@@ -1,15 +1,6 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "display": "Default",
+  "compileOnSave": false,
   "compilerOptions": {
-    "composite": false,
-    "declarationMap": true,
-    "forceConsistentCasingInFileNames": true,
-    "inlineSources": false,
-    "isolatedModules": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "preserveWatchOutput": true,
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
@@ -23,11 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "noPropertyAccessFromIndexSignature": false,
+    "baseUrl": ".",    
     "strict": true,
     "pretty": true,
     "allowJs": true,
-    "noEmit": true,
-    "baseUrl": "."
+    "noEmit": true
   },
   "include": [
     "**/*.ts",
@@ -35,7 +26,10 @@
     "**/*.js",
     "**/*.jsx",
     "next-env.d.ts",
-    "next-i18next.config.js"
+    "next-i18next.config.js",    
+    "apps/*/.eslintrc.js",
+    "packages/*/.eslintrc.js",
+    "./.eslintrc.js",
   ],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "tmp"]
 }
