@@ -210,7 +210,7 @@ services:
       ENABLE_IMAGE_TRANSFORMATION: "true"
       IMGPROXY_URL: http://imgproxy:5001
     volumes:
-      - ./volumes/storage:/var/lib/storage:z
+      - storage-data:/var/lib/storage:z
 
   imgproxy:
     container_name: supabase-imgproxy
@@ -226,7 +226,7 @@ services:
       IMGPROXY_USE_ETAG: "true"
       IMGPROXY_ENABLE_WEBP_DETECTION: ${IMGPROXY_ENABLE_WEBP_DETECTION}
     volumes:
-      - ./volumes/storage:/var/lib/storage:z
+      - storage-data:/var/lib/storage:z
 
   meta:
     container_name: supabase-meta
@@ -291,12 +291,10 @@ services:
       PGDATABASE: ${POSTGRES_DB}
       POSTGRES_DB: ${POSTGRES_DB}
     volumes:
-      - ./volumes/db/realtime.sql:/docker-entrypoint-initdb.d/migrations/99-realtime.sql:Z
-      # Must be superuser to create event trigger
-      - ./volumes/db/webhooks.sql:/docker-entrypoint-initdb.d/init-scripts/98-webhooks.sql:Z
-      # Must be superuser to alter reserved role
-      - ./volumes/db/roles.sql:/docker-entrypoint-initdb.d/init-scripts/99-roles.sql:Z
-      # PGDATA directory is persisted between restarts
-      - ./volumes/db/data:/var/lib/postgresql/data:Z
+      - db-data:/var/lib/postgresql/data:Z
+
+volumes:
+  storage-data: {}
+  db-data: {}
 
 # If you want to use logging, please run with `docker compose -f docker-compose.yml -f docker-compose-logging.yml up`
