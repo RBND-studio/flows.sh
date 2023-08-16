@@ -8,7 +8,7 @@ version: "3.8"
 services:
   studio:
     container_name: supabase-studio
-    image: supabase/studio:v0.23.06
+    image: supabase/studio:20230803-15c6762
     restart: unless-stopped
     healthcheck:
       test:
@@ -60,7 +60,7 @@ services:
 
   auth:
     container_name: supabase-auth
-    image: supabase/gotrue:v2.62.1
+    image: supabase/gotrue:v2.82.4
     healthcheck:
       test:
         [
@@ -232,7 +232,7 @@ services:
 
   functions:
     container_name: supabase-edge-functions
-    image: supabase/edge-runtime:v1.5.2
+    image: supabase/edge-runtime:v1.8.1
     restart: unless-stopped
     environment:
       JWT_SECRET: ${JWT_SECRET}
