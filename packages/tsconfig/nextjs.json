@@ -20,7 +20,13 @@
     "types": ["node", "jest"],
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["./*"],
+      "@ui/*": ["../../packages/ui/*"],
+      "@ui/components/*": ["../../packages/ui/components/ui/*"],
+      "@ui/components/ui/*": ["../../packages/ui/components/ui/*"]
+    }
   },
   "include": [
     "**/*.ts",

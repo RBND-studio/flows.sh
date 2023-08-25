@@ -1,4 +1,5 @@
 {
+  "name": "flows-monorepo",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -9,22 +10,9 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "genTypes": "supabase gen types typescript --db-url postgresql://postgres:z2sJd8i2fUJerUBzYCoZExzz@admin.flows.rbnd.studio:5432/supabase > ./schema.ts",
-    "supabase": "supabase"
+    "supabase": "supabase",
+    "ui:add": "yarn -w ui ui:add --"
   },
-  "devDependencies": {
-    "@turbo/gen": "^1.9.7",
-    "@types/lodash-es": "^4.17.8",
-    "eslint": "8.15.0",
-    "eslint-config-custom": "*",
-    "prettier": "^2.5.1",
-    "turbo": "latest"
-  },
-  "name": "flows-monorepo",
-  "packageManager": "yarn@3.6.1",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "dependencies": {
     "@supabase/auth-helpers-nextjs": "^0.7.4",
     "@supabase/auth-helpers-react": "^0.4.2",
@@ -32,5 +20,18 @@
     "@supabase/auth-ui-shared": "^0.1.6",
     "@supabase/supabase-js": "^2.32.0",
     "lodash-es": "^4.17.21"
-  }
+  },
+  "devDependencies": {
+    "@turbo/gen": "^1.9.7",
+    "@types/lodash-es": "^4.17.8",
+    "eslint": "8.15.0",
+    "eslint-config-custom": "workspace:*",
+    "prettier": "^2.5.1",
+    "turbo": "latest"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "packageManager": "yarn@3.6.1"
 }
