@@ -7,9 +7,5 @@
     "css": "styles/globals.css",
     "baseColor": "slate",
     "cssVariables": true
-  },
-  "aliases": {
-    "components": "@ui/components",
-    "utils": "@ui/lib/utils"
   }
 }

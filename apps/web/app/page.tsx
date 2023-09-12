@@ -1,10 +1,5 @@
-import { Button, Header } from "ui";
+import { Button } from "ui";
 
 export default function Page() {
-  return (
-    <>
-      <Header text="Web" />
-      <Button />
-    </>
-  );
+  return <Button>Click me</Button>;
 }

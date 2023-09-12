@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Next.js",
-  "extends": "../../tsconfig.base.json",
+  "extends": "./base.json",
   "compilerOptions": {
     "plugins": [{ "name": "next" }],
     "allowJs": true,
@@ -17,21 +17,9 @@
     "target": "es6",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["node", "jest"],
     "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "baseUrl": "src",
-    "paths": {
-      "@/*": ["./*"],
-      "@ui/*": ["../../packages/ui/*"],
-      "@ui/components/*": ["../../packages/ui/components/ui/*"],
-      "@ui/components/ui/*": ["../../packages/ui/components/ui/*"]
-    }
+    "isolatedModules": true
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.js",
-    "**/*.jsx","src", "next-env.d.ts"],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "src", "next-env.d.ts"],
   "exclude": ["node_modules"]
 }
