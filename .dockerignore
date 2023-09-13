@@ -1,0 +1,16 @@
+npm-debug.log
+
+**/node_modules/
+dist
+.git
+
+
+*.tsbuildinfo
+
+*Dockerfile*
+docker-compose.yml
+
+.github
+**/.next
+
+.sentryclirc
