@@ -1,0 +1,37 @@
+{
+  "name": "design-system",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "ui": "workspace:*"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.4.1",
+    "@storybook/addon-interactions": "^7.4.1",
+    "@storybook/addon-links": "^7.4.1",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.4.1",
+    "@storybook/cli": "^7.4.1",
+    "@storybook/react": "^7.4.1",
+    "@storybook/react-vite": "^7.4.1",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "eslint-config-custom": "workspace:*",
+    "storybook": "^7.4.1",
+    "tsconfig": "workspace:*",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9"
+  }
+}
