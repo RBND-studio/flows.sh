@@ -1,7 +1,7 @@
 const { resolve } = require("node:path");
 
 const project = resolve(process.cwd(), "tsconfig.json");
-
+const commonRules = require("./common-rules");
 /*
  * This is a custom ESLint configuration for use with
  * internal (bundled by their consumer) libraries
@@ -34,6 +34,6 @@ module.exports = {
   ignorePatterns: ["node_modules/", "dist/", ".eslintrc.js"],
 
   rules: {
-    // add specific rules configurations here
+    ...commonRules,
   },
 };

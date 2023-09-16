@@ -9,7 +9,8 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "app": "pnpm --filter app",
     "web": "pnpm --filter web",
-    "ui": "pnpm --filter ui"
+    "ui": "pnpm --filter ui",
+    "design-system": "pnpm --filter design-system"
   },
   "devDependencies": {
     "eslint": "8.49.0",
