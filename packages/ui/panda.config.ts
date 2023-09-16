@@ -1,4 +1,5 @@
 import { defineConfig } from "@pandacss/dev";
+import { theme } from "./theme";
 
 export default defineConfig({
   // Whether to use css reset
@@ -11,12 +12,7 @@ export default defineConfig({
   exclude: [],
 
   // Useful for theme customization
-  theme: {
-    // extend: {},
-    tokens: {
-      colors: {},
-    },
-  },
+  theme,
 
   // The output directory for your css system
   outdir: "@flows/styled-system",
