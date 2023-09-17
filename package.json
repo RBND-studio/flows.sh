@@ -10,10 +10,12 @@
     "app": "pnpm --filter app",
     "web": "pnpm --filter web",
     "ui": "pnpm --filter ui",
-    "design-system": "pnpm --filter design-system"
+    "design-system": "pnpm --filter design-system",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "eslint": "8.49.0",
+    "husky": "^8.0.3",
     "prettier": "^3.0.3",
     "tsconfig": "workspace:*",
     "turbo": "latest"
