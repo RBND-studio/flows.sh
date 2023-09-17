@@ -2,9 +2,9 @@
   "name": "flows-monorepo",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
+    "build": "TURBO_NO_UPDATE_NOTIFIER=true turbo run build",
+    "dev": "TURBO_NO_UPDATE_NOTIFIER=true turbo run dev",
+    "lint": "TURBO_NO_UPDATE_NOTIFIER=true turbo run lint",
     "tsc": "pnpm -r tsc",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "app": "pnpm --filter app",
@@ -18,7 +18,7 @@
     "husky": "^8.0.3",
     "prettier": "^3.0.3",
     "tsconfig": "workspace:*",
-    "turbo": "latest"
+    "turbo": "^1.10.14"
   },
   "packageManager": "pnpm@8.7.5"
 }
