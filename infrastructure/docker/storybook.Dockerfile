@@ -14,9 +14,10 @@ WORKDIR /app
 COPY .gitignore .gitignore
 COPY --from=builder /app/out/json/ .
 RUN yarn global add pnpm
-RUN pnpm install
+RUN pnpm install --ignore-scripts
 
 COPY --from=builder /app/out/full/ .
+RUN pnpm install
 RUN yarn turbo run build --filter=design-system...
 
 FROM nginx:alpine AS runner
