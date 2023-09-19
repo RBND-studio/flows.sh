@@ -3,12 +3,17 @@ import { Button } from "ui";
 
 const meta: Meta<typeof Button> = {
   component: Button,
+  args: {
+    size: "medium",
+    variant: "primary",
+    children: "Hello World!",
+  },
 };
 
 export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = {
-  render: (props) => <Button {...props}>Hello</Button>,
+export const Default: Story = {
+  render: (props) => <Button {...props} />,
 };

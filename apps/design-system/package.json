@@ -19,7 +19,6 @@
     "@storybook/addon-essentials": "^7.4.2",
     "@storybook/addon-interactions": "^7.4.2",
     "@storybook/addon-links": "^7.4.2",
-    "@storybook/addon-onboarding": "^1.0.8",
     "@storybook/blocks": "^7.4.2",
     "@storybook/cli": "^7.4.2",
     "@storybook/react": "^7.4.2",
