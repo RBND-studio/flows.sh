@@ -112,7 +112,7 @@ select {
 }
 
 .container {
-  max-width: 800px;
+  max-width: calc(800px + 32px);
   margin: 0 auto;
   padding: 0 16px;
 }
