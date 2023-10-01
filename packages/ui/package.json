@@ -9,8 +9,13 @@
     "tsc": "tsc",
     "prepare": "panda codegen"
   },
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.0.2",
+    "next": "^13.4.19"
+  },
   "devDependencies": {
     "@pandacss/dev": "^0.15.0",
+    "@rushstack/eslint-patch": "^1.5.0",
     "@types/node": "^17.0.12",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",

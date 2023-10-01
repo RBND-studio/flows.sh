@@ -13,6 +13,8 @@ const commonRules = require("./common-rules");
  */
 
 module.exports = {
+  root: true,
+  plugins:["simple-import-sort"],
   extends: [
     "plugin:storybook/recommended",
     "plugin:mdx/recommended",
@@ -41,6 +43,11 @@ module.exports = {
   // add rules configurations here
   rules: {
     ...commonRules,
+    "import/order": 0,
+    "simple-import-sort/imports": "error", // Import configuration for `eslint-plugin-simple-import-sort`
+    "simple-import-sort/exports": "error", // Export configuration for `eslint-plugin-simple-import-sort`
+    "react/function-component-definition": "off",
     "import/no-default-export": "off",
+    
   },
 };
