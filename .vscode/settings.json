@@ -1,9 +1,13 @@
 {
-    "cSpell.words": [
-        "contentlayer"
-    ],
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "editor.formatOnSave": true,
-    "editor.tabSize": 2,
-    "editor.detectIndentation": false
+  "cSpell.words": ["contentlayer"],
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnSave": true,
+  "editor.detectIndentation": false,
+  "eslint.workingDirectories": [
+    "./apps/app",
+    "./apps/design-system",
+    "./apps/web",
+    "./packages/icons",
+    "./packages/ui"
+  ]
 }

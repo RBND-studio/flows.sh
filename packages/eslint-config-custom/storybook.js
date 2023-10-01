@@ -1,7 +1,6 @@
-const { resolve } = require("node:path");
-
-const project = resolve(process.cwd(), "tsconfig.json");
 const commonRules = require("./common-rules");
+const { resolve } = require("node:path");
+const project = resolve(process.cwd(), "./tsconfig.json");
 
 /*
  * This is a custom ESLint configuration for use with
@@ -14,7 +13,7 @@ const commonRules = require("./common-rules");
 
 module.exports = {
   root: true,
-  plugins:["simple-import-sort"],
+  plugins: ["simple-import-sort"],
   extends: [
     "plugin:storybook/recommended",
     "plugin:mdx/recommended",
@@ -48,6 +47,5 @@ module.exports = {
     "simple-import-sort/exports": "error", // Export configuration for `eslint-plugin-simple-import-sort`
     "react/function-component-definition": "off",
     "import/no-default-export": "off",
-    
   },
 };

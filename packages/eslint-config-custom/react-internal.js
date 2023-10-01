@@ -1,7 +1,7 @@
-const { resolve } = require("node:path");
-
-const project = resolve(process.cwd(), "tsconfig.json");
 const commonRules = require("./common-rules");
+const { resolve } = require("node:path");
+const project = resolve(process.cwd(), "./tsconfig.json");
+
 /*
  * This is a custom ESLint configuration for use with
  * internal (bundled by their consumer) libraries

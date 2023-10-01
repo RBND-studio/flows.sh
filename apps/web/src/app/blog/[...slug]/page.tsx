@@ -1,12 +1,12 @@
-import type { Post } from 'contentlayer/generated';
-import { allPosts } from 'contentlayer/generated';
-import { format, parseISO } from 'date-fns';
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import type { ReactElement } from 'react';
+import type { Post } from "contentlayer/generated";
+import { allPosts } from "contentlayer/generated";
+import { format, parseISO } from "date-fns";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import type { ReactElement } from "react";
 
-import { Mdx } from '../../../components';
+import { Mdx } from "../../../components";
 
 interface PostProps {
   params: {
@@ -15,9 +15,9 @@ interface PostProps {
 }
 
 const getPostFromParams = (
-  params: PostProps['params'],
+  params: PostProps["params"],
 ): Promise<Post | undefined> => {
-  const slug = params.slug.join('/');
+  const slug = params.slug.join("/");
   const postFromParams = allPosts.find((post) => post.slugAsParams === slug);
 
   if (!postFromParams) {
@@ -42,9 +42,10 @@ export async function generateMetadata({
   };
 }
 
-export async function generateStaticParams(): Promise<PostProps['params'][]> {
+// eslint-disable-next-line @typescript-eslint/require-await -- required for nextjs
+export async function generateStaticParams(): Promise<PostProps["params"][]> {
   return allPosts.map((post) => ({
-    slug: post.slugAsParams.split('/'),
+    slug: post.slugAsParams.split("/"),
   }));
 }
 
@@ -78,7 +79,7 @@ export default async function PostPage({
           </p>
         ) : null}
         <p className="space-x-1 text-xs text-gray-500">
-          <span>{format(parseISO(post.date), 'MMMM dd, yyyy')}</span>
+          <span>{format(parseISO(post.date), "MMMM dd, yyyy")}</span>
           <span>{` • `}</span>
           <span>{post.readingTimeText}</span>
           <span>{` • `}</span>
