@@ -1,46 +1,43 @@
-import { cva, cx } from '@flows/styled-system/css';
-import { Slot } from '@radix-ui/react-slot';
-import type { HTMLAttributes } from 'react';
+import { cva, cx } from "@flows/styled-system/css";
+import { Slot } from "@radix-ui/react-slot";
+import type { HTMLAttributes } from "react";
 
 type Props = HTMLAttributes<HTMLParagraphElement> & {
   /**
    * @defaultValue "primary"
    */
-  variant?: (typeof text.variantMap.variant)[number];
+  variant?: (typeof textVariants.variantMap.variant)[number];
   /**
    * @defaultValue "p"
    */
-  as?: (typeof text.variantMap.as)[number];
+  as?: (typeof textVariants.variantMap.as)[number];
   /**
    * @defaultValue "black"
    */
-  color?: (typeof text.variantMap.color)[number];
+  color?: (typeof textVariants.variantMap.color)[number];
 
   asChild?: boolean;
 };
 
 export function Text({
-  as = 'p',
-  color = 'black',
-  variant = 'bodyM',
+  as = "p",
+  color = "black",
+  variant = "bodyM",
   children,
   asChild,
   ...props
 }: Props): JSX.Element {
   const Component = asChild ? Slot : as;
   return (
-    <Component
-      {...props}
-      className={cx(text({ variant, color }), props.className)}
-    >
+    <Component {...props} className={cx(textVariants({ variant, color }), props.className)}>
       {children}
     </Component>
   );
 }
 
-const text = cva({
+const textVariants = cva({
   base: {
-    display: 'inline-flex',
+    display: "inline-flex",
   },
   variants: {
     as: {
@@ -55,75 +52,78 @@ const text = cva({
     },
     color: {
       black: {
-        color: 'neutral.900',
+        color: "neutral.900",
       },
       white: {
-        color: 'neutral.0',
+        color: "neutral.0",
       },
       primary: {
-        color: 'primaryDark',
+        color: "primaryDark",
+      },
+      gray: {
+        color: "neutral.500",
       },
     },
     variant: {
       titleXxl: {
-        textStyle: 'titleXxl',
+        textStyle: "titleXxl",
       },
       titleXl: {
-        textStyle: 'titleXl',
+        textStyle: "titleXl",
       },
       titleL: {
-        textStyle: 'titleL',
+        textStyle: "titleL",
       },
       titleM: {
-        textStyle: 'titleM',
+        textStyle: "titleM",
       },
       titleS: {
-        textStyle: 'titleS',
+        textStyle: "titleS",
       },
       titleXs: {
-        textStyle: 'titleXs',
+        textStyle: "titleXs",
       },
       subtitleL: {
-        textStyle: 'subtitleL',
+        textStyle: "subtitleL",
       },
       subtitleM: {
-        textStyle: 'subtitleM',
+        textStyle: "subtitleM",
       },
       subtitleS: {
-        textStyle: 'subtitleS',
+        textStyle: "subtitleS",
       },
       bodyL: {
-        textStyle: 'bodyL',
+        textStyle: "bodyL",
       },
       bodyM: {
-        textStyle: 'bodyM',
+        textStyle: "bodyM",
       },
       bodyS: {
-        textStyle: 'bodyS',
+        textStyle: "bodyS",
       },
       bodyLSemiBold: {
-        textStyle: 'bodyL',
-        fontWeight: 'semiBold',
+        textStyle: "bodyL",
+        fontWeight: "600",
       },
       bodyMSemiBold: {
-        textStyle: 'bodyM',
-        fontWeight: 'semiBold',
+        textStyle: "bodyM",
+        fontWeight: "600",
       },
       bodySSemiBold: {
-        textStyle: 'bodyS',
-        fontWeight: 'semiBold',
+        textStyle: "bodyS",
+        fontWeight: "600",
       },
       bodyLBold: {
-        textStyle: 'bodyL',
-        fontWeight: 'bold',
+        textStyle: "bodyL",
+        fontWeight: "bold",
       },
       bodyMBold: {
-        textStyle: 'bodyM',
-        fontWeight: 'bold',
+        textStyle: "bodyM",
+        fontWeight: "bold",
       },
       bodySBold: {
-        textStyle: 'bodyS',
-        fontWeight: 'bold',
+        textStyle: "bodyS",
+        fontWeight: "bold",
       },
     },
   },

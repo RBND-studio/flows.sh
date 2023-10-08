@@ -19,7 +19,7 @@ const computedFields = {
   readingTimeText: {
     type: "string",
     resolve: (doc) => readingTime(doc.body.raw).text,
-  }, 
+  },
   readingTimeMinutes: {
     type: "number",
     resolve: (doc) => readingTime(doc.body.raw).minutes,

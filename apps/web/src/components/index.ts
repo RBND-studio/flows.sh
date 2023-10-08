@@ -1,3 +1,3 @@
-export * from './footer';
-export * from './mdx-components';
-export * from './page-wrapper';
+export * from "./footer";
+export * from "./header";
+export * from "./mdx-components";

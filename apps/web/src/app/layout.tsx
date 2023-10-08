@@ -1,11 +1,10 @@
 import "./globals.css";
 
-import { css } from "@flows/styled-system/css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
 
-import { Footer, pageWrapperCss } from "../components";
+import { Footer, Header } from "../components";
 
 export const MonaSans = localFont({
   src: "../../public/fonts/Mona-Sans.woff2",
@@ -31,37 +30,18 @@ export const metadata: Metadata = {
     description: "A better way to onboard users and drive product adoption.",
     images: "/og.png",
   },
-  keywords: [
-    "flows",
-    "onboarding",
-    "product adoption",
-    "user onboarding",
-    "user adoption",
-  ],
+  keywords: ["flows", "onboarding", "product adoption", "user onboarding", "user adoption"],
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}): JSX.Element {
+export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
   return (
     <html className={`${MonaSans.variable}`} lang="en">
       <body>
-        <main
-          className={css({
-            ...pageWrapperCss,
-          })}
-        >
-          {children}
-        </main>
+        <Header />
+        <main>{children}</main>
         <Footer />
       </body>
-      <Script
-        data-domain="flows.sh"
-        defer
-        src="https://plausible.io/js/script.js"
-      />
+      <Script data-domain="flows.sh" defer src="https://plausible.io/js/script.js" />
     </html>
   );
 }

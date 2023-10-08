@@ -1,6 +1,7 @@
-import { cva, cx } from '@flows/styled-system/css';
-import { styled } from '@flows/styled-system/jsx';
-import type { HTMLAttributes } from 'react';
+import { cva, cx } from "@flows/styled-system/css";
+import { styled } from "@flows/styled-system/jsx";
+import { Slot, Slottable } from "@radix-ui/react-slot";
+import type { HTMLAttributes } from "react";
 
 type Props = HTMLAttributes<HTMLButtonElement> & {
   /**
@@ -13,32 +14,35 @@ type Props = HTMLAttributes<HTMLButtonElement> & {
   variant?: (typeof button.variantMap.variant)[number];
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
+  asChild?: boolean;
 };
 
 export function Button({
-  size = 'medium',
-  variant = 'primary',
+  size = "medium",
+  variant = "primary",
   children,
   startIcon,
   endIcon,
+  asChild,
   ...props
 }: Props): JSX.Element {
+  const Component = asChild ? Slot : "button";
   return (
-    <button
-      type="button"
+    <Component
+      type={!asChild ? "button" : undefined}
       {...props}
       className={cx(button({ size, variant }), props.className)}
     >
       {startIcon ? <Icon position="start">{startIcon}</Icon> : null}
-      {children}
+      <Slottable>{children}</Slottable>
       {endIcon ? <Icon position="end">{endIcon}</Icon> : null}
-    </button>
+    </Component>
   );
 }
 
-const Icon = styled('span', {
+const Icon = styled("span", {
   base: {
-    display: 'inline-flex',
+    display: "inline-flex",
   },
   variants: {
     position: {
@@ -54,35 +58,43 @@ const Icon = styled('span', {
 
 const button = cva({
   base: {
-    display: 'inline-flex',
-    cursor: 'pointer',
-    borderRadius: 6,
-    fontFamily:
-      '"SF Mono", "Segoe UI Mono", "Roboto Mono", "Ubuntu Mono", "Menlo", "Consolas", "Courier", "monospace"',
-    transition: '80ms ease-in-out',
-    boxShadow: '0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05)',
+    display: "inline-flex",
+    cursor: "pointer",
+    borderRadius: 8,
+    transition: "80ms ease-in-out",
+    boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05)",
   },
   variants: {
     size: {
+      small: {
+        padding: "6px 12px",
+      },
       medium: {
-        padding: '8px 12px',
+        padding: "8px 12px",
       },
     },
     variant: {
       primary: {
-        backgroundColor: '#e86339',
-        color: '#fff',
-        border: '1px solid #b63c16',
+        backgroundColor: "#e86339",
+        color: "#fff",
+        border: "1px solid #b63c16",
         _hover: {
-          backgroundColor: '#b63c16',
+          backgroundColor: "#b63c16",
         },
       },
       secondary: {
-        backgroundColor: '#fff',
-        color: '#161412',
-        border: '1px solid #e86339',
+        backgroundColor: "#fff",
+        color: "#161412",
+        border: "1px solid #e86339",
         _hover: {
-          backgroundColor: '##e8e7e3',
+          backgroundColor: "##e8e7e3",
+        },
+      },
+      black: {
+        backgroundColor: "neutral.850",
+        color: "neutral.0",
+        _hover: {
+          backgroundColor: "neutral.900",
         },
       },
     },

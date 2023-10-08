@@ -1,6 +1,5 @@
 import type { Post } from "contentlayer/generated";
 import { allPosts } from "contentlayer/generated";
-import { format, parseISO } from "date-fns";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -14,9 +13,7 @@ interface PostProps {
   };
 }
 
-const getPostFromParams = (
-  params: PostProps["params"],
-): Promise<Post | undefined> => {
+const getPostFromParams = (params: PostProps["params"]): Promise<Post | undefined> => {
   const slug = params.slug.join("/");
   const postFromParams = allPosts.find((post) => post.slugAsParams === slug);
 
@@ -27,9 +24,7 @@ const getPostFromParams = (
   return Promise.resolve(postFromParams);
 };
 
-export async function generateMetadata({
-  params,
-}: PostProps): Promise<Metadata> {
+export async function generateMetadata({ params }: PostProps): Promise<Metadata> {
   const post = await getPostFromParams(params);
 
   if (!post) {
@@ -49,9 +44,7 @@ export async function generateStaticParams(): Promise<PostProps["params"][]> {
   }));
 }
 
-export default async function PostPage({
-  params,
-}: PostProps): Promise<ReactElement> {
+export default async function PostPage({ params }: PostProps): Promise<ReactElement> {
   const post = await getPostFromParams(params);
 
   if (!post) {
@@ -74,21 +67,15 @@ export default async function PostPage({
       <header>
         <h1 className="mb-2">{post.title}</h1>
         {post.description ? (
-          <p className="text-xl mt-0 mb-6 text-gray-700 dark:text-gray-200">
-            {post.description}
-          </p>
+          <p className="text-xl mt-0 mb-6 text-gray-700 dark:text-gray-200">{post.description}</p>
         ) : null}
         <p className="space-x-1 text-xs text-gray-500">
-          <span>{format(parseISO(post.date), "MMMM dd, yyyy")}</span>
+          {/* <span>{format(parseISO(post.date), "MMMM dd, yyyy")}</span> */}
           <span>{` • `}</span>
           <span>{post.readingTimeText}</span>
           <span>{` • `}</span>
           <span>
-            <Link
-              href={`/categories/${encodeURIComponent(
-                post.category.toLowerCase(),
-              )}`}
-            >
+            <Link href={`/categories/${encodeURIComponent(post.category.toLowerCase())}`}>
               {post.category}
             </Link>
           </span>
