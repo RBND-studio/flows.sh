@@ -1,9 +1,11 @@
+import { css } from "@flows/styled-system/css";
 import type { Post } from "contentlayer/generated";
 import { allPosts } from "contentlayer/generated";
 import type { Metadata } from "next";
-import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { ReactElement } from "react";
+import { Text } from "ui";
 
 import { Mdx } from "../../../components";
 
@@ -46,42 +48,61 @@ export async function generateStaticParams(): Promise<PostProps["params"][]> {
 
 export default async function PostPage({ params }: PostProps): Promise<ReactElement> {
   const post = await getPostFromParams(params);
+  const date = post ? new Date(post.date) : new Date();
 
   if (!post) {
     notFound();
   }
 
   return (
-    <article className="py-6 prose dark:prose-invert">
-      {/* {post.image ? <div className="relative w-full h-[345px] mb-12">
-          <Image
-            alt={post.title}
-            className="rounded-lg w-full m-0 object-cover"
-            fill
-            priority
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            src={post.image}
-          />
-        </div> : null} */}
+    <article
+      className={css({
+        maxWidth: "720px",
+        marginTop: "space48",
+        marginX: "auto",
+      })}
+    >
+      <div
+        className={css({
+          mb: "space48",
+        })}
+      >
+        <Text
+          as="h1"
+          className={css({
+            mb: "space16",
+          })}
+          variant="titleL"
+        >
+          {post.title}
+        </Text>
+        <Text as="p" variant="bodyL">
+          {post.description}
+        </Text>
 
-      <header>
-        <h1 className="mb-2">{post.title}</h1>
-        {post.description ? (
-          <p className="text-xl mt-0 mb-6 text-gray-700 dark:text-gray-200">{post.description}</p>
+        {post.image ? (
+          <div className="">
+            <Image
+              alt={post.title}
+              className={css({
+                borderRadius: "radius12",
+                mt: "space32",
+              })}
+              height={600}
+              priority
+              src={post.image}
+              width={1200}
+            />
+          </div>
         ) : null}
-        <p className="space-x-1 text-xs text-gray-500">
-          {/* <span>{format(parseISO(post.date), "MMMM dd, yyyy")}</span> */}
+        <Text className={css({ mt: "space16" })} color="subtle" variant="bodyM">
+          <span>
+            {date.toLocaleString("en-US", { day: "numeric", month: "long", year: "numeric" })}
+          </span>
           <span>{` • `}</span>
           <span>{post.readingTimeText}</span>
-          <span>{` • `}</span>
-          <span>
-            <Link href={`/categories/${encodeURIComponent(post.category.toLowerCase())}`}>
-              {post.category}
-            </Link>
-          </span>
-        </p>
-      </header>
-      <hr className="my-6" />
+        </Text>
+      </div>
       <Mdx code={post.body.code} />
     </article>
   );

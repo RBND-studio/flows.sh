@@ -1,15 +1,15 @@
-import { css } from '@flows/styled-system/css';
-import Image from 'next/image';
+import { css } from "@flows/styled-system/css";
+import Image from "next/image";
 
-import { Text } from '../text';
+import { Text } from "../text";
 
 export function Logo(): JSX.Element {
   return (
     <div
       className={css({
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: '16px',
+        display: "inline-flex",
+        alignItems: "center",
+        gap: "space16",
       })}
     >
       <Image alt="Logo" height={72} src="/images/logo/logo.svg" width={72} />

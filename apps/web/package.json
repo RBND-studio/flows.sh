@@ -13,10 +13,11 @@
   "dependencies": {
     "contentlayer": "^0.3.4",
     "dayjs": "^1.11.10",
-    "next": "^13.4.19",
+    "icons": "workspace:*",
     "next-contentlayer": "^0.3.4",
-    "react": "^18.2.0",
+    "next": "^13.4.19",
     "react-dom": "^18.2.0",
+    "react": "^18.2.0",
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-code-titles": "^1.2.0",

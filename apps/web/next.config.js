@@ -13,6 +13,15 @@ const nextConfig = {
   experimental: {
     outputFileTracingRoot: path.join(__dirname, "../../"),
   },
+  images: {
+    remotePatterns: [
+      {
+        // For placeholder images
+        protocol: "https",
+        hostname: "via.placeholder.com",
+      },
+    ],
+  },
 };
 
 module.exports = withContentlayer(nextConfig);

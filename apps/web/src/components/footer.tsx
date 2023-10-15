@@ -20,14 +20,6 @@ const footerGroups: FooterGroup[] = [
         title: "Overview",
         href: "#overview",
       },
-      {
-        title: "Pricing",
-        href: "/pricing",
-      },
-      {
-        title: "Changelog",
-        href: "/changelog",
-      },
     ],
   },
   {
@@ -49,79 +41,93 @@ export const Footer = (): ReactElement => {
   return (
     <footer
       className={css({
-        maxWidth: "1440px",
-        mx: "auto",
-        px: { base: "16px", md: "32px", lg: "64px", xl: "170px" },
-        py: "40px",
-        display: "flex",
-        alignItems: "flex-start",
-        justifyContent: "space-between",
+        backgroundColor: "bg.muted",
+        paddingX: "space16",
+        borderTopWidth: "1px",
+        borderTopStyle: "solid",
+        borderTopColor: "border",
       })}
     >
-      <div>
-        <div
-          className={css({
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "8px",
-          })}
-        >
-          <Image alt="Logo" height={24} src="/images/logo/logo.svg" width={24} />
-          <Text variant="bodyMBold">Flows</Text>
-        </div>
+      <div
+        className={css({
+          maxWidth: "1100px",
+          mx: "auto",
+          py: "space40",
+          display: "flex",
+          alignItems: "flex-start",
+          justifyContent: "space-between",
+        })}
+      >
         <div>
-          <Text color="gray" variant="bodyS">
-            Follow us
-          </Text>
           <div
             className={css({
-              display: "flex",
+              display: "inline-flex",
               alignItems: "center",
-              gap: "16px",
+              gap: "space8",
+              marginBottom: "space24",
             })}
           >
-            <Text asChild variant="bodySSemiBold">
-              <a href="a">Twitter</a>
-            </Text>
-            <Text asChild variant="bodySSemiBold">
-              <a href="a">Github</a>
-            </Text>
+            <Image alt="Logo" height={24} src="/images/logo/logo.svg" width={24} />
+            <Text variant="bodyMBold">Flows</Text>
           </div>
-        </div>
-        <Text color="gray" variant="bodyS">
-          © 2023 RBND studios
-        </Text>
-      </div>
-      <div className={css({ display: "flex", gap: "32px" })}>
-        {footerGroups.map((group) => (
           <div
             className={css({
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              gap: "8px",
+              marginBottom: "space16",
             })}
-            key={group.title}
           >
-            <Text color="gray" variant="bodyS">
-              {group.title}
+            <Text color="subtle" variant="bodyS">
+              Follow us
             </Text>
-            {group.links.map((link) => (
-              <Text asChild key={link.href} variant="bodySSemiBold">
-                <a
-                  className={css({
-                    "&:hover": {
-                      textDecoration: "underline",
-                    },
-                  })}
-                  href={link.href}
-                >
-                  {link.title}
-                </a>
+            <div
+              className={css({
+                display: "flex",
+                alignItems: "center",
+                gap: "space16",
+              })}
+            >
+              <Text asChild variant="bodySSemiBold">
+                <a href="a">Twitter</a>
               </Text>
-            ))}
+              <Text asChild variant="bodySSemiBold">
+                <a href="a">Github</a>
+              </Text>
+            </div>
           </div>
-        ))}
+          <Text color="subtle" variant="bodyS">
+            © 2023 RBND studios
+          </Text>
+        </div>
+        <div className={css({ display: "flex", gap: "space48" })}>
+          {footerGroups.map((group) => (
+            <div
+              className={css({
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                gap: "space8",
+              })}
+              key={group.title}
+            >
+              <Text color="subtle" variant="bodyS">
+                {group.title}
+              </Text>
+              {group.links.map((link) => (
+                <Text asChild key={link.href} variant="bodySSemiBold">
+                  <a
+                    className={css({
+                      "&:hover": {
+                        textDecoration: "underline",
+                      },
+                    })}
+                    href={link.href}
+                  >
+                    {link.title}
+                  </a>
+                </Text>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </footer>
   );

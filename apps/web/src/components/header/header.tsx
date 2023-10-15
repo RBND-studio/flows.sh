@@ -10,29 +10,40 @@ export const Header = (): ReactElement => {
   return (
     <header
       className={css({
-        maxWidth: "1440px",
-        mx: "auto",
-        px: { base: "16px", md: "32px", lg: "64px", xl: "170px" },
-        py: "12px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
+        backgroundColor: "bg",
+        borderBottomWidth: "1px",
+        borderBottomStyle: "solid",
+        borderBottomColor: "border",
+        paddingX: "space16",
+        position: "sticky",
+        top: 0,
       })}
     >
       <div
         className={css({
-          display: "inline-flex",
+          mx: "auto",
+          py: "space12",
+          display: "flex",
           alignItems: "center",
-          gap: "8px",
+          justifyContent: "space-between",
+          maxWidth: "1100px",
         })}
       >
-        <Image alt="Logo" height={28} src="/images/logo/logo.svg" width={28} />
-        <Text variant="bodyMBold">Flows</Text>
+        <div
+          className={css({
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "space8",
+          })}
+        >
+          <Image alt="Logo" height={28} src="/images/logo/logo.svg" width={28} />
+          <Text variant="bodyMBold">Flows</Text>
+        </div>
+        <HeaderItems />
+        <Button asChild size="small" variant="black">
+          <Link href="/#cta">Join waitlist</Link>
+        </Button>
       </div>
-      <HeaderItems />
-      <Button asChild size="small" variant="black">
-        <Link href="/#cta">Join waitlist</Link>
-      </Button>
     </header>
   );
 };

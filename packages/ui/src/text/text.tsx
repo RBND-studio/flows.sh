@@ -21,7 +21,7 @@ type Props = HTMLAttributes<HTMLParagraphElement> & {
 
 export function Text({
   as = "p",
-  color = "black",
+  color = "default",
   variant = "bodyM",
   children,
   asChild,
@@ -36,9 +36,6 @@ export function Text({
 }
 
 const textVariants = cva({
-  base: {
-    display: "inline-flex",
-  },
   variants: {
     as: {
       h1: {},
@@ -51,17 +48,20 @@ const textVariants = cva({
       span: {},
     },
     color: {
-      black: {
-        color: "neutral.900",
+      default: {
+        color: "text",
       },
       white: {
-        color: "neutral.0",
+        color: "text.white",
       },
       primary: {
-        color: "primaryDark",
+        color: "text.primary",
       },
-      gray: {
-        color: "neutral.500",
+      subtle: {
+        color: "text.subtle",
+      },
+      muted: {
+        color: "text.muted",
       },
     },
     variant: {

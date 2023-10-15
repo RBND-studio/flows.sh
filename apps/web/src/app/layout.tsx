@@ -1,5 +1,6 @@
 import "./globals.css";
 
+import { CtaBanner } from "components/cta-banner";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
       <body>
         <Header />
         <main>{children}</main>
+        <CtaBanner />
         <Footer />
       </body>
       <Script data-domain="flows.sh" defer src="https://plausible.io/js/script.js" />

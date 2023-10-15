@@ -21,14 +21,6 @@ const HEADER_ITEMS: HeaderItem[] = [
     title: "Blog",
     href: "/blog",
   },
-  {
-    title: "Pricing",
-    href: "/pricing",
-  },
-  {
-    title: "Changelog",
-    href: "/changelog",
-  },
 ];
 
 export const HeaderItems = (): ReactElement => {
@@ -41,11 +33,11 @@ export const HeaderItems = (): ReactElement => {
         <li
           className={css({
             display: "inline-block",
-            mr: "32px",
+            mr: "space32",
           })}
           key={item.title}
         >
-          <Text asChild color={path === item.href ? "black" : "gray"} variant="subtitleS">
+          <Text asChild color={path === item.href ? "default" : "subtle"} variant="subtitleS">
             <Link href={item.href}>{item.title}</Link>
           </Text>
         </li>

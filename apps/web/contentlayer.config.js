@@ -37,6 +37,7 @@ export const Post = defineDocumentType(() => ({
     },
     description: {
       type: "string",
+      required: true,
     },
     date: {
       type: "date",
@@ -47,6 +48,10 @@ export const Post = defineDocumentType(() => ({
       required: true,
     },
     image: {
+      type: "string",
+      required: false,
+    },
+    imageAlt: {
       type: "string",
       required: false,
     },
