@@ -67,34 +67,43 @@ const button = cva({
   variants: {
     size: {
       small: {
-        padding: "6px 12px",
+        textStyle: "subtitleS",
+        padding: "5px 11px",
       },
       medium: {
-        padding: "8px 12px",
+        textStyle: "subtitleL",
+        padding: "11px 23px",
       },
     },
     variant: {
       primary: {
-        backgroundColor: "#e86339",
-        color: "#fff",
-        border: "1px solid #b63c16",
+        backgroundColor: "bg.primary",
+        color: "text.onPrimary",
+        borderStyle: "solid",
+        borderWidth: 1,
+        borderColor: "bg.primary",
         _hover: {
-          backgroundColor: "#b63c16",
+          backgroundColor: "bg.primaryHover",
         },
       },
       secondary: {
-        backgroundColor: "#fff",
-        color: "#161412",
-        border: "1px solid #e86339",
+        backgroundColor: "bg",
+        color: "text",
+        borderStyle: "solid",
+        borderWidth: 1,
+        borderColor: "border.primary",
         _hover: {
-          backgroundColor: "##e8e7e3",
+          backgroundColor: "bg.hover",
         },
       },
       black: {
-        backgroundColor: "neutral.850",
-        color: "neutral.0",
+        backgroundColor: "bg.black",
+        borderStyle: "solid",
+        borderWidth: 1,
+        borderColor: "bg.black",
+        color: "text.white",
         _hover: {
-          backgroundColor: "neutral.900",
+          backgroundColor: "bg.blackHover",
         },
       },
     },

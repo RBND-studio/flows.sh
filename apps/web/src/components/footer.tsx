@@ -9,6 +9,7 @@ interface FooterGroup {
   links: {
     title: string;
     href: string;
+    target?: string;
   }[];
 }
 
@@ -32,6 +33,7 @@ const footerGroups: FooterGroup[] = [
       {
         title: "Github",
         href: "https://github.com/RBND-studio",
+        target: "_blank",
       },
     ],
   },
@@ -86,10 +88,14 @@ export const Footer = (): ReactElement => {
               })}
             >
               <Text asChild variant="bodySSemiBold">
-                <a href="a">Twitter</a>
+                <a href="a" rel="noopener" target="_blank">
+                  Twitter
+                </a>
               </Text>
               <Text asChild variant="bodySSemiBold">
-                <a href="a">Github</a>
+                <a href="https://github.com/RBND-studio" rel="noopener" target="_blank">
+                  Github
+                </a>
               </Text>
             </div>
           </div>
@@ -120,6 +126,7 @@ export const Footer = (): ReactElement => {
                       },
                     })}
                     href={link.href}
+                    {...(link.target ? { target: link.target, rel: "noopener" } : {})}
                   >
                     {link.title}
                   </a>

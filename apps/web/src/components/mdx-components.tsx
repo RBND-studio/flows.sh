@@ -145,6 +145,8 @@ const mdxComponents = {
         textDecoration: "underline",
       })}
       href={href}
+      rel="noopener"
+      target="_blank"
       {...rest}
     >
       {children || href}

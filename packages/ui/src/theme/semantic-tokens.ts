@@ -6,6 +6,11 @@ export const semanticTokens = defineSemanticTokens({
       DEFAULT: { value: "{colors.neutral.0}" },
       muted: { value: "{colors.neutral.25}" },
       subtle: { value: "{colors.neutral.50}" },
+      primary: { value: "{colors.primary.400}" },
+      primaryHover: { value: "{colors.primary.500}" },
+      hover: { value: "{colors.neutral.50}" },
+      black: { value: "{colors.neutral.850}" },
+      blackHover: { value: "{colors.neutral.750}" },
     },
     text: {
       DEFAULT: { value: "{colors.neutral.900}" },
@@ -13,6 +18,7 @@ export const semanticTokens = defineSemanticTokens({
       subtle: { value: "{colors.neutral.500}" },
       white: { value: "{colors.neutral.0}" },
       primary: { value: "{colors.primary.500}" },
+      onPrimary: { value: "{colors.neutral.0}" },
     },
     border: {
       DEFAULT: { value: "{colors.neutral.50}" },

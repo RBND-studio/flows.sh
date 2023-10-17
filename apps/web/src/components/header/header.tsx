@@ -17,6 +17,7 @@ export const Header = (): ReactElement => {
         paddingX: "space16",
         position: "sticky",
         top: 0,
+        zIndex: 1,
       })}
     >
       <div
