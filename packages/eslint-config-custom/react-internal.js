@@ -1,4 +1,4 @@
-const commonRules = require("./common-rules");
+const common = require("./common");
 const { resolve } = require("node:path");
 const project = resolve(process.cwd(), "./tsconfig.json");
 
@@ -13,6 +13,7 @@ const project = resolve(process.cwd(), "./tsconfig.json");
  */
 
 module.exports = {
+  plugins: [...common.plugins],
   extends: [
     "@vercel/style-guide/eslint/browser",
     "@vercel/style-guide/eslint/typescript",
@@ -34,6 +35,6 @@ module.exports = {
   ignorePatterns: ["node_modules/", "dist/", ".eslintrc.js"],
 
   rules: {
-    ...commonRules,
+    ...common.rules,
   },
 };

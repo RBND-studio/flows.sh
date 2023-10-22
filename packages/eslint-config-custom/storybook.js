@@ -1,4 +1,4 @@
-const commonRules = require("./common-rules");
+const common = require("./common");
 const { resolve } = require("node:path");
 const project = resolve(process.cwd(), "./tsconfig.json");
 
@@ -13,7 +13,7 @@ const project = resolve(process.cwd(), "./tsconfig.json");
 
 module.exports = {
   root: true,
-  plugins: ["simple-import-sort"],
+  plugins: [...common.plugins],
   extends: [
     "plugin:storybook/recommended",
     "plugin:mdx/recommended",
@@ -41,11 +41,6 @@ module.exports = {
   ignorePatterns: ["node_modules/", "dist/"],
   // add rules configurations here
   rules: {
-    ...commonRules,
-    "import/order": 0,
-    "simple-import-sort/imports": "error", // Import configuration for `eslint-plugin-simple-import-sort`
-    "simple-import-sort/exports": "error", // Export configuration for `eslint-plugin-simple-import-sort`
-    "react/function-component-definition": "off",
-    "import/no-default-export": "off",
+    ...common.rules,
   },
 };

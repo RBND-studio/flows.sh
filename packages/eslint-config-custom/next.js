@@ -1,4 +1,4 @@
-const commonRules = require("./common-rules");
+const common = require("./common");
 const { resolve } = require("node:path");
 const project = resolve(process.cwd(), "./tsconfig.json");
 
@@ -13,7 +13,7 @@ const project = resolve(process.cwd(), "./tsconfig.json");
 
 module.exports = {
   root: true,
-  plugins: ["simple-import-sort", "import", "unused-imports"],
+  plugins: [...common.plugins],
   extends: [
     "@vercel/style-guide/eslint/node",
     "@vercel/style-guide/eslint/browser",
@@ -38,20 +38,6 @@ module.exports = {
   },
   ignorePatterns: ["node_modules/", "dist/"],
   rules: {
-    ...commonRules,
-    "import/order": 0,
-    "simple-import-sort/imports": "error", // Import configuration for `eslint-plugin-simple-import-sort`
-    "simple-import-sort/exports": "error", // Export configuration for `eslint-plugin-simple-import-sort`
-    "import/first": "error",
-    "import/newline-after-import": "error",
-    "import/no-duplicates": "error",
-    "react/function-component-definition": "off",
-    "import/no-default-export": "off",
-    "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
-    "unused-imports/no-unused-imports": "error",
-    "unused-imports/no-unused-vars": [
-      "warn",
-      { vars: "all", varsIgnorePattern: "^_", args: "after-used", argsIgnorePattern: "^_" },
-    ],
+    ...common.rules,
   },
 };
