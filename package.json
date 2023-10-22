@@ -10,7 +10,6 @@
     "app": "pnpm --filter app",
     "web": "pnpm --filter web",
     "ui": "pnpm --filter ui",
-    "design-system": "pnpm --filter design-system",
     "prepare": "husky install"
   },
   "devDependencies": {

@@ -5,7 +5,7 @@ WORKDIR /app
 
 RUN yarn global add turbo
 COPY . .
-RUN turbo prune --scope=design-system --docker
+RUN turbo prune --scope=ui --docker
 
 
 FROM base AS installer
@@ -18,8 +18,8 @@ RUN pnpm install --ignore-scripts
 
 COPY --from=builder /app/out/full/ .
 RUN pnpm install
-RUN yarn turbo run build --filter=design-system...
+RUN yarn turbo run build --filter=ui
 
 FROM nginx:alpine AS runner
 
-COPY --from=installer /app/apps/design-system/storybook-static /usr/share/nginx/html
+COPY --from=installer /app/packages/ui/storybook-static /usr/share/nginx/html
