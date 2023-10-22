@@ -17,19 +17,22 @@ type Props = HTMLAttributes<HTMLParagraphElement> & {
   color?: (typeof textVariants.variantMap.color)[number];
 
   asChild?: boolean;
+
+  align?: "left" | "center" | "right";
 };
 
 export function Text({
   as = "p",
   color = "default",
   variant = "bodyM",
+  align = "left",
   children,
   asChild,
   ...props
 }: Props): JSX.Element {
   const Component = asChild ? Slot : as;
   return (
-    <Component {...props} className={cx(textVariants({ variant, color }), props.className)}>
+    <Component {...props} className={cx(textVariants({ variant, color, align }), props.className)}>
       {children}
     </Component>
   );
@@ -62,6 +65,17 @@ const textVariants = cva({
       },
       muted: {
         color: "text.muted",
+      },
+    },
+    align: {
+      left: {
+        textAlign: "left",
+      },
+      center: {
+        textAlign: "center",
+      },
+      right: {
+        textAlign: "right",
       },
     },
     variant: {
