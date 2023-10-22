@@ -12,8 +12,7 @@
     "prepare": "panda codegen"
   },
   "dependencies": {
-    "@radix-ui/react-slot": "^1.0.2",
-    "next": "^13.4.19"
+    "@radix-ui/react-slot": "^1.0.2"
   },
   "devDependencies": {
     "@pandacss/dev": "^0.17.0",
