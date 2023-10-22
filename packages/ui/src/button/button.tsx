@@ -87,7 +87,6 @@ const button = cva({
         },
       },
       secondary: {
-        backgroundColor: "bg",
         color: "text",
         borderStyle: "solid",
         borderWidth: 1,
