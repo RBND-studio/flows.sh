@@ -1,8 +1,6 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import readingTime from "reading-time";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeCodeTitles from "rehype-code-titles";
-import rehypePrism from "rehype-prism-plus";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
@@ -66,8 +64,6 @@ export default makeSource({
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
       rehypeSlug,
-      rehypeCodeTitles,
-      rehypePrism,
       [
         rehypeAutolinkHeadings,
         {

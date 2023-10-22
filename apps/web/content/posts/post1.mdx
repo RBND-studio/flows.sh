@@ -11,6 +11,32 @@ imageAlt: Halo
 
 Welcome to my example blog post! In this post, we'll explore various Markdown syntax elements to create rich and engaging content. Let's dive in.
 
+## Code
+
+Code blocks:
+
+Inline code: `const message = "Hello, Markdown!";`
+
+```web/test.css
+.button {
+  background-color: #123456;
+  /* ⛔️ Not good, prefer variables */
+
+  background-color: var(--button-background);
+  /* ✅ Much better, don't repeat yourself */
+}
+```
+
+```web/test.js
+const percentToHex =
+  (percent) => Math.round(percent * 255).toString(16);
+
+// Example:
+percentToHex(1); // Output: "FF"
+percentToHex(0); // Output: "00"
+percentToHex(0.9); // Output: "E6"
+```
+
 ## Text Formatting
 
 You can apply various text formatting styles in Markdown:
@@ -41,6 +67,8 @@ You can apply various text formatting styles in Markdown:
 
 You can create links like [Google](https://www.google.com) or reference-style links [^1].
 
+Or you can use relative links to link to other pages in your site like [Blog](/blog).
+
 ## Images
 
 Insert images in your content like this:
@@ -56,19 +84,6 @@ Insert images in your content like this:
 
 > Markdown is a lightweight markup language.
 > It's easy to read and write.
-
-## Code
-
-Inline code: `const message = "Hello, Markdown!";`
-
-Code blocks:
-
-```python
-def greet(name):
-    print(f"Hello, {name}!")
-
-greet("John")
-```
 
 ## Horizontal Rule
 

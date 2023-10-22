@@ -11,17 +11,16 @@
     "prepare": "panda codegen"
   },
   "dependencies": {
+    "bright": "^0.8.4",
     "contentlayer": "^0.3.4",
     "dayjs": "^1.11.10",
     "icons": "workspace:*",
-    "next-contentlayer": "^0.3.4",
     "next": "^13.4.19",
-    "react-dom": "^18.2.0",
+    "next-contentlayer": "^0.3.4",
     "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^6.1.1",
-    "rehype-code-titles": "^1.2.0",
-    "rehype-prism-plus": "^1.6.3",
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1",
     "ui": "workspace:*"

@@ -1,5 +1,9 @@
 import { css } from "@flows/styled-system/css";
+import { Code } from "bright";
+import { theme } from "components/code-snippet/theme";
+import { isValidUrl } from "lib/is-valid-url";
 import Image from "next/image";
+import Link from "next/link";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import type { HTMLProps, ReactElement } from "react";
 import { Text } from "ui";
@@ -66,6 +70,13 @@ const mdxComponents = {
       as="p"
       className={css({
         mb: "space24",
+        "& code": {
+          backgroundColor: "#1c1a27",
+          color: "#fff",
+          paddingInline: "space8",
+          paddingBlock: "space4",
+          borderRadius: "radius8",
+        },
       })}
       variant="bodyL"
       {...props}
@@ -137,23 +148,58 @@ const mdxComponents = {
     />
   ),
 
-  //TODO: replace this with a component that uses either <Link> or <a> depending on whether the href is internal or external
-  a: ({ href, children, ...rest }) => (
-    <a
-      className={css({
-        color: "text.primary",
-        textDecoration: "underline",
-      })}
-      href={href}
-      rel="noopener"
-      target="_blank"
-      {...rest}
-    >
-      {children || href}
-    </a>
-  ),
+  a: ({ href, children, ...rest }) => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call -- because fuck vercel eslint
+    const source: string = href.toString();
 
-  //TODO: add code component with syntax highlighting
+    if (isValidUrl(source)) {
+      return (
+        <a
+          className={css({
+            color: "text.primary",
+            textDecoration: "underline",
+          })}
+          href={source}
+          rel="noreferrer"
+          target="_blank"
+        >
+          {children}
+        </a>
+      );
+    }
+    return (
+      <Link
+        href={href}
+        {...rest}
+        className={css({
+          color: "text.primary",
+          textDecoration: "underline",
+        })}
+      >
+        {children}
+      </Link>
+    );
+  },
+  pre: ({ children, ...props }) => {
+    return (
+      <Code
+        theme={theme}
+        {...props}
+        // className={styles.wrapper}
+        className={css({
+          borderRadius: "radius16!",
+        })}
+        codeClassName={css({
+          fontFamily: `SF Mono,Segoe UI Mono,Roboto Mono,Ubuntu Mono,Menlo,Consolas,Courier,"monospace"`,
+        })}
+        style={{
+          borderRadius: "radius24",
+        }}
+      >
+        {children}
+      </Code>
+    );
+  },
 };
 
 interface MdxProps {
