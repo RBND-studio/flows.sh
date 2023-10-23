@@ -1,42 +1,23 @@
-"use client";
-
 import { css } from "@flows/styled-system/css";
 import Image from "next/image";
 import type { ReactElement } from "react";
 import React from "react";
 import { Text } from "ui";
 
-type SwitcherProps = {
-  variant: SwitcherVariant;
+type Props = {
+  currentIndex: number;
 };
 
-export enum SwitcherVariant {
-  NoCode = "No-Code",
-  InCode = "In-Code",
-  Both = "Both",
-}
-
-export const variants: Record<SwitcherVariant, string> = {
-  [SwitcherVariant.NoCode]: "No-Code",
-  [SwitcherVariant.InCode]: "In-Code",
-  [SwitcherVariant.Both]: "Both",
-};
-
-type SwitcherContent = Record<
-  string,
+export const variants: {
+  name: string;
+  items: {
+    title: string;
+    description: string;
+  }[];
+  visual: ReactElement;
+}[] = [
   {
-    variant: SwitcherVariant;
-    items: {
-      title: string;
-      description: string;
-    }[];
-    visual: ReactElement;
-  }
->;
-
-const content: SwitcherContent = {
-  noCode: {
-    variant: SwitcherVariant.NoCode,
+    name: "No-Code",
     items: [
       {
         title: "Create flows with an WYSIWYG editor",
@@ -63,8 +44,8 @@ const content: SwitcherContent = {
       />
     ),
   },
-  inCode: {
-    variant: SwitcherVariant.InCode,
+  {
+    name: "In-Code",
     items: [
       {
         title: "Define flows in your codebase",
@@ -86,8 +67,8 @@ const content: SwitcherContent = {
       />
     ),
   },
-  both: {
-    variant: SwitcherVariant.Both,
+  {
+    name: "Both",
     items: [
       {
         title: "Combine both approaches",
@@ -104,19 +85,19 @@ const content: SwitcherContent = {
       />
     ),
   },
-};
+];
 
-const Switcher = ({ variant }: SwitcherProps): ReactElement => {
+const Switcher = ({ currentIndex }: Props): ReactElement => {
   return (
     <>
-      {Object.values(content).map((item) => {
+      {variants.map((item, i) => {
         return (
           <div
             className={css({
               gap: "space40",
               justifyContent: "space-between",
               width: "100%",
-              display: variant === item.variant ? "flex" : "none",
+              display: currentIndex === i ? "flex" : "none",
               flexDirection: "column",
               alignItems: "center",
               md: {
@@ -125,7 +106,7 @@ const Switcher = ({ variant }: SwitcherProps): ReactElement => {
                 flexDirection: "row",
               },
             })}
-            key={item.variant}
+            key={item.name}
           >
             <div
               className={css({

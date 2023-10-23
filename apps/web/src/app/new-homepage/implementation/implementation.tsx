@@ -1,15 +1,15 @@
 "use client";
 
 import { css } from "@flows/styled-system/css";
-import type { ReactElement } from "react";
+import type { FC } from "react";
 import React, { useState } from "react";
 import { Text } from "ui";
 
-import type { SwitcherVariant } from "./switcher";
 import Switcher, { variants } from "./switcher";
 
-const Implementation = (): ReactElement => {
-  const [type, setType] = useState("No-Code");
+const Implementation: FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   return (
     <div
       className={css({
@@ -65,33 +65,31 @@ const Implementation = (): ReactElement => {
               borderRadius: "28px",
             })}
           >
-            {Object.keys(variants).map((codeType) => (
+            {variants.map((variant, i) => (
               <button
                 className={css({
                   paddingY: "space12",
                   paddingX: "space24",
                   borderRadius: "24px",
-                  background: codeType === type ? "bg" : "transparent",
-                  color: codeType === type ? "text.primary" : "text",
+                  background: i === currentIndex ? "bg" : "transparent",
+                  color: i === currentIndex ? "text.primary" : "text",
                   fontWeight: "bold",
                   cursor: "pointer",
                   "&:hover": {
-                    color: codeType === type ? "text.primary" : "text.subtle",
+                    color: i === currentIndex ? "text.primary" : "text.subtle",
                   },
                   transition: "all 120ms ease-in-out",
                 })}
-                key={codeType}
-                onClick={() => {
-                  setType(codeType);
-                }}
+                key={variant.name}
+                onClick={() => setCurrentIndex(i)}
                 type="button"
               >
-                {variants[codeType]}
+                {variant.name}
               </button>
             ))}
           </div>
         </div>
-        <Switcher variant={type as SwitcherVariant} />
+        <Switcher currentIndex={currentIndex} />
       </div>
     </div>
   );
