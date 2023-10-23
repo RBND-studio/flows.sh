@@ -35,5 +35,8 @@
     "tsconfig": "workspace:*",
     "typescript": "^5.2.2",
     "vite": "^4.5.0"
+  },
+  "optionalDependencies": {
+    "@flows/styled-system": "link:node_modules/@flows/pandacss"
   }
 }

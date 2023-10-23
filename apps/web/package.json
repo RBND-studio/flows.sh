@@ -34,5 +34,8 @@
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "^5.2.2"
+  },
+  "optionalDependencies": {
+    "@flows/styled-system": "link:node_modules/@flows/pandacss"
   }
 }

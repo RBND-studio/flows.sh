@@ -15,7 +15,7 @@ export default defineConfig({
   theme,
 
   // The output directory for your css system
-  outdir: "@flows/styled-system",
+  outdir: "@flows/pandacss",
 
   jsxFramework: "react",
 
