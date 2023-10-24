@@ -1,9 +1,5 @@
 @layer reset, base, tokens, recipes, utilities;
 
-:root {
-  font-family: var(--font-mona-sans);
-}
-
 .grecaptcha-badge {
   visibility: hidden;
 }

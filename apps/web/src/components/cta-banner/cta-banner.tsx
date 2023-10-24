@@ -2,7 +2,9 @@ import { css } from "@flows/styled-system/css";
 import Image from "next/image";
 import type { ReactElement } from "react";
 import React from "react";
-import { Button, Text } from "ui";
+import { Text } from "ui";
+
+import { WaitlistForm } from "./waitlist-form";
 
 export const CtaBanner = (): ReactElement => {
   return (
@@ -30,17 +32,7 @@ export const CtaBanner = (): ReactElement => {
         <Text variant="titleM">Join Flows waitlist today</Text>
         <Text variant="bodyM">Be the first one to know about our beta launch.</Text>
       </div>
-      <div
-        className={css({
-          display: "flex",
-          gap: "space8",
-          alignItems: "center",
-        })}
-      >
-        {/* TODO: make this work */}
-        <input placeholder="Enter your email" />
-        <Button>Join waitlist</Button>
-      </div>
+      <WaitlistForm />
     </div>
   );
 };

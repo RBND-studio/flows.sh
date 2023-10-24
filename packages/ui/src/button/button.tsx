@@ -1,9 +1,9 @@
 import { cva, cx } from "@flows/styled-system/css";
 import { styled } from "@flows/styled-system/jsx";
 import { Slot, Slottable } from "@radix-ui/react-slot";
-import type { HTMLAttributes } from "react";
+import type { ButtonHTMLAttributes } from "react";
 
-type Props = HTMLAttributes<HTMLButtonElement> & {
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   /**
    * @defaultValue "medium"
    */
@@ -15,6 +15,7 @@ type Props = HTMLAttributes<HTMLButtonElement> & {
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
   asChild?: boolean;
+  loading?: boolean;
 };
 
 export function Button({
@@ -24,6 +25,8 @@ export function Button({
   startIcon,
   endIcon,
   asChild,
+  disabled,
+  loading,
   ...props
 }: Props): JSX.Element {
   const Component = asChild ? Slot : "button";
@@ -32,6 +35,7 @@ export function Button({
       type={!asChild ? "button" : undefined}
       {...props}
       className={cx(button({ size, variant }), props.className)}
+      disabled={disabled || loading}
     >
       {startIcon ? <Icon position="start">{startIcon}</Icon> : null}
       <Slottable>{children}</Slottable>
@@ -84,6 +88,13 @@ const button = cva({
         borderColor: "bg.primary",
         _hover: {
           backgroundColor: "bg.primaryHover",
+        },
+        _disabled: {
+          backgroundColor: "bg.subtle",
+          borderColor: "bg.subtle",
+          color: "text.subtle",
+          pointerEvents: "none",
+          boxShadow: "none",
         },
       },
       secondary: {

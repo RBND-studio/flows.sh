@@ -1,6 +1,8 @@
 module.exports = {
   rules: {
     "import/no-extraneous-dependencies": 0,
+    "@typescript-eslint/no-misused-promises": "off",
+    "@typescript-eslint/no-confusing-void-expression": "off",
     "@typescript-eslint/no-unsafe-assignment": 0,
     "@typescript-eslint/consistent-type-definitions": "off",
     "import/order": 0,

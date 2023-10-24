@@ -1,7 +1,8 @@
 import { css } from "@flows/styled-system/css";
+import { WaitlistForm } from "components/cta-banner/waitlist-form";
 import type { ReactElement } from "react";
 import React from "react";
-import { Button, Text } from "ui";
+import { Text } from "ui";
 
 const Hero = (): ReactElement => {
   return (
@@ -33,17 +34,7 @@ const Hero = (): ReactElement => {
           A better way to <b>onboard users</b> and drive <b>product adoption</b>.
         </Text>
       </div>
-      <div
-        className={css({
-          display: "flex",
-          gap: "space8",
-          alignItems: "center",
-        })}
-      >
-        {/* TODO: make this work */}
-        <input placeholder="Enter your email" />
-        <Button>Join waitlist</Button>
-      </div>
+      <WaitlistForm />
     </div>
   );
 };

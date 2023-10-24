@@ -1,12 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { Text } from './text';
+import { Text } from "./text";
 
 const meta: Meta<typeof Text> = {
+  title: "Text",
   component: Text,
   args: {
-    variant: 'titleXxl',
-    children: 'Hello World!',
+    variant: "titleXxl",
+    children: "Hello World!",
   },
 };
 
