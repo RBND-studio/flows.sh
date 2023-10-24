@@ -20,7 +20,7 @@ export const CtaBanner = (): ReactElement => {
         borderTopColor: "border",
       })}
     >
-      <Image alt="Logo" height={28} src="/images/logo/logo.svg" width={72} />
+      <Image alt="Logo" height={72} src="/images/logo/logo.svg" width={72} />
       <div
         className={css({
           display: "flex",

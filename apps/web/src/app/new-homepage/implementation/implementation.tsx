@@ -5,9 +5,10 @@ import type { FC } from "react";
 import React, { useState } from "react";
 import { Text } from "ui";
 
-import Switcher, { variants } from "./switcher";
+import { Content } from "./content";
+import { Switcher } from "./switcher";
 
-const Implementation: FC = () => {
+export const Implementation: FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
@@ -56,43 +57,10 @@ const Implementation: FC = () => {
             Prefer quick iteration detached from deploys or want to keep things stable? You can do
             both with Flows.
           </Text>
-          <div
-            className={css({
-              display: "flex",
-              justifyContent: "center",
-              padding: "space4",
-              background: "bg.subtle",
-              borderRadius: "28px",
-            })}
-          >
-            {variants.map((variant, i) => (
-              <button
-                className={css({
-                  paddingY: "space12",
-                  paddingX: "space24",
-                  borderRadius: "24px",
-                  background: i === currentIndex ? "bg" : "transparent",
-                  color: i === currentIndex ? "text.primary" : "text",
-                  fontWeight: "bold",
-                  cursor: "pointer",
-                  "&:hover": {
-                    color: i === currentIndex ? "text.primary" : "text.subtle",
-                  },
-                  transition: "all 120ms ease-in-out",
-                })}
-                key={variant.name}
-                onClick={() => setCurrentIndex(i)}
-                type="button"
-              >
-                {variant.name}
-              </button>
-            ))}
-          </div>
+          <Switcher currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} />
         </div>
-        <Switcher currentIndex={currentIndex} />
+        <Content currentIndex={currentIndex} />
       </div>
     </div>
   );
 };
-
-export default Implementation;
