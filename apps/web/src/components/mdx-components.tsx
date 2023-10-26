@@ -1,6 +1,5 @@
 import { css } from "@flows/styled-system/css";
 import { Code } from "bright";
-import { theme } from "components/code-snippet/theme";
 import { isValidUrl } from "lib/is-valid-url";
 import Image from "next/image";
 import Link from "next/link";
@@ -71,11 +70,13 @@ const mdxComponents = {
       className={css({
         mb: "space24",
         "& code": {
-          backgroundColor: "#1c1a27",
-          color: "#fff",
-          paddingInline: "space8",
-          paddingBlock: "space4",
-          borderRadius: "radius8",
+          backgroundColor: "bg.subtle",
+          color: "text",
+          paddingX: "space4",
+          paddingY: "2px",
+          borderRadius: "radius4",
+          textStyle: "bodyM",
+          fontFamily: "monospace",
         },
       })}
       variant="bodyL"
@@ -183,18 +184,19 @@ const mdxComponents = {
   pre: ({ children, ...props }) => {
     return (
       <Code
-        theme={theme}
+        theme="github-dark-dimmed"
         {...props}
-        // className={styles.wrapper}
         className={css({
-          borderRadius: "radius16!",
+          borderRadius: "radius12!",
         })}
         codeClassName={css({
           fontFamily: `SF Mono,Segoe UI Mono,Roboto Mono,Ubuntu Mono,Menlo,Consolas,Courier,"monospace"`,
+          fontSize: "14px",
+          borderRadius: "radius16",
         })}
-        style={{
-          borderRadius: "radius24",
-        }}
+        titleClassName={css({
+          "--tab-top-border": "transparent",
+        })}
       >
         {children}
       </Code>
