@@ -189,7 +189,7 @@ export default function Page(): JSX.Element {
             </div>
           </div>
         </div>
-        <div id="cta" className="bottom-cta">
+        <div className="bottom-cta" id="cta">
           <h2>Join the waitlist</h2>
           <form className="waitlist-form">
             <input name="email" placeholder="Email address" required type="email" />

@@ -1,7 +1,7 @@
 import { css } from "@flows/styled-system/css";
 import { Fork24, Lightning24, Play24, Presentation24, Sliders24, Target24 } from "icons";
 import type { FC } from "react";
-import { Text } from "ui";
+import { Icon, Text } from "ui";
 
 const list: {
   title: string;
@@ -12,35 +12,35 @@ const list: {
     title: "Fast and lightweight",
     description:
       "Native-like performance and small bundle size. Some more text here to make it at least two rows or three for a better info.",
-    visual: <Lightning24 />,
+    visual: <Icon color="icon.primary" icon={Lightning24} />,
   },
   {
     title: "Flow analytics",
     description: "Track how users interact with your flows, identify problems, and improve them.",
-    visual: <Presentation24 />,
+    visual: <Icon color="icon.primary" icon={Presentation24} />,
   },
   {
     title: "Fully customizable",
     description: "Controll the look and feel of your flows with themes and custom CSS.",
-    visual: <Sliders24 />,
+    visual: <Icon color="icon.primary" icon={Sliders24} />,
   },
   {
     title: "Reliable",
     description:
       "No need ot hack around ad-blockers. Our flows show up every time. Some more text here to make it at least two rows.",
-    visual: <Play24 />,
+    visual: <Icon color="icon.primary" icon={Play24} />,
   },
   {
     title: "Opinionated",
     description:
       "The only way to create great products. No fluff, bloat, or bs. Some more text here to make it at least two rows or three for.",
-    visual: <Target24 />,
+    visual: <Icon color="icon.primary" icon={Target24} />,
   },
   {
     title: "Open source",
     description:
       "The core will be open with paid access to our cloud service. Some more text here to make it at least two rows or three for a better info.",
-    visual: <Fork24 />,
+    visual: <Icon color="icon.primary" icon={Fork24} />,
   },
 ];
 
@@ -63,9 +63,6 @@ export const Content: FC = () => {
                 gap: "space8",
                 alignItems: "center",
                 mb: "space8",
-                "& > svg": {
-                  color: "icon.primary",
-                },
               })}
             >
               {item.visual}
