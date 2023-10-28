@@ -1,5 +1,5 @@
 import { css } from "@flows/styled-system/css";
-import { Code } from "bright";
+import { CodeHighlight } from "components/ui";
 import { isValidUrl } from "lib/is-valid-url";
 import Image from "next/image";
 import Link from "next/link";
@@ -181,27 +181,8 @@ const mdxComponents = {
       </Link>
     );
   },
-  pre: ({ children, ...props }) => {
-    return (
-      <Code
-        theme="github-dark-dimmed"
-        {...props}
-        className={css({
-          borderRadius: "radius12!",
-        })}
-        codeClassName={css({
-          fontFamily: `SF Mono,Segoe UI Mono,Roboto Mono,Ubuntu Mono,Menlo,Consolas,Courier,"monospace"`,
-          fontSize: "14px",
-          borderRadius: "radius16",
-        })}
-        titleClassName={css({
-          "--tab-top-border": "transparent",
-        })}
-      >
-        {children}
-      </Code>
-    );
-  },
+  pre: (props) => <CodeHighlight {...props} />,
+  CodeHighlight,
 };
 
 interface MdxProps {
