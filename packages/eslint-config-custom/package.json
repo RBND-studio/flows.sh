@@ -2,6 +2,7 @@
   "name": "eslint-config-custom",
   "version": "0.0.0",
   "private": true,
+  "sideEffects": false,
   "devDependencies": {
     "@vercel/style-guide": "^5.0.1",
     "eslint-config-turbo": "^1.10.14",

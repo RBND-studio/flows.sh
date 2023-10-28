@@ -40,6 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
   return (
     <html
       className={`${MonaSans.variable}`}
+      // TODO: come up with a way to switch between light and dark mode
       // data-color-mode="dark"
       lang="en"
     >
