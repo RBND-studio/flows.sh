@@ -1,5 +1,6 @@
 import "./globals.css";
 
+import { css } from "@flows/styled-system/css";
 import { CtaBanner } from "components/cta-banner";
 import { RECAPTCHA_SITE_KEY } from "lib";
 import type { Metadata } from "next";
@@ -37,8 +38,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
   return (
-    <html className={`${MonaSans.variable}`} lang="en">
-      <body>
+    <html
+      className={`${MonaSans.variable}`}
+      // data-color-mode="dark"
+      lang="en"
+    >
+      <body className={css({ background: "bg" })}>
         <Header />
         <main>{children}</main>
         <CtaBanner />

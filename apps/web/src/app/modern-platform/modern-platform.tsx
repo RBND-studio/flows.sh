@@ -1,39 +1,39 @@
 import { css } from "@flows/styled-system/css";
 import { Section } from "components/section";
 import Image from "next/image";
-import type { ReactElement } from "react";
+import type { FC } from "react";
 import React from "react";
 import { Text } from "ui";
 
-import { WaitlistForm } from "./waitlist-form";
+import { Content } from "./content";
 
-export const CtaBanner = (): ReactElement => {
+export const ModernPlatform: FC = () => {
   return (
     <Section
       innerClassName={css({
         display: "flex",
         flexDirection: "column",
-        gap: "space24",
+        gap: "space64",
         alignItems: "center",
       })}
     >
-      <Image alt="Logo" height={72} src="/images/logo/logo.svg" width={72} />
       <div
         className={css({
+          maxWidth: "728px",
+          marginX: "auto",
           display: "flex",
           flexDirection: "column",
-          gap: "space8",
+          justifyContent: "center",
+          gap: "space24",
           alignItems: "center",
         })}
       >
-        <Text align="center" variant="titleM">
-          Join Flows waitlist today
-        </Text>
-        <Text align="center" variant="bodyM">
-          Be the first one to know about our beta launch.
+        <Text align="center" as="h2" variant="titleL">
+          Modern onboarding platform
         </Text>
       </div>
-      <WaitlistForm />
+      <Image alt="No code" height={1746} src="/images/homepage/modern-platform.png" width={3380} />
+      <Content />
     </Section>
   );
 };

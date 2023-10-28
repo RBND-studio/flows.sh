@@ -36,6 +36,10 @@ export const WaitlistForm: FC = () => {
         display: "flex",
         gap: "space8",
         alignItems: "center",
+        flexDirection: "column",
+        sm: {
+          flexDirection: "row",
+        },
       })}
       onSubmit={handleSubmit}
     >

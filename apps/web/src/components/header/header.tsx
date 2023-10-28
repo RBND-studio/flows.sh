@@ -30,16 +30,17 @@ export const Header = (): ReactElement => {
           maxWidth: "1100px",
         })}
       >
-        <div
+        <Link
           className={css({
             display: "inline-flex",
             alignItems: "center",
             gap: "space8",
           })}
+          href="/"
         >
           <Image alt="Logo" height={28} src="/images/logo/logo.svg" width={28} />
           <Text variant="bodyMBold">Flows</Text>
-        </div>
+        </Link>
         <HeaderItems />
         <Button asChild size="small" variant="black">
           <Link href="/#cta">Join waitlist</Link>

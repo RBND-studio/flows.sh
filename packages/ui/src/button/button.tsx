@@ -66,7 +66,7 @@ const button = cva({
     cursor: "pointer",
     borderRadius: 8,
     transition: "80ms ease-in-out",
-    boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05)",
+    boxShadow: "l1",
   },
   variants: {
     size: {
@@ -87,6 +87,7 @@ const button = cva({
         borderWidth: 1,
         borderColor: "bg.primary",
         _hover: {
+          borderColor: "bg.primaryHover",
           backgroundColor: "bg.primaryHover",
         },
         _disabled: {
@@ -113,6 +114,7 @@ const button = cva({
         borderColor: "bg.black",
         color: "text.white",
         _hover: {
+          borderColor: "bg.blackHover",
           backgroundColor: "bg.blackHover",
         },
       },

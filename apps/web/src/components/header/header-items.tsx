@@ -33,7 +33,10 @@ export const HeaderItems = (): ReactElement => {
         <li
           className={css({
             display: "inline-block",
-            mr: "space32",
+            mx: "space12",
+            sm: {
+              mx: "space24",
+            },
           })}
           key={item.title}
         >

@@ -41,8 +41,14 @@ const input = cva({
     transitionDuration: "fast",
     transitionTimingFunction: "easeInOut",
     transitionProperty: "all",
+    color: "text",
+    _hover: {
+      borderColor: "border.primary",
+      backgroundColor: "bg",
+    },
     _focus: {
       borderColor: "border.primary",
+      backgroundColor: "bg",
     },
   },
   variants: {

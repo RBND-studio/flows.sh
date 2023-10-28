@@ -66,6 +66,9 @@ const textVariants = cva({
       muted: {
         color: "text.muted",
       },
+      disabled: {
+        color: "text.disabled",
+      },
     },
     align: {
       left: {

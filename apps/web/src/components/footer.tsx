@@ -44,7 +44,7 @@ export const Footer = (): ReactElement => {
     <footer
       className={css({
         backgroundColor: "bg.muted",
-        paddingX: "space16",
+        paddingX: "space24",
         borderTopWidth: "1px",
         borderTopStyle: "solid",
         borderTopColor: "border",
@@ -56,8 +56,14 @@ export const Footer = (): ReactElement => {
           mx: "auto",
           py: "space40",
           display: "flex",
+          flexDirection: "column",
+          gap: "space40",
+          flexDir: "column-reverse",
           alignItems: "flex-start",
-          justifyContent: "space-between",
+          sm: {
+            flexDirection: "row",
+            justifyContent: "space-between",
+          },
         })}
       >
         <div>
@@ -103,7 +109,16 @@ export const Footer = (): ReactElement => {
             © 2023 RBND studios
           </Text>
         </div>
-        <div className={css({ display: "flex", gap: "space48" })}>
+        <div
+          className={css({
+            display: "flex",
+            gap: "space48",
+            flexDirection: "column",
+            sm: {
+              flexDirection: "row",
+            },
+          })}
+        >
           {footerGroups.map((group) => (
             <div
               className={css({

@@ -8,6 +8,7 @@ import {
   palette,
   radii,
   semanticTokens,
+  shadows,
   spacing,
   textStyles,
 } from "./src/theme";
@@ -18,6 +19,7 @@ const tokens = defineTokens({
   spacing,
   durations,
   easings,
+  shadows,
 });
 
 export const theme: Config["theme"] = {
@@ -25,4 +27,8 @@ export const theme: Config["theme"] = {
   semanticTokens,
   textStyles,
   tokens,
+};
+
+export const conditions: Config["conditions"] = {
+  dark: "[data-color-mode=dark] &",
 };

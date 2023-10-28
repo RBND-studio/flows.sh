@@ -1,5 +1,5 @@
 import { defineConfig } from "@pandacss/dev";
-import { theme } from "ui/theme";
+import { theme, conditions } from "ui/theme";
 
 export default defineConfig({
   // Whether to use css reset
@@ -19,4 +19,6 @@ export default defineConfig({
   jsxFramework: "react",
 
   emitPackage: true,
+
+  conditions,
 });

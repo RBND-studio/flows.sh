@@ -23,7 +23,7 @@ export const Default: Story = {
 const buttonVariants = {
   size: ["small", "medium"],
   variant: ["primary", "secondary", "black"],
-};
+} as const;
 
 export const Grid: Story = {
   render: () => (

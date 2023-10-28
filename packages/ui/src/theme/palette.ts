@@ -2,8 +2,16 @@ import { defineTokens } from "@pandacss/dev";
 
 export const palette = defineTokens.colors({
   primary: {
-    400: { value: "#EC6441" },
-    500: { value: "#D03618" },
+    900: { value: "#2d150b" },
+    800: { value: "#561e0f" },
+    700: { value: "#802612" },
+    600: { value: "#aa3218" },
+    500: { value: "#d44121" },
+    400: { value: "#ec6441" },
+    300: { value: "#f09175" },
+    200: { value: "#f3b8a6" },
+    100: { value: "#f6ddd5" },
+    25: { value: "#fcf7f5" },
   },
   neutral: {
     0: { value: "#FFFFFF" },
