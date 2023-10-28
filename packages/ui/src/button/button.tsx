@@ -1,8 +1,9 @@
-import { cx, cva } from "@flows/styled-system/css";
+import { cva, cx } from "@flows/styled-system/css";
 import { styled } from "@flows/styled-system/jsx";
-import type { HTMLAttributes } from "react";
+import { Slot, Slottable } from "@radix-ui/react-slot";
+import type { ButtonHTMLAttributes } from "react";
 
-type Props = HTMLAttributes<HTMLButtonElement> & {
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   /**
    * @defaultValue "medium"
    */
@@ -13,6 +14,8 @@ type Props = HTMLAttributes<HTMLButtonElement> & {
   variant?: (typeof button.variantMap.variant)[number];
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
+  asChild?: boolean;
+  loading?: boolean;
 };
 
 export function Button({
@@ -21,14 +24,23 @@ export function Button({
   children,
   startIcon,
   endIcon,
+  asChild,
+  disabled,
+  loading,
   ...props
 }: Props): JSX.Element {
+  const Component = asChild ? Slot : "button";
   return (
-    <button type="button" {...props} className={cx(button({ size, variant }), props.className)}>
+    <Component
+      type={!asChild ? "button" : undefined}
+      {...props}
+      className={cx(button({ size, variant }), props.className)}
+      disabled={disabled || loading}
+    >
       {startIcon ? <Icon position="start">{startIcon}</Icon> : null}
-      {children}
+      <Slottable>{children}</Slottable>
       {endIcon ? <Icon position="end">{endIcon}</Icon> : null}
-    </button>
+    </Component>
   );
 }
 
@@ -52,33 +64,58 @@ const button = cva({
   base: {
     display: "inline-flex",
     cursor: "pointer",
-    borderRadius: 6,
-    fontFamily:
-      '"SF Mono", "Segoe UI Mono", "Roboto Mono", "Ubuntu Mono", "Menlo", "Consolas", "Courier", "monospace"',
+    borderRadius: 8,
     transition: "80ms ease-in-out",
-    boxShadow: "0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05)",
+    boxShadow: "l1",
   },
   variants: {
     size: {
+      small: {
+        textStyle: "subtitleS",
+        padding: "5px 11px",
+      },
       medium: {
-        padding: "8px 12px",
+        textStyle: "subtitleL",
+        padding: "11px 23px",
       },
     },
     variant: {
       primary: {
-        backgroundColor: "#e86339",
-        color: "#fff",
-        border: "1px solid #b63c16",
+        backgroundColor: "bg.primary",
+        color: "text.onPrimary",
+        borderStyle: "solid",
+        borderWidth: 1,
+        borderColor: "bg.primary",
         _hover: {
-          backgroundColor: "#b63c16",
+          borderColor: "bg.primaryHover",
+          backgroundColor: "bg.primaryHover",
+        },
+        _disabled: {
+          backgroundColor: "bg.subtle",
+          borderColor: "bg.subtle",
+          color: "text.subtle",
+          pointerEvents: "none",
+          boxShadow: "none",
         },
       },
       secondary: {
-        backgroundColor: "#fff",
-        color: "#161412",
-        border: "1px solid #e86339",
+        color: "text",
+        borderStyle: "solid",
+        borderWidth: 1,
+        borderColor: "border.primary",
         _hover: {
-          backgroundColor: "##e8e7e3",
+          backgroundColor: "bg.hover",
+        },
+      },
+      black: {
+        backgroundColor: "bg.black",
+        borderStyle: "solid",
+        borderWidth: 1,
+        borderColor: "bg.black",
+        color: "text.white",
+        _hover: {
+          borderColor: "bg.blackHover",
+          backgroundColor: "bg.blackHover",
         },
       },
     },
