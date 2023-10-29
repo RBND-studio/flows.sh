@@ -1,5 +1,7 @@
 import { defineTokens } from "@pandacss/dev";
 
+// TODO: fix light shadows on dark colors
+
 export const shadows = defineTokens.shadows({
   light1: {
     value:

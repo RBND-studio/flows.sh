@@ -2,7 +2,7 @@ import { css, cx } from "@flows/styled-system/css";
 import { ArrowRight16 } from "icons";
 import Image from "next/image";
 import type { FC } from "react";
-import { Text } from "ui";
+import { Button, Dialog, DialogActions, DialogClose, DialogContent, DialogTitle, Text } from "ui";
 
 const list: {
   title: string;
@@ -131,28 +131,43 @@ export const Content: FC = () => {
                   {item.title}
                 </Text>
                 <Text color="muted">{item.description}</Text>
-                <button
-                  className={css({
-                    textStyle: "subtitleL",
-                    color: "text.primary",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "space4",
-                    marginTop: "space8",
-                    _hover: {
-                      "& svg": {
-                        transform: "translateX(4px)",
-                      },
-                    },
-                    "& svg": {
-                      transition: "transform 120ms ease-out",
-                    },
-                  })}
-                  type="button"
+                <Dialog
+                  trigger={
+                    <button
+                      className={css({
+                        textStyle: "subtitleL",
+                        color: "text.primary",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "space4",
+                        marginTop: "space8",
+                        cursor: "pointer",
+                        _hover: {
+                          "& svg": {
+                            transform: "translateX(4px)",
+                          },
+                        },
+                        "& svg": {
+                          transition: "transform 120ms ease-out",
+                        },
+                      })}
+                      type="button"
+                    >
+                      View demo
+                      <ArrowRight16 />
+                    </button>
+                  }
                 >
-                  View demo
-                  <ArrowRight16 />
-                </button>
+                  <DialogTitle>{item.title}</DialogTitle>
+                  <DialogContent>{item.description}</DialogContent>
+                  <DialogActions>
+                    <DialogClose asChild>
+                      <Button size="small" variant="black">
+                        Close
+                      </Button>
+                    </DialogClose>
+                  </DialogActions>
+                </Dialog>
               </div>
             </div>
           );

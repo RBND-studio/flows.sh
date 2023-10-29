@@ -1,7 +1,7 @@
 import { cva, cx } from "@flows/styled-system/css";
 import { styled } from "@flows/styled-system/jsx";
 import { Slot, Slottable } from "@radix-ui/react-slot";
-import type { ButtonHTMLAttributes } from "react";
+import { type ButtonHTMLAttributes, forwardRef } from "react";
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   /**
@@ -18,17 +18,20 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   loading?: boolean;
 };
 
-export function Button({
-  size = "medium",
-  variant = "primary",
-  children,
-  startIcon,
-  endIcon,
-  asChild,
-  disabled,
-  loading,
-  ...props
-}: Props): JSX.Element {
+export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
+  {
+    size = "medium",
+    variant = "primary",
+    children,
+    startIcon,
+    endIcon,
+    asChild,
+    disabled,
+    loading,
+    ...props
+  },
+  ref,
+): JSX.Element {
   const Component = asChild ? Slot : "button";
   return (
     <Component
@@ -36,13 +39,14 @@ export function Button({
       {...props}
       className={cx(button({ size, variant }), props.className)}
       disabled={disabled || loading}
+      ref={ref}
     >
       {startIcon ? <Icon position="start">{startIcon}</Icon> : null}
       <Slottable>{children}</Slottable>
       {endIcon ? <Icon position="end">{endIcon}</Icon> : null}
     </Component>
   );
-}
+});
 
 const Icon = styled("span", {
   base: {
