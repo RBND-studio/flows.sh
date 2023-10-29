@@ -1,25 +1,29 @@
 import { css, cva, cx } from "@flows/styled-system/css";
+import type { SystemProperties } from "@flows/styled-system/types";
 
 export const Section = ({
   children,
   outerClassName,
   innerClassName,
   defaultPadding = true,
+  background = "bg.muted",
 }: {
   children: React.ReactNode;
   outerClassName?: string;
   innerClassName?: string;
   defaultPadding?: boolean;
+  background?: SystemProperties["backgroundColor"];
 }): JSX.Element => {
   return (
     <div
       className={cx(
         css({
           width: "100%",
-          borderTopWidth: "1px",
-          borderTopStyle: "solid",
-          borderTopColor: "border",
+          borderBottomWidth: "1px",
+          borderBottomStyle: "solid",
+          borderBottomColor: "border",
           paddingX: "space24",
+          backgroundColor: background,
         }),
         outerClassName,
       )}
@@ -44,7 +48,10 @@ const padding = cva({
   variants: {
     padding: {
       true: {
-        paddingY: "space120",
+        paddingY: "space64",
+        md: {
+          paddingY: "space120",
+        },
       },
       false: {},
     },

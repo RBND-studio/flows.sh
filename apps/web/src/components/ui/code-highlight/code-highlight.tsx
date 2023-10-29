@@ -17,6 +17,9 @@ export const CodeHighlight: FC<Props> = (props) => {
       {...props}
       className={css({
         borderRadius: "radius12!",
+        borderStyle: "solid",
+        borderWidth: "1px",
+        borderColor: "border",
       })}
       codeClassName={css({
         fontFamily: `SF Mono,Segoe UI Mono,Roboto Mono,Ubuntu Mono,Menlo,Consolas,Courier,"monospace"`,
