@@ -1,10 +1,12 @@
 import { css } from "@flows/styled-system/css";
-import { HeaderItems } from "components/header/header-items";
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactElement } from "react";
 import React from "react";
-import { Button, Text } from "ui";
+import { Text } from "ui";
+
+import { HeaderItems } from "./header-items";
+import { JoinWaitlist } from "./join-waitlist";
 
 export const Header = (): ReactElement => {
   return (
@@ -42,9 +44,7 @@ export const Header = (): ReactElement => {
           <Text variant="bodyMBold">Flows</Text>
         </Link>
         <HeaderItems />
-        <Button asChild size="small" variant="black">
-          <Link href="/#cta">Join waitlist</Link>
-        </Button>
+        <JoinWaitlist />
       </div>
     </header>
   );

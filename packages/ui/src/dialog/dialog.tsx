@@ -13,9 +13,13 @@ type Props = {
   onOpenChange?: (open: boolean) => void;
   trigger?: ReactNode;
   children?: ReactNode;
+  /**
+   * @defaultValue 400
+   */
+  maxWidth?: 400 | 600;
 };
 
-export const Dialog: FC<Props> = ({ open, onOpenChange, trigger, children }) => {
+export const Dialog: FC<Props> = ({ open, onOpenChange, trigger, children, maxWidth = 400 }) => {
   return (
     <RadixDialog.Root onOpenChange={onOpenChange} open={open}>
       {trigger ? <RadixDialog.Trigger asChild>{trigger}</RadixDialog.Trigger> : null}
@@ -45,7 +49,7 @@ export const Dialog: FC<Props> = ({ open, onOpenChange, trigger, children }) => 
           className={css({
             backgroundColor: "bg",
             // TODO: come up with a systematic way for dialog widths
-            maxWidth: "400px",
+            maxWidth: maxWidth === 400 ? "400px" : "600px",
             width: "100%",
             borderRadius: "radius16",
             position: "fixed",
@@ -69,6 +73,7 @@ export const Dialog: FC<Props> = ({ open, onOpenChange, trigger, children }) => 
             },
           })}
         >
+          {children}
           <RadixDialog.Close
             aria-label="Close"
             className={css({
@@ -81,7 +86,6 @@ export const Dialog: FC<Props> = ({ open, onOpenChange, trigger, children }) => 
             {/* TODO: use icon button when it's ready */}
             <Icon icon={Close16} />
           </RadixDialog.Close>
-          {children}
         </RadixDialog.Content>
       </RadixDialog.Portal>
     </RadixDialog.Root>
@@ -123,6 +127,7 @@ export const DialogActions: FC<{ children?: ReactNode; className?: string }> = (
           display: "flex",
           alignItems: "center",
           justifyContent: "flex-end",
+          gap: "space8",
           px: "space12",
           py: "space8",
         }),

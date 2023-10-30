@@ -1,59 +1,65 @@
 "use client";
 
 import { css } from "@flows/styled-system/css";
-import { RECAPTCHA_SITE_KEY, WAITLIST_API_URL } from "lib";
-import { type FC, type FormEvent, useState } from "react";
-import { Button, Input } from "ui";
+import { useWaitlistForm } from "hooks/use-waitlist-form";
+import { type FC } from "react";
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogClose,
+  DialogContent,
+  DialogTitle,
+  Input,
+  Text,
+} from "ui";
 
 export const WaitlistForm: FC = () => {
-  const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
-    e.preventDefault();
-    setLoading(true);
-
-    const captchaToken = await window.grecaptcha?.execute(RECAPTCHA_SITE_KEY, {
-      action: "submitWaitlist",
-    });
-    if (captchaToken) {
-      await fetch(WAITLIST_API_URL, {
-        method: "POST",
-        body: JSON.stringify({ captchaToken, email }),
-        headers: { "Content-Type": "application/json" },
-      }).then(() => {
-        window.plausible("Join waitlist");
-        setEmail("");
-      });
-    }
-
-    setLoading(false);
-  };
+  const { setThankYouOpen, email, handleSubmit, loading, setEmail, thankYouOpen } =
+    useWaitlistForm();
 
   return (
-    <form
-      className={css({
-        display: "flex",
-        gap: "space8",
-        alignItems: "center",
-        flexDirection: "column",
-        sm: {
-          flexDirection: "row",
-        },
-      })}
-      onSubmit={handleSubmit}
-    >
-      <Input
-        onChange={(e) => setEmail(e.currentTarget.value)}
-        placeholder="Enter your email"
-        required
-        size="large"
-        type="email"
-        value={email}
-      />
-      <Button loading={loading} type="submit">
-        Join waitlist
-      </Button>
-    </form>
+    <>
+      <form
+        className={css({
+          display: "flex",
+          gap: "space8",
+          alignItems: "center",
+          flexDirection: "column",
+          sm: {
+            flexDirection: "row",
+          },
+        })}
+        onSubmit={handleSubmit}
+      >
+        <Input
+          onChange={(e) => setEmail(e.currentTarget.value)}
+          placeholder="Enter your email"
+          required
+          size="large"
+          type="email"
+          value={email}
+        />
+        <Button loading={loading} type="submit">
+          Join waitlist
+        </Button>
+      </form>
+      <Dialog onOpenChange={setThankYouOpen} open={thankYouOpen}>
+        <DialogTitle>Thank you!</DialogTitle>
+        <DialogContent>
+          <Text>
+            Thank you for joining the waitlist. We will keep you in the loop when Flows are ready.
+          </Text>
+        </DialogContent>
+
+        <DialogActions>
+          <DialogClose asChild>
+            <Button size="small" variant="black">
+              Close
+            </Button>
+          </DialogClose>
+        </DialogActions>
+      </Dialog>
+    </>
   );
 };

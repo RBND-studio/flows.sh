@@ -1,0 +1,40 @@
+import { RECAPTCHA_SITE_KEY, WAITLIST_API_URL } from "lib";
+import { type FormEvent, useState } from "react";
+
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type -- not needed
+export const useWaitlistForm = () => {
+  const [thankYouOpen, setThankYouOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
+    e.preventDefault();
+    setLoading(true);
+
+    const captchaToken = await window.grecaptcha?.execute(RECAPTCHA_SITE_KEY, {
+      action: "submitWaitlist",
+    });
+    if (captchaToken) {
+      await fetch(WAITLIST_API_URL, {
+        method: "POST",
+        body: JSON.stringify({ captchaToken, email }),
+        headers: { "Content-Type": "application/json" },
+      }).then(() => {
+        window.plausible("Join waitlist");
+        setEmail("");
+        setThankYouOpen(true);
+      });
+    }
+
+    setLoading(false);
+  };
+
+  return {
+    loading,
+    handleSubmit,
+    thankYouOpen,
+    setThankYouOpen,
+    email,
+    setEmail,
+  };
+};

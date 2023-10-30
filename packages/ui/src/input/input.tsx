@@ -13,14 +13,24 @@ type Props = {
   defaultValue?: string;
   type?: string;
   required?: boolean;
+  labelClassName?: string;
+  wrapperClassName?: string;
+  inputClassName?: string;
 };
 
-export const Input: FC<Props> = ({ label, size = "medium", ...props }) => {
+export const Input: FC<Props> = ({
+  label,
+  size = "medium",
+  labelClassName,
+  wrapperClassName,
+  inputClassName,
+  ...props
+}) => {
   return (
-    <label>
+    <label className={labelClassName}>
       {label}
-      <div className={inputWrapper()}>
-        <input className={cx(input({ size }))} {...props} />
+      <div className={cx(inputWrapper(), wrapperClassName)}>
+        <input className={cx(input({ size }), inputClassName)} {...props} />
       </div>
     </label>
   );
