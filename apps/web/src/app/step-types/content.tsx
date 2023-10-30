@@ -82,6 +82,7 @@ export const Content: FC = () => {
     borderWidth: "1px",
     borderStyle: "solid",
     shadow: "l2",
+    backgroundColor: "bg.card",
 
     "& > img": {
       borderRadius: "radius12",

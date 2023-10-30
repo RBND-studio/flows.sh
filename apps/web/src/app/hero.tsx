@@ -5,9 +5,10 @@ import type { ReactElement } from "react";
 import React from "react";
 import { Text } from "ui";
 
-const Hero = (): ReactElement => {
+export const Hero = (): ReactElement => {
   return (
     <Section
+      background="transparent"
       defaultPadding={false}
       innerClassName={css({
         maxWidth: "728px!",
@@ -21,14 +22,26 @@ const Hero = (): ReactElement => {
       outerClassName={css({
         paddingTop: "120px",
         paddingBottom: "140px",
+        position: "relative",
 
-        bgGradient: "to-b",
-        gradientFrom: "bg",
+        bgGradient: "to-b!",
+        gradientFrom: "transparent",
         gradientTo: "bg.muted",
 
         md: {
           paddingTop: "180px",
           paddingBottom: "200px",
+        },
+        "&:after": {
+          content: "''",
+          position: "absolute",
+          top: "0",
+          left: "0",
+          right: "0",
+          bottom: "0",
+          zIndex: "-1",
+          backgroundImage: "url('/images/homepage/pattern.svg')",
+          backgroundRepeat: "repeat-x",
         },
       })}
     >
@@ -42,5 +55,3 @@ const Hero = (): ReactElement => {
     </Section>
   );
 };
-
-export default Hero;

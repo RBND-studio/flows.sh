@@ -10,6 +10,7 @@ import { WaitlistForm } from "./waitlist-form";
 export const CtaBanner = (): ReactElement => {
   return (
     <Section
+      background="bg"
       innerClassName={css({
         display: "flex",
         flexDirection: "column",

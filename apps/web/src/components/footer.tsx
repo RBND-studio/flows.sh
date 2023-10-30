@@ -45,9 +45,6 @@ export const Footer = (): ReactElement => {
       className={css({
         backgroundColor: "bg.muted",
         paddingX: "space24",
-        borderTopWidth: "1px",
-        borderTopStyle: "solid",
-        borderTopColor: "border",
       })}
     >
       <div

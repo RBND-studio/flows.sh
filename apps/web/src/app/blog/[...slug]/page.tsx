@@ -34,8 +34,19 @@ export async function generateMetadata({ params }: PostProps): Promise<Metadata>
   }
 
   return {
-    title: post.title,
+    title: `${post.title} | Flows Blog`,
     description: post.description,
+    openGraph: {
+      type: "article",
+      title: `${post.title} | Flows Blog`,
+      description: post.description,
+      images: post.image || "/og.png",
+    },
+    twitter: {
+      title: `${post.title} | Flows Blog`,
+      description: post.description,
+      images: post.image || "/og.png",
+    },
   };
 }
 
@@ -55,13 +66,7 @@ export default async function PostPage({ params }: PostProps): Promise<ReactElem
   }
 
   return (
-    <article
-      className={css({
-        maxWidth: "720px",
-        marginTop: "space48",
-        marginX: "auto",
-      })}
-    >
+    <article>
       <div
         className={css({
           mb: "space48",
