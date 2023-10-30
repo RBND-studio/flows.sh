@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactElement } from "react";
 import React from "react";
 
+import { DemoFlows } from "./demo-flows";
 import { Hero } from "./hero";
 import { Implementation } from "./implementation";
 import { ModernPlatform } from "./modern-platform/modern-platform";
@@ -13,12 +14,12 @@ export const metadata: Metadata = {
 
 const Page = (): ReactElement => {
   return (
-    <>
+    <DemoFlows>
       <Hero />
       <Implementation />
       <StepTypes />
       <ModernPlatform />
-    </>
+    </DemoFlows>
   );
 };
 

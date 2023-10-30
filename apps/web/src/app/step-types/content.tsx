@@ -1,15 +1,11 @@
-import { css, cx } from "@flows/styled-system/css";
-import { ArrowRight16 } from "icons";
+import { css } from "@flows/styled-system/css";
 import Image from "next/image";
-import type { FC } from "react";
-import { Button, Dialog, DialogActions, DialogClose, DialogContent, DialogTitle, Text } from "ui";
+import { type FC } from "react";
+import { Button } from "ui";
 
-const list: {
-  title: string;
-  description: string;
-  visual: React.ReactNode;
-  preview?: string;
-}[] = [
+import { Item, type ItemType } from "./item";
+
+const list: ItemType[] = [
   {
     title: "Conditional step",
     description:
@@ -23,7 +19,7 @@ const list: {
         width={1458}
       />
     ),
-    preview: "TODO",
+    preview: { flowId: "conditional-step", content: null },
   },
   {
     title: "Call step",
@@ -37,7 +33,7 @@ const list: {
         width={1458}
       />
     ),
-    preview: "TODO",
+    preview: { flowId: "call-step", content: null },
   },
   {
     title: "Wait step",
@@ -51,7 +47,14 @@ const list: {
         width={1458}
       />
     ),
-    preview: "TODO",
+    preview: {
+      flowId: "wait-step",
+      content: (
+        <Button className="wait-step-continue" size="small" variant="secondary">
+          Continue flow
+        </Button>
+      ),
+    },
   },
   {
     title: "AI decision",
@@ -69,153 +72,37 @@ const list: {
 ];
 
 export const Content: FC = () => {
-  const firstTwo = list.slice(0, 2);
-  const lastTwo = list.slice(2, 4);
-
-  const cardStyle = css({
-    display: "flex",
-    flexDirection: "column",
-    gap: "space24",
-    padding: "space24",
-    borderRadius: "radius24",
-    borderColor: "border.strong",
-    borderWidth: "1px",
-    borderStyle: "solid",
-    shadow: "l2",
-    backgroundColor: "bg.card",
-
-    "& > img": {
-      borderRadius: "radius12",
-      borderWidth: "1px",
-      borderStyle: "solid",
-      borderColor: "border.strong",
-      backgroundColor: "bg.muted",
-    },
-  });
-
-  const wrapperStyle = css({
-    display: "flex",
-    flexDirection: "column",
-    gap: "space40",
-    flex: 1,
-  });
-
   return (
     <div
       className={css({
         display: "flex",
-        gap: "space40",
-        width: "100%",
         flexDirection: "column",
-        md: {
-          flexDirection: "row",
-        },
+        gap: "space40",
+        md: { flexDirection: "row" },
       })}
     >
       <div
-        className={cx(
-          css({
-            marginTop: "0",
-            md: {
-              marginTop: "80px",
-            },
-          }),
-          wrapperStyle,
-        )}
+        className={css({
+          display: "flex",
+          flexDirection: "column",
+          gap: "space40",
+          md: { mt: "80px" },
+        })}
       >
-        {firstTwo.map((item) => {
-          return (
-            <div className={cardStyle} key={item.title}>
-              {item.visual}
-              <div>
-                <Text className={css({ marginBottom: "space4" })} variant="titleXs">
-                  {item.title}
-                </Text>
-                <Text color="muted">{item.description}</Text>
-                <Dialog
-                  trigger={
-                    <button
-                      className={css({
-                        textStyle: "subtitleL",
-                        color: "text.primary",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "space4",
-                        marginTop: "space8",
-                        cursor: "pointer",
-                        _hover: {
-                          "& svg": {
-                            transform: "translateX(4px)",
-                          },
-                        },
-                        "& svg": {
-                          transition: "transform 120ms ease-out",
-                        },
-                      })}
-                      type="button"
-                    >
-                      View demo
-                      <ArrowRight16 />
-                    </button>
-                  }
-                >
-                  <DialogTitle>{item.title}</DialogTitle>
-                  <DialogContent>{item.description}</DialogContent>
-                  <DialogActions>
-                    <DialogClose asChild>
-                      <Button size="small" variant="black">
-                        Close
-                      </Button>
-                    </DialogClose>
-                  </DialogActions>
-                </Dialog>
-              </div>
-            </div>
-          );
-        })}
+        {list.slice(0, 2).map((item) => (
+          <Item item={item} key={item.title} />
+        ))}
       </div>
-      <div className={wrapperStyle}>
-        {lastTwo.map((item) => {
-          return (
-            <div className={cardStyle} key={item.title}>
-              {item.visual}
-              <div>
-                <Text className={css({ marginBottom: "space4" })} variant="titleXs">
-                  {item.title}
-                </Text>
-                <Text color="muted">{item.description}</Text>
-                {item.preview ? (
-                  <button
-                    className={css({
-                      textStyle: "subtitleL",
-                      color: "text.primary",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "space4",
-                      marginTop: "space8",
-                      _hover: {
-                        "& svg": {
-                          transform: "translateX(4px)",
-                        },
-                      },
-                      "& svg": {
-                        transition: "transform 120ms ease-out",
-                      },
-                    })}
-                    type="button"
-                  >
-                    View demo
-                    <ArrowRight16 />
-                  </button>
-                ) : (
-                  <Text className={css({ mt: "space8" })} color="disabled" variant="bodyM">
-                    Preview coming soon
-                  </Text>
-                )}
-              </div>
-            </div>
-          );
+      <div
+        className={css({
+          display: "flex",
+          flexDirection: "column",
+          gap: "space40",
         })}
+      >
+        {list.slice(2).map((item) => (
+          <Item item={item} key={item.title} />
+        ))}
       </div>
     </div>
   );
