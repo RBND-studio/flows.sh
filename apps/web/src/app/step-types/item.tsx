@@ -1,7 +1,7 @@
 "use client";
 
 import { css } from "@flows/styled-system/css";
-import { startFlow } from "@rbnd/flows";
+import { endFlow, startFlow } from "@rbnd/flows";
 import { useFlowsContext } from "components/flows";
 import { ArrowRight16 } from "icons";
 import { type FC, type ReactNode } from "react";
@@ -19,7 +19,8 @@ export type ItemType = {
 
 export const Item: FC<{ item: ItemType }> = ({ item }) => {
   const { runningFlowIds } = useFlowsContext();
-  const isRunning = runningFlowIds.includes(item.preview?.flowId ?? "");
+  const flowId = item.preview?.flowId;
+  const isRunning = !!flowId && runningFlowIds.includes(flowId);
   return (
     <div
       className={css({
@@ -53,6 +54,7 @@ export const Item: FC<{ item: ItemType }> = ({ item }) => {
         {item.preview ? (
           <Dialog
             maxWidth={400}
+            onOpenChange={(open) => flowId && !open && endFlow(flowId)}
             trigger={
               <button
                 className={css({
@@ -102,7 +104,7 @@ export const Item: FC<{ item: ItemType }> = ({ item }) => {
                   Close
                 </Button>
               </DialogClose>
-              <Button onClick={() => item.preview && startFlow(item.preview.flowId)} size="small">
+              <Button onClick={() => flowId && startFlow(flowId)} size="small">
                 Run
               </Button>
             </DialogActions>

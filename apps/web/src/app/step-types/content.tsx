@@ -19,7 +19,16 @@ const list: ItemType[] = [
         width={1458}
       />
     ),
-    preview: { flowId: "conditional-step", content: null },
+    preview: {
+      flowId: "conditional-step",
+      content: (
+        <select className="conditional-step-select">
+          <option value="">Select...</option>
+          <option value="1">Option A</option>
+          <option value="2">Option B</option>
+        </select>
+      ),
+    },
   },
   {
     title: "Call step",
@@ -33,7 +42,7 @@ const list: ItemType[] = [
         width={1458}
       />
     ),
-    preview: { flowId: "call-step", content: null },
+    // preview: { flowId: "call-step", content: null },
   },
   {
     title: "Wait step",
@@ -51,7 +60,7 @@ const list: ItemType[] = [
       flowId: "wait-step",
       content: (
         <Button className="wait-step-continue" size="small" variant="secondary">
-          Continue flow
+          Resume flow
         </Button>
       ),
     },

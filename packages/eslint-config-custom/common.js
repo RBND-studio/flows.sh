@@ -13,6 +13,7 @@ module.exports = {
     "import/no-duplicates": "error",
     "react/function-component-definition": "off",
     "import/no-default-export": "off",
+    "no-implicit-coercion": "off",
   },
   plugins: ["simple-import-sort"],
 };

@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@radix-ui/react-tabs": "^1.0.4",
-    "@rbnd/flows": "0.0.14",
+    "@rbnd/flows": "0.0.15",
     "bright": "^0.8.4",
     "contentlayer": "^0.3.4",
     "dayjs": "^1.11.10",
