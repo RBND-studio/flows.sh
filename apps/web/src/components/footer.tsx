@@ -13,6 +13,8 @@ interface FooterGroup {
   }[];
 }
 
+//TODO: add Link component that handles internal and external links
+
 const footerGroups: FooterGroup[] = [
   {
     title: "Product",

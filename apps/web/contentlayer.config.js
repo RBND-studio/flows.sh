@@ -41,10 +41,6 @@ export const Post = defineDocumentType(() => ({
       type: "date",
       required: true,
     },
-    category: {
-      type: "string",
-      required: true,
-    },
     image: {
       type: "string",
       required: false,
@@ -52,6 +48,10 @@ export const Post = defineDocumentType(() => ({
     imageAlt: {
       type: "string",
       required: false,
+    },
+    author: {
+      type: "string",
+      required: true,
     },
   },
   computedFields,

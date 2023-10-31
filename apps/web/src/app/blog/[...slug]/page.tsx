@@ -92,6 +92,9 @@ export default async function PostPage({ params }: PostProps): Promise<ReactElem
               className={css({
                 borderRadius: "radius12",
                 mt: "space32",
+                borderWidth: "1px",
+                borderStyle: "solid",
+                borderColor: "border.strong",
               })}
               height={600}
               priority
@@ -101,6 +104,8 @@ export default async function PostPage({ params }: PostProps): Promise<ReactElem
           </div>
         ) : null}
         <Text className={css({ mt: "space16" })} color="subtle" variant="bodyM">
+          <span>{post.author}</span>
+          <span>{` • `}</span>
           <span>
             {date.toLocaleString("en-US", { day: "numeric", month: "long", year: "numeric" })}
           </span>

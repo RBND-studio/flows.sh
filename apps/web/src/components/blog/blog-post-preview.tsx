@@ -33,6 +33,9 @@ export const BlogPostPreview = ({ post }: Props): ReactElement => {
             className={css({
               borderRadius: "radius12",
               mb: "space16",
+              borderWidth: "1px",
+              borderStyle: "solid",
+              borderColor: "border.strong",
             })}
             height={600}
             src={post.image}
