@@ -53,7 +53,7 @@ export const Item: FC<{ item: ItemType }> = ({ item }) => {
         <Text color="muted">{item.description}</Text>
         {item.preview ? (
           <Dialog
-            maxWidth={400}
+            maxWidth={600}
             onOpenChange={(open) => flowId && !open && endFlow(flowId)}
             trigger={
               <button

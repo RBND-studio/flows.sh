@@ -8,8 +8,9 @@ import { Text } from "ui";
 
 import { Content } from "./content";
 import { Switcher } from "./switcher";
+import type { Variant } from "./variants";
 
-export const Implementation: FC = () => {
+export const Implementation: FC<{ variants: Variant[] }> = ({ variants }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
@@ -46,9 +47,13 @@ export const Implementation: FC = () => {
           Prefer quick iteration detached from deploys or want to keep things stable? You can do
           both with Flows.
         </Text>
-        <Switcher currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} />
+        <Switcher
+          currentIndex={currentIndex}
+          setCurrentIndex={setCurrentIndex}
+          variants={variants}
+        />
       </div>
-      <Content currentIndex={currentIndex} />
+      <Content currentIndex={currentIndex} variants={variants} />
     </Section>
   );
 };

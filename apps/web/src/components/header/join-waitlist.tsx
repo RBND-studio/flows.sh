@@ -27,19 +27,22 @@ export const JoinWaitlist: FC = () => {
         </Button>
       }
     >
-      <DialogTitle>Join waitlist</DialogTitle>
+      <DialogTitle>Join our waitlist</DialogTitle>
       <form onSubmit={handleSubmit}>
         <DialogContent>
           {!thankYouOpen ? (
-            <Input
-              inputClassName={css({ width: "100%" })}
-              onChange={(e) => setEmail(e.currentTarget.value)}
-              placeholder="Enter your email"
-              required
-              size="medium"
-              type="email"
-              value={email}
-            />
+            <>
+              <Text>Get notified when we launch Flows.</Text>
+              <Input
+                inputClassName={css({ width: "100%", mt: "space8" })}
+                onChange={(e) => setEmail(e.currentTarget.value)}
+                placeholder="Enter your email"
+                required
+                size="medium"
+                type="email"
+                value={email}
+              />
+            </>
           ) : (
             <Text>
               Thank you for joining the waitlist. We will keep you in the loop when Flows are ready.

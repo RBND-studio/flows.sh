@@ -27,6 +27,8 @@ export const fileIcons: Extension = {
           return "css";
         case "json":
           return "json";
+        case "html":
+          return "html";
         default:
       }
     })();

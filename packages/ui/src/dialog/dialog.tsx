@@ -51,7 +51,7 @@ export const Dialog: FC<Props> = ({ open, onOpenChange, trigger, children, maxWi
             // TODO: come up with a systematic way for dialog widths
             maxWidth: maxWidth === 400 ? "400px" : "600px",
             width: "100%",
-            borderRadius: "radius16",
+            borderRadius: "radius12",
             position: "fixed",
             zIndex: 10,
             top: "50%",
@@ -78,8 +78,8 @@ export const Dialog: FC<Props> = ({ open, onOpenChange, trigger, children, maxWi
             aria-label="Close"
             className={css({
               position: "absolute",
-              top: "space12",
-              right: "space12",
+              top: "space16",
+              right: "space16",
               cursor: "pointer",
             })}
           >
@@ -100,11 +100,8 @@ export const DialogTitle: FC<{ children?: ReactNode; className?: string }> = ({
   ...props
 }) => {
   return (
-    <RadixDialog.Title
-      className={cx(css({ px: "space12", pt: "space8", pb: "space16" }), className)}
-      {...props}
-    >
-      <Text variant="titleXs">{children}</Text>
+    <RadixDialog.Title className={cx(css({ px: "space16", py: "space16" }), className)} {...props}>
+      <Text variant="subtitleL">{children}</Text>
     </RadixDialog.Title>
   );
 };
@@ -113,7 +110,7 @@ export const DialogContent: FC<{ children?: ReactNode; className?: string }> = (
   className,
   ...props
 }) => {
-  return <div className={cx(css({ px: "space12" }), className)} {...props} />;
+  return <div className={cx(css({ px: "space16" }), className)} {...props} />;
 };
 
 export const DialogActions: FC<{ children?: ReactNode; className?: string }> = ({
@@ -128,8 +125,8 @@ export const DialogActions: FC<{ children?: ReactNode; className?: string }> = (
           alignItems: "center",
           justifyContent: "flex-end",
           gap: "space8",
-          px: "space12",
-          py: "space8",
+          px: "space16",
+          py: "space16",
         }),
         className,
       )}
