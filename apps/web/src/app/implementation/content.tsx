@@ -61,7 +61,9 @@ export const Content: FC<Props> = ({ currentIndex, variants }) => {
                 );
               })}
             </div>
-            <div className={css({ flex: 1 })}>{item.visual}</div>
+            <div className={css({ flex: 1, overflow: "hidden", maxWidth: "100%" })}>
+              {item.visual}
+            </div>
           </div>
         );
       })}

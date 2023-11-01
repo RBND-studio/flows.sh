@@ -51,9 +51,7 @@ export const variants: Variant[] = [
       },
     ],
     visual: (
-      <CodeHighlight
-        className={css({ height: "408px", maxWidth: "616px", width: "100%", margin: "0!" })}
-      >
+      <CodeHighlight className={css({ height: "408px", margin: "0!" })}>
         <pre>
           <code className="index.html">{`<head>
     <title>Vanilla JS example - Flows JS</title>
@@ -114,24 +112,23 @@ export const variants: Variant[] = [
       >
         <Image
           alt="No code"
-          className={css({
-            position: "absolute",
-            top: 0,
-            left: 0,
-          })}
           height={1280}
           src="/images/homepage/no-code-platform.png"
           width={1928}
         />
         <CodeHighlight
           className={css({
-            height: "280px",
-            maxWidth: "500px",
+            height: "220px",
+            maxWidth: "300px",
             margin: "0!",
             position: "absolute",
             width: "100%",
-            bottom: -40,
-            right: -40,
+            bottom: 0,
+            right: 0,
+            sm: {
+              height: "260px",
+              maxWidth: "480px",
+            },
           })}
         >
           <pre>
