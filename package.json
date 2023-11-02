@@ -8,6 +8,7 @@
     "lint": "TURBO_NO_UPDATE_NOTIFIER=true turbo run lint",
     "tsc": "pnpm -r tsc",
     "app": "pnpm --filter app",
+    "docs": "pnpm --filter docs",
     "web": "pnpm --filter web",
     "ui": "pnpm --filter ui",
     "prepare": "husky install"
