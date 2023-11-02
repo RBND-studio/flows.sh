@@ -10,8 +10,7 @@ const list: {
 }[] = [
   {
     title: "Fast and lightweight",
-    description:
-      "Native-like performance and small bundle size. Some more text here to make it at least two rows or three for a better info.",
+    description: "Native-like performance and small bundle size.",
     visual: <Icon color="icon.primary" icon={Lightning24} />,
   },
   {
@@ -26,20 +25,17 @@ const list: {
   },
   {
     title: "Reliable",
-    description:
-      "No need ot hack around ad-blockers. Our flows show up every time. Some more text here to make it at least two rows.",
+    description: "No need ot hack around ad-blockers. Our flows show up every time.",
     visual: <Icon color="icon.primary" icon={Play24} />,
   },
   {
     title: "Opinionated",
-    description:
-      "The only way to create great products. No fluff, bloat, or bs. Some more text here to make it at least two rows or three for.",
+    description: "The only way to create great products. No fluff, bloat, or bs.",
     visual: <Icon color="icon.primary" icon={Target24} />,
   },
   {
     title: "Open source",
-    description:
-      "The core will be open with paid access to our cloud service. Some more text here to make it at least two rows or three for a better info.",
+    description: "The core will be open with paid access to our cloud service.",
     visual: <Icon color="icon.primary" icon={Fork24} />,
   },
 ];
