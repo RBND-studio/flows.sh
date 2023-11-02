@@ -1,16 +1,17 @@
 import { css } from "@flows/styled-system/css";
 import { type FC, useState } from "react";
 
-import { variants } from "./content";
+import type { Variant } from "./variants";
 
 type Props = {
   currentIndex: number;
   setCurrentIndex: (index: number) => void;
+  variants: Variant[];
 };
 
 const DEFAULT_BUTTON_WIDTH = 118;
 
-export const Switcher: FC<Props> = ({ currentIndex, setCurrentIndex }) => {
+export const Switcher: FC<Props> = ({ currentIndex, setCurrentIndex, variants }) => {
   const [wrapper, setWrapper] = useState<HTMLDivElement | null>(null);
 
   const left = Array.from(wrapper?.children ?? [])

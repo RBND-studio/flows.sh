@@ -53,8 +53,12 @@ export const Item: FC<{ item: ItemType }> = ({ item }) => {
         <Text color="muted">{item.description}</Text>
         {item.preview ? (
           <Dialog
-            maxWidth={400}
-            onOpenChange={(open) => flowId && !open && endFlow(flowId)}
+            maxWidth={600}
+            onOpenChange={(open) => {
+              if (!flowId) return;
+              if (open) startFlow(flowId);
+              else endFlow(flowId);
+            }}
             trigger={
               <button
                 className={css({
@@ -92,7 +96,7 @@ export const Item: FC<{ item: ItemType }> = ({ item }) => {
                   height: "200px",
                   backgroundColor: "bg.subtle",
                   borderRadius: "radius12",
-                  ...(!isRunning ? { pointerEvents: "none", opacity: 0.5 } : {}),
+                  ...(!isRunning ? { pointerEvents: "none", opacity: 0.3 } : {}),
                 })}
               >
                 {item.preview.content}
@@ -104,8 +108,8 @@ export const Item: FC<{ item: ItemType }> = ({ item }) => {
                   Close
                 </Button>
               </DialogClose>
-              <Button onClick={() => flowId && startFlow(flowId)} size="small">
-                Run
+              <Button onClick={() => flowId && startFlow(flowId)} size="small" variant="secondary">
+                Restart
               </Button>
             </DialogActions>
           </Dialog>

@@ -67,6 +67,8 @@ const Icon = styled("span", {
 const button = cva({
   base: {
     display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
     cursor: "pointer",
     borderRadius: 8,
     transition: "80ms ease-in-out",

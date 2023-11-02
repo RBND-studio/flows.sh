@@ -9,7 +9,11 @@ export const TabsRoot: FC<{ children?: ReactNode; defaultValue: string }> = ({
   children,
   defaultValue,
 }) => {
-  return <Tabs.Root defaultValue={defaultValue}>{children}</Tabs.Root>;
+  return (
+    <Tabs.Root asChild defaultValue={defaultValue}>
+      {children}
+    </Tabs.Root>
+  );
 };
 
 export const TabsList: FC<{ children?: ReactNode; titles: string[] }> = ({ titles, children }) => {
@@ -26,5 +30,5 @@ export const TabsList: FC<{ children?: ReactNode; titles: string[] }> = ({ title
 };
 
 export const TabsContent: FC<{ value: string; children?: ReactNode }> = (props) => {
-  return <Tabs.Content {...props} />;
+  return <Tabs.Content {...props} asChild />;
 };

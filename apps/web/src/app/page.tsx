@@ -5,6 +5,7 @@ import React from "react";
 import { DemoFlows } from "./demo-flows";
 import { Hero } from "./hero";
 import { Implementation } from "./implementation";
+import { variants } from "./implementation/variants";
 import { ModernPlatform } from "./modern-platform/modern-platform";
 import { StepTypes } from "./step-types/step-types";
 
@@ -16,7 +17,7 @@ const Page = (): ReactElement => {
   return (
     <DemoFlows>
       <Hero />
-      <Implementation />
+      <Implementation variants={variants} />
       <StepTypes />
       <ModernPlatform />
     </DemoFlows>
