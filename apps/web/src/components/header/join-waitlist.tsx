@@ -31,18 +31,16 @@ export const JoinWaitlist: FC = () => {
       <form onSubmit={handleSubmit}>
         <DialogContent>
           {!thankYouOpen ? (
-            <>
-              <Text>Get notified when we launch Flows.</Text>
-              <Input
-                inputClassName={css({ width: "100%", mt: "space8" })}
-                onChange={(e) => setEmail(e.currentTarget.value)}
-                placeholder="Enter your email"
-                required
-                size="medium"
-                type="email"
-                value={email}
-              />
-            </>
+            <Input
+              inputClassName={css({ width: "100%", mt: "space8" })}
+              label={<Text>Get notified when we launch Flows.</Text>}
+              onChange={(e) => setEmail(e.currentTarget.value)}
+              placeholder="Enter your email"
+              required
+              size="medium"
+              type="email"
+              value={email}
+            />
           ) : (
             <Text>
               Thank you for joining the waitlist. We will keep you in the loop when Flows are ready.

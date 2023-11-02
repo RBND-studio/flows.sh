@@ -53,25 +53,13 @@ export const variants: Variant[] = [
     visual: (
       <CodeHighlight className={css({ height: "408px", margin: "0!" })}>
         <pre>
-          <code className="index.html">{`<head>
-    <title>Vanilla JS example - Flows JS</title>
+          <code className="flows.ts">{`import { init } from "@rbnd/flows"; // Fully typed
 
-    <!-- How you would use Flows in your own code -->
-    <script src="https://cdn.jsdelivr.net/npm/@rbnd/flows@0.0.9/dist/index.global.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@rbnd/flows@0.0.9/public/flows.css" />
-
-    <script src="index.js"></script>
-
-    <!-- See more examples in our SDK repo - https://github.com/RBND-studio/flows-js/tree/main/examples -->
-</head>
-`}</code>
-        </pre>
-        <pre>
-          <code className="flows.tsx">{`window.FlowsJS?.init({
-  customerId: "vanilla-demo",
+init({
+  projectId: "my-project",
   flows: [
     {
-      id: "vanilla-demo-flow-1",
+      id: "my-first-flow",
       element: "#start-flow-1",
       steps: [
         {
@@ -139,18 +127,20 @@ export const variants: Variant[] = [
     <script src="https://cdn.jsdelivr.net/npm/@rbnd/flows@0.0.9/dist/index.global.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@rbnd/flows@0.0.9/public/flows.css" />
 
-    <script src="index.js"></script>
+    <script src="flows.js"></script>
 
     <!-- See more examples in our SDK repo - https://github.com/RBND-studio/flows-js/tree/main/examples -->
 </head>
 `}</code>
           </pre>
           <pre>
-            <code className="flows.tsx">{`window.FlowsJS?.init({
-  customerId: "vanilla-demo",
+            <code className="flows.js">{`window.FlowsJS?.init({
+  projectId: "vanilla-demo",
+  // Stable flows in your code
+  // rest loads from our cloud
   flows: [
     {
-      id: "vanilla-demo-flow-1",
+      id: "my-first-flow",
       element: "#start-flow-1",
       steps: [
         {
