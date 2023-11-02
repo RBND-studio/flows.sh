@@ -1,7 +1,6 @@
+const common = require("./common");
 const { resolve } = require("node:path");
-
-const project = resolve(process.cwd(), "tsconfig.json");
-const commonRules = require("./common-rules");
+const project = resolve(process.cwd(), "./tsconfig.json");
 
 /*
  * This is a custom ESLint configuration for use with
@@ -13,6 +12,8 @@ const commonRules = require("./common-rules");
  */
 
 module.exports = {
+  root: true,
+  plugins: [...common.plugins],
   extends: [
     "plugin:storybook/recommended",
     "plugin:mdx/recommended",
@@ -40,7 +41,6 @@ module.exports = {
   ignorePatterns: ["node_modules/", "dist/"],
   // add rules configurations here
   rules: {
-    ...commonRules,
-    "import/no-default-export": "off",
+    ...common.rules,
   },
 };

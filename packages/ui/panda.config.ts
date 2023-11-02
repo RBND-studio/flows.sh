@@ -1,5 +1,5 @@
 import { defineConfig } from "@pandacss/dev";
-import { theme } from "./theme";
+import { theme, conditions } from "./theme";
 
 export default defineConfig({
   // Whether to use css reset
@@ -15,9 +15,11 @@ export default defineConfig({
   theme,
 
   // The output directory for your css system
-  outdir: "@flows/styled-system",
+  outdir: "@flows/pandacss",
 
   jsxFramework: "react",
 
   emitPackage: true,
+
+  conditions,
 });

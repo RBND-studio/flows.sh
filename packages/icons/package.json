@@ -2,11 +2,13 @@
   "name": "icons",
   "version": "0.0.0",
   "private": true,
+  "sideEffects": false,
   "main": "./index.ts",
   "scripts": {
     "tsc": "tsc"
   },
   "devDependencies": {
+    "@types/react": "^18.2.21",
     "eslint-config-custom": "workspace:*",
     "react": "^18.2.0",
     "tsconfig": "workspace:*",

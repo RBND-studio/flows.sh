@@ -54,7 +54,7 @@ pnpm app add react
 
 ```bash
 # Run development server
-pnpm design-system dev
+pnpm ui dev
 
 # Run type check
 pnpm ui tsc
