@@ -1,3 +1,5 @@
+const path = require("node:path");
+
 const withNextra = require("nextra")({
   theme: "nextra-theme-docs",
   themeConfig: "./src/theme.config.tsx",
@@ -9,6 +11,10 @@ const nextConfig = {
   swcMinify: true,
   transpilePackages: ["ui"],
   output: "standalone",
+  experimental: {
+    outputFileTracingRoot: path.join(__dirname, "../../"),
+    optimizePackageImports: ["ui"],
+  },
 };
 
 module.exports = withNextra(nextConfig);

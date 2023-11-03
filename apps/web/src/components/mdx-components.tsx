@@ -1,11 +1,10 @@
 import { css } from "@flows/styled-system/css";
-import { CodeHighlight } from "components/ui";
 import { isValidUrl } from "lib/is-valid-url";
 import Image from "next/image";
 import Link from "next/link";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import type { HTMLProps, ReactElement } from "react";
-import { Text } from "ui";
+import { CodeHighlight, Text } from "ui";
 
 const mdxComponents = {
   Image: (props: HTMLProps<HTMLImageElement>) => (

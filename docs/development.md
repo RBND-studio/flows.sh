@@ -16,6 +16,12 @@ pnpm tsc
 
 # Run lint for all projects
 pnpm lint
+
+# Add npm package to root package.json
+pnpm add react
+# Add npm package to one of the projects
+# Replace web with the project you're working on
+pnpm web add react
 ```
 
 ### Web
@@ -28,9 +34,6 @@ pnpm web dev
 
 # Run type check
 pnpm web tsc
-
-# Add npm package
-pnpm web add react
 ```
 
 ### App
@@ -43,9 +46,18 @@ pnpm app dev
 
 # Run type check
 pnpm app tsc
+```
 
-# Add npm package
-pnpm app add react
+### Docs
+
+- [Production (docs.flows.sh)](https://docs.flows.sh)
+
+```bash
+# Run development server
+pnpm docs dev
+
+# Run type check
+pnpm docs tsc
 ```
 
 ### Design system
@@ -58,7 +70,4 @@ pnpm ui dev
 
 # Run type check
 pnpm ui tsc
-
-# Add npm package
-pnpm ui add react
 ```
