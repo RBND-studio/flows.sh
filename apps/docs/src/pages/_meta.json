@@ -1,0 +1,18 @@
+{
+  "index": "Overview",
+  "cloud": "Cloud",
+  "sdk": "SDK",
+  "-": {
+    "type": "separator"
+  },
+  "sdk-github": {
+    "title": "SDK GitHub",
+    "href": "https://github.com/RBND-studio/flows-js",
+    "newWindow": true
+  },
+  "cloud-github": {
+    "title": "Cloud GitHub",
+    "href": "https://github.com/RBND-studio/flows-cloud",
+    "newWindow": true
+  }
+}

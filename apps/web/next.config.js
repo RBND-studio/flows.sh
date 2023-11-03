@@ -12,6 +12,7 @@ const nextConfig = {
   output: "standalone",
   experimental: {
     outputFileTracingRoot: path.join(__dirname, "../../"),
+    optimizePackageImports: ["ui"],
   },
   images: {
     remotePatterns: [

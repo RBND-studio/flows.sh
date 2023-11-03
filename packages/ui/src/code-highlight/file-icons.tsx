@@ -1,6 +1,5 @@
 import { css } from "@flows/styled-system/css";
 import type { Extension } from "bright";
-import Image from "next/image";
 
 const SIZE = 16;
 
@@ -36,7 +35,7 @@ export const fileIcons: Extension = {
     return (
       <div className={css({ display: "flex", alignItems: "center" })}>
         {icon ? (
-          <Image
+          <img
             alt={icon}
             className={css({ mr: 4 })}
             height={SIZE}

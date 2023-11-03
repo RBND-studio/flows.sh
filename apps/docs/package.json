@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "docs",
   "version": "1.0.0",
   "private": true,
   "sideEffects": false,
@@ -12,18 +12,11 @@
     "prepare": "panda codegen"
   },
   "dependencies": {
-    "@rbnd/flows": "0.0.15",
-    "contentlayer": "^0.3.4",
-    "dayjs": "^1.11.10",
-    "icons": "workspace:*",
     "next": "^14.0.0",
-    "next-contentlayer": "^0.3.4",
+    "nextra": "^2.13.2",
+    "nextra-theme-docs": "^2.13.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "reading-time": "^1.5.0",
-    "rehype-autolink-headings": "^6.1.1",
-    "rehype-slug": "^5.1.0",
-    "remark-gfm": "^3.0.1",
     "ui": "workspace:*"
   },
   "devDependencies": {
