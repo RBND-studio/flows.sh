@@ -18,7 +18,7 @@ type Props = HTMLAttributes<HTMLParagraphElement> & {
 
   asChild?: boolean;
 
-  weight?: "regular" | "medium" | "semibold" | "bold";
+  weight?: "400" | "600" | "700";
 
   align?: "left" | "center" | "right";
 };
@@ -28,7 +28,7 @@ export function Text({
   color = "default",
   variant = "bodyM",
   align = "left",
-  weight = "regular",
+  weight = "400",
   children,
   asChild,
   ...props
@@ -57,15 +57,12 @@ const textVariants = cva({
       span: {},
     },
     weight: {
-      regular: {},
-      medium: {
-        fontWeight: "medium",
+      "400": {},
+      "600": {
+        fontWeight: "600",
       },
-      semibold: {
-        fontWeight: "semibold",
-      },
-      bold: {
-        fontWeight: "bold",
+      "700": {
+        fontWeight: "700",
       },
     },
     color: {

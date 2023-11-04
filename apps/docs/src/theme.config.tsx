@@ -11,7 +11,7 @@ const config: DocsThemeConfig = {
   logo: (
     <span className={css({ display: "flex", gap: "space8", alignItems: "center" })}>
       <Image alt="Logo" height={28} src="/docs/logo.svg" width={28} />
-      <Text className={css({ color: "inherit" })} variant="bodyM" weight="bold">
+      <Text className={css({ color: "inherit" })} variant="bodyM" weight="700">
         Flows
       </Text>
     </span>
