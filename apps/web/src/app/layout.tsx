@@ -10,8 +10,8 @@ import Script from "next/script";
 
 import { Footer, Header } from "../components";
 
-export const MonaSans = localFont({
-  src: "../../public/fonts/Mona-Sans.woff2",
+const MonaSans = localFont({
+  src: "../fonts/Mona-Sans.woff2",
   display: "swap",
   variable: "--font-mona-sans",
 });
