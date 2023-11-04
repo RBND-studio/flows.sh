@@ -27,7 +27,7 @@ export const StepTypes: FC = () => {
           alignItems: "center",
         })}
       >
-        <Text align="center" as="h2" variant="titleL">
+        <Text align="center" as="h2" variant="title4xl">
           Advanced flow steps
         </Text>
         <Text

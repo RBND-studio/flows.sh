@@ -6,7 +6,7 @@ const meta: Meta<typeof Text> = {
   title: "Text",
   component: Text,
   args: {
-    variant: "titleXxl",
+    variant: "title6xl",
     children: "Hello World!",
   },
 };

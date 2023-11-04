@@ -77,11 +77,11 @@ const button = cva({
   variants: {
     size: {
       small: {
-        textStyle: "subtitleS",
+        textStyle: "titleS",
         padding: "5px 11px",
       },
       medium: {
-        textStyle: "subtitleL",
+        textStyle: "titleL",
         padding: "11px 23px",
       },
     },

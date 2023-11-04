@@ -21,7 +21,7 @@ const footerGroups: FooterGroup[] = [
     links: [
       {
         title: "Overview",
-        href: "#overview",
+        href: "/",
       },
     ],
   },
@@ -31,6 +31,11 @@ const footerGroups: FooterGroup[] = [
       {
         title: "Blog",
         href: "/blog",
+      },
+      {
+        title: "Docs",
+        href: "https://docs.flows.sh/",
+        target: "_blank",
       },
       {
         title: "Github",
@@ -75,7 +80,9 @@ export const Footer = (): ReactElement => {
             })}
           >
             <Image alt="Logo" height={24} src="/images/logo/logo.svg" width={24} />
-            <Text variant="bodyMBold">Flows</Text>
+            <Text variant="bodyM" weight="bold">
+              Flows
+            </Text>
           </div>
           <div
             className={css({
@@ -92,12 +99,12 @@ export const Footer = (): ReactElement => {
                 gap: "space16",
               })}
             >
-              <Text asChild variant="bodySSemiBold">
+              <Text asChild variant="bodyS" weight="bold">
                 <a href="a" rel="noopener" target="_blank">
                   Twitter
                 </a>
               </Text>
-              <Text asChild variant="bodySSemiBold">
+              <Text asChild variant="bodyS" weight="bold">
                 <a href="https://github.com/RBND-studio" rel="noopener" target="_blank">
                   Github
                 </a>
@@ -132,7 +139,7 @@ export const Footer = (): ReactElement => {
                 {group.title}
               </Text>
               {group.links.map((link) => (
-                <Text asChild key={link.href} variant="bodySSemiBold">
+                <Text asChild key={link.href} variant="bodyS" weight="bold">
                   <a
                     className={css({
                       "&:hover": {

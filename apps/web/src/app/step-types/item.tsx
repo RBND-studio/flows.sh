@@ -47,7 +47,7 @@ export const Item: FC<{ item: ItemType }> = ({ item }) => {
     >
       {item.visual}
       <div>
-        <Text className={css({ marginBottom: "space4" })} variant="titleXs">
+        <Text className={css({ marginBottom: "space4" })} variant="titleXl">
           {item.title}
         </Text>
         <Text color="muted">{item.description}</Text>
@@ -62,7 +62,7 @@ export const Item: FC<{ item: ItemType }> = ({ item }) => {
             trigger={
               <button
                 className={css({
-                  textStyle: "subtitleL",
+                  textStyle: "titleL",
                   color: "text.primary",
                   display: "flex",
                   alignItems: "center",

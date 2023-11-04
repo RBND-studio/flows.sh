@@ -51,7 +51,7 @@ export const Content: FC<Props> = ({ currentIndex, variants }) => {
                     })}
                     key={variantItem.title}
                   >
-                    <Text as="h4" variant="subtitleL">
+                    <Text as="h4" variant="titleL">
                       {variantItem.title}
                     </Text>
                     <Text color="muted" variant="bodyM">

@@ -1,7 +1,7 @@
 import { defineTextStyles } from "@pandacss/dev";
 
 export const textStyles = defineTextStyles({
-  titleXxl: {
+  title6xl: {
     value: {
       fontStyle: "normal",
       fontWeight: { base: "750", md: "800" },
@@ -10,7 +10,7 @@ export const textStyles = defineTextStyles({
       fontFamily: "var(--font-mona-sans)",
     },
   },
-  titleXl: {
+  title5xl: {
     value: {
       fontStyle: "normal",
       fontWeight: "750",
@@ -19,7 +19,7 @@ export const textStyles = defineTextStyles({
       fontFamily: "var(--font-mona-sans)",
     },
   },
-  titleL: {
+  title4xl: {
     value: {
       fontStyle: "normal",
       fontWeight: "750",
@@ -28,7 +28,7 @@ export const textStyles = defineTextStyles({
       fontFamily: "var(--font-mona-sans)",
     },
   },
-  titleM: {
+  title3xl: {
     value: {
       fontStyle: "normal",
       fontWeight: "750",
@@ -37,7 +37,7 @@ export const textStyles = defineTextStyles({
       fontFamily: "var(--font-mona-sans)",
     },
   },
-  titleS: {
+  title2xl: {
     value: {
       fontStyle: "normal",
       fontWeight: "750",
@@ -46,7 +46,7 @@ export const textStyles = defineTextStyles({
       fontFamily: "var(--font-mona-sans)",
     },
   },
-  titleXs: {
+  titleXl: {
     value: {
       fontStyle: "normal",
       fontWeight: "750",
@@ -55,7 +55,7 @@ export const textStyles = defineTextStyles({
       fontFamily: "var(--font-mona-sans)",
     },
   },
-  subtitleL: {
+  titleL: {
     value: {
       fontStyle: "normal",
       fontWeight: "750",
@@ -64,7 +64,7 @@ export const textStyles = defineTextStyles({
       fontFamily: "var(--font-mona-sans)",
     },
   },
-  subtitleM: {
+  titleM: {
     value: {
       fontStyle: "normal",
       fontWeight: "750",
@@ -73,7 +73,7 @@ export const textStyles = defineTextStyles({
       fontFamily: "var(--font-mona-sans)",
     },
   },
-  subtitleS: {
+  titleS: {
     value: {
       fontStyle: "normal",
       fontWeight: "750",
@@ -82,6 +82,16 @@ export const textStyles = defineTextStyles({
       fontFamily: "var(--font-mona-sans)",
     },
   },
+  titleXs: {
+    value: {
+      fontStyle: "normal",
+      fontWeight: "750",
+      fontSize: "12px",
+      lineHeight: "16px",
+      fontFamily: "var(--font-mona-sans)",
+    },
+  },
+  // Body
   bodyL: {
     value: {
       fontStyle: "normal",
@@ -106,6 +116,15 @@ export const textStyles = defineTextStyles({
       fontWeight: "450",
       fontSize: "14px",
       lineHeight: "20px",
+      fontFamily: "var(--font-mona-sans)",
+    },
+  },
+  bodyXS: {
+    value: {
+      fontStyle: "normal",
+      fontWeight: "450",
+      fontSize: "12px",
+      lineHeight: "16px",
       fontFamily: "var(--font-mona-sans)",
     },
   },

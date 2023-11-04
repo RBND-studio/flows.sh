@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const Page = (): ReactElement => {
   return (
     <>
-      <Text as="h1" variant="titleL">
+      <Text as="h1" variant="title4xl">
         Blog
       </Text>
       <ul>

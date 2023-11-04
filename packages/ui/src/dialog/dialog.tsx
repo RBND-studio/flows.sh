@@ -101,7 +101,7 @@ export const DialogTitle: FC<{ children?: ReactNode; className?: string }> = ({
 }) => {
   return (
     <RadixDialog.Title className={cx(css({ px: "space16", py: "space16" }), className)} {...props}>
-      <Text variant="subtitleL">{children}</Text>
+      <Text variant="titleL">{children}</Text>
     </RadixDialog.Title>
   );
 };
