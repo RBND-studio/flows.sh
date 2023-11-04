@@ -15,7 +15,7 @@ import {
 } from "ui";
 
 export const JoinWaitlist: FC = () => {
-  const { email, handleSubmit, loading, setEmail, setThankYouOpen, thankYouOpen } =
+  const { email, handleSubmit, loading, setEmail, setThankYouOpen, thankYouOpen, loadRecaptcha } =
     useWaitlistForm();
 
   return (
@@ -35,6 +35,7 @@ export const JoinWaitlist: FC = () => {
               inputClassName={css({ width: "100%", mt: "space8" })}
               label={<Text>Get notified when we launch Flows.</Text>}
               onChange={(e) => setEmail(e.currentTarget.value)}
+              onFocus={loadRecaptcha}
               placeholder="Enter your email"
               required
               size="medium"

@@ -29,6 +29,15 @@ export const useWaitlistForm = () => {
     setLoading(false);
   };
 
+  const loadRecaptcha = (): void => {
+    const existingScript = document.getElementById("grecaptcha-script");
+    if (existingScript) return;
+    const script = document.createElement("script");
+    script.id = "grecaptcha-script";
+    script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
+    document.body.appendChild(script);
+  };
+
   return {
     loading,
     handleSubmit,
@@ -36,5 +45,6 @@ export const useWaitlistForm = () => {
     setThankYouOpen,
     email,
     setEmail,
+    loadRecaptcha,
   };
 };

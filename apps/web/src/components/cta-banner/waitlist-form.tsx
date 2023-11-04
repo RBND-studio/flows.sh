@@ -15,7 +15,7 @@ import {
 } from "ui";
 
 export const WaitlistForm: FC = () => {
-  const { setThankYouOpen, email, handleSubmit, loading, setEmail, thankYouOpen } =
+  const { setThankYouOpen, email, handleSubmit, loading, setEmail, thankYouOpen, loadRecaptcha } =
     useWaitlistForm();
 
   return (
@@ -34,6 +34,7 @@ export const WaitlistForm: FC = () => {
       >
         <Input
           onChange={(e) => setEmail(e.currentTarget.value)}
+          onFocus={loadRecaptcha}
           placeholder="Enter your email"
           required
           size="large"

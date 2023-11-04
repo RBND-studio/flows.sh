@@ -3,7 +3,6 @@ import "@rbnd/flows/public/flows.css";
 
 import { css } from "@flows/styled-system/css";
 import { CtaBanner } from "components/cta-banner";
-import { RECAPTCHA_SITE_KEY } from "lib";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
@@ -57,10 +56,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
         <Footer />
       </body>
       <Script data-domain="flows.sh" defer src="https://plausible.io/js/script.js" />
-      <Script
-        src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}
-        strategy="lazyOnload"
-      />
     </html>
   );
 }

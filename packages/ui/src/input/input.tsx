@@ -1,5 +1,5 @@
 import { cva, cx } from "@flows/styled-system/css";
-import type { FC, ReactNode } from "react";
+import type { FC, FocusEvent, ReactNode } from "react";
 
 type Props = {
   label?: ReactNode;
@@ -16,6 +16,7 @@ type Props = {
   labelClassName?: string;
   wrapperClassName?: string;
   inputClassName?: string;
+  onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
 };
 
 export const Input: FC<Props> = ({
