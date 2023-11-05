@@ -48,5 +48,5 @@ export const theme: Config["theme"] = {
 };
 
 export const conditions: Config["conditions"] = {
-  dark: "[data-color-mode=dark] &",
+  dark: ".dark-mode &",
 };

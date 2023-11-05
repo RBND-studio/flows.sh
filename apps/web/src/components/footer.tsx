@@ -4,6 +4,8 @@ import type { ReactElement } from "react";
 import React from "react";
 import { Text } from "ui";
 
+import { ThemeSwitch } from "./dark-mode/theme-switch";
+
 interface FooterGroup {
   title: string;
   links: {
@@ -120,6 +122,7 @@ export const Footer = (): ReactElement => {
             display: "flex",
             gap: "space48",
             flexDirection: "column",
+            alignItems: "flex-start",
             sm: {
               flexDirection: "row",
             },
@@ -155,6 +158,7 @@ export const Footer = (): ReactElement => {
               ))}
             </div>
           ))}
+          <ThemeSwitch />
         </div>
       </div>
     </footer>

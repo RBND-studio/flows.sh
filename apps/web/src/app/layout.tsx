@@ -3,6 +3,7 @@ import "@rbnd/flows/public/flows.css";
 
 import { css } from "@flows/styled-system/css";
 import { CtaBanner } from "components/cta-banner";
+import { DarkMode } from "components/dark-mode/dark-mode";
 import { RECAPTCHA_SITE_KEY } from "lib";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
@@ -42,19 +43,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
   return (
-    <html
-      className={`${MonaSans.variable}`}
-      // TODO: come up with a way to switch between light and dark mode
-      // data-color-mode="dark"
-      lang="en"
-    >
+    <html className={`${MonaSans.variable}`} lang="en">
+      <head>
+        {/* eslint-disable-next-line @next/next/no-sync-scripts -- needed for noflash script */}
+        <script src="/noflash.min.js" />
+      </head>
       <body className={css({ background: "bg" })}>
-        <Header />
-        <main>
-          {children}
-          <CtaBanner />
-        </main>
-        <Footer />
+        <DarkMode>
+          <Header />
+          <main>
+            {children}
+            <CtaBanner />
+          </main>
+          <Footer />
+        </DarkMode>
       </body>
       <Script data-domain="flows.sh" defer src="https://plausible.io/js/script.js" />
       <Script
