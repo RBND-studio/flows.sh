@@ -14,6 +14,7 @@ const nextConfig = {
     outputFileTracingRoot: path.join(__dirname, "../../"),
     optimizePackageImports: ["ui"],
   },
+  basePath: "/docs",
 };
 
 module.exports = withNextra(nextConfig);
