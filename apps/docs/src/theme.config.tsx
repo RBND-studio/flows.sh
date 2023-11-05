@@ -41,6 +41,8 @@ const config: DocsThemeConfig = {
       defaultTitle: "Flows docs",
     };
   },
+  primaryHue: 12,
+  primarySaturation: 80,
 };
 
 export default config;
