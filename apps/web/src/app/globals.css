@@ -11,3 +11,7 @@
   --tab-bottom-border: transparent;
   --tab-top-border: transparent;
 }
+
+body {
+  font-family: var(--font-mona-sans);
+}
