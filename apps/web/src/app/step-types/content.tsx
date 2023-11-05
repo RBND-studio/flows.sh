@@ -59,7 +59,7 @@ const list: ItemType[] = [
     preview: {
       flowId: "wait-step",
       content: (
-        <Button className="wait-step-continue" size="small" variant="secondary">
+        <Button className="wait-step-continue" variant="secondary">
           Resume flow
         </Button>
       ),

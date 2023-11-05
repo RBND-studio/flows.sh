@@ -26,8 +26,7 @@ export const Dialog: FC<Props> = ({ open, onOpenChange, trigger, children, maxWi
       <RadixDialog.Portal>
         <RadixDialog.Overlay
           className={css({
-            // TODO: add semantic token
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            backgroundColor: "bg.overlay",
             position: "fixed",
             zIndex: 10,
             backdropFilter: "blur(4px)",
@@ -57,12 +56,7 @@ export const Dialog: FC<Props> = ({ open, onOpenChange, trigger, children, maxWi
             top: "50%",
             left: "50%",
             translate: "-50% -50%",
-            // TODO:
-            borderWidth: "1px",
-            borderStyle: "solid",
-            borderColor: "border.strong",
-            // TODO:
-            boxShadow: "l2",
+            boxShadow: "l4",
             "&[data-state=open]": {
               animationName: "enter",
               animationDuration: "120ms",

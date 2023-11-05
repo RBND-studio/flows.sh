@@ -40,7 +40,7 @@ export const WaitlistForm: FC = () => {
           type="email"
           value={email}
         />
-        <Button loading={loading} type="submit">
+        <Button loading={loading} size="large" type="submit">
           Join waitlist
         </Button>
       </form>
@@ -54,9 +54,7 @@ export const WaitlistForm: FC = () => {
 
         <DialogActions>
           <DialogClose asChild>
-            <Button size="small" variant="black">
-              Close
-            </Button>
+            <Button variant="black">Close</Button>
           </DialogClose>
         </DialogActions>
       </Dialog>

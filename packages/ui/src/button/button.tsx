@@ -20,7 +20,7 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
 
 export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
   {
-    size = "medium",
+    size = "default",
     variant = "primary",
     children,
     startIcon,
@@ -76,13 +76,17 @@ const button = cva({
   },
   variants: {
     size: {
-      small: {
+      default: {
         textStyle: "titleS",
         padding: "5px 11px",
       },
-      medium: {
+      large: {
         textStyle: "titleL",
         padding: "11px 23px",
+      },
+      small: {
+        textStyle: "titleS",
+        padding: "3px 7px",
       },
     },
     variant: {
