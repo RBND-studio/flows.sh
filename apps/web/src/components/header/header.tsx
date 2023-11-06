@@ -41,7 +41,9 @@ export const Header = (): ReactElement => {
           href="/"
         >
           <Image alt="Logo" height={28} src="/images/logo/logo.svg" width={28} />
-          <Text variant="bodyMBold">Flows</Text>
+          <Text variant="bodyM" weight="700">
+            Flows
+          </Text>
         </Link>
         <HeaderItems />
         <JoinWaitlist />

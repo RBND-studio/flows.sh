@@ -47,7 +47,7 @@ export const Item: FC<{ item: ItemType }> = ({ item }) => {
     >
       {item.visual}
       <div>
-        <Text className={css({ marginBottom: "space4" })} variant="titleXs">
+        <Text className={css({ marginBottom: "space4" })} variant="titleXl">
           {item.title}
         </Text>
         <Text color="muted">{item.description}</Text>
@@ -62,7 +62,7 @@ export const Item: FC<{ item: ItemType }> = ({ item }) => {
             trigger={
               <button
                 className={css({
-                  textStyle: "subtitleL",
+                  textStyle: "titleL",
                   color: "text.primary",
                   display: "flex",
                   alignItems: "center",
@@ -104,11 +104,9 @@ export const Item: FC<{ item: ItemType }> = ({ item }) => {
             </DialogContent>
             <DialogActions>
               <DialogClose asChild>
-                <Button size="small" variant="black">
-                  Close
-                </Button>
+                <Button variant="black">Close</Button>
               </DialogClose>
-              <Button onClick={() => flowId && startFlow(flowId)} size="small" variant="secondary">
+              <Button onClick={() => flowId && startFlow(flowId)} variant="secondary">
                 Restart
               </Button>
             </DialogActions>

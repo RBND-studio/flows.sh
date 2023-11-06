@@ -26,7 +26,7 @@ const mdxComponents = {
         mt: "space48",
         mb: "space24",
       })}
-      variant="titleS"
+      variant="title2xl"
       {...props}
     />
   ),
@@ -37,7 +37,7 @@ const mdxComponents = {
         mt: "space24",
         mb: "space16",
       })}
-      variant="titleXs"
+      variant="titleXl"
       {...props}
     />
   ),
@@ -48,7 +48,7 @@ const mdxComponents = {
         mt: "space24",
         mb: "space16",
       })}
-      variant="subtitleL"
+      variant="titleL"
       {...props}
     />
   ),
@@ -59,7 +59,7 @@ const mdxComponents = {
         mt: "space24",
         mb: "space16",
       })}
-      variant="subtitleM"
+      variant="titleM"
       {...props}
     />
   ),

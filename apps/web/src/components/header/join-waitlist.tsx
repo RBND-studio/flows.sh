@@ -21,11 +21,7 @@ export const JoinWaitlist: FC = () => {
   return (
     <Dialog
       onOpenChange={(open) => open && setThankYouOpen(false)}
-      trigger={
-        <Button size="small" variant="black">
-          Join waitlist
-        </Button>
-      }
+      trigger={<Button variant="black">Join waitlist</Button>}
     >
       <DialogTitle>Join our waitlist</DialogTitle>
       <form onSubmit={handleSubmit}>
@@ -49,12 +45,10 @@ export const JoinWaitlist: FC = () => {
         </DialogContent>
         <DialogActions>
           <DialogClose asChild>
-            <Button size="small" variant="black">
-              Close
-            </Button>
+            <Button variant="black">Close</Button>
           </DialogClose>
           {!thankYouOpen && (
-            <Button loading={loading} size="small" type="submit">
+            <Button loading={loading} type="submit">
               Join
             </Button>
           )}

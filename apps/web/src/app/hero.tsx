@@ -45,7 +45,7 @@ export const Hero = (): ReactElement => {
         },
       })}
     >
-      <Text align="center" as="h1" variant="titleXxl">
+      <Text align="center" as="h1" variant="title6xl">
         Onboarding for modern SaaS
       </Text>
       <Text align="center" color="muted" variant="bodyL">

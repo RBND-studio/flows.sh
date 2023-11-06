@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@rbnd/flows": "0.0.15",
+    "@rbnd/react-dark-mode": "^2.0.1",
     "contentlayer": "^0.3.4",
     "dayjs": "^1.11.10",
     "icons": "workspace:*",

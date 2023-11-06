@@ -52,7 +52,7 @@ export const BlogPostPreview = ({ post }: Props): ReactElement => {
             color: "text.primary",
           },
         })}
-        variant="titleS"
+        variant="title2xl"
       >
         <Link href={`/blog/${post.slugAsParams}`}>{post.title}</Link>
       </Text>
@@ -67,7 +67,7 @@ export const BlogPostPreview = ({ post }: Props): ReactElement => {
       </Text>
       <Link
         className={css({
-          textStyle: "subtitleL",
+          textStyle: "titleL",
           color: "text.primary",
           display: "flex",
           alignItems: "center",

@@ -10,6 +10,7 @@ import { Text } from "ui";
 type HeaderItem = {
   title: string;
   href: string;
+  target?: string;
 };
 
 const HEADER_ITEMS: HeaderItem[] = [
@@ -20,6 +21,10 @@ const HEADER_ITEMS: HeaderItem[] = [
   {
     title: "Blog",
     href: "/blog",
+  },
+  {
+    title: "Docs",
+    href: "https://flows.sh/docs",
   },
 ];
 
@@ -40,8 +45,10 @@ export const HeaderItems = (): ReactElement => {
           })}
           key={item.title}
         >
-          <Text asChild color={path === item.href ? "default" : "subtle"} variant="subtitleS">
-            <Link href={item.href}>{item.title}</Link>
+          <Text asChild color={path === item.href ? "default" : "subtle"} variant="titleS">
+            <Link href={item.href} target={item.target}>
+              {item.title}
+            </Link>
           </Text>
         </li>
       ))}

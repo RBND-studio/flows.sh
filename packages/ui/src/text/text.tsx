@@ -18,6 +18,8 @@ type Props = HTMLAttributes<HTMLParagraphElement> & {
 
   asChild?: boolean;
 
+  weight?: "400" | "600" | "700";
+
   align?: "left" | "center" | "right";
 };
 
@@ -26,13 +28,17 @@ export function Text({
   color = "default",
   variant = "bodyM",
   align = "left",
+  weight = "400",
   children,
   asChild,
   ...props
 }: Props): JSX.Element {
   const Component = asChild ? Slot : as;
   return (
-    <Component {...props} className={cx(textVariants({ variant, color, align }), props.className)}>
+    <Component
+      {...props}
+      className={cx(textVariants({ variant, color, align, weight }), props.className)}
+    >
       {children}
     </Component>
   );
@@ -49,6 +55,15 @@ const textVariants = cva({
       h6: {},
       p: {},
       span: {},
+    },
+    weight: {
+      "400": {},
+      "600": {
+        fontWeight: "600",
+      },
+      "700": {
+        fontWeight: "700",
+      },
     },
     color: {
       default: {
@@ -82,8 +97,20 @@ const textVariants = cva({
       },
     },
     variant: {
-      titleXxl: {
-        textStyle: "titleXxl",
+      title6xl: {
+        textStyle: "title6xl",
+      },
+      title5xl: {
+        textStyle: "title5xl",
+      },
+      title4xl: {
+        textStyle: "title4xl",
+      },
+      title3xl: {
+        textStyle: "title3xl",
+      },
+      title2xl: {
+        textStyle: "title2xl",
       },
       titleXl: {
         textStyle: "titleXl",
@@ -100,15 +127,6 @@ const textVariants = cva({
       titleXs: {
         textStyle: "titleXs",
       },
-      subtitleL: {
-        textStyle: "subtitleL",
-      },
-      subtitleM: {
-        textStyle: "subtitleM",
-      },
-      subtitleS: {
-        textStyle: "subtitleS",
-      },
       bodyL: {
         textStyle: "bodyL",
       },
@@ -118,29 +136,8 @@ const textVariants = cva({
       bodyS: {
         textStyle: "bodyS",
       },
-      bodyLSemiBold: {
-        textStyle: "bodyL",
-        fontWeight: "600",
-      },
-      bodyMSemiBold: {
-        textStyle: "bodyM",
-        fontWeight: "600",
-      },
-      bodySSemiBold: {
-        textStyle: "bodyS",
-        fontWeight: "600",
-      },
-      bodyLBold: {
-        textStyle: "bodyL",
-        fontWeight: "bold",
-      },
-      bodyMBold: {
-        textStyle: "bodyM",
-        fontWeight: "bold",
-      },
-      bodySBold: {
-        textStyle: "bodyS",
-        fontWeight: "bold",
+      bodyXs: {
+        textStyle: "bodyXs",
       },
     },
   },

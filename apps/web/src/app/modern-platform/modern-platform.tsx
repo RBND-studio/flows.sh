@@ -28,7 +28,7 @@ export const ModernPlatform: FC = () => {
           alignItems: "center",
         })}
       >
-        <Text align="center" as="h2" variant="titleL">
+        <Text align="center" as="h2" variant="title4xl">
           Modern onboarding platform
         </Text>
       </div>

@@ -37,6 +37,7 @@
     "eslint-config-custom": "workspace:*",
     "react": "^18.2.0",
     "storybook": "^7.5.1",
+    "storybook-dark-mode": "^3.0.1",
     "tsconfig": "workspace:*",
     "typescript": "^5.2.2",
     "vite": "^4.5.0"
