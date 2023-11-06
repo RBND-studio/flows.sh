@@ -12,3 +12,8 @@
 :root {
   --font-mona-sans: "Mona Sans";
 }
+
+body,
+.docs-story {
+  background-color: var(--colors-bg-muted);
+}

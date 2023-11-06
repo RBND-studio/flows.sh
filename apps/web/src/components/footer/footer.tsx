@@ -4,7 +4,7 @@ import type { ReactElement } from "react";
 import React from "react";
 import { Text } from "ui";
 
-import { ThemeSwitch } from "./dark-mode/theme-switch";
+import { ThemeSwitch } from "./theme-switch";
 
 interface FooterGroup {
   title: string;
@@ -36,8 +36,7 @@ const footerGroups: FooterGroup[] = [
       },
       {
         title: "Docs",
-        href: "https://docs.flows.sh/",
-        target: "_blank",
+        href: "https://flows.sh/docs",
       },
       {
         title: "Github",

@@ -108,7 +108,7 @@ export const textStyles = defineTextStyles({
       lineHeight: "20px",
     },
   },
-  bodyXS: {
+  bodyXs: {
     value: {
       fontStyle: "normal",
       fontWeight: "450",

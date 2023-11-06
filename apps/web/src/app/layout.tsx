@@ -3,7 +3,7 @@ import "@rbnd/flows/public/flows.css";
 
 import { css } from "@flows/styled-system/css";
 import { CtaBanner } from "components/cta-banner";
-import { DarkMode } from "components/dark-mode/dark-mode";
+import { Providers } from "components/providers";
 import { RECAPTCHA_SITE_KEY } from "lib";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
@@ -49,14 +49,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
         <script src="/noflash.min.js" />
       </head>
       <body className={css({ background: "bg" })}>
-        <DarkMode>
+        <Providers>
           <Header />
           <main>
             {children}
             <CtaBanner />
           </main>
           <Footer />
-        </DarkMode>
+        </Providers>
       </body>
       <Script data-domain="flows.sh" defer src="https://plausible.io/js/script.js" />
       <Script

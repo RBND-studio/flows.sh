@@ -24,8 +24,7 @@ const HEADER_ITEMS: HeaderItem[] = [
   },
   {
     title: "Docs",
-    href: "https://docs.flows.sh/",
-    target: "_blank",
+    href: "https://flows.sh/docs",
   },
 ];
 

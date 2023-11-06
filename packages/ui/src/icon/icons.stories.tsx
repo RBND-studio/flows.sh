@@ -1,7 +1,7 @@
-import { css } from "@flows/styled-system/css";
 import { Box } from "@flows/styled-system/jsx";
 import * as icons from "icons";
 
+import { Text } from "../text";
 import { Icon } from "./icon";
 
 export default {
@@ -14,7 +14,7 @@ export function Default(): JSX.Element {
       {Object.entries(icons).map(([key, icon]) => (
         <Box alignItems="center" display="flex" flexDirection="column" gap={4} key={key}>
           <Icon color="icon.strong" icon={icon} />
-          <p className={css({ fontSize: 12 })}>{key}</p>
+          <Text variant="bodyXs">{key}</Text>
         </Box>
       ))}
     </Box>
