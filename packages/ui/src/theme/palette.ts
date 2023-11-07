@@ -1,21 +1,143 @@
 import { defineTokens } from "@pandacss/dev";
 
+// Palettes made in Atmos
+// Light - https://app.atmos.style/653c8f3f160dfe09ce630ffd
+// Dark - https://app.atmos.style/6546397653415c4a4d4741d8
+
 export const palette = defineTokens.colors({
   primary: {
-    900: { value: "#2d150b" },
     800: { value: "#561e0f" },
     700: { value: "#802612" },
     600: { value: "#aa3218" },
     500: { value: "#d44121" },
     400: { value: "#ec6441" },
-    300: { value: "#f09175" },
-    200: { value: "#f3b8a6" },
-    100: { value: "#f6ddd5" },
+    300: { value: "#f58e70" },
+    200: { value: "#f5b7a4" },
+    100: { value: "#fbdbd2" },
+    50: { value: "#f9e7e1" },
     25: { value: "#fcf7f5" },
   },
+
+  success: {
+    800: { value: "#003912" },
+    700: { value: "#00531c" },
+    600: { value: "#006e26" },
+    500: { value: "#018930" },
+    400: { value: "#0fa63e" },
+    300: { value: "#31c455" },
+    200: { value: "#6bde7d" },
+    100: { value: "#9bf7a9" },
+    50: { value: "#bff9c8" },
+    25: { value: "#ebfcef" },
+  },
+
+  warning: {
+    800: { value: "#422c00" },
+    700: { value: "#5d4108" },
+    600: { value: "#79580f" },
+    500: { value: "#956f15" },
+    400: { value: "#b3891b" },
+    300: { value: "#d0a42c" },
+    200: { value: "#eac048" },
+    100: { value: "#fbdf98" },
+    50: { value: "#f9e9be" },
+    25: { value: "#fcf7eb" },
+  },
+
+  danger: {
+    800: { value: "#5c1515" },
+    700: { value: "#881821" },
+    600: { value: "#b41e31" },
+    500: { value: "#d01f3b" },
+    400: { value: "#f95260" },
+    300: { value: "#ff8688" },
+    200: { value: "#ffb2b1" },
+    100: { value: "#ffd9d8" },
+    50: { value: "#fbe6e5" },
+    25: { value: "#fcf7f6" },
+  },
+
+  info: {
+    800: { value: "#062b7b" },
+    700: { value: "#0041ab" },
+    600: { value: "#0059d7" },
+    500: { value: "#1371ff" },
+    400: { value: "#5385ff" },
+    300: { value: "#90a9ff" },
+    200: { value: "#b7c5fd" },
+    100: { value: "#dce2fb" },
+    50: { value: "#e6eafb" },
+    25: { value: "#f7f8fd" },
+  },
+
+  "primary-dark": {
+    900: { value: "#271812" },
+    800: { value: "#512114" },
+    700: { value: "#7c2a17" },
+    600: { value: "#a6361d" },
+    500: { value: "#d35131" },
+    450: { value: "#db5736" },
+    400: { value: "#e46a49" },
+    300: { value: "#f78d6e" },
+    200: { value: "#feb49d" },
+    100: { value: "#ffdacf" },
+  },
+
+  "success-dark": {
+    900: { value: "#0b200d" },
+    800: { value: "#0f3818" },
+    700: { value: "#175123" },
+    600: { value: "#1b6c2d" },
+    500: { value: "#328d42" },
+    450: { value: "#2e9642" },
+    400: { value: "#33a449" },
+    300: { value: "#54c065" },
+    200: { value: "#83da8d" },
+    100: { value: "#bfeec3" },
+  },
+
+  "warning-dark": {
+    900: { value: "#231a0a" },
+    800: { value: "#3e2d13" },
+    700: { value: "#5b4215" },
+    600: { value: "#77591c" },
+    500: { value: "#9a7526" },
+    450: { value: "#a47c24" },
+    400: { value: "#b18927" },
+    300: { value: "#cea53a" },
+    200: { value: "#e7c15d" },
+    100: { value: "#f6e0ac" },
+  },
+
+  "danger-dark": {
+    900: { value: "#2c1512" },
+    800: { value: "#51211d" },
+    700: { value: "#7a2c2a" },
+    600: { value: "#aa2f36" },
+    500: { value: "#d94851" },
+    450: { value: "#e05057" },
+    400: { value: "#ea6369" },
+    300: { value: "#fb898a" },
+    200: { value: "#fdb2b2" },
+    100: { value: "#fddad9" },
+  },
+
+  "info-dark": {
+    900: { value: "#191a2d" },
+    800: { value: "#272d5b" },
+    700: { value: "#32428c" },
+    600: { value: "#3c5aba" },
+    500: { value: "#5475df" },
+    450: { value: "#5c7fef" },
+    400: { value: "#6186f0" },
+    300: { value: "#90a9ff" },
+    200: { value: "#b7c5fd" },
+    100: { value: "#dce2fb" },
+  },
+
   neutral: {
     0: { value: "#FFFFFF" },
-    25: { value: "#fcfcfc" },
+    25: { value: "#fafafa" },
     50: { value: "#eeeeee" },
     100: { value: "#e2e2e2" },
     150: { value: "#d4d4d4 " },

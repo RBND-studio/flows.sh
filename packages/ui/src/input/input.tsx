@@ -21,7 +21,7 @@ type Props = {
 
 export const Input: FC<Props> = ({
   label,
-  size = "medium",
+  size = "default",
   labelClassName,
   wrapperClassName,
   inputClassName,
@@ -60,6 +60,7 @@ const input = cva({
     _focus: {
       borderColor: "border.primary",
       backgroundColor: "bg",
+      boxShadow: "focus",
     },
   },
   variants: {
@@ -73,6 +74,11 @@ const input = cva({
         px: "space12",
         py: "space8",
         textStyle: "bodyM",
+      },
+      default: {
+        px: "space8",
+        py: "5px",
+        textStyle: "bodyS",
       },
     },
   },

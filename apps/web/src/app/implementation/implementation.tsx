@@ -33,7 +33,7 @@ export const Implementation: FC<{ variants: Variant[] }> = ({ variants }) => {
           alignItems: "center",
         })}
       >
-        <Text align="center" as="h2" variant="titleL">
+        <Text align="center" as="h2" variant="title4xl">
           No-Code or In-Code
         </Text>
         <Text

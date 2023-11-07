@@ -6,7 +6,7 @@ const meta: Meta<typeof Button> = {
   title: "Button",
   component: Button,
   args: {
-    size: "medium",
+    size: "default",
     variant: "primary",
     children: "Hello World!",
   },
@@ -21,7 +21,7 @@ export const Default: Story = {
 };
 
 const buttonVariants = {
-  size: ["small", "medium"],
+  size: ["small", "default", "large"],
   variant: ["primary", "secondary", "black"],
 } as const;
 

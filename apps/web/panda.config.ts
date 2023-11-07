@@ -1,6 +1,8 @@
 import { defineConfig } from "@pandacss/dev";
 import { theme, conditions } from "ui/theme";
 
+// const prod =
+
 export default defineConfig({
   // Whether to use css reset
   preflight: true,
@@ -19,6 +21,8 @@ export default defineConfig({
   jsxFramework: "react",
 
   emitPackage: true,
+
+  minify: true,
 
   conditions,
 });

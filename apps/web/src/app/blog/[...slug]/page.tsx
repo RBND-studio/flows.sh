@@ -77,7 +77,7 @@ export default async function PostPage({ params }: PostProps): Promise<ReactElem
           className={css({
             mb: "space16",
           })}
-          variant="titleL"
+          variant="title4xl"
         >
           {post.title}
         </Text>

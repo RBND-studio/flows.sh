@@ -4,6 +4,8 @@ import type { ReactElement } from "react";
 import React from "react";
 import { Text } from "ui";
 
+import { ThemeSwitch } from "./theme-switch";
+
 interface FooterGroup {
   title: string;
   links: {
@@ -21,7 +23,7 @@ const footerGroups: FooterGroup[] = [
     links: [
       {
         title: "Overview",
-        href: "#overview",
+        href: "/",
       },
     ],
   },
@@ -31,6 +33,10 @@ const footerGroups: FooterGroup[] = [
       {
         title: "Blog",
         href: "/blog",
+      },
+      {
+        title: "Docs",
+        href: "https://flows.sh/docs",
       },
       {
         title: "Github",
@@ -75,7 +81,9 @@ export const Footer = (): ReactElement => {
             })}
           >
             <Image alt="Logo" height={24} src="/images/logo/logo.svg" width={24} />
-            <Text variant="bodyMBold">Flows</Text>
+            <Text variant="bodyM" weight="700">
+              Flows
+            </Text>
           </div>
           <div
             className={css({
@@ -92,12 +100,12 @@ export const Footer = (): ReactElement => {
                 gap: "space16",
               })}
             >
-              <Text asChild variant="bodySSemiBold">
+              <Text asChild variant="bodyS" weight="700">
                 <a href="a" rel="noopener" target="_blank">
                   Twitter
                 </a>
               </Text>
-              <Text asChild variant="bodySSemiBold">
+              <Text asChild variant="bodyS" weight="700">
                 <a href="https://github.com/RBND-studio" rel="noopener" target="_blank">
                   Github
                 </a>
@@ -113,6 +121,7 @@ export const Footer = (): ReactElement => {
             display: "flex",
             gap: "space48",
             flexDirection: "column",
+            alignItems: "flex-start",
             sm: {
               flexDirection: "row",
             },
@@ -132,7 +141,7 @@ export const Footer = (): ReactElement => {
                 {group.title}
               </Text>
               {group.links.map((link) => (
-                <Text asChild key={link.href} variant="bodySSemiBold">
+                <Text asChild key={link.href} variant="bodyS" weight="700">
                   <a
                     className={css({
                       "&:hover": {
@@ -148,6 +157,7 @@ export const Footer = (): ReactElement => {
               ))}
             </div>
           ))}
+          <ThemeSwitch />
         </div>
       </div>
     </footer>

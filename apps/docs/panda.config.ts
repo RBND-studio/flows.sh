@@ -1,5 +1,5 @@
 import { defineConfig } from "@pandacss/dev";
-import { theme, conditions } from "ui/theme";
+import { theme } from "ui/theme";
 
 export default defineConfig({
   // Whether to use css reset
@@ -20,5 +20,9 @@ export default defineConfig({
 
   emitPackage: true,
 
-  conditions,
+  minify: true,
+
+  conditions: {
+    dark: ".dark &",
+  },
 });

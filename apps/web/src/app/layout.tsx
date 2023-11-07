@@ -3,14 +3,15 @@ import "@rbnd/flows/public/flows.css";
 
 import { css } from "@flows/styled-system/css";
 import { CtaBanner } from "components/cta-banner";
+import { Providers } from "components/providers";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
 
 import { Footer, Header } from "../components";
 
-export const MonaSans = localFont({
-  src: "../../public/fonts/Mona-Sans.woff2",
+const MonaSans = localFont({
+  src: "../fonts/Mona-Sans.woff2",
   display: "swap",
   variable: "--font-mona-sans",
 });
@@ -41,19 +42,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
   return (
-    <html
-      className={`${MonaSans.variable}`}
-      // TODO: come up with a way to switch between light and dark mode
-      // data-color-mode="dark"
-      lang="en"
-    >
+    <html className={`${MonaSans.variable}`} lang="en">
+      <head>
+        {/* eslint-disable-next-line @next/next/no-sync-scripts -- needed for noflash script */}
+        <script src="/noflash.min.js" />
+      </head>
       <body className={css({ background: "bg" })}>
-        <Header />
-        <main>
-          {children}
-          <CtaBanner />
-        </main>
-        <Footer />
+        <Providers>
+          <Header />
+          <main>
+            {children}
+            <CtaBanner />
+          </main>
+          <Footer />
+        </Providers>
       </body>
       <Script data-domain="flows.sh" defer src="https://plausible.io/js/script.js" />
     </html>

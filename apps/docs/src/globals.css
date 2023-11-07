@@ -1,1 +1,28 @@
 @layer reset, base, tokens, recipes, utilities;
+
+body::before {
+  content: " ";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 400px;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(256, 256, 256, 0) 0%, rgba(256, 256, 256, 1) 100%);
+}
+
+:is(html[class~="dark"]) body::before {
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0.5) 0%, rgba(17, 17, 17, 1) 100%);
+}
+
+body::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  background-image: url("/pattern.svg");
+  background-repeat: repeat-x;
+}

@@ -8,13 +8,13 @@ const withNextra = require("nextra")({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   transpilePackages: ["ui"],
   output: "standalone",
   experimental: {
     outputFileTracingRoot: path.join(__dirname, "../../"),
     optimizePackageImports: ["ui"],
   },
+  basePath: "/docs",
 };
 
 module.exports = withNextra(nextConfig);
