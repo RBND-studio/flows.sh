@@ -6,11 +6,13 @@
     "build": "TURBO_NO_UPDATE_NOTIFIER=true turbo run build",
     "dev": "TURBO_NO_UPDATE_NOTIFIER=true turbo run dev --no-cache",
     "lint": "TURBO_NO_UPDATE_NOTIFIER=true turbo run lint",
+    "test": "pnpm -r test",
     "tsc": "pnpm -r tsc",
     "app": "pnpm --filter app",
     "docs": "pnpm --filter docs",
     "web": "pnpm --filter web",
     "ui": "pnpm --filter ui",
+    "be": "pnpm --filter backend",
     "prepare": "husky install"
   },
   "devDependencies": {
