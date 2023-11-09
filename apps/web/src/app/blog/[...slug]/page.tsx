@@ -41,6 +41,8 @@ export async function generateMetadata({ params }: PostProps): Promise<Metadata>
       title: `${post.title} | Flows Blog`,
       description: post.description,
       images: post.image || "/og.png",
+      locale: "en_US",
+      url: `/blog/${params.slug.join("/")}`,
     },
     twitter: {
       title: `${post.title} | Flows Blog`,

@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import Image from "next/image";
 import type { ReactElement } from "react";
 import React from "react";
+import { links } from "shared";
 import { Text } from "ui";
 
 import { ThemeSwitch } from "./theme-switch";
@@ -36,11 +37,11 @@ const footerGroups: FooterGroup[] = [
       },
       {
         title: "Docs",
-        href: "https://flows.sh/docs",
+        href: links.docs,
       },
       {
         title: "Github",
-        href: "https://github.com/RBND-studio",
+        href: links.rbndGithub,
         target: "_blank",
       },
     ],
@@ -101,12 +102,12 @@ export const Footer = (): ReactElement => {
               })}
             >
               <Text asChild variant="bodyS" weight="700">
-                <a href="a" rel="noopener" target="_blank">
+                <a href={links.twitter} rel="noopener" target="_blank">
                   Twitter
                 </a>
               </Text>
               <Text asChild variant="bodyS" weight="700">
-                <a href="https://github.com/RBND-studio" rel="noopener" target="_blank">
+                <a href={links.rbndGithub} rel="noopener" target="_blank">
                   Github
                 </a>
               </Text>

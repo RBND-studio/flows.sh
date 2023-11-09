@@ -15,6 +15,10 @@ const nextConfig = {
     optimizePackageImports: ["ui"],
   },
   basePath: "/docs",
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en"],
+  },
 };
 
 module.exports = withNextra(nextConfig);

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactElement } from "react";
 import React from "react";
+import { links } from "shared";
 import { Text } from "ui";
 
 type HeaderItem = {
@@ -24,7 +25,7 @@ const HEADER_ITEMS: HeaderItem[] = [
   },
   {
     title: "Docs",
-    href: "https://flows.sh/docs",
+    href: links.docs,
   },
 ];
 
