@@ -3,6 +3,7 @@
   "cloud": "Cloud",
   "sdk": "SDK",
   "-": {
+    "title": "",
     "type": "separator"
   },
   "sdk-github": {

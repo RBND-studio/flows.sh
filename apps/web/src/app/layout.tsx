@@ -36,6 +36,7 @@ export const metadata: Metadata = {
     description:
       "Flows is a better way to onboard users and drive product adoption. With advanced flow steps and modern architecture, Flows is the tool for modern SaaS companies.",
     images: "/og.png",
+    creator: "@flows_sh",
   },
   keywords: ["flows", "onboarding", "product adoption", "user onboarding", "user adoption"],
 };
