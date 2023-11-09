@@ -30,9 +30,9 @@ export const Input: FC<Props> = ({
   return (
     <label className={labelClassName}>
       {label}
-      <div className={cx(inputWrapper(), wrapperClassName)}>
+      <span className={cx(inputWrapper(), wrapperClassName)}>
         <input className={cx(input({ size }), inputClassName)} {...props} />
-      </div>
+      </span>
     </label>
   );
 };

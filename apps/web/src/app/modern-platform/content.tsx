@@ -62,7 +62,9 @@ export const Content: FC = () => {
               })}
             >
               {item.visual}
-              <Text variant="titleL">{item.title}</Text>
+              <Text as="h3" variant="titleL">
+                {item.title}
+              </Text>
             </div>
             <Text color="muted">{item.description}</Text>
           </div>

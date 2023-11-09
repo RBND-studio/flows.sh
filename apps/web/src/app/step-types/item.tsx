@@ -47,7 +47,7 @@ export const Item: FC<{ item: ItemType }> = ({ item }) => {
     >
       {item.visual}
       <div>
-        <Text className={css({ marginBottom: "space4" })} variant="titleXl">
+        <Text as="h3" className={css({ marginBottom: "space4" })} variant="titleXl">
           {item.title}
         </Text>
         <Text color="muted">{item.description}</Text>

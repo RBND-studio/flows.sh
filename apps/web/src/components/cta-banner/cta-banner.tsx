@@ -27,7 +27,7 @@ export const CtaBanner = (): ReactElement => {
           alignItems: "center",
         })}
       >
-        <Text align="center" variant="title3xl">
+        <Text align="center" as="h2" variant="title3xl">
           Join Flows waitlist today
         </Text>
         <Text align="center" variant="bodyM">
