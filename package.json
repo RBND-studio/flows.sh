@@ -13,7 +13,8 @@
     "web": "pnpm --filter web",
     "ui": "pnpm --filter ui",
     "be": "pnpm --filter backend",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pre-commit": "pnpm lint && pnpm tsc && pnpm test && pnpm -r pre-commit"
   },
   "devDependencies": {
     "eslint": "8.50.0",
