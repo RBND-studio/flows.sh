@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactElement } from "react";
 import React from "react";
-import { links } from "shared";
 import { Text } from "ui";
 
 type HeaderItem = {
@@ -23,10 +22,11 @@ const HEADER_ITEMS: HeaderItem[] = [
     title: "Blog",
     href: "/blog",
   },
-  {
-    title: "Docs",
-    href: links.docs,
-  },
+  // TODO: Uncomment when docs are ready and header can handle mobiles
+  // {
+  //   title: "Docs",
+  //   href: links.docs,
+  // },
 ];
 
 export const HeaderItems = (): ReactElement => {
