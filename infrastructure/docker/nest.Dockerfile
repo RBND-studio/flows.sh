@@ -41,5 +41,6 @@ COPY --chown=node:node --from=prod-installer /app/apps/backend/node_modules ./ap
 COPY --chown=node:node --from=prod-installer /app/node_modules ./node_modules
 COPY --chown=node:node --from=prod-installer /app/package.json ./package.json
 COPY --chown=node:node --from=installer /app/apps/backend/dist ./apps/backend/dist
+COPY ./apps/backend/.env ./.env
 
 CMD ["node", "apps/backend/dist/main.js"]
