@@ -36,11 +36,13 @@ FROM base AS runner
 WORKDIR /app
 
 
+COPY --chown=node:node --from=installer /app/packages/db/drizzle ./packages/db/drizzle
 COPY --chown=node:node --from=installer /app/apps/backend/package.json ./apps/backend/
 COPY --chown=node:node --from=prod-installer /app/apps/backend/node_modules ./apps/backend/node_modules
 COPY --chown=node:node --from=prod-installer /app/node_modules ./node_modules
 COPY --chown=node:node --from=prod-installer /app/package.json ./package.json
 COPY --chown=node:node --from=installer /app/apps/backend/dist ./apps/backend/dist
-COPY ./apps/backend/.env ./.env
+COPY ./apps/backend/.env ./apps/backend/.env
 
-CMD ["node", "apps/backend/dist/main.js"]
+WORKDIR /app/apps/backend
+CMD ["node", "dist/main.js"]
