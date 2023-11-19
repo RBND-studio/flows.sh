@@ -13,6 +13,7 @@
     "web": "pnpm --filter web",
     "ui": "pnpm --filter ui",
     "be": "pnpm --filter backend",
+    "db": "pnpm --filter db",
     "prepare": "husky install",
     "pre-commit": "concurrently \"pnpm lint\" \"pnpm tsc\" \"pnpm test\" \"pnpm -r pre-commit\""
   },
