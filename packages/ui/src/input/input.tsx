@@ -17,6 +17,7 @@ type Props = {
   wrapperClassName?: string;
   inputClassName?: string;
   onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
+  name?: string;
 };
 
 export const Input: FC<Props> = ({
