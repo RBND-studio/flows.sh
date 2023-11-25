@@ -6,3 +6,4 @@ export * from "./src/play24";
 export * from "./src/presentation24";
 export * from "./src/sliders24";
 export * from "./src/target24";
+export * from "./src/user-circle24";
