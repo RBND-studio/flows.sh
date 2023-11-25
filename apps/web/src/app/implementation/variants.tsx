@@ -1,7 +1,7 @@
 import { css } from "@flows/styled-system/css";
 import Image from "next/image";
 import type { ReactElement } from "react";
-import { CodeHighlight } from "ui";
+import { CodeHighlight } from "ui/server";
 
 export type Variant = {
   name: string;
