@@ -17,6 +17,7 @@ type Props = {
   wrapperClassName?: string;
   inputClassName?: string;
   onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
+  onBlur?: (e: FocusEvent<HTMLInputElement>) => void;
   name?: string;
 };
 
