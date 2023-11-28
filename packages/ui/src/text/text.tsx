@@ -26,7 +26,7 @@ type Props = HTMLAttributes<HTMLParagraphElement> & {
 export function Text({
   as = "p",
   color = "default",
-  variant = "bodyM",
+  variant = "bodyS",
   align = "left",
   weight = "400",
   children,

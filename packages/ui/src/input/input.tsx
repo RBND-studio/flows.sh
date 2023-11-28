@@ -1,6 +1,8 @@
 import { cva, cx } from "@flows/styled-system/css";
 import { type FocusEvent, forwardRef, type ReactNode } from "react";
 
+import { Text } from "../text";
+
 type Props = {
   label?: ReactNode;
   /**
@@ -17,7 +19,6 @@ type Props = {
   wrapperClassName?: string;
   inputClassName?: string;
   onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
-  onBlur?: (e: FocusEvent<HTMLInputElement>) => void;
   name?: string;
 };
 
@@ -27,7 +28,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
 ) {
   return (
     <label className={labelClassName}>
-      {label}
+      <Text as="span">{label}</Text>
       <span className={cx(inputWrapper(), wrapperClassName)}>
         <input className={cx(input({ size }), inputClassName)} ref={ref} {...props} />
       </span>
