@@ -1,10 +1,10 @@
 import { css } from "@flows/styled-system/css";
-import type { Property } from "@flows/styled-system/types/csstype";
+import { SystemStyleObject } from "@flows/styled-system/types";
 import { type FC, forwardRef, type SVGProps } from "react";
 
 type Props = {
   placeholderSize?: number;
-  color?: Property.Color;
+  color?: SystemStyleObject["color"];
   icon?: FC<SVGProps<SVGSVGElement>>;
   className?: string;
 };

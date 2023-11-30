@@ -25,7 +25,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.17.0",
+    "@pandacss/dev": "0.19.0",
     "@storybook/addon-essentials": "^7.5.3",
     "@storybook/addon-interactions": "^7.5.3",
     "@storybook/addon-links": "^7.5.3",
@@ -41,7 +41,7 @@
     "storybook": "^7.5.3",
     "storybook-dark-mode": "^3.0.1",
     "tsconfig": "workspace:*",
-    "typescript": "^5.2.2",
+    "typescript": "5.3.2",
     "vite": "^4.5.0"
   },
   "optionalDependencies": {

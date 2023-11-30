@@ -21,6 +21,7 @@ export default defineConfig({
   jsxFramework: "react",
 
   emitPackage: true,
+  forceConsistentTypeExtension: true,
 
   minify: true,
 
