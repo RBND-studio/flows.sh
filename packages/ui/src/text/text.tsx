@@ -84,6 +84,9 @@ const textVariants = cva({
       disabled: {
         color: "text.disabled",
       },
+      onPrimary: {
+        color: "text.onPrimary",
+      },
     },
     align: {
       left: {
