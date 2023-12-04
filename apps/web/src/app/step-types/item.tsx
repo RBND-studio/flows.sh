@@ -50,7 +50,9 @@ export const Item: FC<{ item: ItemType }> = ({ item }) => {
         <Text as="h3" className={css({ marginBottom: "space4" })} variant="titleXl">
           {item.title}
         </Text>
-        <Text color="muted">{item.description}</Text>
+        <Text color="muted" variant="bodyM">
+          {item.description}
+        </Text>
         {item.preview ? (
           <Dialog
             maxWidth={600}
@@ -87,7 +89,9 @@ export const Item: FC<{ item: ItemType }> = ({ item }) => {
           >
             <DialogTitle>{item.title}</DialogTitle>
             <DialogContent>
-              <Text className={css({ mb: "space12" })}>{item.description}</Text>
+              <Text className={css({ mb: "space12" })} variant="bodyM">
+                {item.description}
+              </Text>
               <div
                 className={css({
                   display: "flex",

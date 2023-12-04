@@ -29,7 +29,7 @@ export const JoinWaitlist: FC = () => {
           {!thankYouOpen ? (
             <Input
               inputClassName={css({ width: "100%", mt: "space8" })}
-              label={<Text>Get notified when we launch Flows.</Text>}
+              label={<Text variant="bodyM">Get notified when we launch Flows.</Text>}
               onChange={(e) => setEmail(e.currentTarget.value)}
               onFocus={loadRecaptcha}
               placeholder="Enter your email"
