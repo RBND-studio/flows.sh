@@ -1,4 +1,5 @@
 export * from "./src/arrow-right16";
+export * from "./src/caret-down16";
 export * from "./src/check16";
 export * from "./src/close16";
 export * from "./src/fork24";
