@@ -2,7 +2,7 @@
 
 import { css, cx } from "@flows/styled-system/css";
 import * as RadixSelect from "@radix-ui/react-select";
-import { ArrowRight16, Close16 } from "icons";
+import { CaretDown16, Check16 } from "icons";
 import type { FC } from "react";
 
 import { Button } from "../button";
@@ -18,15 +18,24 @@ type Props = {
   onChange?: (value: string) => void;
 };
 
-export const Select: FC<Props> = ({ value, options, buttonClassName, placeholder }) => {
+export const Select: FC<Props> = ({ value, options, buttonClassName, placeholder, onChange }) => {
   return (
-    <RadixSelect.Root value={value}>
+    <RadixSelect.Root onValueChange={onChange} value={value}>
       <RadixSelect.Trigger asChild>
         <Button
-          className={cx(css({ position: "relative" }), buttonClassName)}
+          className={cx(
+            css({
+              position: "relative",
+              "&>:last-child": {
+                flex: 1,
+                justifyContent: "flex-end",
+              },
+            }),
+            buttonClassName,
+          )}
           endIcon={
             <RadixSelect.Icon asChild>
-              <Icon icon={ArrowRight16} />
+              <Icon icon={CaretDown16} />
             </RadixSelect.Icon>
           }
           size="small"
@@ -73,13 +82,14 @@ export const Select: FC<Props> = ({ value, options, buttonClassName, placeholder
                   borderRadius: "radius4",
                   cursor: "default",
                   _hover: { backgroundColor: "bg.hover" },
+                  outline: "none",
                 })}
                 key={option.value}
                 value={option.value}
               >
                 <span className={css({ width: 16 })}>
                   <RadixSelect.ItemIndicator>
-                    <Icon icon={Close16} />
+                    <Icon icon={Check16} />
                   </RadixSelect.ItemIndicator>
                 </span>
                 <RadixSelect.ItemText>{option.label ?? option.value}</RadixSelect.ItemText>

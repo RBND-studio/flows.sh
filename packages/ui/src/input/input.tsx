@@ -1,5 +1,7 @@
 import { cva, cx } from "@flows/styled-system/css";
-import type { FC, FocusEvent, ReactNode } from "react";
+import { type FocusEvent, forwardRef, type ReactNode } from "react";
+
+import { Text } from "../text";
 
 type Props = {
   label?: ReactNode;
@@ -17,25 +19,22 @@ type Props = {
   wrapperClassName?: string;
   inputClassName?: string;
   onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
+  name?: string;
 };
 
-export const Input: FC<Props> = ({
-  label,
-  size = "default",
-  labelClassName,
-  wrapperClassName,
-  inputClassName,
-  ...props
-}) => {
+export const Input = forwardRef<HTMLInputElement, Props>(function Input(
+  { label, size = "default", labelClassName, wrapperClassName, inputClassName, ...props },
+  ref,
+) {
   return (
     <label className={labelClassName}>
-      {label}
+      <Text as="span">{label}</Text>
       <span className={cx(inputWrapper(), wrapperClassName)}>
-        <input className={cx(input({ size }), inputClassName)} {...props} />
+        <input className={cx(input({ size }), inputClassName)} ref={ref} {...props} />
       </span>
     </label>
   );
-};
+});
 
 const inputWrapper = cva({
   base: {},

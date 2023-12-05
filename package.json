@@ -7,15 +7,18 @@
     "dev": "TURBO_NO_UPDATE_NOTIFIER=true turbo run dev --no-cache",
     "lint": "TURBO_NO_UPDATE_NOTIFIER=true turbo run lint",
     "test": "pnpm -r test",
-    "tsc": "pnpm -r tsc",
+    "tsc": "pnpm -r --parallel tsc",
     "app": "pnpm --filter app",
     "docs": "pnpm --filter docs",
     "web": "pnpm --filter web",
     "ui": "pnpm --filter ui",
     "be": "pnpm --filter backend",
-    "prepare": "husky install"
+    "db": "pnpm --filter db",
+    "prepare": "husky install",
+    "pre-commit": "concurrently \"pnpm lint\" \"pnpm tsc\" \"pnpm test\" \"pnpm -r pre-commit\""
   },
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "eslint": "8.50.0",
     "husky": "^8.0.3",
     "prettier": "^3.0.3",

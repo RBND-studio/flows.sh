@@ -4,7 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import type { HTMLProps, ReactElement } from "react";
-import { CodeHighlight, Text } from "ui";
+import { Text } from "ui";
+import { CodeHighlight } from "ui/server";
 
 const mdxComponents = {
   Image: (props: HTMLProps<HTMLImageElement>) => (
