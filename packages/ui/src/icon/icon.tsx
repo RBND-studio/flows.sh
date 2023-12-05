@@ -1,5 +1,5 @@
 import { css } from "@flows/styled-system/css";
-import { SystemStyleObject } from "@flows/styled-system/types";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import { type FC, forwardRef, type SVGProps } from "react";
 
 type Props = {

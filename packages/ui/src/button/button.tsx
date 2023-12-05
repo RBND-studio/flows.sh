@@ -71,7 +71,8 @@ const button = cva({
     justifyContent: "center",
     cursor: "pointer",
     borderRadius: 8,
-    transition: "80ms ease-in-out",
+    transitionDuration: "fast",
+    transitionTimingFunction: "easeInOut",
     boxShadow: "l1",
   },
   variants: {
@@ -127,6 +128,13 @@ const button = cva({
         _hover: {
           borderColor: "bg.blackHover",
           backgroundColor: "bg.blackHover",
+        },
+        _disabled: {
+          backgroundColor: "bg.subtle",
+          borderColor: "bg.subtle",
+          color: "text.subtle",
+          pointerEvents: "none",
+          boxShadow: "none",
         },
       },
     },
