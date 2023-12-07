@@ -22,6 +22,18 @@ const nextConfig = {
       },
     ],
   },
+  rewrites: async () => {
+    return [
+      {
+        source: "/box/script.js",
+        destination: "https://plausible.io/js/script.js",
+      },
+      {
+        source: "/box/event",
+        destination: "https://plausible.io/api/event",
+      },
+    ];
+  },
 };
 
 module.exports = withContentlayer(nextConfig);

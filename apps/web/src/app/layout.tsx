@@ -58,7 +58,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
           <Footer />
         </Providers>
       </body>
-      <Script data-domain="flows.sh" defer src="https://plausible.io/js/script.js" />
+      <Script
+        data-api="/box/event"
+        data-domain="flows.sh"
+        defer
+        src="https://flows.sh/box/script.js"
+      />
     </html>
   );
 }
