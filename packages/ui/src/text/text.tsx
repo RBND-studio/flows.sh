@@ -1,6 +1,6 @@
 import { cva, cx } from "@flows/styled-system/css";
 import { Slot } from "@radix-ui/react-slot";
-import type { HTMLAttributes } from "react";
+import { forwardRef, type HTMLAttributes } from "react";
 
 type Props = HTMLAttributes<HTMLParagraphElement> & {
   /**
@@ -23,26 +23,30 @@ type Props = HTMLAttributes<HTMLParagraphElement> & {
   align?: "left" | "center" | "right";
 };
 
-export function Text({
-  as = "p",
-  color = "default",
-  variant = "bodyS",
-  align = "left",
-  weight = "400",
-  children,
-  asChild,
-  ...props
-}: Props): JSX.Element {
+export const Text = forwardRef<HTMLParagraphElement, Props>(function Text(
+  {
+    as = "p",
+    color = "default",
+    variant = "bodyS",
+    align = "left",
+    weight = "400",
+    children,
+    asChild,
+    ...props
+  },
+  ref,
+) {
   const Component = asChild ? Slot : as;
   return (
     <Component
       {...props}
       className={cx(textVariants({ variant, color, align, weight }), props.className)}
+      ref={ref}
     >
       {children}
     </Component>
   );
-}
+});
 
 const textVariants = cva({
   variants: {
