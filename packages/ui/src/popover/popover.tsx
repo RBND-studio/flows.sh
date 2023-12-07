@@ -18,7 +18,12 @@ export const PopoverContent = forwardRef<React.ElementRef<typeof PopoverPrimitiv
   function PopoverContent({ ...props }, ref) {
     return (
       <PopoverPrimitive.Portal>
-        <PopoverPrimitive.Content className={cx(content(), props.className)} ref={ref} {...props} />
+        <PopoverPrimitive.Content
+          className={cx(content(), props.className)}
+          ref={ref}
+          {...props}
+          collisionPadding={8}
+        />
       </PopoverPrimitive.Portal>
     );
   },
