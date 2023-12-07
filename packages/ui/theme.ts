@@ -5,6 +5,7 @@ import {
   breakpoints,
   durations,
   easings,
+  keyframes,
   palette,
   radii,
   semanticTokens,
@@ -27,24 +28,7 @@ export const theme: Config["theme"] = {
   semanticTokens,
   textStyles,
   tokens,
-  keyframes: {
-    enter: {
-      "0%": { transform: "scale(.95)", opacity: 0 },
-      "100%": { transform: "scale(1)", opacity: 1 },
-    },
-    exit: {
-      "0%": { transform: "scale(1)", opacity: 1 },
-      "100%": { transform: "scale(.95)", opacity: 0 },
-    },
-    fadein: {
-      "0%": { opacity: "0" },
-      "100%": { opacity: "1" },
-    },
-    fadeout: {
-      "0%": { opacity: "1" },
-      "100%": { opacity: "0" },
-    },
-  },
+  keyframes,
 };
 
 export const conditions: Config["conditions"] = {

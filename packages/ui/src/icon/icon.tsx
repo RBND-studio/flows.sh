@@ -1,4 +1,4 @@
-import { css } from "@flows/styled-system/css";
+import { css, cx } from "@flows/styled-system/css";
 import type { SystemStyleObject } from "@flows/styled-system/types";
 import { type FC, forwardRef, type SVGProps } from "react";
 
@@ -16,7 +16,7 @@ const DefaultIcon = (props: React.SVGProps<SVGSVGElement>): JSX.Element => (
 );
 
 export const Icon = forwardRef<SVGSVGElement, Props>(function Icon(
-  { icon = DefaultIcon, color, placeholderSize, ...props },
+  { icon = DefaultIcon, color, placeholderSize, className, ...props },
   ref,
 ) {
   const Cmp = icon;
@@ -25,5 +25,12 @@ export const Icon = forwardRef<SVGSVGElement, Props>(function Icon(
       ? { height: placeholderSize, width: placeholderSize }
       : {};
 
-  return <Cmp className={css({ color: color ?? "icon" })} {...sizeProps} {...props} ref={ref} />;
+  return (
+    <Cmp
+      {...sizeProps}
+      {...props}
+      className={cx(css({ color: color ?? "icon" }), className)}
+      ref={ref}
+    />
+  );
 });

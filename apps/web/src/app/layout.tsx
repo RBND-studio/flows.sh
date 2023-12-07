@@ -58,12 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
           <Footer />
         </Providers>
       </body>
-      <Script
-        data-api="https://flows.sh/box/event"
-        data-domain="flows.sh"
-        defer
-        src="https://flows.sh/box/script.js"
-      />
+      <Script data-api="/box/event" data-domain="flows.sh" defer src="/box/script.js" />
     </html>
   );
 }

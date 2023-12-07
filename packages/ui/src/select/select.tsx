@@ -7,6 +7,7 @@ import type { FC } from "react";
 
 import { Button } from "../button";
 import { Icon } from "../icon";
+import { Text } from "../text";
 
 type Props = {
   value?: string;
@@ -92,7 +93,10 @@ export const Select: FC<Props> = ({ value, options, buttonClassName, placeholder
                     <Icon icon={Check16} />
                   </RadixSelect.ItemIndicator>
                 </span>
-                <RadixSelect.ItemText>{option.label ?? option.value}</RadixSelect.ItemText>
+
+                <RadixSelect.ItemText asChild>
+                  <Text>{option.label ?? option.value}</Text>
+                </RadixSelect.ItemText>
               </RadixSelect.Item>
             ))}
           </RadixSelect.Viewport>
