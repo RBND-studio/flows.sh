@@ -20,6 +20,7 @@ type Props = {
   inputClassName?: string;
   onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
   name?: string;
+  minLength?: number;
 };
 
 export const Input = forwardRef<HTMLInputElement, Props>(function Input(
