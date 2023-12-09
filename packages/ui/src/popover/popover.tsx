@@ -31,10 +31,13 @@ export const PopoverContent = forwardRef<React.ElementRef<typeof PopoverPrimitiv
 
 const content = cva({
   base: {
-    borderRadius: "radius8",
-    backgroundColor: "bg",
-    p: "space12",
+    borderRadius: "radius12",
+    backgroundColor: "bg.card",
+    borderStyle: "solid",
+    borderWidth: "1px",
+    borderColor: "border",
     boxShadow: "l2",
+    overflow: "hidden",
     "&[data-state=open]": {
       animationName: "enter",
       animationDuration: "120ms",

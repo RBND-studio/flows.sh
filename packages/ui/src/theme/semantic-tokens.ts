@@ -13,6 +13,7 @@ export const semanticTokens = defineSemanticTokens({
       black: { value: "{colors.neutral.850}" },
       blackHover: { value: "{colors.neutral.750}" },
       overlay: { value: { base: "rgba(0, 0, 0, 0.75)", _dark: "rgba(0, 0, 0, 0.80)" } },
+      subtleDanger: { value: { base: "{colors.danger.50}", _dark: "{colors.danger-dark.900}" } },
     },
     text: {
       DEFAULT: { value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.25}" } },

@@ -137,6 +137,17 @@ const button = cva({
           boxShadow: "none",
         },
       },
+      grey: {
+        color: "text",
+        borderStyle: "solid",
+        borderWidth: 1,
+        borderColor: "border.strong",
+        backgroundColor: "bg.muted",
+        _hover: {
+          borderColor: "border.primary",
+          backgroundColor: "bg",
+        },
+      },
     },
   },
 });

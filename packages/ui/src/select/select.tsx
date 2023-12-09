@@ -40,7 +40,7 @@ export const Select: FC<Props> = ({ value, options, buttonClassName, placeholder
             </RadixSelect.Icon>
           }
           size="small"
-          variant="secondary"
+          variant="grey"
         >
           <RadixSelect.Value placeholder={placeholder} />
         </Button>
