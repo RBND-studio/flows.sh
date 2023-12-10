@@ -2,6 +2,7 @@ export * from "./src/arrow-right16";
 export * from "./src/caret-down16";
 export * from "./src/check16";
 export * from "./src/chevron-down16";
+export * from "./src/circle-slash16";
 export * from "./src/close16";
 export * from "./src/fork24";
 export * from "./src/lightning24";

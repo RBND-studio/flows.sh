@@ -91,6 +91,12 @@ const textVariants = cva({
       onPrimary: {
         color: "text.onPrimary",
       },
+      success: {
+        color: "text.success",
+      },
+      inherit: {
+        color: "inherit",
+      },
     },
     align: {
       left: {

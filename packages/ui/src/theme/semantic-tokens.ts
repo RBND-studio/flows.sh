@@ -9,6 +9,7 @@ export const semanticTokens = defineSemanticTokens({
       primary: { value: { base: "{colors.primary.400}", _dark: "{colors.primary-dark.400}" } },
       primaryHover: { value: { base: "{colors.primary.500}", _dark: "{colors.primary-dark.500}" } },
       hover: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.850}" } },
+      subtleHover: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.875}" } },
       card: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.850}" } },
       black: { value: "{colors.neutral.850}" },
       blackHover: { value: "{colors.neutral.750}" },
