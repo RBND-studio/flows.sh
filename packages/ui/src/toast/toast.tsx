@@ -8,8 +8,9 @@ import { resolveValue, useToaster } from "react-hot-toast/headless";
 
 import { Icon } from "../icon";
 import { Spinner } from "../spinner";
+import { Text } from "../text";
 
-export const ToastWarmer = (): ReactNode => {
+export const ToastProvider = (): ReactNode => {
   const { toasts, handlers } = useToaster();
   const { startPause, endPause, updateHeight } = handlers;
   if (typeof window === "undefined" || !toasts.length) {
@@ -55,6 +56,8 @@ export const ToastWarmer = (): ReactNode => {
             icon = null;
           }
 
+          const value = resolveValue(toast.message, toast);
+
           return (
             <div
               className={css({
@@ -78,7 +81,8 @@ export const ToastWarmer = (): ReactNode => {
               {...toast.ariaProps}
             >
               {icon}
-              {resolveValue(toast.message, toast)}
+
+              {typeof value === "string" ? <Text>{value}</Text> : value}
             </div>
           );
         })}
