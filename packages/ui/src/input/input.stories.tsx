@@ -9,6 +9,7 @@ const meta: Meta<typeof Input> = {
     defaultValue: "Hello World!",
     // eslint-disable-next-line no-console -- useful for storybook
     onChange: console.log,
+    label: "Input",
   },
 };
 

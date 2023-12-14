@@ -28,7 +28,8 @@ export const JoinWaitlist: FC = () => {
         <DialogContent>
           {!thankYouOpen ? (
             <Input
-              inputClassName={css({ width: "100%", mt: "space8" })}
+              fullWidth
+              inputClassName={css({ mt: "space8" })}
               label={<Text variant="bodyM">Get notified when we launch Flows.</Text>}
               onChange={(e) => setEmail(e.currentTarget.value)}
               onFocus={loadRecaptcha}

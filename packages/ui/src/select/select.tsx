@@ -3,25 +3,37 @@
 import { css, cx } from "@flows/styled-system/css";
 import * as RadixSelect from "@radix-ui/react-select";
 import { CaretDown16, Check16 } from "icons";
-import type { FC } from "react";
+import type { ComponentProps } from "react";
 
 import { Button } from "../button";
 import { Icon } from "../icon";
 import { Text } from "../text";
 
-type Props = {
-  value?: string;
-  options: { value: string; label?: string }[];
+type Props<T extends string> = {
+  value?: T;
+  defaultValue?: T;
+  options: readonly { value: T; label?: string }[];
   buttonClassName?: string;
   inputClassName?: string;
   placeholder?: string;
-  asInput?: boolean;
-  onChange?: (value: string) => void;
+  label?: string;
+  onChange?: (value: T) => void;
+  buttonSize?: ComponentProps<typeof Button>["size"];
 };
 
-export const Select: FC<Props> = ({ value, options, buttonClassName, placeholder, onChange }) => {
-  return (
-    <RadixSelect.Root onValueChange={onChange} value={value}>
+export function Select<T extends string>({
+  options,
+  buttonClassName,
+  placeholder,
+  buttonSize = "small",
+  label,
+  onChange,
+  ...props
+}: Props<T>): JSX.Element {
+  const currentOption = options.find((opt) => opt.value === (props.value ?? props.defaultValue));
+
+  const selectRender = (
+    <RadixSelect.Root {...props} onValueChange={onChange}>
       <RadixSelect.Trigger asChild>
         <Button
           className={cx(
@@ -39,10 +51,12 @@ export const Select: FC<Props> = ({ value, options, buttonClassName, placeholder
               <Icon icon={CaretDown16} />
             </RadixSelect.Icon>
           }
-          size="small"
+          size={buttonSize}
           variant="grey"
         >
-          <RadixSelect.Value placeholder={placeholder} />
+          <RadixSelect.Value placeholder={placeholder}>
+            {currentOption?.label ?? currentOption?.value}
+          </RadixSelect.Value>
         </Button>
       </RadixSelect.Trigger>
 
@@ -104,4 +118,15 @@ export const Select: FC<Props> = ({ value, options, buttonClassName, placeholder
       </RadixSelect.Portal>
     </RadixSelect.Root>
   );
-};
+
+  if (label === undefined) return selectRender;
+
+  return (
+    <label>
+      <Text as="span" className={css({ mb: "space4", display: "block" })}>
+        {label}
+      </Text>
+      {selectRender}
+    </label>
+  );
+}
