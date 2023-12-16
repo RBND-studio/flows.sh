@@ -80,14 +80,17 @@ const button = cva({
       default: {
         textStyle: "titleS",
         padding: "5px 11px",
+        height: 32,
       },
       large: {
         textStyle: "titleL",
         padding: "11px 23px",
+        height: 52,
       },
       small: {
         textStyle: "titleS",
         padding: "3px 7px",
+        height: 28,
       },
     },
     variant: {
