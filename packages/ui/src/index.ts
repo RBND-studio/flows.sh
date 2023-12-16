@@ -6,5 +6,6 @@ export * from "./input";
 export * from "./popover";
 export * from "./select";
 export * from "./spinner";
+export * from "./switch";
 export * from "./text";
 export * from "./toast";
