@@ -8,3 +8,4 @@ export { semanticTokens } from "./semantic-tokens";
 export { shadows } from "./shadows";
 export { spacing } from "./spacing";
 export { textStyles } from "./typography";
+export * from "./utilities";

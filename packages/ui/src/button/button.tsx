@@ -116,8 +116,8 @@ const button = cva({
         color: "text",
         borderStyle: "solid",
         borderWidth: 1,
-        borderColor: "border.primary",
-        backgroundColor: "bg",
+        borderColor: "border.strong",
+        backgroundColor: "bg.muted",
         _hover: {
           backgroundColor: "bg.hover",
         },

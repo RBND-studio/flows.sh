@@ -1,3 +1,5 @@
+"use client";
+
 import { cva } from "@flows/styled-system/css";
 import * as RadixSwitch from "@radix-ui/react-switch";
 import type { FC } from "react";
@@ -5,32 +7,33 @@ import type { FC } from "react";
 type Props = {
   checked: boolean;
   onChange: (checked: boolean) => void;
+  disabled?: boolean;
 };
 
-export const Switch: FC<Props> = ({ checked, onChange }) => {
+export const Switch: FC<Props> = ({ onChange, ...props }) => {
   return (
-    <RadixSwitch.Root checked={checked} className={root({ checked })} onCheckedChange={onChange}>
-      <RadixSwitch.SwitchThumb className={thumb({ checked })} />
+    <RadixSwitch.Root className={root()} onCheckedChange={onChange} {...props}>
+      <RadixSwitch.SwitchThumb className={thumb()} />
     </RadixSwitch.Root>
   );
 };
 
 const root = cva({
   base: {
-    width: 32,
+    width: 36,
     height: 20,
     borderRadius: 9999,
     position: "relative",
     transitionDuration: "fast",
     transitionTimingFunction: "easeInOut",
-    bg: "bg.subtle",
+    bg: "bg.strong",
     _hover: {
-      bg: "bg.subtleHover",
+      bg: "bg.strongHover",
     },
     "&[data-state='checked']": {
-      bg: "bg.primary",
+      bg: "bg.success",
       _hover: {
-        bg: "bg.primaryHover",
+        bg: "bg.successHover",
       },
     },
   },
@@ -47,7 +50,7 @@ const thumb = cva({
     transitionTimingFunction: "easeInOut",
     transform: "translateX(2px)",
     "&[data-state='checked']": {
-      transform: "translateX(14px)",
+      transform: "translateX(18px)",
     },
   },
 });

@@ -2,7 +2,9 @@ import type { Config } from "@pandacss/dev";
 import { defineTokens } from "@pandacss/dev";
 
 import {
+  bor,
   breakpoints,
+  cardWrap,
   durations,
   easings,
   keyframes,
@@ -33,4 +35,11 @@ export const theme: Config["theme"] = {
 
 export const conditions: Config["conditions"] = {
   dark: ".dark-mode &",
+};
+
+export const utilities: Config["utilities"] = {
+  extend: {
+    bor,
+    cardWrap,
+  },
 };
