@@ -1,9 +1,8 @@
-import { token } from "@flows/styled-system/tokens";
 import { defineUtility } from "@pandacss/dev";
 
 export const bor = defineUtility({
   values: ["1px"],
-  transform(value) {
+  transform(value, { token }) {
     return {
       borderStyle: "solid",
       borderWidth: value,
@@ -13,7 +12,7 @@ export const bor = defineUtility({
 });
 
 export const cardWrap = defineUtility({
-  transform() {
+  transform(_, { token }) {
     return {
       borderStyle: "solid",
       borderWidth: "1px",
