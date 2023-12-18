@@ -94,6 +94,9 @@ const textVariants = cva({
       success: {
         color: "text.success",
       },
+      danger: {
+        color: "text.danger",
+      },
       inherit: {
         color: "inherit",
       },
