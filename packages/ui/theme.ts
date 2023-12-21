@@ -3,6 +3,8 @@ import { defineTokens } from "@pandacss/dev";
 
 import {
   bor,
+  borBottom,
+  borTop,
   breakpoints,
   cardWrap,
   durations,
@@ -40,6 +42,8 @@ export const conditions: Config["conditions"] = {
 export const utilities: Config["utilities"] = {
   extend: {
     bor,
+    borBottom,
+    borTop,
     cardWrap,
   },
 };

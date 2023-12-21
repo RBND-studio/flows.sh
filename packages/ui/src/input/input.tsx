@@ -1,4 +1,5 @@
 import { css, cva, cx } from "@flows/styled-system/css";
+import { Slot } from "@radix-ui/react-slot";
 import { type FocusEvent, forwardRef, type ReactNode } from "react";
 
 import { Text } from "../text";
@@ -21,8 +22,14 @@ type Props = {
   onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
   name?: string;
   minLength?: number;
-  fullWidth?: boolean;
+  width?: string;
   onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  asChild?: boolean;
+  children?: ReactNode;
+  description?: ReactNode;
+  descriptionClassName?: string;
+  disabled?: boolean;
+  fullClassName?: string;
 };
 
 export const Input = forwardRef<HTMLInputElement, Props>(function Input(
@@ -32,26 +39,53 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
     labelClassName,
     wrapperClassName,
     inputClassName,
-    fullWidth,
+    fullClassName,
+    width,
+    descriptionClassName,
+    asChild,
+    description,
     ...props
   },
   ref,
 ) {
+  const Comp = asChild ? Slot : "input";
+
   const inputRender = (
     <span className={cx(inputWrapper(), wrapperClassName)}>
-      <input className={cx(input({ size, fullWidth }), inputClassName)} ref={ref} {...props} />
+      <Comp
+        className={cx(input({ size }), inputClassName)}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any -- TODO: fix this
+        ref={ref as any}
+        {...props}
+      />
     </span>
   );
 
   if (label === undefined) return inputRender;
 
   return (
-    <label className={labelClassName}>
-      <Text as="span" className={css({ mb: "space4", display: "block" })}>
-        {label}
+    <div
+      className={cx(
+        css({
+          maxWidth: width,
+        }),
+        fullClassName,
+      )}
+    >
+      <label className={labelClassName}>
+        <Text as="span" className={css({ mb: "space4", display: "block" })}>
+          {label}
+        </Text>
+        {inputRender}
+      </label>
+      <Text
+        className={cx(css({ mt: "space4" }), descriptionClassName)}
+        color="subtle"
+        variant="bodyXs"
+      >
+        {description}
       </Text>
-      {inputRender}
-    </label>
+    </div>
   );
 });
 
@@ -71,8 +105,9 @@ const input = cva({
     outline: "none",
     transitionDuration: "fast",
     transitionTimingFunction: "easeInOut",
-    transitionProperty: "all",
+    transitionProperty: "border-color, background-color, box-shadow",
     color: "text",
+    width: "100%",
     _hover: {
       borderColor: "border.primary",
       backgroundColor: "bg",
@@ -81,6 +116,13 @@ const input = cva({
       borderColor: "border.primary",
       backgroundColor: "bg",
       boxShadow: "focus",
+    },
+    _disabled: {
+      "&&": {
+        backgroundColor: "bg.strong",
+        borderColor: "border.strong",
+        color: "text.disabled",
+      },
     },
   },
   variants: {
@@ -100,11 +142,6 @@ const input = cva({
         py: "5px",
         textStyle: "bodyS",
         height: "32px",
-      },
-    },
-    fullWidth: {
-      true: {
-        width: "100%",
       },
     },
   },

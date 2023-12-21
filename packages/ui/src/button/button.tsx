@@ -16,12 +16,16 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   endIcon?: React.ReactNode;
   asChild?: boolean;
   loading?: boolean;
+  shadow?: boolean;
 };
+
+//TODO: separate icon only buttons intro separate component with tooltip and square shape
 
 export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
   {
     size = "default",
     variant = "primary",
+    shadow = true,
     children,
     startIcon,
     endIcon,
@@ -37,7 +41,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
     <Component
       type={!asChild ? "button" : undefined}
       {...props}
-      className={cx(button({ size, variant }), props.className)}
+      className={cx(button({ size, variant, shadow }), props.className)}
       disabled={disabled || loading}
       ref={ref}
     >
@@ -73,7 +77,7 @@ const button = cva({
     borderRadius: 8,
     transitionDuration: "fast",
     transitionTimingFunction: "easeInOut",
-    boxShadow: "l1",
+    shadow: "l1",
   },
   variants: {
     size: {
@@ -150,6 +154,20 @@ const button = cva({
           borderColor: "border.primary",
           backgroundColor: "bg",
         },
+      },
+      ghost: {
+        color: "text",
+        backgroundColor: "transparent",
+        shadow: "none",
+        _hover: {
+          backgroundColor: "bg.hover",
+          shadow: "none",
+        },
+      },
+    },
+    shadow: {
+      false: {
+        shadow: "none",
       },
     },
   },

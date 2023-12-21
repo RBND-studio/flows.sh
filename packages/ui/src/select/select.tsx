@@ -38,7 +38,9 @@ export function Select<T extends string>({
         <Button
           className={cx(
             css({
+              textStyle: "bodyS",
               position: "relative",
+              shadow: "none",
               "&>:last-child": {
                 flex: 1,
                 justifyContent: "flex-end",

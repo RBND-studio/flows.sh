@@ -28,7 +28,6 @@ export const JoinWaitlist: FC = () => {
         <DialogContent>
           {!thankYouOpen ? (
             <Input
-              fullWidth
               inputClassName={css({ mt: "space8" })}
               label={<Text variant="bodyM">Get notified when we launch Flows.</Text>}
               onChange={(e) => setEmail(e.currentTarget.value)}
