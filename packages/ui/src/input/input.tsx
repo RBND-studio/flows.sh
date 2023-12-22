@@ -78,13 +78,15 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
         </Text>
         {inputRender}
       </label>
-      <Text
-        className={cx(css({ mt: "space4" }), descriptionClassName)}
-        color="subtle"
-        variant="bodyXs"
-      >
-        {description}
-      </Text>
+      {description !== undefined && (
+        <Text
+          className={cx(css({ mt: "space4" }), descriptionClassName)}
+          color="subtle"
+          variant="bodyXs"
+        >
+          {description}
+        </Text>
+      )}
     </div>
   );
 });
@@ -121,7 +123,7 @@ const input = cva({
       "&&": {
         backgroundColor: "bg.strong",
         borderColor: "border.strong",
-        color: "text.disabled",
+        color: "text.muted",
       },
     },
   },
