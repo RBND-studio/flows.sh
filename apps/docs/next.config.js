@@ -10,6 +10,7 @@ const nextConfig = {
   reactStrictMode: true,
   transpilePackages: ["ui"],
   output: "standalone",
+  swcMinify: true,
   experimental: {
     outputFileTracingRoot: path.join(__dirname, "../../"),
     optimizePackageImports: ["ui"],
