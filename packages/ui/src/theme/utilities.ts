@@ -61,7 +61,7 @@ export const cardWrap = defineUtility({
       borderStyle: "solid",
       borderWidth: "1px",
       borderColor: token("colors.border"),
-      borderRadius: token("radii.radius12"),
+      borderRadius: token("radii.radius8"),
       backgroundColor: token("colors.bg.card"),
       boxShadow: token("shadows.l1"),
     };

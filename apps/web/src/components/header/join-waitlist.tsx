@@ -46,7 +46,9 @@ export const JoinWaitlist: FC = () => {
         </DialogContent>
         <DialogActions>
           <DialogClose asChild>
-            <Button variant="black">Close</Button>
+            <Button shadow={false} variant="secondary">
+              Close
+            </Button>
           </DialogClose>
           {!thankYouOpen && (
             <Button loading={loading} type="submit">

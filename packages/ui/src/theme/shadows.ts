@@ -2,8 +2,7 @@ import { defineTokens } from "@pandacss/dev";
 
 export const shadows = defineTokens.shadows({
   light1: {
-    value:
-      "1px 2px 2.5px -2.5px rgba(10, 10, 10, 0.2), 0.4px 0.8px 1px -1.2px rgba(10, 10, 10, 0.2), 0px 0.5px 1.5px 0px rgba(10, 10, 10, 0.2)",
+    value: "0px 2px 2px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.08)",
   },
   light2: {
     value:
@@ -22,8 +21,7 @@ export const shadows = defineTokens.shadows({
       "18.8px 37.5px 39.3px -3.7px rgba(10, 10, 10, 0.07), 12.3px 15.4px 25.8px -3.2px rgba(10, 10, 10, 0.08), 7.7px 15.4px 16.1px -2.7px rgba(10, 10, 10, 0.09), 4.6px 9.1px 9.6px -2.1px rgba(10, 10, 10, 0.1), 2.6px 5.1px 5.4px -1.6px rgba(10, 10, 10, 0.11), 1.4px 2.8px 2.9px -1.1px rgba(10, 10, 10, 0.12), 0.7px 1.5px 1.6px -0.5px rgba(10, 10, 10, 0.13), 0px 0.5px 1.5px 0px rgba(10, 10, 10, 0.2)",
   },
   dark1: {
-    value:
-      "1px 2px 2.5px -2.5px rgba(0,0,0, 0.7), 0.4px 0.8px 1px -1.2px rgba(0,0,0, 0.75), 0px 0.5px 1.5px 0px rgba(0,0,0, 1)",
+    value: "0px 2px 2px rgba(0, 0, 0, 0.4), 0px 0px 1px rgba(0, 0, 0, 0.6)",
   },
   dark2: {
     value:

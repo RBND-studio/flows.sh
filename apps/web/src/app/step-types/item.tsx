@@ -108,7 +108,9 @@ export const Item: FC<{ item: ItemType }> = ({ item }) => {
             </DialogContent>
             <DialogActions>
               <DialogClose asChild>
-                <Button variant="black">Close</Button>
+                <Button shadow={false} variant="secondary">
+                  Close
+                </Button>
               </DialogClose>
               <Button onClick={() => flowId && startFlow(flowId)} variant="secondary">
                 Restart

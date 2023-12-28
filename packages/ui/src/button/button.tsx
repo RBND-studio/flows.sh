@@ -131,7 +131,7 @@ const button = cva({
         borderStyle: "solid",
         borderWidth: 1,
         borderColor: "bg.black",
-        color: "text.white",
+        color: "text.onBlack",
         _hover: {
           borderColor: "bg.blackHover",
           backgroundColor: "bg.blackHover",
