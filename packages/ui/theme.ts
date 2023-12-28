@@ -4,6 +4,8 @@ import { defineTokens } from "@pandacss/dev";
 import {
   bor,
   borBottom,
+  borLeft,
+  borRight,
   borTop,
   breakpoints,
   cardWrap,
@@ -44,6 +46,8 @@ export const utilities: Config["utilities"] = {
     bor,
     borBottom,
     borTop,
+    borLeft,
+    borRight,
     cardWrap,
   },
 };

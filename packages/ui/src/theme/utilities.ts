@@ -33,6 +33,28 @@ export const borTop = defineUtility({
   },
 });
 
+export const borLeft = defineUtility({
+  values: ["1px"],
+  transform(value, { token }) {
+    return {
+      borderLeftStyle: "solid",
+      borderLeftWidth: value,
+      borderLeftColor: token("colors.border"),
+    };
+  },
+});
+
+export const borRight = defineUtility({
+  values: ["1px"],
+  transform(value, { token }) {
+    return {
+      borderRightStyle: "solid",
+      borderRightWidth: value,
+      borderRightColor: token("colors.border"),
+    };
+  },
+});
+
 export const cardWrap = defineUtility({
   transform(_, { token }) {
     return {
