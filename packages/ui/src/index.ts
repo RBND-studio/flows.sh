@@ -5,6 +5,7 @@ export * from "./icon";
 export * from "./input";
 export * from "./popover";
 export * from "./select";
+export * from "./skeleton";
 export * from "./spinner";
 export * from "./switch";
 export * from "./tabs";

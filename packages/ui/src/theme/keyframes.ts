@@ -25,4 +25,12 @@ export const keyframes: CssKeyframes = {
       transform: "rotate(360deg)",
     },
   },
+  pulse: {
+    "0%, 100%": {
+      opacity: "1",
+    },
+    "50%": {
+      opacity: ".5",
+    },
+  },
 };
