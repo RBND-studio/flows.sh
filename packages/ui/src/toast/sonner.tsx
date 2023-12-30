@@ -1,9 +1,9 @@
 import { css } from "@flows/styled-system/css";
-import React from "react";
+import type { FC } from "react";
 import { toast as sonnerToast, Toaster as SonnerToaster } from "sonner";
 
 // TODO: @OPesicka - make da toast beautifuler
-export const Toaster = (): React.JSX.Element => {
+export const Toaster: FC = () => {
   return (
     <SonnerToaster
       toastOptions={{
@@ -11,7 +11,6 @@ export const Toaster = (): React.JSX.Element => {
         classNames: {
           toast: css({
             width: "100%",
-            color: "text.white",
             borderRadius: "radius12",
             py: "space8",
             px: "space16",
@@ -22,10 +21,15 @@ export const Toaster = (): React.JSX.Element => {
             "& div svg": {
               mt: "space4",
             },
+            backgroundColor: "bg",
+            color: "text",
+            borderColor: "border",
           }),
-          default: css({
-            backgroundColor: "bg.subtle",
-            borderColor: "border.strong",
+          title: css({
+            textStyle: "titleM",
+          }),
+          description: css({
+            color: "text.muted!",
           }),
           success: css({
             backgroundColor: "bg.success",
