@@ -11,8 +11,8 @@ export const Toaster: FC = () => {
         classNames: {
           toast: css({
             width: "100%",
-            borderRadius: "radius12",
-            py: "space8",
+            borderRadius: "radius8",
+            py: "space12",
             px: "space16",
             border: "1px solid",
             textStyle: "bodyS",
@@ -26,37 +26,39 @@ export const Toaster: FC = () => {
             borderColor: "border",
           }),
           title: css({
-            textStyle: "titleM",
+            textStyle: "bodyS!",
+            fontWeight: "600!",
           }),
           description: css({
             color: "text.muted!",
           }),
           success: css({
-            backgroundColor: "bg.success",
-            borderColor: "bg.success",
+            backgroundColor: "bg.successSubtle",
+            borderColor: "border.successSubtle",
+
             "& div svg": {
-              color: "green",
+              color: "icon.success",
             },
           }),
           warning: css({
-            backgroundColor: "border.warning",
-            borderColor: "bg.warning",
+            backgroundColor: "bg.warningSubtle",
+            borderColor: "border.warningSubtle",
             "& div svg": {
-              color: "orange",
+              color: "icon.warning",
             },
           }),
           error: css({
-            backgroundColor: "bg.danger",
-            borderColor: "bg.danger",
+            backgroundColor: "bg.dangerSubtle",
+            borderColor: "border.dangerSubtle",
             "& div svg": {
-              color: "red",
+              color: "icon.danger",
             },
           }),
           info: css({
-            backgroundColor: "bg.info",
-            borderColor: "bg.info",
+            backgroundColor: "bg.infoSubtle",
+            borderColor: "border.infoSubtle",
             "& div svg": {
-              color: "blue",
+              color: "icon.info",
             },
           }),
         },

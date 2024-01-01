@@ -21,6 +21,10 @@ export const semanticTokens = defineSemanticTokens({
       chip: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.900}" } },
       success: { value: { base: "{colors.success.400}", _dark: "{colors.success-dark.400}" } },
       successHover: { value: { base: "{colors.success.500}", _dark: "{colors.success-dark.500}" } },
+      successSubtle: { value: { base: "{colors.success.25}", _dark: "{colors.success-dark.900}" } },
+      warningSubtle: { value: { base: "{colors.warning.25}", _dark: "{colors.warning-dark.900}" } },
+      dangerSubtle: { value: { base: "{colors.danger.25}", _dark: "{colors.danger-dark.900}" } },
+      infoSubtle: { value: { base: "{colors.info.25}", _dark: "{colors.info-dark.900}" } },
     },
     text: {
       DEFAULT: { value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.25}" } },
@@ -42,9 +46,17 @@ export const semanticTokens = defineSemanticTokens({
       strong: { value: { base: "{colors.neutral.150}", _dark: "{colors.neutral.650}" } },
       primary: { value: { base: "{colors.primary.400}", _dark: "{colors.primary-dark.400}" } },
       info: { value: { base: "{colors.info.400}", _dark: "{colors.info-dark.400}" } },
+      infoSubtle: { value: { base: "{colors.info.300}", _dark: "{colors.info-dark.700}" } },
       success: { value: { base: "{colors.success.400}", _dark: "{colors.success-dark.400}" } },
+      successSubtle: {
+        value: { base: "{colors.success.300}", _dark: "{colors.success-dark.700}" },
+      },
       warning: { value: { base: "{colors.warning.400}", _dark: "{colors.warning-dark.400}" } },
+      warningSubtle: {
+        value: { base: "{colors.warning.300}", _dark: "{colors.warning-dark.700}" },
+      },
       danger: { value: { base: "{colors.danger.400}", _dark: "{colors.danger-dark.400}" } },
+      dangerSubtle: { value: { base: "{colors.danger.300}", _dark: "{colors.danger-dark.700}" } },
     },
     icon: {
       DEFAULT: { value: { base: "{colors.neutral.650}", _dark: "{colors.neutral.300}" } },
@@ -52,7 +64,7 @@ export const semanticTokens = defineSemanticTokens({
       primary: { value: { base: "{colors.primary.500}", _dark: "{colors.primary-dark.400}" } },
       info: { value: { base: "{colors.info.500}", _dark: "{colors.info-dark.500}" } },
       success: { value: { base: "{colors.success.500}", _dark: "{colors.success-dark.500}" } },
-      warning: { value: { base: "{colors.warning.500}", _dark: "{colors.warning-dark.400}" } },
+      warning: { value: { base: "{colors.warning.300}", _dark: "{colors.warning-dark.400}" } },
       danger: { value: { base: "{colors.danger.500}", _dark: "{colors.danger-dark.500}" } },
     },
   },
