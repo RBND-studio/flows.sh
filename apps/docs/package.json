@@ -13,7 +13,7 @@
     "prepare": "panda codegen"
   },
   "dependencies": {
-    "next": "14.0.4",
+    "next": "14.0.5-canary.36",
     "next-sitemap": "^4.2.3",
     "nextra": "^2.13.2",
     "nextra-theme-docs": "^2.13.2",
