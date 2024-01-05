@@ -10,14 +10,15 @@ const nextConfig = {
   reactStrictMode: true,
   transpilePackages: ["ui"],
   output: "standalone",
+  swcMinify: true,
   experimental: {
     outputFileTracingRoot: path.join(__dirname, "../../"),
     optimizePackageImports: ["ui"],
   },
   basePath: "/docs",
   i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
+    defaultLocale: "en-US",
+    locales: ["en-US"],
   },
 };
 

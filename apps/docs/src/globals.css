@@ -23,6 +23,6 @@ body::after {
   right: 0;
   bottom: 0;
   z-index: -2;
-  background-image: url("/pattern.svg");
+  background-image: url("/docs/pattern.svg");
   background-repeat: repeat-x;
 }

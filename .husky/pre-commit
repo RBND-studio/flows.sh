@@ -1,4 +1,15 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+# Section for gitleaks
+if ! command -v gitleaks > /dev/null 2>&1
+then
+
+    echo "gitleaks is not installed. Please run 'brew install gitleaks' or visit https://github.com/gitleaks/gitleaks#installing"
+    exit 1
+fi
+
+# Run gitleaks
+gitleaks protect --staged -v 
+
 pnpm pre-commit

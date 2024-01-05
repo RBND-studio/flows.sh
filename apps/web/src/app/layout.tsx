@@ -4,6 +4,7 @@ import "@rbnd/flows/public/flows.css";
 import { css } from "@flows/styled-system/css";
 import { CtaBanner } from "components/cta-banner";
 import { Providers } from "components/providers";
+import { PRODUCTION } from "lib";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import Script from "next/script";
@@ -58,12 +59,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
           <Footer />
         </Providers>
       </body>
-      <Script
-        data-api="https://flows.sh/box/event"
-        data-domain="flows.sh"
-        defer
-        src="https://flows.sh/box/script.js"
-      />
+      {PRODUCTION ? (
+        <Script data-api="/box/event" data-domain="flows.sh" defer src="/box/script.js" />
+      ) : null}
     </html>
   );
 }

@@ -16,12 +16,16 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   endIcon?: React.ReactNode;
   asChild?: boolean;
   loading?: boolean;
+  shadow?: boolean;
 };
+
+//TODO: separate icon only buttons intro separate component with tooltip and square shape
 
 export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
   {
     size = "default",
     variant = "primary",
+    shadow = true,
     children,
     startIcon,
     endIcon,
@@ -37,7 +41,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
     <Component
       type={!asChild ? "button" : undefined}
       {...props}
-      className={cx(button({ size, variant }), props.className)}
+      className={cx(button({ size, variant, shadow }), props.className)}
       disabled={disabled || loading}
       ref={ref}
     >
@@ -73,21 +77,24 @@ const button = cva({
     borderRadius: 8,
     transitionDuration: "fast",
     transitionTimingFunction: "easeInOut",
-    boxShadow: "l1",
+    shadow: "l1",
   },
   variants: {
     size: {
       default: {
         textStyle: "titleS",
         padding: "5px 11px",
+        height: 32,
       },
       large: {
         textStyle: "titleL",
         padding: "11px 23px",
+        height: 52,
       },
       small: {
         textStyle: "titleS",
         padding: "3px 7px",
+        height: 28,
       },
     },
     variant: {
@@ -113,8 +120,8 @@ const button = cva({
         color: "text",
         borderStyle: "solid",
         borderWidth: 1,
-        borderColor: "border.primary",
-        backgroundColor: "bg",
+        borderColor: "border.strong",
+        backgroundColor: "bg.muted",
         _hover: {
           backgroundColor: "bg.hover",
         },
@@ -124,7 +131,7 @@ const button = cva({
         borderStyle: "solid",
         borderWidth: 1,
         borderColor: "bg.black",
-        color: "text.white",
+        color: "text.onBlack",
         _hover: {
           borderColor: "bg.blackHover",
           backgroundColor: "bg.blackHover",
@@ -136,6 +143,31 @@ const button = cva({
           pointerEvents: "none",
           boxShadow: "none",
         },
+      },
+      grey: {
+        color: "text",
+        borderStyle: "solid",
+        borderWidth: 1,
+        borderColor: "border.strong",
+        backgroundColor: "bg.muted",
+        _hover: {
+          borderColor: "border.primary",
+          backgroundColor: "bg",
+        },
+      },
+      ghost: {
+        color: "text",
+        backgroundColor: "transparent",
+        shadow: "none",
+        _hover: {
+          backgroundColor: "bg.hover",
+          shadow: "none",
+        },
+      },
+    },
+    shadow: {
+      false: {
+        shadow: "none",
       },
     },
   },

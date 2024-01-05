@@ -28,7 +28,7 @@ export const JoinWaitlist: FC = () => {
         <DialogContent>
           {!thankYouOpen ? (
             <Input
-              inputClassName={css({ width: "100%", mt: "space8" })}
+              inputClassName={css({ mt: "space8" })}
               label={<Text variant="bodyM">Get notified when we launch Flows.</Text>}
               onChange={(e) => setEmail(e.currentTarget.value)}
               onFocus={loadRecaptcha}
@@ -46,7 +46,9 @@ export const JoinWaitlist: FC = () => {
         </DialogContent>
         <DialogActions>
           <DialogClose asChild>
-            <Button variant="black">Close</Button>
+            <Button shadow={false} variant="secondary">
+              Close
+            </Button>
           </DialogClose>
           {!thankYouOpen && (
             <Button loading={loading} type="submit">

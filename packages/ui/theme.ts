@@ -2,9 +2,16 @@ import type { Config } from "@pandacss/dev";
 import { defineTokens } from "@pandacss/dev";
 
 import {
+  bor,
+  borBottom,
+  borLeft,
+  borRight,
+  borTop,
   breakpoints,
+  cardWrap,
   durations,
   easings,
+  keyframes,
   palette,
   radii,
   semanticTokens,
@@ -27,26 +34,20 @@ export const theme: Config["theme"] = {
   semanticTokens,
   textStyles,
   tokens,
-  keyframes: {
-    enter: {
-      "0%": { transform: "scale(.95)", opacity: 0 },
-      "100%": { transform: "scale(1)", opacity: 1 },
-    },
-    exit: {
-      "0%": { transform: "scale(1)", opacity: 1 },
-      "100%": { transform: "scale(.95)", opacity: 0 },
-    },
-    fadein: {
-      "0%": { opacity: "0" },
-      "100%": { opacity: "1" },
-    },
-    fadeout: {
-      "0%": { opacity: "1" },
-      "100%": { opacity: "0" },
-    },
-  },
+  keyframes,
 };
 
 export const conditions: Config["conditions"] = {
   dark: ".dark-mode &",
+};
+
+export const utilities: Config["utilities"] = {
+  extend: {
+    bor,
+    borBottom,
+    borTop,
+    borLeft,
+    borRight,
+    cardWrap,
+  },
 };
