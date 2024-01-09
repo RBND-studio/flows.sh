@@ -26,12 +26,22 @@ export const Checkbox = forwardRef<React.ElementRef<typeof CheckboxPrimitive.Roo
         <CheckboxPrimitive.Indicator
           className={css({
             display: "grid",
-            placeItems: "center",
             color: "text.onPrimary",
             height: "100%",
+            position: "relative",
           })}
         >
-          <Icon className={css({ height: "100%" })} color="inherit" icon={Check16} />
+          <Icon
+            className={css({
+              height: "16px",
+              width: "16px",
+              position: "absolute",
+              top: -1,
+              left: -1,
+            })}
+            color="inherit"
+            icon={Check16}
+          />
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Root>
     );
@@ -61,8 +71,8 @@ export const Checkbox = forwardRef<React.ElementRef<typeof CheckboxPrimitive.Roo
 
 const checkbox = cva({
   base: {
-    width: "20px",
-    height: "20px",
+    width: "16px",
+    height: "16px",
     borderRadius: "radius4",
     backgroundColor: "bg",
     borderWidth: 1,

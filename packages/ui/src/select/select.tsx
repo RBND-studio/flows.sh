@@ -124,7 +124,7 @@ export function Select<T extends string>({
   if (label === undefined) return selectRender;
 
   return (
-    <label>
+    <label className={css({ display: "flex", flexDirection: "column" })}>
       <Text as="span" className={css({ mb: "space4", display: "block" })}>
         {label}
       </Text>

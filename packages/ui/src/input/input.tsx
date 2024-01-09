@@ -13,7 +13,7 @@ type Props = {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value?: string | number;
   placeholder?: string;
-  defaultValue?: string;
+  defaultValue?: string | number;
   type?: string;
   required?: boolean;
   labelClassName?: string;
