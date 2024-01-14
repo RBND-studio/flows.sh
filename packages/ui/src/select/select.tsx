@@ -19,12 +19,16 @@ type Props<T extends string> = {
   label?: string;
   onChange?: (value: T) => void;
   buttonSize?: ComponentProps<typeof Button>["size"];
+  description?: string;
+  labelClassName?: string;
 };
 
 export function Select<T extends string>({
   options,
   buttonClassName,
+  description,
   placeholder,
+  labelClassName,
   buttonSize = "small",
   label,
   onChange,
@@ -124,11 +128,16 @@ export function Select<T extends string>({
   if (label === undefined) return selectRender;
 
   return (
-    <label className={css({ display: "flex", flexDirection: "column" })}>
+    <label className={cx(css({ display: "flex", flexDirection: "column" }), labelClassName)}>
       <Text as="span" className={css({ mb: "space4", display: "block" })}>
         {label}
       </Text>
       {selectRender}
+      {description ? (
+        <Text className={css({ mt: "space4" })} color="subtle" variant="bodyXs">
+          {description}
+        </Text>
+      ) : null}
     </label>
   );
 }

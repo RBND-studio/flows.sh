@@ -1,4 +1,5 @@
 import { css, cva, cx } from "@flows/styled-system/css";
+import { Flex } from "@flows/styled-system/jsx";
 import { Slot } from "@radix-ui/react-slot";
 import { type FocusEvent, forwardRef, type ReactNode } from "react";
 
@@ -30,6 +31,7 @@ type Props = {
   descriptionClassName?: string;
   disabled?: boolean;
   fullClassName?: string;
+  optional?: boolean;
 };
 
 export const Input = forwardRef<HTMLInputElement, Props>(function Input(
@@ -40,6 +42,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
     wrapperClassName,
     inputClassName,
     fullClassName,
+    optional,
     width,
     descriptionClassName,
     asChild,
@@ -73,9 +76,16 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
       )}
     >
       <label className={labelClassName}>
-        <Text as="span" className={css({ mb: "space4", display: "block" })}>
-          {label}
-        </Text>
+        <Flex mb="space4">
+          <Text as="span" className={css({ display: "block", width: "100%", mr: "space4" })}>
+            {label}
+            {optional ? (
+              <Text as="span" color="subtle" variant="bodyXs">
+                (optional)
+              </Text>
+            ) : null}
+          </Text>
+        </Flex>
         {inputRender}
       </label>
       {description !== undefined && (
@@ -93,7 +103,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
 
 const inputWrapper = cva({
   base: {
-    display: "block",
+    display: "flex",
   },
 });
 
