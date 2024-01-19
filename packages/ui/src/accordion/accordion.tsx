@@ -9,11 +9,16 @@ import { Text } from "../text";
 type Props = {
   title: React.ReactNode;
   children?: React.ReactNode;
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
 };
 
-export const Accordion: FC<Props> = ({ title, children }) => {
-  const [expanded, setExpanded] = useState(false);
-  const toggleExpanded = (): void => setExpanded((prev) => !prev);
+export const Accordion: FC<Props> = ({ title, children, onOpenChange, open }) => {
+  // eslint-disable-next-line react/hook-use-state -- useful for controlled components
+  const state = useState(false);
+  const expanded = open ?? state[0];
+  const setExpanded = onOpenChange ?? state[1];
+  const toggleExpanded = (): void => setExpanded(!expanded);
 
   return (
     <Box cardWrap="-" overflow="hidden">
