@@ -13,6 +13,7 @@ export * from "./src/home16";
 export * from "./src/kebab-horizontal16";
 export * from "./src/lightning24";
 export * from "./src/log16";
+export * from "./src/paintbrush16";
 export * from "./src/person24";
 export * from "./src/play24";
 export * from "./src/plus16";
