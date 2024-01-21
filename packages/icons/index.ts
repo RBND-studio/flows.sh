@@ -8,6 +8,8 @@ export * from "./src/close16";
 export * from "./src/comment16";
 export * from "./src/flows16";
 export * from "./src/fork24";
+export * from "./src/github16";
+export * from "./src/google16";
 export * from "./src/graph16";
 export * from "./src/home16";
 export * from "./src/kebab-horizontal16";
