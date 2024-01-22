@@ -8,6 +8,7 @@ type Props = {
   checked: boolean;
   onChange: (checked: boolean) => void;
   disabled?: boolean;
+  id?: string;
 };
 
 export const Switch: FC<Props> = ({ onChange, ...props }) => {
