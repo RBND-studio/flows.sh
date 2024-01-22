@@ -1,4 +1,4 @@
-import type { Flow } from "@rbnd/flows";
+import type { Flow } from "@flows/js";
 import { Flows } from "components/flows";
 import type { FC, ReactNode } from "react";
 
@@ -30,7 +30,7 @@ const flows: Flow[] = [
             action: 1,
           },
         ],
-        options: [],
+        hideNext: true,
         placement: "left",
       },
       [
