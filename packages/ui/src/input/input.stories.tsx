@@ -6,10 +6,12 @@ const meta: Meta<typeof Input> = {
   title: "Input",
   component: Input,
   args: {
-    defaultValue: "Hello World!",
     // eslint-disable-next-line no-console -- useful for storybook
     onChange: console.log,
-    label: "Input",
+    label: "Name",
+    optional: true,
+    placeholder: "Enter your name..",
+    description: "Or don't, it's up to you.",
   },
 };
 
