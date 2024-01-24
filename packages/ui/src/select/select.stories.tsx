@@ -8,6 +8,8 @@ const meta: Meta<typeof Select> = {
   args: {
     value: "",
     placeholder: "Select",
+    label: "Favorite number",
+    description: "Favorite number is required.",
     options: [
       { value: "1", label: "One" },
       { value: "2", label: "Two" },

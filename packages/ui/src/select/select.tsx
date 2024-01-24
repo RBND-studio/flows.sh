@@ -1,53 +1,68 @@
 "use client";
 
 import { css, cx } from "@flows/styled-system/css";
+import { Flex } from "@flows/styled-system/jsx";
 import * as RadixSelect from "@radix-ui/react-select";
 import { CaretDown16, Check16 } from "icons";
-import type { ComponentProps } from "react";
+import { type ComponentProps, useId } from "react";
 
 import { Button } from "../button";
+import { Description } from "../description";
 import { Icon } from "../icon";
+import { Label } from "../label";
 import { Text } from "../text";
 
 type Props<T extends string> = {
   value?: T;
   defaultValue?: T;
   options: readonly { value: T; label?: string }[];
-  buttonClassName?: string;
-  inputClassName?: string;
-  placeholder?: string;
-  label?: string;
   onChange?: (value: T) => void;
+  className?: string;
+  buttonClassName?: string;
+  placeholder?: string;
   buttonSize?: ComponentProps<typeof Button>["size"];
-  description?: string;
+  optional?: boolean;
+  label?: string;
   labelClassName?: string;
+  description?: string;
+  descriptionClassName?: string;
+  id?: string;
 };
 
 export function Select<T extends string>({
   options,
   buttonClassName,
   description,
+  descriptionClassName,
   placeholder,
+  label,
   labelClassName,
   buttonSize = "small",
-  label,
   onChange,
+  optional,
   ...props
 }: Props<T>): JSX.Element {
+  const id = useId();
   const currentOption = options.find((opt) => opt.value === (props.value ?? props.defaultValue));
 
   const selectRender = (
     <RadixSelect.Root {...props} onValueChange={onChange}>
-      <RadixSelect.Trigger asChild>
+      <RadixSelect.Trigger asChild id={props.id ?? id}>
         <Button
           className={cx(
             css({
               textStyle: "bodyS",
               position: "relative",
+              outline: "none",
               shadow: "none",
               "&>:last-child": {
                 flex: 1,
                 justifyContent: "flex-end",
+              },
+              _focus: {
+                borderColor: "border.primary",
+                backgroundColor: "bg",
+                boxShadow: "focus",
               },
             }),
             buttonClassName,
@@ -86,7 +101,7 @@ export function Select<T extends string>({
               animationName: "exit",
               animationDuration: "120ms",
             },
-            minWidth: "200px",
+            minW: "var(--radix-select-trigger-width)",
           })}
           position="popper"
           sideOffset={4}
@@ -103,6 +118,7 @@ export function Select<T extends string>({
                   borderRadius: "radius4",
                   cursor: "default",
                   _hover: { backgroundColor: "bg.hover" },
+                  "&[data-highlighted]": { backgroundColor: "bg.hover" },
                   outline: "none",
                 })}
                 key={option.value}
@@ -125,19 +141,23 @@ export function Select<T extends string>({
     </RadixSelect.Root>
   );
 
-  if (label === undefined) return selectRender;
-
   return (
-    <label className={cx(css({ display: "flex", flexDirection: "column" }), labelClassName)}>
-      <Text as="span" className={css({ mb: "space4", display: "block" })}>
-        {label}
-      </Text>
-      {selectRender}
-      {description ? (
-        <Text className={css({ mt: "space4" })} color="subtle" variant="bodyXs">
-          {description}
-        </Text>
+    <Flex flexDir="column">
+      {label !== undefined ? (
+        <Label
+          className={cx(css({ mb: "space4" }), labelClassName)}
+          htmlFor={props.id ?? id}
+          optional={optional}
+        >
+          {label}
+        </Label>
       ) : null}
-    </label>
+      {selectRender}
+      {description !== undefined && (
+        <Description className={cx(css({ mt: "space4" }), descriptionClassName)}>
+          {description}
+        </Description>
+      )}
+    </Flex>
   );
 }

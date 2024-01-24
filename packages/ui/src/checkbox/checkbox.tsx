@@ -1,10 +1,11 @@
 import { css, cva, cx } from "@flows/styled-system/css";
+import { Flex } from "@flows/styled-system/jsx";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { Check16 } from "icons";
-import { forwardRef } from "react";
+import { forwardRef, useId } from "react";
 
 import { Icon } from "../icon";
-import { Text } from "../text";
+import { Label } from "../label";
 
 type Props = {
   checked?: boolean;
@@ -17,12 +18,21 @@ type Props = {
   defaultChecked?: boolean;
   label?: string;
   labelClassName?: string;
+  inputClassName?: string;
+  id?: string;
 };
 
 export const Checkbox = forwardRef<React.ElementRef<typeof CheckboxPrimitive.Root>, Props>(
-  function Checkbox({ className, label, labelClassName, ...props }, ref) {
+  function Checkbox({ className, label, labelClassName, inputClassName, ...props }, ref) {
+    const id = useId();
+
     const check = (
-      <CheckboxPrimitive.Root className={cx(checkbox({}), className)} ref={ref} {...props}>
+      <CheckboxPrimitive.Root
+        className={cx(checkbox({}), inputClassName)}
+        ref={ref}
+        {...props}
+        id={props.id ?? id}
+      >
         <CheckboxPrimitive.Indicator
           className={css({
             display: "grid",
@@ -46,26 +56,16 @@ export const Checkbox = forwardRef<React.ElementRef<typeof CheckboxPrimitive.Roo
       </CheckboxPrimitive.Root>
     );
 
-    if (label !== undefined)
-      return (
-        <label
-          className={cx(
-            css({
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "space4",
-              cursor: !props.disabled ? "pointer" : undefined,
-              overflow: "hidden",
-            }),
-            labelClassName,
-          )}
-        >
-          {check}
-          <Text as="span">{label}</Text>
-        </label>
-      );
-
-    return check;
+    return (
+      <Flex alignItems="center" className={className} gap="space4">
+        {check}
+        {label !== undefined ? (
+          <Label className={labelClassName} htmlFor={props.id ?? id}>
+            {label}
+          </Label>
+        ) : null}
+      </Flex>
+    );
   },
 );
 

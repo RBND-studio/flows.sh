@@ -5,7 +5,9 @@ import { Switch } from ".";
 const meta: Meta<typeof Switch> = {
   title: "Switch",
   component: Switch,
-  args: {},
+  args: {
+    label: "Switch",
+  },
 };
 
 export default meta;

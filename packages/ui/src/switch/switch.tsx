@@ -1,26 +1,46 @@
 "use client";
 
 import { cva } from "@flows/styled-system/css";
+import { Flex } from "@flows/styled-system/jsx";
 import * as RadixSwitch from "@radix-ui/react-switch";
-import type { FC } from "react";
+import { type FC, useId } from "react";
+
+import { Label } from "../label";
 
 type Props = {
   checked: boolean;
   onChange: (checked: boolean) => void;
   disabled?: boolean;
   id?: string;
+  label?: string;
+  labelClassName?: string;
+  className?: string;
 };
 
-export const Switch: FC<Props> = ({ onChange, ...props }) => {
-  return (
-    <RadixSwitch.Root className={root()} onCheckedChange={onChange} {...props}>
+export const Switch: FC<Props> = ({ onChange, className, label, labelClassName, ...props }) => {
+  const id = useId();
+
+  const switchRender = (
+    <RadixSwitch.Root className={root()} onCheckedChange={onChange} {...props} id={props.id ?? id}>
       <RadixSwitch.SwitchThumb className={thumb()} />
     </RadixSwitch.Root>
+  );
+
+  return (
+    <Flex alignItems="center" className={className} gap="space8">
+      {switchRender}
+      {label !== undefined ? (
+        <Label className={labelClassName} htmlFor={props.id ?? id}>
+          {label}
+        </Label>
+      ) : null}
+    </Flex>
   );
 };
 
 const root = cva({
   base: {
+    cursor: "pointer",
     width: 36,
     height: 20,
     borderRadius: 9999,
@@ -47,6 +67,7 @@ const thumb = cva({
     height: 16,
     borderRadius: 9999,
     bg: "bg",
+    boxShadow: "l1",
     transitionDuration: "fast",
     transitionTimingFunction: "easeInOut",
     transform: "translateX(2px)",

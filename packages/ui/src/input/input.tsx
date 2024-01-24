@@ -57,7 +57,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
       {label !== undefined ? (
         <Label
           className={cx(css({ mb: "space4" }), labelClassName)}
-          htmlFor={id}
+          htmlFor={props.id ?? id}
           optional={optional}
         >
           {label}
