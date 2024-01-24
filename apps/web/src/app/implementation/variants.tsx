@@ -53,7 +53,7 @@ export const variants: Variant[] = [
     visual: (
       <CodeHighlight className={css({ height: "408px", margin: "0!" })}>
         <pre>
-          <code className="flows.ts">{`import { init } from "@rbnd/flows"; // Fully typed
+          <code className="flows.ts">{`import { init } from "@flows/js"; // Fully typed
 
 init({
   projectId: "my-project",
@@ -124,8 +124,9 @@ init({
     <title>Vanilla JS example - Flows JS</title>
 
     <!-- How you would use Flows in your own code -->
-    <script src="https://cdn.jsdelivr.net/npm/@rbnd/flows@0.0.9/dist/index.global.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@rbnd/flows@0.0.9/public/flows.css" />
+    <!-- Make sure to lock specific version to avoid braking changes. See docs for more info. -->
+    <script src="https://cdn.jsdelivr.net/npm/@flows/js/dist/index.global.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@flows/js/css.min/flows.css" />
 
     <script src="flows.js"></script>
 

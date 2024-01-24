@@ -1,7 +1,9 @@
 "use client";
 
-import type { FlowsOptions } from "@rbnd/flows";
-import { endFlow, init } from "@rbnd/flows";
+import "@flows/js/flows.css";
+
+import type { FlowsOptions } from "@flows/js";
+import { endFlow, init } from "@flows/js";
 import { usePrevious } from "hooks";
 import type { FC, ReactNode } from "react";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
@@ -18,7 +20,7 @@ export const Flows: FC<Props> = ({ children, ...options }) => {
   const [runningFlowIds, setRunningFlowIds] = useState<string[]>([]);
 
   useEffect(() => {
-    init({
+    void init({
       ...options,
       tracking: (event) =>
         setRunningFlowIds((prev) => {
@@ -28,7 +30,9 @@ export const Flows: FC<Props> = ({ children, ...options }) => {
           return prev;
         }),
     });
-    return () => init({ flows: [] });
+    return () => {
+      void init({ flows: [] });
+    };
   }, [options]);
 
   const flowIds = useMemo(() => (options.flows ?? []).map((f) => f.id), [options.flows]);
@@ -36,8 +40,8 @@ export const Flows: FC<Props> = ({ children, ...options }) => {
   const flowIdsChanged = prevFlowIds && flowIds.toString() !== prevFlowIds.toString();
 
   useEffect(() => {
-    prevFlowIds?.forEach(endFlow);
-    return () => flowIds.forEach(endFlow);
+    prevFlowIds?.forEach((id) => endFlow(id));
+    return () => flowIds.forEach((id) => endFlow(id));
     // eslint-disable-next-line react-hooks/exhaustive-deps -- only run on flowIds change
   }, [flowIdsChanged]);
 

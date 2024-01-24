@@ -1,7 +1,7 @@
 "use client";
 
+import { endFlow, startFlow } from "@flows/js";
 import { css } from "@flows/styled-system/css";
-import { endFlow, startFlow } from "@rbnd/flows";
 import { useFlowsContext } from "components/flows";
 import { ArrowRight16 } from "icons";
 import { type FC, type ReactNode } from "react";

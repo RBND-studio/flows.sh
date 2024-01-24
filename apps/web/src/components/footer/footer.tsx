@@ -44,6 +44,11 @@ const footerGroups: FooterGroup[] = [
         href: links.rbndGithub,
         target: "_blank",
       },
+      {
+        title: "Status",
+        href: links.status,
+        target: "_blank",
+      },
     ],
   },
 ];

@@ -56,6 +56,7 @@ export const borRight = defineUtility({
 });
 
 export const cardWrap = defineUtility({
+  values: ["-"],
   transform(_, { token }) {
     return {
       borderStyle: "solid",

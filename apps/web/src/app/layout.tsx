@@ -1,5 +1,4 @@
 import "./globals.css";
-import "@rbnd/flows/public/flows.css";
 
 import { css } from "@flows/styled-system/css";
 import { CtaBanner } from "components/cta-banner";

@@ -14,6 +14,7 @@ module.exports = {
     "react/function-component-definition": "off",
     "import/no-default-export": "off",
     "no-implicit-coercion": "off",
+    "no-sequences": "off",
   },
   plugins: ["simple-import-sort"],
 };
