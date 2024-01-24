@@ -1,4 +1,4 @@
-import { RECAPTCHA_SITE_KEY, WAITLIST_API_URL } from "lib";
+import { API_URL, RECAPTCHA_SITE_KEY } from "lib";
 import { type FormEvent, useState } from "react";
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type -- not needed
@@ -15,7 +15,7 @@ export const useWaitlistForm = () => {
       action: "submitWaitlist",
     });
     if (captchaToken) {
-      await fetch(WAITLIST_API_URL, {
+      await fetch(`${API_URL}/waitlist`, {
         method: "POST",
         body: JSON.stringify({ captchaToken, email }),
         headers: { "Content-Type": "application/json" },
