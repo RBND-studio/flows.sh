@@ -31,6 +31,7 @@ type Props<T extends string> = {
 
 export function Select<T extends string>({
   options,
+  className,
   buttonClassName,
   description,
   descriptionClassName,
@@ -142,7 +143,7 @@ export function Select<T extends string>({
   );
 
   return (
-    <Flex flexDir="column">
+    <Flex className={className} flexDir="column">
       {label !== undefined ? (
         <Label
           className={cx(css({ mb: "space4" }), labelClassName)}
