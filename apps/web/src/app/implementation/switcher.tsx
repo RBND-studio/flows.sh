@@ -50,9 +50,7 @@ export const Switcher: FC<Props> = ({ currentIndex, setCurrentIndex, variants })
               "&:hover": {
                 color: i === currentIndex ? "text.primary" : "text.subtle",
               },
-              transitionDuration: "fast",
-              transitionTimingFunction: "easeInOut",
-              transitionProperty: "all",
+              fastEaseInOut: "all",
               position: "relative",
               zIndex: 1,
             })}
@@ -70,9 +68,7 @@ export const Switcher: FC<Props> = ({ currentIndex, setCurrentIndex, variants })
             height: "100%",
             borderRadius: "24px",
             background: "bg",
-            transitionDuration: "fast",
-            transitionTimingFunction: "easeInOut",
-            transitionProperty: "all",
+            fastEaseInOut: "all",
           })}
           style={{
             width: wrapper?.children[currentIndex].clientWidth ?? DEFAULT_BUTTON_WIDTH,

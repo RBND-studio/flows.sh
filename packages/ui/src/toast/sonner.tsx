@@ -2,7 +2,6 @@ import { css } from "@flows/styled-system/css";
 import type { FC } from "react";
 import { toast as sonnerToast, Toaster as SonnerToaster } from "sonner";
 
-// TODO: @OPesicka - make da toast beautifuler
 export const Toaster: FC = () => {
   return (
     <SonnerToaster

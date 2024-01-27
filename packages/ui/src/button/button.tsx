@@ -75,8 +75,7 @@ const button = cva({
     justifyContent: "center",
     cursor: "pointer",
     borderRadius: 8,
-    transitionDuration: "fast",
-    transitionTimingFunction: "easeInOut",
+    fastEaseInOut: "all",
     shadow: "l1",
   },
   variants: {

@@ -11,6 +11,7 @@ import {
   cardWrap,
   durations,
   easings,
+  fastEaseInOut,
   keyframes,
   palette,
   radii,
@@ -49,5 +50,6 @@ export const utilities: Config["utilities"] = {
     borLeft,
     borRight,
     cardWrap,
+    fastEaseInOut,
   },
 };

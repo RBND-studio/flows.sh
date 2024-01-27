@@ -45,9 +45,7 @@ export const ThemeSwitch: FC = () => {
         backgroundColor: "bg",
         color: "text",
         textStyle: "bodyS",
-        transitionDuration: "fast",
-        transitionTimingFunction: "easeInOut",
-        transitionProperty: "all",
+        fastEaseInOut: "all",
         width: selectWidth,
         "&:hover": {
           backgroundColor: "bg.muted",

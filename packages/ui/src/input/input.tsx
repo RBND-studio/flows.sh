@@ -86,9 +86,8 @@ const input = cva({
     borderColor: "border.strong",
     backgroundColor: "bg.muted",
     outline: "none",
-    transitionDuration: "fast",
-    transitionTimingFunction: "easeInOut",
     transitionProperty: "border-color, background-color, box-shadow",
+    fastEaseInOut: "border-color, background-color, box-shadow",
     color: "text",
     width: "100%",
     _hover: {

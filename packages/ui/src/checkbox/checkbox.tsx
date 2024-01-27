@@ -79,9 +79,7 @@ const checkbox = cva({
     borderStyle: "solid",
     borderColor: "border.strong",
     cursor: "pointer",
-    transitionDuration: "fast",
-    transitionProperty: "all",
-    transitionTimingFunction: "easeInOut",
+    fastEaseInOut: "all",
 
     _hover: {
       backgroundColor: "bg.hover",

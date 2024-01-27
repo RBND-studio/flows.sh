@@ -78,9 +78,7 @@ export const TabsTrigger = forwardRef<
       >
         <span
           className={css({
-            transitionDuration: "fast",
-            transitionTimingFunction: "easeInOut",
-            transitionProperty: "background-color",
+            fastEaseInOut: "background-color",
             px: "space8",
             py: "space4",
             cursor: "pointer",
