@@ -9,7 +9,7 @@ const flows: Flow[] = [
       {
         title: `Select one of the options`,
         body: "By selecting one of the options the Flow will autmatically branch to the correct step",
-        element: ".conditional-step-select",
+        targetElement: ".conditional-step-select",
         wait: [
           {
             change: [
@@ -18,7 +18,7 @@ const flows: Flow[] = [
                 value: "1",
               },
             ],
-            action: 0,
+            targetBranch: 0,
           },
           {
             change: [
@@ -27,7 +27,7 @@ const flows: Flow[] = [
                 value: "2",
               },
             ],
-            action: 1,
+            targetBranch: 1,
           },
         ],
         hideNext: true,
@@ -37,14 +37,14 @@ const flows: Flow[] = [
         [
           {
             title: "You selected option A",
-            element: ".conditional-step-select",
+            targetElement: ".conditional-step-select",
             placement: "right",
           },
         ],
         [
           {
             title: "You selected option B",
-            element: ".conditional-step-select",
+            targetElement: ".conditional-step-select",
             placement: "right",
           },
         ],
@@ -59,14 +59,14 @@ const flows: Flow[] = [
     id: "wait-step",
     steps: [
       {
-        element: ".wait-step-continue",
+        targetElement: ".wait-step-continue",
         title: "Click to continue",
         body: "By clicking continue we will enter the wait step and Flow will be waiting for the user to click the resume button to continue.",
         placement: "left",
       },
-      { wait: { element: ".wait-step-continue" } },
+      { wait: { clickElement: ".wait-step-continue" } },
       {
-        element: ".wait-step-continue",
+        targetElement: ".wait-step-continue",
         title: "Flow resumed",
         body: "By clicking the continue button, we resumed the flow.",
         placement: "right",

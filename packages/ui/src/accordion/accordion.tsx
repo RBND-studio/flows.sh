@@ -31,7 +31,7 @@ export const Accordion: FC<Props> = ({ title, children, onOpenChange, open }) =>
         py="space8"
       >
         <Box flex={1}>
-          <Text variant="titleM">{title}</Text>
+          {typeof title === "string" ? <Text variant="titleM">{title}</Text> : title}
         </Box>
 
         <Icon
