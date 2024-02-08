@@ -3,7 +3,7 @@
 import "@flows/js/flows.css";
 
 import type { FlowsOptions } from "@flows/js";
-import { endFlow, init } from "@flows/js";
+import { endFlow, init } from "@flows/js/core";
 import { usePrevious } from "hooks";
 import type { FC, ReactNode } from "react";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
