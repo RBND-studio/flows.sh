@@ -1,5 +1,4 @@
 import { css } from "@flows/styled-system/css";
-import { WEB_MAX_WIDTH } from "lib";
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactElement } from "react";
@@ -30,7 +29,7 @@ export const Header = (): ReactElement => {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          maxWidth: WEB_MAX_WIDTH,
+          maxWidth: "960px",
         })}
       >
         <Link

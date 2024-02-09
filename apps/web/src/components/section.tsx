@@ -1,6 +1,5 @@
 import { css, cva, cx } from "@flows/styled-system/css";
 import type { SystemProperties } from "@flows/styled-system/types";
-import { WEB_MAX_WIDTH } from "lib";
 
 export const Section = ({
   children,
@@ -32,7 +31,7 @@ export const Section = ({
       <div
         className={cx(
           css({
-            maxWidth: WEB_MAX_WIDTH,
+            maxWidth: "960px",
             marginX: "auto",
           }),
           innerClassName,
