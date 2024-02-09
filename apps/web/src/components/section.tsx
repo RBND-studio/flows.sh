@@ -1,17 +1,18 @@
 import { css, cva, cx } from "@flows/styled-system/css";
 import type { SystemProperties } from "@flows/styled-system/types";
+import { WEB_MAX_WIDTH } from "lib";
 
 export const Section = ({
   children,
   outerClassName,
   innerClassName,
-  defaultPadding = true,
+  sectionPadding = "default",
   background = "bg.muted",
 }: {
   children: React.ReactNode;
   outerClassName?: string;
   innerClassName?: string;
-  defaultPadding?: boolean;
+  sectionPadding?: "default" | "none" | "small";
   background?: SystemProperties["backgroundColor"];
 }): JSX.Element => {
   return (
@@ -31,11 +32,11 @@ export const Section = ({
       <div
         className={cx(
           css({
-            maxWidth: "1100px",
+            maxWidth: WEB_MAX_WIDTH,
             marginX: "auto",
           }),
           innerClassName,
-          padding({ padding: defaultPadding }),
+          padding({ padding: sectionPadding }),
         )}
       >
         {children}
@@ -47,13 +48,19 @@ export const Section = ({
 const padding = cva({
   variants: {
     padding: {
-      true: {
+      default: {
         paddingY: "space64",
         md: {
           paddingY: "space120",
         },
       },
-      false: {},
+      small: {
+        paddingY: "space40",
+        md: {
+          paddingY: "space80",
+        },
+      },
+      none: {},
     },
   },
 });

@@ -1,20 +1,20 @@
 import { css } from "@flows/styled-system/css";
 import { Section } from "components/section";
 import type { FC } from "react";
-import React from "react";
 import { Text } from "ui";
 
 import { Content } from "./content";
 
-export const StepTypes: FC = () => {
+export const FlowsAreBetterSection: FC = () => {
   return (
     <Section
       innerClassName={css({
         display: "flex",
         flexDirection: "column",
-        gap: "space64",
+        gap: "space40",
         alignItems: "center",
       })}
+      sectionPadding="small"
     >
       <div
         className={css({
@@ -27,19 +27,8 @@ export const StepTypes: FC = () => {
           alignItems: "center",
         })}
       >
-        <Text align="center" as="h2" variant="title4xl">
-          Advanced flow steps
-        </Text>
-        <Text
-          align="center"
-          className={css({
-            maxWidth: "542px",
-          })}
-          color="muted"
-          variant="bodyL"
-        >
-          Apart form the basics like tooltips and modals, Flows offers a range of advanced steps
-          that allow you to craft better flows.
+        <Text align="center" as="h2" variant="title3xl">
+          How are Flows better?
         </Text>
       </div>
       <Content />

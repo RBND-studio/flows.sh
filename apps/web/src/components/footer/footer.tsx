@@ -1,4 +1,5 @@
 import { css } from "@flows/styled-system/css";
+import { WEB_MAX_WIDTH } from "lib";
 import Image from "next/image";
 import type { ReactElement } from "react";
 import React from "react";
@@ -63,7 +64,7 @@ export const Footer = (): ReactElement => {
     >
       <div
         className={css({
-          maxWidth: "1100px",
+          maxWidth: WEB_MAX_WIDTH,
           mx: "auto",
           py: "space40",
           display: "flex",

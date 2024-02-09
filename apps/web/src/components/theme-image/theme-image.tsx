@@ -1,4 +1,4 @@
-import { css } from "@flows/styled-system/css";
+import { css, cx } from "@flows/styled-system/css";
 import type { ImageProps } from "next/image";
 import Image from "next/image";
 
@@ -14,21 +14,27 @@ export const ThemeImage = (props: Props): JSX.Element => {
     <>
       <Image
         {...rest}
-        className={css({
-          _dark: {
-            display: "none",
-          },
-        })}
+        className={cx(
+          css({
+            _dark: {
+              display: "none",
+            },
+          }),
+          rest.className,
+        )}
         src={srcLight}
       />
       <Image
         {...rest}
-        className={css({
-          display: "none",
-          _dark: {
-            display: "unset",
-          },
-        })}
+        className={cx(
+          css({
+            display: "none",
+            _dark: {
+              display: "unset",
+            },
+          }),
+          rest.className,
+        )}
         src={srcDark}
       />
     </>

@@ -12,6 +12,7 @@ type Props = FlowsOptions & {
   children?: ReactNode;
 };
 
+//TODO: check if this is used and remove if not
 const FlowsContext = createContext<{ runningFlowIds: string[] }>({ runningFlowIds: [] });
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type -- not needed
 export const useFlowsContext = () => useContext(FlowsContext);

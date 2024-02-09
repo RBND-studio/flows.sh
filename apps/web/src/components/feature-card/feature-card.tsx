@@ -2,11 +2,12 @@ import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import { Icon, Text } from "ui";
 
-type Props = {
-  featureIcon: React.FC<React.SVGProps<SVGSVGElement>>;
-  featureName: string;
+export type FeatureCardTypes = {
+  featureIcon?: React.FC<React.SVGProps<SVGSVGElement>>;
+  featureName?: string;
   mainSlot: React.ReactNode;
-  illustration: React.ReactNode;
+  illustration?: React.ReactNode;
+  reverse?: boolean;
 };
 
 const wrapperStyles = css({
@@ -22,16 +23,22 @@ const wrapperStyles = css({
   },
 });
 
-export const FeatureCard = (props: Props): JSX.Element => {
+export const FeatureCard = (props: FeatureCardTypes): JSX.Element => {
   return (
-    <Flex className={wrapperStyles} flexDir="column">
+    <Flex
+      className={wrapperStyles}
+      flexDirection={props.reverse ? "column-reverse" : "column"}
+      width="100%"
+    >
       <Flex flexDir="column" gap="space4" padding="space24">
-        <Flex alignItems="center" gap="space8">
-          <Icon color="text.subtle" icon={props.featureIcon} />
-          <Text color="subtle" variant="bodyS">
-            {props.featureName}
-          </Text>
-        </Flex>
+        {props.featureIcon && props.featureName ? (
+          <Flex alignItems="center" gap="space8">
+            <Icon color="text.subtle" icon={props.featureIcon} />
+            <Text color="subtle" variant="bodyS">
+              {props.featureName}
+            </Text>
+          </Flex>
+        ) : null}
         <Text
           className={css({
             "& span": {
