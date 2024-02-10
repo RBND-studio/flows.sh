@@ -4,6 +4,7 @@ import { ThemeImage } from "components/theme-image";
 import { FeatureCard, type FeatureCardTypes } from "components/ui";
 import { Hourglass16, Storage16 } from "icons";
 import type { FC } from "react";
+import { Text } from "ui";
 
 const mainList: FeatureCardTypes[] = [
   {
@@ -11,26 +12,37 @@ const mainList: FeatureCardTypes[] = [
     featureName: "Optimized delivery",
     mainSlot: (
       <>
-        <span>Speed as priority.</span> Your users won’t wait for the onboarding to load. That’s why
-        Flows show up{" "}
+        <span>Speed as priority.</span> Your users won’t wait for the tour to load. That’s why Flows
+        show{" "}
         <span
           className={css({
             color: "text.primary!",
           })}
         >
-          ~200ms
-        </span>{" "}
-        after initialization.
+          instantly*
+        </span>
       </>
     ),
     illustration: (
-      <ThemeImage
-        alt="Chart illustrating delivery speed"
-        height={720}
-        srcDark="/images/homepage/delivery-speed-dark.png"
-        srcLight="/images/homepage/delivery-speed-light.png"
-        width={1392}
-      />
+      <>
+        <ThemeImage
+          alt="Chart illustrating delivery speed"
+          height={720}
+          srcDark="/images/homepage/delivery-speed-dark.png"
+          srcLight="/images/homepage/delivery-speed-light.png"
+          width={1392}
+        />
+        <Text
+          className={css({
+            paddingX: "space16",
+            paddingBottom: "space16",
+          })}
+          color="subtle"
+          variant="bodyS"
+        >
+          *anytime after initial load which takes ~300ms
+        </Text>
+      </>
     ),
   },
   {
@@ -44,7 +56,7 @@ const mainList: FeatureCardTypes[] = [
             color: "text.primary!",
           })}
         >
-          ~16.9kB
+          ~20kB
         </span>
         . Bundle it with your app or load from CDN.
       </>
@@ -52,6 +64,9 @@ const mainList: FeatureCardTypes[] = [
     illustration: (
       <ThemeImage
         alt="Bundle size illustration"
+        className={css({
+          marginY: "auto",
+        })}
         height={720}
         srcDark="/images/homepage/bundle-size-dark.png"
         srcLight="/images/homepage/bundle-size-light.png"

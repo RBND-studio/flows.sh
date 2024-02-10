@@ -6,7 +6,7 @@ export const Section = ({
   outerClassName,
   innerClassName,
   sectionPadding = "default",
-  background = "bg.muted",
+  background = "bg.section",
 }: {
   children: React.ReactNode;
   outerClassName?: string;

@@ -1,5 +1,5 @@
 import { css } from "@flows/styled-system/css";
-import { Flex } from "@flows/styled-system/jsx";
+import { Box, Flex } from "@flows/styled-system/jsx";
 import { ThemeImage } from "components/theme-image";
 import { FeatureCard, type FeatureCardTypes } from "components/ui/feature-card";
 import { Cloud16, Code16, Versions16 } from "icons";
@@ -46,6 +46,7 @@ const mainList: FeatureCardTypes[] = [
   },
 ];
 
+//TODO: Add mobile version of the diagram illustration
 export const Content: FC = () => {
   return (
     <Flex flexDirection="column" gap="space32">
@@ -53,13 +54,20 @@ export const Content: FC = () => {
         featureIcon={Versions16}
         featureName="Advanced flow builder"
         illustration={
-          <ThemeImage
-            alt="Onboarding flow diagram illustration"
-            height={792}
-            srcDark="/images/homepage/flow-diagram-dark.png"
-            srcLight="/images/homepage/flow-diagram-light.png"
-            width={2874}
-          />
+          <Box
+            display="unset"
+            smDown={{
+              display: "none",
+            }}
+          >
+            <ThemeImage
+              alt="Onboarding flow diagram illustration"
+              height={792}
+              srcDark="/images/homepage/flow-diagram-dark.png"
+              srcLight="/images/homepage/flow-diagram-light.png"
+              width={2874}
+            />
+          </Box>
         }
         mainSlot={
           <>
