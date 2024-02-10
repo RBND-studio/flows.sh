@@ -1,4 +1,4 @@
-FROM node:18-alpine AS base
+FROM node:20-alpine AS base
 
 FROM base AS builder
 RUN apk add --no-cache libc6-compat
@@ -32,6 +32,9 @@ RUN yarn turbo run build --filter=${APP}...
 
 FROM base AS runner
 WORKDIR /app
+
+RUN npm install -g sharp
+ENV NEXT_SHARP_PATH=/usr/local/lib/node_modules/sharp
 
 # Don't run production as root
 RUN addgroup --system --gid 1001 nodejs
