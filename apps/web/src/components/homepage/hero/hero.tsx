@@ -65,6 +65,7 @@ export const Hero = (): ReactElement => {
             zIndex: "-1",
             maxWidth: "1440px",
           })}
+          fetchPriority="high"
           height={2160}
           srcDark="/images/homepage/hero-dark.png"
           srcLight="/images/homepage/hero-light.png"

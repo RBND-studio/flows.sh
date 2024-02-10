@@ -1,10 +1,11 @@
 import { css, cx } from "@flows/styled-system/css";
+import type { StaticImport } from "next/dist/shared/lib/get-img-props";
 import type { ImageProps } from "next/image";
 import Image from "next/image";
 
 type Props = Omit<ImageProps, "src" | "priority" | "loading"> & {
-  srcLight: string;
-  srcDark: string;
+  srcLight: string | StaticImport;
+  srcDark: string | StaticImport;
 };
 
 export const ThemeImage = (props: Props): JSX.Element => {
