@@ -13,7 +13,6 @@
     "prepare": "panda codegen"
   },
   "dependencies": {
-    "@flows/js": "0.0.34",
     "@rbnd/react-dark-mode": "^2.0.1",
     "contentlayer": "^0.3.4",
     "dayjs": "^1.11.10",

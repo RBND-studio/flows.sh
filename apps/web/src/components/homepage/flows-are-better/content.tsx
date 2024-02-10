@@ -1,7 +1,7 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
-import { FeatureCard, type FeatureCardTypes } from "components/feature-card";
 import { ThemeImage } from "components/theme-image";
+import { FeatureCard, type FeatureCardTypes } from "components/ui";
 import type { FC } from "react";
 
 const mainList: FeatureCardTypes[] = [
@@ -63,8 +63,9 @@ export const Content: FC = () => {
       })}
       gap="space32"
     >
-      {mainList.map((item) => {
-        return <FeatureCard key={item.featureName} {...item} reverse />;
+      {mainList.map((item, i) => {
+        // eslint-disable-next-line react/no-array-index-key -- fixed order
+        return <FeatureCard key={i} {...item} reverse />;
       })}
     </Flex>
   );

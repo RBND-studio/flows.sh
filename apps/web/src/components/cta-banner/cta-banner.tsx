@@ -1,5 +1,5 @@
 import { css } from "@flows/styled-system/css";
-import { Section } from "components/section";
+import { Section } from "components/ui/section";
 import Image from "next/image";
 import type { ReactElement } from "react";
 import React from "react";

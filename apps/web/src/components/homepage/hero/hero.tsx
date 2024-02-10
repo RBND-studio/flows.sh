@@ -1,8 +1,8 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import { WaitlistForm } from "components/cta-banner/waitlist-form";
-import { Section } from "components/section";
 import { ThemeImage } from "components/theme-image";
+import { Section } from "components/ui/section";
 import type { ReactElement } from "react";
 import { Text } from "ui";
 

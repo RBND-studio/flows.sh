@@ -1,9 +1,12 @@
-import { AnalyzeSection, BuilderSection, DeliverSection } from "components/homepage";
-import { FlowsAreBetterSection } from "components/homepage/flows-are-better";
+import {
+  AnalyzeSection,
+  BuilderSection,
+  DeliverSection,
+  FlowsAreBetterSection,
+  Hero,
+} from "components";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
-
-import { Hero } from "./hero";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://flows.sh" },

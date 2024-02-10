@@ -1,7 +1,7 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
-import { FeatureCard, type FeatureCardTypes } from "components/feature-card";
 import { ThemeImage } from "components/theme-image";
+import { FeatureCard, type FeatureCardTypes } from "components/ui";
 import { Hourglass16, Storage16 } from "icons";
 import type { FC } from "react";
 
