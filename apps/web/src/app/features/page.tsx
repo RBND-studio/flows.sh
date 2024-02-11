@@ -59,6 +59,7 @@ const Page = (): ReactElement => {
               borderRadius: "20px",
             })}
             height={80}
+            priority
             src="/images/logo/logo.svg"
             width={80}
           />

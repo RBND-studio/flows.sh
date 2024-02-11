@@ -40,7 +40,7 @@ export const Header = (): ReactElement => {
           })}
           href="/"
         >
-          <Image alt="Logo" height={28} src="/images/logo/logo.svg" width={28} />
+          <Image alt="Logo" height={28} priority src="/images/logo/logo.svg" width={28} />
           <Text variant="bodyM" weight="700">
             Flows
           </Text>

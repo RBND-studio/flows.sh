@@ -139,15 +139,20 @@ export const Footer = (): ReactElement => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "flex-start",
-                gap: "space8",
               })}
               key={group.title}
             >
-              <Text color="subtle" variant="bodyS">
+              <Text className={css({ mb: "space4" })} color="subtle" variant="bodyS">
                 {group.title}
               </Text>
               {group.links.map((link) => (
-                <Text asChild key={link.href} variant="bodyS" weight="700">
+                <Text
+                  asChild
+                  className={css({ padding: "space4", mx: "-space4" })}
+                  key={link.href}
+                  variant="bodyS"
+                  weight="700"
+                >
                   <a
                     className={css({
                       "&:hover": {

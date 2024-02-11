@@ -6,6 +6,11 @@ import { Section } from "components/ui/section";
 import type { ReactElement } from "react";
 import { Text } from "ui";
 
+import heroDarkImg from "./hero-dark.png";
+import heroLightImg from "./hero-light.png";
+import heroMobileDarkImg from "./hero-mobile-dark.png";
+import heroMobileLightImg from "./hero-mobile-light.png";
+
 export const Hero = (): ReactElement => {
   return (
     <Section
@@ -67,8 +72,9 @@ export const Hero = (): ReactElement => {
           })}
           fetchPriority="high"
           height={2160}
-          srcDark="/images/homepage/hero-dark.png"
-          srcLight="/images/homepage/hero-light.png"
+          placeholder="blur"
+          srcDark={heroDarkImg}
+          srcLight={heroLightImg}
           width={4320}
         />
       </Box>
@@ -90,8 +96,9 @@ export const Hero = (): ReactElement => {
           })}
           fetchPriority="high"
           height={471}
-          srcDark="/images/homepage/hero-mobile-dark.png"
-          srcLight="/images/homepage/hero-mobile-light.png"
+          placeholder="blur"
+          srcDark={heroMobileDarkImg}
+          srcLight={heroMobileLightImg}
           width={780}
         />
       </Box>
