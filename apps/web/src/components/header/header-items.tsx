@@ -15,8 +15,8 @@ type HeaderItem = {
 
 const HEADER_ITEMS: HeaderItem[] = [
   {
-    title: "Product",
-    href: "/",
+    title: "Features",
+    href: "/features",
   },
   {
     title: "Blog",
@@ -46,7 +46,17 @@ export const HeaderItems = (): ReactElement => {
           })}
           key={item.title}
         >
-          <Text asChild color={path === item.href ? "default" : "subtle"} variant="titleS">
+          <Text
+            asChild
+            className={css({
+              fastEaseInOut: "color",
+              "&:hover": {
+                color: "text",
+              },
+            })}
+            color={path === item.href ? "default" : "subtle"}
+            variant="titleS"
+          >
             <Link href={item.href} target={item.target}>
               {item.title}
             </Link>

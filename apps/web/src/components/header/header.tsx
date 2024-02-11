@@ -29,7 +29,7 @@ export const Header = (): ReactElement => {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          maxWidth: "1100px",
+          maxWidth: "960px",
         })}
       >
         <Link

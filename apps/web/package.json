@@ -13,7 +13,6 @@
     "prepare": "panda codegen"
   },
   "dependencies": {
-    "@flows/js": "0.0.36",
     "@rbnd/react-dark-mode": "^2.0.1",
     "contentlayer": "^0.3.4",
     "dayjs": "^1.11.10",
@@ -28,6 +27,7 @@
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1",
     "shared": "workspace:*",
+    "sharp": "^0.33.2",
     "ui": "workspace:*"
   },
   "devDependencies": {

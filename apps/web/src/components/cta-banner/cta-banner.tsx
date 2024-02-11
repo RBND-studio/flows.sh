@@ -1,5 +1,5 @@
 import { css } from "@flows/styled-system/css";
-import { Section } from "components/section";
+import { Section } from "components/ui/section";
 import Image from "next/image";
 import type { ReactElement } from "react";
 import React from "react";
@@ -16,6 +16,10 @@ export const CtaBanner = (): ReactElement => {
         flexDirection: "column",
         gap: "space24",
         alignItems: "center",
+      })}
+      outerClassName={css({
+        backgroundImage: "radial-gradient(token(colors.special.dotBg) 1px, transparent 0)",
+        backgroundSize: "16px 16px",
       })}
     >
       <Image alt="Logo" height={72} src="/images/logo/logo.svg" width={72} />

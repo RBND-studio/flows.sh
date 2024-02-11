@@ -23,8 +23,8 @@ const footerGroups: FooterGroup[] = [
     title: "Product",
     links: [
       {
-        title: "Overview",
-        href: "/",
+        title: "Features",
+        href: "/features",
       },
     ],
   },
@@ -63,7 +63,7 @@ export const Footer = (): ReactElement => {
     >
       <div
         className={css({
-          maxWidth: "1100px",
+          maxWidth: "960px",
           mx: "auto",
           py: "space40",
           display: "flex",

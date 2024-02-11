@@ -147,6 +147,7 @@ export const palette = defineTokens.colors({
     500: { value: "#717171" },
     650: { value: "#525252" },
     750: { value: "#3b3b3b" },
+    800: { value: "#303030" },
     850: { value: "#262626" },
     875: { value: "#1f1f1f" },
     900: { value: "#181818" },

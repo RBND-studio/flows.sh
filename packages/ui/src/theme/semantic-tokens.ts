@@ -25,6 +25,7 @@ export const semanticTokens = defineSemanticTokens({
       warningSubtle: { value: { base: "{colors.warning.25}", _dark: "{colors.warning-dark.900}" } },
       dangerSubtle: { value: { base: "{colors.danger.25}", _dark: "{colors.danger-dark.900}" } },
       infoSubtle: { value: { base: "{colors.info.25}", _dark: "{colors.info-dark.900}" } },
+      section: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.900}" } },
     },
     text: {
       DEFAULT: { value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.25}" } },
@@ -66,6 +67,9 @@ export const semanticTokens = defineSemanticTokens({
       success: { value: { base: "{colors.success.500}", _dark: "{colors.success-dark.500}" } },
       warning: { value: { base: "{colors.warning.300}", _dark: "{colors.warning-dark.400}" } },
       danger: { value: { base: "{colors.danger.500}", _dark: "{colors.danger-dark.500}" } },
+    },
+    special: {
+      dotBg: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.800}" } },
     },
   },
   shadows: {
