@@ -1,4 +1,5 @@
 import { css } from "@flows/styled-system/css";
+import { SmartLink } from "components/ui";
 import Image from "next/image";
 import type { ReactElement } from "react";
 import React from "react";
@@ -148,22 +149,20 @@ export const Footer = (): ReactElement => {
               {group.links.map((link) => (
                 <Text
                   asChild
-                  className={css({ padding: "space4", mx: "-space4" })}
+                  className={css({
+                    padding: "space4",
+                    mx: "-space4",
+                    "&:hover": {
+                      textDecoration: "underline",
+                    },
+                  })}
                   key={link.href}
                   variant="bodyS"
                   weight="700"
                 >
-                  <a
-                    className={css({
-                      "&:hover": {
-                        textDecoration: "underline",
-                      },
-                    })}
-                    href={link.href}
-                    {...(link.target ? { target: link.target, rel: "noopener" } : {})}
-                  >
+                  <SmartLink href={link.href} target={link.target}>
                     {link.title}
-                  </a>
+                  </SmartLink>
                 </Text>
               ))}
             </div>
