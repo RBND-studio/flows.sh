@@ -68,6 +68,9 @@ export const semanticTokens = defineSemanticTokens({
       warning: { value: { base: "{colors.warning.300}", _dark: "{colors.warning-dark.400}" } },
       danger: { value: { base: "{colors.danger.500}", _dark: "{colors.danger-dark.500}" } },
     },
+    special: {
+      dotBg: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.800}" } },
+    },
   },
   shadows: {
     l1: { value: { base: "{shadows.light1}", _dark: "{shadows.dark1}" } },

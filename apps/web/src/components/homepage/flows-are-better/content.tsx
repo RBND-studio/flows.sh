@@ -14,6 +14,13 @@ const mainList: FeatureCardTypes[] = [
     illustration: (
       <ThemeImage
         alt="Delivery speed"
+        className={css({
+          mdDown: {
+            maxWidth: "280px",
+            marginX: "auto",
+            width: "100%",
+          },
+        })}
         height={552}
         srcDark="/images/homepage/fast-dark.png"
         srcLight="/images/homepage/fast-light.png"
@@ -30,6 +37,13 @@ const mainList: FeatureCardTypes[] = [
     illustration: (
       <ThemeImage
         alt="Delivery speed"
+        className={css({
+          mdDown: {
+            maxWidth: "280px",
+            marginX: "auto",
+            width: "100%",
+          },
+        })}
         height={552}
         srcDark="/images/homepage/flexible-dark.png"
         srcLight="/images/homepage/flexible-light.png"
@@ -46,6 +60,13 @@ const mainList: FeatureCardTypes[] = [
     illustration: (
       <ThemeImage
         alt="Delivery speed"
+        className={css({
+          mdDown: {
+            maxWidth: "280px",
+            marginX: "auto",
+            width: "100%",
+          },
+        })}
         height={552}
         srcDark="/images/homepage/privacy-dark.png"
         srcLight="/images/homepage/privacy-light.png"
