@@ -4,10 +4,15 @@ const path = require("node:path");
 
 const withContentlayer = createContentlayerPlugin();
 
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  // eslint-disable-next-line turbo/no-undeclared-env-vars -- ignore
+  enabled: process.env.ANALYZE === "true",
+});
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  transpilePackages: ["ui", "icons"],
+  transpilePackages: ["ui", "icons", "shared"],
   output: "standalone",
   swcMinify: true,
   experimental: {
@@ -38,4 +43,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withContentlayer(nextConfig);
+module.exports = withBundleAnalyzer(withContentlayer(nextConfig));
