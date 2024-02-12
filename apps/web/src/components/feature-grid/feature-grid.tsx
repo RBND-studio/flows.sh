@@ -17,7 +17,9 @@ export const FeatureGrid = (props: FeatureGridTypes): JSX.Element => {
     <Section>
       <Flex flexDirection="column" gap="space32">
         <Flex flexDirection="column" gap="space8">
-          <Text variant="title3xl">{props.title}</Text>
+          <Text as="h2" variant="title3xl">
+            {props.title}
+          </Text>
           <Text color="muted" variant="bodyL">
             {props.description}
           </Text>

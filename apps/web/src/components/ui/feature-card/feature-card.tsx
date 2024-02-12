@@ -19,7 +19,7 @@ export const FeatureCard = (props: FeatureCardTypes): JSX.Element => {
         {props.featureIcon && props.featureName ? (
           <Flex alignItems="center" gap="space8">
             <Icon color="text.subtle" icon={props.featureIcon} />
-            <Text color="subtle" variant="bodyS">
+            <Text as="h3" color="subtle" variant="bodyS">
               {props.featureName}
             </Text>
           </Flex>
