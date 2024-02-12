@@ -26,7 +26,7 @@ RUN pnpm install --ignore-scripts
 
 # Build the project
 COPY --from=builder /app/out/full/ .
-RUN pnpm install
+RUN PROD=true pnpm install
 ARG APP
 RUN yarn turbo run build --filter=${APP}...
 

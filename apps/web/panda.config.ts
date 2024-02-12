@@ -1,7 +1,7 @@
 import { defineConfig } from "@pandacss/dev";
 import { theme, conditions, utilities } from "ui/theme";
 
-// const prod =
+const prod = process.env.PROD === "true" || process.env.NODE_ENV === "production";
 
 export default defineConfig({
   // Whether to use css reset
@@ -26,6 +26,8 @@ export default defineConfig({
   forceConsistentTypeExtension: true,
 
   minify: true,
+
+  hash: { className: prod, cssVar: false },
 
   conditions,
 });

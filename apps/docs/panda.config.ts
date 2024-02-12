@@ -1,6 +1,8 @@
 import { defineConfig } from "@pandacss/dev";
 import { theme, utilities } from "ui/theme";
 
+const prod = process.env.PROD === "true" || process.env.NODE_ENV === "production";
+
 export default defineConfig({
   // Whether to use css reset
   preflight: true,
@@ -24,6 +26,8 @@ export default defineConfig({
   forceConsistentTypeExtension: true,
 
   minify: true,
+
+  hash: { className: prod, cssVar: false },
 
   conditions: {
     dark: ".dark &",
