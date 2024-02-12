@@ -17,7 +17,6 @@ export const SmallFeatureCard = (props: SmallFeatureCardTypes): JSX.Element => {
       className={cardWrapper({ hover: props.hover })}
       flexDir="row"
       gap="space12"
-      height="100%"
       padding="space16"
     >
       <Flex bor="1px" borderRadius="radius8" padding="space12">
