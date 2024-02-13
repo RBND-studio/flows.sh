@@ -34,7 +34,6 @@ export const Header = (): ReactElement => {
           gap: "space8",
         })}
       >
-        <MobileMenu />
         <Link
           className={css({
             display: "inline-flex",
@@ -52,6 +51,7 @@ export const Header = (): ReactElement => {
           <DesktopMenu />
         </Flex>
         <JoinWaitlist />
+        <MobileMenu />
       </div>
     </header>
   );

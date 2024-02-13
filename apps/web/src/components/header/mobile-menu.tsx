@@ -20,7 +20,7 @@ export const MobileMenu: FC = () => {
   return (
     <>
       <Button
-        className={css({ sm: { display: "none" }, px: "8px", ml: "-8px" })}
+        className={css({ sm: { display: "none" }, px: "8px" })}
         onClick={toggleOpen}
         variant="ghost"
       >
