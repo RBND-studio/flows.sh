@@ -6,10 +6,10 @@ import { Section } from "components/ui/section";
 import type { ReactElement } from "react";
 import { Text } from "ui";
 
-import heroDarkImg from "./hero-dark.png";
-import heroLightImg from "./hero-light.png";
-import heroMobileDarkImg from "./hero-mobile-dark.png";
-import heroMobileLightImg from "./hero-mobile-light.png";
+import heroDarkImg from "./hero-dark.webp";
+import heroLightImg from "./hero-light.webp";
+import heroMobileDarkImg from "./hero-mobile-dark.webp";
+import heroMobileLightImg from "./hero-mobile-light.webp";
 
 export const Hero = (): ReactElement => {
   return (
@@ -75,6 +75,7 @@ export const Hero = (): ReactElement => {
           placeholder="blur"
           srcDark={heroDarkImg}
           srcLight={heroLightImg}
+          sizes="100wv"
           width={4320}
         />
       </Box>

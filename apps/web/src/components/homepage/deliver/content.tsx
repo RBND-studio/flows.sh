@@ -28,8 +28,8 @@ const mainList: FeatureCardTypes[] = [
         <ThemeImage
           alt="Chart illustrating delivery speed"
           height={720}
-          srcDark="/images/homepage/delivery-speed-dark.png"
-          srcLight="/images/homepage/delivery-speed-light.png"
+          srcDark="/images/homepage/delivery-speed-dark.webp"
+          srcLight="/images/homepage/delivery-speed-light.webp"
           width={1392}
         />
         <Text
@@ -68,8 +68,8 @@ const mainList: FeatureCardTypes[] = [
           marginY: "auto",
         })}
         height={720}
-        srcDark="/images/homepage/bundle-size-dark.png"
-        srcLight="/images/homepage/bundle-size-light.png"
+        srcDark="/images/homepage/bundle-size-dark.webp"
+        srcLight="/images/homepage/bundle-size-light.webp"
         width={1392}
       />
     ),

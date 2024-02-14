@@ -20,7 +20,7 @@ const nextConfig = {
     optimizePackageImports: ["ui", "icons"],
   },
   images: {
-    formats: ["image/avif", "image/webp"],
+    formats: ["image/webp"],
     remotePatterns: [
       {
         // For placeholder images

@@ -19,8 +19,8 @@ const mainList: FeatureCardTypes[] = [
       <ThemeImage
         alt="Flow tooltip illustration"
         height={720}
-        srcDark="/images/homepage/no-code-dark.png"
-        srcLight="/images/homepage/no-code-light.png"
+        srcDark="/images/homepage/no-code-dark.webp"
+        srcLight="/images/homepage/no-code-light.webp"
         width={1392}
       />
     ),
@@ -38,8 +38,8 @@ const mainList: FeatureCardTypes[] = [
       <ThemeImage
         alt="Code implementation illustration"
         height={720}
-        srcDark="/images/homepage/in-code-dark.png"
-        srcLight="/images/homepage/in-code-light.png"
+        srcDark="/images/homepage/in-code-dark.webp"
+        srcLight="/images/homepage/in-code-light.webp"
         width={1392}
       />
     ),
@@ -63,8 +63,8 @@ export const Content: FC = () => {
             <ThemeImage
               alt="Onboarding flow diagram illustration"
               height={792}
-              srcDark="/images/homepage/flow-diagram-dark.png"
-              srcLight="/images/homepage/flow-diagram-light.png"
+              srcDark="/images/homepage/flow-diagram-dark.webp"
+              srcLight="/images/homepage/flow-diagram-light.webp"
               width={2874}
             />
           </Box>

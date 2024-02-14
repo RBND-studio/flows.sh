@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://flows.sh
+
+# Sitemaps
+Sitemap: https://flows.sh/sitemap.xml
+Sitemap: https://flows.sh/docs/sitemap.xml
