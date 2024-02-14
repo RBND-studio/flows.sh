@@ -1,0 +1,42 @@
+---
+title: Flow options
+---
+
+import { Tabs } from "nextra/components"
+
+# Flow options
+
+## ID
+<Tabs items={["Cloud", "Standalone"]} storageKey="variant">
+<Tabs.Tab>
+
+Flow ID is automatically generated when you're creating Flow from the Flow name. You can see the Flow ID in the Flow settings page under Human ID.
+
+ID is used to programatically control the Flow provided by the Flows SDK.
+
+```js
+startFlow("flow-id")
+nextStep("flow-id")
+```
+
+</Tabs.Tab>
+<Tabs.Tab>
+
+ID is used to programatically control the Flow provided by the Flows SDK.
+
+```js
+const flow = {
+  id: "flow-id"
+}
+
+startFlow("flow-id")
+nextStep("flow-id")
+```
+
+</Tabs.Tab>
+</Tabs>
+
+## Steps
+
+Steps are the building blocks of a Flow. See [Steps](/creating-flows/step) for more information.
+

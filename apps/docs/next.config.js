@@ -3,6 +3,8 @@ const path = require("node:path");
 const withNextra = require("nextra")({
   theme: "nextra-theme-docs",
   themeConfig: "./src/theme.config.tsx",
+  defaultShowCopyCode: true,
+  staticImage: true,
 });
 
 /** @type {import('next').NextConfig} */

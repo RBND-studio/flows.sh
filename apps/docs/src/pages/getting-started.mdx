@@ -1,0 +1,88 @@
+---
+title: Getting started
+description: TODO
+---
+
+import { Tabs } from "nextra/components"
+
+## Installation
+
+To install Flows, you can install npm package or link the source code from a CDN.
+
+### NPM
+
+```sh npm2yarn
+npm i @flows/js
+```
+
+### CDN
+
+<Tabs items={["Cloud", "Standalone"]} storageKey="variant">
+<Tabs.Tab>
+```html
+<script src="https://cdn.jsdelivr.net/npm/@flows/js@0.0.34/dist/cloud/index.global.js"></script>
+```
+</Tabs.Tab>
+<Tabs.Tab>
+```html
+<script src="https://cdn.jsdelivr.net/npm/@flows/js@0.0.34/dist/index.global.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@flows/js@0.0.34/css.min/flows.css" />
+```
+</Tabs.Tab>
+</Tabs>
+
+## Usage
+
+<Tabs items={["Cloud", "Standalone"]} storageKey="variant">
+<Tabs.Tab>
+
+When using Cloud you don't need to worry about CSS file. It is loaded automatically from your project template.
+
+```js
+// Notice the import has additional `/cloud` at the end
+import { init } from "@flows/js/cloud"
+
+init({
+  // Insert your Flows Cloud projectId
+  projectId: "xxxx",
+  // Optionally define local flows
+  flows: []
+})
+```
+
+</Tabs.Tab>
+<Tabs.Tab>
+
+```js
+// If your environment supports importing CSS file
+// Otherwise use <link>, see below
+import "@flows/js/flows.css"
+
+import { init } from "@flows/js";
+
+init({
+  flows: [ ]
+})
+```
+
+Use this method if your environment doesn't support importing the CSS file. Start by copying the `@flows/js/css.min/flows.css` file from npm package to your public folder. And then link it at the top of your HTML file.
+
+
+```html
+<link rel="stylesheet" href="/flows.css" />
+```
+
+</Tabs.Tab>
+</Tabs>
+
+### CDN
+
+When loading Flows SDK from CDN it works the same way. The only difference is the Flows methods are available globally under `window.FlowsJS`.
+
+```html
+<script>
+window.FlowsJS.init({
+  // ...
+})
+</script>
+```

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { type DocsThemeConfig } from "nextra-theme-docs";
 import { Text } from "ui";
 
+import { Demo } from "./components/demo";
 import { PRODUCTION } from "./lib/constants";
 
 const config: DocsThemeConfig = {
@@ -54,6 +55,9 @@ const config: DocsThemeConfig = {
   },
   primaryHue: 12,
   primarySaturation: 80,
+  components: {
+    Demo,
+  },
 };
 
 export default config;

@@ -1,0 +1,100 @@
+---
+title: TODO
+description: TODO
+---
+
+# Tooltip step
+
+Tooltip is a card that points to an element. It is used to provide contextual information on the page.
+
+<Demo variant="tooltip" />
+
+![Tooltip step](/tooltip.png)
+
+## Content
+
+### Title
+
+Title of the tooltip. Supports HTML content. Can be customized with `.flows-title` class.
+
+### Body
+
+Content of the tooltip. Supports HTML content. Can be customized with `.flows-body` class.
+
+## Target
+
+### Target element
+
+Element that the tooltip points to. 
+
+### Placement
+
+On which side of the target element the tooltip should be placed. Supported values: `top`, `right`, `bottom`, `left`, `top-start`, `top-end`, `right-start`, `right-end`, `bottom-start`, `bottom-end`, `left-start`, `left-end`
+
+### Overlay
+
+Highlights the target element with an overlay.
+
+### Close on overlay click
+
+Cancel the flow when the overlay is clicked. Only works when `overlay` is `true`.
+
+### Hide arrow
+
+Hide the arrow pointing to the target element.
+
+### Scroll element
+
+The element to scroll to when the tooltip is shown.
+
+## Buttons
+
+### Hide close
+
+Hide the close button. Without the close button and overlay the user will not be able to close the tooltip
+
+
+
+### Previous button
+
+- Hide previous button
+- Previous button label
+
+### Next button
+
+- Hide next button
+  - Hide the next button. Watch out this option should be used with `footerActions` to provide a way to go to the next step or by controlling the flow programmatically with `nextStep()`. Otherwise the user will be stuck on the current step.
+- Next button label
+  - Text of the next and finish buttons.
+
+## Footer actions
+
+Customize the buttons show in the footer of the tooltip. You can add custom link, button to a target branch, or customize next and previous buttons.
+
+```js
+const step = {
+  footerActions: {
+    left: [],
+    center: [],
+    right: [
+      {
+        label: "Flows",
+        href: "https://flows.sh",
+        external: true
+      },
+      {
+        label: "Variant A",
+        targetBranch: 0
+      },
+      {
+        label: "Continue",
+        next: true,
+      },
+      {
+        label: "Back",
+        back: true
+      }
+    ]
+  }
+}
+```
