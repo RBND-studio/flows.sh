@@ -18,14 +18,14 @@ const MonaSans = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://flows.sh"),
-  title: "Flows: Onboarding for modern SaaS",
+  title: "Flows – User onboarding for modern SaaS",
   description:
-    "Flows is a better way to onboard users and drive product adoption. With advanced flow steps and modern architecture, Flows is the tool for modern SaaS companies.",
+    "Flows lets you build any onboarding you want. Guide users, increase feature adoption, and improve revenue.",
   openGraph: {
     type: "website",
     title: "Flows: Onboarding for modern SaaS",
     description:
-      "Flows is a better way to onboard users and drive product adoption. With advanced flow steps and modern architecture, Flows is the tool for modern SaaS companies.",
+      "Flows lets you build any onboarding you want. Guide users, increase feature adoption, and improve revenue.",
     images: "/og.png",
     url: "/",
     locale: "en_US",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Flows: Onboarding for modern SaaS",
     description:
-      "Flows is a better way to onboard users and drive product adoption. With advanced flow steps and modern architecture, Flows is the tool for modern SaaS companies.",
+      "Flows lets you build any onboarding you want. Guide users, increase feature adoption, and improve revenue.",
     images: "/og.png",
     creator: "@flows_sh",
   },

@@ -8,7 +8,7 @@ const mainList: FeatureCardTypes[] = [
   {
     mainSlot: (
       <>
-        <span>Fast.</span> Optimized preformance that beats the competition.
+        <span>Fast.</span> Optimized performance that beats the competition.
       </>
     ),
     illustration: (

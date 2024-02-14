@@ -12,8 +12,8 @@ const mainList: FeatureCardTypes[] = [
     featureName: "Optimized delivery",
     mainSlot: (
       <>
-        <span>Speed as priority.</span> Your users won’t wait for the tour to load. That’s why Flows
-        show{" "}
+        <span>Speed as a priority.</span> Your users won’t wait for the tour to load. That’s why
+        Flows show{" "}
         <span
           className={css({
             color: "text.primary!",

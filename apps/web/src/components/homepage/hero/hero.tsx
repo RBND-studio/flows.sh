@@ -49,7 +49,7 @@ export const Hero = (): ReactElement => {
           color="muted"
           variant="bodyL"
         >
-          Flows let you build any onboarding you want. Guide users, increase feature adoption, and
+          Flows lets you build any onboarding you want. Guide users, increase feature adoption, and
           improve revenue.
         </Text>
       </Flex>

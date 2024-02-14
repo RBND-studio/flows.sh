@@ -31,7 +31,6 @@ export const metadata: Metadata = {
     images: "/images/features/features-og.png",
     creator: "@flows_sh",
   },
-  keywords: ["flows", "onboarding", "product adoption", "user onboarding", "user adoption"],
 };
 
 const Page = (): ReactElement => {
@@ -88,7 +87,7 @@ const Page = (): ReactElement => {
             color="muted"
             variant="bodyL"
           >
-            With its flexible approach, Flows unlock the potential of your product by providing the
+            With its flexible approach, Flows unlocks the potential of your product by providing the
             tools to build seamless onboarding experiences for your users. It is the tool of choice
             for modern SaaS companies.
           </Text>

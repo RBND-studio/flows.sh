@@ -104,7 +104,7 @@ export const featuresData: FeatureGridTypes[] = [
       {
         mainSlot: (
           <>
-            <span>Speed as priority.</span> Show flows instantly.
+            <span>Speed as a priority.</span> Show flows instantly.
           </>
         ),
         link: "/features/deliver#speed",

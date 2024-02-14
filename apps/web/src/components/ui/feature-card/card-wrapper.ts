@@ -10,6 +10,7 @@ export const cardWrapper = cva({
     backgroundColor: "bg.card",
     overflow: "hidden",
     boxShadow: "l1",
+    textWrap: "balance",
 
     _after: {
       content: "''",
