@@ -22,8 +22,8 @@ const mainList: FeatureCardTypes[] = [
           },
         })}
         height={552}
-        srcDark="/images/homepage/fast-dark.png"
-        srcLight="/images/homepage/fast-light.png"
+        srcDark="/images/homepage/fast-dark.webp"
+        srcLight="/images/homepage/fast-light.webp"
         width={894}
       />
     ),
@@ -45,8 +45,8 @@ const mainList: FeatureCardTypes[] = [
           },
         })}
         height={552}
-        srcDark="/images/homepage/flexible-dark.png"
-        srcLight="/images/homepage/flexible-light.png"
+        srcDark="/images/homepage/flexible-dark.webp"
+        srcLight="/images/homepage/flexible-light.webp"
         width={894}
       />
     ),
@@ -68,8 +68,8 @@ const mainList: FeatureCardTypes[] = [
           },
         })}
         height={552}
-        srcDark="/images/homepage/privacy-dark.png"
-        srcLight="/images/homepage/privacy-light.png"
+        srcDark="/images/homepage/privacy-dark.webp"
+        srcLight="/images/homepage/privacy-light.webp"
         width={894}
       />
     ),

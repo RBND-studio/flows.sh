@@ -25,6 +25,7 @@ export const MobileMenu: FC = () => {
         variant="ghost"
       >
         <Menu16 />
+        <span className={css({ srOnly: true })}>Open main menu</span>
       </Button>
       <Box
         backgroundColor="bg"

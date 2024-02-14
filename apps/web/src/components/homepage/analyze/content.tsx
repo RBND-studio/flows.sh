@@ -18,8 +18,8 @@ const mainList: FeatureCardTypes[] = [
       <ThemeImage
         alt="Funnel chart illustration"
         height={720}
-        srcDark="/images/homepage/flow-analytics-dark.png"
-        srcLight="/images/homepage/flow-analytics-light.png"
+        srcDark="/images/homepage/flow-analytics-dark.webp"
+        srcLight="/images/homepage/flow-analytics-light.webp"
         width={1392}
       />
     ),
@@ -36,8 +36,8 @@ const mainList: FeatureCardTypes[] = [
       <ThemeImage
         alt="Error tracking illustration"
         height={720}
-        srcDark="/images/homepage/error-tracking-dark.png"
-        srcLight="/images/homepage/error-tracking-light.png"
+        srcDark="/images/homepage/error-tracking-dark.webp"
+        srcLight="/images/homepage/error-tracking-light.webp"
         width={1392}
       />
     ),
