@@ -3,6 +3,8 @@ import Image from "next/image";
 import { type DocsThemeConfig } from "nextra-theme-docs";
 import { Text } from "ui";
 
+import { PRODUCTION } from "./lib/constants";
+
 const config: DocsThemeConfig = {
   sidebar: {
     toggleButton: true,
@@ -46,6 +48,8 @@ const config: DocsThemeConfig = {
       description:
         "Flows is a better way to onboard users and drive product adoption. With advanced flow steps and modern architecture, Flows is the tool for modern SaaS companies.",
       keywords: ["flows", "onboarding", "product adoption", "user onboarding", "user adoption"],
+      noindex: !PRODUCTION,
+      nofollow: !PRODUCTION,
     };
   },
   primaryHue: 12,
