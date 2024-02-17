@@ -78,6 +78,6 @@ export const semanticTokens = defineSemanticTokens({
     l3: { value: { base: "{shadows.light3}", _dark: "{shadows.dark3}" } },
     l4: { value: { base: "{shadows.light4}", _dark: "{shadows.dark4}" } },
     l5: { value: { base: "{shadows.light5}", _dark: "{shadows.dark5}" } },
-    focus: { value: { base: "{shadows.lighFocus}", _dark: "{shadows.darkFocus}" } },
+    focus: { value: { base: "{shadows.lightFocus}", _dark: "{shadows.darkFocus}" } },
   },
 });
