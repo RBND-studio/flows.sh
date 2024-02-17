@@ -1,31 +1,24 @@
-import { css } from "@flows/styled-system/css";
-import Image from "next/image";
 import { type DocsThemeConfig } from "nextra-theme-docs";
-import { Text } from "ui";
 
+import { BetterCallout } from "./components/better-callout";
 import { Demo } from "./components/demo";
+import { DocsLogo } from "./components/docs-logo";
+import { SectionLink } from "./components/section-link";
 import { PRODUCTION } from "./lib/constants";
 
 const config: DocsThemeConfig = {
   sidebar: {
     toggleButton: true,
   },
-
-  logo: (
-    <span className={css({ display: "flex", gap: "space8", alignItems: "center" })}>
-      <Image alt="Logo" height={28} src="/docs/logo.svg" width={28} />
-      <Text className={css({ color: "inherit" })} variant="bodyM" weight="700">
-        Flows
-      </Text>
-    </span>
-  ),
+  logo: <DocsLogo />,
+  logoLink: false,
   project: {
     link: "https://github.com/RBND-studio",
   },
   docsRepositoryBase: "https://github.com/RBND-studio/flows-cloud/tree/main/apps/docs",
   feedback: { content: null },
   footer: {
-    text: "Flows",
+    component: null,
   },
   darkMode: true,
   head: null,
@@ -57,6 +50,8 @@ const config: DocsThemeConfig = {
   primarySaturation: 80,
   components: {
     Demo,
+    SectionLink,
+    BetterCallout,
   },
 };
 

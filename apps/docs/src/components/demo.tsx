@@ -1,12 +1,15 @@
 import { endFlow, startFlow } from "@flows/js";
+import { css, cx } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { type FC, useEffect } from "react";
 
 import { useFirstRender } from "../hooks/use-first-render";
 
 type Props = {
-  variant: "tooltip" | "modal";
+  variant: "tooltip" | "modal" | "wait" | "fork";
 };
+
+//TODO: add reset option
 
 export const Demo: FC<Props> = ({ variant }) => {
   const firstRender = useFirstRender();
@@ -25,11 +28,13 @@ export const Demo: FC<Props> = ({ variant }) => {
     return (
       <Flex
         alignItems="center"
-        bor="1px"
+        bg="bg.muted"
+        bor="1px!"
         className="tooltip-root"
-        h="200px"
+        h="240px"
+        marginY="space24"
         overflow="hidden"
-        p="space32"
+        p="space40"
         rounded="radius8"
         transform="translate3d(0,0,0)"
       >
@@ -37,9 +42,110 @@ export const Demo: FC<Props> = ({ variant }) => {
       </Flex>
     );
 
-  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- ignore
   if (variant === "modal")
-    return <Box className="modal-root" height="240px" transform="translate3d(0,0,0)" />;
+    return (
+      <Box
+        bg="bg.muted"
+        bor="1px!"
+        className="modal-root"
+        height="320px"
+        marginY="space24"
+        overflow="hidden"
+        rounded="radius8"
+        transform="translate3d(0,0,0)"
+      />
+    );
+
+  if (variant === "wait")
+    return (
+      <Flex
+        alignItems="center"
+        bg="bg.muted"
+        bor="1px!"
+        className="wait-root"
+        h="240px"
+        marginY="space24"
+        overflow="hidden"
+        p="space40"
+        rounded="radius8"
+        transform="translate3d(0,0,0)"
+      >
+        <Box
+          bg="bg.primary"
+          className="wait-tooltip-target"
+          h="16px"
+          rounded="radius100"
+          w="16px"
+        />
+        <button
+          className={cx(
+            css({
+              backgroundColor: "bg.primary!",
+              paddingY: "space8!",
+              paddingX: "space16!",
+              borderRadius: "radius8",
+              color: "text.onPrimary!",
+              marginLeft: "space40!",
+            }),
+            "flow-3",
+          )}
+          type="button"
+        >
+          Click me to continue
+        </button>
+      </Flex>
+    );
+
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- this is fine
+  if (variant === "fork")
+    return (
+      <Flex
+        alignItems="center"
+        bg="bg.muted"
+        bor="1px!"
+        className="fork-root"
+        h="240px"
+        justifyContent="center"
+        marginY="space24"
+        overflow="hidden"
+        p="space40"
+        rounded="radius8"
+        transform="translate3d(0,0,0)"
+      >
+        <button
+          className={cx(
+            css({
+              backgroundColor: "bg.primary!",
+              paddingY: "space8!",
+              paddingX: "space16!",
+              borderRadius: "radius8",
+              color: "text.onPrimary!",
+              marginLeft: "space40!",
+            }),
+            "branch-a",
+          )}
+          type="button"
+        >
+          Branch A
+        </button>
+        <button
+          className={cx(
+            css({
+              backgroundColor: "bg.primary!",
+              paddingY: "space8!",
+              paddingX: "space16!",
+              borderRadius: "radius8",
+              color: "text.onPrimary!",
+              marginLeft: "space40!",
+            }),
+            "branch-b",
+          )}
+          type="button"
+        >
+          Branch B
+        </button>
+      </Flex>
+    );
 
   return null;
 };

@@ -1,5 +1,6 @@
 {
   "tooltip": "Tooltip",
   "modal": "Modal",
-  "wait": "Wait"
+  "wait": "Wait",
+  "fork": "Fork"
 }

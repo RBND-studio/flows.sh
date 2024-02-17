@@ -1,0 +1,68 @@
+---
+title: Install Flows
+description: Learn how to install Flows in your product
+---
+
+import { Tabs } from "nextra/components";
+
+# Install Flows
+
+<Tabs items={["JS snippet (CDN)", "SDK library"]}>
+<Tabs.Tab>
+ This is the simplest way to install Flows. It only takes a few minutes.
+
+Copy the snippet bellow and paste it within the `<head>` tag of your product - ideally right before the closing `</head>` tag.
+
+{/* TODO: How to make sure the version is always latest here? */}
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@flows/js@0.0.34/dist/cloud/index.global.js"></script>
+```
+
+When you're done, you can start using Flows by calling `window.Flows` anywhere in your code. You can find the `projectId` in your project settings.
+
+```html
+<script>
+  window.FlowsJS.init({
+    // Insert your Flows Cloud projectId
+    projectId: "xxxx",
+    // Optionally define local flows. Learn how at https://flows.sh/docs/SDK/local-flows TODO: fix link
+    flows: [],
+  });
+</script>
+```
+
+Once the snippet is installed, you can start creating onboarding flows and launching them in your product.
+
+</Tabs.Tab>
+<Tabs.Tab>
+
+Install the Flows SDK library via a package manager.
+
+```sh npm2yarn
+npm i @flows/js
+```
+
+And then import it in your code. You can find the `projectId` in your project settings.
+
+```js
+import { init } from "@flows/js";
+
+init({
+  // Insert your Flows Cloud projectId
+  projectId: "xxxx",
+  // Optionally define local flows. Learn how at https://flows.sh/docs/SDK/local-flows TODO: fix link
+  flows: [],
+});
+```
+
+Once the library is installed, you can start creating onboarding flows and launching them in your product.
+
+</Tabs.Tab>
+</Tabs>
+
+## Set up a reverse proxy (optional)
+
+We recommend setting up a reverse proxy to load flows from Flows Cloud, so they're less likely to be intercepted by ad blockers. There are several options for creating a reverse proxy, including Cloudflare Workers, Vercel, and Netlify.
+
+{/* TODO: add simple article for reverse proxy process */}

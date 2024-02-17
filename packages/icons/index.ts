@@ -19,6 +19,7 @@ export * from "./src/google16";
 export * from "./src/graph16";
 export * from "./src/home16";
 export * from "./src/hourglass16";
+export * from "./src/info16";
 export * from "./src/kebab-horizontal16";
 export * from "./src/lightning24";
 export * from "./src/log16";
