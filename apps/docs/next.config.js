@@ -22,6 +22,9 @@ const nextConfig = {
     defaultLocale: "en-US",
     locales: ["en-US"],
   },
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
 };
 
 module.exports = withNextra(nextConfig);
