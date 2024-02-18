@@ -25,11 +25,5 @@
     "title": "SDK GitHub ↗",
     "href": "https://github.com/RBND-studio/flows-js",
     "newWindow": true
-  },
-  "sign-up": {
-    "title": "Sign up",
-    "href": "https://app.flows.sh",
-    "newWindow": true,
-    "type": "page"
   }
 }
