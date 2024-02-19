@@ -13,4 +13,7 @@ To preview a flow before making it live, click the `Preview` button in the top r
 
 ## Flow is not starting
 
-If the flow is not starting, make sure that the page you entered is accessible from the internet and that the flow is not waiting for any input from the user. If nothing happens, double check that Flows are installed in the application you are trying to test the flow on.
+1. Make sure the page you entered has Flows installed with correct Project ID.
+2. Make sure the page domain is allowed in the Project settings.
+3. Make sure the flow isn't stuck by clearing the browser local storage. {/* TODO: maybe we should think about better way of doing this */}
+4. Check the browser console in the preview page for any errors.
