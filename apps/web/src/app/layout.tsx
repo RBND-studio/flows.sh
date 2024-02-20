@@ -39,6 +39,7 @@ export const metadata: Metadata = {
     creator: "@flows_sh",
   },
   keywords: ["flows", "onboarding", "product adoption", "user onboarding", "user adoption"],
+  robots: PRODUCTION ? undefined : "noindex,nofollow",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {

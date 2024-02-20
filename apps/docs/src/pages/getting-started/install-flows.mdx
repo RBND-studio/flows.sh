@@ -1,0 +1,81 @@
+---
+title: Install Flows
+description: Learn how to install Flows in your product
+---
+
+import { useData } from "nextra/data"
+import { Tabs, Pre, Code } from "nextra/components";
+
+export const getServerSideProps = () => {
+  return fetch("https://cdn.jsdelivr.net/npm/@flows/js/package.json").then(res => res.json()).then(pkgJson => ({
+    props: {
+      ssg: {
+        version: pkgJson.version
+      }
+    },
+  }))
+}
+
+export const LatestScript = ({children}) => {
+  const {version} = useData()
+
+  return <Pre hasCopyCode data-language="html" data-theme="default"><Code><span className="line"><span style={{color:"var(--shiki-color-text)"}}>&lt;</span><span style={{color:"var(--shiki-token-string-expression)"}}>script</span><span style={{color:"var(--shiki-color-text)"}}> </span><span style={{color:"var(--shiki-token-function)"}}>src</span><span style={{color:"var(--shiki-token-keyword)"}}>=</span><span style={{color:"var(--shiki-token-string-expression)"}}>"https://cdn.jsdelivr.net/npm/@flows/js@{version}/dist/cloud/index.global.js"</span><span style={{color:"var(--shiki-color-text)"}}>&gt;&lt;/</span><span style={{color:"var(--shiki-token-string-expression)"}}>script</span><span style={{color:"var(--shiki-color-text)"}}>&gt;</span></span></Code></Pre>
+}
+
+# Install Flows
+
+<Tabs items={["JS snippet (CDN)", "NPM package"]}>
+<Tabs.Tab>
+ This is the simplest way to install Flows. It only takes a few minutes.
+
+Copy the snippet bellow and paste it within the `<head>` tag of your product - ideally right before the closing `</head>` tag.
+
+<LatestScript/>
+
+When you're done, you can start using Flows by calling `window.Flows` anywhere in your code. You can find the `projectId` in your project settings.
+
+```html
+<script>
+  window.FlowsJS.init({
+    // Insert your Flows Cloud projectId
+    projectId: "xxxx",
+    // Optionally define local flows. Learn how at https://flows.sh/docs/SDK/local-flows TODO: fix link
+    flows: [],
+  });
+</script>
+```
+
+Once the snippet is installed, you can start creating onboarding flows and launching them in your product.
+
+</Tabs.Tab>
+<Tabs.Tab>
+
+Install the Flows SDK library via a NPM package manager.
+
+```sh npm2yarn
+npm i @flows/js
+```
+
+And then import it in your code. You can find the `projectId` in your project settings.
+
+```js
+import { init } from "@flows/js";
+
+init({
+  // Insert your Flows Cloud projectId
+  projectId: "xxxx",
+  // Optionally define local flows. Learn how at https://flows.sh/docs/SDK/local-flows TODO: fix link
+  flows: [],
+});
+```
+
+Once the library is installed, you can start creating onboarding flows and launching them in your product.
+
+</Tabs.Tab>
+</Tabs>
+
+{/* ## Set up a proxy (optional) */}
+
+{/* We recommend setting up a proxy to load flows from Flows Cloud, so they're less likely to be intercepted by ad blockers. There are several options for creating a reverse proxy, including Cloudflare Workers, Vercel, and Netlify. */}
+
+{/* TODO: add simple article for proxy process */}

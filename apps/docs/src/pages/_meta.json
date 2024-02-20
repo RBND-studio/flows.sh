@@ -1,21 +1,29 @@
 {
   "index": "Overview",
-  "getting-started": "Getting Started",
-  "creating-flows": "Creating Flows",
-  "cloud": "Cloud",
-  "sdk": "SDK",
+  "getting-started": "Getting started",
+  "creating-flows": "Create flows",
+  "step-types": "Step types",
   "-": {
     "title": "",
     "type": "separator"
   },
-  "sdk-github": {
-    "title": "SDK GitHub",
-    "href": "https://github.com/RBND-studio/flows-js",
-    "newWindow": true
+  "sdk": "SDK",
+  "--": {
+    "title": "",
+    "type": "separator"
+  },
+  "---": {
+    "title": "Links",
+    "type": "separator"
   },
   "cloud-github": {
-    "title": "Cloud GitHub",
+    "title": "Cloud GitHub ↗",
     "href": "https://github.com/RBND-studio/flows-cloud",
+    "newWindow": true
+  },
+  "sdk-github": {
+    "title": "SDK GitHub ↗",
+    "href": "https://github.com/RBND-studio/flows-js",
     "newWindow": true
   }
 }

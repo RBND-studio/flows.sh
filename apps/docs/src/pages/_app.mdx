@@ -1,5 +1,12 @@
 import "../globals.css";
+import "@flows/js/flows.css"
+import {DemoFlows} from "../components/demo-flows"
 
 export default function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Component {...pageProps} />
+      <DemoFlows />
+    </>
+  );
 }

@@ -1,0 +1,51 @@
+{
+  // Version of the setting file.  Always 0.2
+  "version": "0.2",
+  // language - current active spelling language
+  "language": "en",
+  // words - list of words to be always considered correct
+  "words": [
+    "AAAAAL",
+    "clpxmw",
+    "easings",
+    "fadein",
+    "flows",
+    "grecaptcha",
+    "Lekgu",
+    "libc",
+    "nestjs",
+    "nextjs",
+    "nextra",
+    "noflash",
+    "Ondrej",
+    "Pesicka",
+    "pesickadavid",
+    "rbnd",
+    "rehype",
+    "reimagined",
+    "Sonner",
+    "supabase",
+    "Usetiful",
+    "visx",
+    "Vixww",
+    "waivable",
+    "shiki"
+  ],
+  // flagWords - list of words to be always considered incorrect
+  // This is useful for offensive words and common spelling errors.
+  // For example "hte" should be "the"
+  "flagWords": ["hte"],
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/tsconfig.*",
+    "**.html",
+    "**/package.json",
+    "**/dist/**/*",
+    "**/storybook-static/**/*",
+    "out/**/*",
+    "_journal.json",
+    "pnpm-lock.yaml",
+    "cspell.json"
+  ],
+  "allowCompoundWords": true
+}

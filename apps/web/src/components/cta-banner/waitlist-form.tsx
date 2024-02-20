@@ -21,7 +21,7 @@ export const WaitlistForm: FC = () => {
   return (
     <>
       <form
-        className={css({
+        className={`${css({
           display: "flex",
           gap: "space8",
           alignItems: "center",
@@ -29,7 +29,7 @@ export const WaitlistForm: FC = () => {
           sm: {
             flexDirection: "row",
           },
-        })}
+        })} waitlist-form`}
         onSubmit={handleSubmit}
       >
         <Input

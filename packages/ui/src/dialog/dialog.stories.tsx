@@ -14,11 +14,8 @@ const meta: Meta<typeof Dialog> = {
         <DialogTitle>Hello World!</DialogTitle>
         <DialogContent>
           <Text>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto eos nesciunt
-            obcaecati, culpa odit delectus! Dolorem aperiam, assumenda delectus repellat mollitia
-            repellendus nihil esse, ea praesentium nesciunt aliquam minus quam expedita ad atque
-            deleniti? Illum explicabo, deserunt harum delectus officiis rerum quod non pariatur
-            dolorem. Doloribus perspiciatis quidem ipsum accusamus?
+            Flows lets you build any onboarding you want. Guide users, increase feature adoption,
+            and improve revenue.
           </Text>
         </DialogContent>
         <DialogActions>

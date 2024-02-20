@@ -3,6 +3,8 @@ const path = require("node:path");
 const withNextra = require("nextra")({
   theme: "nextra-theme-docs",
   themeConfig: "./src/theme.config.tsx",
+  defaultShowCopyCode: true,
+  staticImage: true,
 });
 
 /** @type {import('next').NextConfig} */
@@ -19,6 +21,9 @@ const nextConfig = {
   i18n: {
     defaultLocale: "en-US",
     locales: ["en-US"],
+  },
+  images: {
+    formats: ["image/avif", "image/webp"],
   },
 };
 

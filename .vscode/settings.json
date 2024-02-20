@@ -1,5 +1,4 @@
 {
-  "cSpell.words": ["contentlayer", "sonner"],
   "editor.formatOnSave": true,
   "editor.detectIndentation": false,
   "eslint.workingDirectories": [{ "mode": "auto" }]

@@ -15,11 +15,13 @@
     "be": "pnpm --filter backend",
     "db": "pnpm --filter db",
     "prepare": "husky install",
-    "pre-push": "concurrently \"pnpm lint\" \"pnpm tsc\" \"pnpm test\" \"pnpm -r pre-commit\"",
-    "web-docs": "pnpm --filter=web --filter=docs"
+    "pre-push": "concurrently \"pnpm lint\" \"pnpm tsc\" \"pnpm test\" \"pnpm spellcheck\" \"pnpm -r pre-commit\"",
+    "web-docs": "pnpm --filter=web --filter=docs",
+    "spellcheck": "pnpm cspell .  --quiet"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
+    "cspell": "^8.4.0",
     "eslint": "8.50.0",
     "husky": "^8.0.3",
     "prettier": "^3.0.3",
