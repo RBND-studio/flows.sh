@@ -1,3 +1,5 @@
+import { links } from "shared";
+
 type MenuItem = {
   title: string;
   href: string;
@@ -13,9 +15,8 @@ export const menuItems: MenuItem[] = [
     title: "Blog",
     href: "/blog",
   },
-  // TODO: Uncomment when docs are ready and header can handle mobiles
-  // {
-  //   title: "Docs",
-  //   href: links.docs,
-  // },
+  {
+    title: "Docs",
+    href: links.docs,
+  },
 ];
