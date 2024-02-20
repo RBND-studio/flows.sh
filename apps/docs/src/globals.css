@@ -26,3 +26,8 @@ body::after {
   background-image: url("/docs/pattern.svg");
   background-repeat: repeat-x;
 }
+
+p > img {
+  border: 1px solid var(--colors-border);
+  border-radius: 8px;
+}

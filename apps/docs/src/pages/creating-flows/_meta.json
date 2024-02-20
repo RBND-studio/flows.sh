@@ -1,5 +1,7 @@
 {
-  "selecting-elements": "Selecting Elements",
-  "step-types": "Types of Flow Steps",
-  "elements": "Elements"
+  "steps-editor": "Steps editor",
+  "frequency": "Frequency",
+  "targeting": "Targeting",
+  "preview": "Preview flow",
+  "publish-flow": "Publish flow"
 }

@@ -1,0 +1,47 @@
+---
+title: Flow targeting
+description: Filter the users that should see a specific flow.
+---
+
+# Flow targeting
+
+Filter the users that should see a specific flow.
+
+![Targeting form](/creating-flows/targeting.png)
+
+When launching flows, you can show them to specific users based on their attributes. This is useful when you want to show a flow to a specific segment of your users, for example, only to users that have a specific role or that have been using your app for a certain amount of time.
+
+## Create targeting filter
+
+1. Add a new filter group. Filter groups combine all the filters in them with an `AND` operator. This means that all the filters in the group must be true for the flow to be shown to the user.
+2. Add a new filter. You can add as many filters as you need to the group. Each filter can be based on a different user attribute or the same attribute with different conditions.
+3. Specify the user property that you want to use for targeting. You can use any user property that you have set up in your implementation.
+4. Choose the operator that you want to use to compare the user property. The available operators depend on the type of the user property.
+5. Specify the property type (number, string, or date).
+6. Enter the value that you want to compare the user property to.
+7. Optionally add another filter or filter group to further refine the targeting.
+
+## Targeting groups
+
+You can add multiple targeting groups to a flow. All the targeting groups are combined with an `OR` operator. This means that the flow will be shown to the user if any of the targeting groups is true.
+
+## Targeting options
+
+Targeting is based on user attributes. You can target users based on any user property that you have set up in your implementation. Flows support the following targeting options:
+
+- Number
+- String
+- Date
+- Boolean
+
+You can further refine the targeting by using the following operators:
+
+- Equals
+- Does not equal
+- Greater than
+- Greater than or equal to
+- Less than
+- Less than or equal to
+- Contains
+- Does not contain
+- Regular expression
