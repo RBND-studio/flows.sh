@@ -8,9 +8,10 @@ import { tabs } from "./tabs";
 type Props = {
   children: ReactNode;
   className?: string;
+  lineNumbers?: boolean;
 };
 
-export const CodeHighlight: FC<Props> = (props) => {
+export const CodeHighlight: FC<Props> = ({ lineNumbers = true, ...props }) => {
   return (
     <Code
       extensions={[fileIcons, tabs]}
@@ -18,6 +19,7 @@ export const CodeHighlight: FC<Props> = (props) => {
       {...props}
       className={cx(
         css({
+          position: "relative",
           borderRadius: "radius12!",
           borderStyle: "solid",
           borderWidth: "1px",
@@ -27,6 +29,9 @@ export const CodeHighlight: FC<Props> = (props) => {
           "& pre": {
             flex: 1,
           },
+          "&:hover .copy-button": {
+            opacity: 1,
+          },
         }),
         props.className,
       )}
@@ -35,7 +40,7 @@ export const CodeHighlight: FC<Props> = (props) => {
         fontSize: "14px",
         borderRadius: "radius16",
       })}
-      lineNumbers
+      lineNumbers={lineNumbers}
       titleClassName={css({
         "--tab-top-border": "transparent",
       })}
