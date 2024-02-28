@@ -48,7 +48,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
       ref={ref}
     >
       {startIcon || loading ? (
-        <Icon position="start">{loading ? <Spinner color="inherit" /> : startIcon}</Icon>
+        <Icon position="start">{loading ? <Spinner color="inherit" size={16} /> : startIcon}</Icon>
       ) : null}
       <Slottable>{children}</Slottable>
       {endIcon ? <Icon position="end">{endIcon}</Icon> : null}
