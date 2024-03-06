@@ -4,11 +4,10 @@ import { MobileMenu } from "components/header/mobile-menu";
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactElement } from "react";
-import React from "react";
-import { Text } from "ui";
+import { links } from "shared";
+import { Button, Text } from "ui";
 
 import { DesktopMenu } from "./desktop-menu";
-import { JoinWaitlist } from "./join-waitlist";
 
 export const Header = (): ReactElement => {
   return (
@@ -34,23 +33,32 @@ export const Header = (): ReactElement => {
           gap: "space8",
         })}
       >
-        <Link
-          className={css({
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "space8",
-          })}
-          href="/"
-        >
-          <Image alt="Logo" height={28} priority src="/images/logo/logo.svg" width={28} />
-          <Text variant="bodyM" weight="700">
-            Flows
-          </Text>
-        </Link>
+        <Flex flex={1} gap="space8" maxW="150px">
+          <Link
+            className={css({
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "space8",
+            })}
+            href="/"
+          >
+            <Image alt="Logo" height={28} priority src="/images/logo/logo.svg" width={28} />
+            <Text variant="bodyM" weight="700">
+              Flows
+            </Text>
+          </Link>
+        </Flex>
         <Flex flex={1} justifyContent="center">
           <DesktopMenu />
         </Flex>
-        <JoinWaitlist />
+        <Flex flex={1} gap="space8" justifyContent="flex-end" maxW="150px">
+          <Button asChild variant="ghost">
+            <a href={links.logIn}>Log in</a>
+          </Button>
+          <Button asChild variant="black">
+            <a href={links.signUp}>Sign up</a>
+          </Button>
+        </Flex>
         <MobileMenu />
       </div>
     </header>
