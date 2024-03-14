@@ -29,7 +29,7 @@
     "sonner": "^1.4.0"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.32.0",
+    "@pandacss/dev": "0.34.3",
     "@storybook/addon-essentials": "^8.0.0",
     "@storybook/addon-interactions": "^8.0.0",
     "@storybook/addon-links": "^8.0.0",
@@ -45,9 +45,7 @@
     "storybook": "^8.0.0",
     "tsconfig": "workspace:*",
     "typescript": "5.4.2",
-    "vite": "^5.1.6"
-  },
-  "optionalDependencies": {
-    "@flows/styled-system": "link:node_modules/@flows/pandacss"
+    "vite": "^5.1.6",
+    "vite-tsconfig-paths": "^4.3.2"
   }
 }
