@@ -109,6 +109,10 @@ const button = cva({
         padding: "3px 7px",
         height: 28,
       },
+      smallIcon: {
+        padding: "5px",
+        height: "unset",
+      },
       medium: {
         textStyle: "titleS",
         padding: "7px 15px",
