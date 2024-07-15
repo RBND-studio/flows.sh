@@ -1,3 +1,4 @@
+import { ExternalLink16 } from "icons";
 import Link from "next/link";
 import type { FC, ReactNode } from "react";
 
@@ -12,6 +13,7 @@ export const SmartLink: FC<Props> = (props) => {
     return (
       <a rel={props.target === "_blank" ? "noopener" : undefined} {...props}>
         {props.children}
+        {props.target === "_blank" && <ExternalLink16 />}
       </a>
     );
 
