@@ -3,7 +3,7 @@ import { type HTMLStyledProps, styled } from "@flows/styled-system/jsx";
 import { Slot } from "@radix-ui/react-slot";
 import { forwardRef, type HTMLAttributes } from "react";
 
-type Props = HTMLAttributes<HTMLParagraphElement> &
+export type TextProps = HTMLAttributes<HTMLParagraphElement> &
   HTMLStyledProps<"p"> & {
     /**
      * @defaultValue "primary"
@@ -25,7 +25,7 @@ type Props = HTMLAttributes<HTMLParagraphElement> &
     align?: "left" | "center" | "right";
   };
 
-export const Text = forwardRef<HTMLParagraphElement, Props>(function Text(
+export const Text = forwardRef<HTMLParagraphElement, TextProps>(function Text(
   {
     as = "p",
     color = "default",
