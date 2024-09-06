@@ -18,7 +18,7 @@
     "@radix-ui/react-slot": "^1.1.0",
     "@rbnd/react-dark-mode": "^2.0.1",
     "contentlayer": "^0.3.4",
-    "dayjs": "^1.11.11",
+    "dayjs": "^1.11.12",
     "icons": "workspace:*",
     "next": "14.2.5",
     "next-contentlayer": "^0.3.4",
@@ -26,7 +26,6 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "reading-time": "^1.5.0",
-    "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.0",
     "shared": "workspace:*",
@@ -41,6 +40,6 @@
     "@types/react-dom": "^18.3.0",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
-    "typescript": "5.5.3"
+    "typescript": "5.5.4"
   }
 }

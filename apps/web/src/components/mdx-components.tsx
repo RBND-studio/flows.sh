@@ -1,10 +1,11 @@
 import { css } from "@flows/styled-system/css";
+import { HeadingLink } from "components/mdx-heading-link";
 import { isValidUrl } from "lib/is-valid-url";
 import Image from "next/image";
 import Link from "next/link";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import type { HTMLProps, ReactElement } from "react";
-import { Text } from "ui";
+import { Text, type TextProps } from "ui";
 import { CodeHighlight } from "ui/server";
 
 const mdxComponents = {
@@ -22,50 +23,130 @@ const mdxComponents = {
       sizes="(max-width: 768px) 100vw, 896px"
     />
   ),
-  h1: (props) => (
-    <Text
-      as="h2"
-      className={css({
-        mt: "space48",
-        mb: "space24",
-      })}
-      variant="title2xl"
-      {...props}
-    />
-  ),
-  h2: (props) => (
-    <Text
-      as="h3"
-      className={css({
-        mt: "space24",
-        mb: "space16",
-      })}
-      variant="titleXl"
-      {...props}
-    />
-  ),
-  h3: (props) => (
-    <Text
-      as="h4"
-      className={css({
-        mt: "space24",
-        mb: "space16",
-      })}
-      variant="titleL"
-      {...props}
-    />
-  ),
-  h4: (props) => (
-    <Text
-      as="h5"
-      className={css({
-        mt: "space24",
-        mb: "space16",
-      })}
-      variant="titleM"
-      {...props}
-    />
-  ),
+  h1: (props: TextProps) => {
+    if (props.id) {
+      return (
+        <HeadingLink
+          linkProps={{ href: `#${props.id}` }}
+          textProps={{
+            as: "h2",
+            variant: "title2xl",
+            ...props,
+          }}
+          wrapperProps={css({
+            mt: "space48",
+            mb: "space24",
+          })}
+        >
+          {props.children}
+        </HeadingLink>
+      );
+    }
+    return (
+      <Text
+        as="h2"
+        className={css({
+          mt: "space48",
+          mb: "space24",
+        })}
+        variant="title2xl"
+        {...props}
+      />
+    );
+  },
+  h2: (props: TextProps) => {
+    if (props.id) {
+      return (
+        <HeadingLink
+          linkProps={{ href: `#${props.id}` }}
+          textProps={{
+            as: "h3",
+            variant: "titleXl",
+            ...props,
+          }}
+          wrapperProps={css({
+            mt: "space24",
+            mb: "space16",
+          })}
+        >
+          {props.children}
+        </HeadingLink>
+      );
+    }
+    return (
+      <Text
+        as="h3"
+        className={css({
+          mt: "space24",
+          mb: "space16",
+        })}
+        variant="titleXl"
+        {...props}
+      />
+    );
+  },
+  h3: (props: TextProps) => {
+    if (props.id) {
+      return (
+        <HeadingLink
+          linkProps={{ href: `#${props.id}` }}
+          textProps={{
+            as: "h4",
+            variant: "titleL",
+            ...props,
+          }}
+          wrapperProps={css({
+            mt: "space24",
+            mb: "space16",
+          })}
+        >
+          {props.children}
+        </HeadingLink>
+      );
+    }
+    return (
+      <Text
+        as="h4"
+        className={css({
+          mt: "space24",
+          mb: "space16",
+        })}
+        variant="titleL"
+        {...props}
+      />
+    );
+  },
+  h4: (props: TextProps) => {
+    if (props.id) {
+      return (
+        <HeadingLink
+          linkProps={{ href: `#${props.id}` }}
+          textProps={{
+            as: "h5",
+            variant: "titleM",
+            ...props,
+          }}
+          wrapperProps={css({
+            mt: "space24",
+            mb: "space16",
+          })}
+        >
+          {props.children}
+        </HeadingLink>
+      );
+    }
+    return (
+      <Text
+        as="h5"
+        className={css({
+          mt: "space24",
+          mb: "space16",
+        })}
+        variant="titleM"
+        {...props}
+      />
+    );
+  },
   p: (props) => (
     <Text
       as="p"

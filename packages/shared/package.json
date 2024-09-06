@@ -6,11 +6,11 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "dayjs": "1.11.11"
+    "dayjs": "1.11.12"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
-    "typescript": "5.5.3"
+    "typescript": "5.5.4"
   }
 }

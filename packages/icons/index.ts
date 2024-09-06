@@ -25,6 +25,7 @@ export * from "./src/home16";
 export * from "./src/hourglass16";
 export * from "./src/info16";
 export * from "./src/kebab-horizontal16";
+export * from "./src/link16";
 export * from "./src/log16";
 export * from "./src/mail16";
 export * from "./src/menu16";

@@ -78,17 +78,6 @@ export default makeSource({
   documentTypes: [Post, Release],
   mdx: {
     remarkPlugins: [remarkGfm],
-    rehypePlugins: [
-      rehypeSlug,
-      // TODO: @pesickadavid this was creating empty links that nobody could use. Ideal state would be to have an icon show up when hovering over the heading that would allow you to copy the link.
-      // [
-      //   rehypeAutolinkHeadings,
-      //   {
-      //     properties: {
-      //       className: ["anchor"],
-      //     },
-      //   },
-      // ],
-    ],
+    rehypePlugins: [rehypeSlug],
   },
 });
