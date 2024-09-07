@@ -1,6 +1,8 @@
+"use client";
+
 import { css, cx } from "@flows/styled-system/css";
-import { headers } from "next/headers";
 import Link, { type LinkProps } from "next/link";
+import { usePathname } from "next/navigation";
 import { type ReactNode } from "react";
 import { Text, type TextProps } from "ui";
 
@@ -18,9 +20,8 @@ export const HeadingLink = ({
   wrapperProps,
   children,
 }: HeadingLinkProps): ReactNode => {
-  const headersList = headers();
-  const fullUrl = headersList.get("referer") ?? "";
-  const link = `${fullUrl}#${textProps.id}`;
+  const pathname = usePathname();
+  const path = `${pathname}#${textProps.id}`;
   return (
     <div
       className={cx(
@@ -49,11 +50,11 @@ export const HeadingLink = ({
       <HeadingCopyButton
         className={css({
           _groupHover: {
-            display: "flex",
+            opacity: 1,
           },
-          display: "none",
+          opacity: 0,
         })}
-        link={link}
+        path={path}
       />
     </div>
   );
