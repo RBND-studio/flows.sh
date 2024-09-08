@@ -32,7 +32,7 @@
     "sonner": "^1.5.0"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.45.0",
+    "@pandacss/dev": "0.45.2",
     "@storybook/addon-essentials": "^8.2.9",
     "@storybook/addon-interactions": "^8.2.9",
     "@storybook/addon-links": "^8.2.9",
