@@ -26,7 +26,7 @@ COPY --from=builder /app/out/full/ .
 RUN pnpm install --frozen-lockfile
 RUN pnpm turbo run build --filter=backend...
 
-FROM base as prod-installer
+FROM base AS prod-installer
 WORKDIR /app
 RUN corepack enable pnpm
 COPY --from=builder /app/out/full/ .

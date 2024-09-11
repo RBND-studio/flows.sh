@@ -6,14 +6,14 @@ import { type ReactNode } from "react";
 import { clipboard, Icon, toast } from "ui";
 
 export const HeadingCopyButton = ({
-  link,
+  path,
   className,
 }: {
-  link: string;
+  path: string;
   className?: string;
 }): ReactNode => {
   const handleCopy = (): void => {
-    void clipboard.copy(link);
+    void clipboard.copy(window.location.origin + path);
     toast.success("URL copied to your clipboard");
   };
 
