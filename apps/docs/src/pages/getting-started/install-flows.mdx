@@ -103,6 +103,12 @@ Once the library is installed, you can start creating onboarding flows and start
 </Tabs.Tab>
 </Tabs>
 
+<BetterCallout variant="warning">
+  Ensure you use a secure origin (`https://...` or `http://localhost`) when using this library. We
+  use WebCrypto API under the hood, which requires a secure context. [Learn
+  more](https://stackoverflow.com/questions/46670556/how-to-enable-crypto-subtle-for-unsecure-origins-in-chrome/46671627#46671627).
+</BetterCallout>
+
 {/* ## Set up a proxy (optional) */}
 
 {/* We recommend setting up a proxy to load flows from Flows Cloud, so they're less likely to be intercepted by ad blockers. There are several options for creating a reverse proxy, including Cloudflare Workers, Vercel, and Netlify. */}
