@@ -6,8 +6,9 @@ type Props = {
   children?: ReactNode;
   className?: string;
   color?: ComponentProps<typeof Text>["color"];
+  disabled?: boolean;
 };
 
-export const Description: FC<Props> = (props) => {
-  return <Text color="subtle" variant="bodyXs" {...props} />;
+export const Description: FC<Props> = ({ color = "muted", ...props }) => {
+  return <Text color={props.disabled ? "disabled" : color} variant="bodyXxs" {...props} />;
 };

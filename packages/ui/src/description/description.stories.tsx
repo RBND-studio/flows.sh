@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Description } from "./description";
 
 const meta: Meta<typeof Description> = {
-  title: "Description",
+  title: "Parts/Description",
   component: Description,
   args: {
     children: "This is a description for input.",

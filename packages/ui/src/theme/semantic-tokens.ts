@@ -78,6 +78,93 @@ export const semanticTokens = defineSemanticTokens({
     special: {
       dotBg: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.800}" } },
     },
+
+    newBg: {
+      DEFAULT: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
+      neutral: {
+        DEFAULT: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
+        muted: {
+          value: {
+            base: "{colors.neutral.25}", //TODO: add _dark
+          },
+        },
+        subtle: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.800}" } },
+      },
+      primary: {
+        DEFAULT: { value: { base: "{colors.primary.500}", _dark: "{colors.primary-dark.400}" } },
+      },
+    },
+
+    newFg: {
+      DEFAULT: { value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.25}" } },
+      neutral: {
+        DEFAULT: { value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.25}" } },
+      },
+      primary: {
+        DEFAULT: { value: { base: "{colors.primary.600}", _dark: "{colors.primary-dark.400}" } },
+      },
+    },
+
+    newBorder: {
+      DEFAULT: {
+        value: {
+          base: "{colors.neutral.150}", //TODO: add _dark
+        },
+      },
+      neutral: {
+        DEFAULT: {
+          value: {
+            base: "{colors.neutral.150}", //TODO: add _dark
+          },
+        },
+        strong: {
+          value: {
+            base: "{colors.neutral.200}", //TODO: add _dark
+          },
+        },
+      },
+      primary: {
+        DEFAULT: {
+          value: {
+            base: "{colors.primary.500}", //TODO: add _dark
+          },
+        },
+      },
+    },
+    // control is a generic pattern for control elements like fields
+    newControl: {
+      bg: {
+        DEFAULT: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.875}" } },
+        hover: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.825}" } },
+        selected: { value: { base: "{colors.primary.50}", _dark: "{colors.primary-dark.800}" } },
+        disabled: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.850}" } },
+      },
+      fg: {
+        DEFAULT: { value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.25}" } },
+        selected: { value: { base: "{colors.primary.600}", _dark: "{colors.primary-dark.400}" } },
+        disabled: { value: { base: "{colors.neutral.400}", _dark: "{colors.neutral.500}" } },
+        placeholder: { value: { base: "{colors.neutral.400}", _dark: "{colors.neutral.500}" } },
+      },
+      border: {
+        DEFAULT: { value: { base: "{colors.neutral.200}", _dark: "{colors.neutral.700}" } },
+        hover: { value: { base: "{colors.neutral.300}", _dark: "{colors.neutral.600}" } },
+        disabled: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.850}" } },
+        selected: { value: { base: "{colors.primary.500}", _dark: "{colors.primary-dark.400}" } },
+      },
+    },
+    // overlay is used for modals, popovers, and other overlay patterns
+    overlay: {
+      bg: {
+        DEFAULT: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.875}" } },
+      },
+      border: {
+        DEFAULT: { value: { base: "{colors.neutral.150}", _dark: "{colors.neutral.750}" } },
+      },
+    },
+    // TODO: separate button into separate pattern
+    // button: {
+    //
+    // },
   },
   shadows: {
     l1: { value: { base: "{shadows.light1}", _dark: "{shadows.dark1}" } },

@@ -37,7 +37,6 @@ export const WaitlistForm: FC = () => {
           onFocus={loadRecaptcha}
           placeholder="Enter your email"
           required
-          size="large"
           type="email"
           value={email}
         />

@@ -41,34 +41,49 @@ const TooltipContent = ({
 );
 TooltipContent.displayName = TooltipPrimitive.Content.displayName;
 
+export type TooltipSide = React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>["side"];
+
 type TooltipProps = {
   trigger: React.ReactNode;
-  text: string;
+  content: React.ReactNode;
   sideOffset?: number;
-  side?: React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>["side"];
+  side?: TooltipSide;
   align?: React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>["align"];
   className?: string;
   delayDuration?: number;
+  hasUnderline?: boolean;
 };
 
 export const Tooltip = ({
-  text,
+  content,
   trigger,
   align,
   className,
   side,
   sideOffset,
   delayDuration = 320,
+  hasUnderline,
 }: TooltipProps): JSX.Element => {
   return (
     <TooltipProvider>
       <TooltipRoot delayDuration={delayDuration}>
-        <TooltipTrigger asChild>{trigger}</TooltipTrigger>
-        {text === "" ? null : (
+        <TooltipTrigger
+          asChild
+          className={cx(
+            css({
+              borderBottom: hasUnderline ? "2px dotted" : "none",
+              borderColor: hasUnderline ? "newBorder.neutral.strong" : undefined,
+            }),
+            className,
+          )}
+        >
+          {trigger}
+        </TooltipTrigger>
+        {content ? (
           <TooltipContent align={align} className={className} side={side} sideOffset={sideOffset}>
-            {text}
+            {content}
           </TooltipContent>
-        )}
+        ) : null}
       </TooltipRoot>
     </TooltipProvider>
   );

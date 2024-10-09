@@ -1,3 +1,4 @@
+// TODO: replace this with a smaller carret
 export const CaretDown16 = (props: React.SVGProps<SVGSVGElement>): JSX.Element => (
   <svg
     fill="currentColor"

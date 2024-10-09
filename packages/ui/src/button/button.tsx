@@ -52,10 +52,16 @@ export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
     >
       {/* eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- nullish coalescing cannot be used here */}
       {startIcon || loading ? (
-        <Icon position="start">{loading ? <Spinner color="inherit" size={16} /> : startIcon}</Icon>
+        <Icon size={size} position="start">
+          {loading ? <Spinner color="inherit" size={16} /> : startIcon}
+        </Icon>
       ) : null}
       <Slottable>{children}</Slottable>
-      {endIcon ? <Icon position="end">{endIcon}</Icon> : null}
+      {endIcon ? (
+        <Icon size={size} position="end">
+          {endIcon}
+        </Icon>
+      ) : null}
     </Component>
   );
 });
@@ -66,11 +72,26 @@ const Icon = styled("span", {
   },
   variants: {
     position: {
+      // position removes the opposite margin that is set using size prop
       start: {
-        marginRight: 8,
+        marginLeft: 0,
       },
       end: {
-        marginLeft: 8,
+        marginRight: 0,
+      },
+    },
+    size: {
+      small: {
+        mx: 4,
+      },
+      default: {
+        mx: 4,
+      },
+      medium: {
+        mx: 8,
+      },
+      large: {
+        mx: 8,
       },
     },
   },
@@ -82,11 +103,16 @@ const button = cva({
     alignItems: "center",
     justifyContent: "center",
     cursor: "pointer",
-    borderRadius: 8,
-    superFastEaseInOut: "all",
-    shadow: "l1",
     textWrap: "nowrap",
-    border: "1px solid transparent",
+
+    borderRadius: 8,
+    borderStyle: "solid",
+    borderWidth: 1,
+    borderColor: "transparent",
+    shadow: "l1",
+
+    superFastEaseInOut: "all",
+
     _disabled: {
       pointerEvents: "none",
       cursor: "default",
@@ -101,8 +127,9 @@ const button = cva({
     size: {
       small: {
         textStyle: "titleS",
-        padding: "3px 7px",
-        height: 28,
+        padding: "1px 7px",
+        height: 24,
+        borderRadius: 6,
       },
       default: {
         textStyle: "titleS",
@@ -116,20 +143,18 @@ const button = cva({
       },
       large: {
         textStyle: "titleL",
-        padding: "9px 19px",
-        height: 48,
+        padding: "5px 15px",
+        height: 40,
       },
     },
     variant: {
       primary: {
         backgroundColor: "bg.primary",
-        color: "text.onPrimary",
-        borderStyle: "solid",
-        borderWidth: 1,
         borderColor: "bg.primary",
+        color: "text.onPrimary",
         _hover: {
-          borderColor: "bg.primaryHover",
           backgroundColor: "bg.primaryHover",
+          borderColor: "bg.primaryHover",
         },
         _disabled: {
           backgroundColor: "bg.subtle",
@@ -144,11 +169,9 @@ const button = cva({
         },
       },
       secondary: {
-        color: "text",
-        borderStyle: "solid",
-        borderWidth: 1,
-        borderColor: "border.strong",
         backgroundColor: "bg.muted",
+        borderColor: "border.strong",
+        color: "text",
         _hover: {
           backgroundColor: "bg.hover",
         },
@@ -165,8 +188,6 @@ const button = cva({
       },
       black: {
         backgroundColor: "bg.black",
-        borderStyle: "solid",
-        borderWidth: 1,
         borderColor: "bg.black",
         color: "text.onBlack",
         _hover: {
@@ -185,28 +206,10 @@ const button = cva({
           borderColor: "bg.blackActive",
         },
       },
-      // Used in select
-      field: {
-        color: "text",
-        borderStyle: "solid",
-        borderWidth: 1,
-        borderColor: "border.strong",
-        backgroundColor: "bg.muted",
-        _hover: {
-          borderColor: "border.primary",
-          backgroundColor: "bg",
-        },
-        _disabled: {
-          backgroundColor: "bg.subtle",
-          borderColor: "bg.subtle",
-          color: "text.subtle",
-          pointerEvents: "none",
-          boxShadow: "none",
-        },
-      },
       ghost: {
-        color: "text",
         backgroundColor: "transparent",
+        borderColor: "transparent",
+        color: "text",
         shadow: "none",
         _hover: {
           backgroundColor: "bg.hover",
@@ -222,13 +225,13 @@ const button = cva({
         },
       },
       danger: {
-        color: "text.danger",
         backgroundColor: "bg.muted",
         borderColor: "border.strong",
+        color: "text.danger",
         _hover: {
           backgroundColor: "bg.dangerHover",
-          color: "text.onPrimary",
           borderColor: "bg.dangerHover",
+          color: "text.onPrimary",
         },
         _disabled: {
           backgroundColor: "bg.subtle",
@@ -242,8 +245,38 @@ const button = cva({
           borderColor: "bg.dangerActive",
         },
       },
+      // Used in select
+      field: {
+        backgroundColor: "newControl.bg",
+        borderColor: "newControl.border",
+        outline: "none",
+        color: "newControl.fg",
+
+        shadow: "none",
+        textStyle: "bodyS",
+
+        _hover: {
+          borderColor: "newControl.border.hover",
+        },
+        // TODO: think if focus makes sense on select
+        _focus: {
+          borderColor: "newControl.border.selected",
+          _hover: {
+            borderColor: "newControl.border.selected",
+          },
+        },
+
+        _disabled: {
+          backgroundColor: "newControl.bg.disabled",
+          borderColor: "newControl.border.disabled",
+          color: "newControl.fg.disabled",
+          pointerEvents: "none",
+          boxShadow: "none",
+        },
+      },
     },
     shadow: {
+      //TODO: think about highlight
       highlight: {
         boxShadow: "l3",
       },

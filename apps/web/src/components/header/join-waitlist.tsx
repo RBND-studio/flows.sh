@@ -35,7 +35,6 @@ export const JoinWaitlist: FC = () => {
               onFocus={loadRecaptcha}
               placeholder="Enter your email"
               required
-              size="medium"
               type="email"
               value={email}
             />

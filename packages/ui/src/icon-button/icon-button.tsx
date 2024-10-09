@@ -3,7 +3,7 @@ import { type HTMLStyledProps, styled } from "@flows/styled-system/jsx";
 import { Slot, Slottable } from "@radix-ui/react-slot";
 import { type ButtonHTMLAttributes, forwardRef } from "react";
 
-import { Tooltip } from "../tooltip/tooltip";
+import { Tooltip, type TooltipSide } from "../tooltip/tooltip";
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> &
   HTMLStyledProps<"button"> & {
@@ -22,6 +22,7 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> &
      */
     shadow?: (typeof button.variantMap.shadow)[number];
     tooltip?: string;
+    tooltipSide?: TooltipSide;
   };
 
 export const IconButton = forwardRef<HTMLButtonElement, Props>(function Button(
@@ -33,6 +34,7 @@ export const IconButton = forwardRef<HTMLButtonElement, Props>(function Button(
     tooltip,
     asChild,
     disabled,
+    tooltipSide = "bottom",
     ...props
   },
   ref,
@@ -56,7 +58,9 @@ export const IconButton = forwardRef<HTMLButtonElement, Props>(function Button(
 
   if (!tooltip) return buttonRender;
 
-  return <Tooltip text={tooltip} trigger={buttonRender} />;
+  return (
+    <Tooltip side={tooltipSide} content={tooltip} delayDuration={800} trigger={buttonRender} />
+  );
 });
 
 const Icon = styled("span", {
@@ -85,7 +89,10 @@ const button = cva({
     superFastEaseInOut: "all",
     shadow: "l1",
     textWrap: "nowrap",
-    border: "1px solid transparent",
+    borderStyle: "solid",
+    borderWidth: 1,
+    borderColor: "transparent",
+    flexShrink: 0,
     _disabled: {
       pointerEvents: "none",
       cursor: "default",
@@ -99,8 +106,9 @@ const button = cva({
   variants: {
     size: {
       small: {
-        width: 28,
-        height: 28,
+        width: 24,
+        height: 24,
+        borderRadius: 6,
       },
       default: {
         width: 32,
@@ -111,16 +119,15 @@ const button = cva({
         height: 36,
       },
       large: {
-        width: 48,
-        height: 48,
+        width: 40,
+        height: 40,
       },
     },
     variant: {
       primary: {
         backgroundColor: "bg.primary",
         color: "text.onPrimary",
-        borderStyle: "solid",
-        borderWidth: 1,
+
         borderColor: "bg.primary",
         _hover: {
           borderColor: "bg.primaryHover",
@@ -140,8 +147,7 @@ const button = cva({
       },
       secondary: {
         color: "text",
-        borderStyle: "solid",
-        borderWidth: 1,
+
         borderColor: "border.strong",
         backgroundColor: "bg.muted",
         _hover: {
@@ -160,8 +166,7 @@ const button = cva({
       },
       black: {
         backgroundColor: "bg.black",
-        borderStyle: "solid",
-        borderWidth: 1,
+
         borderColor: "bg.black",
         color: "text.onBlack",
         _hover: {
@@ -183,6 +188,7 @@ const button = cva({
       ghost: {
         color: "text",
         backgroundColor: "transparent",
+        borderColor: "transparent",
         shadow: "none",
         _hover: {
           backgroundColor: "bg.hover",

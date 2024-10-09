@@ -1,6 +1,17 @@
 @layer reset, base, tokens, recipes, utilities;
 
+/* TODO: do the same for other places where we use Inter */
+
+:root {
+  font-feature-settings:
+    "liga" 1,
+    "calt" 1; /* fix for Chrome */
+  --font-body: "Inter";
+  --font-main: "Inter";
+  text-rendering: optimizeLegibility;
+}
+
 body,
 .docs-story {
-  background-color: var(--colors-bg-muted);
+  background-color: var(--colors-bg);
 }

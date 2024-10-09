@@ -29,6 +29,8 @@ export * from "./src/link16";
 export * from "./src/log16";
 export * from "./src/mail16";
 export * from "./src/menu16";
+export * from "./src/minus16";
+export * from "./src/number16";
 export * from "./src/organization16";
 export * from "./src/paintbrush16";
 export * from "./src/person24";

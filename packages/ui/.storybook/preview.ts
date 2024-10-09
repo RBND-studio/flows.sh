@@ -1,7 +1,7 @@
 import "./index.css";
+import { Preview } from "@storybook/react";
 
-/** @type { import('@storybook/react').Preview } */
-const preview = {
+const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
@@ -10,10 +10,12 @@ const preview = {
         date: /Date$/,
       },
     },
+
     darkMode: {
       stylePreview: true,
       darkClass: "dark-mode",
       lightClass: "light-mode",
+      classTarget: "html",
     },
   },
 };

@@ -23,20 +23,21 @@ type Props = {
 };
 
 export const Checkbox = forwardRef<React.ElementRef<typeof CheckboxPrimitive.Root>, Props>(
-  function Checkbox({ className, label, labelClassName, inputClassName, ...props }, ref) {
+  function Checkbox({ className, label, labelClassName, inputClassName, disabled, ...props }, ref) {
     const id = useId();
 
     const check = (
       <CheckboxPrimitive.Root
         className={cx(checkbox({}), inputClassName)}
         ref={ref}
+        disabled={disabled}
         {...props}
         id={props.id ?? id}
       >
         <CheckboxPrimitive.Indicator
           className={css({
             display: "grid",
-            color: "text.onPrimary",
+            color: "newControl.fg",
             height: "100%",
             position: "relative",
           })}
@@ -46,8 +47,8 @@ export const Checkbox = forwardRef<React.ElementRef<typeof CheckboxPrimitive.Roo
               height: "16px",
               width: "16px",
               position: "absolute",
-              top: -1,
-              left: -1,
+              top: 0,
+              left: 0,
             })}
             color="inherit"
             icon={Check16}
@@ -60,7 +61,7 @@ export const Checkbox = forwardRef<React.ElementRef<typeof CheckboxPrimitive.Roo
       <Flex alignItems="center" className={className} gap="space4">
         {check}
         {label !== undefined ? (
-          <Label className={labelClassName} htmlFor={props.id ?? id}>
+          <Label className={labelClassName} disabled={disabled} htmlFor={props.id ?? id}>
             {label}
           </Label>
         ) : null}
@@ -71,34 +72,32 @@ export const Checkbox = forwardRef<React.ElementRef<typeof CheckboxPrimitive.Roo
 
 const checkbox = cva({
   base: {
-    width: "16px",
-    height: "16px",
-    borderRadius: "radius4",
-    backgroundColor: "bg",
+    width: "18px",
+    height: "18px",
+    borderRadius: "5px", // TODO: fix theme
+    backgroundColor: "newControl.bg",
     borderWidth: 1,
     borderStyle: "solid",
-    borderColor: "border.strong",
+    borderColor: "newControl.border",
     cursor: "pointer",
     fastEaseInOut: "all",
 
     _hover: {
-      backgroundColor: "bg.hover",
-    },
-    "&[data-state=checked]": {
-      borderColor: "bg.primary",
-      backgroundColor: "bg.primary",
-      _hover: {
-        backgroundColor: "bg.primaryHover",
-        borderColor: "bg.primaryHover",
-      },
+      borderColor: "newControl.border.hover",
     },
     _disabled: {
-      backgroundColor: "bg.subtle",
-      borderColor: "bg.subtle",
+      backgroundColor: "newControl.bg.disabled",
+      borderColor: "newControl.border.disabled",
       cursor: "default",
+      pointerEvents: "none",
+
+      _hover: {
+        borderColor: "newControl.border.disabled",
+      },
+
       "&>span": {
-        backgroundColor: "bg.subtle",
-        color: "text.disabled",
+        backgroundColor: "newControl.bg.disabled",
+        color: "newControl.fg.disabled",
       },
     },
   },

@@ -1,10 +1,10 @@
 "use client";
 
-import { css, cx } from "@flows/styled-system/css";
+import { css, cva, cx } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import * as RadixSelect from "@radix-ui/react-select";
 import { CaretDown16, Check16 } from "icons";
-import { type ComponentProps, useId } from "react";
+import { useId } from "react";
 
 import { Button } from "../button";
 import { Description } from "../description";
@@ -20,7 +20,7 @@ type Props<T extends string> = {
   className?: string;
   buttonClassName?: string;
   placeholder?: string;
-  buttonSize?: ComponentProps<typeof Button>["size"];
+  size?: "default" | "small";
   optional?: boolean;
   label?: string;
   labelClassName?: string;
@@ -28,6 +28,7 @@ type Props<T extends string> = {
   descriptionClassName?: string;
   id?: string;
   ["aria-label"]?: string;
+  disabled?: boolean;
 };
 
 export function Select<T extends string>({
@@ -39,9 +40,10 @@ export function Select<T extends string>({
   placeholder,
   label,
   labelClassName,
-  buttonSize = "small",
+  size = "default",
   onChange,
   optional,
+  disabled,
   "aria-label": ariaLabel,
   ...props
 }: Props<T>): JSX.Element {
@@ -49,34 +51,33 @@ export function Select<T extends string>({
   const currentOption = options.find((opt) => opt.value === (props.value ?? props.defaultValue));
 
   const selectRender = (
-    <RadixSelect.Root {...props} onValueChange={onChange}>
+    <RadixSelect.Root disabled={disabled} {...props} onValueChange={onChange}>
       <RadixSelect.Trigger asChild id={props.id ?? id}>
         <Button
           aria-label={ariaLabel}
           className={cx(
             css({
-              textStyle: "bodyS",
               position: "relative",
-              outline: "none",
-              shadow: "none",
+              "&[data-placeholder]": {
+                color: "newControl.fg.placeholder",
+              },
               "&>:last-child": {
                 flex: 1,
                 justifyContent: "flex-end",
               },
-              _focus: {
-                borderColor: "border.primary",
-                backgroundColor: "bg",
-                boxShadow: "focus",
-              },
             }),
             buttonClassName,
+            button({ size }),
           )}
           endIcon={
             <RadixSelect.Icon asChild>
-              <Icon icon={CaretDown16} />
+              <Icon
+                color={disabled ? "newControl.fg.disabled" : "newControl.fg"}
+                icon={CaretDown16}
+              />
             </RadixSelect.Icon>
           }
-          size={buttonSize}
+          size={size}
           variant="field"
         >
           <RadixSelect.Value placeholder={placeholder}>
@@ -88,15 +89,15 @@ export function Select<T extends string>({
       <RadixSelect.Portal>
         <RadixSelect.Content
           className={css({
-            backgroundColor: "bg",
+            backgroundColor: "overlay.bg",
             borderRadius: "radius8",
             boxShadow: "l2",
-            p: "space4",
+            p: "space8",
             position: "relative",
             zIndex: 50,
             borderWidth: 1,
             borderStyle: "solid",
-            borderColor: "border.strong",
+            borderColor: "overlay.border",
             "&[data-state=open]": {
               animationName: "enter",
               animationDuration: "120ms",
@@ -110,33 +111,45 @@ export function Select<T extends string>({
           position="popper"
           sideOffset={4}
         >
-          <RadixSelect.Viewport>
+          <RadixSelect.Viewport
+            className={css({
+              display: "flex",
+              flexDirection: "column",
+              gap: "2px",
+            })}
+          >
             {options.map((option) => (
               <RadixSelect.Item
-                className={css({
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "space8",
-                  px: "space8",
-                  py: "space4",
-                  borderRadius: "radius4",
-                  cursor: "default",
-                  _hover: { backgroundColor: "bg.hover" },
-                  "&[data-highlighted]": { backgroundColor: "bg.hover" },
-                  outline: "none",
-                })}
+                className={cx(
+                  css({
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    gap: "space8",
+                    px: "space8",
+                    py: "space4",
+                    borderRadius: "5px", // TODO: fix theme
+                    cursor: "default",
+                    outline: "none",
+                    "&[data-state=checked]": {
+                      backgroundColor: "newControl.bg.selected",
+                      _hover: { backgroundColor: "newControl.bg.selected" },
+                    },
+                    "&[data-highlighted]": { backgroundColor: "newControl.bg.hover" },
+                    "&:hover": { backgroundColor: "newControl.bg.hover" },
+                  }),
+                  "group",
+                )}
                 key={option.value}
                 value={option.value}
               >
-                <span className={css({ width: 16 })}>
-                  <RadixSelect.ItemIndicator>
-                    <Icon icon={Check16} />
-                  </RadixSelect.ItemIndicator>
-                </span>
-
                 <RadixSelect.ItemText asChild>
                   <Text>{option.label ?? option.value}</Text>
                 </RadixSelect.ItemText>
+
+                <RadixSelect.ItemIndicator>
+                  <Icon color="newControl.fg.selected" icon={Check16} />
+                </RadixSelect.ItemIndicator>
               </RadixSelect.Item>
             ))}
           </RadixSelect.Viewport>
@@ -149,7 +162,8 @@ export function Select<T extends string>({
     <Flex className={className} flexDir="column">
       {label !== undefined ? (
         <Label
-          className={cx(css({ mb: "space4" }), labelClassName)}
+          className={labelClassName}
+          disabled={disabled}
           htmlFor={props.id ?? id}
           optional={optional}
         >
@@ -158,10 +172,25 @@ export function Select<T extends string>({
       ) : null}
       {selectRender}
       {description !== undefined && (
-        <Description className={cx(css({ mt: "space4" }), descriptionClassName)}>
+        <Description disabled={disabled} className={descriptionClassName}>
           {description}
         </Description>
       )}
     </Flex>
   );
 }
+
+const button = cva({
+  variants: {
+    size: {
+      default: {
+        mt: "space4",
+        mb: "space4",
+      },
+      small: {
+        mt: "2px", //TODO: fix theme
+        mb: "2px", //TODO: fix theme
+      },
+    },
+  },
+});

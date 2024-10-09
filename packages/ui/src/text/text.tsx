@@ -20,7 +20,7 @@ export type TextProps = HTMLAttributes<HTMLParagraphElement> &
 
     asChild?: boolean;
 
-    weight?: "400" | "600" | "700";
+    weight?: "400" | "500" | "600" | "700";
 
     align?: "left" | "center" | "right";
   };
@@ -65,6 +65,9 @@ const textVariants = cva({
     },
     weight: {
       "400": {},
+      "500": {
+        fontWeight: "500",
+      },
       "600": {
         fontWeight: "600",
       },
@@ -88,6 +91,7 @@ const textVariants = cva({
       muted: {
         color: "text.muted",
       },
+      // TODO: check how this will play with newControl
       disabled: {
         color: "text.disabled",
       },
@@ -157,6 +161,9 @@ const textVariants = cva({
       },
       bodyXs: {
         textStyle: "bodyXs",
+      },
+      bodyXxs: {
+        textStyle: "bodyXxs",
       },
     },
   },
