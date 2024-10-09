@@ -13,6 +13,7 @@ type Props = {
    */
   size?: (typeof input.variantMap.size)[number];
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
   value?: string | number;
   placeholder?: string;
   defaultValue?: string | number;

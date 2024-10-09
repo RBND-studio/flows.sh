@@ -4,7 +4,7 @@ import { css, cva, cx } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import * as RadixSelect from "@radix-ui/react-select";
 import { CaretDown16, Check16 } from "icons";
-import { useId } from "react";
+import { type ReactNode, useId } from "react";
 
 import { Button } from "../button";
 import { Description } from "../description";
@@ -15,7 +15,7 @@ import { Text } from "../text";
 type Props<T extends string> = {
   value?: T;
   defaultValue?: T;
-  options: readonly { value: T; label?: string }[];
+  options: readonly { value: T; label?: ReactNode }[];
   onChange?: (value: T) => void;
   className?: string;
   buttonClassName?: string;
