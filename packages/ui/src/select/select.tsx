@@ -91,8 +91,8 @@ export function Select<T extends string>({
           className={css({
             backgroundColor: "overlay.bg",
             borderRadius: "radius8",
-            boxShadow: "l2",
-            p: "space8",
+            shadow: "newL2",
+            p: "space4",
             position: "relative",
             zIndex: 50,
             borderWidth: 1,

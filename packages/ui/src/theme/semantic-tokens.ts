@@ -79,15 +79,12 @@ export const semanticTokens = defineSemanticTokens({
       dotBg: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.800}" } },
     },
 
+    // new color tokens
     newBg: {
       DEFAULT: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
       neutral: {
         DEFAULT: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
-        muted: {
-          value: {
-            base: "{colors.neutral.25}", //TODO: add _dark
-          },
-        },
+        muted: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.875}" } },
         subtle: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.800}" } },
       },
       primary: {
@@ -106,31 +103,16 @@ export const semanticTokens = defineSemanticTokens({
     },
 
     newBorder: {
-      DEFAULT: {
-        value: {
-          base: "{colors.neutral.150}", //TODO: add _dark
-        },
-      },
+      DEFAULT: { value: { base: "{colors.neutral.150}", _dark: "{colors.neutral.700}" } },
       neutral: {
-        DEFAULT: {
-          value: {
-            base: "{colors.neutral.150}", //TODO: add _dark
-          },
-        },
-        strong: {
-          value: {
-            base: "{colors.neutral.200}", //TODO: add _dark
-          },
-        },
+        DEFAULT: { value: { base: "{colors.neutral.150}", _dark: "{colors.neutral.700}" } },
+        strong: { value: { base: "{colors.neutral.200}", _dark: "{colors.neutral.600}" } },
       },
       primary: {
-        DEFAULT: {
-          value: {
-            base: "{colors.primary.500}", //TODO: add _dark
-          },
-        },
+        DEFAULT: { value: { base: "{colors.primary.500}", _dark: "{colors.primary-dark.400}" } },
       },
     },
+
     // control is a generic pattern for control elements like fields
     newControl: {
       bg: {
@@ -152,6 +134,7 @@ export const semanticTokens = defineSemanticTokens({
         selected: { value: { base: "{colors.primary.500}", _dark: "{colors.primary-dark.400}" } },
       },
     },
+
     // overlay is used for modals, popovers, and other overlay patterns
     overlay: {
       bg: {
@@ -168,6 +151,8 @@ export const semanticTokens = defineSemanticTokens({
   },
   shadows: {
     l1: { value: { base: "{shadows.light1}", _dark: "{shadows.dark1}" } },
+    newL1: { value: { base: "{shadows.newLight1}", _dark: "{shadows.newDark1}" } },
+    newL2: { value: { base: "{shadows.newLight2}", _dark: "{shadows.newDark2}" } },
     l2: { value: { base: "{shadows.light2}", _dark: "{shadows.dark2}" } },
     l3: { value: { base: "{shadows.light3}", _dark: "{shadows.dark3}" } },
     l4: { value: { base: "{shadows.light4}", _dark: "{shadows.dark4}" } },
