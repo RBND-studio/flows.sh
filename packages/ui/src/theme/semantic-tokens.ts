@@ -85,7 +85,7 @@ export const semanticTokens = defineSemanticTokens({
       neutral: {
         DEFAULT: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
         muted: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.875}" } },
-        subtle: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.800}" } },
+        subtle: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.850}" } },
       },
       primary: {
         DEFAULT: { value: { base: "{colors.primary.500}", _dark: "{colors.primary-dark.400}" } },
@@ -135,7 +135,17 @@ export const semanticTokens = defineSemanticTokens({
       },
     },
 
+    // panes are used for main background areas like layout, sidebar, panels, etc.
+    pane: {
+      bg: {
+        DEFAULT: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.925}" } },
+        main: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.925}" } },
+        secondary: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.950}" } },
+      },
+    },
+
     // overlay is used for modals, popovers, and other overlay patterns
+    //TODO: maybe merge with pane
     overlay: {
       bg: {
         DEFAULT: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.875}" } },

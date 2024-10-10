@@ -158,5 +158,7 @@ export const palette = defineTokens.colors({
     850: { value: "#22262d" },
     875: { value: "#1c2026" },
     900: { value: "#15181c" },
+    925: { value: "#141619" },
+    950: { value: "#0f1113" },
   },
 });
