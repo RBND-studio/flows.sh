@@ -3,6 +3,7 @@ import { type HTMLStyledProps, styled } from "@flows/styled-system/jsx";
 import { Slot, Slottable } from "@radix-ui/react-slot";
 import { type ButtonHTMLAttributes, forwardRef } from "react";
 
+import { Spinner } from "../spinner";
 import { Tooltip, type TooltipSide } from "../tooltip/tooltip";
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> &
@@ -35,6 +36,7 @@ export const IconButton = forwardRef<HTMLButtonElement, Props>(function Button(
     asChild,
     disabled,
     tooltipSide = "bottom",
+    loading,
     ...props
   },
   ref,
@@ -51,7 +53,7 @@ export const IconButton = forwardRef<HTMLButtonElement, Props>(function Button(
       ref={ref}
     >
       <Slottable>
-        <Icon>{children}</Icon>
+        <Icon>{loading ? <Spinner color="inherit" size={16} /> : children}</Icon>
       </Slottable>
     </Component>
   );
