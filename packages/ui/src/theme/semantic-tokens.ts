@@ -144,6 +144,27 @@ export const semanticTokens = defineSemanticTokens({
         DEFAULT: { value: { base: "{colors.neutral.150}", _dark: "{colors.neutral.750}" } },
       },
     },
+
+    // workflow block icon colors
+    // TODO: use special colors to separate from other semantic colors
+    blockIcon: {
+      start: {
+        bg: { value: { base: "{colors.warning.100}", _dark: "{colors.warning-dark.800}" } },
+        fg: { value: { base: "{colors.warning.600}", _dark: "{colors.warning-dark.400}" } },
+      },
+      component: {
+        bg: { value: { base: "{colors.primary.100}", _dark: "{colors.primary-dark.800}" } },
+        fg: { value: { base: "{colors.primary.600}", _dark: "{colors.primary-dark.400}" } },
+      },
+      logic: {
+        bg: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.800}" } },
+        fg: { value: { base: "{colors.neutral.600}", _dark: "{colors.neutral.400}" } },
+      },
+      end: {
+        bg: { value: { base: "{colors.danger.100}", _dark: "{colors.danger-dark.800}" } },
+        fg: { value: { base: "{colors.danger.600}", _dark: "{colors.danger-dark.400}" } },
+      },
+    },
     // TODO: separate button into separate pattern
     // button: {
     //

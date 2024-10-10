@@ -38,6 +38,7 @@ type Props = {
   readOnly?: boolean;
   startIcon?: FC<SVGProps<SVGSVGElement>>;
   endIcon?: FC<SVGProps<SVGSVGElement>>;
+  variant?: (typeof input.variantMap.variant)[number];
 };
 
 export const Input = forwardRef<HTMLInputElement, Props>(function Input(
@@ -55,6 +56,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
     startIcon,
     endIcon,
     disabled,
+    variant = "default",
     ...props
   },
   ref,
@@ -84,7 +86,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
         ) : null}
         <Comp
           className={cx(
-            input({ size, startIcon: !!startIcon, endIcon: !!endIcon }),
+            input({ size, startIcon: !!startIcon, endIcon: !!endIcon, variant }),
             inputClassName,
           )}
           ref={ref}
@@ -175,6 +177,15 @@ const input = cva({
     },
   },
   variants: {
+    variant: {
+      default: {},
+      inline: {
+        borderColor: "transparent",
+        backgroundColor: "transparent",
+        mt: 0,
+        mb: 0,
+      },
+    },
     startIcon: {
       true: {
         pl: "space24",

@@ -107,6 +107,9 @@ const textVariants = cva({
       inherit: {
         color: "inherit",
       },
+      onBlack: {
+        color: "text.onBlack",
+      },
     },
     align: {
       left: {
