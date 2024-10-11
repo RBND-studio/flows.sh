@@ -1,5 +1,5 @@
 import { cva, cx } from "@flows/styled-system/css";
-import { Box, Flex } from "@flows/styled-system/jsx";
+import { Flex } from "@flows/styled-system/jsx";
 import { Slot } from "@radix-ui/react-slot";
 import { type FC, type FocusEvent, forwardRef, type ReactNode, type SVGProps, useId } from "react";
 
@@ -76,7 +76,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
           {label}
         </Label>
       ) : null}
-      <Box position="relative">
+      <Flex position="relative">
         {startIcon ? (
           <Icon
             color="newControl.fg.placeholder"
@@ -97,7 +97,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
         {endIcon ? (
           <Icon color="newControl.fg.placeholder" className={endIconCva({ size })} icon={endIcon} />
         ) : null}
-      </Box>
+      </Flex>
       {description !== undefined && (
         <Description
           disabled={disabled}
@@ -184,6 +184,15 @@ const input = cva({
         backgroundColor: "transparent",
         mt: 0,
         mb: 0,
+        _hover: {
+          borderColor: "transparent",
+          backgroundColor: "newControl.bg.hover",
+        },
+        _focus: {
+          _hover: {
+            backgroundColor: "newControl.bg",
+          },
+        },
       },
     },
     startIcon: {
