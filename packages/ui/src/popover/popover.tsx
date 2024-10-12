@@ -37,12 +37,12 @@ export const PopoverContent = forwardRef<React.ElementRef<typeof PopoverPrimitiv
 // Or introduce popover variants? Or..?
 const content = cva({
   base: {
-    borderRadius: "radius12",
-    backgroundColor: "bg.card",
+    borderRadius: "radius8",
+    backgroundColor: "overlay.bg",
     borderStyle: "solid",
     borderWidth: "1px",
-    borderColor: "border",
-    boxShadow: "l2",
+    borderColor: "overlay.border",
+    boxShadow: "newL2",
     overflow: "hidden",
     "&[data-state=open]": {
       animationName: "enter",

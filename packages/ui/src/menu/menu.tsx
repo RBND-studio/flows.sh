@@ -18,7 +18,7 @@ export const Menu: FC<Props> = ({ trigger, children, align }) => {
     <Popover>
       <PopoverTrigger asChild>{trigger}</PopoverTrigger>
       <PopoverContent align={align ?? "start"}>
-        <Flex flexDir="column" justifyContent="center" minW="240px" p="space8">
+        <Flex flexDir="column" justifyContent="center" minW="240px" p="6px">
           {children}
         </Flex>
       </PopoverContent>
@@ -47,9 +47,10 @@ export const MenuItem: FC<MenuItemProps> = forwardRef<HTMLButtonElement, MenuIte
               display: "flex",
               alignItems: "center",
               gap: "space8",
-              py: "space8",
-              px: "space8",
-              borderRadius: "radius8",
+              py: "6px",
+              px: "6px",
+              my: "1px",
+              borderRadius: "5px",
               cursor: disabled ? "default" : "pointer",
               width: "100%",
               fastEaseInOut: "all",
@@ -75,5 +76,5 @@ export const MenuItem: FC<MenuItemProps> = forwardRef<HTMLButtonElement, MenuIte
 );
 
 export const MenuSeparator: FC<{ className?: string }> = ({ className }) => {
-  return <Separator className={cx(css({ mx: "-space8", w: "auto", my: "space8" }), className)} />;
+  return <Separator className={cx(css({ mx: "-6px", w: "auto", my: "space4" }), className)} />;
 };
