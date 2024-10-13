@@ -39,6 +39,7 @@ type Props = {
   startIcon?: FC<SVGProps<SVGSVGElement>>;
   endIcon?: FC<SVGProps<SVGSVGElement>>;
   variant?: (typeof input.variantMap.variant)[number];
+  style?: React.CSSProperties;
 };
 
 export const Input = forwardRef<HTMLInputElement, Props>(function Input(
