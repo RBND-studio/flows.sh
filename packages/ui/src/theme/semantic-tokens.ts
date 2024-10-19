@@ -143,6 +143,9 @@ export const semanticTokens = defineSemanticTokens({
         main: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.925}" } },
         secondary: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.950}" } },
       },
+      fg: {
+        scroll: { value: { base: "{colors.neutral.300}", _dark: "{colors.neutral.500}" } },
+      },
     },
 
     // overlay is used for modals, popovers, and other overlay patterns

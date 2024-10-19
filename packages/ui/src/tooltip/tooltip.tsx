@@ -18,7 +18,7 @@ const TooltipContent = ({
   <TooltipPrimitive.Content
     className={cx(
       css({
-        zIndex: "tooltip",
+        zIndex: "1000", //TODO: fix theme
         overflow: "hidden",
         borderRadius: "radius8",
         py: "6px", // This is intentional
