@@ -29,6 +29,7 @@ type Props<T extends string> = {
   id?: string;
   ["aria-label"]?: string;
   disabled?: boolean;
+  readOnly?: boolean;
 };
 
 export function Select<T extends string>({
@@ -44,6 +45,7 @@ export function Select<T extends string>({
   onChange,
   optional,
   disabled,
+  readOnly,
   "aria-label": ariaLabel,
   ...props
 }: Props<T>): JSX.Element {
@@ -51,7 +53,12 @@ export function Select<T extends string>({
   const currentOption = options.find((opt) => opt.value === (props.value ?? props.defaultValue));
 
   const selectRender = (
-    <RadixSelect.Root disabled={disabled} {...props} onValueChange={onChange}>
+    <RadixSelect.Root
+      disabled={disabled}
+      {...props}
+      onValueChange={onChange}
+      open={readOnly ? false : undefined}
+    >
       <RadixSelect.Trigger asChild id={props.id ?? id}>
         <Button
           aria-label={ariaLabel}

@@ -20,10 +20,14 @@ type Props = {
   labelClassName?: string;
   inputClassName?: string;
   id?: string;
+  readOnly?: boolean;
 };
 
 export const Checkbox = forwardRef<React.ElementRef<typeof CheckboxPrimitive.Root>, Props>(
-  function Checkbox({ className, label, labelClassName, inputClassName, disabled, ...props }, ref) {
+  function Checkbox(
+    { className, label, labelClassName, inputClassName, disabled, readOnly, ...props },
+    ref,
+  ) {
     const id = useId();
 
     const check = (
@@ -33,6 +37,7 @@ export const Checkbox = forwardRef<React.ElementRef<typeof CheckboxPrimitive.Roo
         disabled={disabled}
         {...props}
         id={props.id ?? id}
+        onCheckedChange={readOnly ? undefined : props.onCheckedChange}
       >
         <CheckboxPrimitive.Indicator
           className={css({
