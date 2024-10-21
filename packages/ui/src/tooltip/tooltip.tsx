@@ -54,16 +54,20 @@ type TooltipProps = {
   hasUnderline?: boolean;
 };
 
-export const Tooltip = ({
-  content,
-  trigger,
-  align,
-  className,
-  side,
-  sideOffset,
-  delayDuration = 320,
-  hasUnderline,
-}: TooltipProps): JSX.Element => {
+export const Tooltip = React.forwardRef<HTMLButtonElement, TooltipProps>(function Tooltip(
+  {
+    content,
+    trigger,
+    align,
+    className,
+    side,
+    sideOffset,
+    delayDuration = 320,
+    hasUnderline,
+    ...props
+  },
+  ref,
+): JSX.Element {
   return (
     <TooltipProvider>
       <TooltipRoot delayDuration={delayDuration}>
@@ -76,6 +80,8 @@ export const Tooltip = ({
             }),
             className,
           )}
+          ref={ref}
+          {...props}
         >
           {trigger}
         </TooltipTrigger>
@@ -87,6 +93,6 @@ export const Tooltip = ({
       </TooltipRoot>
     </TooltipProvider>
   );
-};
+});
 
 export { TooltipContent, TooltipProvider, TooltipRoot, TooltipTrigger };
