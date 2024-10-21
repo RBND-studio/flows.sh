@@ -3,6 +3,8 @@ import { type HTMLStyledProps, styled } from "@flows/styled-system/jsx";
 import { Slot } from "@radix-ui/react-slot";
 import { forwardRef, type HTMLAttributes } from "react";
 
+import { Tooltip } from "../tooltip/tooltip";
+
 export type TextProps = HTMLAttributes<HTMLParagraphElement> &
   HTMLStyledProps<"p"> & {
     /**
@@ -23,6 +25,8 @@ export type TextProps = HTMLAttributes<HTMLParagraphElement> &
     weight?: "400" | "500" | "600" | "700";
 
     align?: "left" | "center" | "right";
+
+    hideOverflow?: boolean;
   };
 
 export const Text = forwardRef<HTMLParagraphElement, TextProps>(function Text(
@@ -34,21 +38,25 @@ export const Text = forwardRef<HTMLParagraphElement, TextProps>(function Text(
     weight = "400",
     children,
     asChild,
+    hideOverflow,
     ...props
   },
   ref,
 ) {
   const Component = asChild ? Slot : styled[as];
 
-  return (
+  const textContent = (
     <Component
       {...props}
-      className={cx(textVariants({ variant, color, align, weight }), props.className)}
+      className={cx(textVariants({ variant, color, align, weight, hideOverflow }), props.className)}
       ref={ref}
     >
       {children}
     </Component>
   );
+
+  //TODO: @VojtechVidra - please can you make it so that the tooltip is only rendered if the text actually truncates?
+  return hideOverflow ? <Tooltip trigger={textContent} content={children} /> : textContent;
 });
 
 const textVariants = cva({
@@ -120,6 +128,13 @@ const textVariants = cva({
       },
       right: {
         textAlign: "right",
+      },
+    },
+    hideOverflow: {
+      true: {
+        whiteSpace: "nowrap",
+        overflow: "hidden",
+        textOverflow: "ellipsis",
       },
     },
     variant: {
