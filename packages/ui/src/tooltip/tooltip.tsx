@@ -96,13 +96,10 @@ export const Tooltip = React.forwardRef<HTMLButtonElement, TooltipProps>(functio
       <TooltipRoot delayDuration={delayDuration}>
         <TooltipTrigger
           asChild
-          className={cx(
-            css({
-              borderBottom: hasUnderline ? "2px dotted" : "none",
-              borderColor: hasUnderline ? "newBorder.neutral.strong" : undefined,
-            }),
-            className,
-          )}
+          className={css({
+            borderBottom: hasUnderline ? "2px dotted" : "none",
+            borderColor: hasUnderline ? "newBorder.neutral.strong" : undefined,
+          })}
           ref={ref}
           {...props}
         >
