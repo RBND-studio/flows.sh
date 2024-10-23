@@ -5,7 +5,7 @@ import * as RadixDialog from "@radix-ui/react-dialog";
 import { Close16 } from "icons";
 import type { FC, ReactNode } from "react";
 
-import { Icon } from "../icon";
+import { IconButton } from "../icon-button";
 import { Text } from "../text";
 
 type Props = {
@@ -58,8 +58,10 @@ export const Dialog: FC<Props> = ({ open, onOpenChange, trigger, children, maxWi
               cursor: "pointer",
             })}
           >
-            {/* TODO: use icon button when it's ready */}
-            <Icon icon={Close16} />
+            {/* eslint-disable-next-line no-restricted-syntax -- close button */}
+            <IconButton size="small" variant="ghost">
+              <Close16 />
+            </IconButton>
           </RadixDialog.Close>
         </RadixDialog.Content>
       </RadixDialog.Portal>
@@ -69,7 +71,8 @@ export const Dialog: FC<Props> = ({ open, onOpenChange, trigger, children, maxWi
 
 const contentCss = cva({
   base: {
-    backgroundColor: "bg",
+    backgroundColor: "pane.bg.main",
+    bor: "1px",
     width: "100%",
     borderRadius: "radius12",
     position: "fixed",
@@ -77,7 +80,7 @@ const contentCss = cva({
     top: "50%",
     left: "50%",
     translate: "-50% -50%",
-    boxShadow: "l4",
+    boxShadow: "newL2",
     "&[data-state=open]": {
       animationName: "enter",
       animationDuration: "120ms",
@@ -105,7 +108,7 @@ export const DialogTitle: FC<{ children?: ReactNode; className?: string }> = ({
 }) => {
   return (
     <RadixDialog.Title className={cx(css({ px: "space16", py: "space16" }), className)} {...props}>
-      <Text variant="titleL">{children}</Text>
+      <Text variant="titleM">{children}</Text>
     </RadixDialog.Title>
   );
 };
