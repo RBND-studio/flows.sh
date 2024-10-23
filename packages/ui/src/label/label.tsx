@@ -1,5 +1,5 @@
 import { css, cx } from "@flows/styled-system/css";
-import type { FC, ReactNode } from "react";
+import { forwardRef, type ReactNode } from "react";
 
 import { Text } from "../text";
 import { Tooltip } from "../tooltip/tooltip";
@@ -13,14 +13,10 @@ type Props = {
   disabled?: boolean;
 };
 
-export const Label: FC<Props> = ({
-  children,
-  optional,
-  className,
-  tooltip,
-  disabled,
-  ...props
-}) => {
+export const Label = forwardRef<HTMLLabelElement, Props>(function Label(
+  { children, optional, className, tooltip, disabled, ...props },
+  ref,
+) {
   const labelRender = (
     <label
       className={cx(
@@ -31,6 +27,7 @@ export const Label: FC<Props> = ({
         }),
         className,
       )}
+      ref={ref}
       {...props}
     >
       {children}
@@ -50,4 +47,4 @@ export const Label: FC<Props> = ({
   if (!tooltip) return labelRender;
 
   return <Tooltip content={tooltip} trigger={labelRender} hasUnderline />;
-};
+});

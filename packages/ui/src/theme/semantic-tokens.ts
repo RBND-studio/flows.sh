@@ -108,6 +108,7 @@ export const semanticTokens = defineSemanticTokens({
       neutral: {
         DEFAULT: { value: { base: "{colors.neutral.150}", _dark: "{colors.neutral.700}" } },
         strong: { value: { base: "{colors.neutral.200}", _dark: "{colors.neutral.600}" } },
+        onBlack: { value: { base: "{colors.neutral.700}", _dark: "{colors.neutral.750}" } },
       },
       primary: {
         DEFAULT: { value: { base: "{colors.primary.500}", _dark: "{colors.primary-dark.400}" } },
@@ -142,9 +143,14 @@ export const semanticTokens = defineSemanticTokens({
         DEFAULT: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.925}" } },
         main: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.925}" } },
         secondary: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.950}" } },
+        tooltip: { value: { base: "{colors.neutral.850}", _dark: "{colors.neutral.1000}" } },
       },
       fg: {
         scroll: { value: { base: "{colors.neutral.300}", _dark: "{colors.neutral.500}" } },
+        tooltip: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.25}" } },
+      },
+      border: {
+        tooltip: { value: { base: "{colors.neutral.850}", _dark: "{colors.neutral.800}" } },
       },
     },
 

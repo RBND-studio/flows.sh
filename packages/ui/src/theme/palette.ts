@@ -160,5 +160,6 @@ export const palette = defineTokens.colors({
     900: { value: "#15181c" },
     925: { value: "#141619" },
     950: { value: "#0f1113" },
+    1000: { value: "#000000" },
   },
 });
