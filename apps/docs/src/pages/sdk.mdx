@@ -7,4 +7,154 @@ import { Callout } from "nextra/components";
 
 # Flows SDK
 
-<Callout emoji="🚨">This page is currently under construction.</Callout>
+The official Flows SDK for JavaScript, with full TypeScript support.
+
+[![npm](https://img.shields.io/npm/dw/%40flows%2Fjs?style=plastic)](https://www.npmjs.com/package/@flows/js)
+
+## Installation
+
+You can install the Flows package [from npm](https://www.npmjs.com/package/@flows/js):
+
+```sh npm2yarn
+npm i @flows/js
+```
+
+<SectionLink href="/getting-started/install-flows">Learn more about installing Flows →</SectionLink>
+
+## Methods
+
+- [init()](#init)
+- [startFlow()](#startFlow)
+- [nextStep()](#nextStep)
+- [endFlow()](#endFlow)
+- [getCurrentStep()](#getCurrentStep)
+- [resetFlow()](#resetFlow)
+- [resetAllFlows()](#resetAllFlows)
+
+### init()
+
+Initializes the Flows SDK with the provided configuration.
+
+```js
+init({
+  projectId: "xxxx",
+  userId: "yyyy",
+  userProperties: {
+    name: "John Doe",
+    email: "john.doe@flows.sh",
+  },
+});
+```
+
+**Parameters:**
+
+| Name           | Type     | Required | Notes                                                                          |
+| -------------- | -------- | -------- | ------------------------------------------------------------------------------ |
+| projectId      | string   | true     | Flows Cloud project ID. You can find this in the Project settings page.        |
+| userId         | string   | false    | Your user's unique identifier. Needed when using user targeting and frequency. |
+| userProperties | object   | false    | User properties to use when targeting flows.                                   |
+| onFlowUpdate   | function | false    | Method to be called when a flow is started, ended or its step changes.         |
+| tracking       | function | false    | Method for integrating 3rd party tracking tools.                               |
+
+### startFlow()
+
+Start a flow by its ID.
+
+```js
+startFlow("flowId");
+```
+
+**Parameters:**
+
+| Name       | Type   | Required | Notes                                                                           |
+| ---------- | ------ | -------- | ------------------------------------------------------------------------------- |
+| flowId     | string | true     |                                                                                 |
+| again      | bool   | false    | If true, the flow will be started again regardless if it has already been seen. |
+| startDraft | bool   | false    | If true, the draft version will be preferred when starting the flow.            |
+
+### nextStep()
+
+Go to the next step of a running Flow.
+
+```js
+nextStep("flowId");
+```
+
+**Parameters:**
+
+| Name         | Type   | Required | Notes               |
+| ------------ | ------ | -------- | ------------------- |
+| flowId       | string | true     |                     |
+| targetBranch | number | false    | Target branch index |
+
+### endFlow()
+
+Ends the current flow.
+
+```js
+endFlow("flowId");
+```
+
+**Parameters:**
+
+| Name    | Type   | Required | Notes                                                                             |
+| ------- | ------ | -------- | --------------------------------------------------------------------------------- |
+| flowId  | string | true     |                                                                                   |
+| variant | string | false    | How to mark the ended flow (finish, cancel, no-event). By default, it's "cancel". |
+
+### getCurrentStep()
+
+Get the current step of a running flow.
+
+```js
+getCurrentStep("flowId");
+```
+
+**Parameters:**
+
+| Name   | Type   | Required | Notes |
+| ------ | ------ | -------- | ----- |
+| flowId | string | true     |       |
+
+**Response:**
+
+This method returns the current step object.
+
+```json
+{
+  "targetElement": ".flow-1",
+  "title": "Hello from Flows!",
+  "body": "Let's get started with Flows. Click the button to continue.",
+  "wait": [
+    {
+      "clickElement": ".flow-1"
+    }
+  ],
+  "overlay": false,
+  "disableOverlayClickLayer": true
+}
+```
+
+### resetFlow()
+
+Resets current users progress in a specific flow.
+
+```js
+resetFlow("flowId");
+```
+
+**Parameters:**
+
+| Name   | Type   | Required | Notes |
+| ------ | ------ | -------- | ----- |
+| flowId | string | true     |       |
+
+The userId is taken from the init() method.
+
+### resetAllFlows()
+
+Resets progress of all flows for the current user.
+
+```js
+resetAllFlows();
+```
