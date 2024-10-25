@@ -26,7 +26,7 @@ export const Dialog: FC<Props> = ({ open, onOpenChange, trigger, children, maxWi
       <RadixDialog.Portal>
         <RadixDialog.Overlay
           className={css({
-            backgroundColor: "bg.overlay",
+            backgroundColor: "pane.bg.translucentOverlay",
             position: "fixed",
             zIndex: 10,
             backdropFilter: "blur(4px)",

@@ -96,7 +96,7 @@ export function Select<T extends string>({
       <RadixSelect.Portal>
         <RadixSelect.Content
           className={css({
-            backgroundColor: "overlay.bg",
+            backgroundColor: "pane.bg.elevated",
             borderRadius: "radius8",
             shadow: "newL2",
             p: "space4",
@@ -104,7 +104,7 @@ export function Select<T extends string>({
             zIndex: 50,
             borderWidth: 1,
             borderStyle: "solid",
-            borderColor: "overlay.border",
+            borderColor: "pane.border.elevated",
             "&[data-state=open]": {
               animationName: "enter",
               animationDuration: "120ms",

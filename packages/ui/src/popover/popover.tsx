@@ -38,10 +38,10 @@ export const PopoverContent = forwardRef<React.ElementRef<typeof PopoverPrimitiv
 const content = cva({
   base: {
     borderRadius: "radius8",
-    backgroundColor: "overlay.bg",
+    backgroundColor: "pane.bg.elevated",
     borderStyle: "solid",
     borderWidth: "1px",
-    borderColor: "overlay.border",
+    borderColor: "pane.border.elevated",
     boxShadow: "newL2",
     overflow: "hidden",
     "&[data-state=open]": {

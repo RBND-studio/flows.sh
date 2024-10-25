@@ -21,7 +21,6 @@ export const semanticTokens = defineSemanticTokens({
       black: { value: { base: "{colors.neutral.850}", _dark: "{colors.neutral.50}" } },
       blackHover: { value: { base: "{colors.neutral.750}", _dark: "{colors.neutral.0}" } },
       blackActive: { value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.100}" } },
-      overlay: { value: { base: "rgba(0, 0, 0, 0.75)", _dark: "rgba(0, 0, 0, 0.80)" } },
       chip: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.900}" } },
       success: { value: { base: "{colors.success.400}", _dark: "{colors.success-dark.400}" } },
       successHover: { value: { base: "{colors.success.500}", _dark: "{colors.success-dark.500}" } },
@@ -79,6 +78,7 @@ export const semanticTokens = defineSemanticTokens({
       dotBg: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.800}" } },
     },
 
+    // --------------------------------------------
     // new color tokens
     newBg: {
       DEFAULT: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
@@ -143,25 +143,19 @@ export const semanticTokens = defineSemanticTokens({
         DEFAULT: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.925}" } },
         main: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.925}" } },
         secondary: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.950}" } },
+        elevated: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
         tooltip: { value: { base: "{colors.neutral.850}", _dark: "{colors.neutral.1000}" } },
+        translucentOverlay: {
+          value: { base: "rgba(0, 0, 0, 0.75)", _dark: "rgba(0, 0, 0, 0.50)" },
+        },
       },
       fg: {
         scroll: { value: { base: "{colors.neutral.300}", _dark: "{colors.neutral.500}" } },
         tooltip: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.25}" } },
       },
       border: {
+        elevated: { value: { base: "{colors.neutral.150}", _dark: "{colors.neutral.750}" } },
         tooltip: { value: { base: "{colors.neutral.850}", _dark: "{colors.neutral.800}" } },
-      },
-    },
-
-    // overlay is used for modals, popovers, and other overlay patterns
-    //TODO: maybe merge with pane
-    overlay: {
-      bg: {
-        DEFAULT: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.875}" } },
-      },
-      border: {
-        DEFAULT: { value: { base: "{colors.neutral.150}", _dark: "{colors.neutral.750}" } },
       },
     },
 
