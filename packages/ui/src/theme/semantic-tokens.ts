@@ -96,6 +96,7 @@ export const semanticTokens = defineSemanticTokens({
       DEFAULT: { value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.25}" } },
       neutral: {
         DEFAULT: { value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.25}" } },
+        muted: { value: { base: "{colors.neutral.700}", _dark: "{colors.neutral.250}" } },
         onPrimary: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
       },
       primary: {

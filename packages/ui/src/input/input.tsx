@@ -187,7 +187,7 @@ const input = cva({
         mb: 0,
         _hover: {
           borderColor: "transparent",
-          backgroundColor: "newControl.bg.hover",
+          backgroundColor: "newControl.bg.hover", //TODO: hover is too strong in dark - check icon button ghost hover
         },
         _focus: {
           _hover: {
