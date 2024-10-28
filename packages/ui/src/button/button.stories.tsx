@@ -12,6 +12,7 @@ const meta: Meta<typeof Button> = {
     size: "default",
     variant: "primary",
     children: "Hello World!",
+    disabled: false,
   },
 };
 

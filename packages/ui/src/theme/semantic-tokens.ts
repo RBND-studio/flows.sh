@@ -181,9 +181,100 @@ export const semanticTokens = defineSemanticTokens({
       },
     },
     // TODO: separate button into separate pattern
-    // button: {
-    //
-    // },
+    button: {
+      primary: {
+        bg: {
+          rest: { value: { base: "{colors.primary.500}", _dark: "{colors.primary-dark.500}" } },
+          hover: { value: { base: "{colors.primary.550}", _dark: "{colors.primary-dark.450}" } },
+          active: { value: { base: "{colors.primary.600}", _dark: "{colors.primary-dark.400}" } },
+          disabled: { value: { base: "{colors.primary.200}", _dark: "{colors.primary-dark.800}" } },
+        },
+        border: {
+          rest: { value: { base: "{colors.primary.600}", _dark: "{colors.primary-dark.400}" } },
+          hover: { value: { base: "{colors.primary.600}", _dark: "{colors.primary-dark.400}" } },
+          active: { value: { base: "{colors.primary.600}", _dark: "{colors.primary-dark.400}" } },
+          disabled: { value: { base: "{colors.primary.200}", _dark: "{colors.primary-dark.800}" } },
+        },
+        fg: {
+          rest: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.0}" } },
+          disabled: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.500}" } },
+        },
+      },
+      secondary: {
+        bg: {
+          rest: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.850}" } },
+          hover: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.800}" } },
+          active: { value: { base: "{colors.neutral.75}", _dark: "{colors.neutral.750}" } },
+          disabled: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.850}" } },
+        },
+        border: {
+          rest: { value: { base: "{colors.neutral.200}", _dark: "{colors.neutral.700}" } },
+          hover: { value: { base: "{colors.neutral.250}", _dark: "{colors.neutral.600}" } },
+          active: { value: { base: "{colors.neutral.250}", _dark: "{colors.neutral.600}" } },
+          disabled: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.800}" } },
+        },
+        fg: {
+          rest: { value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.25}" } },
+          disabled: { value: { base: "{colors.neutral.400}", _dark: "{colors.neutral.600}" } },
+        },
+      },
+      black: {
+        bg: {
+          rest: { value: { base: "{colors.neutral.850}", _dark: "{colors.neutral.50}" } },
+          hover: { value: { base: "{colors.neutral.750}", _dark: "{colors.neutral.100}" } },
+          active: { value: { base: "{colors.neutral.700}", _dark: "{colors.neutral.150}" } },
+          disabled: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.800}" } },
+        },
+        border: {
+          rest: { value: { base: "{colors.neutral.1000}", _dark: "{colors.neutral.0}" } },
+          hover: { value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.0}" } },
+          active: { value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.0}" } },
+          disabled: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.800}" } },
+        },
+        fg: {
+          rest: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
+          disabled: { value: { base: "{colors.neutral.300}", _dark: "{colors.neutral.600}" } },
+        },
+      },
+      ghost: {
+        bg: {
+          rest: { value: "transparent" },
+          hover: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.850}" } },
+          active: { value: { base: "{colors.neutral.75}", _dark: "{colors.neutral.800}" } },
+          disabled: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.850}" } },
+        },
+        border: {
+          rest: { value: "transparent" },
+          hover: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.850}" } },
+          active: { value: { base: "{colors.neutral.75}", _dark: "{colors.neutral.800}" } },
+          disabled: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.850}" } },
+        },
+        fg: {
+          rest: { value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.25}" } },
+          disabled: { value: { base: "{colors.neutral.400}", _dark: "{colors.neutral.600}" } },
+        },
+      },
+      danger: {
+        bg: {
+          rest: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.850}" } },
+          hover: { value: { base: "{colors.danger.500}", _dark: "{colors.danger-dark.600}" } },
+          active: { value: { base: "{colors.danger.600}", _dark: "{colors.danger-dark.500}" } },
+          disabled: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.850}" } },
+        },
+        border: {
+          rest: { value: { base: "{colors.neutral.200}", _dark: "{colors.neutral.700}" } },
+          hover: { value: { base: "{colors.danger.600}", _dark: "{colors.danger-dark.500}" } },
+          active: { value: { base: "{colors.danger.600}", _dark: "{colors.danger-dark.500}" } },
+          disabled: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.800}" } },
+        },
+        fg: {
+          rest: { value: { base: "{colors.danger.500}", _dark: "{colors.danger-dark.500}" } },
+          hover: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.0}" } },
+          active: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.0}" } },
+          disabled: { value: { base: "{colors.danger.200}", _dark: "{colors.danger-dark.700}" } },
+        },
+      },
+    },
   },
   shadows: {
     l1: { value: { base: "{shadows.light1}", _dark: "{shadows.dark1}" } },
@@ -194,5 +285,6 @@ export const semanticTokens = defineSemanticTokens({
     l4: { value: { base: "{shadows.light4}", _dark: "{shadows.dark4}" } },
     l5: { value: { base: "{shadows.light5}", _dark: "{shadows.dark5}" } },
     focus: { value: { base: "{shadows.lightFocus}", _dark: "{shadows.darkFocus}" } },
+    inset: { value: { base: "inset 0px 1px 0px 0px rgba(0, 0, 0, 0.3)", _dark: "none" } },
   },
 });

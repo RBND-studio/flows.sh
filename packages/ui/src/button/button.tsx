@@ -22,14 +22,12 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> &
     /**
      * @defaultValue "default"
      */
-    shadow?: (typeof button.variantMap.shadow)[number];
   };
 
 export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
   {
     size = "default",
     variant = "black",
-    shadow = "default",
     children,
     startIcon,
     endIcon,
@@ -45,7 +43,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
     <Component
       type={!asChild ? "button" : undefined}
       {...props}
-      className={cx(button({ size, variant, shadow }), props.className)}
+      className={cx(button({ size, variant }), props.className)}
       // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- nullish coalescing cannot be used here
       disabled={disabled || loading}
       ref={ref}
@@ -109,7 +107,8 @@ const button = cva({
     borderStyle: "solid",
     borderWidth: 1,
     borderColor: "transparent",
-    shadow: "l1",
+
+    shadow: "none",
 
     superFastEaseInOut: "all",
 
@@ -117,9 +116,9 @@ const button = cva({
       pointerEvents: "none",
       cursor: "default",
       _hover: {
-        backgroundColor: "bg.subtle",
-        borderColor: "bg.subtle",
-        color: "text.subtle",
+        backgroundColor: "button.secondary.bg.disabled",
+        borderColor: "button.secondary.border.disabled",
+        color: "button.secondary.fg.disabled",
       },
     },
   },
@@ -149,100 +148,103 @@ const button = cva({
     },
     variant: {
       primary: {
-        backgroundColor: "bg.primary",
-        borderColor: "bg.primary",
-        color: "text.onPrimary",
+        backgroundColor: "button.primary.bg.rest",
+        borderColor: "button.primary.border.rest",
+        color: "button.primary.fg.rest",
         _hover: {
-          backgroundColor: "bg.primaryHover",
-          borderColor: "bg.primaryHover",
+          backgroundColor: "button.primary.bg.hover",
+          borderColor: "button.primary.border.hover",
         },
         _disabled: {
-          backgroundColor: "bg.subtle",
-          borderColor: "bg.subtle",
-          color: "text.subtle",
+          backgroundColor: "button.primary.bg.disabled",
+          borderColor: "button.primary.border.disabled",
+          color: "button.primary.fg.disabled",
           pointerEvents: "none",
-          boxShadow: "none",
         },
         _active: {
-          backgroundColor: "bg.primaryActive",
-          borderColor: "bg.primaryActive",
+          backgroundColor: "button.primary.bg.active",
+          borderColor: "button.primary.border.active",
+          shadow: "inset",
         },
       },
       secondary: {
-        backgroundColor: "bg.muted",
-        borderColor: "border.strong",
-        color: "text",
+        backgroundColor: "button.secondary.bg.rest",
+        borderColor: "button.secondary.border.rest",
+        color: "button.secondary.fg.rest",
         _hover: {
-          backgroundColor: "bg.hover",
+          backgroundColor: "button.secondary.bg.hover",
+          borderColor: "button.secondary.border.hover",
         },
         _disabled: {
-          backgroundColor: "bg.subtle",
-          borderColor: "bg.subtle",
-          color: "text.subtle",
+          backgroundColor: "button.secondary.bg.disabled",
+          borderColor: "button.secondary.border.disabled",
+          color: "button.secondary.fg.disabled",
           pointerEvents: "none",
-          boxShadow: "none",
         },
         _active: {
-          backgroundColor: "bg.active",
+          backgroundColor: "button.secondary.bg.active",
+          borderColor: "button.secondary.border.active",
         },
       },
       black: {
-        backgroundColor: "bg.black",
-        borderColor: "bg.black",
-        color: "text.onBlack",
+        backgroundColor: "button.black.bg.rest",
+        borderColor: "button.black.border.rest",
+        color: "button.black.fg.rest",
         _hover: {
-          borderColor: "bg.blackHover",
-          backgroundColor: "bg.blackHover",
+          backgroundColor: "button.black.bg.hover",
+          borderColor: "button.black.border.hover",
         },
         _disabled: {
-          backgroundColor: "bg.subtle",
-          borderColor: "bg.subtle",
-          color: "text.subtle",
+          backgroundColor: "button.black.bg.disabled",
+          borderColor: "button.black.border.disabled",
+          color: "button.black.fg.disabled",
           pointerEvents: "none",
-          boxShadow: "none",
         },
         _active: {
-          backgroundColor: "bg.blackActive",
-          borderColor: "bg.blackActive",
+          backgroundColor: "button.black.bg.active",
+          borderColor: "button.black.border.active",
+          shadow: "inset",
         },
       },
       ghost: {
-        backgroundColor: "transparent",
-        borderColor: "transparent",
-        color: "text",
-        shadow: "none",
+        backgroundColor: "button.ghost.bg.rest",
+        borderColor: "button.ghost.border.rest",
+        color: "button.ghost.fg.rest",
         _hover: {
-          backgroundColor: "bg.hover",
-          shadow: "none",
+          backgroundColor: "button.ghost.bg.hover",
+          borderColor: "button.ghost.border.hover",
         },
         _disabled: {
-          color: "text.subtle",
+          backgroundColor: "button.ghost.bg.disabled",
+          borderColor: "button.ghost.border.disabled",
+          color: "button.ghost.fg.disabled",
           pointerEvents: "none",
-          boxShadow: "none",
         },
         _active: {
-          backgroundColor: "bg.active",
+          backgroundColor: "button.ghost.bg.active",
+          borderColor: "button.ghost.border.active",
         },
       },
       danger: {
-        backgroundColor: "bg.muted",
-        borderColor: "border.strong",
-        color: "text.danger",
+        backgroundColor: "button.danger.bg.rest",
+        borderColor: "button.danger.border.rest",
+        color: "button.danger.fg.rest",
         _hover: {
-          backgroundColor: "bg.dangerHover",
-          borderColor: "bg.dangerHover",
-          color: "text.onPrimary",
+          backgroundColor: "button.danger.bg.hover",
+          borderColor: "button.danger.border.hover",
+          color: "button.danger.fg.hover",
         },
         _disabled: {
-          backgroundColor: "bg.subtle",
-          borderColor: "bg.subtle",
-          color: "text.subtle",
+          backgroundColor: "button.danger.bg.disabled",
+          borderColor: "button.danger.border.disabled",
+          color: "button.danger.fg.disabled",
           pointerEvents: "none",
-          boxShadow: "none",
         },
         _active: {
-          backgroundColor: "bg.dangerActive",
-          borderColor: "bg.dangerActive",
+          backgroundColor: "button.danger.bg.active",
+          borderColor: "button.danger.border.active",
+          color: "button.danger.fg.active",
+          shadow: "inset",
         },
       },
       // Used in select
@@ -252,7 +254,6 @@ const button = cva({
         outline: "none",
         color: "newControl.fg",
 
-        shadow: "none",
         textStyle: "bodyS",
 
         _hover: {
@@ -271,16 +272,8 @@ const button = cva({
           borderColor: "newControl.border.disabled",
           color: "newControl.fg.disabled",
           pointerEvents: "none",
-          boxShadow: "none",
         },
       },
-    },
-    shadow: {
-      //TODO: think about highlight
-      highlight: {
-        boxShadow: "l3",
-      },
-      default: {},
     },
   },
 });
