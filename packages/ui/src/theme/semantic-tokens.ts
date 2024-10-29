@@ -172,8 +172,8 @@ export const semanticTokens = defineSemanticTokens({
         fg: { value: { base: "{colors.warning.600}", _dark: "{colors.warning-dark.400}" } },
       },
       component: {
-        bg: { value: { base: "{colors.primary.100}", _dark: "{colors.primary-dark.800}" } },
-        fg: { value: { base: "{colors.primary.600}", _dark: "{colors.primary-dark.400}" } },
+        bg: { value: { base: "#dbe3ff", _dark: "#252e56" } },
+        fg: { value: { base: "#4757b8", _dark: "#6e85f2" } },
       },
       logic: {
         bg: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.800}" } },
