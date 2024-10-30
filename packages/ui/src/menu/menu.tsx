@@ -32,49 +32,54 @@ type MenuItemProps = {
   disabled?: boolean;
   className?: string;
   onClick?: () => void;
+  preventClose?: boolean;
 };
 export const MenuItem: FC<MenuItemProps> = forwardRef<HTMLButtonElement, MenuItemProps>(
-  function MenuItem({ children, asChild, disabled, className, ...props }, ref) {
+  function MenuItem({ children, asChild, disabled, className, preventClose, ...props }, ref) {
     const Component = asChild ? Slot : "button";
 
-    return (
-      <PopoverClose asChild>
-        <Component
-          ref={ref}
-          {...props}
-          className={cx(
-            css({
-              display: "flex",
-              alignItems: "center",
-              gap: "space8",
-              py: "6px",
-              px: "6px",
-              my: "1px",
-              borderRadius: "5px",
-              cursor: disabled ? "default" : "pointer",
-              width: "100%",
-              fastEaseInOut: "all",
-              textStyle: "bodyS",
+    const component = (
+      <Component
+        ref={ref}
+        {...props}
+        className={cx(
+          css({
+            display: "flex",
+            alignItems: "center",
+            gap: "space8",
+            py: "6px",
+            px: "6px",
+            my: "1px",
+            borderRadius: "5px",
+            cursor: disabled ? "default" : "pointer",
+            width: "100%",
+            fastEaseInOut: "all",
+            textStyle: "bodyS",
+            color: disabled ? "text.disabled" : undefined,
+
+            _hover: {
+              bg: disabled ? "transparent" : "bg.hover",
+            },
+            "& svg": {
               color: disabled ? "text.disabled" : undefined,
+            },
+          }),
 
-              _hover: {
-                bg: disabled ? "transparent" : "bg.hover",
-              },
-              "& svg": {
-                color: disabled ? "text.disabled" : undefined,
-              },
-            }),
-
-            className,
-          )}
-        >
-          {children}
-        </Component>
-      </PopoverClose>
+          className,
+        )}
+      >
+        {children}
+      </Component>
     );
+
+    if (preventClose) {
+      return component;
+    }
+
+    return <PopoverClose asChild>{component}</PopoverClose>;
   },
 );
 
 export const MenuSeparator: FC<{ className?: string }> = ({ className }) => {
-  return <Separator className={cx(css({ mx: "-6px", w: "auto", my: "space4" }), className)} />;
+  return <Separator className={cx(css({ mx: "-6px", w: "auto", my: "6px" }), className)} />;
 };
