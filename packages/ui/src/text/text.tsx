@@ -22,7 +22,7 @@ export type TextProps = HTMLAttributes<HTMLParagraphElement> &
 
     asChild?: boolean;
 
-    weight?: "400" | "500" | "600" | "700";
+    weight?: "400" | "500" | "550" | "600" | "700";
 
     align?: "left" | "center" | "right";
 
@@ -75,6 +75,9 @@ const textVariants = cva({
       "400": {},
       "500": {
         fontWeight: "500",
+      },
+      "550": {
+        fontWeight: "550",
       },
       "600": {
         fontWeight: "600",
