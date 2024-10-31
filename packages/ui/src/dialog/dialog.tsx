@@ -93,6 +93,7 @@ const contentCss = cva({
   variants: {
     maxWidth: {
       400: { maxWidth: "400px" },
+      500: { maxWidth: "500px" },
       600: { maxWidth: "600px" },
       1200: { maxWidth: "1200px" },
     },
