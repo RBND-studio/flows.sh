@@ -1,5 +1,5 @@
-import { css, cva } from "@flows/styled-system/css";
-import { Flex, Grid } from "@flows/styled-system/jsx";
+import { cva } from "@flows/styled-system/css";
+import { Flex } from "@flows/styled-system/jsx";
 import { type ReactElement } from "react";
 import { Icon, Text } from "ui";
 
@@ -12,22 +12,21 @@ type Props = {
 
 export const DemoTabs = ({ activeTab, onTabChange }: Props): ReactElement => {
   return (
-    <Flex overflow="auto">
+    <Flex overflow="auto" gap="space8" justifyContent="center" py="6px" mb="space12">
       {tabs.map((tab) => {
         const active = tab.title === activeTab;
         return (
-          <Grid padding="space8" key={tab.title} flex="1" className={lineCss}>
-            <button
-              type="button"
-              onClick={() => onTabChange(tab.title)}
-              className={button({ active })}
-            >
-              <Icon icon={tab.icon} />
-              <Text weight="600" color="muted" align="center">
-                {tab.title}
-              </Text>
-            </button>
-          </Grid>
+          <button
+            key={tab.title}
+            type="button"
+            onClick={() => onTabChange(tab.title)}
+            className={button({ active })}
+          >
+            <Icon icon={tab.icon} />
+            <Text weight="600" color="muted" align="center">
+              {tab.title}
+            </Text>
+          </button>
         );
       })}
     </Flex>
@@ -38,16 +37,17 @@ const button = cva({
   base: {
     cursor: "pointer",
     display: "flex",
-    flexDirection: "column",
-    gap: "space8",
-    paddingY: "space16",
-    paddingX: "space8",
+    gap: "space4",
+    paddingLeft: "6px",
+    paddingRight: "8px",
+    paddingY: "space4",
     alignItems: "center",
-    minWidth: "140px",
-    justifyContent: "center",
     transitionTimingFunction: "easeInOut",
     transitionDuration: "fast",
-    borderRadius: "radius8",
+    borderRadius: "6px",
+    background: "newBg.neutral",
+    borderColor: "newBorder.neutral.muted",
+    borderWidth: "1px",
     _hover: {
       bg: "bg.hover",
     },
@@ -56,27 +56,8 @@ const button = cva({
     active: {
       true: {
         bg: "bg.subtle",
+        borderColor: "newBorder.neutral",
       },
-    },
-  },
-});
-
-const lineCss = css({
-  position: "relative",
-
-  _after: {
-    content: '""',
-    position: "absolute",
-    bottom: "0px",
-    width: "1px",
-    right: "1px",
-    height: "120px",
-    background: "linear-gradient(180deg, transparent, {colors.border})",
-  },
-
-  _last: {
-    _after: {
-      background: "none",
     },
   },
 });

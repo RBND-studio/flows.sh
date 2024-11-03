@@ -50,12 +50,7 @@ const questions = [
 
 export const PricingFaq = (): ReactElement => {
   return (
-    <Section
-      sectionPadding="small"
-      innerClassName={css({
-        maxWidth: "640px!",
-      })}
-    >
+    <Section maxWidth="640px!">
       <Text
         className={css({
           marginBottom: "space24",

@@ -1,5 +1,5 @@
 import { Box, Flex } from "@flows/styled-system/jsx";
-import { cardWrapper, Section, SingleBoxLinesWrapper } from "components/ui";
+import { Section } from "components/ui";
 import { type ReactElement } from "react";
 import { formatNumberToK, formatNumberWithThousandSeparator, pricingTiers } from "shared";
 import { Text } from "ui";
@@ -29,30 +29,29 @@ export const VolumeTable = (): ReactElement => {
   ];
 
   return (
-    <Section sectionPadding="small">
+    <Section>
       <Flex flexDirection="column" gap="space8" mb="space32">
         <Text variant="title2xl">Volume pricing</Text>
         <Text variant="bodyL" color="muted">
           Flows offers volume based pricing, the more flows you start the less you pay.
         </Text>
       </Flex>
-      <SingleBoxLinesWrapper>
-        <Box className={cardWrapper()}>
-          {pricing.map((item) => (
-            <Flex
-              key={item.price}
-              paddingX="space24"
-              paddingY="space16"
-              borBottom="1px"
-              justifyContent="space-between"
-              _last={{ border: "none" }}
-            >
-              <Text variant="titleM">{item.range}</Text>
-              <Text variant="titleM">{item.price}</Text>
-            </Flex>
-          ))}
-        </Box>
-      </SingleBoxLinesWrapper>
+
+      <Box>
+        {pricing.map((item) => (
+          <Flex
+            key={item.price}
+            paddingX="space24"
+            paddingY="space16"
+            borBottom="1px"
+            justifyContent="space-between"
+            _last={{ border: "none" }}
+          >
+            <Text variant="titleM">{item.range}</Text>
+            <Text variant="titleM">{item.price}</Text>
+          </Flex>
+        ))}
+      </Box>
     </Section>
   );
 };

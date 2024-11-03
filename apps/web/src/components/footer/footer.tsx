@@ -1,6 +1,6 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
-import { SmartLink } from "components/ui";
+import { SmartLink, TopLine } from "components/ui";
 import type { ReactElement } from "react";
 import { routes } from "routes";
 import { links } from "shared";
@@ -21,10 +21,6 @@ const footerGroups: FooterGroup[] = [
   {
     title: "Product",
     links: [
-      {
-        title: "Features",
-        href: routes.features,
-      },
       {
         title: "Demo",
         href: links.nextJsDemo,
@@ -82,11 +78,13 @@ export const Footer = (): ReactElement => {
   return (
     <footer
       className={css({
-        backgroundColor: "bg.muted",
         paddingX: "space24",
-        borTop: "1px",
+        borderTopWidth: "1px",
+        borderTopColor: "newBorder.neutral",
+        position: "relative",
       })}
     >
+      <TopLine />
       <Flex
         flexDirection="column-reverse"
         gap="space40"

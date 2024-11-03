@@ -38,13 +38,11 @@ const Page = (): ReactElement => {
   return (
     <>
       <Section
-        innerClassName={css({
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "space24",
-          paddingBottom: "space24!",
-        })}
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        gap="space24"
+        paddingBottom="space24"
       >
         <Flex flexDirection="column" gap="space12" maxW="800px">
           <HeroCallout link={links.docs.migrateToFlows}>

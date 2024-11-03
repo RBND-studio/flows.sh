@@ -9,10 +9,6 @@ type MenuItem = {
 
 export const menuItems: MenuItem[] = [
   {
-    title: "Features",
-    href: routes.features,
-  },
-  {
     title: "Blog",
     href: routes.blog,
   },

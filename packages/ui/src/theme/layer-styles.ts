@@ -12,4 +12,12 @@ export const layerStyles = defineLayerStyles({
       boxShadow: "newL1",
     },
   },
+  dotBackground: {
+    value: {
+      background: "pane.bg.secondary",
+      backgroundImage: "radial-gradient(token(colors.special.dotBg) 1px, transparent 0)",
+      backgroundSize: "12px 12px",
+      backgroundPosition: "-6px -6px",
+    },
+  },
 });

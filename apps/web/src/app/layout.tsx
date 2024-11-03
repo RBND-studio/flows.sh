@@ -1,8 +1,8 @@
 import "./globals.css";
 
 import { css, cx } from "@flows/styled-system/css";
-import { CtaBanner } from "components/cta-banner";
 import { Providers } from "components/providers";
+import { LinesBox } from "components/ui";
 import { PRODUCTION } from "lib";
 import type { Metadata } from "next";
 import { Figtree, Inter } from "next/font/google";
@@ -57,18 +57,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
         {/* eslint-disable-next-line @next/next/no-sync-scripts -- needed for noflash script */}
         <script src="/noflash.min.js" />
       </head>
-      <body className={css({ background: "bg" })}>
+      <body className={css({ background: "pane.bg" })}>
         <Providers>
-          <Header />
-          <main
-            className={css({
-              overflowX: "hidden",
-            })}
-          >
-            {children}
-            <CtaBanner />
-          </main>
-          <Footer />
+          <LinesBox>
+            <Header />
+            <main
+            //TODO: check if this is needed
+            // className={css({
+            //   overflowX: "hidden",
+            // })}
+            >
+              {children}
+            </main>
+            <Footer />
+          </LinesBox>
         </Providers>
       </body>
       {PRODUCTION ? (

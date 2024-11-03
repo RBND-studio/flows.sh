@@ -1,4 +1,3 @@
-import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import { headingCss, paragraphCss, Section, SmartLink } from "components/ui";
 import type { ReactElement } from "react";
@@ -8,29 +7,14 @@ import { Text } from "ui";
 const Page = (): ReactElement => {
   return (
     <>
-      <Section
-        innerClassName={css({
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "space24",
-        })}
-        outerClassName={css({
-          backgroundImage: "radial-gradient(token(colors.special.dotBg) 1px, transparent 0)",
-          backgroundSize: "16px 16px",
-        })}
-      >
+      <Section display="flex" flexDirection="column" alignItems="center" gap="space24">
         <Flex flexDirection="column" gap="space12" maxW="800px">
           <Text align="center" as="h1" variant="title4xl">
             Flows terms of service
           </Text>
         </Flex>
       </Section>
-      <Section
-        innerClassName={css({
-          maxWidth: "580px!",
-        })}
-      >
+      <Section maxWidth="580px!">
         <Text className={paragraphCss} variant="bodyM">
           Thank you for using Flows!
         </Text>

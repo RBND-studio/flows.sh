@@ -1,62 +1,41 @@
-import { css, cva, cx } from "@flows/styled-system/css";
-import type { SystemProperties } from "@flows/styled-system/types";
+import { css, cx } from "@flows/styled-system/css";
+import { Box } from "@flows/styled-system/jsx";
+import type { HTMLStyledProps } from "@flows/styled-system/types";
+import { type HTMLAttributes } from "react";
 
-export const Section = ({
-  children,
-  outerClassName,
-  innerClassName,
-  sectionPadding = "default",
-  background = "bg.section",
-}: {
-  children: React.ReactNode;
-  outerClassName?: string;
-  innerClassName?: string;
-  sectionPadding?: "default" | "none" | "small";
-  background?: SystemProperties["backgroundColor"];
-}): JSX.Element => {
-  return (
+import { HorizontalLinesBox } from "./lines";
+
+type Props = HTMLAttributes<HTMLDivElement> &
+  HTMLStyledProps<"div"> & {
+    linesWrapper?: boolean;
+  };
+
+export const Section = ({ children, linesWrapper, ...props }: Props): JSX.Element => {
+  const sectionComponent = (
     <div
       className={cx(
         css({
           width: "100%",
           paddingX: "space24",
-          backgroundColor: background,
         }),
-        outerClassName,
       )}
     >
-      <div
+      <Box
+        {...props}
         className={cx(
           css({
-            maxWidth: "960px",
+            maxWidth: "1024px",
             marginX: "auto",
           }),
-          innerClassName,
-          padding({ padding: sectionPadding }),
+          props.className,
         )}
       >
         {children}
-      </div>
+      </Box>
     </div>
   );
+  if (linesWrapper) {
+    return <HorizontalLinesBox>{sectionComponent}</HorizontalLinesBox>;
+  }
+  return sectionComponent;
 };
-
-const padding = cva({
-  variants: {
-    padding: {
-      default: {
-        paddingY: "space64",
-        md: {
-          paddingY: "space120",
-        },
-      },
-      small: {
-        paddingY: "space40",
-        md: {
-          paddingY: "space80",
-        },
-      },
-      none: {},
-    },
-  },
-});

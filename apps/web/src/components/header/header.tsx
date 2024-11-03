@@ -1,6 +1,7 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import { MobileMenu } from "components/header/mobile-menu";
+import { BottomLine } from "components/ui";
 import { SignupClick } from "components/utils/signup-click";
 import Link from "next/link";
 import type { ReactElement } from "react";
@@ -16,8 +17,7 @@ export const Header = (): ReactElement => {
       className={css({
         backgroundColor: "bg",
         borderBottomWidth: "1px",
-        borderBottomStyle: "solid",
-        borderBottomColor: "border",
+        borderBottomColor: "newBorder.neutral",
         paddingX: "space16",
         position: "sticky",
         top: 0,
@@ -27,10 +27,10 @@ export const Header = (): ReactElement => {
       <div
         className={css({
           mx: "auto",
-          py: "space12",
+          py: "space8",
           display: "flex",
           alignItems: "center",
-          maxWidth: "960px",
+          maxWidth: "1024px",
           gap: "space8",
         })}
       >
@@ -58,7 +58,7 @@ export const Header = (): ReactElement => {
           <DesktopMenu />
         </Flex>
         <Flex flex={1} gap="space8" justifyContent="flex-end" maxW="150px">
-          <Button asChild variant="ghost">
+          <Button asChild variant="secondary">
             <a href={links.logIn}>Log in</a>
           </Button>
           <SignupClick>
@@ -69,6 +69,7 @@ export const Header = (): ReactElement => {
         </Flex>
         <MobileMenu />
       </div>
+      <BottomLine />
     </header>
   );
 };

@@ -10,11 +10,4 @@ export const routes = {
 
   changelog: "/changelog",
   changelogReleaseDetail: ({ releaseId }: { releaseId: string }) => `/changelog/${releaseId}`,
-
-  features: "/features",
-  featuresBuild: "/features/build",
-  featuresFlowSteps: "/features/flow-steps",
-  featuresDeliver: "/features/deliver",
-  featuresAnalyze: "/features/analyze",
-  featuresSecure: "/features/secure",
 };
