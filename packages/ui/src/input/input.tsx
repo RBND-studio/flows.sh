@@ -41,6 +41,7 @@ type Props = {
   variant?: (typeof input.variantMap.variant)[number];
   style?: React.CSSProperties;
   autoComplete?: React.InputHTMLAttributes<HTMLInputElement>["autoComplete"];
+  autoFocus?: boolean;
 };
 
 export const Input = forwardRef<HTMLInputElement, Props>(function Input(
