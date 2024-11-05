@@ -4,7 +4,14 @@ import { Text } from "ui";
 
 export const WorkflowsFeatures = (): JSX.Element => {
   return (
-    <Section display="flex" gap="space40" pt="space80" pb="space64">
+    <Section
+      display="flex"
+      gap="space40"
+      pt="space80"
+      pb="space64"
+      flexDirection="column"
+      md={{ flexDirection: "row" }}
+    >
       <Box width="100%">
         <Text mb="space12" variant="titleXl">
           Product tours
@@ -32,7 +39,7 @@ export const WorkflowsFeatures = (): JSX.Element => {
                   borderRadius="radius4"
                   shadow="focus"
                 />
-                <Box width={176} pt="space4" position="absolute">
+                <Box width={176} pt="space4" position="absolute" right={0} md={{ right: "unset" }}>
                   <PlaceholderTooltip
                     title="Get started"
                     description="Start by creating your first issue in the project."

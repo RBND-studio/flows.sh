@@ -1,25 +1,24 @@
 import { cva } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
-import { type ReactElement } from "react";
+import { type FC, type ReactElement, type SVGProps } from "react";
 import { Icon, Text } from "ui";
-
-import { tabs } from "./demo-data";
 
 type Props = {
   activeTab: string;
-  onTabChange: (tab: string) => void;
+  onTabChange?: (tab: string) => void;
+  tabs: { title: string; icon: FC<SVGProps<SVGSVGElement>> }[];
 };
 
-export const DemoTabs = ({ activeTab, onTabChange }: Props): ReactElement => {
+export const Tabs = ({ activeTab, onTabChange, tabs }: Props): ReactElement => {
   return (
-    <Flex overflow="auto" gap="space8" justifyContent="center" py="6px" mb="space12">
+    <Flex overflow="auto" gap="space8" scrollbar="hidden">
       {tabs.map((tab) => {
         const active = tab.title === activeTab;
         return (
           <button
             key={tab.title}
             type="button"
-            onClick={() => onTabChange(tab.title)}
+            {...(onTabChange && { onClick: () => onTabChange(tab.title) })}
             className={button({ active })}
           >
             <Icon icon={tab.icon} />
@@ -45,6 +44,7 @@ const button = cva({
     transitionTimingFunction: "easeInOut",
     transitionDuration: "fast",
     borderRadius: "6px",
+    textWrap: "nowrap",
     background: "newBg.neutral",
     borderColor: "newBorder.neutral.muted",
     borderWidth: "1px",

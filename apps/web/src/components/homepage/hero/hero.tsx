@@ -16,7 +16,16 @@ export const Hero = (): ReactElement => {
           animation: "topSlideIn 0.6s ease-out",
         })}
       >
-        Build native user onboarding <br />
+        Build native{" "}
+        <Text
+          color="muted"
+          variant="title4xl"
+          as="span"
+          textShadow="0 4px 0 {colors.newBorder.neutral}"
+        >
+          user onboarding
+        </Text>{" "}
+        <br />
         your way
       </Text>
       <Text
@@ -45,7 +54,14 @@ export const Hero = (): ReactElement => {
         animationFillMode="forwards"
       >
         <SignupClick>
-          <Button asChild shadow="highlight" size="large">
+          <Button
+            className={css({
+              shadow: "neutralFocus",
+            })}
+            asChild
+            shadow="highlight"
+            size="large"
+          >
             <SmartLink href={links.signUp}>Start building</SmartLink>
           </Button>
         </SignupClick>

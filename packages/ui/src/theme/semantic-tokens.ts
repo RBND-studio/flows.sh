@@ -102,6 +102,7 @@ export const semanticTokens = defineSemanticTokens({
       neutral: {
         DEFAULT: { value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.25}" } },
         muted: { value: { base: "{colors.neutral.700}", _dark: "{colors.neutral.250}" } },
+        subtle: { value: { base: "{colors.neutral.500}", _dark: "{colors.neutral.400}" } },
         onPrimary: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
       },
       primary: {
@@ -292,5 +293,12 @@ export const semanticTokens = defineSemanticTokens({
     l5: { value: { base: "{shadows.light5}", _dark: "{shadows.dark5}" } },
     focus: { value: { base: "{shadows.lightFocus}", _dark: "{shadows.darkFocus}" } },
     inset: { value: { base: "inset 0px 1px 0px 0px rgba(0, 0, 0, 0.3)", _dark: "none" } },
+    neutralFocus: { value: { base: "{shadows.blackFocus}", _dark: "{shadows.whiteFocus}" } },
+    textHighlight: {
+      value: {
+        base: "0 0 2px rgba(6, 126, 253, 0.25)",
+        _dark: "0  0 2px rgba(6, 126, 253, 0.3)",
+      },
+    },
   },
 });

@@ -89,7 +89,7 @@ export const Footer = (): ReactElement => {
         flexDirection="column-reverse"
         gap="space40"
         alignItems="flex-start"
-        maxWidth="960px"
+        maxWidth="1024px"
         mx="auto"
         py="space40"
         sm={{
@@ -134,9 +134,9 @@ export const Footer = (): ReactElement => {
               target="_blank"
               href={links.rbnd}
               rel="noopener"
-              className={css({ fontWeight: "700", _hover: { textDecoration: "underline" } })}
+              className={css({ fontWeight: "600", _hover: { textDecoration: "underline" } })}
             >
-              RBND studio
+              RBND studio s.r.o.
             </a>
           </Text>
         </Box>
@@ -163,7 +163,7 @@ export const Footer = (): ReactElement => {
                 width: "auto",
               }}
             >
-              <Text className={css({ mb: "space4" })} color="subtle" variant="bodyS">
+              <Text className={css({ mb: "space4" })} weight="700" variant="bodyS">
                 {group.title}
               </Text>
               {group.links.map((link) => (
@@ -184,7 +184,7 @@ export const Footer = (): ReactElement => {
                   })}
                   key={link.href}
                   variant="bodyS"
-                  weight="700"
+                  color="muted"
                 >
                   <SmartLink href={link.href} target={link.target}>
                     {link.title}

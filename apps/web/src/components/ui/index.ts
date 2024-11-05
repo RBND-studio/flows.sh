@@ -6,4 +6,5 @@ export * from "./placeholder-application";
 export * from "./section";
 export * from "./small-feature";
 export * from "./smart-link";
+export * from "./tabs";
 export * from "./typography-css";

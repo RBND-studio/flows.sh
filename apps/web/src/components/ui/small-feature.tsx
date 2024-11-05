@@ -13,7 +13,7 @@ export const SmallFeature = ({ icon, title, description }: Props): ReactElement 
     <Box width="100%">
       <Flex gap="space8" alignItems="center" mb="space8">
         {icon}
-        <Text variant="titleM">{title}</Text>
+        <Text weight="600">{title}</Text>
       </Flex>
       <Text color="muted">{description}</Text>
     </Box>

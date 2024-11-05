@@ -5,9 +5,16 @@ import { PlaceholderSidebar } from "./placeholder-sidebar";
 type Props = {
   bannerSlot?: JSX.Element;
   sidebarTooltipSlot?: JSX.Element;
+  sidebarBannerSlot?: JSX.Element;
+  helpSlot?: JSX.Element;
 };
-//TODO: role="img" + aria-hidden="true"
-export const PlaceholderApplication = ({ bannerSlot, sidebarTooltipSlot }: Props): JSX.Element => {
+
+export const PlaceholderApplication = ({
+  bannerSlot,
+  sidebarTooltipSlot,
+  sidebarBannerSlot,
+  helpSlot,
+}: Props): JSX.Element => {
   return (
     <Flex
       gap="space12"
@@ -17,8 +24,12 @@ export const PlaceholderApplication = ({ bannerSlot, sidebarTooltipSlot }: Props
       width="100%"
       height="100%"
       mdDown={{ flexDirection: "column" }}
+      role="img"
     >
-      <PlaceholderSidebar sidebarTooltipSlot={sidebarTooltipSlot} />
+      <PlaceholderSidebar
+        sidebarTooltipSlot={sidebarTooltipSlot}
+        sidebarBannerSlot={sidebarBannerSlot}
+      />
       <Flex
         flex={2}
         flexDirection="column"
@@ -28,6 +39,7 @@ export const PlaceholderApplication = ({ bannerSlot, sidebarTooltipSlot }: Props
         borderColor="newBorder.neutral.muted"
         borderRadius="radius8"
         background="pane.bg.main"
+        aria-hidden="true"
       >
         <Flex
           alignItems="center"
@@ -39,13 +51,16 @@ export const PlaceholderApplication = ({ bannerSlot, sidebarTooltipSlot }: Props
           pl="10px"
           pr="6px"
         >
-          <Box
-            height={10}
-            maxWidth={85}
-            width="100%"
-            backgroundColor="newBg.neutral.strong"
-            borderRadius="radius4"
-          />
+          <Flex width="100%" alignItems="center" gap="space8">
+            <Box
+              height={10}
+              maxWidth={85}
+              width="100%"
+              backgroundColor="newBg.neutral.strong"
+              borderRadius="radius4"
+            />
+            {helpSlot}
+          </Flex>
           <Flex gap="space8">
             <Box
               height={20}

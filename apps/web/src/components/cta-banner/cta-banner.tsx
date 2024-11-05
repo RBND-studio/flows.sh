@@ -24,7 +24,7 @@ export const CtaBanner = (): ReactElement => {
         layerStyle="dotBackground"
         gap="space24"
       >
-        <Text as="h2" variant="title2xl">
+        <Text align="center" as="h2" variant="title2xl">
           Getting started is easy and free
         </Text>
         <Text maxWidth={460} align="center" variant="bodyL" color="muted">

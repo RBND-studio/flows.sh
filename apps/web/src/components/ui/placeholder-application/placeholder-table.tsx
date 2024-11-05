@@ -3,7 +3,7 @@ import { Text } from "ui";
 
 export const PlaceholderTable = (): JSX.Element => {
   return (
-    <Flex p="space16" gap="space12" flexDirection="column">
+    <Flex p="space16" gap="space12" flexDirection="column" aria-hidden="true">
       <Text variant="titleM">Home</Text>
       <Banner />
       <Table />

@@ -2,6 +2,7 @@ import { Box } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
 import { Text } from "ui";
 
+import { ImplementationCodeExample } from "./implementation-code-example";
 import { ImplementationExample } from "./implementation-example";
 import { ImplementationFeatures } from "./implementation-features";
 import { ImplementationSubfeatures } from "./implementation-subfeatures";
@@ -35,7 +36,7 @@ export const ImplementationSection = (): JSX.Element => {
       </Section>
 
       <ImplementationFeatures />
-      <ImplementationExample />
+      <ImplementationExample codeExample={<ImplementationCodeExample />} />
       <ImplementationSubfeatures />
     </>
   );

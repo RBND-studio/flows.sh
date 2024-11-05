@@ -1,7 +1,19 @@
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { Button, Text } from "ui";
 
-export const PlaceholderModal = (): JSX.Element => {
+type Props = {
+  title: string;
+  description: string;
+  buttonLabel?: string;
+  className?: string;
+};
+
+export const PlaceholderModal = ({
+  title,
+  description,
+  buttonLabel = "Continue",
+  className,
+}: Props): JSX.Element => {
   return (
     <Flex
       flexDirection="column"
@@ -11,18 +23,26 @@ export const PlaceholderModal = (): JSX.Element => {
       borderWidth="1px"
       backgroundColor="pane.bg.elevated"
       shadow="newL2"
-      gap="space12"
       alignItems="center"
+      maxWidth={240}
+      className={className}
+      aria-hidden="true"
     >
-      <Box width="100%" borderRadius="6px" height={100} backgroundColor="newFg.neutral.muted" />
-      <Text align="center" variant="titleS">
-        New feature announcement
+      <Box
+        mb="space12"
+        width="100%"
+        borderRadius="6px"
+        height={100}
+        backgroundColor="newFg.neutral.muted"
+      />
+      <Text mb="space4" align="center" variant="titleS">
+        {title}
       </Text>
-      <Text align="center" variant="bodyXs">
-        Lorem ipsum dolor sit amet. Some more text here to be written
+      <Text mb="space12" align="center" variant="bodyXs">
+        {description}
       </Text>
       <Button type="button" variant="primary" size="small">
-        Continue
+        {buttonLabel}
       </Button>
     </Flex>
   );

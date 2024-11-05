@@ -1,34 +1,45 @@
+"use client";
+
 import { Box } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
+import { useState } from "react";
 import { Text } from "ui";
 
+import { WorkflowsBlocksTabs } from "./workflows-blocks-tabs";
+
+const tabs = [{ title: "UI components" }, { title: "Workflow logic" }];
+
 export const WorkflowsBlocks = (): JSX.Element => {
+  const [activeTab, setActiveTab] = useState(tabs[0].title);
   return (
     <Section
       display="flex"
-      gap="space40"
+      flexDirection="column"
       borderLeftColor="newBorder.neutral"
       borderLeftWidth="1px"
+      borderRightColor="newBorder.neutral"
+      borderRightWidth="1px"
       alignItems="center"
       linesWrapper
+      md={{ flexDirection: "row" }}
     >
-      <Box maxWidth={320} width="100%" pl="space32">
-        <Text mb="space12" variant="titleXl">
+      <Box md={{ maxWidth: "320px" }} width="100%" px="space32" py="space24">
+        <Text maxWidth={240} md={{ maxWidth: "unset" }} mb="space16" variant="titleXl">
           Create complex workflows with blocks
         </Text>
-        <Text mb="space8" weight="600">
-          UI components
-        </Text>
-        <Text weight="600">Workflow logic</Text>
+        <WorkflowsBlocksTabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
       </Box>
       <Box
-        borderRightColor="newBorder.neutral"
-        borderRightWidth="1px"
-        borderLeftColor="newBorder.neutral"
-        borderLeftWidth="1px"
         layerStyle="dotBackground"
         width="100%"
         height="280px"
+        borderTopColor="newBorder.neutral"
+        borderTopWidth="1px"
+        md={{
+          borderTopWidth: 0,
+          borderLeftColor: "newBorder.neutral",
+          borderLeftWidth: "1px",
+        }}
       />
     </Section>
   );

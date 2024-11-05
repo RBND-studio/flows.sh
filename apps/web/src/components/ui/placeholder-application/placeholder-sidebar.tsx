@@ -2,46 +2,59 @@ import { Box, Flex } from "@flows/styled-system/jsx";
 
 type Props = {
   sidebarTooltipSlot?: JSX.Element;
+  sidebarBannerSlot?: JSX.Element;
 };
 
-export const PlaceholderSidebar = ({ sidebarTooltipSlot }: Props): JSX.Element => {
+export const PlaceholderSidebar = ({
+  sidebarTooltipSlot,
+  sidebarBannerSlot,
+}: Props): JSX.Element => {
   return (
     <>
-      <DesktopSidebar sidebarTooltipSlot={sidebarTooltipSlot} />
-      <MobileSidebar sidebarTooltipSlot={sidebarTooltipSlot} />
+      <DesktopSidebar
+        sidebarTooltipSlot={sidebarTooltipSlot}
+        sidebarBannerSlot={sidebarBannerSlot}
+      />
+      <MobileSidebar
+        sidebarTooltipSlot={sidebarTooltipSlot}
+        sidebarBannerSlot={sidebarBannerSlot}
+      />
     </>
   );
 };
 
-const MobileSidebar = ({ sidebarTooltipSlot }: Props): JSX.Element => {
+const MobileSidebar = ({ sidebarTooltipSlot, sidebarBannerSlot }: Props): JSX.Element => {
   return (
-    <Flex mdDown={{ display: "flex" }} display="none" alignItems="center" gap="space8">
-      <Box height={24} width={24} backgroundColor="newFg.neutral.muted" borderRadius="radius4" />
-      <Box
-        height={10}
-        maxWidth={68}
-        width="100%"
-        backgroundColor="newBg.neutral.strong"
-        borderRadius="radius4"
-        mr="auto"
-      />
-      {sidebarTooltipSlot ? (
-        sidebarTooltipSlot
-      ) : (
+    <Box aria-hidden="true" display="none" mdDown={{ display: "unset" }}>
+      <Flex alignItems="center" gap="space8">
+        <Box height={24} width={24} backgroundColor="newFg.neutral.muted" borderRadius="radius4" />
         <Box
-          height={24}
-          width={24}
-          backgroundColor="newBg.neutral"
-          borderWidth="1px"
-          borderColor="newBorder.neutral.muted"
+          height={10}
+          maxWidth={68}
+          width="100%"
+          backgroundColor="newBg.neutral.strong"
           borderRadius="radius4"
+          mr="auto"
         />
-      )}
-    </Flex>
+        {sidebarTooltipSlot ? (
+          sidebarTooltipSlot
+        ) : (
+          <Box
+            height={24}
+            width={24}
+            backgroundColor="newBg.neutral"
+            borderWidth="1px"
+            borderColor="newBorder.neutral.muted"
+            borderRadius="radius4"
+          />
+        )}
+      </Flex>
+      {sidebarBannerSlot}
+    </Box>
   );
 };
 
-const DesktopSidebar = ({ sidebarTooltipSlot }: Props): JSX.Element => {
+const DesktopSidebar = ({ sidebarTooltipSlot, sidebarBannerSlot }: Props): JSX.Element => {
   return (
     <Flex
       mdDown={{ display: "none" }}
@@ -51,6 +64,7 @@ const DesktopSidebar = ({ sidebarTooltipSlot }: Props): JSX.Element => {
       maxWidth={162}
       height="100%"
       flex={1}
+      aria-hidden="true"
     >
       <Flex alignItems="center" gap="space8">
         <Box height={24} width={24} backgroundColor="newFg.neutral.muted" borderRadius="radius4" />
@@ -195,13 +209,17 @@ const DesktopSidebar = ({ sidebarTooltipSlot }: Props): JSX.Element => {
           />
         </Flex>
       </Flex>
-      <Box
-        flexShrink={0}
-        width="100%"
-        borderRadius="radius4"
-        height={56}
-        backgroundColor="newBg.neutral.strong"
-      />
+      {sidebarBannerSlot ? (
+        sidebarBannerSlot
+      ) : (
+        <Box
+          flexShrink={0}
+          width="100%"
+          borderRadius="radius4"
+          height={56}
+          backgroundColor="newBg.neutral.strong"
+        />
+      )}
     </Flex>
   );
 };

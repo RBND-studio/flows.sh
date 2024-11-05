@@ -24,40 +24,15 @@ export const Header = (): ReactElement => {
         zIndex: 10,
       })}
     >
-      <div
-        className={css({
-          mx: "auto",
-          py: "space8",
-          display: "flex",
-          alignItems: "center",
-          maxWidth: "1024px",
-          gap: "space8",
-        })}
-      >
-        <Flex
-          flex={1}
-          mdDown={{
-            flex: "unset",
-          }}
-          gap="space8"
-          maxW="150px"
-        >
-          <Link
-            className={css({
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "space8",
-            })}
-            href={routes.home}
-            aria-label="Home"
-          >
-            <Logo type="type" size={20} />
-          </Link>
-        </Flex>
-        <Flex flex={1} justifyContent="center">
+      <Flex mx="auto" py="space8" alignItems="center" maxWidth="1024px" gap="space16">
+        <Link href={routes.home} aria-label="Home">
+          <Logo type="type" size={20} />
+        </Link>
+
+        <Flex ml="space32" flex={1}>
           <DesktopMenu />
         </Flex>
-        <Flex flex={1} gap="space8" justifyContent="flex-end" maxW="150px">
+        <Flex gap="space8" justifyContent="flex-end">
           <Button asChild variant="secondary">
             <a href={links.logIn}>Log in</a>
           </Button>
@@ -68,7 +43,7 @@ export const Header = (): ReactElement => {
           </SignupClick>
         </Flex>
         <MobileMenu />
-      </div>
+      </Flex>
       <BottomLine />
     </header>
   );

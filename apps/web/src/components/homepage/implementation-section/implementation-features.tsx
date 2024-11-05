@@ -1,10 +1,18 @@
+import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { PlaceholderModal, PlaceholderTable, PlaceholderTooltip, Section } from "components/ui";
 import { Text } from "ui";
 
 export const ImplementationFeatures = (): JSX.Element => {
   return (
-    <Section display="flex" gap="space40" pt="space80" pb="space64">
+    <Section
+      display="flex"
+      gap="space40"
+      pt="space80"
+      pb="space64"
+      flexDirection="column"
+      md={{ flexDirection: "row" }}
+    >
       <Box width="100%">
         <Text mb="space12" variant="titleXl">
           Inline components
@@ -21,6 +29,7 @@ export const ImplementationFeatures = (): JSX.Element => {
           borderRadius={6}
           position="relative"
           background="pane.bg.secondary"
+          role="img"
         >
           <Box
             position="absolute"
@@ -29,6 +38,7 @@ export const ImplementationFeatures = (): JSX.Element => {
             height={48}
             background="linear-gradient(0deg, token(colors.pane.bg.secondary), transparent)"
             width="100%"
+            aria-hidden="true"
           />
           <PlaceholderTable />
         </Box>
@@ -42,20 +52,30 @@ export const ImplementationFeatures = (): JSX.Element => {
         </Text>
         <Flex
           alignItems="center"
+          justifyContent="center"
           borderColor="newBorder.neutral"
           borderWidth="1px"
           layerStyle="dotBackground"
           width="100%"
           height="288px"
           borderRadius={6}
-          p="space24"
+          p="space12"
           gap="space24"
+          role="img"
         >
           <PlaceholderTooltip
             title="Click here"
-            description="Lorem ipsum dolor sit amet. Some more text here to be written"
+            description="Tooltips are great for guiding users through a process."
           />
-          <PlaceholderModal />
+
+          <PlaceholderModal
+            title="New feature announcement"
+            description="Modals are better for catching attention or more information."
+            className={css({
+              display: "none",
+              md: { display: "unset" },
+            })}
+          />
         </Flex>
       </Box>
     </Section>
