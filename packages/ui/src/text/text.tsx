@@ -1,12 +1,7 @@
-"use client";
-
 import { cva, cx } from "@flows/styled-system/css";
 import { type HTMLStyledProps, styled } from "@flows/styled-system/jsx";
 import { Slot } from "@radix-ui/react-slot";
-import mergeRefs from "merge-refs";
-import { forwardRef, type HTMLAttributes, useState } from "react";
-
-import { Tooltip } from "../tooltip/tooltip";
+import { forwardRef, type HTMLAttributes } from "react";
 
 export type TextProps = HTMLAttributes<HTMLParagraphElement> &
   HTMLStyledProps<"p"> & {
@@ -47,25 +42,16 @@ export const Text = forwardRef<HTMLParagraphElement, TextProps>(function Text(
   ref,
 ) {
   const Component = asChild ? Slot : styled[as];
-  const [textEl, setTextEl] = useState<HTMLParagraphElement | null>(null);
 
-  const textContent = (
+  return (
     <Component
       {...props}
       className={cx(textVariants({ variant, color, align, weight, hideOverflow }), props.className)}
-      ref={mergeRefs(ref, setTextEl as (instance: HTMLParagraphElement | null) => void)}
+      ref={ref}
     >
       {children}
     </Component>
   );
-
-  if (!hideOverflow) return textContent;
-
-  const isOverflowing = !!textEl && textEl.scrollWidth > textEl.clientWidth;
-
-  if (!isOverflowing) return textContent;
-
-  return <Tooltip trigger={textContent} content={children} />;
 });
 
 const textVariants = cva({
