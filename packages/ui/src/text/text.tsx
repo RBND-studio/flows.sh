@@ -1,7 +1,10 @@
+"use client";
+
 import { cva, cx } from "@flows/styled-system/css";
 import { type HTMLStyledProps, styled } from "@flows/styled-system/jsx";
 import { Slot } from "@radix-ui/react-slot";
-import { forwardRef, type HTMLAttributes } from "react";
+import mergeRefs from "merge-refs";
+import { forwardRef, type HTMLAttributes, useState } from "react";
 
 import { Tooltip } from "../tooltip/tooltip";
 
@@ -44,19 +47,25 @@ export const Text = forwardRef<HTMLParagraphElement, TextProps>(function Text(
   ref,
 ) {
   const Component = asChild ? Slot : styled[as];
+  const [textEl, setTextEl] = useState<HTMLParagraphElement | null>(null);
 
   const textContent = (
     <Component
       {...props}
       className={cx(textVariants({ variant, color, align, weight, hideOverflow }), props.className)}
-      ref={ref}
+      ref={mergeRefs(ref, setTextEl as (instance: HTMLParagraphElement | null) => void)}
     >
       {children}
     </Component>
   );
 
-  //TODO: @VojtechVidra - please can you make it so that the tooltip is only rendered if the text actually truncates?
-  return hideOverflow ? <Tooltip trigger={textContent} content={children} /> : textContent;
+  if (!hideOverflow) return textContent;
+
+  const isOverflowing = !!textEl && textEl.scrollWidth > textEl.clientWidth;
+
+  if (!isOverflowing) return textContent;
+
+  return <Tooltip trigger={textContent} content={children} />;
 });
 
 const textVariants = cva({
