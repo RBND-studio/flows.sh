@@ -30,6 +30,7 @@ type Props<T extends string> = {
   ["aria-label"]?: string;
   disabled?: boolean;
   readOnly?: boolean;
+  autoFocus?: boolean;
 };
 
 export function Select<T extends string>({
@@ -47,6 +48,7 @@ export function Select<T extends string>({
   disabled,
   readOnly,
   "aria-label": ariaLabel,
+  autoFocus,
   ...props
 }: Props<T>): JSX.Element {
   const id = useId();
@@ -61,6 +63,8 @@ export function Select<T extends string>({
     >
       <RadixSelect.Trigger asChild id={props.id ?? id}>
         <Button
+          // eslint-disable-next-line jsx-a11y/no-autofocus -- can be helpful for some usecases
+          autoFocus={autoFocus}
           aria-label={ariaLabel}
           className={cx(
             css({
