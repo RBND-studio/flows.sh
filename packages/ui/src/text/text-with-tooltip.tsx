@@ -4,14 +4,14 @@ import mergeRefs from "merge-refs";
 import { forwardRef, useState } from "react";
 
 import { Tooltip } from "../tooltip/tooltip";
-import { Text, type TextProps } from "./text";
+import { BaseText, type TextProps } from "./base-text";
 
 export const TextWithTooltip = forwardRef<HTMLParagraphElement, TextProps>(
   function TextWithTooltip(props, ref) {
     const [textEl, setTextEl] = useState<HTMLParagraphElement | null>(null);
 
     const textContent = (
-      <Text
+      <BaseText
         ref={mergeRefs(ref, setTextEl as (instance: HTMLParagraphElement | null) => void)}
         {...props}
       />
