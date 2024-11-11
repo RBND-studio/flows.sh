@@ -47,15 +47,16 @@ export const Dialog: FC<Props> = ({ open, onOpenChange, trigger, children, maxWi
         <RadixDialog.Content
           onSubmit={(e) => e.stopPropagation()}
           className={contentCss({ maxWidth })}
+          aria-describedby={undefined}
         >
           {children}
           <RadixDialog.Close
+            asChild
             aria-label="Close"
             className={css({
               position: "absolute",
               top: "space16",
               right: "space16",
-              cursor: "pointer",
             })}
           >
             {/* eslint-disable-next-line no-restricted-syntax -- close button */}
