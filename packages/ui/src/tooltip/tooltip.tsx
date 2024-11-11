@@ -97,7 +97,7 @@ export const Tooltip = React.forwardRef<HTMLButtonElement, TooltipProps>(functio
         <TooltipTrigger
           asChild
           className={css({
-            borderBottom: hasUnderline ? "2px dotted" : "none",
+            borderBottom: hasUnderline ? "2px dotted" : undefined,
             borderColor: hasUnderline ? "newBorder.neutral.strong" : undefined,
           })}
           ref={ref}
