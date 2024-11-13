@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function ChangelogLayout({ children }: Props): JSX.Element {
   return (
-    <Section maxWidth="820px!" marginX="auto">
+    <Section maxWidth="820px!" my="space40" md={{ my: "space80" }} marginX="auto">
       <Flex
         flexDirection="column"
         gap="space4"

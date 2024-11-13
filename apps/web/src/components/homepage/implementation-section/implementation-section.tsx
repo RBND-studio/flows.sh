@@ -10,16 +10,13 @@ import { ImplementationSubfeatures } from "./implementation-subfeatures";
 export const ImplementationSection = (): JSX.Element => {
   return (
     <>
-      <Section pt="space120" pb="space40">
-        <Text mb="space12" color="muted">
-          Implementation
-        </Text>
+      <Section pt="space80" pb="space40" md={{ pt: "space120" }}>
         <Text mb="space24" variant="title3xl">
           Deploy Flows in minutes
         </Text>
         <Text maxWidth="480px" color="muted" variant="bodyL">
           Install the SDK, add UI components, and create your first workflow. With built-in UI
-          components, you can start building right away—no comples setups required.
+          components, you can start building right away—no complex setups required.
         </Text>
       </Section>
 

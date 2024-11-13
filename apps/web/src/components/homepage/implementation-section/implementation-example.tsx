@@ -3,9 +3,9 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { PlaceholderApplication, Section, Tabs } from "components/ui";
-import { Banner16, Close16, Paintbrush16 } from "icons";
+import { Banner16, Close16, Code16 } from "icons";
 import { type FC, type ReactNode, useState } from "react";
-import { Button, Checkbox, Icon, Input, Text } from "ui";
+import { Button, Checkbox, Icon, Input, Logo, Text } from "ui";
 
 type Props = {
   codeExample: ReactNode;
@@ -23,12 +23,12 @@ export const ImplementationExample: FC<Props> = ({ codeExample }) => {
   const tabs = [
     {
       title: "Your code",
-      icon: Paintbrush16,
+      icon: <Icon icon={Code16} color="inherit" />,
       element: codeExample,
     },
     {
-      title: "Flows workflow",
-      icon: Paintbrush16,
+      title: "Flows editor",
+      icon: <Logo type="pill" size={16} color="inherit" />,
       element: (
         <Box>
           <Flex
@@ -102,7 +102,7 @@ export const ImplementationExample: FC<Props> = ({ codeExample }) => {
         <Text mb="space12" variant="titleXl">
           Bring your own UI
         </Text>
-        <Text maxWidth={528} mb="space32" variant="bodyL">
+        <Text maxWidth={528} mb="space32" color="muted" variant="bodyL">
           Infinite customization. Just add your own UI components and use them in workflows to
           create a native user experience.
         </Text>
@@ -179,10 +179,9 @@ export const ImplementationExample: FC<Props> = ({ codeExample }) => {
                     <Text wordBreak="break-word" color="white" variant="bodyXs">
                       {description}
                     </Text>
+                    {/* Button is rendered as div to prevent taking focus and messing with aria-hidden */}
                     <Button asChild variant="secondary" size="small">
-                      <a href={buttonLink} target="_blank" rel="noopener">
-                        {buttonLabel}
-                      </a>
+                      <div>{buttonLabel}</div>
                     </Button>
                   </Flex>
                 </Flex>

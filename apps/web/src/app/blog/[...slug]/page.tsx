@@ -67,7 +67,17 @@ export default function PostPage({ params }: PostProps): ReactElement {
   if (!post) return notFound();
 
   return (
-    <article>
+    <article
+      className={css({
+        maxWidth: "720px",
+        mx: "auto",
+        px: "space24",
+        my: "space40",
+        md: {
+          my: "space80",
+        },
+      })}
+    >
       <div
         className={css({
           mb: "space48",

@@ -1,12 +1,12 @@
 import { cva } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
-import { type FC, type ReactElement, type SVGProps } from "react";
-import { Icon, Text } from "ui";
+import { type ReactElement, type ReactNode } from "react";
+import { Text } from "ui";
 
 type Props = {
   activeTab: string;
   onTabChange?: (tab: string) => void;
-  tabs: { title: string; icon: FC<SVGProps<SVGSVGElement>> }[];
+  tabs: { title: string; icon?: ReactNode }[];
 };
 
 export const Tabs = ({ activeTab, onTabChange, tabs }: Props): ReactElement => {
@@ -19,10 +19,10 @@ export const Tabs = ({ activeTab, onTabChange, tabs }: Props): ReactElement => {
             key={tab.title}
             type="button"
             {...(onTabChange && { onClick: () => onTabChange(tab.title) })}
-            className={button({ active })}
+            className={button({ variant: active ? "active" : "resting" })}
           >
-            <Icon icon={tab.icon} />
-            <Text weight="600" color="muted" align="center">
+            {tab.icon ? tab.icon : null}
+            <Text weight="600" color="inherit" align="center">
               {tab.title}
             </Text>
           </button>
@@ -45,18 +45,23 @@ const button = cva({
     transitionDuration: "fast",
     borderRadius: "6px",
     textWrap: "nowrap",
-    background: "newBg.neutral",
-    borderColor: "newBorder.neutral.muted",
     borderWidth: "1px",
-    _hover: {
-      bg: "bg.hover",
-    },
+    bg: "newBg.neutral",
   },
   variants: {
-    active: {
-      true: {
-        bg: "bg.subtle",
+    variant: {
+      resting: {
+        borderColor: "newBorder.neutral.muted",
+        color: "newFg.neutral.muted",
+        _hover: {
+          borderColor: "newBorder.neutral",
+          color: "newFg.neutral",
+        },
+      },
+      active: {
         borderColor: "newBorder.neutral",
+        color: "newFg.neutral",
+        bg: "newBg.neutral.subtle",
       },
     },
   },

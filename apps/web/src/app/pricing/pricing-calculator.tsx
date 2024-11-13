@@ -37,9 +37,15 @@ export const PricingCalculator = (): ReactElement => {
   })();
 
   return (
-    <Section>
-      <Box>
-        <Box padding="space24" borBottom="1px">
+    <>
+      <Section
+        linesWrapper
+        borderLeftWidth="1px"
+        borderLeftColor="newBorder.neutral"
+        borderRightWidth="1px"
+        borderRightColor="newBorder.neutral"
+      >
+        <Box padding="space24" borderBottomWidth="1px" borderBottomColor="newBorder.neutral">
           <Flex
             justifyContent="space-between"
             mb="space16"
@@ -78,7 +84,12 @@ export const PricingCalculator = (): ReactElement => {
             </Text>
           </Flex>
         </Box>
-        <Flex padding="space24" justifyContent="space-between" alignItems="baseline">
+        <Flex
+          layerStyle="dotBackground"
+          padding="space24"
+          justifyContent="space-between"
+          alignItems="baseline"
+        >
           <Text variant="titleL">Estimate</Text>
           <Flex alignItems="baseline" gap="space8">
             <Text variant="title2xl">${estimatedCost}</Text>
@@ -87,22 +98,22 @@ export const PricingCalculator = (): ReactElement => {
             </Text>
           </Flex>
         </Flex>
-      </Box>
-
-      <Text
-        variant="bodyM"
-        color="muted"
-        align="center"
-        className={css({
-          mt: "space24",
-          textWrap: "balance",
-        })}
-      >
-        Starts at ${pricingTiers.tier1.price}/started flow with first{" "}
-        {formatNumberWithThousandSeparator(pricingTiers.free.flowsRange[1])} free every month. We
-        charge for every flow that you start, regardless if it finishes or not. Unsure how many
-        flows you need? Our rule of thumb is 3 flows started per user per month.
-      </Text>
-    </Section>
+      </Section>
+      <Section>
+        <Text
+          variant="bodyM"
+          color="muted"
+          align="center"
+          className={css({
+            mt: "space24",
+            textWrap: "balance",
+          })}
+        >
+          Starts at ${pricingTiers.tier1.price}/MAU with first{" "}
+          {formatNumberWithThousandSeparator(pricingTiers.free.flowsRange[1])} free every month. We
+          count every user that you init, regardless if they enter a workflow or not.
+        </Text>
+      </Section>
+    </>
   );
 };

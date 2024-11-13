@@ -41,8 +41,9 @@ export const PlaceholderModal = ({
       <Text mb="space12" align="center" variant="bodyXs">
         {description}
       </Text>
-      <Button type="button" variant="primary" size="small">
-        {buttonLabel}
+      {/* Button is rendered as div to prevent taking focus and messing with aria-hidden */}
+      <Button asChild variant="primary" size="small">
+        <div>{buttonLabel}</div>
       </Button>
     </Flex>
   );

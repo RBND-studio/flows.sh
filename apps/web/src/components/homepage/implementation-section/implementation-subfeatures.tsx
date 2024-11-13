@@ -6,22 +6,22 @@ const subFeatures = [
   {
     icon: <Icon icon={Eye16} />,
     title: "Observability",
-    description: "Debug with a complete visibility into your users and workflows",
+    description: "Debug with a complete visibility into workflows and user interactions.",
   },
   {
     icon: <Icon icon={Environment16} />,
     title: "Environments",
-    description: "Test workflows on staging before deploying them into production.",
+    description: "Test workflows on staging before deploying them to production.",
   },
   {
     icon: <Icon icon={BlockPlus16} />,
     title: "Infinite extensibility",
-    description: "Compose with your components or integrate with any API.",
+    description: "Expand workflows with your components or integrate any API.",
   },
   {
     icon: <Icon icon={Paintbrush16} />,
     title: "Easy theming",
-    description: "Use any theme providers or CSS solutions ins UI components.",
+    description: "Use any theme provider or CSS solutions in UI components.",
   },
 ];
 
@@ -33,10 +33,11 @@ export const ImplementationSubfeatures = (): JSX.Element => {
       gap="space24"
       rowGap="space40"
       pt="space48"
-      pb="space64"
+      pb="space48"
       md={{
         gridTemplateColumns: "repeat(4, 1fr)",
         gap: "space40",
+        pb: "space64",
       }}
     >
       {subFeatures.map((feature) => (

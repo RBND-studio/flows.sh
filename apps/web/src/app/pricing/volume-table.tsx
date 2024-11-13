@@ -1,4 +1,4 @@
-import { Box, Flex } from "@flows/styled-system/jsx";
+import { Flex } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
 import { type ReactElement } from "react";
 import { formatNumberToK, formatNumberWithThousandSeparator, pricingTiers } from "shared";
@@ -29,15 +29,21 @@ export const VolumeTable = (): ReactElement => {
   ];
 
   return (
-    <Section>
-      <Flex flexDirection="column" gap="space8" mb="space32">
+    <>
+      <Section pt="space120" mb="space40" display="flex" flexDirection="column" gap="space12">
         <Text variant="title2xl">Volume pricing</Text>
         <Text variant="bodyL" color="muted">
           Flows offers volume based pricing, the more flows you start the less you pay.
         </Text>
-      </Flex>
+      </Section>
 
-      <Box>
+      <Section
+        borderLeftWidth="1px"
+        borderLeftColor="newBorder.neutral"
+        borderRightWidth="1px"
+        borderRightColor="newBorder.neutral"
+        linesWrapper
+      >
         {pricing.map((item) => (
           <Flex
             key={item.price}
@@ -51,7 +57,7 @@ export const VolumeTable = (): ReactElement => {
             <Text variant="titleM">{item.price}</Text>
           </Flex>
         ))}
-      </Box>
-    </Section>
+      </Section>
+    </>
   );
 };

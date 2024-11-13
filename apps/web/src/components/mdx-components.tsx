@@ -13,7 +13,7 @@ const mdxComponents = {
     <Image
       alt={props.alt ?? "Blog post cover image"}
       className={css({
-        borderRadius: "radius12",
+        borderRadius: "radius8",
         bor: "1px",
         mb: "space24",
       })}

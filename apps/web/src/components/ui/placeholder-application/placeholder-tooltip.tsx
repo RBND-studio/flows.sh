@@ -50,8 +50,9 @@ export const PlaceholderTooltip = ({
           </Flex>
         ) : null}
 
-        <Button type="button" variant="primary" size="small">
-          {buttonLabel}
+        {/* Button is rendered as div to prevent taking focus and messing with aria-hidden */}
+        <Button asChild variant="primary" size="small">
+          <div>{buttonLabel}</div>
         </Button>
       </Flex>
     </Flex>

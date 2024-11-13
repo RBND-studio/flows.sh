@@ -7,17 +7,17 @@ export const WorkflowsFeatures = (): JSX.Element => {
     <Section
       display="flex"
       gap="space40"
-      pt="space80"
+      pt="space64"
       pb="space64"
       flexDirection="column"
-      md={{ flexDirection: "row" }}
+      md={{ flexDirection: "row", pt: "space80" }}
     >
       <Box width="100%">
         <Text mb="space12" variant="titleXl">
           Product tours
         </Text>
-        <Text mb="space32" variant="bodyL">
-          Guide users step-by-step through your features with tours.
+        <Text mb="space32" color="muted" variant="bodyL">
+          Guide users step-by-step through your application with interactive product tours.
         </Text>
         <Box
           borderColor="newBorder.neutral"
@@ -52,10 +52,10 @@ export const WorkflowsFeatures = (): JSX.Element => {
       </Box>
       <Box width="100%">
         <Text mb="space12" variant="titleXl">
-          Semi-permanent elements
+          Temporary elements
         </Text>
-        <Text mb="space32" variant="bodyL">
-          Add promotions or teach users with temporary elements in your app.
+        <Text mb="space32" color="muted" variant="bodyL">
+          Add UI elements into your application without needing to redeploy.
         </Text>
         <Box
           borderColor="newBorder.neutral"

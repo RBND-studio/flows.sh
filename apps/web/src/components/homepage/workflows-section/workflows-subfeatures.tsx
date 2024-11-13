@@ -6,22 +6,23 @@ const subFeatures = [
   {
     icon: <Icon icon={Language16} />,
     title: "Localization",
-    description: "Support any language or locale.",
+    description: "Support any language or locale to reach a global audience.",
+    comingSoon: true,
   },
   {
     icon: <Icon icon={Filter16} />,
     title: "Segmentation",
-    description: "Target users or companies based on properties or behavior.",
+    description: "Target specific users or companies based on properties or behavior.",
   },
   {
     icon: <Icon icon={Versioning16} />,
     title: "Versioning",
-    description: "Deploy, restore, and audit your changes across environments.",
+    description: "Deploy, audit, and restore your changes across environments.",
   },
   {
     icon: <Icon icon={Graph16} />,
     title: "Workflow analytics",
-    description: "Understand how your users interact with your workflows.",
+    description: "Understand how users interact with your workflows.",
   },
 ];
 
@@ -33,10 +34,11 @@ export const WorkflowsSubfeatures = (): JSX.Element => {
       gap="space24"
       rowGap="space40"
       pt="space48"
-      pb="space64"
+      pb="space48"
       md={{
         gridTemplateColumns: "repeat(4, 1fr)",
         gap: "space40",
+        pb: "space64",
       }}
     >
       {subFeatures.map((feature) => (

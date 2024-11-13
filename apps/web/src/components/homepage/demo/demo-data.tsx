@@ -1,12 +1,11 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { PlaceholderModal, PlaceholderTooltip } from "components/ui";
-import { Banner16, Comment16, Flows16, Question16 } from "icons";
+import { Question16 } from "icons";
 import { Button, Icon, Text } from "ui";
 
 export const tabs = [
   {
-    icon: Comment16,
     title: "User onboarding",
     sidebarTooltipSlot: (
       <Box position="relative">
@@ -29,7 +28,6 @@ export const tabs = [
     ),
   },
   {
-    icon: Flows16,
     title: "Product adoption",
     bannerSlot: (
       <Flex
@@ -58,7 +56,6 @@ export const tabs = [
     ),
   },
   {
-    icon: Banner16,
     title: "In-app messaging",
     sidebarBannerSlot: (
       <Flex
@@ -75,12 +72,14 @@ export const tabs = [
         <Text mb="space4" variant="bodyXs">
           We will be performing maintenance tomorrow.
         </Text>
-        <Button size="small">Show details</Button>
+        {/* Button is rendered as div to prevent taking focus and messing with aria-hidden */}
+        <Button asChild size="small">
+          <div>Show details</div>
+        </Button>
       </Flex>
     ),
   },
   {
-    icon: Comment16,
     title: "Growth experiments",
     slideout: (
       <Box
@@ -112,7 +111,6 @@ export const tabs = [
     ),
   },
   {
-    icon: Comment16,
     title: "In-app help",
     helpSlot: (
       <Box position="relative" width="100%">

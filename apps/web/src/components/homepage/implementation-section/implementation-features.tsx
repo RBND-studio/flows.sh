@@ -8,16 +8,16 @@ export const ImplementationFeatures = (): JSX.Element => {
     <Section
       display="flex"
       gap="space40"
-      pt="space80"
+      pt="space64"
       pb="space64"
       flexDirection="column"
-      md={{ flexDirection: "row" }}
+      md={{ flexDirection: "row", pt: "space80" }}
     >
       <Box width="100%">
         <Text mb="space12" variant="titleXl">
           Inline components
         </Text>
-        <Text mb="space32" variant="bodyL">
+        <Text mb="space32" color="muted" variant="bodyL">
           Render inline components directly within your app’s UI using Slots as anchors.
         </Text>
         <Box
@@ -47,8 +47,8 @@ export const ImplementationFeatures = (): JSX.Element => {
         <Text mb="space12" variant="titleXl">
           Floating components
         </Text>
-        <Text mb="space32" variant="bodyL">
-          Show tooltips and modals anywhere in your app to guide users.
+        <Text mb="space32" color="muted" variant="bodyL">
+          Show tooltips, modals, and banners anywhere in your app to guide users.
         </Text>
         <Flex
           alignItems="center"
@@ -73,7 +73,7 @@ export const ImplementationFeatures = (): JSX.Element => {
             description="Modals are better for catching attention or more information."
             className={css({
               display: "none",
-              md: { display: "unset" },
+              md: { display: "flex" },
             })}
           />
         </Flex>
