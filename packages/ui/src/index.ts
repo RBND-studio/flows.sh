@@ -1,5 +1,6 @@
 export * from "./accordion";
 export * from "./badge";
+export * from "./block-icon";
 export * from "./button";
 export * from "./checkbox";
 export * from "./description";
