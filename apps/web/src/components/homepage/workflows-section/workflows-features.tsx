@@ -10,7 +10,7 @@ export const WorkflowsFeatures = (): JSX.Element => {
       pt="space64"
       pb="space64"
       flexDirection="column"
-      md={{ flexDirection: "row", pt: "space80" }}
+      md={{ flexDirection: "row", pt: "space96", pb: "space96" }}
     >
       <Box width="100%">
         <Text mb="space12" variant="titleXl">

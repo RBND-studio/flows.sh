@@ -61,14 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
         <Providers>
           <LinesBox>
             <Header />
-            <main
-            //TODO: check if this is needed
-            // className={css({
-            //   overflowX: "hidden",
-            // })}
-            >
-              {children}
-            </main>
+            <main>{children}</main>
             <Footer />
           </LinesBox>
         </Providers>

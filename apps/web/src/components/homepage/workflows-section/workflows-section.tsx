@@ -1,15 +1,16 @@
-import { Box } from "@flows/styled-system/jsx";
+import { Flex } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
 import { Text } from "ui";
 
 import { WorkflowsBlocks } from "./workflows-blocks";
+import { WorkflowsExample } from "./workflows-example";
 import { WorkflowsFeatures } from "./workflows-features";
 import { WorkflowsSubfeatures } from "./workflows-subfeatures";
 
 export const WorkflowsSection = (): JSX.Element => {
   return (
     <>
-      <Section pt="space80" pb="space40" md={{ pt: "space120" }}>
+      <Section pt="space80" pb="space40" md={{ pt: "space140", pb: "space64" }}>
         <Text mb="space24" variant="title3xl">
           Design the user journey
         </Text>
@@ -20,15 +21,20 @@ export const WorkflowsSection = (): JSX.Element => {
       </Section>
 
       <Section linesWrapper>
-        <Box
+        <Flex
+          alignItems="center"
+          justifyContent="center"
           borderRightColor="newBorder.neutral"
           borderRightWidth="1px"
           borderLeftColor="newBorder.neutral"
           borderLeftWidth="1px"
           layerStyle="dotBackground"
           width="100%"
-          height="400px"
-        />
+          height={400}
+          role="img"
+        >
+          <WorkflowsExample />
+        </Flex>
       </Section>
 
       <WorkflowsFeatures />

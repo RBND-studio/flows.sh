@@ -12,5 +12,7 @@ export const spacing = defineTokens.spacing({
   space48: { value: "48px" },
   space64: { value: "64px" },
   space80: { value: "80px" },
+  space96: { value: "96px" },
   space120: { value: "120px" },
+  space140: { value: "140px" },
 });

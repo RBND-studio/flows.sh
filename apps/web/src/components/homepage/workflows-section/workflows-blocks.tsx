@@ -94,7 +94,7 @@ export const WorkflowsBlocks = (): JSX.Element => {
       linesWrapper
       md={{ flexDirection: "row" }}
     >
-      <Box md={{ maxWidth: "320px" }} width="100%" px="space32" py="space24">
+      <Box md={{ maxWidth: "320px" }} width="100%" px="space32" py="space32">
         <Text maxWidth={240} md={{ maxWidth: "unset" }} mb="space16" variant="titleXl">
           Create complex workflows with blocks
         </Text>
@@ -114,8 +114,9 @@ export const WorkflowsBlocks = (): JSX.Element => {
           borderLeftColor: "newBorder.neutral",
           borderLeftWidth: "1px",
         }}
+        role="img"
       >
-        <Wrap gap="space8" maxWidth={400} justifyContent="center">
+        <Wrap aria-hidden="true" gap="space8" maxWidth={400} justifyContent="center">
           {tabs
             .find((tab) => tab.title === activeTab)
             ?.components.map((block) => (

@@ -37,6 +37,7 @@ export const ImplementationSubfeatures = (): JSX.Element => {
       md={{
         gridTemplateColumns: "repeat(4, 1fr)",
         gap: "space40",
+        pt: "space64",
         pb: "space64",
       }}
     >

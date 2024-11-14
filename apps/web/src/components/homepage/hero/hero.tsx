@@ -19,20 +19,18 @@ export const Hero = (): ReactElement => {
       <Text
         as="h1"
         variant="title4xl"
-        className={css({
-          animation: "topSlideIn 0.6s ease-out",
-        })}
+        animation="topSlideIn 0.6s ease-out"
+        mdDown={{ textAlign: "center" }}
       >
         Build native product growth experiences, your way
       </Text>
       <Text
-        className={css({
-          maxWidth: "580px",
-          opacity: 0,
-          animation: "topSlideIn 0.6s ease-out",
-          animationFillMode: "forwards",
-          animationDelay: "0.3s",
-        })}
+        maxWidth="580px"
+        opacity={0}
+        animation="topSlideIn 0.6s ease-out"
+        animationDelay="0.3s"
+        animationFillMode="forwards"
+        mdDown={{ textAlign: "center" }}
         color="muted"
         variant="bodyL"
       >
@@ -49,6 +47,7 @@ export const Hero = (): ReactElement => {
         animation="topSlideIn 0.6s ease-out"
         animationDelay="0.6s"
         animationFillMode="forwards"
+        mdDown={{ alignItems: "center" }}
       >
         <SignupClick>
           <Button

@@ -13,6 +13,10 @@ export const TopLine = (): JSX.Element => {
             right: "-40px",
             height: "1px",
             background: "newBorder.neutral.muted",
+            lgDown: {
+              width: "24px",
+              right: "-24px",
+            },
             mdDown: {
               display: "none",
               width: "0px",
@@ -31,6 +35,10 @@ export const TopLine = (): JSX.Element => {
             left: "-40px",
             height: "1px",
             background: "newBorder.neutral.muted",
+            lgDown: {
+              width: "24px",
+              left: "-24px",
+            },
             mdDown: {
               display: "none",
               width: "0px",
@@ -57,6 +65,10 @@ export const BottomLine = ({ className }: { className?: string }): JSX.Element =
               right: "-40px",
               height: "1px",
               background: "newBorder.neutral.muted",
+              lgDown: {
+                width: "24px",
+                right: "-24px",
+              },
               mdDown: {
                 display: "none",
                 width: "0px",
@@ -78,6 +90,10 @@ export const BottomLine = ({ className }: { className?: string }): JSX.Element =
               left: "-40px",
               height: "1px",
               background: "newBorder.neutral.muted",
+              lgDown: {
+                width: "24px",
+                left: "-24px",
+              },
               mdDown: {
                 display: "none",
                 width: "0px",

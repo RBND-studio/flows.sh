@@ -15,8 +15,12 @@ export const LinesBox = ({
       borderWidth="1px"
       position="relative"
       className={className}
+      lgDown={{
+        m: "space24",
+      }}
       mdDown={{
         m: "0",
+        borderWidth: "0",
       }}
     >
       {children}
@@ -51,6 +55,10 @@ export const newCorner = cva({
           right: "-40px",
           height: "1px",
           background: "newBorder.neutral.muted",
+          lgDown: {
+            width: "24px",
+            right: "-24px",
+          },
           mdDown: {
             display: "none",
             width: "0px",
@@ -63,6 +71,10 @@ export const newCorner = cva({
           right: "-1px",
           width: "1px",
           background: "newBorder.neutral.muted",
+          lgDown: {
+            height: "24px",
+            top: "-24px",
+          },
           mdDown: {
             display: "none",
             height: "0px",
@@ -79,6 +91,10 @@ export const newCorner = cva({
           left: "-40px",
           height: "1px",
           background: "newBorder.neutral.muted",
+          lgDown: {
+            width: "24px",
+            left: "-24px",
+          },
           mdDown: {
             display: "none",
             width: "0px",
@@ -91,6 +107,10 @@ export const newCorner = cva({
           left: "-1px",
           width: "1px",
           background: "newBorder.neutral.muted",
+          lgDown: {
+            height: "24px",
+            top: "-24px",
+          },
           mdDown: {
             display: "none",
             height: "0px",
@@ -107,6 +127,10 @@ export const newCorner = cva({
           right: "-40px",
           height: "1px",
           background: "newBorder.neutral.muted",
+          lgDown: {
+            width: "24px",
+            right: "-24px",
+          },
           mdDown: {
             display: "none",
             width: "0px",
@@ -119,6 +143,10 @@ export const newCorner = cva({
           right: "-1px",
           width: "1px",
           background: "newBorder.neutral.muted",
+          lgDown: {
+            height: "24px",
+            bottom: "-24px",
+          },
           mdDown: {
             display: "none",
             height: "0px",
@@ -135,6 +163,10 @@ export const newCorner = cva({
           left: "-40px",
           height: "1px",
           background: "newBorder.neutral.muted",
+          lgDown: {
+            width: "24px",
+            left: "-24px",
+          },
           mdDown: {
             display: "none",
             width: "0px",
@@ -147,6 +179,10 @@ export const newCorner = cva({
           left: "-1px",
           width: "1px",
           background: "newBorder.neutral.muted",
+          lgDown: {
+            height: "24px",
+            bottom: "-24px",
+          },
           mdDown: {
             display: "none",
             height: "0px",
