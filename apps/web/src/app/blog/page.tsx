@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const Page = (): ReactElement => {
   return (
     <>
-      <Section maxWidth="720px">
+      <Section maxWidth="720px!">
         <Text as="h1" variant="title4xl" mt="space40" md={{ mt: "space80" }}>
           Blog
         </Text>
