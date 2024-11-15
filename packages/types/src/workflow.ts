@@ -21,3 +21,8 @@ export interface UserPropertyMatch {
    */
   value: UserPropertyMatchValue | UserPropertyMatchValue[];
 }
+
+export type TourWait = {
+  navigation?: { operator: string; value: string[] };
+  interaction?: { operator: string; value: string };
+};
