@@ -33,6 +33,7 @@ const buttonVariants = {
   endIcon: [null, <ChevronDown16 />],
   shadow: ["default", "highlight"],
   disabled: [false, true],
+  loading: [false, true],
 } as const;
 
 export const Grid: Story = {
@@ -52,29 +53,32 @@ export const Grid: Story = {
           Object.values(buttonVariants.endIcon).map((endIcon) =>
             Object.values(buttonVariants.shadow).map((shadow) =>
               Object.values(buttonVariants.disabled).map((disabled) =>
-                Object.values(buttonVariants.variant).map((variant) => (
-                  <Flex
-                    direction="column"
-                    gap="space12"
-                    alignItems="center"
-                    key={`${size}-${variant}`}
-                  >
-                    <Button
+                Object.values(buttonVariants.loading).map((loading) =>
+                  Object.values(buttonVariants.variant).map((variant) => (
+                    <Flex
+                      direction="column"
+                      gap="space12"
+                      alignItems="center"
                       key={`${size}-${variant}`}
-                      startIcon={startIcon}
-                      size={size}
-                      variant={variant}
-                      endIcon={endIcon}
-                      shadow={shadow}
-                      disabled={disabled}
                     >
-                      {variant}
-                    </Button>
-                    <Text variant="bodyXs" color="muted" align="center">
-                      {[size, shadow, disabled, variant].join(", ")}
-                    </Text>
-                  </Flex>
-                )),
+                      <Button
+                        key={`${size}-${variant}`}
+                        startIcon={startIcon}
+                        size={size}
+                        variant={variant}
+                        endIcon={endIcon}
+                        shadow={shadow}
+                        disabled={disabled}
+                        loading={loading}
+                      >
+                        {variant}
+                      </Button>
+                      <Text variant="bodyXs" color="muted" align="center">
+                        {[size, shadow, disabled, loading, variant].join(", ")}
+                      </Text>
+                    </Flex>
+                  )),
+                ),
               ),
             ),
           ),

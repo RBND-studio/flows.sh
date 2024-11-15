@@ -1,4 +1,4 @@
-import { cva, cx } from "@flows/styled-system/css";
+import { css, cva, cx } from "@flows/styled-system/css";
 import { type HTMLStyledProps, styled } from "@flows/styled-system/jsx";
 import { Slot, Slottable } from "@radix-ui/react-slot";
 import { type ButtonHTMLAttributes, forwardRef } from "react";
@@ -47,13 +47,27 @@ export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
       // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- nullish coalescing cannot be used here
       disabled={disabled || loading}
       ref={ref}
+      data-loading={loading ? "" : undefined}
+      aria-busy={loading}
     >
       {/* eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- nullish coalescing cannot be used here */}
       {startIcon || loading ? (
         <Icon size={size} position="start">
-          {loading ? <Spinner color="inherit" size={16} /> : startIcon}
+          {startIcon}
         </Icon>
       ) : null}
+      {loading ? (
+        <Spinner
+          className={css({
+            position: "absolute",
+            visibility: "visible!",
+          })}
+          // TODO: use correct color for each variant
+          color="button.secondary.fg.disabled"
+          size={16}
+        />
+      ) : null}
+
       <Slottable>{children}</Slottable>
       {endIcon ? (
         <Icon size={size} position="end">
@@ -111,6 +125,13 @@ const button = cva({
     shadow: "none",
 
     superFastEaseInOut: "all",
+
+    _loading: {
+      color: "transparent!",
+      "& > *": {
+        visibility: "hidden",
+      },
+    },
 
     _disabled: {
       pointerEvents: "none",
