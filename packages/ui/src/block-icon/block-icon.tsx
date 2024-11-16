@@ -23,6 +23,8 @@ export const builtInBlockIcons: Record<string, IconCmp> = {
   tour: Tour16,
   end: Exit16,
   filter: Filter16,
+  // TODO: replace me with correct icon
+  wait: Filter16,
 };
 
 export const customIconOptions: Record<string, IconCmp> = {
@@ -54,7 +56,7 @@ export const BlockIcon = forwardRef<HTMLDivElement, Props>(function BlockIcon(
   }, [blockIcon, blockType]);
 
   const type = useMemo(() => {
-    if (["filter"].includes(blockType)) return "logic";
+    if (["filter", "wait"].includes(blockType)) return "logic";
     return blockType as (typeof boxStyles.variantMap.type)[number];
   }, [blockType]);
 

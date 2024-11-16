@@ -23,4 +23,5 @@ export const blockTranslation = {
   end: "End",
   tour: "Tour",
   filter: "Filter",
+  wait: "Wait",
 } as const;
