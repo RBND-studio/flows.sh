@@ -23,6 +23,7 @@ export interface UserPropertyMatch {
 }
 
 export type TourWait = {
-  navigation?: { operator: string; value: string[] };
-  interaction?: { operator: string; value: string };
+  interaction?: string;
+  page?: { operator: string; value: string[] };
+  element?: string;
 };
