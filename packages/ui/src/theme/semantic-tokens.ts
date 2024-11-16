@@ -128,6 +128,7 @@ export const semanticTokens = defineSemanticTokens({
       bg: {
         DEFAULT: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.875}" } },
         hover: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.825}" } },
+        subtleHover: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.875}" } },
         selected: { value: { base: "{colors.primary.50}", _dark: "{colors.primary-dark.800}" } },
         disabled: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.850}" } },
       },
