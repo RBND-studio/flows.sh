@@ -188,6 +188,27 @@ export const semanticTokens = defineSemanticTokens({
         fg: { value: { base: "{colors.danger.600}", _dark: "{colors.danger-dark.400}" } },
       },
     },
+    // charts and data visualization
+    dataViz: {
+      green: {
+        fg: {
+          DEFAULT: { value: { base: "{colors.success.400}", _dark: "{colors.success-dark.400}" } },
+          muted: { value: { base: "{colors.success.600}", _dark: "{colors.success-dark.600}" } },
+        },
+      },
+      blue: {
+        fg: {
+          DEFAULT: { value: { base: "{colors.primary.400}", _dark: "{colors.primary-dark.400}" } },
+          muted: { value: { base: "{colors.primary.600}", _dark: "{colors.primary-dark.600}" } },
+        },
+      },
+      neutral: {
+        fg: {
+          DEFAULT: { value: { base: "{colors.neutral.400}", _dark: "{colors.neutral.400}" } },
+          muted: { value: { base: "{colors.neutral.600}", _dark: "{colors.neutral.600}" } },
+        },
+      },
+    },
     // TODO: separate button into separate pattern
     button: {
       primary: {
