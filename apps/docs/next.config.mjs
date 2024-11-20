@@ -1,6 +1,8 @@
-const path = require("node:path");
+import path from "node:path";
 
-const withNextra = require("nextra")({
+import nextra from "nextra";
+
+const withNextra = nextra({
   theme: "nextra-theme-docs",
   themeConfig: "./src/theme.config.tsx",
   defaultShowCopyCode: true,
@@ -40,17 +42,13 @@ const nextConfig = {
   output: "standalone",
   swcMinify: true,
   experimental: {
-    outputFileTracingRoot: path.join(__dirname, "../../"),
+    outputFileTracingRoot: path.join(path.resolve(), "../../"),
     optimizePackageImports: ["ui", "icons", "shared"],
   },
   basePath: "/docs",
-  i18n: {
-    defaultLocale: "en-US",
-    locales: ["en-US"],
-  },
   images: {
     formats: ["image/webp"],
   },
 };
 
-module.exports = withNextra(nextConfig);
+export default withNextra(nextConfig);

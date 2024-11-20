@@ -3,26 +3,7 @@ title: Install Flows
 description: Learn how to install Flows in your product
 ---
 
-import { useData } from "nextra/data";
 import { Tabs, Pre, Code } from "nextra/components";
-
-export const getServerSideProps = () => {
-  return fetch("https://unpkg.com/@flows/js@latest/package.json")
-    .then((res) => res.json())
-    .then((pkgJson) => ({
-      props: {
-        ssg: {
-          version: pkgJson.version,
-        },
-      },
-    }));
-};
-
-export const LatestScript = ({children}) => {
-  const {version} = useData()
-
-return <Pre hasCopyCode data-language="html" data-theme="default"><Code><span className="line"><span style={{color:"var(--shiki-color-text)"}}>&lt;</span><span style={{color:"var(--shiki-token-string-expression)"}}>script</span> <span style={{color:"var(--shiki-token-function)"}}>defer</span> <span style={{color:"var(--shiki-token-function)"}}>src</span><span style={{color:"var(--shiki-token-keyword)"}}>=</span><span style={{color:"var(--shiki-token-string-expression)"}}>"https://cdn.jsdelivr.net/npm/@flows/js@{version}/dist/index.global.js"</span><span style={{color:"var(--shiki-color-text)"}}>&gt;&lt;/</span><span style={{color:"var(--shiki-token-string-expression)"}}>script</span><span style={{color:"var(--shiki-color-text)"}}>&gt;</span></span></Code></Pre>
-}
 
 # Install Flows
 
@@ -62,8 +43,6 @@ Lastly don't forget to render the Flows component in the root of your applicatio
 This is the simplest way to install Flows. It only takes a few minutes.
 
 Copy the snippet bellow and paste it within the `<head>` tag of your product - ideally right before the closing `</head>` tag.
-
-<LatestScript />
 
 When you're done, you can start using Flows by calling `flows.init()` anywhere in your code. You can find the `projectId` in your project settings.
 

@@ -1,5 +1,5 @@
-{
+export default {
   "install-flows": "Install Flows",
   "identify-users": "Identify users",
-  "concepts": "Concepts"
-}
+  concepts: "Concepts",
+};

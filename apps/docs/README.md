@@ -39,3 +39,49 @@
   - Individual functions (each function has a page) - how to use it, what it does, what are the options, examples
   - Implementation examples
     - Individual languages and frameworks - installation, configuration, examples
+
+---
+
+New structure:
+
+- Learn
+  - Getting started
+    - Quickstart
+    - Concepts
+    - Migration from other tools
+    - Migration from v1
+  - Creating workflows
+    - Workflows
+    - Adding blocks
+    - Configuring blocks
+    - Creating paths
+    - Publishing workflows
+    - Managing versions
+    - Testing workflows
+  - Block templates
+    - Block templates
+    - Creating custom components
+    - Publishing component versions
+    - Updating components
+  - Users
+    - Users
+    - Adding users
+    - User log
+    - User workflow states
+  - Environments
+    - Environments
+    - Managing environments
+  - Organization setup
+    - ...
+    - Billing
+    - Estimating costs
+- SDK
+  - React
+- Guides
+
+  - ...
+
+- Links
+  - Contact us ✅
+  - Status ✅
+  - Github ✅
