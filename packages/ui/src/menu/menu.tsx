@@ -32,10 +32,13 @@ type MenuItemProps = {
   disabled?: boolean;
   className?: string;
   onClick?: () => void;
-  preventClose?: boolean;
+  /**
+   * @defaultValue true
+   */
+  closeOnClick?: boolean;
 };
 export const MenuItem: FC<MenuItemProps> = forwardRef<HTMLButtonElement, MenuItemProps>(
-  function MenuItem({ children, asChild, disabled, className, preventClose, ...props }, ref) {
+  function MenuItem({ children, asChild, disabled, className, closeOnClick, ...props }, ref) {
     const Component = asChild ? Slot : "button";
 
     const component = (
@@ -72,9 +75,7 @@ export const MenuItem: FC<MenuItemProps> = forwardRef<HTMLButtonElement, MenuIte
       </Component>
     );
 
-    if (preventClose) {
-      return component;
-    }
+    if (!closeOnClick) return component;
 
     return <PopoverClose asChild>{component}</PopoverClose>;
   },
