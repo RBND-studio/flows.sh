@@ -86,6 +86,7 @@ const checkbox = cva({
     borderColor: "newControl.border",
     cursor: "pointer",
     fastEaseInOut: "all",
+    flexShrink: 0,
 
     _hover: {
       borderColor: "newControl.border.hover",
