@@ -87,6 +87,7 @@ export const semanticTokens = defineSemanticTokens({
         muted: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.875}" } },
         subtle: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.850}" } },
         strong: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.650}" } },
+        pureInverted: { value: { base: "{colors.neutral.850}", _dark: "{colors.neutral.50}" } },
       },
       primary: {
         DEFAULT: { value: { base: "{colors.primary.500}", _dark: "{colors.primary-dark.400}" } },
