@@ -55,7 +55,6 @@ export const Hero = (): ReactElement => {
               shadow: "neutralFocus",
             })}
             asChild
-            shadow="highlight"
             size="large"
           >
             <SmartLink href={links.signUp}>Start building</SmartLink>

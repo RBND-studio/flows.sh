@@ -9,14 +9,14 @@ import { formatNumberWithThousandSeparator, pricingTiers } from "shared";
 import { Slider, Text } from "ui";
 
 export const PricingCalculator = (): ReactElement => {
-  const [selectedValue, setSelectedValue] = useState(1000);
+  const [selectedValue, setSelectedValue] = useState(500);
 
   const handleSliderChange = (value: number): void => {
     const result = sum([
-      1000,
-      Math.min(value, 40) * 100,
-      Math.min(Math.max(value - 40, 0), 40) * 500,
-      Math.min(Math.max(value - 80, 0), 40) * 1875,
+      500,
+      Math.min(value, 40) * 37.5,
+      Math.min(Math.max(value - 40, 0), 40) * 200,
+      Math.min(Math.max(value - 80, 0), 40) * 1000,
     ]);
 
     setSelectedValue(Math.round(result));
@@ -52,12 +52,12 @@ export const PricingCalculator = (): ReactElement => {
             mdDown={{ flexDirection: "column", gap: "space8" }}
           >
             <Text id="calculatorLabel" variant="titleL">
-              Started flows
+              Monthly MTUs
             </Text>
             <Flex gap="space8" alignItems="baseline">
               <Text variant="titleL">{formatNumberWithThousandSeparator(selectedValue)}</Text>
               <Text variant="bodyL" color="muted">
-                flows / month
+                MTUs / month
               </Text>
             </Flex>
           </Flex>
@@ -71,16 +71,16 @@ export const PricingCalculator = (): ReactElement => {
           />
           <Flex justifyContent="space-between" mt="space16">
             <Text variant="bodyS" color="muted">
-              1k
+              500
             </Text>
             <Text variant="bodyS" color="muted">
-              5k
+              2k
             </Text>
             <Text variant="bodyS" color="muted">
-              25k
+              10k
             </Text>
             <Text variant="bodyS" color="muted">
-              100k
+              50k
             </Text>
           </Flex>
         </Box>
@@ -109,9 +109,9 @@ export const PricingCalculator = (): ReactElement => {
             textWrap: "balance",
           })}
         >
-          Starts at ${pricingTiers.tier1.price}/MAU with first{" "}
+          Starts at ${pricingTiers.tier1.price}/MTU with first{" "}
           {formatNumberWithThousandSeparator(pricingTiers.free.flowsRange[1])} free every month. We
-          count every user that you init, regardless if they enter a workflow or not.
+          count every user that you initialize, regardless if they enter a workflow or not.
         </Text>
       </Section>
     </>

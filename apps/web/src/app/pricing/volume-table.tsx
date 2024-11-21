@@ -7,24 +7,30 @@ import { Text } from "ui";
 export const VolumeTable = (): ReactElement => {
   const pricing = [
     {
-      range: `First ${formatNumberWithThousandSeparator(pricingTiers.free.flowsRange[1])} flows`,
+      range: `First ${formatNumberWithThousandSeparator(pricingTiers.free.flowsRange[1])} MTUs`,
       price: "Free every month",
     },
     {
       range: `${formatNumberToK(pricingTiers.tier1.flowsRange[0])} - ${formatNumberToK(
         pricingTiers.tier1.flowsRange[1],
       )}`,
-      price: `$${pricingTiers.tier1.price.toFixed(4)} per flow`,
+      price: `$${pricingTiers.tier1.price.toFixed(3)} per MTU`,
     },
     {
       range: `${formatNumberToK(pricingTiers.tier2.flowsRange[0])} - ${formatNumberToK(
         pricingTiers.tier2.flowsRange[1],
       )}`,
-      price: `$${pricingTiers.tier2.price.toFixed(4)} per flow`,
+      price: `$${pricingTiers.tier2.price.toFixed(3)} per MTU`,
     },
     {
-      range: `${formatNumberToK(pricingTiers.tier3.flowsRange[0])} +`,
-      price: `$${pricingTiers.tier3.price.toFixed(4)} per flow`,
+      range: `${formatNumberToK(pricingTiers.tier3.flowsRange[0])} - ${formatNumberToK(
+        pricingTiers.tier3.flowsRange[1],
+      )}`,
+      price: `$${pricingTiers.tier3.price.toFixed(3)} per MTU`,
+    },
+    {
+      range: `${formatNumberToK(pricingTiers.tier4.flowsRange[0])} +`,
+      price: `$${pricingTiers.tier4.price.toFixed(3)} per MTU`,
     },
   ];
 
@@ -33,7 +39,7 @@ export const VolumeTable = (): ReactElement => {
       <Section pt="space120" mb="space40" display="flex" flexDirection="column" gap="space12">
         <Text variant="title2xl">Volume pricing</Text>
         <Text variant="bodyL" color="muted">
-          Flows offers volume based pricing, the more flows you start the less you pay.
+          Flows offers volume based pricing, the more MTUs you have the less you pay.
         </Text>
       </Section>
 

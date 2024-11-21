@@ -7,17 +7,35 @@ import { Text } from "ui";
 
 const questions = [
   {
+    title: "How are MTUs (monthly tracked users) calculated?",
+    content: (
+      <>
+        MTUs are the number of unique users that have been initialized in a given month. We count
+        every users that has been initialized regardless if they have entered a workflow or not.
+        <br />
+        <br />
+        If user is initialized multiple times in a month, they are only counted once. And if that
+        user doesn’t initialize the next month, they are not counted in your usage for that month.
+      </>
+    ),
+  },
+  {
     title: "How does the pricing work?",
     content:
-      "Flows offers volume based pricing, the more flows you start the less you pay. Every month you will be billed based on the number of flows you started. To get an estimate of your monthly cost, use our pricing calculator above.",
+      "Flows offers volume based pricing, the more MTUs you have the less you pay. Every month you will be billed based on the number of your MTUs. To get an estimate of your monthly cost, use our pricing calculator above.",
+  },
+  {
+    title: "How do you calculate a month?",
+    content:
+      "Free tier resets on the first day of the month. Paid plans billing cycle starts on the day of the month that you subscribe. For example, if you subscribe on the 15th, your billing cycle will start on the 15th of every month.",
   },
   {
     title: "Do you offer a free tier?",
     content: `Yes, we offer a free tier for the first ${formatNumberWithThousandSeparator(
       pricingTiers.free.flowsRange[1],
-    )} flows started. No credit card required. When you exceed the free tier, you will need to upgrade to a pay as you go plan starting at $${
+    )} MTUs. No credit card required. When you exceed the free tier, you will need to upgrade to a pay as you go plan starting at $${
       pricingTiers.tier1.price
-    } per flow.`,
+    } per MTU.`,
   },
   {
     title: "Do you offer discounts for startups?",
@@ -35,11 +53,6 @@ const questions = [
         </a>
       </>
     ),
-  },
-  {
-    title: "How does Flows calculate usage?",
-    content:
-      "Flows calculates usage based on the number of flows you start. A flow is counted when a user starts an onboarding flow.",
   },
   {
     title: "Will you help us switch to Flows?",
