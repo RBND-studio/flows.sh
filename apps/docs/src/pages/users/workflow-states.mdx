@@ -1,0 +1,49 @@
+---
+title: Workflow states
+description: Inspect and manage user workflow states
+---
+
+# User workflow states
+
+Inspect and manage user workflow states
+
+[TODO: image]
+
+## Overview
+
+Every user you identify in Flows has a state for each workflow in your organization. You can inspect and update these states from the user detail page to troubleshoot or test workflows effectively.
+
+## Understanding user workflow states
+
+Each workflow state includes the following details:
+
+- **Workflow** - the name of the workflow
+- **Workflow status** - indicates if the workflow is active or its configuration is preventing the user from entering
+- **User progress** - tracks the user’s progress within the workflow
+
+### Workflow status
+
+Workflow status can be one of the following:
+
+- **Disabled** - workflow is disabled in the user's environment
+- **Enabled** - workflow is enabled in the user's environment
+- **No version assigned** - the workflow is enabled but lacks an assigned version in the user's environment
+
+### User progress
+
+User progress can be one of the following:
+
+- **Not started** - user has not entered the workflow yet
+- **In progress** - user is currently in the workflow
+- **Finished** - user has completed or exited the workflow
+
+## Reset user progress
+
+Flows makes it easy to reset a user’s progress in a workflow. This can be particularly useful for testing updates or resolving user-specific issues.
+
+To reset a user's progress in a workflow:
+
+1. Navigate to the **Users** page in Flows.
+2. Search for the user by their unique ID.
+3. Open the **Workflows** tab in the user detail page.
+4. Click **Reset progress** next to the workflow you want to reset.

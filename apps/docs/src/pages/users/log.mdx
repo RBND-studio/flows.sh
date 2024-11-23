@@ -1,0 +1,37 @@
+---
+title: Event log
+description: Track and view user activity in your environments
+---
+
+# Event log
+
+Track and view user activity in your environments
+
+[TODO: image]
+
+## Overview
+
+Flows automatically track user events across your environments, maintaining a detailed history of interactions. This includes workflow state changes and block transitions, helping your inspect and debug user behavior.
+
+## Understanding the user log
+
+Each event in the user log includes the following details:
+
+- **Timestamp** - the exact date and time the event occurred
+- **Event Type** - categorizes the event (e.g., block transition, workflow completion)
+- **Event name** - identifies the workflow and block associated with the event
+
+Event types include:
+
+- **`workflow-entered`** - the user entered a workflow
+- **`workflow-exited`** - the user completed or exited a workflow
+- **`block-entered`** - the user entered a block
+- **`block-exited`** - the user exited a block
+
+## Example Use Case
+
+Imagine a user reports an issue while navigating a workflow. By reviewing the **User Log**, you can:
+
+1. Follow the user's path to identify where they encountered the issue.
+2. Verify if the user completed expected transitions or encountered an error.
+3. Use this data to optimize workflows or address potential bottlenecks.

@@ -1,0 +1,53 @@
+---
+title: Environments
+description: Separate Flows deployments for different stages of your development lifecycle.
+---
+
+# Environments
+
+Separate Flows deployments for different stages of your development lifecycle.
+
+[TODO: image]
+
+## Overview
+
+Environments allow you to manage workflows across the entire development lifecycle, from local development to production. Each environment operates independently with its own:
+
+- Active workflow versions and statuses
+- Workflow analytics
+- Users
+
+You can create an unlimited number of environments.
+
+## Create an Environment
+
+[TODO: image of the environment page]
+
+To create a new environment:
+
+1. Navigate to **Settings > Environment**.
+2. Enter a **unique key** for the environment. This key is used to identify the environment in the SDK.
+
+## Edit an Environment
+
+To modify an existing environment:
+
+1. Navigate to **Settings > Environment**.
+2. Update the **environment key** as needed.
+
+<BetterCallout variant="warning">
+  **Important:** If you update the environment key, ensure the key is updated in your SDK's `init`
+  function to prevent service disruptions.
+</BetterCallout>
+
+## Using Environments
+
+Each environment is associated with a unique key that links your application to the correct workflows. Include this key in your SDK setup:
+
+```javascript
+import { init } from "@flows/flows-sdk";
+
+init({
+  environment: "your-environment-key",
+});
+```

@@ -1,0 +1,68 @@
+---
+title: User properties
+description: How to add and manage user properties
+---
+
+# User properties
+
+How to add and manage user properties
+
+[TODO: image]
+
+## Overview
+
+User properties enable you to store additional information about your users as key-value pairs. These properties can be used to segment users.
+
+## Default user properties
+
+Flows automatically collects the following default user properties:
+
+- **`updatedAt`** - timestamp when the user was last updated in Flows
+- **`createdAt`** - timestamp when the user was created in Flows
+- **`id`** - unique identifier of the user provided by you
+- **`environment`** - environment (e.g., staging, production) associated with the user
+
+## Custom user properties
+
+Custom user properties are additional fields that you can use to store information about your users. You can define these properties using the Flows SDK or API.
+
+### Property types
+
+Custom user properties can be of the following types:
+
+- **`string`**
+- **`number`**
+- **`boolean`**
+- **`date`** - a date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format
+
+## Adding custom user properties
+
+To add custom user properties, use the Flows SDK as shown below:
+
+```javascript
+import { init } from "@flows/flows-sdk";
+
+init({
+  environment: "your-environment-key",
+  userProperties: {
+    customProperty: "value", // Add your custom property here.
+  },
+});
+```
+
+## Reserved property names
+
+The following property names are reserved by Flows and cannot be used for custom user properties:
+
+- **`updatedAt`**
+- **`createdAt`**
+- **`id`**
+- **`environment`**
+
+## View assigned user properties
+
+To view a user's properties:
+
+1. Navigate to the **Users** page in Flows.
+2. Search for the user by their unique ID.
+3. View custom properties in the user detail page.

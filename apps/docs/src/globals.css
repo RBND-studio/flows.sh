@@ -1,6 +1,23 @@
 @layer reset, base, tokens, recipes, utilities;
 
+html {
+  font-size: 15px !important;
+}
+
+/* Round images in content and add border */
 p > img {
   border: 1px solid var(--colors-border);
   border-radius: 8px;
+}
+
+/* Hide breadcrumbs */
+.nextra-breadcrumb {
+  display: none !important;
+}
+
+/* Override top level item in sidebar */
+.nextra-scrollbar > div > div > ul > li.open > button {
+  background-color: transparent !important;
+  color: unset !important;
+  font-weight: 400 !important;
 }

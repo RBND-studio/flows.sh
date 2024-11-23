@@ -57,7 +57,8 @@
     "_journal.json",
     "pnpm-lock.yaml",
     "cspell.json",
-    "pandacss-generated"
+    "pandacss-generated",
+    "**/drizzle/**/*",
   ],
   "allowCompoundWords": true
 }
