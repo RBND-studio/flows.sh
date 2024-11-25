@@ -77,15 +77,6 @@ const Page = (): ReactElement => {
       </Text>
 
       <Text className={paragraphCss} variant="bodyM">
-        We use Posthog to collect usage data for the Flows Cloud. We use this data to improve the
-        product and provide better support. See the{" "}
-        <a href="https://posthog.com/privacy" rel="noopener noreferrer" target="_blank">
-          Posthog privacy policy
-        </a>{" "}
-        for full details.
-      </Text>
-
-      <Text className={paragraphCss} variant="bodyM">
         We use Loops.io to send all our emails. Transactional email and marketing emails. We have
         disabled link tracking and Loops only tracks open rates. See the{" "}
         <a href="https://loops.so/privacy" rel="noopener noreferrer" target="_blank">
