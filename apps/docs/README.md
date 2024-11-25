@@ -7,7 +7,7 @@
     - Concepts
     - Migration from other tools
     - Migration from v1
-  - Creating workflows
+  - Workflows
     - Workflows
     - Adding blocks
     - Configuring blocks
@@ -15,11 +15,10 @@
     - Publishing workflows
     - Managing versions
     - Testing workflows
-  - Block templates
-    - Block templates
-    - Creating custom components
-    - Publishing component versions
-    - Updating components
+  - Blocks
+    - Block library 🖼️
+    - Block templates 🖼️
+    - Creating custom components 💻 🖼️
   - Users
     - Users 🖼️
     - User properties 💻 🖼️

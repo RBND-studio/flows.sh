@@ -11,6 +11,8 @@ const meta: MetaType = {
     type: "separator",
   },
   "getting-started": "Getting started",
+  workflows: "Workflows",
+  blocks: "Blocks",
   users: "Users",
   "organization-setup": "Organization setup",
 

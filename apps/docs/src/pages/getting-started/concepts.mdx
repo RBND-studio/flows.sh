@@ -1,14 +1,46 @@
 ---
 title: Concepts
-description: Get a basic understanding of Flows so you can setup your projects and start using Flows effectively.
+description: Get a basic understanding of Flows so you can set up your organization and start using Flows effectively.
 ---
 
 # Concepts
 
-Get a basic understanding of Flows so you can setup your projects and start using Flows effectively.
+Get a basic understanding of Flows so you can set up your organization and start using Flows effectively.
 
-## Basic Concepts
+[TODO: Image]
+
+## Basic concepts
 
 ### Organization
 
-An organization groups together all the projects and users in your company. It's the top-level entity in Flows. Here you manage your billing, users, and projects. As a user, you can be a member of multiple organizations and can switch between these organizations using a dropdown in the top right-hand corner of the application. When you are logging into Flows you are logging into your personal account.
+An organization is the container for all workflows, environments, users, and members. As a user, you can belong to multiple organizations and switch between them using the dropdown in the top-right corner of the application. Logging into Flows means accessing your personal account, which can be associated with multiple organizations.
+
+### Workflows
+
+A workflow is a series of steps executed in a specific sequence, defined by the connections between blocks and their conditions. These workflows are built using the Flows editor, which offers a visual representation for creating and managing workflows. In the editor, you can add blocks, connect them, and configure their properties.
+
+Workflows are version-controlled and can be published to individual environments.
+
+### Blocks
+
+Blocks are the individual steps of a workflow. They can represent UI elements, logical steps, or actions. Each block has customizable properties that define its behavior and can be connected to other blocks to form a workflow.
+
+### Block properties
+
+Block properties are the configurable fields available to editors when a block is added to a workflow. They map directly to the props defined in your components. For instance, a "banner block" might include properties like `title`, `description`, `button label`, `button link`, and `hide close button`.
+
+### Block templates
+
+Block templates are reusable UI components that allow you to create custom elements for workflows. They contain properties and instructions, giving editors the power to create custom workflows. Each template must correspond to a matching component in your application.
+
+### Entry node
+
+Entry nodes are connectors that allow workflows to enter a block. They don't hold logic; they serve as the entry point for paths.
+
+### Exit nodes
+
+Exit nodes are connectors that allow workflows to leave a block. They include logic to determine which path should be followed when exiting. For example, clicking a button might trigger an exit node that leads to another block.
+
+### Paths
+
+Paths connect blocks in a workflow, starting from an exit node of one block and ending at an entry node of another. They define the sequence of the workflow.

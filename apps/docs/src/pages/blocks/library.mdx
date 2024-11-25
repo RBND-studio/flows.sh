@@ -1,0 +1,51 @@
+---
+title: Block library
+description: Understand the building blocks that power your workflows.
+---
+
+# Block library
+
+Understand the building blocks that power your workflows.
+
+[TODO: Image]
+
+## Overview
+
+Blocks are the individual steps connected by paths to create workflows. They can represent UI elements, logical steps, or actions. Each block has configurable properties, allowing for custom behavior. You can also create reusable custom block templates create custom UI components for workflows.
+
+## Start blocks
+
+Start blocks define the entry points for users to begin a workflow. Multiple start blocks can be used in a single workflow to allow different entry conditions. Once a user enters a workflow, they will not re-enter until they exit it.
+
+### Automatic start
+
+Automatically triggers a workflow when specific conditions are met.
+
+**Input:**
+
+- **User properties conditions**: An array of conditions based on user properties that must be satisfied for a user to enter the workflow.
+
+## Component blocks
+
+Component blocks display custom UI elements within your application. They come in two types:
+
+- **Floating**: UI components displayed over the application, such as modals and tooltips.
+- **Inline**: UI components integrated within the application layout, such as banners and cards, added via slots.
+
+To use component blocks, create a block template and integrate the corresponding component into your application. Default component blocks are available to help you get started.
+
+## Logic blocks
+
+Logic blocks manage workflow behavior. They can be used to define branching logic, conditions, and other rules.
+
+### Filter
+
+Filters users based on specific conditions, allowing only those who match the criteria to proceed. Users who don't match stop at the block but may continue along other workflow paths if available.
+
+**Input:**
+
+- **User properties conditions**: An array of conditions users must meet to pass through the block.
+
+## End block
+
+End blocks exit the workflow. When a user reaches an end block, the workflow is completed and marked as finished.
