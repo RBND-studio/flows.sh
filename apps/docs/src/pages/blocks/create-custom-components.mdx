@@ -107,19 +107,29 @@ With added styling, the component should look like this:
   buttonLink="#"
 />
 
-### Add component into the init function
+### Add component into the Flows provider
 
-To make the component available to Flows, you need to add it to the `init` function in your application.
+To make the component available to Flows, you need to add it to the `FlowsProvider` in your application.
 
-```js {6}
-import { init } from "@flows/flows";
+```tsx filename="layout.tsx" {12}
+import { FlowsProvider } from "@flows/react";
 import { Banner } from "./banner";
 
-init({
-  components: {
-    Banner,
-  },
-});
+const App = () => {
+  return (
+    <FlowsProvider
+      organizationId="your-organization-id"
+      environment="your-environment"
+      // Add tour specific components here
+      tourComponents={{}}
+      components={{
+        Banner,
+      }}
+    >
+      {/* Your app code here */}
+    </FlowsProvider>
+  );
+};
 ```
 
 ## Step 2: Create a block template

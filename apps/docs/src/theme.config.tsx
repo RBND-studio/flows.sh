@@ -1,7 +1,6 @@
 import { type DocsThemeConfig } from "nextra-theme-docs";
 
 import { BetterCallout } from "./components/better-callout";
-import { Demo } from "./components/demo";
 import { DocsLogo } from "./components/docs-logo";
 import { DocsSignUp } from "./components/docs-sign-up";
 import { HeadTags } from "./components/head-tags";
@@ -36,7 +35,6 @@ const config: DocsThemeConfig = {
   },
 
   components: {
-    Demo,
     SectionLink,
     BetterCallout,
   },

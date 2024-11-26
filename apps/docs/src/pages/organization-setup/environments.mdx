@@ -36,18 +36,25 @@ To modify an existing environment:
 2. Update the **environment key** as needed.
 
 <BetterCallout variant="warning">
-  **Important:** If you update the environment key, ensure the key is updated in your SDK's `init`
-  function to prevent service disruptions.
+  **Important:** If you update the environment key, ensure the key is updated in your SDK setup to
+  prevent service disruptions.
 </BetterCallout>
 
 ## Using Environments
 
 Each environment is associated with a unique key that links your application to the correct [workflows](/workflows). Include this key in your SDK setup:
 
-```javascript
-import { init } from "@flows/flows-sdk";
+```tsx filename="layout.tsx" {7}
+import { FlowsProvider } from "@flows/react";
 
-init({
-  environment: "your-environment-key",
-});
+const App = () => {
+  return (
+    <FlowsProvider
+      organizationId="your-organization-id" // Find this in Settings > General
+      environment="your-environment"
+    >
+      {/* Your app code here */}
+    </FlowsProvider>
+  );
+};
 ```

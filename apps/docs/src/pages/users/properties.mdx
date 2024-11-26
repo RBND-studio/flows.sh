@@ -39,15 +39,23 @@ Custom user properties can be of the following types:
 
 To add custom user properties, use the Flows SDK as shown below:
 
-```javascript
-import { init } from "@flows/flows-sdk";
+```tsx filename="layout.tsx" {9-11}
+import { FlowsProvider } from "@flows/react";
 
-init({
-  environment: "your-environment-key",
-  userProperties: {
-    customProperty: "value", // Add your custom property here.
-  },
-});
+const App = () => {
+  return (
+    <FlowsProvider
+      organizationId="your-organization-id" // Find this in Settings > General
+      environment="your-environment"
+      userId="your-user-id"
+      userProperties={{
+        customProperty: "value", // Add custom properties here
+      }}
+    >
+      {/* Your app code here */}
+    </FlowsProvider>
+  );
+};
 ```
 
 ## Reserved property names
