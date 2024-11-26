@@ -5,17 +5,17 @@ description: Understand the building blocks that power your workflows.
 
 # Block library
 
-Understand the building blocks that power your workflows.
+Understand the building blocks that power your [workflows](/workflows).
 
 [TODO: Image]
 
 ## Overview
 
-Blocks are the individual steps connected by paths to create workflows. They can represent UI elements, logical steps, or actions. Each block has configurable properties, allowing for custom behavior. You can also create reusable custom block templates create custom UI components for workflows.
+Blocks are the individual steps connected by paths to create [workflows](/workflows). They can represent UI elements, logical steps, or actions. Each block has configurable properties, allowing for custom behavior. You can also create reusable custom [block templates](/blocks/templates) create custom UI components for workflows.
 
 ## Start blocks
 
-Start blocks define the entry points for users to begin a workflow. Multiple start blocks can be used in a single workflow to allow different entry conditions. Once a user enters a workflow, they will not re-enter until they exit it.
+Start blocks define the entry points for [users](/users) to begin a workflow. Multiple start blocks can be used in a single workflow to allow different entry conditions. Once a user enters a workflow, they will not re-enter until they exit it.
 
 ### Automatic start
 
@@ -23,7 +23,7 @@ Automatically triggers a workflow when specific conditions are met.
 
 **Input:**
 
-- **User properties conditions**: An array of conditions based on user properties that must be satisfied for a user to enter the workflow.
+- **User properties conditions**: An array of conditions based on [user properties](/users/properties) that must be satisfied for a user to enter the workflow.
 
 ## Component blocks
 
@@ -40,11 +40,11 @@ Logic blocks manage workflow behavior. They can be used to define branching logi
 
 ### Filter
 
-Filters users based on specific conditions, allowing only those who match the criteria to proceed. Users who don't match stop at the block but may continue along other workflow paths if available.
+Filters [users](/users) based on specific conditions, allowing only those who match the criteria to proceed. Users who don't match stop at the block but may continue along other workflow paths if available.
 
 **Input:**
 
-- **User properties conditions**: An array of conditions users must meet to pass through the block.
+- **User properties conditions**: An array of conditions [users](/users) must meet to pass through the block.
 
 ## End block
 

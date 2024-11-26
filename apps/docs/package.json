@@ -10,7 +10,9 @@
     "start": "next start",
     "lint": "next lint",
     "tsc": "tsc",
-    "prepare": "panda codegen"
+    "prepare": "panda codegen",
+    "export-mdx": "node ./src/lib/export-mdx.js",
+    "import-mdx": "node ./src/lib/import-mdx.js"
   },
   "dependencies": {
     "@flows/js": "0.3.3",

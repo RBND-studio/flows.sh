@@ -11,7 +11,7 @@ Customize block properties and their behavior.
 
 ## Overview
 
-Blocks are individual steps of workflows, with configurable **properties** and **exit nodes**. Properties control the block's behavior and appearance, while exit nodes define the paths users take after interacting with the block.
+Blocks are individual steps of [workflows](/workflows), with configurable **properties** and **exit nodes**. Properties control the block's behavior and appearance, while exit nodes define the paths [users](/users) take after interacting with the block.
 
 ## Block name and description
 
@@ -35,7 +35,7 @@ Basic property types include:
 If a block is slottable (i.e., designed to render within your application), additional slot-specific properties are available:
 
 - **Slot ID**: Specifies the slot where the block will be rendered, as defined in your application.
-- **Slot index**: Controls the rendering order when multiple blocks share the same slot. Blocks with lower index render first.
+- **Slot index**: Controls the rendering order when multiple [blocks](/blocks/library) share the same slot. Blocks with lower index render first.
 
 ### Page targeting
 
@@ -50,9 +50,9 @@ Use page targeting to determine where the block appears based on the URL. Suppor
 For tour blocks, the **steps** property defines individual steps. Each step behaves like an individual block but transitions automatically when completed. You can:
 
 - Add steps from your tour blocks library.
-- Use built-in logic blocks, such as **`wait`** steps.
+- Use built-in logic [blocks](/blocks/library), such as **`wait`** steps.
 
-Built-in logic blocks include:
+Built-in logic [blocks](/blocks/library) include:
 
 - **`wait`**: Pause the tour until a user interacts with your application (e.g., clicking a button or navigating to a specific page).
 

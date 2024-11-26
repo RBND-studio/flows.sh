@@ -11,10 +11,9 @@
     - Workflows
     - Adding blocks
     - Configuring blocks
-    - Creating paths
     - Publishing workflows
-    - Managing versions
     - Testing workflows
+  - Tours
   - Blocks
     - Block library 🖼️
     - Block templates 🖼️

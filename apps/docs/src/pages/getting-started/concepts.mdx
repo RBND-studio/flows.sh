@@ -13,17 +13,17 @@ Get a basic understanding of Flows so you can set up your organization and start
 
 ### Organization
 
-An organization is the container for all workflows, environments, users, and members. As a user, you can belong to multiple organizations and switch between them using the dropdown in the top-right corner of the application. Logging into Flows means accessing your personal account, which can be associated with multiple organizations.
+An organization is the container for all [workflows](/workflows), [environments](/organization-setup/environments), [users](/users), and members. As a user, you can belong to multiple [organizations](/organization-setup/organizations) and switch between them using the dropdown in the top-right corner of the application. Logging into Flows means accessing your personal account, which can be associated with multiple organizations.
 
-### Workflows
+## Workflows
 
-A workflow is a series of steps executed in a specific sequence, defined by the connections between blocks and their conditions. These workflows are built using the Flows editor, which offers a visual representation for creating and managing workflows. In the editor, you can add blocks, connect them, and configure their properties.
+A workflow is a series of steps executed in a specific sequence, defined by the connections between [blocks](/blocks/library) and their conditions. These [workflows](/workflows) are built using the Flows editor, which offers a visual representation for creating and managing [workflows](/workflows). In the editor, you can add blocks, connect them, and configure their properties.
 
-Workflows are version-controlled and can be published to individual environments.
+Workflows are version-controlled and can be published to individual [environments](/organization-setup/environments).
 
 ### Blocks
 
-Blocks are the individual steps of a workflow. They can represent UI elements, logical steps, or actions. Each block has customizable properties that define its behavior and can be connected to other blocks to form a workflow.
+Blocks are the individual steps of a workflow. They can represent UI elements, logical steps, or actions. Each block has customizable properties that define its behavior and can be connected to other [blocks](/blocks/library) to form a workflow.
 
 ### Block properties
 
@@ -31,16 +31,27 @@ Block properties are the configurable fields available to editors when a block i
 
 ### Block templates
 
-Block templates are reusable UI components that allow you to create custom elements for workflows. They contain properties and instructions, giving editors the power to create custom workflows. Each template must correspond to a matching component in your application.
+Block templates are reusable UI components that allow you to create custom elements for [workflows](/workflows). They contain properties and instructions, giving editors the power to create custom workflows. Each template must correspond to a matching component in your application.
 
 ### Entry node
 
-Entry nodes are connectors that allow workflows to enter a block. They don't hold logic; they serve as the entry point for paths.
+Entry nodes are connectors that allow [workflows](/workflows) to enter a block. They don't hold logic; they serve as the entry point for paths.
 
 ### Exit nodes
 
-Exit nodes are connectors that allow workflows to leave a block. They include logic to determine which path should be followed when exiting. For example, clicking a button might trigger an exit node that leads to another block.
+Exit nodes are connectors that allow [workflows](/workflows) to leave a block. They include logic to determine which path should be followed when exiting. For example, clicking a button might trigger an exit node that leads to another block.
 
 ### Paths
 
-Paths connect blocks in a workflow, starting from an exit node of one block and ending at an entry node of another. They define the sequence of the workflow.
+Paths connect [blocks](/blocks/library) in a workflow, starting from an exit node of one block and ending at an entry node of another. They define the sequence of the workflow.
+
+## Tours
+
+Tours are guided, step-by-step instructions designed to help [users](/users) complete a specific task or understand a feature within your application. They are typically used for onboarding new [users](/users) or highlighting new functionalities. Tours need to be part of a workflow.
+
+### Tours vs [workflows](/workflows)
+
+While both tours and [workflows](/workflows) consist of a series of steps, they differ in purpose and design:
+
+- **Tours** are linear, time-sensitive guides focused on immediate user engagement and understanding. They are perfect for introducing features or ensuring [users](/users) can perform specific actions during onboarding.
+- **Workflows** are more complex and versatile, designed to support complex sequences. Workflows can operate independently of user interaction and include logic, actions, and conditions that tours do not.

@@ -1,0 +1,47 @@
+---
+title: Testing workflows
+description: Learn how to test workflows in Flows.
+---
+
+# Testing workflows
+
+Learn how to test workflows in Flows.
+
+[TODO: image]
+
+## Overview
+
+Testing [workflows](/workflows) is an essential step in ensuring your workflows run smoothly. Flows provides tools to validate and debug workflows before they are deployed.
+
+## How to test a workflow
+
+Follow these steps to test your workflow:
+
+1. **Publish to test environment**: Publish the workflow in a test environment by clicking the **Publish** button in the workflow editor's top-right corner.
+2. **Log in to your application**: Access your application in the test environment.
+3. **Trigger the workflow**: Trigger the workflow by meeting the start block conditions. This may involve creating a new user, updating a user property, or performing another action that triggers the workflow.
+4. **Verify behavior**: Confirm that the workflow executes as expected.
+
+<BetterCallout>
+  To simplify testing, set the workflow frequency to `Every time`. This allows you to test
+  repeatedly without needing additional changes.
+</BetterCallout>
+
+## Restarting a workflow
+
+If necessary, you can restart a workflow during testing. There are two methods to achieve this:
+
+### 1. Publish a new version
+
+When you publish a new version of a workflow, choose the **Restart all in-progress users** option. This resets the workflow for all [users](/users) currently in progress.
+
+### 2. Restart a single user
+
+To restart for a specific user without publishing a new version:
+
+- Navigate to the user's profile.
+- Click the **Reset progress** button next to the relevant workflow. Learn more about [user workflow states](/users/workflow-states).
+
+## Debugging workflows
+
+For insights into workflow execution for individual users, view their **Workflow state** and **Log** in the [user profile](/users).
