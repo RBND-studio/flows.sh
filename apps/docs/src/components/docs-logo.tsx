@@ -1,7 +1,10 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import Link from "next/link";
+import { links } from "shared";
 import { Logo } from "ui";
+
+import { DOMAIN } from "../lib/constants";
 
 export const DocsLogo = (): JSX.Element => {
   return (
@@ -13,7 +16,7 @@ export const DocsLogo = (): JSX.Element => {
             opacity: 0.7,
           },
         })}
-        href="https://flows.sh"
+        href={links(DOMAIN).homePage}
       >
         <Logo type="type" size={20} />
       </Link>
