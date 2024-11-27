@@ -3,16 +3,16 @@
 - Main page
 - Learn
   - Getting started
-    - Quickstart
-    - Concepts
+    - Quickstart 💻 🖼️
+    - Concepts 🖼️
     - Migration from other tools
     - Migration from v1
   - Workflows
-    - Workflows
-    - Adding blocks
-    - Configuring blocks
-    - Publishing workflows
-    - Testing workflows
+    - Workflows 📝 🖼️
+    - Adding blocks 🖼️
+    - Configuring blocks 🖼️
+    - Publishing workflows 🖼️
+    - Testing workflows 🖼️
   - Tours
   - Blocks
     - Block library 🖼️
@@ -29,8 +29,10 @@
     - Environments 💻 🖼️
     - Allowed domains
     - Billing 🖼️
-- SDK
-  - React
+- API
+  - SDK
+    - Overview
+    - React💻
 - Guides
 
 - Links
@@ -44,3 +46,4 @@ Legend:
 ✅ - Done
 💻 - Code snippets need to be finalized
 🖼️ - Images need to be added
+📝 - More content is needed

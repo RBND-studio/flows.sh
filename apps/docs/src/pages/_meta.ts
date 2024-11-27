@@ -17,10 +17,11 @@ const meta: MetaType = {
   "organization-setup": "Organization setup",
 
   // Developer docs
-  sdk: {
-    title: "SDK",
+  api: {
+    title: "API",
     type: "separator",
   },
+  sdk: "SDKs",
 
   // Support links
   links: {

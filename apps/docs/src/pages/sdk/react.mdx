@@ -1,0 +1,78 @@
+---
+title: React SDK
+description: React SDK for Flows.
+---
+
+# React SDK
+
+The official Flows SDK for React.
+
+## Installation
+
+You can install the Flows React SDK [from npm](https://www.npmjs.com/package/@flows/react):
+
+```sh npm2yarn
+npm i @flows/react
+```
+
+### Built-in components
+
+Flows comes with a set of built-in components that you can use in your workflows. You can install the `@flows/react-components` package [from npm](https://www.npmjs.com/package/@flows/react-components):
+
+```sh npm2yarn
+npm i @flows/react-components
+```
+
+Then, import and use the components in your app:
+
+```tsx filename="layout.tsx" {2, 9-14}
+import { FlowsProvider } from "@flows/react";
+import { tourComponents, components } from "@flows/react-components";
+
+const App = () => {
+  return (
+    <FlowsProvider
+      organizationId="your-organization-id" // Find this in Settings > General
+      environment="production" // Default environment
+      tourComponents={{
+        ...tourComponents,
+      }}
+      components={{
+        ...components,
+      }}
+    >
+      {/* Your app code here */}
+    </FlowsProvider>
+  );
+};
+```
+
+## Usage
+
+The SDK provides a `FlowsProvider` component that you can use to wrap your app. Initialize it with your organization ID and environment key, which you can find in the **Settings > General** and **Settings > Environments** sections of the Flows dashboard.
+
+```tsx filename="layout.tsx"
+import { FlowsProvider } from "@flows/react";
+
+const App = () => {
+  return (
+    <FlowsProvider
+      organizationId="your-organization-id" // Find this in Settings > General
+      environment="production" // Default environment
+    >
+      {/* Your app code here */}
+    </FlowsProvider>
+  );
+};
+```
+
+FlowsProvider accepts the following props:
+
+| Name             | Type     | Required | Notes                                                                                                            |
+| ---------------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------- |
+| `organizationId` | `string` | Yes      | Your organization ID. Find this in **Settings > General**.                                                       |
+| `environment`    | `string` | Yes      | The environment key. Find this in **Settings > Environments**.                                                   |
+| `components`     | `object` | No       | Custom components to use in your workflows.                                                                      |
+| `tourComponents` | `object` | No       | Custom tour components to use in tour blocks.                                                                    |
+| `userId`         | `string` | No       | Unique user ID. If no ID is provided, all users will be treated as one.                                          |
+| `userProperties` | `object` | No       | Object with custom [user properties](/users/properties). Values can be `string`, `number`, `boolean`, or `date`. |
