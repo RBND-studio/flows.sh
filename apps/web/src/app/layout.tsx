@@ -3,7 +3,7 @@ import "./globals.css";
 import { css, cx } from "@flows/styled-system/css";
 import { Providers } from "components/providers";
 import { LinesBox } from "components/ui";
-import { PRODUCTION } from "lib";
+import { DOMAIN, PRODUCTION } from "lib";
 import type { Metadata } from "next";
 import { Figtree, Inter } from "next/font/google";
 import Script from "next/script";
@@ -21,7 +21,7 @@ const InterFont = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://flows.sh"),
+  metadataBase: new URL(`https://${DOMAIN}`),
   title: "Flows – User onboarding for modern SaaS",
   description:
     "Flows lets you build any onboarding you want. Guide users, increase feature adoption, and improve revenue.",

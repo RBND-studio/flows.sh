@@ -1,9 +1,10 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import { Section, SmartLink } from "components/ui";
+import { DOMAIN } from "lib";
+import { links } from "lib/links";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
-import { links } from "shared";
 import { Button, Text } from "ui";
 
 import { PricingCalculator } from "./pricing-calculator";
@@ -11,7 +12,7 @@ import { PricingFaq } from "./pricing-faq";
 import { VolumeTable } from "./volume-table";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://flows.sh"),
+  metadataBase: new URL(`https://${DOMAIN}`),
   title: "Pricing – Flows",
   description:
     "The new standard for building user onboarding. With volume pricing starting at $0/month.",

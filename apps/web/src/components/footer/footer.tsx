@@ -1,9 +1,9 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { SmartLink, TopLine } from "components/ui";
+import { links } from "lib/links";
 import type { ReactElement } from "react";
 import { routes } from "routes";
-import { links } from "shared";
 import { Logo, Text } from "ui";
 
 import { ThemeSwitch } from "./theme-switch";

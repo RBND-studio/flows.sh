@@ -1,9 +1,9 @@
 import { css } from "@flows/styled-system/css";
 import { Box } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
+import { links } from "lib/links";
 import Link from "next/link";
 import { routes } from "routes";
-import { links } from "shared";
 import { Text } from "ui";
 
 export default function About(): JSX.Element {

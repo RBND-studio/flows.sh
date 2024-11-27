@@ -2,8 +2,8 @@ import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import { Section, SmartLink } from "components/ui";
 import { SignupClick } from "components/utils/signup-click";
+import { links } from "lib/links";
 import { type ReactElement } from "react";
-import { links } from "shared";
 import { Button, Text } from "ui";
 
 export const Hero = (): ReactElement => {

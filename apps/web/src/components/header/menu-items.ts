@@ -1,5 +1,5 @@
+import { links } from "lib/links";
 import { routes } from "routes";
-import { links } from "shared";
 
 type MenuItem = {
   title: string;

@@ -3,10 +3,10 @@ import { Flex } from "@flows/styled-system/jsx";
 import { MobileMenu } from "components/header/mobile-menu";
 import { BottomLine } from "components/ui";
 import { SignupClick } from "components/utils/signup-click";
+import { links } from "lib/links";
 import Link from "next/link";
 import type { ReactElement } from "react";
 import { routes } from "routes";
-import { links } from "shared";
 import { Button, Logo } from "ui";
 
 import { DesktopMenu } from "./desktop-menu";

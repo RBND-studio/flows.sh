@@ -2,8 +2,8 @@ import { Box, Wrap } from "@flows/styled-system/jsx";
 import { TopLine } from "components/ui";
 import { Section } from "components/ui/section";
 import { SignupClick } from "components/utils/signup-click";
+import { links } from "lib/links";
 import type { ReactElement } from "react";
-import { links } from "shared";
 import { Button, Text } from "ui";
 
 export const CtaBanner = (): ReactElement => {

@@ -1,10 +1,10 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import { Section } from "components/ui/section";
+import { links } from "lib/links";
 import { type Metadata } from "next";
 import type { ReactNode } from "react";
 import React from "react";
-import { links } from "shared";
 import { Text } from "ui";
 
 type Props = {
