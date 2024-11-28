@@ -42,6 +42,7 @@ type Props = {
   style?: React.CSSProperties;
   autoComplete?: React.InputHTMLAttributes<HTMLInputElement>["autoComplete"];
   autoFocus?: boolean;
+  "data-test"?: string;
 };
 
 export const Input = forwardRef<HTMLInputElement, Props>(function Input(

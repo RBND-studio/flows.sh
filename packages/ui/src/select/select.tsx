@@ -31,6 +31,7 @@ type Props<T extends string> = {
   disabled?: boolean;
   readOnly?: boolean;
   autoFocus?: boolean;
+  "data-test"?: string;
 };
 
 export function Select<T extends string>({
@@ -49,6 +50,7 @@ export function Select<T extends string>({
   readOnly,
   "aria-label": ariaLabel,
   autoFocus,
+  "data-test": dataTest,
   ...props
 }: Props<T>): JSX.Element {
   const id = useId();
@@ -66,6 +68,7 @@ export function Select<T extends string>({
           // eslint-disable-next-line jsx-a11y/no-autofocus -- can be helpful for some usecases
           autoFocus={autoFocus}
           aria-label={ariaLabel}
+          data-test={dataTest}
           className={cx(
             css({
               position: "relative",
