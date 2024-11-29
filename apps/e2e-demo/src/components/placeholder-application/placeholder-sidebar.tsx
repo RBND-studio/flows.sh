@@ -129,7 +129,7 @@ const DesktopSidebar = ({ sidebarTooltipSlot, sidebarBannerSlot }: Props): JSX.E
             </Link>
           </Text>
           <Text asChild variant="titleXs">
-            <Link id="main-link" className={css({ lineHeight: "10px!" })} href="/list">
+            <Link id="list-link" className={css({ lineHeight: "10px!" })} href="/list">
               List
             </Link>
           </Text>
