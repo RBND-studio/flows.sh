@@ -1,4 +1,3 @@
-import { FlowsSlot } from "@flows/react";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { Text } from "ui";
 
@@ -26,7 +25,7 @@ export default function Home(): JSX.Element {
         pr="6px"
       >
         <Flex width="100%" alignItems="center" gap="space8">
-          <Text variant="titleS">Main</Text>
+          <Text variant="titleS">List</Text>
         </Flex>
         <Flex gap="space8">
           <Box
@@ -45,16 +44,15 @@ export default function Home(): JSX.Element {
         </Flex>
       </Flex>
       <Flex flexDirection="column" width="100%" height="100%" p="space8">
-        <FlowsSlot id="banner" />
-        <Flex height="100%" gap="space8">
+        <Flex flexDirection="column" height="100%" gap="space8">
           <Box
             width="100%"
             height="100%"
             backgroundColor="newBg.neutral.muted"
             borderRadius="radius4"
             borderWidth="1px"
-            borderColor="newBorder.neutral.muted"
-            id="column-item"
+            borderColor="newBorder.neutral.strong"
+            id="list-item"
           />
           <Box
             width="100%"
@@ -62,7 +60,7 @@ export default function Home(): JSX.Element {
             backgroundColor="newBg.neutral.muted"
             borderRadius="radius4"
             borderWidth="1px"
-            borderColor="newBorder.neutral.muted"
+            borderColor="newBorder.neutral.strong"
           />
           <Box
             width="100%"
@@ -70,7 +68,7 @@ export default function Home(): JSX.Element {
             backgroundColor="newBg.neutral.muted"
             borderRadius="radius4"
             borderWidth="1px"
-            borderColor="newBorder.neutral.muted"
+            borderColor="newBorder.neutral.strong"
           />
           <Box
             width="100%"
@@ -78,12 +76,58 @@ export default function Home(): JSX.Element {
             backgroundColor="newBg.neutral.muted"
             borderRadius="radius4"
             borderWidth="1px"
-            borderColor="newBorder.neutral.muted"
+            borderColor="newBorder.neutral.strong"
+          />
+          <Box
+            width="100%"
+            height="100%"
+            backgroundColor="newBg.neutral.muted"
+            borderRadius="radius4"
+            borderWidth="1px"
+            borderColor="newBorder.neutral.strong"
+          />
+          <Box
+            width="100%"
+            height="100%"
+            backgroundColor="newBg.neutral.muted"
+            borderRadius="radius4"
+            borderWidth="1px"
+            borderColor="newBorder.neutral.strong"
+          />
+          <Box
+            width="100%"
+            height="100%"
+            backgroundColor="newBg.neutral.muted"
+            borderRadius="radius4"
+            borderWidth="1px"
+            borderColor="newBorder.neutral.strong"
+          />
+          <Box
+            width="100%"
+            height="100%"
+            backgroundColor="newBg.neutral.muted"
+            borderRadius="radius4"
+            borderWidth="1px"
+            borderColor="newBorder.neutral.strong"
+          />
+          <Box
+            width="100%"
+            height="100%"
+            backgroundColor="newBg.neutral.muted"
+            borderRadius="radius4"
+            borderWidth="1px"
+            borderColor="newBorder.neutral.strong"
+          />
+          <Box
+            width="100%"
+            height="100%"
+            backgroundColor="newBg.neutral.muted"
+            borderRadius="radius4"
+            borderWidth="1px"
+            borderColor="newBorder.neutral.strong"
           />
         </Flex>
       </Flex>
     </Flex>
   );
 }
-
-// {"userId":"john.doe@flows.sh","environment":"production","organizationId":"3c89c174-ce9d-4968-b777-81fa067e47ce","apiUrl":"https://api.dev.flows-cloud.com"}

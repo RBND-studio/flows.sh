@@ -1,4 +1,7 @@
+import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
+import Link from "next/link";
+import { Text } from "ui";
 
 type Props = {
   sidebarTooltipSlot?: JSX.Element;
@@ -120,20 +123,17 @@ const DesktopSidebar = ({ sidebarTooltipSlot, sidebarBannerSlot }: Props): JSX.E
             backgroundColor="newBg.neutral.subtle"
             borderRadius="radius4"
           />
-          <Box
-            height={10}
-            maxWidth={90}
-            width="100%"
-            backgroundColor="newBg.neutral.strong"
-            borderRadius="radius4"
-          />
-          <Box
-            height={10}
-            maxWidth={110}
-            width="100%"
-            backgroundColor="newBg.neutral.strong"
-            borderRadius="radius4"
-          />
+          <Text asChild variant="titleXs">
+            <Link id="main-link" className={css({ lineHeight: "10px!" })} href="/">
+              Main
+            </Link>
+          </Text>
+          <Text asChild variant="titleXs">
+            <Link id="main-link" className={css({ lineHeight: "10px!" })} href="/list">
+              List
+            </Link>
+          </Text>
+
           <Box
             height={10}
             maxWidth={96}
@@ -224,6 +224,7 @@ const DesktopSidebar = ({ sidebarTooltipSlot, sidebarBannerSlot }: Props): JSX.E
           borderRadius="radius4"
           height={56}
           backgroundColor="newBg.neutral.strong"
+          id="bottom-banner"
         />
       )}
     </Flex>

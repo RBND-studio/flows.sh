@@ -1,5 +1,8 @@
 import "./globals.css";
 
+import { css } from "@flows/styled-system/css";
+import { Flex } from "@flows/styled-system/jsx";
+import { PlaceholderApplication } from "components/placeholder-application";
 import { ConfigProvider } from "contexts/config-context";
 import type { Metadata } from "next";
 
@@ -14,9 +17,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>): JSX.Element {
   return (
-    <html lang="en">
+    <html lang="en" className={css({ layerStyle: "dotBackground" })}>
       <body>
-        <ConfigProvider>{children}</ConfigProvider>
+        <ConfigProvider>
+          <Flex height="100vh" alignItems="center">
+            <Flex height="560px" flex={1} justifyContent="center">
+              <PlaceholderApplication>{children}</PlaceholderApplication>
+            </Flex>
+          </Flex>
+        </ConfigProvider>
       </body>
     </html>
   );
