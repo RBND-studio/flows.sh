@@ -67,7 +67,13 @@ const DesktopSidebar = ({ sidebarTooltipSlot, sidebarBannerSlot }: Props): JSX.E
       aria-hidden="true"
     >
       <Flex alignItems="center" gap="space8">
-        <Box height={24} width={24} backgroundColor="newFg.neutral.muted" borderRadius="radius4" />
+        <Box
+          id="left-corner"
+          height={24}
+          width={24}
+          backgroundColor="newFg.neutral.muted"
+          borderRadius="radius4"
+        />
         <Box
           height={10}
           maxWidth={68}

@@ -73,6 +73,7 @@ export const PlaceholderApplication = ({
               width={20}
               backgroundColor="newBg.neutral.subtle"
               borderRadius="radius4"
+              id="right-corner"
             />
           </Flex>
         </Flex>
