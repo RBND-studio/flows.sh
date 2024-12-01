@@ -1,4 +1,6 @@
+import { FlowsSlot } from "@flows/react";
 import { Box, Flex } from "@flows/styled-system/jsx";
+import { slots } from "lib/consts";
 import { Text } from "ui";
 
 export default function Home(): JSX.Element {
@@ -44,6 +46,8 @@ export default function Home(): JSX.Element {
         </Flex>
       </Flex>
       <Flex flexDirection="column" width="100%" height="100%" p="space8">
+        <FlowsSlot id={slots.sharedBannerId} />
+        <FlowsSlot id={slots.listBannerId} />
         <Flex flexDirection="column" height="100%" gap="space8">
           <Box
             width="100%"

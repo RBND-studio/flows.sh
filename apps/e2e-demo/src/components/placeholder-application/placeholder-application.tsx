@@ -4,18 +4,10 @@ import React from "react";
 import { PlaceholderSidebar } from "./placeholder-sidebar";
 
 type Props = {
-  sidebarTooltipSlot?: JSX.Element;
-  sidebarBannerSlot?: JSX.Element;
-
   children?: React.ReactNode;
 };
 
-export const PlaceholderApplication = ({
-  sidebarTooltipSlot,
-  sidebarBannerSlot,
-
-  children,
-}: Props): JSX.Element => {
+export const PlaceholderApplication = ({ children }: Props): JSX.Element => {
   return (
     <Flex
       gap="space12"
@@ -28,10 +20,7 @@ export const PlaceholderApplication = ({
       role="img"
       layerStyle="card"
     >
-      <PlaceholderSidebar
-        sidebarTooltipSlot={sidebarTooltipSlot}
-        sidebarBannerSlot={sidebarBannerSlot}
-      />
+      <PlaceholderSidebar />
       {children}
     </Flex>
   );
