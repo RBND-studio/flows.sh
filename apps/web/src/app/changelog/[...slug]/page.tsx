@@ -8,13 +8,15 @@ import type { ReactElement } from "react";
 
 import { ReleasePreview } from "./release-preview";
 
+type Params = {
+  slug: string[];
+};
+
 interface ReleaseProps {
-  params: {
-    slug: string[];
-  };
+  params: Promise<Params>;
 }
 
-const getReleaseFromParams = (params: ReleaseProps["params"]): Release | undefined => {
+const getReleaseFromParams = (params: Params): Release | undefined => {
   const slug = params.slug.join("/");
   const releaseFromParams = allReleases.find((release) => release.slugAsParams === slug);
 
@@ -25,7 +27,8 @@ const getReleaseFromParams = (params: ReleaseProps["params"]): Release | undefin
   return releaseFromParams;
 };
 
-export function generateMetadata({ params }: ReleaseProps): Metadata {
+export async function generateMetadata(props: ReleaseProps): Promise<Metadata> {
+  const params = await props.params;
   const release = getReleaseFromParams(params);
 
   if (!release) {
@@ -37,13 +40,14 @@ export function generateMetadata({ params }: ReleaseProps): Metadata {
   };
 }
 
-export function generateStaticParams(): ReleaseProps["params"][] {
+export function generateStaticParams(): Params[] {
   return allReleases.map((release) => ({
     slug: release.slugAsParams.split("/"),
   }));
 }
 
-export default function ReleasePage({ params }: ReleaseProps): ReactElement {
+export default async function ReleasePage(props: ReleaseProps): Promise<ReactElement> {
+  const params = await props.params;
   const release = getReleaseFromParams(params);
 
   if (!release) return notFound();
@@ -55,7 +59,7 @@ export default function ReleasePage({ params }: ReleaseProps): ReactElement {
   return (
     <>
       <ChangelogItem detail release={release} />
-      <Grid gap="space24" gridTemplateColumns="2" mt="space32">
+      <Grid gap="space24" gridTemplateColumns="repeat(2, 1fr)" mt="space32">
         <div>{nextRelease ? <ReleasePreview variant="next" release={nextRelease} /> : null}</div>
         <div>{prevRelease ? <ReleasePreview variant="prev" release={prevRelease} /> : null}</div>
       </Grid>

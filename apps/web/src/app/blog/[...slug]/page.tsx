@@ -9,13 +9,15 @@ import { Text } from "ui";
 
 import { Mdx } from "../../../components";
 
+type Params = {
+  slug: string[];
+};
+
 interface PostProps {
-  params: {
-    slug: string[];
-  };
+  params: Promise<Params>;
 }
 
-const getPostFromParams = (params: PostProps["params"]): Post | undefined => {
+const getPostFromParams = (params: Params): Post | undefined => {
   const slug = params.slug.join("/");
   const postFromParams = allPosts.find((post) => post.slugAsParams === slug);
 
@@ -26,7 +28,8 @@ const getPostFromParams = (params: PostProps["params"]): Post | undefined => {
   return postFromParams;
 };
 
-export function generateMetadata({ params }: PostProps): Metadata {
+export async function generateMetadata(props: PostProps): Promise<Metadata> {
+  const params = await props.params;
   const post = getPostFromParams(params);
 
   if (!post) {
@@ -54,13 +57,14 @@ export function generateMetadata({ params }: PostProps): Metadata {
   };
 }
 
-export function generateStaticParams(): PostProps["params"][] {
+export function generateStaticParams(): Params[] {
   return allPosts.map((post) => ({
     slug: post.slugAsParams.split("/"),
   }));
 }
 
-export default function PostPage({ params }: PostProps): ReactElement {
+export default async function PostPage(props: PostProps): Promise<ReactElement> {
+  const params = await props.params;
   const post = getPostFromParams(params);
   const date = post ? new Date(post.date) : new Date();
 

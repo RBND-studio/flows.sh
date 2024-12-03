@@ -3,7 +3,7 @@ import { HeadingLink } from "components/mdx-heading-link";
 import { isValidUrl } from "lib/is-valid-url";
 import Image from "next/image";
 import Link from "next/link";
-import { useMDXComponent } from "next-contentlayer/hooks";
+import { useMDXComponent } from "next-contentlayer2/hooks";
 import type { HTMLProps, ReactElement } from "react";
 import { Text, type TextProps } from "ui";
 import { CodeHighlight } from "ui/server";

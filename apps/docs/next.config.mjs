@@ -37,12 +37,10 @@ const nextConfig = {
       },
     ];
   },
-  reactStrictMode: true,
   transpilePackages: ["ui", "icons", "shared"],
   output: "standalone",
-  swcMinify: true,
+  outputFileTracingRoot: path.join(path.resolve(), "../../"),
   experimental: {
-    outputFileTracingRoot: path.join(path.resolve(), "../../"),
     optimizePackageImports: ["ui", "icons", "shared"],
   },
   basePath: "/docs",
