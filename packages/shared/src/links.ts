@@ -17,25 +17,79 @@ export const links = (domain = "flows.sh") => ({
   demoVideo: `https://youtu.be/XY3eU_p0AW4?si=I-Kws9rhJ9RLak7Q`,
   docs: {
     home: `https://${domain}/docs`,
-    stepsEditor: `https://${domain}/docs/creating-flows/steps-editor`,
-    installFlows: `https://${domain}/docs/getting-started/install-flows`,
-    contact: `https://${domain}/docs/contact-us`,
-    startFlow: `https://${domain}/docs/creating-flows/start-flow`,
-    targetFlow: `https://${domain}/docs/creating-flows/targeting`,
-    flowFrequency: `https://${domain}/docs/creating-flows/frequency`,
+    /**
+     * @deprecated old flows docs
+     */
+    stepsEditor: `https://github.com/RBND-studio/flows.sh/tree/main/apps/docs/src/pages/creating-flows/steps-editor.mdx`,
+    /**
+     * @deprecated old flows docs
+     */
+    installFlows: `https://github.com/RBND-studio/flows.sh/tree/main/apps/docs/src/pages/getting-started/install-flows.mdx`,
+    /**
+     * @deprecated old flows docs
+     */
+    contact: `https://github.com/RBND-studio/flows.sh/tree/main/apps/docs/src/pages/contact-us.mdx`,
+    /**
+     * @deprecated old flows docs
+     */
+    startFlow: `https://github.com/RBND-studio/flows.sh/tree/main/apps/docs/src/pages/creating-flows/start-flow.mdx`,
+    /**
+     * @deprecated old flows docs
+     */
+    targetFlow: `https://github.com/RBND-studio/flows.sh/tree/main/apps/docs/src/pages/creating-flows/targeting.mdx`,
+    /**
+     * @deprecated old flows docs
+     */
+    flowFrequency: `https://github.com/RBND-studio/flows.sh/tree/main/apps/docs/src/pages/creating-flows/frequency.mdx`,
     step: {
-      tooltip: `https://${domain}/docs/step-types/tooltip`,
-      modal: `https://${domain}/docs/step-types/modal`,
-      banner: `https://${domain}/docs/step-types/banner`,
-      wait: `https://${domain}/docs/step-types/wait`,
+      /**
+       * @deprecated old flows docs
+       */
+      tooltip: `https://github.com/RBND-studio/flows.sh/tree/main/apps/docs/src/pages/step-types/tooltip.mdx`,
+      /**
+       * @deprecated old flows docs
+       */
+      modal: `https://github.com/RBND-studio/flows.sh/tree/main/apps/docs/src/pages/step-types/modal.mdx`,
+      /**
+       * @deprecated old flows docs
+       */
+      banner: `https://github.com/RBND-studio/flows.sh/tree/main/apps/docs/src/pages/step-types/banner.mdx`,
+      /**
+       * @deprecated old flows docs
+       */
+      wait: `https://github.com/RBND-studio/flows.sh/tree/main/apps/docs/src/pages/step-types/wait.mdx`,
     },
-    branchTargeting: `https://${domain}/docs/step-types/fork#targeting-branches`,
-    previewFlow: `https://${domain}/docs/creating-flows/preview`,
-    publishFlow: `https://${domain}/docs/creating-flows/enable-flow#publishing-changes`,
-    makeFlowLive: `https://${domain}/docs/creating-flows/enable-flow#making-your-flow-live`,
-    projectDomains: `https://${domain}/docs/project-setup/project-domains`,
-    customStyles: `https://${domain}/docs/customization-and-styling/custom-styles`,
-    migrateToFlows: `https://${domain}/docs/migrate-to-flows`,
-    resetFlow: `https://${domain}/docs/project-setup/reset-user-progress`,
+    /**
+     * @deprecated old flows docs
+     */
+    branchTargeting: `https://github.com/RBND-studio/flows.sh/tree/main/apps/docs/src/pages/step-types/fork#targeting-branches.mdx`,
+    /**
+     * @deprecated old flows docs
+     */
+    previewFlow: `https://github.com/RBND-studio/flows.sh/tree/main/apps/docs/src/pages/creating-flows/preview.mdx`,
+    /**
+     * @deprecated old flows docs
+     */
+    publishFlow: `https://github.com/RBND-studio/flows.sh/tree/main/apps/docs/src/pages/creating-flows/enable-flow#publishing-changes.mdx`,
+    /**
+     * @deprecated old flows docs
+     */
+    makeFlowLive: `https://github.com/RBND-studio/flows.sh/tree/main/apps/docs/src/pages/creating-flows/enable-flow#making-your-flow-live.mdx`,
+    /**
+     * @deprecated old flows docs
+     */
+    projectDomains: `https://github.com/RBND-studio/flows.sh/tree/main/apps/docs/src/pages/project-setup/project-domains.mdx`,
+    /**
+     * @deprecated old flows docs
+     */
+    customStyles: `https://github.com/RBND-studio/flows.sh/tree/main/apps/docs/src/pages/customization-and-styling/custom-styles.mdx`,
+    /**
+     * @deprecated old flows docs
+     */
+    migrateToFlows: `https://github.com/RBND-studio/flows.sh/tree/main/apps/docs/src/pages/migrate-to-flows.mdx`,
+    /**
+     * @deprecated old flows docs
+     */
+    resetFlow: `https://github.com/RBND-studio/flows.sh/tree/main/apps/docs/src/pages/project-setup/reset-user-progress.mdx`,
   },
 });
