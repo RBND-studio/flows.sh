@@ -14,8 +14,6 @@
     "test": {},
     "tsc": {},
     "pre-commit": {},
-    "//#spellcheck": {
-      "cache": false
-    }
+    "//#spellcheck": {}
   }
 }

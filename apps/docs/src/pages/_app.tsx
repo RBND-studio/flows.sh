@@ -11,7 +11,7 @@ export const InterFont = Inter({
   variable: "--font-body",
 });
 
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }): JSX.Element {
   return (
     <div className={InterFont.className}>
       <Component {...pageProps} />
