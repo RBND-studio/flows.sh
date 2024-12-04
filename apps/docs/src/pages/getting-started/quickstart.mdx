@@ -15,7 +15,7 @@ With Flows, you can build user onboarding, feature announcements, and other in-a
 
 ## 1. Install the Flows SDK
 
-To get started, you need to install the Flows React SDK.
+To get started, you need to install the [`@flows/react`](https://www.npmjs.com/package/@flows/react) package.
 
 ```sh npm2yarn
 npm i @flows/react
@@ -42,7 +42,7 @@ const App = () => {
 
 ## 3. Add built-in components
 
-Flows comes with a set of built-in components that you can use in your workflows. Start by installing the `@flows/react-components` package.
+Flows comes with a set of built-in components that you can use in your workflows. Start by installing the [`@flows/react-components`](https://www.npmjs.com/package/@flows/react-components) package.
 
 ```sh npm2yarn
 npm i @flows/react-components
@@ -50,9 +50,12 @@ npm i @flows/react-components
 
 Then, import and use the components in your app.
 
-```tsx filename="layout.tsx" {2, 9-14}
+```tsx filename="layout.tsx" {2-3, 5, 12-17}
 import { FlowsProvider } from "@flows/react";
-import { tourComponents, components } from "@flows/react-components";
+import * as components from "@flows/react-components";
+import * as tourComponents from "@flows/react-components/tour";
+
+import "@flows/react-components/index.css"
 
 const App = () => {
   return (
