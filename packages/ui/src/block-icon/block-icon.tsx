@@ -10,6 +10,7 @@ import {
   Start16,
   Tooltip16,
   Tour16,
+  Wait16,
 } from "icons";
 import { type FC, type SVGProps } from "react";
 import { forwardRef, useMemo } from "react";
@@ -23,8 +24,7 @@ export const builtInBlockIcons: Record<string, IconCmp> = {
   tour: Tour16,
   end: Exit16,
   filter: Filter16,
-  // TODO: replace me with correct icon
-  wait: Filter16,
+  wait: Wait16,
 };
 
 export const customIconOptions: Record<string, IconCmp> = {
@@ -63,7 +63,7 @@ export const BlockIcon = forwardRef<HTMLDivElement, Props>(function BlockIcon(
   return (
     <Box
       ref={ref}
-      padding="2px" //TODO: fix theme
+      padding="space2"
       borderRadius="radius4"
       className={cx(boxStyles({ type }), className)}
       {...props}

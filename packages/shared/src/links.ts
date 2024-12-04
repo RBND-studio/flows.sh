@@ -17,6 +17,16 @@ export const links = (domain = "flows.sh") => ({
   demoVideo: `https://youtu.be/XY3eU_p0AW4?si=I-Kws9rhJ9RLak7Q`,
   docs: {
     home: `https://${domain}/docs`,
+    users: {
+      main: `https://${domain}/docs/users`,
+      properties: `https://${domain}/docs/users/properties`,
+    },
+    workflows: {
+      main: `https://${domain}/docs/workflows`,
+    },
+    blockTemplates: `https://${domain}/docs/blocks/templates`,
+    environments: `https://${domain}/docs/organization-setup/environments`,
+
     /**
      * @deprecated old flows docs
      */

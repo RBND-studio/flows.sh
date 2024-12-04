@@ -1,7 +1,9 @@
 import { defineTokens } from "@pandacss/dev";
 
 export const spacing = defineTokens.spacing({
+  space2: { value: "2px" },
   space4: { value: "4px" },
+  space6: { value: "6px" },
   space8: { value: "8px" },
   space12: { value: "12px" },
   space16: { value: "16px" },
