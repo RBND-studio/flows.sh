@@ -50,8 +50,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
       data-loading={loading ? "" : undefined}
       aria-busy={loading}
     >
-      {/* eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- nullish coalescing cannot be used here */}
-      {startIcon || loading ? (
+      {startIcon ? (
         <Icon size={size} position="start">
           {startIcon}
         </Icon>
