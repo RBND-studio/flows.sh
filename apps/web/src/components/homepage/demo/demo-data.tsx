@@ -14,11 +14,23 @@ export const tabs = [
           width={24}
           backgroundColor="newBg.neutral"
           borderWidth="1px"
-          borderColor="newBorder.primary"
+          borderColor="newBorder.neutral"
           borderRadius="radius4"
-          shadow="focus"
+          animation="highlightFadeIn 0.6s ease-in-out"
+          animationDelay="0.3s"
+          animationFillMode="forwards"
         />
-        <Box width={176} pt="space4" position="absolute" right={0} md={{ right: "unset" }}>
+        <Box
+          opacity={0}
+          animation="fadein 0.6s ease-in-out"
+          animationDelay="0.3s"
+          animationFillMode="forwards"
+          width={176}
+          pt="space4"
+          position="absolute"
+          right={0}
+          md={{ right: "unset" }}
+        >
           <PlaceholderTooltip
             title="Get started"
             description="Start by creating your first issue in the project."
@@ -40,6 +52,9 @@ export const tabs = [
         shadow="focus"
         backgroundColor="pane.bg.elevated"
         mb="space8"
+        opacity={0}
+        animation="fadein 0.6s ease-in-out"
+        animationFillMode="forwards"
       >
         <Box
           borderRadius="6px"
@@ -67,6 +82,9 @@ export const tabs = [
         backgroundColor="pane.bg.elevated"
         mt="space8"
         alignItems="start"
+        opacity={0}
+        animation="fadein 0.6s ease-in-out"
+        animationFillMode="forwards"
       >
         <Text variant="titleS">Planned maintenance</Text>
         <Text mb="space4" variant="bodyXs">
@@ -89,6 +107,9 @@ export const tabs = [
         top="50%"
         left="50%"
         transform="translate(-50%, -50%)"
+        opacity={0}
+        animation="topSlideIn 0.4s ease-in-out"
+        animationFillMode="forwards"
         md={{
           bottom: "32px",
           right: "32px",
@@ -114,8 +135,23 @@ export const tabs = [
     title: "In-app help",
     helpSlot: (
       <Box position="relative" width="100%">
-        <Icon icon={Question16} />
-        <Box position="absolute" maxWidth={180} width="100%" pt="space4">
+        <Icon
+          className={css({
+            opacity: 0,
+            animation: "fadein 0.6s ease-in-out",
+            animationFillMode: "forwards",
+          })}
+          icon={Question16}
+        />
+        <Box
+          opacity={0}
+          animation="fadein 0.6s ease-in-out"
+          animationFillMode="forwards"
+          position="absolute"
+          maxWidth={180}
+          width="100%"
+          pt="space4"
+        >
           <PlaceholderTooltip
             title="Issue view"
             description="This view shows all issues in your project."

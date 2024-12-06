@@ -22,7 +22,7 @@ export default function About(): JSX.Element {
           pb="space40"
           md={{ pt: "space80", pb: "space64" }}
         >
-          Flows is reinventing the way users learn software
+          Flows is reinventing the way people learn software
         </Text>
       </Section>
       <Section maxWidth="720px!" linesWrapper>

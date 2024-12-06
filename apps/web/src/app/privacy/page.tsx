@@ -107,7 +107,7 @@ const Page = (): ReactElement => {
         for full details.
       </Text>
       <Text className={paragraphCss} variant="bodyM">
-        We use Lemon Squeezy as a merchang in the middle for our payment processing. See the{" "}
+        We use Lemon Squeezy as a merchant in the middle for our payment processing. See the{" "}
         <a href="https://www.lemonsqueezy.com/privacy/" rel="noopener noreferrer" target="_blank">
           Lemon Squeezy privacy policy
         </a>{" "}

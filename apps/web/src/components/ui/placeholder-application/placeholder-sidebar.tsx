@@ -44,7 +44,7 @@ const MobileSidebar = ({ sidebarTooltipSlot, sidebarBannerSlot }: Props): JSX.El
             width={24}
             backgroundColor="newBg.neutral"
             borderWidth="1px"
-            borderColor="newBorder.neutral.muted"
+            borderColor="newBorder.neutral"
             borderRadius="radius4"
           />
         )}
@@ -84,7 +84,7 @@ const DesktopSidebar = ({ sidebarTooltipSlot, sidebarBannerSlot }: Props): JSX.E
             width={24}
             backgroundColor="newBg.neutral"
             borderWidth="1px"
-            borderColor="newBorder.neutral.muted"
+            borderColor="newBorder.neutral"
             borderRadius="radius4"
           />
         )}

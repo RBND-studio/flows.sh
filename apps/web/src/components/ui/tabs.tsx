@@ -51,7 +51,7 @@ const button = cva({
   variants: {
     variant: {
       resting: {
-        borderColor: "newBorder.neutral.muted",
+        borderColor: "newBorder.neutral",
         color: "newFg.neutral.muted",
         _hover: {
           borderColor: "newBorder.neutral",
@@ -59,9 +59,9 @@ const button = cva({
         },
       },
       active: {
-        borderColor: "newBorder.neutral",
+        borderColor: "newBorder.neutral.strong",
         color: "newFg.neutral",
-        bg: "newBg.neutral.subtle",
+        bg: "button.secondary.bg.active",
       },
     },
   },

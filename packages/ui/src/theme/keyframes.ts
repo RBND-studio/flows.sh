@@ -43,4 +43,14 @@ export const keyframes: CssKeyframes = {
       opacity: 1,
     },
   },
+  highlightFadeIn: {
+    "0%": {
+      borderColor: "newBorder.neutral",
+      boxShadow: "none",
+    },
+    "100%": {
+      borderColor: "newBorder.primary",
+      boxShadow: "focus",
+    },
+  },
 };

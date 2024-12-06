@@ -52,7 +52,7 @@ export const PricingCalculator = (): ReactElement => {
             mdDown={{ flexDirection: "column", gap: "space8" }}
           >
             <Text id="calculatorLabel" variant="titleL">
-              Monthly MTUs
+              Monthly tracked users
             </Text>
             <Flex gap="space8" alignItems="baseline">
               <Text variant="titleL">{formatNumberWithThousandSeparator(selectedValue)}</Text>

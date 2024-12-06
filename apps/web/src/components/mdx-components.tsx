@@ -240,8 +240,12 @@ const mdxComponents = {
       return (
         <a
           className={css({
-            color: "text.primary",
-            textDecoration: "underline",
+            fontWeight: "600",
+            borderBottomWidth: "2px",
+            borderBottomColor: "newBorder.primary",
+            _hover: {
+              borderBottomWidth: "3px",
+            },
           })}
           href={source}
           rel="noreferrer"
@@ -257,8 +261,12 @@ const mdxComponents = {
         target="_blank"
         {...rest}
         className={css({
-          color: "text.primary",
-          textDecoration: "underline",
+          fontWeight: "600",
+          borderBottomWidth: "2px",
+          borderBottomColor: "newBorder.primary",
+          _hover: {
+            borderBottomWidth: "3px",
+          },
         })}
       >
         {children}
