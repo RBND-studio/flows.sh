@@ -10,7 +10,7 @@
   "devDependencies": {
     "@types/react": "^18.3.12",
     "eslint-config-custom": "workspace:*",
-    "react": "19.0.0-rc.1",
+    "react": "19.0.0",
     "tsconfig": "workspace:*",
     "typescript": "5.7.2"
   }

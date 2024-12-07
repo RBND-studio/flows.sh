@@ -14,11 +14,11 @@
     "@flows/react-components": "canary",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
-    "next": "15.0.3",
+    "next": "15.0.4",
     "ui": "workspace:*"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "15.0.3",
+    "@next/eslint-plugin-next": "15.0.4",
     "@pandacss/dev": "0.48.0",
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.12",
