@@ -1,5 +1,6 @@
 import { Section, SmallFeature } from "components/ui";
 import { BlockPlus16, Environment16, Eye16, Paintbrush16 } from "icons";
+import type { JSX } from "react";
 import { Icon } from "ui";
 
 const subFeatures = [

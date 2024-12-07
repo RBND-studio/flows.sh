@@ -12,6 +12,7 @@
     "docs": "pnpm --filter docs",
     "web": "pnpm --filter web",
     "ui": "pnpm --filter ui",
+    "icons": "pnpm --filter icons",
     "be": "pnpm --filter backend",
     "db": "pnpm --filter db",
     "e2e": "pnpm --filter e2e",

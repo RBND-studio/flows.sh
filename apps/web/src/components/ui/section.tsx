@@ -1,7 +1,7 @@
 import { css, cx } from "@flows/styled-system/css";
 import { Box } from "@flows/styled-system/jsx";
 import type { HTMLStyledProps } from "@flows/styled-system/types";
-import { type HTMLAttributes } from "react";
+import { type HTMLAttributes, type JSX } from "react";
 
 import { HorizontalLinesBox } from "./lines";
 

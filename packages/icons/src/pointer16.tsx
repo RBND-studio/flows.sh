@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 export function Pointer16(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg fill="currentColor" height={16} width={16} xmlns="http://www.w3.org/2000/svg" {...props}>

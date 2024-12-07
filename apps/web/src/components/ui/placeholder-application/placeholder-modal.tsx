@@ -1,4 +1,5 @@
 import { Box, Flex } from "@flows/styled-system/jsx";
+import type { JSX } from "react";
 import { Button, Text } from "ui";
 
 type Props = {

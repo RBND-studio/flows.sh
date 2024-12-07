@@ -1,5 +1,6 @@
 import { Box } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
+import type { JSX } from "react";
 import { Text } from "ui";
 
 import { ImplementationCodeExample } from "./implementation-code-example";

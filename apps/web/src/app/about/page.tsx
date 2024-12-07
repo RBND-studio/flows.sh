@@ -3,6 +3,7 @@ import { Box } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
 import { links } from "lib/links";
 import Link from "next/link";
+import type { JSX } from "react";
 import { routes } from "routes";
 import { Text } from "ui";
 

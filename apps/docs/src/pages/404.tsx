@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { JSX } from "react";
 
 export default function Custom404(): JSX.Element {
   return (

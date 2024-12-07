@@ -1,5 +1,6 @@
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { token } from "@flows/styled-system/tokens";
+import type { JSX } from "react";
 import { BlockIcon, Text } from "ui";
 
 export const WorkflowsExample = (): JSX.Element => {

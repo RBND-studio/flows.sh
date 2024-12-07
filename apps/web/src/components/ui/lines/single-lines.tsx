@@ -1,4 +1,5 @@
 import { css, cx } from "@flows/styled-system/css";
+import type { JSX } from "react";
 
 export const TopLine = (): JSX.Element => {
   return (

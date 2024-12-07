@@ -1,7 +1,7 @@
 import { css, cva } from "@flows/styled-system/css";
 import { Flex, Grid } from "@flows/styled-system/jsx";
 import { ExternalLink16, NextJS32, React32 } from "icons";
-import { type FC, type SVGProps } from "react";
+import { type FC, type JSX,type SVGProps } from "react";
 import { Icon, Text } from "ui";
 
 const templates: TemplateCardProps[] = [

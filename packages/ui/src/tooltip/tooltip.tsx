@@ -3,6 +3,7 @@
 import { css, cx } from "@flows/styled-system/css";
 import { token } from "@flows/styled-system/tokens";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
+import type { JSX } from "react";
 import * as React from "react";
 
 const TooltipProvider = TooltipPrimitive.Provider;

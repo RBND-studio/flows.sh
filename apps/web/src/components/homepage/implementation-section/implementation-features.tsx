@@ -1,6 +1,7 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { PlaceholderModal, PlaceholderTable, PlaceholderTooltip, Section } from "components/ui";
+import type { JSX } from "react";
 import { Text } from "ui";
 
 export const ImplementationFeatures = (): JSX.Element => {

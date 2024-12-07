@@ -1,4 +1,4 @@
-import { type SVGProps } from "react";
+import { type JSX,type SVGProps } from "react";
 
 export const LogoPillSvg = (props: SVGProps<SVGSVGElement>): JSX.Element => (
   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 40 40" {...props}>

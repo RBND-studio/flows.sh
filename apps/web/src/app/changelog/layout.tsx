@@ -3,7 +3,7 @@ import { Flex } from "@flows/styled-system/jsx";
 import { Section } from "components/ui/section";
 import { links } from "lib/links";
 import { type Metadata } from "next";
-import type { ReactNode } from "react";
+import type { JSX,ReactNode } from "react";
 import React from "react";
 import { Text } from "ui";
 

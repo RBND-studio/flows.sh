@@ -7,6 +7,7 @@ import { DOMAIN, PRODUCTION } from "lib";
 import type { Metadata } from "next";
 import { Figtree, Inter } from "next/font/google";
 import Script from "next/script";
+import type { JSX } from "react";
 
 import { Footer, Header } from "../components";
 

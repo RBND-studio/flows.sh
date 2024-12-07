@@ -1,4 +1,5 @@
 import { css } from "@flows/styled-system/css";
+import type { JSX } from "react";
 import { CodeHighlight } from "ui/server";
 
 const codeExample = `export const Banner = (props) => {

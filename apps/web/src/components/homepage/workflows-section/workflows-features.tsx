@@ -1,5 +1,6 @@
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { PlaceholderApplication, PlaceholderTooltip, Section } from "components/ui";
+import type { JSX } from "react";
 import { Text } from "ui";
 
 export const WorkflowsFeatures = (): JSX.Element => {

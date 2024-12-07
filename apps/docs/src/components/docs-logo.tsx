@@ -1,6 +1,7 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import Link from "next/link";
+import type { JSX } from "react";
 import { links } from "shared";
 import { Logo } from "ui";
 

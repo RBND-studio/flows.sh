@@ -1,3 +1,5 @@
+import type { JSX } from "react";
+
 export const Timestamp = ({ timestamp }: { timestamp: Date }): JSX.Element => {
   return (
     <>

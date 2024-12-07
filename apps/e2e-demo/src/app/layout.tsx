@@ -5,6 +5,7 @@ import { Box, Flex } from "@flows/styled-system/jsx";
 import { PlaceholderApplication } from "components/placeholder-application";
 import { ConfigProvider } from "contexts/config-context";
 import type { Metadata } from "next";
+import type { JSX } from "react";
 import { Logo } from "ui";
 
 export const metadata: Metadata = {

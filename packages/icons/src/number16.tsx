@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 export function Number16(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg

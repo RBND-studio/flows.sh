@@ -1,6 +1,7 @@
 import { FlowsSlot } from "@flows/react";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { slots } from "lib/consts";
+import type { JSX } from "react";
 import { Text } from "ui";
 
 export default function Home(): JSX.Element {

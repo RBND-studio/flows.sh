@@ -1,7 +1,7 @@
 import { cva, cx } from "@flows/styled-system/css";
 import { type HTMLStyledProps, styled } from "@flows/styled-system/jsx";
 import { Slot, Slottable } from "@radix-ui/react-slot";
-import { type ButtonHTMLAttributes, forwardRef } from "react";
+import { type ButtonHTMLAttributes, forwardRef, type JSX } from "react";
 
 import { Spinner } from "../spinner";
 import { Tooltip, type TooltipSide } from "../tooltip/tooltip";

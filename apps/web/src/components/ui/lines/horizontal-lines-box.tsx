@@ -1,5 +1,6 @@
 import { css } from "@flows/styled-system/css";
 import { Box } from "@flows/styled-system/jsx";
+import type { JSX } from "react";
 
 export const HorizontalLinesBox = ({
   children,

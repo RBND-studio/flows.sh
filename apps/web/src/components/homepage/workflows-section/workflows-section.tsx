@@ -1,5 +1,6 @@
 import { Flex } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
+import type { JSX } from "react";
 import { Text } from "ui";
 
 import { WorkflowsBlocks } from "./workflows-blocks";

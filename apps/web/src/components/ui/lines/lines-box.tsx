@@ -1,5 +1,6 @@
 import { cva } from "@flows/styled-system/css";
 import { Box } from "@flows/styled-system/jsx";
+import type { JSX } from "react";
 
 export const LinesBox = ({
   children,

@@ -3,6 +3,7 @@ import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { slots } from "lib/consts";
 import Link from "next/link";
+import type { JSX } from "react";
 import { Text } from "ui";
 
 export const PlaceholderSidebar = (): JSX.Element => {

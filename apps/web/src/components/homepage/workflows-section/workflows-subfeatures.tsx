@@ -1,5 +1,6 @@
 import { Section, SmallFeature } from "components/ui";
 import { Filter16, Graph16, Language16, Versioning16 } from "icons";
+import type { JSX } from "react";
 import { Icon } from "ui";
 
 const subFeatures = [

@@ -1,5 +1,5 @@
 import { Flex } from "@flows/styled-system/jsx";
-import React from "react";
+import React, { type JSX } from "react";
 
 import { PlaceholderSidebar } from "./placeholder-sidebar";
 

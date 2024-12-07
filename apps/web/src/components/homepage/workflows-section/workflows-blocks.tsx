@@ -3,7 +3,7 @@
 import { Box, Flex, Wrap } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
 import { BlockTemplate16 } from "icons";
-import { useState } from "react";
+import { type JSX,useState } from "react";
 import { BlockIcon, Icon, Text } from "ui";
 
 import { WorkflowsBlocksTabs } from "./workflows-blocks-tabs";

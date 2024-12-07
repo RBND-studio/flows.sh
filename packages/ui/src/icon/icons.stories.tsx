@@ -1,5 +1,6 @@
 import { Box } from "@flows/styled-system/jsx";
 import * as icons from "icons";
+import type { JSX } from "react";
 
 import { Text } from "../text";
 import { Icon } from "./icon";

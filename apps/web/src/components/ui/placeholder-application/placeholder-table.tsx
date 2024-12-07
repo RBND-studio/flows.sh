@@ -1,4 +1,5 @@
 import { Box, Flex } from "@flows/styled-system/jsx";
+import type { JSX } from "react";
 import { Text } from "ui";
 
 export const PlaceholderTable = (): JSX.Element => {

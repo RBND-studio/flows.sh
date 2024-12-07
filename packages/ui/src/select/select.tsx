@@ -4,7 +4,7 @@ import { css, cva, cx } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import * as RadixSelect from "@radix-ui/react-select";
 import { CaretDown16, Check16 } from "icons";
-import { type ReactNode, useId } from "react";
+import { type JSX,type ReactNode, useId } from "react";
 
 import { Button } from "../button";
 import { Description } from "../description";

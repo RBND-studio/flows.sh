@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useConfig } from "nextra-theme-docs";
+import type { JSX } from "react";
 
 import { PRODUCTION } from "../lib/constants";
 
