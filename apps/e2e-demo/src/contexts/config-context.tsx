@@ -20,7 +20,7 @@ import { Button, Input, Label, Text } from "ui";
 type Config = {
   organizationId: string;
   environment: string;
-  userId?: string;
+  userId: string;
   apiUrl?: string;
   userProperties?: Record<string, string | number | boolean | null | Date | undefined>;
 };
