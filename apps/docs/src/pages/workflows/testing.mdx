@@ -1,13 +1,13 @@
 ---
-title: Testing workflows
+title: Test workflows
 description: Learn how to test workflows in Flows.
 ---
 
-# Testing workflows
+# Test workflows
 
 Learn how to test workflows in Flows.
 
-[TODO: image]
+![Test workflows](/workflows/testing.png)
 
 ## Overview
 
@@ -27,7 +27,7 @@ Follow these steps to test your workflow:
   repeatedly without needing additional changes.
 </BetterCallout>
 
-## Restarting a workflow
+## Restart a workflow
 
 If necessary, you can restart a workflow during testing. There are two methods to achieve this:
 
@@ -42,6 +42,12 @@ To restart for a specific user without publishing a new version:
 - Navigate to the user's profile.
 - Click the **Reset progress** button next to the relevant workflow. Learn more about [user workflow states](/users/workflow-states).
 
-## Debugging workflows
+## Debug workflows
 
-For insights into workflow execution for individual users, view their **Workflow state** and **Log** in the [user profile](/users).
+When debugging workflows there are multiple places to look for information:
+
+- **Workflow editor**: Review the workflow in the editor to ensure the logic is correct.
+- **User log**: View the user's [log](/users/log) to see the workflow execution steps.
+- **User workflow state**: Check the user's [workflow state](/users/workflow-states) to see if they are in progress, completed, or haven't started the workflow.
+- **Browser console**: Check the browser console for any errors that may have occurred during workflow execution.
+- **Broser network tab**: Check the network tab in the browser console to see if the SDK requests are successful.

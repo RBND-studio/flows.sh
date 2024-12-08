@@ -897,7 +897,7 @@ To reset a user's progress in a workflow:
 
 
 ===
-File: workflows/adding-blocks.mdx
+File: workflows/add-blocks.mdx
 
 ---
 title: Adding blocks
@@ -925,12 +925,12 @@ To add a block to your workflow:
 
 ## Next steps
 
-After adding [blocks](/blocks/library), you need to configure their properties and exit nodes. To learn more, see [Configuring blocks](./configuring-blocks.mdx).
+After adding [blocks](/blocks/library), you need to configure their properties and exit nodes. To learn more, see [Configuring blocks](./configure-blocks.mdx).
 
 
 
 ===
-File: workflows/configuring-blocks.mdx
+File: workflows/configure-blocks.mdx
 
 ---
 title: Configuring blocks

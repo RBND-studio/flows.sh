@@ -86,3 +86,12 @@ tbody > tr:last-child > td:last-child {
 tbody > tr {
   background-color: transparent !important;
 }
+
+/* Remove margin from nested lists */
+ul > li > ul {
+  margin-top: 0 !important;
+}
+
+ol > li > ol {
+  margin-top: 0 !important;
+}
