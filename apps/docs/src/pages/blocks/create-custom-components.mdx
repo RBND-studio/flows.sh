@@ -9,7 +9,7 @@ import { Banner } from "../../components/banner";
 
 Create custom [block templates](/blocks/templates) to add your own UI elements into [workflows](/workflows).
 
-[TODO: Image]
+![Block templates](/blocks/template.png)
 
 ## Overview
 
@@ -142,9 +142,13 @@ A dialog will appear where you need to enter a name for the block template and s
 
 To tell the Flows SDK which component to use, you need to enter the name of the component you defined in your application. In our case, it's `Banner`.
 
+![Template component](/blocks/template-component.png)
+
 ### Select if the component is slottable
 
 If your component is intended to be rendered inside the application, you need to select the **Slottable** option. This will allow you to specify a slot id when adding the block to a workflow. In our case, the banner component is slottable.
+
+![Template slot](/blocks/template-slot.png)
 
 ### Define block properties
 
@@ -165,6 +169,8 @@ Each property has:
 - **Key** - the key that will be used to pass the value to the component
 - **Type** - the type of the property
 
+![Template properties](/blocks/template-properties.png)
+
 ### Add exit nodes
 
 Exit nodes are the transitions that can be triggered when the user interacts with the block. For our banner component, we'll add two exit nodes:
@@ -174,6 +180,8 @@ Exit nodes are the transitions that can be triggered when the user interacts wit
 
 The exit node has only a `key` field that needs to match the prop name in your component.
 
+![Template exit nodes](/blocks/template-exit-nodes.png)
+
 ### Additional customization
 
 You can also change the icon of your block template by clicking on the icon above the block template name.
@@ -182,9 +190,13 @@ You can also change the icon of your block template by clicking on the icon abov
 
 Once you've defined your properties and exit nodes, click **Publish changes** to make the latest version of the block template available to use in your [workflows](/workflows).
 
+![Template publish](/blocks/template-publish.png)
+
 ## Step 3: Add block to workflow
 
 Now that we have our block template, we can add it to a workflow. Navigate to a workflow and click **Add block**. Select the block template you created and configure the properties.
+
+![Template add to workflow](/blocks/template-add-to-workflow.png)
 
 ## Step 4: Finish the workflow
 

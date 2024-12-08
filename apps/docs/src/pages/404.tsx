@@ -1,11 +1,14 @@
 import Link from "next/link";
 import type { JSX } from "react";
+import { Logo } from "ui";
 
 export default function Custom404(): JSX.Element {
   return (
     <div className="grid">
       <div className="flex">
-        <h1>404 - Not found</h1>
+        <Logo type="pill" />
+        <h1>Page not found</h1>
+        <p className="description">The page you’re trying to access does not exist.</p>
         <p className="link">
           <Link href="/">Go back home</Link>
         </p>
@@ -23,16 +26,21 @@ export default function Custom404(): JSX.Element {
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 1rem;
+          gap: 8px;
         }
         h1 {
-          font-size: 2rem;
+          margin-top: 12px;
+          font-size: 1.6rem;
           font-weight: bold;
         }
+        .description {
+          font-size: 1rem;
+        }
         .link {
+          margin-top: 16px;
           color: var(--colors-text-primary);
           font-weight: 600;
-          font-size: 1.25rem;
+          font-size: 1rem;
         }
         .link:hover {
           text-decoration: underline;

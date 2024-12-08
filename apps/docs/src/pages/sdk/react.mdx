@@ -7,6 +7,8 @@ description: React SDK for Flows.
 
 The official Flows SDK for React.
 
+![Flows React SDK](/sdk/react.png)
+
 ## Installation
 
 You can install the Flows React SDK [from npm](https://www.npmjs.com/package/@flows/react):
@@ -76,3 +78,25 @@ FlowsProvider accepts the following props:
 | `tourComponents` | `object` | No       | Custom tour components to use in tour blocks.                                                                    |
 | `userId`         | `string` | No       | Unique user ID. If no ID is provided, all users will be treated as one.                                          |
 | `userProperties` | `object` | No       | Object with custom [user properties](/users/properties). Values can be `string`, `number`, `boolean`, or `date`. |
+
+### FlowsSlot
+
+The `FlowsSlot` is used to create Slots in your app where you can insert components using Workflows.
+
+```tsx
+import { FlowsSlot } from "@flows/react";
+
+const Sidebar = () => {
+  return (
+    <div>
+      <h1>My app</h1>
+      <FlowsSlot id="my-slot" placeholder={<BannerPlaceholder />} />
+    </div>
+  );
+};
+```
+
+| Name          | Type        | Required | Notes                                                              |
+| ------------- | ----------- | -------- | ------------------------------------------------------------------ |
+| `id`          | `string`    | Yes      | The Slot ID used to refer to the slot when creating workflows.     |
+| `placeholder` | `ReactNode` | No       | The component to render when no component is inserted in the slot. |
