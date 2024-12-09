@@ -68,37 +68,9 @@ When adding steps into a tour block, you can:
 - Add tour specific blocks from your library.
 - Use built-in wait steps to pause the tour until a user interacts with your application (e.g., clicking a button or navigating to a specific page).
 
+<SectionLink href="/tours">Learn more about configuring tour steps →</SectionLink>
+
 ![Tour steps](/workflows/tour-steps.png)
-
-#### Wait property
-
-The wait property is automatically added to every step in the tour block. It allows you to pause the tour at a specific step until the user interacts with your application, such as clicking a button or navigating to a page.
-
-**Options:**
-
-- **Interaction**: The type of interaction that triggers the next step. Options include:
-  - **Click**: Continues when the user clicks a specific element.
-  - **Navigation**: Continues when the user navigates to a specific page.
-  - **None**: The wait property is turned off, and the tour needs to be proceeded manually (e.g., through a button click).
-- **Element**: The CSS selector of the element that triggers the next step. This options is available when the interaction is set to **Click**.
-- **Page**: The URL of the page where the user needs to navigate, or the page where the element is located. This option is available for both **Click** and **Navigation** interactions. Configuration is described in the [page targeting](#page-targeting) section.
-
-![Wait property](/workflows/wait-property.png)
-
-#### Wait step
-
-Similarly to a **`wait`** property in a tour block, the **`wait`** step pauses the tour at a specific step until the user interacts with your application, such as clicking a button or navigating to a page. This step is built-in and can be added only to tour block steps.
-
-**Options:**
-
-- **Interaction**: The type of interaction that triggers the next step. Options include:
-  - **Click**: Continues when the user clicks a specific element.
-  - **Navigation**: Continues when the user navigates to a specific page.
-  - **None**: The wait property is turned off, and the tour needs to be proceeded manually (e.g., through a button click).
-- **Element**: The CSS selector of the element that triggers the next step. This options is available when the interaction is set to **Click**.
-- **Page**: The URL of the page where the user needs to navigate, or the page where the element is located. This option is available for both **Click** and **Navigation** interactions. Configuration is described in the [page targeting](#page-targeting) section.
-
-![Wait step](/workflows/wait-step.png)
 
 ## Exit nodes
 

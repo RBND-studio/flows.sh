@@ -12,6 +12,7 @@ const meta: MetaType = {
   },
   "getting-started": "Getting started",
   workflows: "Workflows",
+  tours: "Tours",
   blocks: "Blocks",
   users: "Users",
   "organization-setup": "Organization setup",
