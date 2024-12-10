@@ -6,6 +6,7 @@ import { type ButtonHTMLAttributes, forwardRef, type JSX } from "react";
 import { Spinner } from "../spinner";
 import { Tooltip, type TooltipSide } from "../tooltip/tooltip";
 
+//TODO: asChild doesn't work with tooltip?
 type Props = ButtonHTMLAttributes<HTMLButtonElement> &
   HTMLStyledProps<"button"> & {
     /**

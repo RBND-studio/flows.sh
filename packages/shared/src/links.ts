@@ -1,3 +1,6 @@
+/**
+ * @deprecated use `links` from `lib/links` to get links with domain support
+ */
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type -- infer the return type
 export const links = (domain = "flows.sh") => ({
   homePage: `https://${domain}`,
@@ -23,10 +26,34 @@ export const links = (domain = "flows.sh") => ({
     },
     workflows: {
       main: `https://${domain}/docs/workflows`,
+      publish: `https://${domain}/docs/workflows/publishing`,
+      environments: `https://${domain}/docs/workflows/publishing#managing-active-versions`,
+      frequency: `https://${domain}/docs/workflows#workflow-frequency`,
     },
     blockTemplates: `https://${domain}/docs/blocks/templates`,
-    environments: `https://${domain}/docs/organization-setup/environments`,
-
+    organization: {
+      main: `https://${domain}/docs/organization-setup/organizations`,
+      environments: `https://${domain}/docs/organization-setup/environments`,
+      members: `https://${domain}/docs/organization-setup/manage-members`,
+      billing: `https://${domain}/docs/organization-setup/billing`,
+    },
+    blocks: {
+      start: `https://${domain}/docs/blocks/library#start-block`,
+      tour: `https://${domain}/docs/blocks/library#tour-block`,
+      filter: `https://${domain}/docs/blocks/library#filter`,
+      end: `https://${domain}/docs/blocks/library#end-block`,
+    },
+    configureBlocks: {
+      slot: `https://${domain}/docs/workflows/configure-blocks#slot-configuration`,
+      pageTargeting: `https://${domain}/docs/workflows/configure-blocks#page-targeting`,
+      userProperties: `https://${domain}/docs/workflows/configure-blocks#user-properties`,
+      exitNodes: `https://${domain}/docs/workflows/configure-blocks#exit-nodes`,
+    },
+    tour: {
+      steps: `https://${domain}/docs/tours/tour-steps`,
+      waitStep: `https://${domain}/docs/tours/tour-steps#wait-step`,
+      waitProperty: `https://${domain}/docs/tours/tour-steps#wait-property`,
+    },
     /**
      * @deprecated old flows docs
      */

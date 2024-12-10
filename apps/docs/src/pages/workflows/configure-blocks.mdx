@@ -47,7 +47,7 @@ These properties allow you to insert components into your application using pred
 
 ### Page targeting
 
-Page targeting allows you to determine where a block appears based on the current page [pathname](https://developer.mozilla.org/en-US/docs/Web/API/URL/pathname). This is useful for displaying blocks on specific pages or sections of your application.
+Page targeting allows you to determine where a block appears based on the current page [pathname](https://developer.mozilla.org/en-US/docs/Web/API/URL/pathname). This is useful for displaying blocks on specific pages or sections of your application. In [wait step](/tours/tour-steps#wait-step) and [wait properties](/workflows/properties#wait-property), page targeting can be used to pause the workflow until the user navigates to a specific page or does a specific action on the desired page.
 
 **Options:**
 
@@ -71,6 +71,19 @@ When adding steps into a tour block, you can:
 <SectionLink href="/tours">Learn more about configuring tour steps →</SectionLink>
 
 ![Tour steps](/workflows/tour-steps.png)
+
+### User properties
+
+User properties fields allows you to target users based on their attributes. You can add multiple user properties to target users based on their attributes, in that case the properties are combined with an AND operator. User properties are only available in built-in logic blocks.
+
+**Options:**
+
+- **Property name**: The user attribute to target.
+- **Data type**: The data type of the user attribute. See [supported types](/users/properties#property-types).
+- **Operator**: The operator to use when comparing the user attribute value.
+- **Values**: The value(s) to compare against the user attribute. You can add multiple values to match against (in that case the values are combined with an OR operator).
+
+![User properties](/workflows/user-properties.png)
 
 ## Exit nodes
 
