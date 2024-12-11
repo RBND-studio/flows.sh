@@ -69,6 +69,10 @@ export const Release = defineDocumentType(() => ({
       type: "date",
       required: true,
     },
+    description: {
+      type: "string",
+      required: true,
+    },
   },
   computedFields,
 }));

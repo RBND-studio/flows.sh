@@ -37,6 +37,7 @@ export async function generateMetadata(props: ReleaseProps): Promise<Metadata> {
 
   return {
     title: `${release.title} | Changelog`,
+    description: release.description,
   };
 }
 

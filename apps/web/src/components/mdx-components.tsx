@@ -172,6 +172,7 @@ const mdxComponents = {
       className={css({
         listStyle: "disc",
         marginBottom: "space24",
+        marginLeft: "space16",
         "& ul": {
           paddingLeft: "space32",
         },
@@ -190,6 +191,7 @@ const mdxComponents = {
       as="ol"
       className={css({
         listStyle: "number",
+        marginLeft: "space16",
       })}
       variant="bodyL"
       {...props}
@@ -200,7 +202,7 @@ const mdxComponents = {
       as="li"
       variant="bodyL"
       {...props}
-      className={css({ listStylePosition: "inside", marginBottom: "space8" })}
+      className={css({ listStylePosition: "outside", marginBottom: "space8" })}
     />
   ),
 
@@ -258,7 +260,6 @@ const mdxComponents = {
     return (
       <Link
         href={href}
-        target="_blank"
         {...rest}
         className={css({
           fontWeight: "600",
