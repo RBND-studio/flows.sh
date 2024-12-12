@@ -16,6 +16,8 @@ type Props = PopoverPrimitive.PopoverContentProps & {
   className?: string;
 };
 
+const COLLISION_PADDING = 16;
+
 export const PopoverContent = forwardRef<React.ElementRef<typeof PopoverPrimitive.Content>, Props>(
   function PopoverContent({ className, ...props }, ref) {
     return (
@@ -23,7 +25,7 @@ export const PopoverContent = forwardRef<React.ElementRef<typeof PopoverPrimitiv
         <PopoverPrimitive.Content
           className={cx(content(), className)}
           ref={ref}
-          collisionPadding={16}
+          collisionPadding={COLLISION_PADDING}
           sideOffset={4}
           {...props}
         />
@@ -37,6 +39,7 @@ export const PopoverContent = forwardRef<React.ElementRef<typeof PopoverPrimitiv
 // Or introduce popover variants? Or..?
 const content = cva({
   base: {
+    maxHeight: `calc(100vh - ${COLLISION_PADDING * 2}px)`,
     borderRadius: "radius8",
     backgroundColor: "pane.bg.elevated",
     borderStyle: "solid",
