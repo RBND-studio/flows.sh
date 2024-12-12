@@ -17,7 +17,7 @@
   "dependencies": {
     "@flows/js": "0.3.3",
     "icons": "workspace:*",
-    "next": "15.0.4",
+    "next": "15.1.0",
     "next-sitemap": "^4.2.3",
     "nextra": "^3.2.4",
     "nextra-theme-docs": "^3.2.4",
@@ -28,8 +28,8 @@
     "ui": "workspace:*"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "15.0.4",
-    "@pandacss/dev": "0.48.0",
+    "@next/eslint-plugin-next": "15.1.0",
+    "@pandacss/dev": "0.49.0",
     "@types/node": "^20.14.10",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
