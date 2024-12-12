@@ -22,7 +22,7 @@ const subFeatures = [
   {
     icon: <Icon icon={Paintbrush16} />,
     title: "Easy theming",
-    description: "Use any theme provider or CSS solutions in UI components.",
+    description: "Use any theme provider or CSS solution in UI components.",
   },
 ];
 

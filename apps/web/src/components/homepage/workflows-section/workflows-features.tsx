@@ -53,10 +53,10 @@ export const WorkflowsFeatures = (): JSX.Element => {
       </Box>
       <Box width="100%">
         <Text mb="space12" variant="titleXl">
-          Temporary elements
+          Embeddable components
         </Text>
         <Text mb="space32" color="muted" variant="bodyL">
-          Add UI elements into your application without needing to redeploy.
+          Embed UI elements directly into your application without needing to redeploy.
         </Text>
         <Box
           borderColor="newBorder.neutral"

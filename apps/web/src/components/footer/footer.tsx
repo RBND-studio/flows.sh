@@ -21,11 +21,11 @@ const footerGroups: FooterGroup[] = [
   {
     title: "Product",
     links: [
-      {
-        title: "Demo",
-        href: links.nextJsDemo,
-        target: "_blank",
-      },
+      // {
+      //   title: "Demo",
+      //   href: links.nextJsDemo,
+      //   target: "_blank",
+      // },
       {
         title: "Pricing",
         href: routes.pricing,

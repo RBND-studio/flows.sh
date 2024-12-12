@@ -15,13 +15,9 @@ export const Hero = (): ReactElement => {
       pt="space40"
       pb="space40"
       md={{ pt: "space80", pb: "space64" }}
+      alignItems="center"
     >
-      <Text
-        as="h1"
-        variant="title4xl"
-        animation="topSlideIn 0.6s ease-out"
-        mdDown={{ textAlign: "center" }}
-      >
+      <Text as="h1" variant="title4xl" animation="topSlideIn 0.6s ease-out" align="center">
         Build native product growth experiences, your way
       </Text>
       <Text
@@ -30,24 +26,22 @@ export const Hero = (): ReactElement => {
         animation="topSlideIn 0.6s ease-out"
         animationDelay="0.3s"
         animationFillMode="forwards"
-        mdDown={{ textAlign: "center" }}
         color="muted"
         variant="bodyL"
+        align="center"
       >
         Meet Flows, the flexible platform for building in-app experiences. Focus on your product,
         not creating one-off logic.
       </Text>
 
       <Flex
-        alignItems="flex-start"
-        flexDirection="column"
-        gap="space16"
+        justifyContent="center"
+        gap="space12"
         width="100%"
         opacity={0}
         animation="topSlideIn 0.6s ease-out"
         animationDelay="0.6s"
         animationFillMode="forwards"
-        mdDown={{ alignItems: "center" }}
       >
         <SignupClick>
           <Button
@@ -60,6 +54,9 @@ export const Hero = (): ReactElement => {
             <SmartLink href={links.signUp}>Start building</SmartLink>
           </Button>
         </SignupClick>
+        <Button variant="secondary" asChild size="large">
+          <SmartLink href={links.docs.contact}>Talk to us</SmartLink>
+        </Button>
       </Flex>
     </Section>
   );

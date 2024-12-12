@@ -1,6 +1,7 @@
 "use client";
 
 import { css, cx } from "@flows/styled-system/css";
+import { styled } from "@flows/styled-system/jsx";
 import Link, { type LinkProps } from "next/link";
 import { usePathname } from "next/navigation";
 import { type ReactNode } from "react";
@@ -13,17 +14,21 @@ type HeadingLinkProps = {
   textProps: TextProps;
   children: ReactNode;
   wrapperProps?: string;
+  as: string;
 };
 export const HeadingLink = ({
   linkProps,
   textProps,
   wrapperProps,
   children,
+  as,
 }: HeadingLinkProps): ReactNode => {
   const pathname = usePathname();
   const path = `${pathname}#${textProps.id}`;
+  const Component = styled[as];
+
   return (
-    <div
+    <Component
       className={cx(
         css({
           display: "flex",
@@ -56,6 +61,6 @@ export const HeadingLink = ({
         })}
         path={path}
       />
-    </div>
+    </Component>
   );
 };
