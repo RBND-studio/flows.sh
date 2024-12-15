@@ -40,7 +40,7 @@ export const CtaBanner = (): ReactElement => {
             </Button>
           </SignupClick>
           <Button variant="secondary" asChild size="large">
-            <a href={links.nextJsDemo} target="_blank" rel="noopener">
+            <a href={links.docs.contact} target="_blank" rel="noopener">
               Talk to us
             </a>
           </Button>

@@ -2,7 +2,10 @@ import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { PlaceholderModal, PlaceholderTooltip } from "components/ui";
 import { Question16 } from "icons";
+import Image from "next/image";
 import { Button, Icon, Text } from "ui";
+
+import bannerImage from "./banner-image.jpg";
 
 export const tabs = [
   {
@@ -57,12 +60,15 @@ export const tabs = [
         animationFillMode="forwards"
       >
         <Box
+          smDown={{ display: "none" }}
           borderRadius="6px"
-          width="100%"
-          maxWidth={72}
+          width={72}
           height={40}
-          backgroundColor="newFg.neutral.muted"
-        />
+          flexShrink={0}
+          overflow="hidden"
+        >
+          <Image src={bannerImage} alt="" />
+        </Box>
         <Flex flexDirection="column" gap="2px">
           <Text variant="titleS">Try out the new Instant sync</Text>
           <Text variant="bodyXs">With instant sync, you can now sync your data in real-time.</Text>
@@ -102,22 +108,11 @@ export const tabs = [
     slideout: (
       <Box
         position="absolute"
-        // center in the box
-        width="100%"
-        top="50%"
-        left="50%"
-        transform="translate(-50%, -50%)"
         opacity={0}
         animation="topSlideIn 0.4s ease-in-out"
         animationFillMode="forwards"
-        md={{
-          bottom: "32px",
-          right: "32px",
-          left: "unset",
-          top: "unset",
-          transform: "unset",
-          width: "unset",
-        }}
+        bottom="32px"
+        right="32px"
       >
         <PlaceholderModal
           title="Discount on our annual plan"

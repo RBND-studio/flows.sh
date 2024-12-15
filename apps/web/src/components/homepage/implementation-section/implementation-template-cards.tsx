@@ -1,7 +1,8 @@
 import { css, cva } from "@flows/styled-system/css";
 import { Flex, Grid } from "@flows/styled-system/jsx";
 import { ExternalLink16, NextJS32, React32 } from "icons";
-import { type FC, type JSX,type SVGProps } from "react";
+import { links } from "lib/links";
+import { type FC, type JSX, type SVGProps } from "react";
 import { Icon, Text } from "ui";
 
 const templates: TemplateCardProps[] = [
@@ -9,13 +10,13 @@ const templates: TemplateCardProps[] = [
     title: "NextJS",
     icon: NextJS32,
     backgroundColor: "nextjs",
-    link: "https://example.com", //TODO: add correct link
+    link: links.sdk.nextTemplate,
   },
   {
     title: "React",
     icon: React32,
     backgroundColor: "react",
-    link: "https://example.com", //TODO: add correct link
+    link: links.sdk.reactTemplate,
   },
 ];
 

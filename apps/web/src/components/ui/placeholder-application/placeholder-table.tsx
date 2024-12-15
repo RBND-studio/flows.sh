@@ -1,6 +1,9 @@
 import { Box, Flex } from "@flows/styled-system/jsx";
+import Image from "next/image";
 import type { JSX } from "react";
 import { Text } from "ui";
+
+import bannerImage from "./banner-image.jpg";
 
 export const PlaceholderTable = (): JSX.Element => {
   return (
@@ -29,8 +32,11 @@ const Banner = (): JSX.Element => {
         width="100%"
         maxWidth={72}
         height={40}
-        backgroundColor="newFg.neutral.muted"
-      />
+        overflow="hidden"
+        flexShrink={0}
+      >
+        <Image src={bannerImage} alt="" />
+      </Box>
       <Flex flexDirection="column" gap="2px">
         <Text variant="titleS">Announcing Instant sync</Text>
         <Text variant="bodyXs">With instant sync, you can now sync your data in real-time.</Text>

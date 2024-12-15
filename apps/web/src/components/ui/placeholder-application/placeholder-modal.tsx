@@ -1,6 +1,9 @@
 import { Box, Flex } from "@flows/styled-system/jsx";
+import Image from "next/image";
 import type { JSX } from "react";
 import { Button, Text } from "ui";
+
+import modalImage from "./modal-image.jpg";
 
 type Props = {
   title: string;
@@ -33,9 +36,12 @@ export const PlaceholderModal = ({
         mb="space12"
         width="100%"
         borderRadius="6px"
-        height={100}
-        backgroundColor="newFg.neutral.muted"
-      />
+        height="100%"
+        maxHeight={100}
+        overflow="hidden"
+      >
+        <Image src={modalImage} alt="" />
+      </Box>
       <Text mb="space4" align="center" variant="titleS">
         {title}
       </Text>
