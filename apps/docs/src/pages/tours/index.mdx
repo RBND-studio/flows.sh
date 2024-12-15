@@ -25,15 +25,23 @@ For more details, visit the [workflow guide](/workflows).
 
 ## Tours vs. workflows
 
-Although tours and [workflows](/workflows) use blocks, their purposes differ:
+Although both tours and [workflows](/workflows) use blocks, their purposes differ:
 
-- **Tours**: Linear, time-sensitive guides focused on user onboarding and immediate feature exploration.
+- **Tours**: Linear, step-by-step instructions designed to help users complete a specific task or understand a feature.
 - **Workflows**: Versatile processes supporting complex sequences with logic, actions, and conditions.
 
 When choosing between a tour and a workflow, consider:
 
 - If the sequence is short and needs to be completed in one session, use a **tour**.
 - For longer or multi-session sequences, use a **workflow**.
+
+### Benefits of tours
+
+Tours are designed to provide a better user experience for step-by-step instructions. They main benefits include:
+
+- **Low latency**: When a tour is started, the whole sequence is loaded into the user's browser, making switching between steps instant.
+- **Forwards and backwards navigation**: Users can navigate to the previous steps, making it easier to review instructions.
+- **State persistence**: Tours remember the user's progress, even if they leave and return later.
 
 ## Tour steps
 
