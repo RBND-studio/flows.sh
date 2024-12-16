@@ -13,11 +13,11 @@ Get a basic understanding of Flows so you can set up your organization and start
 
 ### Organization
 
-An organization is the container for all [workflows](/workflows), [environments](/organization-setup/environments), [users](/users), and members. As a user, you can belong to multiple [organizations](/organization-setup/organizations) and switch between them using the dropdown in the top-right corner of the application. Logging into Flows means accessing your personal account, which can be associated with multiple organizations.
+An organization is the container for all [workflows](/workflows), [environments](/organization-setup/environments), [users](/users), and [members](/organization-setup/manage-members). As a user, you can belong to multiple [organizations](/organization-setup/organizations) and switch between them using the dropdown in the top-left corner of the application. Logging into Flows means accessing your personal account, which can be associated with multiple organizations.
 
 ## Workflows
 
-A workflow is a series of steps executed in a specific sequence, defined by the connections between [blocks](/blocks/library) and their conditions. These [workflows](/workflows) are built using the Flows editor, which offers a visual representation for creating and managing [workflows](/workflows). In the editor, you can add blocks, connect them, and configure their properties.
+A workflow is a series of steps executed in a specific sequence, defined by the connections between [blocks](/blocks/library) and their conditions. These [workflows](/workflows) are built using the Flows editor, which offers a visual representation for creating and managing workflows. In the editor, you can add blocks, connect them, and configure their properties.
 
 Workflows are version-controlled and can be published to individual [environments](/organization-setup/environments).
 
@@ -33,10 +33,6 @@ Block properties are the configurable fields available to editors when a block i
 
 Block templates are reusable UI components that allow you to create custom elements for [workflows](/workflows). They contain properties and instructions, giving editors the power to create custom workflows. Each template must correspond to a matching component in your application.
 
-### Entry node
-
-Entry nodes are connectors that allow [workflows](/workflows) to enter a block. They don't hold logic; they serve as the entry point for paths.
-
 ### Exit nodes
 
 Exit nodes are connectors that allow [workflows](/workflows) to leave a block. They include logic to determine which path should be followed when exiting. For example, clicking a button might trigger an exit node that leads to another block.
@@ -47,11 +43,8 @@ Paths connect [blocks](/blocks/library) in a workflow, starting from an exit nod
 
 ## Tours
 
-Tours are guided, step-by-step instructions designed to help [users](/users) complete a specific task or understand a feature within your application. They are typically used for onboarding new [users](/users) or highlighting new functionalities. Tours need to be part of a workflow.
+[Tours](/tours) are guided, step-by-step instructions designed to help [users](/users) complete a specific task or understand a feature within your application. They are typically used for onboarding new [users](/users) or highlighting new functionalities. Tours need to be part of a workflow.
 
-### Tours vs [workflows](/workflows)
+## Slot
 
-While both tours and [workflows](/workflows) consist of a series of steps, they differ in purpose and design:
-
-- **Tours** are linear, time-sensitive guides focused on immediate user engagement and understanding. They are perfect for introducing features or ensuring [users](/users) can perform specific actions during onboarding.
-- **Workflows** are more complex and versatile, designed to support complex sequences. Workflows can operate independently of user interaction and include logic, actions, and conditions that tours do not.
+[Slots](/workflows/configure-blocks#slot-configuration) are places in your application where Flows can render components. They need to be [defined manually](/sdk/react#flowsslot) in your codebase and then they can be referenced in the workflow editor to render Slottable components.

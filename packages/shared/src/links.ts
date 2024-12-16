@@ -34,7 +34,10 @@ export const links = (domain = "flows.sh") => ({
       environments: `https://${domain}/docs/workflows/publishing#managing-active-versions`,
       frequency: `https://${domain}/docs/workflows#workflow-frequency`,
     },
-    blockTemplates: `https://${domain}/docs/blocks/templates`,
+    blockTemplates: {
+      main: `https://${domain}/docs/blocks/templates`,
+      updateInstances: `https://${domain}/docs/blocks/templates#updating-block-template-instances`,
+    },
     organization: {
       main: `https://${domain}/docs/organization-setup/organizations`,
       environments: `https://${domain}/docs/organization-setup/environments`,

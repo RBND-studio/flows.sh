@@ -27,6 +27,19 @@ Follow these steps to test your workflow:
   repeatedly without needing additional changes.
 </BetterCallout>
 
+### Using draft version
+
+Flows allows you to apply the draft version of a workflow in an environment. This is useful for testing the workflow as you make changes without needing to publish a new version every time. To use the draft version in an environment:
+
+- Click on **Environments** in the workflow editor.
+- Using the **Workflow version** dropdown, apply the draft version to the desired environment.
+- Save the changes.
+
+Things to keep in mind when using the draft version:
+
+- Never use the draft version in a production environment – as you make edits to your workflow the draft version can get into a broken state (eg. missing blocks, broken connections).
+- It is easy to get stuck in an invalid state when using the draft version. Make sure to [reset](#2-restart-a-single-user) the workflow state for your test user if you get stuck.
+
 ## Restart a workflow
 
 If necessary, you can restart a workflow during testing. There are two methods to achieve this:
@@ -40,6 +53,7 @@ When you publish a new version of a workflow, choose the **Restart all in-progre
 To restart for a specific user without publishing a new version:
 
 - Navigate to the user's profile.
+- Switch to the **Workflows** tab.
 - Click the **Reset progress** button next to the relevant workflow. Learn more about [user workflow states](/users/workflow-states).
 
 ## Debug workflows

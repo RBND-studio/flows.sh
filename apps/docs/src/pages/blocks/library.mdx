@@ -46,13 +46,11 @@ To use component blocks, create a block template and integrate the corresponding
 
 ![Filter block](/blocks/filter.png)
 
-When a workflow is running
-
-Logic blocks manage workflow behavior. They can be used to define branching logic, conditions, and other rules.
+They can be used to define branching logic, conditions, and other rules.
 
 ### Filter
 
-Filters [users](/users) based on specific conditions, allowing only those who match the criteria to proceed. Users who don't match stop at the block but may continue along other workflow paths if available.
+Filters [users](/users) based on specific conditions, allowing only those who match the criteria to proceed. Users that don't match the conditions are stopped and won't continue to next block, however if they have active another block the workflow won't be exited.
 
 **Input:**
 
