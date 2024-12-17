@@ -44,7 +44,7 @@ type Props = {
   hideCloseButton?: boolean;
 };
 
-export const Banner = (props: Props): ReactNode => {
+export const MyBanner = (props: Props): ReactNode => {
   return (
     <div>
       <div>
@@ -64,39 +64,51 @@ export const Banner = (props: Props): ReactNode => {
 
 Now we will add exit node props that will allow Flows to react to user interactions with the block. Let's add `complete` and `close` props that will be called when the user clicks the button or the close button.
 
-```tsx {7-8, 16, 20} filename="banner.tsx"
+
+```tsx {7-8} filename="banner.tsx"
 type Props = {
   title: string;
   description: string;
   buttonLabel: string;
   buttonLink: string;
   hideCloseButton?: boolean;
-  complete?: () => void;
-  close?: () => void;
-};
-
-export const Banner = (props: Props): ReactNode => {
-  return (
-    <div>
-      <div>
-        <h2>{props.title}</h2>
-        {!props.hideCloseButton && <button onClick={props.close}>X</button>}
-      </div>
-      <div>
-        <p>{props.description}</p>
-        <a onClick={props.complete} href={props.buttonLink}>
-          {props.buttonLabel}
-        </a>
-      </div>
-    </div>
-  );
-};
+  complete: () => void;
+  close:() => void;
+}
 ```
 
-<BetterCallout variant="warning">
-  Use only `complete` and `close` props for tour components, as they integrate directly with the
-  Flows runtime.
-</BetterCallout>
+In case of a tour component, you should use `TourComponentProps` from `@flows/react` package. This will give you access to `previous`, `continue` and `cancel` props that are used to navigate through the tour.
+
+```tsx {1, 3} filename="tour-banner.tsx"
+import { TourComponentProps } from "@flows/react";
+
+type Props = TourComponentProps<{
+  title: string;
+  description: string;
+  buttonLabel: string;
+  buttonLink: string;
+  hideCloseButton?: boolean;
+}>
+```
+
+And then use these props in the component:
+
+```tsx {5, 9} filename="banner.tsx"
+export const MyBanner = (props: Props): ReactNode => (
+  <div>
+    <div>
+      <h2>{props.title}</h2>
+      {!props.hideCloseButton && <button onClick={props.close}>X</button>}
+    </div>
+    <div>
+      <p>{props.description}</p>
+      <a onClick={props.complete} href={props.buttonLink}>
+        {props.buttonLabel}
+      </a>
+    </div>
+  </div>
+);
+```
 
 With added styling, the component should look like this:
 
@@ -113,7 +125,7 @@ To make the component available to Flows, you need to add it to the `FlowsProvid
 
 ```tsx filename="layout.tsx" {12}
 import { FlowsProvider } from "@flows/react";
-import { Banner } from "./banner";
+import { MyBanner } from "./banner";
 
 const App = () => {
   return (
@@ -123,7 +135,7 @@ const App = () => {
       // Add tour specific components here
       tourComponents={{}}
       components={{
-        Banner,
+        Banner: MyBanner,
       }}
     >
       {/* Your app code here */}
@@ -140,13 +152,13 @@ A dialog will appear where you need to enter a name for the block template and s
 
 ### Specify component
 
-To tell the Flows SDK which component to use, you need to enter the name of the component you defined in your application. In our case, it's `Banner`.
+To tell the Flows SDK which component to use, you need to enter the key you used in the `components` object passed to FlowsProvider. In our case, it's `Banner`.
 
 ![Template component](/blocks/template-component.png)
 
 ### Select if the component is slottable
 
-If your component is intended to be rendered inside the application, you need to select the **Slottable** option. This will allow you to specify a slot id when adding the block to a workflow. In our case, the banner component is slottable.
+If your component is intended to be rendered inside the application, you need to select the **Slottable** option. This will allow you to specify a slot id when adding the block to a workflow. In our case, the banner component is [slottable](/workflows/configure-blocks#slot-configuration) because we want to embed it into our application UI.
 
 ![Template slot](/blocks/template-slot.png)
 
