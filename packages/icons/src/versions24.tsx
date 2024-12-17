@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 export function Versions24(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg fill="currentColor" height={24} width={24} xmlns="http://www.w3.org/2000/svg" {...props}>

@@ -1,0 +1,20 @@
+---
+title: Allowed domains
+description: Select the domains where the Flows SDK can be used.
+---
+
+# Allowed domains
+
+Select the domains where the Flows SDK can be used. This is a security feature that allows you to restrict where the Flows SDK can be used.
+
+## Add a domain
+
+To add a domain, just click on the **Add domain** button and enter the domain name. Make sure to enter the domain with the correct protocol (`http://` or `https://`) and without the trailing slash. We don't support wildcards.
+
+### Null origin
+
+Some environments don't have a domain, for example Figma plugins. You can allow null origins by adding `null` to the list of allowed domains.
+
+## Local development
+
+When you are developing locally, you don't need to add `localhost` and `127.0.0.1` to the list of allowed domains. The Flows SDK will work on your machine without any additional configuration.

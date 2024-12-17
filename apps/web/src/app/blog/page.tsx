@@ -1,4 +1,6 @@
+import { css } from "@flows/styled-system/css";
 import { BlogPostPreview } from "components/blog";
+import { Section } from "components/ui";
 import { allPosts } from "contentlayer/generated";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
@@ -12,10 +14,19 @@ export const metadata: Metadata = {
 const Page = (): ReactElement => {
   return (
     <>
-      <Text as="h1" variant="title4xl">
-        Blog
-      </Text>
-      <ul>
+      <Section maxWidth="720px!">
+        <Text as="h1" variant="title4xl" mt="space40" md={{ mt: "space80" }}>
+          Blog
+        </Text>
+      </Section>
+      <ul
+        className={css({
+          mb: "space40",
+          md: {
+            mb: "space80",
+          },
+        })}
+      >
         {[...allPosts]
           .sort((a, b) => b.date.localeCompare(a.date))
           .map((post) => (

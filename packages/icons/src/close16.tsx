@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 export function Close16(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg

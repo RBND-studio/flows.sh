@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Text } from "./text";
 
 const meta: Meta<typeof Text> = {
-  title: "Text",
+  title: "Tokens/Text",
   component: Text,
   args: {
     variant: "title6xl",

@@ -1,3 +1,5 @@
+import type { JSX } from "react";
+// TODO: replace this with a smaller carret and check overlap with ChevronDown16
 export const CaretDown16 = (props: React.SVGProps<SVGSVGElement>): JSX.Element => (
   <svg
     fill="currentColor"

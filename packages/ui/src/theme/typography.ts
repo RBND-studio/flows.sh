@@ -3,6 +3,7 @@ import { defineTextStyles } from "@pandacss/dev";
 // Font definition excluding font-family, family is defined in global styles for each app separately because we want to use fancier font on the web but UI focused one in the app
 
 export const textStyles = defineTextStyles({
+  // unused
   title6xl: {
     value: {
       fontStyle: "normal",
@@ -12,6 +13,7 @@ export const textStyles = defineTextStyles({
       fontFamily: "var(--font-main)",
     },
   },
+  // used in web Hero
   title5xl: {
     value: {
       fontStyle: "normal",
@@ -21,6 +23,7 @@ export const textStyles = defineTextStyles({
       fontFamily: "var(--font-main)",
     },
   },
+  // used in "Secondary" web Hero
   title4xl: {
     value: {
       fontStyle: "normal",
@@ -30,6 +33,7 @@ export const textStyles = defineTextStyles({
       fontFamily: "var(--font-main)",
     },
   },
+  // used on web only
   title3xl: {
     value: {
       fontStyle: "normal",
@@ -39,6 +43,7 @@ export const textStyles = defineTextStyles({
       fontFamily: "var(--font-main)",
     },
   },
+  // used on web only
   title2xl: {
     value: {
       fontStyle: "normal",
@@ -79,11 +84,12 @@ export const textStyles = defineTextStyles({
     value: {
       fontStyle: "normal",
       fontWeight: "700",
-      fontSize: "14px",
-      lineHeight: "20px",
+      fontSize: "13px",
+      lineHeight: "18px",
       fontFamily: "var(--font-main)",
     },
   },
+  // unused
   titleXs: {
     value: {
       fontStyle: "normal",
@@ -116,8 +122,8 @@ export const textStyles = defineTextStyles({
     value: {
       fontStyle: "normal",
       fontWeight: "450",
-      fontSize: "14px",
-      lineHeight: "20px",
+      fontSize: "13px",
+      lineHeight: "18px",
       fontFamily: "var(--font-body)",
     },
   },
@@ -127,6 +133,15 @@ export const textStyles = defineTextStyles({
       fontWeight: "450",
       fontSize: "12px",
       lineHeight: "16px",
+      fontFamily: "var(--font-body)",
+    },
+  },
+  bodyXxs: {
+    value: {
+      fontStyle: "normal",
+      fontWeight: "450",
+      fontSize: "11px",
+      lineHeight: "14px",
       fontFamily: "var(--font-body)",
     },
   },

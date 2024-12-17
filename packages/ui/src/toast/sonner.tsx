@@ -2,7 +2,7 @@
 
 import { css } from "@flows/styled-system/css";
 import type { FC } from "react";
-import { toast as sonnerToast, Toaster as SonnerToaster } from "sonner";
+import { Toaster as SonnerToaster } from "sonner";
 
 export const Toaster: FC = () => {
   return (
@@ -68,4 +68,4 @@ export const Toaster: FC = () => {
   );
 };
 
-export const toast = sonnerToast;
+export { toast } from "sonner";

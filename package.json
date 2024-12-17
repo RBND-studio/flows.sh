@@ -3,30 +3,31 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
-    "build": "TURBO_NO_UPDATE_NOTIFIER=true turbo run build",
-    "dev": "TURBO_NO_UPDATE_NOTIFIER=true turbo run dev --no-cache",
-    "lint": "TURBO_NO_UPDATE_NOTIFIER=true turbo run lint",
-    "test": "TURBO_NO_UPDATE_NOTIFIER=true turbo run test",
-    "tsc": "TURBO_NO_UPDATE_NOTIFIER=true turbo run tsc",
+    "build": "turbo run build",
+    "dev": "turbo run dev --no-cache",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "tsc": "turbo run tsc",
     "app": "pnpm --filter app",
     "docs": "pnpm --filter docs",
     "web": "pnpm --filter web",
     "ui": "pnpm --filter ui",
+    "icons": "pnpm --filter icons",
     "be": "pnpm --filter backend",
     "db": "pnpm --filter db",
     "e2e": "pnpm --filter e2e",
-    "prepare": "husky",
-    "pre-push": "TURBO_NO_UPDATE_NOTIFIER=true turbo lint tsc test spellcheck pre-commit",
-    "spellcheck": "pnpm cspell .  --quiet"
+    "e2e-demo": "pnpm --filter e2e-demo",
+    "prepare": "husky || true",
+    "pre-push": "turbo lint tsc test spellcheck pre-commit",
+    "spellcheck": "pnpm cspell . --quiet"
   },
   "devDependencies": {
-    "concurrently": "^9.0.1",
-    "cspell": "^8.14.2",
+    "cspell": "^8.16.1",
     "eslint": "8.57.0",
-    "husky": "^9.1.6",
-    "prettier": "^3.3.3",
+    "husky": "^9.1.7",
+    "prettier": "^3.4.2",
     "tsconfig": "workspace:*",
-    "turbo": "^2.0.6"
+    "turbo": "^2.3.3"
   },
-  "packageManager": "pnpm@9.11.0"
+  "packageManager": "pnpm@9.15.0"
 }

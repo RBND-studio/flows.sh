@@ -3,7 +3,7 @@ import { HeadingLink } from "components/mdx-heading-link";
 import { isValidUrl } from "lib/is-valid-url";
 import Image from "next/image";
 import Link from "next/link";
-import { useMDXComponent } from "next-contentlayer/hooks";
+import { useMDXComponent } from "next-contentlayer2/hooks";
 import type { HTMLProps, ReactElement } from "react";
 import { Text, type TextProps } from "ui";
 import { CodeHighlight } from "ui/server";
@@ -13,7 +13,7 @@ const mdxComponents = {
     <Image
       alt={props.alt ?? "Blog post cover image"}
       className={css({
-        borderRadius: "radius12",
+        borderRadius: "radius8",
         bor: "1px",
         mb: "space24",
       })}
@@ -28,9 +28,40 @@ const mdxComponents = {
       return (
         <HeadingLink
           linkProps={{ href: `#${props.id}` }}
+          as="h1"
           textProps={{
-            as: "h2",
             variant: "title2xl",
+            ...props,
+          }}
+          wrapperProps={css({
+            mt: "space48",
+            mb: "space24",
+          })}
+        >
+          {props.children}
+        </HeadingLink>
+      );
+    }
+    return (
+      <Text
+        as="h1"
+        className={css({
+          mt: "space48",
+          mb: "space24",
+        })}
+        variant="title2xl"
+        {...props}
+      />
+    );
+  },
+  h2: (props: TextProps) => {
+    if (props.id) {
+      return (
+        <HeadingLink
+          as="h2"
+          linkProps={{ href: `#${props.id}` }}
+          textProps={{
+            variant: "titleXl",
             ...props,
           }}
           wrapperProps={css({
@@ -49,23 +80,23 @@ const mdxComponents = {
           mt: "space48",
           mb: "space24",
         })}
-        variant="title2xl"
+        variant="titleXl"
         {...props}
       />
     );
   },
-  h2: (props: TextProps) => {
+  h3: (props: TextProps) => {
     if (props.id) {
       return (
         <HeadingLink
+          as="h3"
           linkProps={{ href: `#${props.id}` }}
           textProps={{
-            as: "h3",
-            variant: "titleXl",
+            variant: "titleL",
             ...props,
           }}
           wrapperProps={css({
-            mt: "space24",
+            mt: "space32",
             mb: "space16",
           })}
         >
@@ -77,38 +108,7 @@ const mdxComponents = {
       <Text
         as="h3"
         className={css({
-          mt: "space24",
-          mb: "space16",
-        })}
-        variant="titleXl"
-        {...props}
-      />
-    );
-  },
-  h3: (props: TextProps) => {
-    if (props.id) {
-      return (
-        <HeadingLink
-          linkProps={{ href: `#${props.id}` }}
-          textProps={{
-            as: "h4",
-            variant: "titleL",
-            ...props,
-          }}
-          wrapperProps={css({
-            mt: "space24",
-            mb: "space16",
-          })}
-        >
-          {props.children}
-        </HeadingLink>
-      );
-    }
-    return (
-      <Text
-        as="h4"
-        className={css({
-          mt: "space24",
+          mt: "space32",
           mb: "space16",
         })}
         variant="titleL"
@@ -121,8 +121,8 @@ const mdxComponents = {
       return (
         <HeadingLink
           linkProps={{ href: `#${props.id}` }}
+          as="h4"
           textProps={{
-            as: "h5",
             variant: "titleM",
             ...props,
           }}
@@ -137,7 +137,7 @@ const mdxComponents = {
     }
     return (
       <Text
-        as="h5"
+        as="h4"
         className={css({
           mt: "space24",
           mb: "space16",
@@ -172,6 +172,7 @@ const mdxComponents = {
       className={css({
         listStyle: "disc",
         marginBottom: "space24",
+        marginLeft: "space16",
         "& ul": {
           paddingLeft: "space32",
         },
@@ -190,6 +191,7 @@ const mdxComponents = {
       as="ol"
       className={css({
         listStyle: "number",
+        marginLeft: "space16",
       })}
       variant="bodyL"
       {...props}
@@ -200,7 +202,7 @@ const mdxComponents = {
       as="li"
       variant="bodyL"
       {...props}
-      className={css({ listStylePosition: "inside", marginBottom: "space8" })}
+      className={css({ listStylePosition: "outside", marginBottom: "space8" })}
     />
   ),
 
@@ -240,8 +242,12 @@ const mdxComponents = {
       return (
         <a
           className={css({
-            color: "text.primary",
-            textDecoration: "underline",
+            fontWeight: "600",
+            borderBottomWidth: "2px",
+            borderBottomColor: "newBorder.primary",
+            _hover: {
+              borderBottomWidth: "3px",
+            },
           })}
           href={source}
           rel="noreferrer"
@@ -254,11 +260,14 @@ const mdxComponents = {
     return (
       <Link
         href={href}
-        target="_blank"
         {...rest}
         className={css({
-          color: "text.primary",
-          textDecoration: "underline",
+          fontWeight: "600",
+          borderBottomWidth: "2px",
+          borderBottomColor: "newBorder.primary",
+          _hover: {
+            borderBottomWidth: "3px",
+          },
         })}
       >
         {children}

@@ -1,9 +1,9 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
-import { SmartLink } from "components/ui";
+import { SmartLink, TopLine } from "components/ui";
+import { links } from "lib/links";
 import type { ReactElement } from "react";
 import { routes } from "routes";
-import { links } from "shared";
 import { Logo, Text } from "ui";
 
 import { ThemeSwitch } from "./theme-switch";
@@ -21,15 +21,11 @@ const footerGroups: FooterGroup[] = [
   {
     title: "Product",
     links: [
-      {
-        title: "Features",
-        href: routes.features,
-      },
-      {
-        title: "Demo",
-        href: links.nextJsDemo,
-        target: "_blank",
-      },
+      // {
+      //   title: "Demo",
+      //   href: links.nextJsDemo,
+      //   target: "_blank",
+      // },
       {
         title: "Pricing",
         href: routes.pricing,
@@ -74,6 +70,8 @@ const footerGroups: FooterGroup[] = [
       { title: "About", href: routes.about },
       { title: "Privacy", href: routes.privacy },
       { title: "Terms", href: routes.terms },
+      { title: "Cookies", href: routes.cookies },
+      { title: "DPA", href: routes.dpa },
     ],
   },
 ];
@@ -82,16 +80,18 @@ export const Footer = (): ReactElement => {
   return (
     <footer
       className={css({
-        backgroundColor: "bg.muted",
         paddingX: "space24",
-        borTop: "1px",
+        borderTopWidth: "1px",
+        borderTopColor: "newBorder.neutral",
+        position: "relative",
       })}
     >
+      <TopLine />
       <Flex
         flexDirection="column-reverse"
         gap="space40"
         alignItems="flex-start"
-        maxWidth="960px"
+        maxWidth="1024px"
         mx="auto"
         py="space40"
         sm={{
@@ -136,9 +136,9 @@ export const Footer = (): ReactElement => {
               target="_blank"
               href={links.rbnd}
               rel="noopener"
-              className={css({ fontWeight: "700", _hover: { textDecoration: "underline" } })}
+              className={css({ fontWeight: "600", _hover: { textDecoration: "underline" } })}
             >
-              RBND studio
+              RBND studio s.r.o.
             </a>
           </Text>
         </Box>
@@ -165,7 +165,7 @@ export const Footer = (): ReactElement => {
                 width: "auto",
               }}
             >
-              <Text className={css({ mb: "space4" })} color="subtle" variant="bodyS">
+              <Text className={css({ mb: "space4" })} weight="700" variant="bodyS">
                 {group.title}
               </Text>
               {group.links.map((link) => (
@@ -186,7 +186,7 @@ export const Footer = (): ReactElement => {
                   })}
                   key={link.href}
                   variant="bodyS"
-                  weight="700"
+                  color="muted"
                 >
                   <SmartLink href={link.href} target={link.target}>
                     {link.title}

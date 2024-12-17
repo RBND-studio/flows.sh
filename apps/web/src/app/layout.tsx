@@ -1,12 +1,13 @@
 import "./globals.css";
 
 import { css, cx } from "@flows/styled-system/css";
-import { CtaBanner } from "components/cta-banner";
 import { Providers } from "components/providers";
-import { PRODUCTION } from "lib";
+import { LinesBox } from "components/ui";
+import { DOMAIN, PRODUCTION } from "lib";
 import type { Metadata } from "next";
 import { Figtree, Inter } from "next/font/google";
 import Script from "next/script";
+import type { JSX } from "react";
 
 import { Footer, Header } from "../components";
 
@@ -21,7 +22,7 @@ const InterFont = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://flows.sh"),
+  metadataBase: new URL(`https://${DOMAIN}`),
   title: "Flows – User onboarding for modern SaaS",
   description:
     "Flows lets you build any onboarding you want. Guide users, increase feature adoption, and improve revenue.",
@@ -57,18 +58,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
         {/* eslint-disable-next-line @next/next/no-sync-scripts -- needed for noflash script */}
         <script src="/noflash.min.js" />
       </head>
-      <body className={css({ background: "bg" })}>
+      <body className={css({ background: "pane.bg" })}>
         <Providers>
-          <Header />
-          <main
-            className={css({
-              overflowX: "hidden",
-            })}
-          >
-            {children}
-            <CtaBanner />
-          </main>
-          <Footer />
+          <LinesBox>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </LinesBox>
         </Providers>
       </body>
       {PRODUCTION ? (

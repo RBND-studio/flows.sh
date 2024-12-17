@@ -1,0 +1,60 @@
+---
+title: Tour steps
+description: Tour steps are tour-specific blocks from your block library.
+---
+
+# Tour steps
+
+Tour steps are tour-specific blocks from your block library.
+
+![Tour steps](/workflows/tour-steps.png)
+
+## Overview
+
+Tours consist of tour-specific blocks from your block library. Each step behaves like a standard block but includes built-in connections to the previous and next steps through `previous` and `continue` exit nodes. A `cancel` exit node allows users to exit the tour at any step.
+
+Tours also include a built-in wait step that pauses the tour until the user interacts with your application, such as clicking a button or navigating to a page.
+
+## Custom steps
+
+Custom steps are blocks from your block library added to a tour. When creating a [block template](/blocks/templates), you can define a block as a tour step, making it available for tours.
+
+### Tour step exit nodes
+
+Tour-specific blocks include built-in exit nodes to ensure proper behavior in tours:
+
+- **`continue`**: Connects to the next step in the tour.
+- **`previous`**: Connects to the previous step in the tour.
+- **`cancel`**: Connects to the `cancel` exit node of the tour block.
+
+To ensure compatibility, use these exit node keys in the underlying component.
+
+### Wait property
+
+The wait property is automatically added to each step in the tour block. When enabled, it pauses the tour at a specific step until the user performs a defined action, such as clicking a button or navigating to a page.
+
+**Options:**
+
+- **Interaction**: Defines the type of interaction required to proceed. Options include:
+  - **Click**: Proceeds when the user clicks a specified element.
+  - **Navigation**: Proceeds when the user navigates to a specific page.
+  - **None**: Disables the wait property, requiring manual progression (e.g., via a button click).
+- **Element**: The CSS selector of the element needed to be clicked to proceed (available when **Click** is selected).
+- **Page**: Defines the target page or page for the interaction (available for both **Click** and **Navigation**). See the [page targeting](#page-targeting) section for configuration details.
+
+![Wait property](/workflows/wait-property.png)
+
+## Wait step
+
+The **wait** step functions like the `wait` property but is implemented as a standalone step within tour blocks. It pauses the tour until the user performs a defined interaction.
+
+**Options:**
+
+- **Interaction**: Defines the type of interaction required to proceed. Options include:
+  - **Click**: Proceeds when the user clicks a specified element.
+  - **Navigation**: Proceeds when the user navigates to a specific page.
+  - **None**: Disables the wait property, requiring manual progression (e.g., via a button click).
+- **Element**: The CSS selector of the element needed to be clicked to proceed (available when **Click** is selected).
+- **Page**: Defines the target page or page for the interaction (available for both **Click** and **Navigation**). See the [page targeting](#page-targeting) section for configuration details.
+
+![Wait step](/workflows/wait-step.png)

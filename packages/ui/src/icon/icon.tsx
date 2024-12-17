@@ -14,5 +14,11 @@ export const Icon = forwardRef<SVGSVGElement, Props>(function Icon(
 ) {
   const Cmp = icon;
 
-  return <Cmp {...props} className={cx(css({ color: color ?? "icon" }), className)} ref={ref} />;
+  return (
+    <Cmp
+      {...props}
+      className={cx(css({ color: color ?? "icon", flexShrink: 0 }), className)}
+      ref={ref}
+    />
+  );
 });

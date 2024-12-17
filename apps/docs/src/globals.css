@@ -1,33 +1,97 @@
 @layer reset, base, tokens, recipes, utilities;
 
-body::before {
-  content: " ";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 400px;
-  z-index: -1;
-  background: linear-gradient(180deg, rgba(256, 256, 256, 0) 0%, rgba(256, 256, 256, 1) 100%);
+html {
+  font-size: 15px !important;
 }
 
-:is(html[class~="dark"]) body::before {
-  background: linear-gradient(180deg, rgba(17, 17, 17, 0.5) 0%, rgba(17, 17, 17, 1) 100%);
-}
-
-body::after {
-  content: " ";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -2;
-  background-image: url("/docs/pattern.svg");
-  background-repeat: repeat-x;
-}
-
+/* Round images in content and add border */
 p > img {
   border: 1px solid var(--colors-border);
-  border-radius: 8px;
+  border-radius: 6px;
+}
+
+/* Hide breadcrumbs */
+.nextra-breadcrumb {
+  display: none !important;
+}
+
+/* Override top level item in sidebar */
+.nextra-scrollbar > div > div > ul > li.open > button {
+  background-color: transparent !important;
+  color: unset !important;
+  font-weight: 400 !important;
+}
+
+/* Table styles */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+  line-height: 20px;
+  width: 100%;
+}
+
+thead > tr > th:first-child {
+  border-top-left-radius: 6px !important;
+}
+
+thead > tr > th:last-child {
+  border-top-right-radius: 6px !important;
+}
+
+th:first-child {
+  border-left-width: 1px !important;
+}
+
+th {
+  border-left-width: 0px !important;
+  text-align: left;
+  font-weight: 600 !important;
+  padding: 6px 12px !important;
+}
+
+th {
+  border-bottom-width: 0px !important;
+}
+
+thead > tr {
+  background-color: var(--colors-new-bg-neutral-subtle) !important;
+}
+
+td:first-child {
+  border-left-width: 1px !important;
+}
+
+td {
+  border-left-width: 0px !important;
+  padding: 6px 12px !important;
+}
+
+tr:last-child > td {
+  border-bottom-width: 1px !important;
+}
+
+tr > td {
+  border-bottom-width: 0px !important;
+}
+
+tbody > tr:last-child > td:first-child {
+  border-bottom-left-radius: 6px !important;
+}
+
+tbody > tr:last-child > td:last-child {
+  border-bottom-right-radius: 6px !important;
+}
+
+tbody > tr {
+  background-color: transparent !important;
+}
+
+/* Remove margin from nested lists */
+ul > li > ul {
+  margin-top: 0 !important;
+}
+
+ol > li > ol {
+  margin-top: 0 !important;
 }

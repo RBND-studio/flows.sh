@@ -1,0 +1,51 @@
+---
+title: Workflows
+description: Workflows are a series of steps executed in a specific sequence, defined by the connections between blocks and their conditions.
+---
+
+# Workflows
+
+Workflows are a series of steps executed in a specific sequence, defined by the connections between blocks and their conditions.
+
+![Workflows](/workflows/main.png)
+
+## Overview
+
+Workflows allow you to create complex multi-step experiences that can span multiple sessions or even the entire user lifecycle. They are more versatile than tours and can operate independently of user interaction. Workflows can include logic, actions, and conditions that tours do not.
+
+## Create a workflow
+
+To create a workflow click the **New workflow** button at the **Workflows** page. You can then add blocks, connect them, and configure their properties.
+
+## Workflow settings
+
+Apart from the blocks and their properties, workflows have additional settings.
+
+### Workflow frequency
+
+The **Frequency** setting allows you to define how often the workflow should be triggered. When editing a workflow you can choose the frequency from the dropdown menu in the main right panel. This setting is applied **only** to the `draft` version of the workflow. When [publishing](/workflows/publishing) a workflow version, you can choose the frequency of that version in the publishing dialog.
+
+**Frequency options:**
+
+- **Once**: The workflow is triggered only once for each user.
+- **Every time**: The workflow is triggered every time the conditions are met and the user is not already in the workflow.
+
+### Workflow environments
+
+A workflow can have different versions active in different environments. You can publish a workflow to individual environments, allowing you to test changes before making them available to all users. When you are [publishing](/workflows/publishing) a workflow version, you can select the environments where the version should be active. To see which versions are active in specific environments, click the **environments** button in the workflow detail.
+
+## Workflow analytics
+
+You can track the performance of your workflows in the **Analytics** tab. Here you can see how many users entered the workflow, how many completed it, and how many have been stopped. You can also see the total and unique number of users for each metric.
+
+<BetterCallout variant="info">
+  The analytics are available only for the whole workflow. Data for individual blocks are planned.
+</BetterCallout>
+
+## Workflow versions
+
+Workflows are version-controlled. When you make changes to a workflow, they are saved in a working `draft` version. You can then publish this version to individual environments. This allows you to test changes before making them available to all users. To see a list of versions, click the dropdown next to the workflow name in the workflow detail.
+
+You can view published versions and their block configurations in a read-only mode. To edit a workflow switch back to the `draft` version and make changes.
+
+Each version has its own `frequency` and `user migration` settings. The [user migration settings](/workflows/publishing#how-to-migrate-active-users) are applied to the users of an the environment every time the specific version is activated in the environment.

@@ -2,6 +2,7 @@ import { css, cx } from "@flows/styled-system/css";
 import type { StaticImport } from "next/dist/shared/lib/get-img-props";
 import type { ImageProps } from "next/image";
 import Image from "next/image";
+import type { JSX } from "react";
 
 type Props = Omit<ImageProps, "src" | "priority" | "loading"> & {
   srcLight: string | StaticImport;

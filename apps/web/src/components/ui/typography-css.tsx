@@ -12,10 +12,13 @@ export const paragraphCss = css({
 });
 
 export const bulletCss = css({
-  "&::before": {
-    content: "'•'",
-    marginRight: "space12",
-  },
+  marginLeft: "space16",
+  mb: "space8",
+});
+
+export const ulCss = css({
+  listStylePosition: "outside",
+  listStyle: "disc",
 });
 
 export const headingCss = css({

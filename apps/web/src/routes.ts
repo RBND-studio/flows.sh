@@ -1,7 +1,9 @@
 export const routes = {
   home: "/",
-  privacy: "/privacy",
-  terms: "/terms",
+  privacy: "/legal/privacy",
+  terms: "/legal/terms",
+  cookies: "/legal/cookies",
+  dpa: "/legal/dpa",
   about: "/about",
   pricing: "/pricing",
 
@@ -10,11 +12,4 @@ export const routes = {
 
   changelog: "/changelog",
   changelogReleaseDetail: ({ releaseId }: { releaseId: string }) => `/changelog/${releaseId}`,
-
-  features: "/features",
-  featuresBuild: "/features/build",
-  featuresFlowSteps: "/features/flow-steps",
-  featuresDeliver: "/features/deliver",
-  featuresAnalyze: "/features/analyze",
-  featuresSecure: "/features/secure",
 };

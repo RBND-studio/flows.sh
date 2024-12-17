@@ -12,6 +12,13 @@ const meta: Meta<typeof Input> = {
     optional: true,
     placeholder: "Enter your name..",
     description: "Or don't, it's up to you.",
+    disabled: false,
+  },
+  argTypes: {
+    size: {
+      options: ["default", "small"],
+      control: { type: "radio" },
+    },
   },
 };
 

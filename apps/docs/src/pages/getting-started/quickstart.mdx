@@ -1,0 +1,117 @@
+---
+title: Quickstart
+description: Welcome to Flows, the platform to build native product growth experiences, your way.
+---
+
+# Quickstart
+
+Welcome to Flows, the platform to build native product growth experiences, your way.
+
+[TODO: image]
+
+## Overview
+
+With Flows, you can build user onboarding, feature announcements, and other in-app experiences that help your users get the most out of your product. Flows is a no-code platform that lets you create and manage these experiences without writing any code, while at the same time giving you unlimited flexibility to create your own UI components to use in your workflows.
+
+## 1. Install the Flows SDK
+
+To get started, you need to install the [`@flows/react`](https://www.npmjs.com/package/@flows/react) package.
+
+```sh npm2yarn
+npm i @flows/react
+```
+
+## 2. Integrate the SDK
+
+Next, integrate the SDK into your app. Initialize it with your organization ID and environment key, which you can find in the **Settings > General** and **Settings > Environments** sections of the Flows dashboard.
+
+```tsx filename="layout.tsx"
+import { FlowsProvider } from "@flows/react";
+
+const App = () => {
+  return (
+    <FlowsProvider
+      organizationId="your-organization-id" // Find this in Settings > General
+      environment="production" // Default environment
+    >
+      {/* Your app code here */}
+    </FlowsProvider>
+  );
+};
+```
+
+## 3. Add built-in components
+
+Flows comes with a set of built-in components that you can use in your workflows. Start by installing the [`@flows/react-components`](https://www.npmjs.com/package/@flows/react-components) package.
+
+```sh npm2yarn
+npm i @flows/react-components
+```
+
+Then, import and use the components in your app.
+
+```tsx filename="layout.tsx" {2-3, 5, 12-17}
+import { FlowsProvider } from "@flows/react";
+import * as components from "@flows/react-components";
+import * as tourComponents from "@flows/react-components/tour";
+
+import "@flows/react-components/index.css";
+
+const App = () => {
+  return (
+    <FlowsProvider
+      organizationId="your-organization-id" // Find this in Settings > General
+      environment="production" // Default environment
+      tourComponents={{
+        ...tourComponents,
+      }}
+      components={{
+        ...components,
+      }}
+    >
+      {/* Your app code here */}
+    </FlowsProvider>
+  );
+};
+```
+
+## 4. Identify users
+
+Users are individuals who you identify inside Flows. Each user has a unique identifier and can experience workflows inside your app. Users are scoped on environment level, meaning that a user with the same ID will have individual user profile and workflow states in each environment.
+
+To identify a user, you need to provide a user ID when initializing the Flows SDK. This ID should be unique to each user in your app.
+
+```tsx filename="layout.tsx" {8}
+import { FlowsProvider } from "@flows/react";
+
+const App = () => {
+  return (
+    <FlowsProvider
+      organizationId="your-organization-id" // Find this in Settings > General
+      environment="your-environment"
+      userId="your-user-id"
+    >
+      {/* Your app code here */}
+    </FlowsProvider>
+  );
+};
+```
+
+Additionally, you can add custom properties to your users. Learn more about [user properties](/users/properties).
+
+## 5. Create your first workflow
+
+You're now ready to create a workflow in the Flows dashboard. Navigate to **Workflows**, click **Create workflow**, and start adding blocks to design the user experience you need.
+
+Learn more:
+
+- [Add blocks](/workflows/add-blocks)
+- [Configure blocks](/workflows/configure-blocks)
+
+## 6. Publish your workflow
+
+To make your workflow live click **Publish version**. Choose the environment you want to deploy to. For detailed steps, see [publishing workflows](/workflows/publishing-workflows).
+
+## 7. Try your workflow
+
+Finally, [test the published workflow](/workflows/testing) in your app. It will display to users based on the conditions set in the workflow configuration.

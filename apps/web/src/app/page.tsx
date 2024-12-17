@@ -1,4 +1,5 @@
-import { AnalyzeSection, BuilderSection, DeliverSection, DemoSection, Hero } from "components";
+import { DemoSection, Hero, ImplementationSection, WorkflowsSection } from "components";
+import { CtaBanner } from "components/cta-banner";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
 
@@ -11,9 +12,9 @@ const Page = (): ReactElement => {
     <>
       <Hero />
       <DemoSection />
-      <BuilderSection />
-      <DeliverSection />
-      <AnalyzeSection />
+      <WorkflowsSection />
+      <ImplementationSection />
+      <CtaBanner />
     </>
   );
 };

@@ -1,8 +1,8 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://flows.sh",
+  siteUrl: `https://${process.env.NEXT_PUBLIC_DOMAIN}`,
   generateRobotsTxt: true,
   robotsTxtOptions: {
-    additionalSitemaps: ["https://flows.sh/docs/sitemap.xml"],
+    additionalSitemaps: [`https://${process.env.NEXT_PUBLIC_DOMAIN}/docs/sitemap.xml`],
   },
 };
