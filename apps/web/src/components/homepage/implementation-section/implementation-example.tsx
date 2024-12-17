@@ -4,8 +4,11 @@ import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { PlaceholderApplication, Section, Tabs } from "components/ui";
 import { Banner16, Close16, Code16 } from "icons";
+import Image from "next/image";
 import { type FC, type ReactNode, useState } from "react";
 import { Button, Checkbox, Icon, Input, Logo, Text } from "ui";
+
+import bannerBg from "./banner-bg.jpg";
 
 type Props = {
   codeExample: ReactNode;
@@ -159,32 +162,50 @@ export const ImplementationExample: FC<Props> = ({ codeExample }) => {
           >
             <PlaceholderApplication
               bannerSlot={
-                <Flex
-                  p="space12"
-                  flexDirection="column"
-                  gap="space4"
-                  backgroundColor="neutral.800"
-                  borderRadius="radius4"
-                  mb="space8"
-                >
-                  <Flex alignItems="center" justifyContent="space-between">
-                    <Text color="white" variant="titleXs">
-                      {title}
-                    </Text>
-                    {!hideClose && (
-                      <Icon className={css({ cursor: "pointer" })} icon={Close16} color="white" />
-                    )}
+                <Box borderRadius="radius4" position="relative" mb="space8">
+                  <Image
+                    className={css({
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      zIndex: 0,
+                      opacity: 0.4,
+                      borderRadius: "radius4",
+                    })}
+                    src={bannerBg}
+                    alt="Banner background"
+                    layout="fill"
+                  />
+                  <Flex
+                    backgroundColor="newBg.neutral"
+                    p="space12"
+                    flexDirection="column"
+                    gap="space4"
+                    borderRadius="radius4"
+                  >
+                    <Flex zIndex={1} alignItems="center" justifyContent="space-between">
+                      <Text variant="titleXs">{title}</Text>
+                      {!hideClose && <Icon className={css({ cursor: "pointer" })} icon={Close16} />}
+                    </Flex>
+                    <Flex
+                      zIndex={1}
+                      gap="space8"
+                      justifyContent="space-between"
+                      alignItems="center"
+                    >
+                      <Text wordBreak="break-word" variant="bodyXs">
+                        {description}
+                      </Text>
+                      {/* Button is rendered as div to prevent taking focus and messing with aria-hidden */}
+                      <Button asChild variant="secondary" size="small">
+                        <div>{buttonLabel}</div>
+                      </Button>
+                    </Flex>
                   </Flex>
-                  <Flex gap="space8" justifyContent="space-between" alignItems="center">
-                    <Text wordBreak="break-word" color="white" variant="bodyXs">
-                      {description}
-                    </Text>
-                    {/* Button is rendered as div to prevent taking focus and messing with aria-hidden */}
-                    <Button asChild variant="secondary" size="small">
-                      <div>{buttonLabel}</div>
-                    </Button>
-                  </Flex>
-                </Flex>
+                </Box>
               }
             />
           </Box>
