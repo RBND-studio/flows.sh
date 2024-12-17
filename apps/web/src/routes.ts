@@ -1,7 +1,9 @@
 export const routes = {
   home: "/",
-  privacy: "/privacy",
-  terms: "/terms",
+  privacy: "/legal/privacy",
+  terms: "/legal/terms",
+  cookies: "/legal/cookies",
+  dpa: "/legal/dpa",
   about: "/about",
   pricing: "/pricing",
 

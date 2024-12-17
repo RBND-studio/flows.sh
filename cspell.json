@@ -6,12 +6,17 @@
   // words - list of words to be always considered correct
   "words": [
     "AAAAAL",
+    "Astrodon",
+    "authjs",
+    "CCPA",
     "clpxmw",
     "easings",
     "fadein",
     "fastify",
+    "FERPA",
     "flows",
     "grecaptcha",
+    "Hlavenec",
     "kafkajs",
     "Lekgu",
     "lemonsqueezy",
@@ -33,12 +38,13 @@
     "Sonner",
     "squeezy",
     "Usetiful",
+    "vdpl",
     "Vidra",
     "visx",
     "Vixww",
     "Vojtech",
     "waivable",
-    "zustand"
+    "zustand",
   ],
   // flagWords - list of words to be always considered incorrect
   // This is useful for offensive words and common spelling errors.

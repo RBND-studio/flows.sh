@@ -1,7 +1,14 @@
 import { Flex } from "@flows/styled-system/jsx";
-import { bulletCss, headingCss, paragraphCss, Section } from "components/ui";
+import { bulletCss, headingCss, paragraphCss, Section, ulCss } from "components/ui";
+import { type Metadata } from "next";
 import type { ReactElement } from "react";
 import { Text } from "ui";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Exploring Flows’s legal documents? Let us know if we can help. Get in touch at hello@flows.sh",
+};
 
 const Page = (): ReactElement => {
   return (
@@ -61,7 +68,7 @@ const Page = (): ReactElement => {
         information to provide you with the service you signed up for. For that we collect:
       </Text>
 
-      <ul>
+      <ul className={ulCss}>
         <li className={bulletCss}>First and last name (if provided)</li>
         <li className={bulletCss}>Email</li>
         <li className={bulletCss}>Password</li>

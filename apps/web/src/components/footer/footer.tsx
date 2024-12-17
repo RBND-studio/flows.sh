@@ -70,6 +70,8 @@ const footerGroups: FooterGroup[] = [
       { title: "About", href: routes.about },
       { title: "Privacy", href: routes.privacy },
       { title: "Terms", href: routes.terms },
+      { title: "Cookies", href: routes.cookies },
+      { title: "DPA", href: routes.dpa },
     ],
   },
 ];
