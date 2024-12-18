@@ -1,5 +1,4 @@
 import "../globals.css";
-import "@flows/js/flows.css";
 
 import { Inter } from "next/font/google";
 import Script from "next/script";
