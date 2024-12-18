@@ -11,7 +11,7 @@
     "start": "next start",
     "lint": "next lint",
     "tsc": "tsc",
-    "prepare": "panda codegen"
+    "prepare": "panda codegen && contentlayer2 build"
   },
   "dependencies": {
     "@next/bundle-analyzer": "15.1.0",

@@ -15,7 +15,6 @@
     "import-mdx": "node ./src/lib/import-mdx.js"
   },
   "dependencies": {
-    "@flows/js": "0.3.3",
     "icons": "workspace:*",
     "next": "15.1.0",
     "next-sitemap": "^4.2.3",
