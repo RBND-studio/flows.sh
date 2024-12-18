@@ -16,7 +16,6 @@
     "be": "pnpm --filter backend",
     "db": "pnpm --filter db",
     "e2e": "pnpm --filter e2e",
-    "e2e-demo": "pnpm --filter e2e-demo",
     "prepare": "husky || true",
     "pre-push": "turbo lint tsc test spellcheck pre-commit",
     "spellcheck": "pnpm cspell . --quiet"
