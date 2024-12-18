@@ -1,7 +1,7 @@
-import { cva, cx } from "@flows/styled-system/css";
+import { css, cva, cx } from "@flows/styled-system/css";
 import { type HTMLStyledProps, styled } from "@flows/styled-system/jsx";
 import { Slot, Slottable } from "@radix-ui/react-slot";
-import { type ButtonHTMLAttributes, forwardRef } from "react";
+import { type ButtonHTMLAttributes, forwardRef, type JSX } from "react";
 
 import { Spinner } from "../spinner";
 
@@ -22,14 +22,12 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> &
     /**
      * @defaultValue "default"
      */
-    shadow?: (typeof button.variantMap.shadow)[number];
   };
 
 export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
   {
     size = "default",
     variant = "black",
-    shadow = "default",
     children,
     startIcon,
     endIcon,
@@ -45,17 +43,36 @@ export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
     <Component
       type={!asChild ? "button" : undefined}
       {...props}
-      className={cx(button({ size, variant, shadow }), props.className)}
+      className={cx(button({ size, variant }), props.className)}
       // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- nullish coalescing cannot be used here
       disabled={disabled || loading}
       ref={ref}
+      data-loading={loading ? "" : undefined}
+      aria-busy={loading}
     >
-      {/* eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- nullish coalescing cannot be used here */}
-      {startIcon || loading ? (
-        <Icon position="start">{loading ? <Spinner color="inherit" size={16} /> : startIcon}</Icon>
+      {startIcon ? (
+        <Icon size={size} position="start">
+          {startIcon}
+        </Icon>
       ) : null}
+      {loading ? (
+        <Spinner
+          className={css({
+            position: "absolute",
+            visibility: "visible!",
+          })}
+          // TODO: use correct color for each variant
+          color="button.secondary.fg.disabled"
+          size={16}
+        />
+      ) : null}
+
       <Slottable>{children}</Slottable>
-      {endIcon ? <Icon position="end">{endIcon}</Icon> : null}
+      {endIcon ? (
+        <Icon size={size} position="end">
+          {endIcon}
+        </Icon>
+      ) : null}
     </Component>
   );
 });
@@ -66,11 +83,26 @@ const Icon = styled("span", {
   },
   variants: {
     position: {
+      // position removes the opposite margin that is set using size prop
       start: {
-        marginRight: 8,
+        marginLeft: 0,
       },
       end: {
-        marginLeft: 8,
+        marginRight: 0,
+      },
+    },
+    size: {
+      small: {
+        mx: 4,
+      },
+      default: {
+        mx: 4,
+      },
+      medium: {
+        mx: 8,
+      },
+      large: {
+        mx: 8,
       },
     },
   },
@@ -82,18 +114,31 @@ const button = cva({
     alignItems: "center",
     justifyContent: "center",
     cursor: "pointer",
-    borderRadius: 8,
-    superFastEaseInOut: "all",
-    shadow: "l1",
     textWrap: "nowrap",
-    border: "1px solid transparent",
+
+    borderRadius: 8,
+    borderStyle: "solid",
+    borderWidth: 1,
+    borderColor: "transparent",
+
+    shadow: "none",
+
+    superFastEaseInOut: "all",
+
+    _loading: {
+      color: "transparent!",
+      "& > *": {
+        visibility: "hidden",
+      },
+    },
+
     _disabled: {
       pointerEvents: "none",
       cursor: "default",
       _hover: {
-        backgroundColor: "bg.subtle",
-        borderColor: "bg.subtle",
-        color: "text.subtle",
+        backgroundColor: "button.secondary.bg.disabled",
+        borderColor: "button.secondary.border.disabled",
+        color: "button.secondary.fg.disabled",
       },
     },
   },
@@ -101,8 +146,9 @@ const button = cva({
     size: {
       small: {
         textStyle: "titleS",
-        padding: "3px 7px",
-        height: 28,
+        padding: "1px 7px",
+        height: 24,
+        borderRadius: 6,
       },
       default: {
         textStyle: "titleS",
@@ -116,138 +162,138 @@ const button = cva({
       },
       large: {
         textStyle: "titleL",
-        padding: "9px 19px",
-        height: 48,
+        padding: "5px 15px",
+        height: 40,
       },
     },
     variant: {
       primary: {
-        backgroundColor: "bg.primary",
-        color: "text.onPrimary",
-        borderStyle: "solid",
-        borderWidth: 1,
-        borderColor: "bg.primary",
+        backgroundColor: "button.primary.bg.rest",
+        borderColor: "button.primary.border.rest",
+        color: "button.primary.fg.rest",
         _hover: {
-          borderColor: "bg.primaryHover",
-          backgroundColor: "bg.primaryHover",
+          backgroundColor: "button.primary.bg.hover",
+          borderColor: "button.primary.border.hover",
         },
         _disabled: {
-          backgroundColor: "bg.subtle",
-          borderColor: "bg.subtle",
-          color: "text.subtle",
+          backgroundColor: "button.primary.bg.disabled",
+          borderColor: "button.primary.border.disabled",
+          color: "button.primary.fg.disabled",
           pointerEvents: "none",
-          boxShadow: "none",
         },
         _active: {
-          backgroundColor: "bg.primaryActive",
-          borderColor: "bg.primaryActive",
+          backgroundColor: "button.primary.bg.active",
+          borderColor: "button.primary.border.active",
+          shadow: "inset",
         },
       },
       secondary: {
-        color: "text",
-        borderStyle: "solid",
-        borderWidth: 1,
-        borderColor: "border.strong",
-        backgroundColor: "bg.muted",
+        backgroundColor: "button.secondary.bg.rest",
+        borderColor: "button.secondary.border.rest",
+        color: "button.secondary.fg.rest",
         _hover: {
-          backgroundColor: "bg.hover",
+          backgroundColor: "button.secondary.bg.hover",
+          borderColor: "button.secondary.border.hover",
         },
         _disabled: {
-          backgroundColor: "bg.subtle",
-          borderColor: "bg.subtle",
-          color: "text.subtle",
+          backgroundColor: "button.secondary.bg.disabled",
+          borderColor: "button.secondary.border.disabled",
+          color: "button.secondary.fg.disabled",
           pointerEvents: "none",
-          boxShadow: "none",
         },
         _active: {
-          backgroundColor: "bg.active",
+          backgroundColor: "button.secondary.bg.active",
+          borderColor: "button.secondary.border.active",
         },
       },
       black: {
-        backgroundColor: "bg.black",
-        borderStyle: "solid",
-        borderWidth: 1,
-        borderColor: "bg.black",
-        color: "text.onBlack",
+        backgroundColor: "button.black.bg.rest",
+        borderColor: "button.black.border.rest",
+        color: "button.black.fg.rest",
         _hover: {
-          borderColor: "bg.blackHover",
-          backgroundColor: "bg.blackHover",
+          backgroundColor: "button.black.bg.hover",
+          borderColor: "button.black.border.hover",
         },
         _disabled: {
-          backgroundColor: "bg.subtle",
-          borderColor: "bg.subtle",
-          color: "text.subtle",
+          backgroundColor: "button.black.bg.disabled",
+          borderColor: "button.black.border.disabled",
+          color: "button.black.fg.disabled",
           pointerEvents: "none",
-          boxShadow: "none",
         },
         _active: {
-          backgroundColor: "bg.blackActive",
-          borderColor: "bg.blackActive",
+          backgroundColor: "button.black.bg.active",
+          borderColor: "button.black.border.active",
+          shadow: "inset",
+        },
+      },
+      ghost: {
+        backgroundColor: "button.ghost.bg.rest",
+        borderColor: "button.ghost.border.rest",
+        color: "button.ghost.fg.rest",
+        _hover: {
+          backgroundColor: "button.ghost.bg.hover",
+          borderColor: "button.ghost.border.hover",
+        },
+        _disabled: {
+          backgroundColor: "button.ghost.bg.disabled",
+          borderColor: "button.ghost.border.disabled",
+          color: "button.ghost.fg.disabled",
+          pointerEvents: "none",
+        },
+        _active: {
+          backgroundColor: "button.ghost.bg.active",
+          borderColor: "button.ghost.border.active",
+        },
+      },
+      danger: {
+        backgroundColor: "button.danger.bg.rest",
+        borderColor: "button.danger.border.rest",
+        color: "button.danger.fg.rest",
+        _hover: {
+          backgroundColor: "button.danger.bg.hover",
+          borderColor: "button.danger.border.hover",
+          color: "button.danger.fg.hover",
+        },
+        _disabled: {
+          backgroundColor: "button.danger.bg.disabled",
+          borderColor: "button.danger.border.disabled",
+          color: "button.danger.fg.disabled",
+          pointerEvents: "none",
+        },
+        _active: {
+          backgroundColor: "button.danger.bg.active",
+          borderColor: "button.danger.border.active",
+          color: "button.danger.fg.active",
+          shadow: "inset",
         },
       },
       // Used in select
       field: {
-        color: "text",
-        borderStyle: "solid",
-        borderWidth: 1,
-        borderColor: "border.strong",
-        backgroundColor: "bg.muted",
+        backgroundColor: "newControl.bg",
+        borderColor: "newControl.border",
+        outline: "none",
+        color: "newControl.fg",
+
+        textStyle: "bodyS",
+
         _hover: {
-          borderColor: "border.primary",
-          backgroundColor: "bg",
+          borderColor: "newControl.border.hover",
         },
+        // TODO: think if focus makes sense on select
+        _focus: {
+          borderColor: "newControl.border.selected",
+          _hover: {
+            borderColor: "newControl.border.selected",
+          },
+        },
+
         _disabled: {
-          backgroundColor: "bg.subtle",
-          borderColor: "bg.subtle",
-          color: "text.subtle",
+          backgroundColor: "newControl.bg.disabled",
+          borderColor: "newControl.border.disabled",
+          color: "newControl.fg.disabled",
           pointerEvents: "none",
-          boxShadow: "none",
         },
       },
-      ghost: {
-        color: "text",
-        backgroundColor: "transparent",
-        shadow: "none",
-        _hover: {
-          backgroundColor: "bg.hover",
-          shadow: "none",
-        },
-        _disabled: {
-          color: "text.subtle",
-          pointerEvents: "none",
-          boxShadow: "none",
-        },
-        _active: {
-          backgroundColor: "bg.active",
-        },
-      },
-      danger: {
-        color: "text.danger",
-        backgroundColor: "bg.muted",
-        borderColor: "border.strong",
-        _hover: {
-          backgroundColor: "bg.dangerHover",
-          color: "text.onPrimary",
-          borderColor: "bg.dangerHover",
-        },
-        _disabled: {
-          backgroundColor: "bg.subtle",
-          borderColor: "bg.subtle",
-          color: "text.subtle",
-          pointerEvents: "none",
-          boxShadow: "none",
-        },
-        _active: {
-          backgroundColor: "bg.dangerActive",
-          borderColor: "bg.dangerActive",
-        },
-      },
-    },
-    shadow: {
-      highlight: {
-        boxShadow: "l3",
-      },
-      default: {},
     },
   },
 });

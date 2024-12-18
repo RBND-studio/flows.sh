@@ -1,9 +1,10 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
-import { HeroCallout, Section, SmartLink } from "components/ui";
+import { Section, SmartLink } from "components/ui";
+import { DOMAIN } from "lib";
+import { links } from "lib/links";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
-import { links } from "shared";
 import { Button, Text } from "ui";
 
 import { PricingCalculator } from "./pricing-calculator";
@@ -11,7 +12,7 @@ import { PricingFaq } from "./pricing-faq";
 import { VolumeTable } from "./volume-table";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://flows.sh"),
+  metadataBase: new URL(`https://${DOMAIN}`),
   title: "Pricing – Flows",
   description:
     "The new standard for building user onboarding. With volume pricing starting at $0/month.",
@@ -38,18 +39,15 @@ const Page = (): ReactElement => {
   return (
     <>
       <Section
-        innerClassName={css({
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "space24",
-          paddingBottom: "space24!",
-        })}
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        gap="space24"
+        pt="space40"
+        pb="space64"
+        md={{ pt: "space80" }}
       >
         <Flex flexDirection="column" gap="space12" maxW="800px">
-          <HeroCallout link={links.docs.migrateToFlows}>
-            Switching from another platform? Get free usage!
-          </HeroCallout>
           <Text align="center" as="h1" variant="title4xl">
             Pricing
           </Text>
@@ -67,7 +65,7 @@ const Page = (): ReactElement => {
             tier.
           </Text>
         </Flex>
-        <Button shadow="highlight" asChild size="large">
+        <Button className={css({ shadow: "neutralFocus" })} asChild size="large">
           <SmartLink href={links.signUp}>Sign up for free</SmartLink>
         </Button>
       </Section>

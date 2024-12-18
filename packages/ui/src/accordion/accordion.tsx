@@ -14,9 +14,20 @@ type Props = {
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
   className?: string;
+  /**
+   * @defaultValue `unmount`
+   */
+  hideMode?: "unmount" | "css";
 };
 
-export const Accordion: FC<Props> = ({ title, children, onOpenChange, open, ...props }) => {
+export const Accordion: FC<Props> = ({
+  title,
+  children,
+  onOpenChange,
+  open,
+  hideMode,
+  ...props
+}) => {
   // eslint-disable-next-line react/hook-use-state -- useful for controlled components
   const state = useState(false);
   const expanded = open ?? state[0];
@@ -57,6 +68,10 @@ export const Accordion: FC<Props> = ({ title, children, onOpenChange, open, ...p
 
       {expanded ? (
         <Box px="space12" py="space16">
+          {children}
+        </Box>
+      ) : hideMode === "css" ? (
+        <Box px="space12" py="space16" style={{ display: "none" }}>
           {children}
         </Box>
       ) : null}

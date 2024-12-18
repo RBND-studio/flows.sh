@@ -1,45 +1,51 @@
-import { css } from "@flows/styled-system/css";
-import { Flex } from "@flows/styled-system/jsx";
+import { Box, Wrap } from "@flows/styled-system/jsx";
+import { TopLine } from "components/ui";
 import { Section } from "components/ui/section";
 import { SignupClick } from "components/utils/signup-click";
+import { links } from "lib/links";
 import type { ReactElement } from "react";
-import { links } from "shared";
 import { Button, Text } from "ui";
 
-//TODO: fix the layout for blog and feature pages
 export const CtaBanner = (): ReactElement => {
   return (
-    <Section
-      innerClassName={css({
-        display: "flex",
-        gap: "space24",
-        alignItems: "center",
-        justifyContent: "space-between",
-        mdDown: {
-          flexDirection: "column",
-          alignItems: "flex-start",
-        },
-      })}
-      outerClassName={css({
-        borTop: "1px",
-      })}
+    <Box
+      position="relative"
+      borderTopWidth="1px"
+      mt="space40"
+      md={{ mt: "space80" }}
+      borderTopColor="newBorder.neutral"
     >
-      <Text as="h2" variant="title2xl">
-        Ready to start driving product <br /> activation and adoption?
-      </Text>
-
-      <Flex gap="space16">
-        <SignupClick>
-          <Button asChild shadow="highlight" size="large">
-            <a href={links.signUp}>Sign up for free</a>
+      <TopLine />
+      <Section
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        py="space80"
+        px="space24"
+        borderRightColor="newBorder.neutral"
+        borderRightWidth="1px"
+        borderLeftColor="newBorder.neutral"
+        borderLeftWidth="1px"
+        layerStyle="dotBackground"
+        gap="space24"
+        md={{ py: "space120" }}
+      >
+        <Text align="center" as="h2" maxWidth={400} variant="title3xl">
+          Build anything with Flows
+        </Text>
+        <Wrap gap="space16" mt="space8" justifyContent="center">
+          <SignupClick>
+            <Button asChild shadow="highlight" size="large">
+              <a href={links.signUp}>Get started for free</a>
+            </Button>
+          </SignupClick>
+          <Button variant="secondary" asChild size="large">
+            <a href={links.docs.contact} target="_blank" rel="noopener">
+              Talk to us
+            </a>
           </Button>
-        </SignupClick>
-        <Button variant="secondary" asChild size="large">
-          <a href={links.nextJsDemo} target="_blank" rel="noopener">
-            See demo
-          </a>
-        </Button>
-      </Flex>
-    </Section>
+        </Wrap>
+      </Section>
+    </Box>
   );
 };

@@ -1,5 +1,5 @@
+import { links } from "lib/links";
 import { routes } from "routes";
-import { links } from "shared";
 
 type MenuItem = {
   title: string;
@@ -8,10 +8,6 @@ type MenuItem = {
 };
 
 export const menuItems: MenuItem[] = [
-  {
-    title: "Features",
-    href: routes.features,
-  },
   {
     title: "Blog",
     href: routes.blog,

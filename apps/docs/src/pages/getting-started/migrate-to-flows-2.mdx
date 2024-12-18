@@ -1,0 +1,116 @@
+---
+title: Migrating to Flows 2
+description: This guide details the changes and how to migrate your onboarding flows to Flows 2.
+---
+
+# Migrating to Flows 2
+
+This guide details the changes and how to migrate your onboarding flows to Flows 2. Read the [full announcement](https://flows.sh/blog/flows-v2) on our blog.
+
+![Workflows](/workflows/main.png)
+
+<BetterCallout variant="warning">
+  The old version of Flows will be shut down on **March 31, 2025**. Please ensure you migrate before
+  this date. To ease the transition, Flows 1 usage will be free for everyone during this period.
+</BetterCallout>
+
+## Key changes
+
+### Workflows
+
+Flows 2 introduces [workflows](/workflows), enabling you to create complex, multi-step experiences across sessions and the entire user lifecycle. Workflows are more versatile than original flows and can function independently of user interaction.
+
+### Flow is now a Tour
+
+For step-by-step guides to specific tasks, use a [tour](/tours) within a workflow. Tours work similarly to old flows but offer [special features](/tours#tours-vs-workflows), making them ideal for linear user journeys.
+
+### React-only support
+
+Flows 2 is currently available only for React applications. A JavaScript SDK is in progress and will launch before Flows 1 is fully deprecated. If you are using a different framework, let us know at hello@flows.sh.
+
+### Pricing changes
+
+We’re transitioning from a “Monthly Started Flows” model to a “Monthly Tracked Users (MTU)” model. This means you’ll pay based on the number of users initialized in a given month, with unlimited workflows included. For full details, visit our [pricing page](https://flows.sh/pricing).
+
+### Projects are deprecated
+
+Flows 2 removes the concept of "projects". If you have projects in Flows 1, you can still access them to migrate your flows. Use [environments](/organization-setup/environments) or separate organizations to manage project isolation.
+
+### Styling
+
+Flows 2 does not support adding custom CSS in Flows Cloud. To customize components, use:
+
+1. Custom components for full flexibility.
+2. Built-in styles by extracting and modifying `index.css` from `@flows/react-components` package.
+
+## How to migrate
+
+### 1. Install the new SDK
+
+Flows 2 requires the `@flows/react` package. The old `@flows/js` is deprecated and no longer updated.
+
+```sh npm2yarn
+npm install @flows/react
+```
+
+Refer to the [getting started guide](/getting-started/quickstart) or [SDK documentation](/sdk/react) for setup details.
+
+<BetterCallout variant="info">
+  If you need to keep serving old flows in your application during the migration, keep the old
+  `@flows/js` package installed.
+</BetterCallout>
+
+### 2. Use built-in components
+
+In Flows 2, you can create custom UI components and use them in your workflows. To make the transition easier, we have created a set of built-in components. These components keep the most common use cases in mind, if you need different features, create your own custom components. To use the built-in components install the `@flows/react-components` package.
+
+```sh npm2yarn
+npm install @flows/react-components
+```
+
+Then import and use the components in your app.
+
+```tsx filename="layout.tsx" {2-4, 11-16}
+import { FlowsProvider } from "@flows/react";
+import * as components from "@flows/react-components";
+import * as tourComponents from "@flows/react-components/tour";
+import "@flows/react-components/index.css";
+
+const App = () => {
+  return (
+    <FlowsProvider
+      organizationId="your-organization-id" // Find in Settings > General
+      environment="production" // Default environment
+      tourComponents={{
+        ...tourComponents,
+      }}
+      components={{
+        ...components,
+      }}
+    >
+      {/* Your app code here */}
+    </FlowsProvider>
+  );
+};
+```
+
+### 3. Add custom components
+
+Flows 2 supports custom components for greater flexibility. Create components in your app, pass them to FlowsProvider, and use them in workflows. For more information, see the [custom components guide](/blocks/create-custom-components).
+
+## SDK deprecated functions
+
+| Flows 1 function           | Status             | Replacement                         |
+| -------------------------- | ------------------ | ----------------------------------- |
+| `init()`                   | Replaced           | Use `FlowsProvider`                 |
+| `startFlows()`             | Deprecated         | –                                   |
+| `nextStep()`               | Deprecated         | –                                   |
+| `endFlow()`                | Deprecated         | –                                   |
+| `getCurrentStep()`         | Deprecated for now | Replacement coming soon             |
+| `resetFlow()`              | Deprecated for now | Replacement coming soon             |
+| `resetAllFlows()`          | Deprecated for now | Replacement coming soon             |
+| `init()` tracking function | Deprecated for now | Future integrations to replace this |
+
+---
+
+Have questions or need help migrating? Contact us via hello@flows.sh or join the [Slack community](https://flows.sh/join-slack).

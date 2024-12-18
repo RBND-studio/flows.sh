@@ -6,12 +6,20 @@
   // words - list of words to be always considered correct
   "words": [
     "AAAAAL",
+    "Astrodon",
+    "authjs",
+    "CCPA",
     "clpxmw",
     "easings",
     "fadein",
+    "fastify",
+    "FERPA",
     "flows",
     "grecaptcha",
+    "Hlavenec",
+    "kafkajs",
     "Lekgu",
+    "lemonsqueezy",
     "libc",
     "marsidev",
     "nestjs",
@@ -26,19 +34,17 @@
     "rehype",
     "reimagined",
     "shiki",
+    "signup",
     "Sonner",
-    "supabase",
+    "squeezy",
     "Usetiful",
+    "vdpl",
     "Vidra",
     "visx",
     "Vixww",
     "Vojtech",
     "waivable",
-    "shiki",
-    "marsidev",
-    "signup",
-    "squeezy",
-    "lemonsqueezy"
+    "zustand",
   ],
   // flagWords - list of words to be always considered incorrect
   // This is useful for offensive words and common spelling errors.
@@ -55,7 +61,8 @@
     "_journal.json",
     "pnpm-lock.yaml",
     "cspell.json",
-    "pandacss-generated"
+    "pandacss-generated",
+    "**/drizzle/**/*",
   ],
   "allowCompoundWords": true
 }

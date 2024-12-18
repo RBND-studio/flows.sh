@@ -13,6 +13,7 @@ import {
   easings,
   fastEaseInOut,
   keyframes,
+  layerStyles,
   palette,
   radii,
   semanticTokens,
@@ -37,6 +38,7 @@ export const theme: Config["theme"] = {
   textStyles,
   tokens,
   keyframes,
+  layerStyles,
 };
 
 export const conditions: Config["conditions"] = {

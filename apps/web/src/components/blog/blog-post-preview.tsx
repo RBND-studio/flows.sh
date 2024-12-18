@@ -1,10 +1,10 @@
 import { css } from "@flows/styled-system/css";
+import { Box } from "@flows/styled-system/jsx";
 import type { Post } from "contentlayer/generated";
 import { ArrowRight16 } from "icons";
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactElement } from "react";
-import React from "react";
 import { routes } from "routes";
 import { Text } from "ui";
 
@@ -18,79 +18,67 @@ export const BlogPostPreview = ({ post }: Props): ReactElement => {
   return (
     <li
       className={css({
-        pt: "space48",
-        pb: "space48",
-        borderBottomWidth: "1px",
-        borderBottomStyle: "solid",
-        borderBottomColor: "border",
-        "&:last-child": {
-          borderBottom: "none",
-        },
+        pt: "space40",
+        pb: "space40",
+        px: "space24",
       })}
       key={post.slug}
     >
-      {post.image ? (
-        <Link href={href}>
-          <Image
-            // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- or is better here
-            alt={post.imageAlt || "Blog post cover image"}
-            className={css({
-              borderRadius: "radius12",
-              mb: "space16",
-              borderWidth: "1px",
-              borderStyle: "solid",
-              borderColor: "border.strong",
-            })}
-            height={600}
-            src={post.image}
-            width={1200}
-            sizes="(max-width: 768px) 100vw, 896px"
-          />
-        </Link>
-      ) : null}
+      <Box maxWidth={720} mx="auto">
+        {post.image ? (
+          <Link href={href}>
+            <Image
+              // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- or is better here
+              alt={post.imageAlt || "Blog post cover image"}
+              className={css({
+                borderRadius: "radius8",
+                mb: "space16",
+                borderWidth: "1px",
+                borderStyle: "solid",
+                borderColor: "border.strong",
+              })}
+              height={600}
+              src={post.image}
+              width={1200}
+              sizes="(max-width: 768px) 100vw, 896px"
+            />
+          </Link>
+        ) : null}
 
-      <Text
-        as="h2"
-        className={css({
-          transition: "color 120ms ease-out",
-          _hover: {
+        <Text
+          as="h2"
+          mb="space8"
+          variant="titleXl"
+          _hover={{ color: "newFg.primary" }}
+          fastEaseInOut="color"
+        >
+          <Link href={href}>{post.title}</Link>
+        </Text>
+        <Text as="p" mb="space12" variant="bodyM" color="muted">
+          {post.description}
+        </Text>
+        <Link
+          className={css({
+            textStyle: "titleL",
             color: "text.primary",
-          },
-        })}
-        variant="title2xl"
-      >
-        <Link href={href}>{post.title}</Link>
-      </Text>
-      <Text
-        as="p"
-        className={css({
-          my: "space16",
-        })}
-        variant="bodyL"
-      >
-        {post.description}
-      </Text>
-      <Link
-        className={css({
-          textStyle: "titleL",
-          color: "text.primary",
-          display: "flex",
-          alignItems: "center",
-          gap: "space4",
-          _hover: {
-            "& svg": {
-              transform: "translateX(4px)",
+            display: "flex",
+            alignItems: "center",
+            gap: "space4",
+            _hover: {
+              "& svg": {
+                transform: "translateX(4px)",
+              },
             },
-          },
-          "& svg": {
-            transition: "transform 120ms ease-out",
-          },
-        })}
-        href={href}
-      >
-        Read more
-        <ArrowRight16 />
-      </Link>
+            "& svg": {
+              fastEaseInOut: "transform",
+            },
+          })}
+          href={href}
+        >
+          Read more
+          <ArrowRight16 />
+        </Link>
+      </Box>
     </li>
   );
 };

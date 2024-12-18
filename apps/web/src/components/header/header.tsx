@@ -1,11 +1,12 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import { MobileMenu } from "components/header/mobile-menu";
+import { BottomLine } from "components/ui";
 import { SignupClick } from "components/utils/signup-click";
+import { links } from "lib/links";
 import Link from "next/link";
 import type { ReactElement } from "react";
 import { routes } from "routes";
-import { links } from "shared";
 import { Button, Logo } from "ui";
 
 import { DesktopMenu } from "./desktop-menu";
@@ -16,49 +17,31 @@ export const Header = (): ReactElement => {
       className={css({
         backgroundColor: "bg",
         borderBottomWidth: "1px",
-        borderBottomStyle: "solid",
-        borderBottomColor: "border",
+        borderBottomColor: "newBorder.neutral",
         paddingX: "space16",
         position: "sticky",
         top: 0,
         zIndex: 10,
       })}
     >
-      <div
-        className={css({
-          mx: "auto",
-          py: "space12",
-          display: "flex",
-          alignItems: "center",
-          maxWidth: "960px",
-          gap: "space8",
-        })}
+      <Flex
+        mx="auto"
+        py="space8"
+        alignItems="center"
+        maxWidth="1024px"
+        gap="space16"
+        mdDown={{ justifyContent: "space-between" }}
       >
-        <Flex
-          flex={1}
-          mdDown={{
-            flex: "unset",
-          }}
-          gap="space8"
-          maxW="150px"
-        >
-          <Link
-            className={css({
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "space8",
-            })}
-            href={routes.home}
-            aria-label="Home"
-          >
-            <Logo type="type" size={20} />
-          </Link>
-        </Flex>
-        <Flex flex={1} justifyContent="center">
+        <Link href={routes.home} aria-label="Home">
+          <Logo type="type" size={20} />
+        </Link>
+
+        <Flex ml="space32" flex={1} sm={{ display: "flex" }} display="none">
           <DesktopMenu />
         </Flex>
-        <Flex flex={1} gap="space8" justifyContent="flex-end" maxW="150px">
-          <Button asChild variant="ghost">
+
+        <Flex gap="space8" justifyContent="flex-end">
+          <Button asChild variant="secondary">
             <a href={links.logIn}>Log in</a>
           </Button>
           <SignupClick>
@@ -66,9 +49,10 @@ export const Header = (): ReactElement => {
               <a href={links.signUp}>Sign up</a>
             </Button>
           </SignupClick>
+          <MobileMenu />
         </Flex>
-        <MobileMenu />
-      </div>
+      </Flex>
+      <BottomLine />
     </header>
   );
 };

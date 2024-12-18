@@ -1,7 +1,7 @@
 import { cva } from "@flows/styled-system/css";
 import { Box } from "@flows/styled-system/jsx";
 import { Alert16, CircleSlash16, Info16 } from "icons";
-import type { FC, ReactNode } from "react";
+import type { FC, JSX,ReactNode } from "react";
 import { Icon } from "ui";
 
 type Props = {

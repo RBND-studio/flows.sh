@@ -7,7 +7,7 @@ const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
   args: {
     trigger: <Button>Hover me</Button>,
-    text: "Hello World!",
+    content: "Hello World!",
   },
 };
 

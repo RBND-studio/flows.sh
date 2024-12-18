@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 export const Spinner20 = (props: React.SVGProps<SVGSVGElement>): JSX.Element => (
   <svg
     color="black"

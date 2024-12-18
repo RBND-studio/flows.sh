@@ -1,95 +1,63 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
-import { HeroCallout, LinesBox, SmartLink } from "components/ui";
-import { Section } from "components/ui/section";
+import { Section, SmartLink } from "components/ui";
 import { SignupClick } from "components/utils/signup-click";
-import type { ReactElement } from "react";
-import { links } from "shared";
+import { links } from "lib/links";
+import { type ReactElement } from "react";
 import { Button, Text } from "ui";
 
 export const Hero = (): ReactElement => {
   return (
     <Section
-      innerClassName={css({
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        gap: "space40",
-      })}
-      outerClassName={css({
-        paddingTop: "80px",
-        paddingBottom: "80px",
-        position: "relative",
-
-        overflow: "hidden",
-
-        md: {
-          paddingTop: "128px",
-          paddingBottom: "96px",
-        },
-      })}
-      sectionPadding="none"
+      display="flex"
+      flexDirection="column"
+      gap="space24"
+      pt="space40"
+      pb="space40"
+      md={{ pt: "space80", pb: "space64" }}
+      alignItems="center"
     >
-      <Flex flexDirection="column" gap="space12" maxW="728px">
-        <HeroCallout link={links.docs.migrateToFlows} delay={0.8}>
-          Transitioning to Flows from another platform? We can help!
-        </HeroCallout>
-        <Text
-          align="center"
-          as="h1"
-          variant="title5xl"
-          className={css({
-            animation: "topSlideIn 0.6s ease-out",
-          })}
-        >
-          User onboarding for modern SaaS
-        </Text>
-        <Text
-          align="center"
-          className={css({
-            maxWidth: "560px",
-            marginX: "auto",
-            opacity: 0,
-            animation: "topSlideIn 0.6s ease-out",
-            animationFillMode: "forwards",
-            animationDelay: "0.3s",
-          })}
-          color="muted"
-          variant="bodyL"
-        >
-          A better way to drive product adoption and activation.
-        </Text>
-      </Flex>
-      <LinesBox
-        className={css({
-          width: "100%",
-        })}
+      <Text as="h1" variant="title4xl" animation="topSlideIn 0.6s ease-out" align="center">
+        Build native product growth experiences, your way
+      </Text>
+      <Text
+        maxWidth="580px"
+        opacity={0}
+        animation="topSlideIn 0.6s ease-out"
+        animationDelay="0.3s"
+        animationFillMode="forwards"
+        color="muted"
+        variant="bodyL"
+        align="center"
       >
-        <Flex
-          alignItems="center"
-          flexDirection="column"
-          gap="space16"
-          width="100%"
-          opacity={0}
-          animation="topSlideIn 0.6s ease-out"
-          animationDelay="0.6s"
-          animationFillMode="forwards"
-        >
-          <SignupClick>
-            <Button
-              asChild
-              className={css({
-                paddingX: "space48",
-              })}
-              shadow="highlight"
-              size="large"
-            >
-              <SmartLink href={links.signUp}>Start for free</SmartLink>
-            </Button>
-          </SignupClick>
-        </Flex>
-      </LinesBox>
+        Meet Flows, the flexible platform for building in-app experiences. Focus on your product,
+        not creating one-off logic.
+      </Text>
+
+      <Flex
+        justifyContent="center"
+        gap="space12"
+        width="100%"
+        opacity={0}
+        animation="topSlideIn 0.6s ease-out"
+        animationDelay="0.6s"
+        animationFillMode="forwards"
+      >
+        <SignupClick>
+          <Button
+            className={css({
+              shadow: "neutralFocus",
+            })}
+            asChild
+            size="large"
+          >
+            <SmartLink href={links.signUp}>Start building</SmartLink>
+          </Button>
+        </SignupClick>
+        <Button variant="secondary" asChild size="large">
+          <SmartLink href={links.docs.contact}>Talk to us</SmartLink>
+        </Button>
+      </Flex>
     </Section>
   );
 };

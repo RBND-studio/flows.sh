@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 export function Settings24(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg

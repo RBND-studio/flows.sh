@@ -31,7 +31,7 @@ WORKDIR /app
 RUN corepack enable pnpm
 COPY --from=builder /app/out/full/ .
 COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
-RUN pnpm install --production --ignore-scripts --frozen-lockfile
+RUN pnpm install --production --frozen-lockfile
 
 FROM base AS runner
 WORKDIR /app

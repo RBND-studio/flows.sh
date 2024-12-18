@@ -1,0 +1,63 @@
+---
+title: Block library
+description: Understand the building blocks that power your workflows.
+---
+
+# Block library
+
+Understand the building blocks that power your [workflows](/workflows).
+
+## Overview
+
+Blocks are the individual steps connected by paths to create [workflows](/workflows). They can represent UI elements, logical steps, or actions. Each block has configurable properties, allowing for custom behavior. You can also create reusable custom [block templates](/blocks/templates) create custom UI components for workflows.
+
+## Start block
+
+![Start block](/blocks/start.png)
+
+Start blocks define the entry points for [users](/users) to begin a workflow. They determine the conditions when a user can enter a workflow. Multiple start blocks can be used in a single workflow to allow different entry conditions. Once a user enters a workflow, they will not re-enter until they exit it.
+
+**Input:**
+
+- **User properties conditions**: An array of conditions based on [user properties](/workflows/configure-blocks#user-properties) that must be satisfied for a user to enter the workflow.
+
+## Component blocks
+
+![Component block](/blocks/component.png)
+
+Component blocks display custom UI elements within your application. They come in two types:
+
+- **Floating**: UI components displayed over the application, such as modals and tooltips.
+- **Inline**: UI components integrated within the application layout, such as banners and cards, added via slots.
+
+To use component blocks, create a block template and integrate the corresponding component into your application. [Default component blocks](/getting-started/quickstart#3-add-built-in-components) are available to help you get started.
+
+## Tour block
+
+![Tour block](/blocks/tour.png)
+
+[Tour blocks](/tours) guide users through a series of steps to complete a task or learn about a feature. They can be used to onboard new users, introduce new features, or provide help.
+
+**Input:**
+
+- **Steps**: An array of [steps](/tours/tour-steps) that define the tour flow. These steps use tour specific block templates to display content.
+
+## Logic blocks
+
+![Filter block](/blocks/filter.png)
+
+They can be used to define branching logic, conditions, and other rules.
+
+### Filter
+
+Filters [users](/users) based on specific conditions, allowing only those who match the criteria to proceed. Users that don't match the conditions are stopped and won't continue to next block, however if they have active another block the workflow won't be exited.
+
+**Input:**
+
+- **User properties conditions**: An array of [user properties](/workflows/configure-blocks#user-properties) that users must meet to pass through the block.
+
+## End block
+
+![End block](/blocks/end.png)
+
+End blocks exit the workflow. When a user reaches an end block, the workflow is completed and marked as finished.

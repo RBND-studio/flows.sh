@@ -5,7 +5,7 @@ import * as RadixDialog from "@radix-ui/react-dialog";
 import { Close16 } from "icons";
 import type { FC, ReactNode } from "react";
 
-import { Icon } from "../icon";
+import { IconButton } from "../icon-button";
 import { Text } from "../text";
 
 type Props = {
@@ -26,7 +26,7 @@ export const Dialog: FC<Props> = ({ open, onOpenChange, trigger, children, maxWi
       <RadixDialog.Portal>
         <RadixDialog.Overlay
           className={css({
-            backgroundColor: "bg.overlay",
+            backgroundColor: "pane.bg.translucentOverlay",
             position: "fixed",
             zIndex: 10,
             backdropFilter: "blur(4px)",
@@ -47,19 +47,22 @@ export const Dialog: FC<Props> = ({ open, onOpenChange, trigger, children, maxWi
         <RadixDialog.Content
           onSubmit={(e) => e.stopPropagation()}
           className={contentCss({ maxWidth })}
+          aria-describedby={undefined}
         >
           {children}
           <RadixDialog.Close
+            asChild
             aria-label="Close"
             className={css({
               position: "absolute",
               top: "space16",
               right: "space16",
-              cursor: "pointer",
             })}
           >
-            {/* TODO: use icon button when it's ready */}
-            <Icon icon={Close16} />
+            {/* eslint-disable-next-line no-restricted-syntax -- close button */}
+            <IconButton size="small" variant="ghost">
+              <Close16 />
+            </IconButton>
           </RadixDialog.Close>
         </RadixDialog.Content>
       </RadixDialog.Portal>
@@ -69,7 +72,8 @@ export const Dialog: FC<Props> = ({ open, onOpenChange, trigger, children, maxWi
 
 const contentCss = cva({
   base: {
-    backgroundColor: "bg",
+    backgroundColor: "pane.bg.main",
+    bor: "1px",
     width: "100%",
     borderRadius: "radius12",
     position: "fixed",
@@ -77,7 +81,7 @@ const contentCss = cva({
     top: "50%",
     left: "50%",
     translate: "-50% -50%",
-    boxShadow: "l4",
+    boxShadow: "newL2",
     "&[data-state=open]": {
       animationName: "enter",
       animationDuration: "120ms",
@@ -90,6 +94,7 @@ const contentCss = cva({
   variants: {
     maxWidth: {
       400: { maxWidth: "400px" },
+      500: { maxWidth: "500px" },
       600: { maxWidth: "600px" },
       1200: { maxWidth: "1200px" },
     },
@@ -105,7 +110,7 @@ export const DialogTitle: FC<{ children?: ReactNode; className?: string }> = ({
 }) => {
   return (
     <RadixDialog.Title className={cx(css({ px: "space16", py: "space16" }), className)} {...props}>
-      <Text variant="titleL">{children}</Text>
+      <Text variant="titleM">{children}</Text>
     </RadixDialog.Title>
   );
 };

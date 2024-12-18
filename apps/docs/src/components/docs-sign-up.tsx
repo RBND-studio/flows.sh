@@ -1,4 +1,5 @@
 import { Box } from "@flows/styled-system/jsx";
+import type { JSX } from "react";
 
 export const DocsSignUp = (): JSX.Element => {
   return (

@@ -11,36 +11,41 @@ export const Popover = PopoverPrimitive.Root;
 
 export const PopoverTrigger = PopoverPrimitive.Trigger;
 
-type Props = {
+type Props = PopoverPrimitive.PopoverContentProps & {
   children?: ReactNode;
   className?: string;
-  align?: PopoverPrimitive.PopoverContentProps["align"];
 };
 
+const COLLISION_PADDING = 16;
+
 export const PopoverContent = forwardRef<React.ElementRef<typeof PopoverPrimitive.Content>, Props>(
-  function PopoverContent({ ...props }, ref) {
+  function PopoverContent({ className, ...props }, ref) {
     return (
       <PopoverPrimitive.Portal>
         <PopoverPrimitive.Content
-          className={cx(content(), props.className)}
+          className={cx(content(), className)}
           ref={ref}
-          {...props}
-          collisionPadding={16}
+          collisionPadding={COLLISION_PADDING}
           sideOffset={4}
+          {...props}
         />
       </PopoverPrimitive.Portal>
     );
   },
 );
 
+// TODO: @opesicka I think we should move the visual styles to the components that actually use them
+// and keep only the stuff like animation and overflow, what do you think?
+// Or introduce popover variants? Or..?
 const content = cva({
   base: {
-    borderRadius: "radius12",
-    backgroundColor: "bg.card",
+    maxHeight: `calc(100vh - ${COLLISION_PADDING * 2}px)`,
+    borderRadius: "radius8",
+    backgroundColor: "pane.bg.elevated",
     borderStyle: "solid",
     borderWidth: "1px",
-    borderColor: "border",
-    boxShadow: "l2",
+    borderColor: "pane.border.elevated",
+    boxShadow: "newL2",
     overflow: "hidden",
     "&[data-state=open]": {
       animationName: "enter",

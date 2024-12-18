@@ -1,4 +1,4 @@
-const { createContentlayerPlugin } = require("next-contentlayer");
+const { createContentlayerPlugin } = require("next-contentlayer2");
 
 const path = require("node:path");
 
@@ -38,11 +38,12 @@ const nextConfig = {
       },
     ];
   },
-  reactStrictMode: true,
   transpilePackages: ["ui", "icons", "shared"],
   output: "standalone",
+  outputFileTracingRoot: path.join(__dirname, "../../"),
   experimental: {
-    outputFileTracingRoot: path.join(__dirname, "../../"),
+    // This is needed to avoid next from logging warning because of `next-contentlayer2`
+    turbo: {},
     optimizePackageImports: ["ui", "icons", "shared"],
   },
   images: {

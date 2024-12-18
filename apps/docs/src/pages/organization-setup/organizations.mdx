@@ -1,28 +1,44 @@
 ---
 title: Organizations
-description: Organizations are the top-level entities in Flows. They hold projects and members.
+description: The first step to using Flows is to create an organization for your company.
 ---
 
 # Organizations
 
-An organization groups together all the projects and users in your company. It's the top-level entity in Flows. Here you manage your billing, users, and projects.
+The first step to using Flows is to create an organization for your company.
 
-![Organization switcher](/organization-setup/organizations.png)
+![Organization switcher](/organization-setup/organization-switcher.png)
 
-## Basics
+## Overview
 
-### Organization settings
+An organization is the home for all your [workflows](/workflows) and interactions in Flows. We recommend creating a single organization for your company and using [environments](/organization-setup/environments) to manage different deployments effectively.
 
-Currently any member of the organization can manage it. This means that any member can add or remove other members, change the organization name, or delete the organization, they can also manage the billing and the organization's projects. This will change in the future when we introduce member roles.
+When you create an organization, Flows automatically generates a default environment and language setting for you.
 
-### Members
+## Organization settings
 
-Members are users that have full access to the organization and any projects and flows in it. Your organization can have an unlimited number of members.
+To manage your organization, go to **Settings > Organization**.
 
-<SectionLink href="/organization-setup/manage-members">Learn how to manage members →</SectionLink>
+Currently, any member of the organization can perform administrative tasks, such as:
 
-### Usage limit
+- Adding or removing members
+- Renaming the organization
+- Deleting the organization
+- Managing [billing](/organization-setup/billing) and [workflows](/workflows)
 
-When your organization is on a pay as you go plan, you can set the usage limit. When the limit is reached, all flows in the organization will be paused until the next billing cycle.
+<BetterCallout variant="info">
+  **Note**: This approach will evolve as we introduce **member roles**, offering more granular
+  permissions.
+</BetterCallout>
 
-<SectionLink href="/billing/limits">Learn more about Usage limit →</SectionLink>
+### Delete an organization
+
+Deleting an organization is permanent and includes the removal of all workflows and user data. You can delete an organization under **Settings > Organization > General**.
+
+<BetterCallout variant="warning">
+  **Important:** Before deleting an organization, cancel your subscription if you have a paid plan.
+</BetterCallout>
+
+## Multiple organizations
+
+Flows allows you to create multiple organizations under a single account (e.g. tied to a specific email). If you are using Flows for multiple projects, we recommend creating a separate organization for each project.

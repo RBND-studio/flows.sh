@@ -19,6 +19,7 @@ export const HeadingCopyButton = ({
 
   return (
     <button
+      aria-label="Copy link to heading"
       className={cx(
         css({
           color: "icon",

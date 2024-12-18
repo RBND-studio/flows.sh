@@ -1,10 +1,10 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import { Section } from "components/ui/section";
+import { links } from "lib/links";
 import { type Metadata } from "next";
-import type { ReactNode } from "react";
+import type { JSX,ReactNode } from "react";
 import React from "react";
-import { links } from "shared";
 import { Text } from "ui";
 
 type Props = {
@@ -33,12 +33,7 @@ export const metadata: Metadata = {
 
 export default function ChangelogLayout({ children }: Props): JSX.Element {
   return (
-    <Section
-      innerClassName={css({
-        maxWidth: "820px!",
-        marginX: "auto",
-      })}
-    >
+    <Section maxWidth="820px!" my="space40" md={{ my: "space80" }} marginX="auto">
       <Flex
         flexDirection="column"
         gap="space4"

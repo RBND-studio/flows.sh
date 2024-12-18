@@ -1,9 +1,10 @@
-import { css, cva, cx } from "@flows/styled-system/css";
+import { cva, cx } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import { Slot } from "@radix-ui/react-slot";
-import { type FocusEvent, forwardRef, type ReactNode, useId } from "react";
+import { type FC, type FocusEvent, forwardRef, type ReactNode, type SVGProps, useId } from "react";
 
 import { Description } from "../description";
+import { Icon } from "../icon";
 import { Label } from "../label";
 
 type Props = {
@@ -12,6 +13,7 @@ type Props = {
    */
   size?: (typeof input.variantMap.size)[number];
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
   value?: string | number;
   placeholder?: string;
   defaultValue?: string | number;
@@ -34,6 +36,13 @@ type Props = {
   id?: string;
   error?: boolean;
   readOnly?: boolean;
+  startIcon?: FC<SVGProps<SVGSVGElement>>;
+  endIcon?: FC<SVGProps<SVGSVGElement>>;
+  variant?: (typeof input.variantMap.variant)[number];
+  style?: React.CSSProperties;
+  autoComplete?: React.InputHTMLAttributes<HTMLInputElement>["autoComplete"];
+  autoFocus?: boolean;
+  "data-test"?: string;
 };
 
 export const Input = forwardRef<HTMLInputElement, Props>(function Input(
@@ -48,6 +57,10 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
     asChild,
     description,
     error,
+    startIcon,
+    endIcon,
+    disabled,
+    variant = "default",
     ...props
   },
   ref,
@@ -59,23 +72,41 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
     <Flex className={className} flexDir="column">
       {label !== undefined ? (
         <Label
-          className={cx(css({ mb: "space4" }), labelClassName)}
+          className={labelClassName}
+          disabled={disabled}
           htmlFor={props.id ?? id}
           optional={optional}
         >
           {label}
         </Label>
       ) : null}
-      <Comp
-        className={cx(input({ size }), inputClassName)}
-        ref={ref}
-        {...props}
-        id={props.id ?? id}
-      />
+      <Flex position="relative">
+        {startIcon ? (
+          <Icon
+            color="newControl.fg.placeholder"
+            className={startIconCva({ size })}
+            icon={startIcon}
+          />
+        ) : null}
+        <Comp
+          className={cx(
+            input({ size, startIcon: !!startIcon, endIcon: !!endIcon, variant }),
+            inputClassName,
+          )}
+          ref={ref}
+          {...props}
+          id={props.id ?? id}
+          disabled={disabled}
+        />
+        {endIcon ? (
+          <Icon color="newControl.fg.placeholder" className={endIconCva({ size })} icon={endIcon} />
+        ) : null}
+      </Flex>
       {description !== undefined && (
         <Description
-          className={cx(css({ mt: "space4" }), descriptionClassName)}
-          color={error ? "danger" : undefined}
+          disabled={disabled}
+          className={descriptionClassName}
+          color={error ? "danger" : "muted"}
         >
           {description}
         </Description>
@@ -84,53 +115,136 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
   );
 });
 
+const startIconCva = cva({
+  base: {
+    position: "absolute",
+    top: "50%",
+    transform: "translateY(-50%)",
+  },
+  variants: {
+    size: {
+      default: {
+        left: "space8",
+      },
+      small: {
+        left: "space4",
+      },
+    },
+  },
+});
+
+const endIconCva = cva({
+  base: {
+    position: "absolute",
+    top: "50%",
+    transform: "translateY(-50%)",
+  },
+  variants: {
+    size: {
+      default: {
+        right: "space8",
+      },
+      small: {
+        right: "space4",
+      },
+    },
+  },
+});
+
 const input = cva({
   base: {
     borderRadius: "radius8",
     borderWidth: 1,
     borderStyle: "solid",
-    borderColor: "border.strong",
-    backgroundColor: "bg.muted",
+    borderColor: "newControl.border",
+    backgroundColor: "newControl.bg",
     outline: "none",
     transitionProperty: "border-color, background-color, box-shadow",
     fastEaseInOut: "border-color, background-color, box-shadow",
-    color: "text",
+    color: "newControl.fg",
     width: "100%",
     _hover: {
-      borderColor: "border.primary",
-      backgroundColor: "bg",
+      borderColor: "newControl.border.hover",
     },
     _focus: {
-      borderColor: "border.primary",
-      backgroundColor: "bg",
-      boxShadow: "focus",
+      borderColor: "newControl.border.selected",
+      _hover: {
+        borderColor: "newControl.border.selected",
+      },
     },
     _disabled: {
       "&&": {
-        backgroundColor: "bg.strong",
-        borderColor: "border.strong",
-        color: "text.muted",
+        backgroundColor: "newControl.bg.disabled",
+        borderColor: "newControl.border.disabled",
+        color: "newControl.fg.disabled",
       },
     },
   },
   variants: {
+    variant: {
+      default: {},
+      inline: {
+        borderColor: "transparent",
+        backgroundColor: "transparent",
+        mt: 0,
+        mb: 0,
+        _hover: {
+          borderColor: "transparent",
+          backgroundColor: "newControl.bg.hover", //TODO: hover is too strong in dark - check icon button ghost hover
+        },
+        _focus: {
+          _hover: {
+            backgroundColor: "newControl.bg",
+          },
+        },
+      },
+    },
+    startIcon: {
+      true: {
+        pl: "space24",
+      },
+    },
+    endIcon: {
+      true: {
+        pr: "space24",
+      },
+    },
     size: {
-      large: {
-        px: "space16",
-        py: "space12",
-        textStyle: "bodyL",
-      },
-      medium: {
-        px: "space12",
-        py: "space8",
-        textStyle: "bodyM",
-      },
+      // 32px height
       default: {
         px: "space8",
         py: "5px",
         textStyle: "bodyS",
         height: "32px",
+        mt: "space4",
+        mb: "space4",
+      },
+      // 24px height
+      // for use in property panels
+      small: {
+        px: "space4",
+        py: "2px", // TODO: fix theme
+        textStyle: "bodyS",
+        borderRadius: "5px", //TODO: fix theme
+        mt: "2px", //TODO: fix theme
+        mb: "2px", //TODO: fix theme
       },
     },
   },
+  compoundVariants: [
+    {
+      size: "small",
+      startIcon: true,
+      css: {
+        pl: "space20",
+      },
+    },
+    {
+      size: "small",
+      endIcon: true,
+      css: {
+        pr: "space20",
+      },
+    },
+  ],
 });

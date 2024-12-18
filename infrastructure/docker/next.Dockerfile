@@ -42,7 +42,8 @@ RUN adduser --system --uid 1001 nextjs
 USER nextjs
 
 ARG APP
-COPY --from=installer /app/apps/${APP}/next.config.js .
+RUN cp /app/apps/${APP}/next.config.js . || true
+RUN cp /app/apps/${APP}/next.config.mjs . || true
 COPY --from=installer /app/apps/${APP}/package.json .
 
 # Automatically leverage output traces to reduce image size
@@ -53,5 +54,6 @@ COPY --from=installer --chown=nextjs:nodejs /app/apps/${APP}/public ./apps/${APP
 
 ENV SERVER_FILE=apps/${APP}/server.js
 
-CMD node ${SERVER_FILE}
+# CMD ["node", "$SERVER_FILE"]
+CMD ["sh", "-c", "node $SERVER_FILE"]
 
