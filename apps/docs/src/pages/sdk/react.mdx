@@ -87,9 +87,11 @@ npm i @flows/react-components
 
 Then, import and use the components in your app:
 
-```tsx filename="layout.tsx" {2, 9-14}
+```tsx filename="layout.tsx" {2-4, 11-16}
 import { FlowsProvider } from "@flows/react";
-import { tourComponents, components } from "@flows/react-components";
+import * as components from "@flows/react-components";
+import * as tourComponents from "@flows/react-components/tour";
+import "@flows/react-components/index.css";
 
 const App = () => {
   return (

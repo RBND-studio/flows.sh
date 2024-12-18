@@ -26,6 +26,7 @@ export const links = (domain = "flows.sh") => ({
   },
   docs: {
     home: `https://${domain}/docs`,
+    migrateToFlows2: `https://${domain}/docs/getting-started/migrate-to-flows-2`,
     users: {
       main: `https://${domain}/docs/users`,
       properties: `https://${domain}/docs/users/properties`,
