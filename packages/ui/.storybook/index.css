@@ -1,7 +1,5 @@
 @layer reset, base, tokens, recipes, utilities;
 
-/* TODO: do the same for other places where we use Inter */
-
 :root {
   font-feature-settings:
     "liga" 1,
