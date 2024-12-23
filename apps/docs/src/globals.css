@@ -1,5 +1,12 @@
 @layer reset, base, tokens, recipes, utilities;
 
+:root {
+  font-feature-settings:
+    "liga" 1,
+    "calt" 1; /* fix for Chrome */
+  text-rendering: optimizeLegibility;
+}
+
 html {
   font-size: 15px !important;
 }
