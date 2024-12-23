@@ -90,7 +90,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
         ) : null}
         <Comp
           className={cx(
-            input({ size, startIcon: !!startIcon, endIcon: !!endIcon, variant }),
+            input({ size, startIcon: !!startIcon, endIcon: !!endIcon, variant, error }),
             inputClassName,
           )}
           ref={ref}
@@ -223,11 +223,19 @@ const input = cva({
       // for use in property panels
       small: {
         px: "space4",
-        py: "2px", // TODO: fix theme
+        py: "space2",
         textStyle: "bodyS",
         borderRadius: "5px", //TODO: fix theme
-        mt: "2px", //TODO: fix theme
-        mb: "2px", //TODO: fix theme
+        mt: "space2",
+        mb: "space2",
+      },
+    },
+    error: {
+      true: {
+        borderColor: "newControl.border.error",
+        _hover: {
+          borderColor: "newControl.border.error",
+        },
       },
     },
   },
