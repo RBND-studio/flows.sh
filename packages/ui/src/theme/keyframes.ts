@@ -53,4 +53,15 @@ export const keyframes: CssKeyframes = {
       boxShadow: "focus",
     },
   },
+  blinking: {
+    "0%": {
+      opacity: 0,
+    },
+    "50%": {
+      opacity: 1,
+    },
+    "100%": {
+      opacity: 0,
+    },
+  },
 };

@@ -45,6 +45,7 @@
     "Vojtech",
     "waivable",
     "zustand",
+    "Ilike"
   ],
   // flagWords - list of words to be always considered incorrect
   // This is useful for offensive words and common spelling errors.
@@ -62,7 +63,7 @@
     "pnpm-lock.yaml",
     "cspell.json",
     "pandacss-generated",
-    "**/drizzle/**/*",
+    "**/drizzle/**/*"
   ],
   "allowCompoundWords": true
 }

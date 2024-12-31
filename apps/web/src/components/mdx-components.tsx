@@ -274,7 +274,14 @@ const mdxComponents = {
       </Link>
     );
   },
-  pre: (props) => <CodeHighlight {...props} />,
+  pre: (props) => (
+    <CodeHighlight
+      codeClassName={css({
+        fontSize: "13px",
+      })}
+      {...props}
+    />
+  ),
   CodeHighlight,
 };
 

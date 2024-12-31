@@ -18,7 +18,7 @@ const cspHeader = `
     object-src 'none';
     base-uri 'self';
     form-action 'self';
-    frame-src https://www.youtube.com;
+    frame-src 'none';
     frame-ancestors 'none';
     upgrade-insecure-requests;
 `;

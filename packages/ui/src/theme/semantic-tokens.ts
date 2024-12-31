@@ -109,6 +109,9 @@ export const semanticTokens = defineSemanticTokens({
       primary: {
         DEFAULT: { value: { base: "{colors.primary.600}", _dark: "{colors.primary-dark.400}" } },
       },
+      success: {
+        DEFAULT: { value: { base: "{colors.success.500}", _dark: "{colors.success-dark.400}" } },
+      },
     },
 
     newBorder: {
@@ -121,6 +124,10 @@ export const semanticTokens = defineSemanticTokens({
       },
       primary: {
         DEFAULT: { value: { base: "{colors.primary.500}", _dark: "{colors.primary-dark.400}" } },
+        subtle: { value: { base: "{colors.primary.200}", _dark: "{colors.primary-dark.600}" } },
+      },
+      success: {
+        DEFAULT: { value: { base: "{colors.success.400}", _dark: "{colors.success-dark.400}" } },
       },
     },
 

@@ -25,13 +25,14 @@ export const CodeHighlight: FC<Props> = ({ lineNumbers = true, ...props }) => {
       className={cx(
         css({
           position: "relative",
-          borderRadius: "radius12!",
+          borderRadius: "radius8!",
           borderStyle: "solid",
           borderWidth: "1px",
-          borderColor: "border",
+          borderColor: "newBorder.neutral",
           display: "flex",
           flexDirection: "column",
           "& pre": {
+            py: "space12!",
             flex: 1,
           },
           "&:hover .copy-button": {
@@ -43,8 +44,8 @@ export const CodeHighlight: FC<Props> = ({ lineNumbers = true, ...props }) => {
       codeClassName={cx(
         css({
           fontFamily: `SF Mono,Segoe UI Mono,Roboto Mono,Ubuntu Mono,Menlo,Consolas,Courier,"monospace"`,
-          fontSize: "14px",
-          borderRadius: "radius16",
+          fontSize: "12px",
+          borderRadius: "radius8",
         }),
         props.codeClassName,
       )}
