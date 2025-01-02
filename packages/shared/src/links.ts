@@ -18,8 +18,6 @@ export const links = (domain = "flows.sh") => ({
   dpa: `https://${domain}/legal/dpa`,
   pricing: `https://${domain}/pricing`,
   changelog: `https://${domain}/changelog`,
-  demoVideoEmbed: `https://www.youtube.com/embed/XY3eU_p0AW4?si=kSQJFruZM8YViA0w`,
-  demoVideo: `https://youtu.be/XY3eU_p0AW4?si=I-Kws9rhJ9RLak7Q`,
   sdk: {
     reactTemplate: `https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/vite`,
     nextTemplate: `https://github.com/RBND-studio/flows-skd/tree/main/examples/react/next`,
