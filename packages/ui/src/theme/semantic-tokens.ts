@@ -331,5 +331,11 @@ export const semanticTokens = defineSemanticTokens({
         _dark: "0  0 2px rgba(6, 126, 253, 0.3)",
       },
     },
+    solid: {
+      value: {
+        base: "{shadows.lightSolid}",
+        _dark: "{shadows.darkSolid}",
+      },
+    },
   },
 });

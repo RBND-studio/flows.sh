@@ -11,24 +11,36 @@ export const LinesBox = ({
 }): JSX.Element => {
   return (
     <Box
-      m="space40"
-      borderColor="newBorder.neutral"
-      borderWidth="1px"
-      position="relative"
-      className={className}
+      mx="space40"
       lgDown={{
-        m: "space24",
+        mx: "space24",
       }}
       mdDown={{
-        m: "0",
-        borderWidth: "0",
+        mx: "0",
       }}
     >
-      {children}
-      <div className={newCorner({ variant: "topLeft" })} />
-      <div className={newCorner({ variant: "topRight" })} />
-      <div className={newCorner({ variant: "bottomRight" })} />
-      <div className={newCorner({ variant: "bottomLeft" })} />
+      <Box
+        my="space40"
+        mx="auto"
+        borderColor="newBorder.neutral"
+        borderWidth="1px"
+        position="relative"
+        className={className}
+        maxWidth={1264}
+        lgDown={{
+          my: "space24",
+        }}
+        mdDown={{
+          my: "0",
+          borderWidth: "0",
+        }}
+      >
+        {children}
+        <div className={newCorner({ variant: "topLeft" })} />
+        <div className={newCorner({ variant: "topRight" })} />
+        <div className={newCorner({ variant: "bottomRight" })} />
+        <div className={newCorner({ variant: "bottomLeft" })} />
+      </Box>
     </Box>
   );
 };
@@ -55,7 +67,7 @@ export const newCorner = cva({
           width: "40px",
           right: "-40px",
           height: "1px",
-          background: "newBorder.neutral.muted",
+          backgroundImage: "linear-gradient(90deg, token(colors.newBorder.neutral), transparent)",
           lgDown: {
             width: "24px",
             right: "-24px",
@@ -71,7 +83,7 @@ export const newCorner = cva({
           height: "40px",
           right: "-1px",
           width: "1px",
-          background: "newBorder.neutral.muted",
+          backgroundImage: "linear-gradient(0deg, token(colors.newBorder.neutral), transparent)",
           lgDown: {
             height: "24px",
             top: "-24px",
@@ -91,7 +103,7 @@ export const newCorner = cva({
           width: "40px",
           left: "-40px",
           height: "1px",
-          background: "newBorder.neutral.muted",
+          backgroundImage: "linear-gradient(270deg, token(colors.newBorder.neutral), transparent)",
           lgDown: {
             width: "24px",
             left: "-24px",
@@ -107,7 +119,7 @@ export const newCorner = cva({
           height: "40px",
           left: "-1px",
           width: "1px",
-          background: "newBorder.neutral.muted",
+          backgroundImage: "linear-gradient(0deg, token(colors.newBorder.neutral), transparent)",
           lgDown: {
             height: "24px",
             top: "-24px",
@@ -127,7 +139,7 @@ export const newCorner = cva({
           width: "40px",
           right: "-40px",
           height: "1px",
-          background: "newBorder.neutral.muted",
+          backgroundImage: "linear-gradient(160deg, token(colors.newBorder.neutral), transparent)",
           lgDown: {
             width: "24px",
             right: "-24px",
@@ -143,7 +155,7 @@ export const newCorner = cva({
           height: "40px",
           right: "-1px",
           width: "1px",
-          background: "newBorder.neutral.muted",
+          backgroundImage: "linear-gradient(160deg, token(colors.newBorder.neutral), transparent)",
           lgDown: {
             height: "24px",
             bottom: "-24px",
@@ -179,7 +191,7 @@ export const newCorner = cva({
           height: "40px",
           left: "-1px",
           width: "1px",
-          background: "newBorder.neutral.muted",
+          backgroundImage: "linear-gradient(270deg, token(colors.newBorder.neutral), transparent)",
           lgDown: {
             height: "24px",
             bottom: "-24px",

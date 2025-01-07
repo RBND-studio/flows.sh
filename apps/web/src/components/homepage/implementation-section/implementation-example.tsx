@@ -113,17 +113,17 @@ export const ImplementationExample: FC<Props> = ({ codeExample }) => {
       <Section
         display="flex"
         width="100%"
-        borderRightColor="newBorder.neutral"
-        borderRightWidth="1px"
         borderLeftColor="newBorder.neutral"
         borderLeftWidth="1px"
         linesWrapper
         flexDirection="column"
         md={{ flexDirection: "row", height: "460px" }}
+        linesWrapperClassName={css({ layerStyle: "dotBackground" })}
       >
         <Box
           maxWidth={360}
           width="100%"
+          backgroundColor="newBg.neutral"
           borderBottomColor="newBorder.neutral"
           borderBottomWidth="1px"
           md={{
@@ -152,9 +152,9 @@ export const ImplementationExample: FC<Props> = ({ codeExample }) => {
         <Flex width="100%" p="space12" layerStyle="dotBackground">
           <Box
             borderWidth="1px"
-            borderColor="newBorder.neutral"
+            borderColor="newBorder.neutral.strong"
             borderRadius="radius12"
-            shadow="newL1"
+            shadow="solid"
             overflow="hidden"
             width="100%"
             height="400px"
@@ -177,7 +177,6 @@ export const ImplementationExample: FC<Props> = ({ codeExample }) => {
                     })}
                     src={bannerBg}
                     alt="Banner background"
-                    layout="fill"
                   />
                   <Flex
                     backgroundColor="newBg.neutral"

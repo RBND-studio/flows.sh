@@ -29,7 +29,7 @@ export const HorizontalLinesBox = ({
             width: "40px",
             right: "-40px",
             height: "1px",
-            background: "newBorder.neutral.muted",
+            backgroundImage: "linear-gradient(90deg, token(colors.newBorder.neutral), transparent)",
             lgDown: {
               width: "24px",
               right: "-24px",
@@ -52,7 +52,8 @@ export const HorizontalLinesBox = ({
             width: "40px",
             left: "-40px",
             height: "1px",
-            background: "newBorder.neutral.muted",
+            backgroundImage:
+              "linear-gradient(270deg, token(colors.newBorder.neutral), transparent)",
             lgDown: {
               width: "24px",
               left: "-24px",
@@ -75,7 +76,7 @@ export const HorizontalLinesBox = ({
             width: "40px",
             right: "-40px",
             height: "1px",
-            background: "newBorder.neutral.muted",
+            backgroundImage: "linear-gradient(90deg, token(colors.newBorder.neutral), transparent)",
             lgDown: {
               width: "24px",
               right: "-24px",
@@ -98,7 +99,8 @@ export const HorizontalLinesBox = ({
             width: "40px",
             left: "-40px",
             height: "1px",
-            background: "newBorder.neutral.muted",
+            backgroundImage:
+              "linear-gradient(270deg, token(colors.newBorder.neutral), transparent)",
             lgDown: {
               width: "24px",
               left: "-24px",

@@ -29,7 +29,7 @@ export const textStyles = defineTextStyles({
       fontStyle: "normal",
       fontWeight: "750",
       fontSize: { base: "30px", sm: "34px", md: "48px" },
-      lineHeight: { base: "40px", sm: "44px", md: "60px" },
+      lineHeight: { base: "40px", sm: "44px", md: "52px" },
       fontFamily: "var(--font-main)",
     },
   },

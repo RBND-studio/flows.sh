@@ -43,6 +43,16 @@ export const keyframes: CssKeyframes = {
       opacity: 1,
     },
   },
+  bottomSlideIn: {
+    "0%": {
+      transform: "translateY(10px)",
+      opacity: 0,
+    },
+    "100%": {
+      transform: "translateY(0)",
+      opacity: 1,
+    },
+  },
   highlightFadeIn: {
     "0%": {
       borderColor: "newBorder.neutral",

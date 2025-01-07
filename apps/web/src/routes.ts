@@ -7,6 +7,10 @@ export const routes = {
   about: "/about",
   pricing: "/pricing",
 
+  solution: {
+    userOnboarding: "/solution/user-onboarding",
+  },
+
   blog: "/blog",
   blogPostDetail: ({ postId }: { postId: string }) => `/blog/${postId}`,
 

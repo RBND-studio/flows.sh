@@ -1,13 +1,21 @@
 import { links } from "lib/links";
+import { type ReactNode } from "react";
 import { routes } from "routes";
 
-type MenuItem = {
+import { SolutionsSubItems } from "./sub-menu-items";
+
+export type MenuItemProps = {
   title: string;
-  href: string;
+  href?: string;
   target?: string;
+  subItems?: (close) => ReactNode;
 };
 
-export const menuItems: MenuItem[] = [
+export const menuItems: MenuItemProps[] = [
+  {
+    title: "Solutions",
+    subItems: (close) => <SolutionsSubItems close={close} />,
+  },
   {
     title: "Blog",
     href: routes.blog,

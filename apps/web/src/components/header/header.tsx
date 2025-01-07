@@ -36,7 +36,7 @@ export const Header = (): ReactElement => {
           <Logo type="type" size={20} />
         </Link>
 
-        <Flex ml="space32" flex={1} sm={{ display: "flex" }} display="none">
+        <Flex flex={1} sm={{ display: "flex" }} md={{ ml: "space16" }} display="none">
           <DesktopMenu />
         </Flex>
 

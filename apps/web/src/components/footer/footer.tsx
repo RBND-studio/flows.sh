@@ -21,11 +21,6 @@ const footerGroups: FooterGroup[] = [
   {
     title: "Product",
     links: [
-      // {
-      //   title: "Demo",
-      //   href: links.nextJsDemo,
-      //   target: "_blank",
-      // },
       {
         title: "Pricing",
         href: routes.pricing,
@@ -33,6 +28,15 @@ const footerGroups: FooterGroup[] = [
       {
         title: "Changelog",
         href: routes.changelog,
+      },
+    ],
+  },
+  {
+    title: "Solutions",
+    links: [
+      {
+        title: "User onboarding",
+        href: routes.solution.userOnboarding,
       },
     ],
   },

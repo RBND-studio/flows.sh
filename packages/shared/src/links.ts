@@ -38,6 +38,7 @@ export const links = (domain = "flows.sh") => ({
     blockTemplates: {
       main: `https://${domain}/docs/blocks/templates`,
       updateInstances: `https://${domain}/docs/blocks/templates#updating-block-template-instances`,
+      createCustomComponents: `https://${domain}/docs/blocks/create-custom-components`,
     },
     organization: {
       main: `https://${domain}/docs/organization-setup/organizations`,
