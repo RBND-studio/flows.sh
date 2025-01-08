@@ -22,7 +22,7 @@ export const ImplementationFeatures = (): JSX.Element => {
           Render inline components directly within your app’s UI using Slots as anchors.
         </Text>
         <Box
-          borderColor="newBorder.neutral"
+          borderColor="newBorder.neutral.strong"
           borderWidth="1px"
           overflow="hidden"
           width="100%"
@@ -31,6 +31,7 @@ export const ImplementationFeatures = (): JSX.Element => {
           position="relative"
           background="pane.bg.secondary"
           role="img"
+          shadow="solid"
         >
           <Box
             position="absolute"
@@ -54,7 +55,7 @@ export const ImplementationFeatures = (): JSX.Element => {
         <Flex
           alignItems="center"
           justifyContent="center"
-          borderColor="newBorder.neutral"
+          borderColor="newBorder.neutral.strong"
           borderWidth="1px"
           layerStyle="dotBackground"
           width="100%"
@@ -63,6 +64,7 @@ export const ImplementationFeatures = (): JSX.Element => {
           p="space12"
           gap="space24"
           role="img"
+          shadow="solid"
         >
           <PlaceholderTooltip
             title="Click here"

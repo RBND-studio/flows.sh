@@ -1,3 +1,4 @@
+import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
 import { type ReactElement } from "react";
@@ -49,10 +50,12 @@ export const VolumeTable = (): ReactElement => {
         borderRightWidth="1px"
         borderRightColor="newBorder.neutral"
         linesWrapper
+        linesWrapperClassName={css({ layerStyle: "dotBackground" })}
       >
         {pricing.map((item) => (
           <Flex
             key={item.price}
+            backgroundColor="newBg.neutral"
             paddingX="space24"
             paddingY="space16"
             borBottom="1px"

@@ -1,14 +1,14 @@
 "use client";
 
-import { css } from "@flows/styled-system/css";
-import { Box } from "@flows/styled-system/jsx";
+import { css, cva } from "@flows/styled-system/css";
+import { Box, Flex } from "@flows/styled-system/jsx";
 import { SmartLink } from "components/ui";
-import { Menu16 } from "icons";
+import { ChevronDown16, Menu16 } from "icons";
 import { usePathname } from "next/navigation";
-import { type FC, useState } from "react";
-import { IconButton, Text } from "ui";
+import { type FC, type ReactNode, useState } from "react";
+import { Icon, IconButton, Text } from "ui";
 
-import { menuItems } from "./menu-items";
+import { type MenuItemProps, menuItems } from "./menu-items";
 
 export const MobileMenu: FC = () => {
   const pathName = usePathname();
@@ -38,32 +38,13 @@ export const MobileMenu: FC = () => {
         pt="space4"
         px="space16"
         sm={{ display: "none" }}
-        top="56px"
+        top="49px"
         width="100%"
       >
         <ul className={css({ display: "flex", flexDir: "column" })}>
           {menuItems.map((item) => (
             <li key={item.title}>
-              <Text
-                asChild
-                className={css({
-                  display: "block",
-                  px: "space8",
-                  mx: "-space8",
-                  py: "space8",
-                  fastEaseInOut: "color",
-                  "&:hover": {
-                    color: "text",
-                  },
-                })}
-                color={path === item.href ? "default" : "subtle"}
-                onClick={handleClose}
-                variant="titleM"
-              >
-                <SmartLink href={item.href} target={item.target}>
-                  {item.title}
-                </SmartLink>
-              </Text>
+              <MobileMainMenuItem item={item} path={path} handleClose={handleClose} />
             </li>
           ))}
         </ul>
@@ -71,3 +52,64 @@ export const MobileMenu: FC = () => {
     </>
   );
 };
+
+type MainMenuItemProps = {
+  item: MenuItemProps;
+  path: string;
+  handleClose: () => void;
+};
+
+const MobileMainMenuItem = ({ item, path, handleClose }: MainMenuItemProps): ReactNode => {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleSubItemClick = (): void => {
+    setIsOpen(false);
+    handleClose();
+  };
+
+  const Component = item.href ? SmartLink : "button";
+
+  const MenuItemComp = (
+    <Component
+      href={item.href as unknown as string}
+      onClick={item.subItems ? () => setIsOpen(!isOpen) : handleClose}
+      className={css({
+        display: "flex",
+        justifyContent: "space-between",
+        borderRadius: "radius6",
+        backgroundColor: path === item.href ? "newBg.neutral.subtle" : "transparent",
+        alignItems: "center",
+        py: "space12",
+        px: "space8",
+      })}
+    >
+      <Text variant="bodyM" weight="700">
+        {item.title}
+      </Text>
+      {item.subItems ? <Icon icon={ChevronDown16} className={iconClass({ open: isOpen })} /> : null}
+    </Component>
+  );
+
+  if (item.subItems) {
+    return (
+      <Flex flexDirection="column">
+        {MenuItemComp}
+        <Box display={isOpen ? "block" : "none"}>{item.subItems(handleSubItemClick)}</Box>
+      </Flex>
+    );
+  }
+
+  return MenuItemComp;
+};
+
+const iconClass = cva({
+  base: {
+    fastEaseInOut: "all",
+  },
+  variants: {
+    open: {
+      true: {
+        transform: "rotate(180deg)",
+      },
+    },
+  },
+});

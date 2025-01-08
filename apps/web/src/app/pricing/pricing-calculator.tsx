@@ -44,8 +44,16 @@ export const PricingCalculator = (): ReactElement => {
         borderLeftColor="newBorder.neutral"
         borderRightWidth="1px"
         borderRightColor="newBorder.neutral"
+        linesWrapperClassName={css({
+          layerStyle: "dotBackground",
+        })}
       >
-        <Box padding="space24" borderBottomWidth="1px" borderBottomColor="newBorder.neutral">
+        <Box
+          padding="space24"
+          borderBottomWidth="1px"
+          borderBottomColor="newBorder.neutral"
+          backgroundColor="pane.bg.elevated"
+        >
           <Flex
             justifyContent="space-between"
             mb="space16"
@@ -85,7 +93,7 @@ export const PricingCalculator = (): ReactElement => {
           </Flex>
         </Box>
         <Flex
-          layerStyle="dotBackground"
+          backgroundColor="pane.bg.elevated"
           padding="space24"
           justifyContent="space-between"
           alignItems="baseline"

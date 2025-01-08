@@ -18,7 +18,7 @@ export const WorkflowsExample = (): JSX.Element => {
           <LineArrowDown />
           <Block name="End" type="end" icon="end" />
         </Flex>
-        <Flex mt={199} ml={-5}>
+        <Flex mt={187} ml={-5}>
           <Box my={13}>
             <LineArrowRight />
           </Box>
@@ -61,7 +61,7 @@ const Block = ({ name, type, icon }: BlockProps): JSX.Element => {
 
 const LineArrowDown = (): JSX.Element => {
   return (
-    <svg viewBox="0 0 16 24" width="16" height="24">
+    <svg viewBox="0 0 16 20" width="16" height="20">
       <defs>
         <marker
           id="arrow"
@@ -93,7 +93,7 @@ const LineArrowDown = (): JSX.Element => {
         x1={8}
         y1={0}
         x2={8}
-        y2={24}
+        y2={20}
         markerStart="url(#circle)"
         markerEnd="url(#arrow)"
       />

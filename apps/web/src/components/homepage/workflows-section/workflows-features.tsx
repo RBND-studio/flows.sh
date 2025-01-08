@@ -21,12 +21,13 @@ export const WorkflowsFeatures = (): JSX.Element => {
           Guide users step-by-step through your application with interactive product tours.
         </Text>
         <Box
-          borderColor="newBorder.neutral"
+          borderColor="newBorder.neutral.strong"
           borderWidth="1px"
           width="100%"
           height="288px"
           borderRadius={6}
           overflow="hidden"
+          shadow="solid"
         >
           <PlaceholderApplication
             sidebarTooltipSlot={
@@ -59,12 +60,13 @@ export const WorkflowsFeatures = (): JSX.Element => {
           Embed UI elements directly into your application without needing to redeploy.
         </Text>
         <Box
-          borderColor="newBorder.neutral"
+          borderColor="newBorder.neutral.strong"
           borderWidth="1px"
           width="100%"
           height="288px"
           borderRadius={6}
           overflow="hidden"
+          shadow="solid"
         >
           <PlaceholderApplication
             bannerSlot={

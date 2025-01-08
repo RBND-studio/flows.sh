@@ -14,6 +14,7 @@ export const CtaBanner = (): ReactElement => {
       mt="space40"
       md={{ mt: "space80" }}
       borderTopColor="newBorder.neutral"
+      layerStyle="dotBackground"
     >
       <TopLine />
       <Section
@@ -22,13 +23,7 @@ export const CtaBanner = (): ReactElement => {
         alignItems="center"
         py="space80"
         px="space24"
-        borderRightColor="newBorder.neutral"
-        borderRightWidth="1px"
-        borderLeftColor="newBorder.neutral"
-        borderLeftWidth="1px"
-        layerStyle="dotBackground"
         gap="space24"
-        md={{ py: "space120" }}
       >
         <Text align="center" as="h2" maxWidth={400} variant="title3xl">
           Build anything with Flows

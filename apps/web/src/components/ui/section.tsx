@@ -8,9 +8,15 @@ import { HorizontalLinesBox } from "./lines";
 type Props = HTMLAttributes<HTMLDivElement> &
   HTMLStyledProps<"div"> & {
     linesWrapper?: boolean;
+    linesWrapperClassName?: string;
   };
 
-export const Section = ({ children, linesWrapper, ...props }: Props): JSX.Element => {
+export const Section = ({
+  children,
+  linesWrapper,
+  linesWrapperClassName,
+  ...props
+}: Props): JSX.Element => {
   const sectionComponent = (
     <div
       className={cx(
@@ -35,7 +41,9 @@ export const Section = ({ children, linesWrapper, ...props }: Props): JSX.Elemen
     </div>
   );
   if (linesWrapper) {
-    return <HorizontalLinesBox>{sectionComponent}</HorizontalLinesBox>;
+    return (
+      <HorizontalLinesBox className={linesWrapperClassName}>{sectionComponent}</HorizontalLinesBox>
+    );
   }
   return sectionComponent;
 };

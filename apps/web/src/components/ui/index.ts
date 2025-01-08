@@ -4,6 +4,7 @@ export * from "./hero-callout";
 export * from "./lines";
 export * from "./placeholder-application";
 export * from "./section";
+export * from "./section-intro";
 export * from "./small-feature";
 export * from "./smart-link";
 export * from "./tabs";

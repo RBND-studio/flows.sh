@@ -1,3 +1,4 @@
+import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
 import type { JSX } from "react";
@@ -21,19 +22,8 @@ export const WorkflowsSection = (): JSX.Element => {
         </Text>
       </Section>
 
-      <Section linesWrapper>
-        <Flex
-          alignItems="center"
-          justifyContent="center"
-          borderRightColor="newBorder.neutral"
-          borderRightWidth="1px"
-          borderLeftColor="newBorder.neutral"
-          borderLeftWidth="1px"
-          layerStyle="dotBackground"
-          width="100%"
-          height={400}
-          role="img"
-        >
+      <Section linesWrapper linesWrapperClassName={css({ layerStyle: "dotBackground" })}>
+        <Flex alignItems="center" justifyContent="center" width="100%" height={400} role="img">
           <WorkflowsExample />
         </Flex>
       </Section>
