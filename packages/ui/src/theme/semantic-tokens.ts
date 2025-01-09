@@ -96,6 +96,10 @@ export const semanticTokens = defineSemanticTokens({
       warning: {
         muted: { value: { base: "{colors.warning.50}", _dark: "{colors.warning-dark.800}" } },
       },
+      danger: {
+        subtle: { value: { base: "{colors.danger.50}", _dark: "{colors.danger-dark.800}" } },
+        muted: { value: { base: "{colors.danger.25}", _dark: "{colors.danger-dark.900}" } },
+      },
     },
 
     newFg: {
@@ -111,6 +115,9 @@ export const semanticTokens = defineSemanticTokens({
       },
       success: {
         DEFAULT: { value: { base: "{colors.success.500}", _dark: "{colors.success-dark.400}" } },
+      },
+      danger: {
+        DEFAULT: { value: { base: "{colors.danger.500}", _dark: "{colors.danger-dark.400}" } },
       },
     },
 
@@ -128,6 +135,9 @@ export const semanticTokens = defineSemanticTokens({
       },
       success: {
         DEFAULT: { value: { base: "{colors.success.400}", _dark: "{colors.success-dark.400}" } },
+      },
+      danger: {
+        DEFAULT: { value: { base: "{colors.danger.400}", _dark: "{colors.danger-dark.400}" } },
       },
     },
 
