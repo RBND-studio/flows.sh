@@ -235,10 +235,7 @@ const Page = (): ReactElement => {
       <Text className={paragraphCss} variant="bodyM">
         We use third party vendors to provide the necessary hardware, storage, payment processing
         and related technology required to run the Services. You can see a list of{" "}
-        <a href="https://flows.sh/privacy" rel="noopener" target="_blank">
-          all subprocessors here
-        </a>
-        .
+        <SmartLink href={routes.privacy}>all subprocessors here</SmartLink>.
       </Text>
 
       <Text as="h2" className={headingCss} variant="titleXl">
