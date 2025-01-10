@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "icons": "workspace:*",
-    "next": "15.1.0",
+    "next": "15.1.4",
     "next-sitemap": "^4.2.3",
     "nextra": "^3.2.4",
     "nextra-theme-docs": "^3.2.4",
@@ -27,7 +27,7 @@
     "ui": "workspace:*"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "15.1.0",
+    "@next/eslint-plugin-next": "15.1.4",
     "@pandacss/dev": "0.49.0",
     "@types/node": "^20.14.10",
     "@types/react": "^19.0.1",
