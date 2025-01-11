@@ -1,20 +1,24 @@
 import { css, cx } from "@flows/styled-system/css";
-import type { FC } from "react";
+import { Box } from "@flows/styled-system/jsx";
+import { type HTMLStyledProps } from "@flows/styled-system/types";
+import type { FC, HTMLAttributes } from "react";
 
-type Props = {
-  className?: string;
-};
+type Props = HTMLAttributes<HTMLDivElement> &
+  HTMLStyledProps<"div"> & {
+    className?: string;
+  };
 
-export const Skeleton: FC<Props> = ({ className }) => {
+export const Skeleton: FC<Props> = (props) => {
   return (
-    <div
+    <Box
+      {...props}
       className={cx(
         css({
           animation: "pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite",
           borderRadius: "radius4",
-          bg: "bg.subtle",
+          bg: "newBg.neutral.subtle",
         }),
-        className,
+        props.className,
       )}
     />
   );
