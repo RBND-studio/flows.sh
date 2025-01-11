@@ -38,6 +38,10 @@ const footerGroups: FooterGroup[] = [
         title: "User onboarding",
         href: routes.solution.userOnboarding,
       },
+      {
+        title: "Feature adoption",
+        href: routes.solution.featureAdoption,
+      },
     ],
   },
   {

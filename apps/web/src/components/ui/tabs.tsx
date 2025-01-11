@@ -6,7 +6,7 @@ import { Text } from "ui";
 type Props = {
   activeTab: string;
   onTabChange?: (tab: string) => void;
-  tabs: { title: string; icon?: ReactNode }[];
+  tabs: readonly { title: string; icon?: ReactNode }[];
 };
 
 export const Tabs = ({ activeTab, onTabChange, tabs }: Props): ReactElement => {

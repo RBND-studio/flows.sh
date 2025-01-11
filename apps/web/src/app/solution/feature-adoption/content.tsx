@@ -14,9 +14,36 @@ import {
 
 export const riverFeatures = [
   {
+    title: "Embeddable components",
+    description:
+      "Add feature announcements directly into your application without needing to update code or re-deploying.",
+    visual: (
+      <Box
+        overflow="hidden"
+        width="100%"
+        height="100%"
+        position="relative"
+        background="pane.bg.main"
+        role="img"
+      >
+        <Box
+          bottom={0}
+          left={0}
+          height={120}
+          background="linear-gradient(0deg, token(colors.pane.bg.elevated), transparent)"
+          width="100%"
+          aria-hidden="true"
+          position="absolute"
+        />
+        <PlaceholderTable />
+      </Box>
+    ),
+    first: true,
+  },
+  {
     title: "In-app product tours",
     description:
-      "Guide users step-by-step through key features for their success in your product. Highlight actions, showcase the value, and lead them to their “Aha” moment.",
+      "Guide users step-by-step to teach them what new features are available and how to use them.",
     visual: (
       <PlaceholderApplication
         sidebarTooltipSlot={
@@ -39,33 +66,6 @@ export const riverFeatures = [
           </Box>
         }
       />
-    ),
-    first: true,
-  },
-  {
-    title: "Embeddable components",
-    description:
-      "Embed UI elements directly into your application without needing to update code or re-deploying.",
-    visual: (
-      <Box
-        overflow="hidden"
-        width="100%"
-        height="100%"
-        position="relative"
-        background="pane.bg.main"
-        role="img"
-      >
-        <Box
-          bottom={0}
-          left={0}
-          height={120}
-          background="linear-gradient(0deg, token(colors.pane.bg.elevated), transparent)"
-          width="100%"
-          aria-hidden="true"
-          position="absolute"
-        />
-        <PlaceholderTable />
-      </Box>
     ),
   },
   {
@@ -120,14 +120,14 @@ export const riverFeatures = [
 
 export const questions = [
   {
-    title: "What is Flows and how can it help with user onboarding?",
+    title: "What is Flows and how can it help with feature adoption?",
     content: (
       <>
-        Flows is a product adoption platform that streamlines user onboarding with tools and
-        components to guide users through key features. Integrate Flows to create in-app tours,
-        embed UI elements, and design custom workflows to enhance engagement and retention. The
-        visual editor allows non-developers to manage these elements without coding, while offering
-        customization for developers.
+        Flows is a product adoption platform that simplifies feature announcement and product
+        walkthroughs with tools and components to guide users. Integrate Flows to create in-app
+        tours, embed UI elements, and design custom workflows to enhance engagement and retention.
+        The visual editor allows non-developers to manage these elements without coding, while
+        offering customization for developers.
         <br />
         <br />
         Flows includes built-in UI components and supports custom components for a native
@@ -140,7 +140,7 @@ export const questions = [
     title: "Do I need to know how to code?",
     content: (
       <>
-        You don’t need to know how to code to start creating user onboarding flows with Flows. Once
+        You don’t need to know how to code to create your fist release announcement with Flows. Once
         you integrate our SDK, you can use our visual editor to create and manage workflows without
         writing any code.
         <br />

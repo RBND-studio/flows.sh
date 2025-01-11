@@ -7,8 +7,13 @@ import { type FC, useState } from "react";
 
 import { tabs } from "./demo-data";
 
-export const DemoSection: FC = () => {
-  const [activeTab, setActiveTab] = useState(tabs[0].title);
+type Props = {
+  defaultTab?: (typeof tabs)[number]["title"];
+};
+
+export const DemoSection: FC<Props> = ({ defaultTab }) => {
+  const defaultTabTitle = defaultTab ?? tabs[0].title;
+  const [activeTab, setActiveTab] = useState<string>(defaultTabTitle);
   const currentTab = tabs.find((tab) => tab.title === activeTab);
 
   return (
@@ -49,12 +54,12 @@ export const DemoSection: FC = () => {
           lg={{ height: "560" }}
           md={{ height: "480" }}
         >
-          {activeTab === "Growth experiments" ? currentTab?.slideout : null}
+          {activeTab === "Growth experiments" ? currentTab?.element : null}
           <PlaceholderApplication
-            sidebarTooltipSlot={currentTab?.sidebarTooltipSlot}
-            bannerSlot={currentTab?.bannerSlot}
-            sidebarBannerSlot={currentTab?.sidebarBannerSlot}
-            helpSlot={currentTab?.helpSlot}
+            sidebarTooltipSlot={activeTab === "User onboarding" ? currentTab?.element : undefined}
+            bannerSlot={activeTab === "Product adoption" ? currentTab?.element : undefined}
+            sidebarBannerSlot={activeTab === "In-app messaging" ? currentTab?.element : undefined}
+            helpSlot={activeTab === "In-app help" ? currentTab?.element : undefined}
           />
         </Box>
       </Section>

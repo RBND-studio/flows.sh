@@ -13,23 +13,17 @@ import { SharedFeatures } from "../shared-features";
 import { questions, riverFeatures } from "./content";
 
 export const metadata: Metadata = {
-  title: "User Onboarding – Flows",
+  title: "Feature Adoption – Flows",
   description:
-    "Build engaging onboarding flows that guide users to value. Improve new user experience and drive activation while being on-brand.",
+    "Support releases with engaging announcements, embeddable banners, and guides. Nudge users to try new features and get the most out of your product.",
 };
 
 const Page = (): ReactElement => {
   return (
     <>
       <Hero
-        title={
-          <>
-            Create powerful
-            <br />
-            user onboarding
-          </>
-        }
-        description="Build engaging onboarding flows that guide users to value. Improve new user experience and drive activation while being on-brand."
+        title="Improve feature adoption"
+        description="Support releases with engaging announcements, embeddable banners, and guides. Nudge users to try new features and get the most out of your product."
         actions={
           <>
             <SignupClick>
@@ -40,7 +34,7 @@ const Page = (): ReactElement => {
                 asChild
                 size="large"
               >
-                <a href={links.signUp}>Start onboarding</a>
+                <a href={links.signUp}>Get started</a>
               </Button>
             </SignupClick>
             <Button variant="secondary" asChild size="large">
@@ -50,11 +44,11 @@ const Page = (): ReactElement => {
         }
       />
 
-      <DemoSection />
+      <DemoSection defaultTab="Product adoption" />
 
       <SectionIntro
-        title="How Flows works for user onboarding"
-        description="Power-up your user onboarding with flexible tools that help you create engaging experiences for your users."
+        title="How Flows helps with feature adoption"
+        description="Stop adding additional temporary code to your application to announce new features. Use Flows to create temporary banners, tooltips, and guides to help users discover and adopt new features."
         className={css({
           mb: "space80",
           md: { mb: "0" },
