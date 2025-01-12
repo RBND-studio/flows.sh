@@ -1,4 +1,3 @@
-import { css } from "@flows/styled-system/css";
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Skeleton } from ".";
@@ -13,5 +12,5 @@ export default meta;
 type Story = StoryObj<typeof Skeleton>;
 
 export const Default: Story = {
-  render: () => <Skeleton className={css({ width: "200px", height: 20 })} />,
+  render: () => <Skeleton width="200px" height="20px" />,
 };

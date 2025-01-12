@@ -1,6 +1,6 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
-import { Checklist16 } from "icons";
+import { Checklist16, Graph16 } from "icons";
 import Link from "next/link";
 import { type ReactNode } from "react";
 import { routes } from "routes";
@@ -18,6 +18,12 @@ export const SolutionsSubItems = ({ close }: Props): ReactNode => {
       icon: Checklist16,
       description: "Improve user activation and retention",
     },
+    {
+      title: "Feature adoption",
+      href: routes.solution.featureAdoption,
+      icon: Graph16,
+      description: "Drive feature adoption and engagement",
+    },
   ];
 
   return (
@@ -27,7 +33,7 @@ export const SolutionsSubItems = ({ close }: Props): ReactNode => {
           href={solution.href}
           className={css({
             display: "flex",
-            gap: "space12",
+            gap: "space8",
             borderRadius: "radius8",
             alignItems: "center",
             pl: "space8",
@@ -48,7 +54,7 @@ export const SolutionsSubItems = ({ close }: Props): ReactNode => {
           >
             <Icon icon={solution.icon} />
           </Flex>
-          <Flex flexDirection="column" gap="space4">
+          <Flex flexDirection="column" gap="space2">
             <Text variant="bodyS" weight="700">
               {solution.title}
             </Text>

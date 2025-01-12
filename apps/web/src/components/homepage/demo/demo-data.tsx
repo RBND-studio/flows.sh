@@ -10,7 +10,7 @@ import bannerImage from "./banner-image.jpg";
 export const tabs = [
   {
     title: "User onboarding",
-    sidebarTooltipSlot: (
+    element: (
       <Box position="relative">
         <Box
           height={24}
@@ -44,7 +44,7 @@ export const tabs = [
   },
   {
     title: "Product adoption",
-    bannerSlot: (
+    element: (
       <Flex
         p="space8"
         borderWidth="1px"
@@ -78,7 +78,7 @@ export const tabs = [
   },
   {
     title: "In-app messaging",
-    sidebarBannerSlot: (
+    element: (
       <Flex
         flexDirection="column"
         p="space12"
@@ -105,7 +105,7 @@ export const tabs = [
   },
   {
     title: "Growth experiments",
-    slideout: (
+    element: (
       <Box
         position="absolute"
         opacity={0}
@@ -128,7 +128,7 @@ export const tabs = [
   },
   {
     title: "In-app help",
-    helpSlot: (
+    element: (
       <Box position="relative" width="100%">
         <Icon
           className={css({
@@ -157,4 +157,4 @@ export const tabs = [
       </Box>
     ),
   },
-];
+] as const;
