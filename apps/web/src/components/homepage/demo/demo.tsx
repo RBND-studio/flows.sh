@@ -23,6 +23,7 @@ export const DemoSection: FC<Props> = ({ defaultTab }) => {
         justifyContent="center"
         px="space24"
         mb="space24"
+        position="relative"
         _after={{
           content: '""',
           position: "absolute",
