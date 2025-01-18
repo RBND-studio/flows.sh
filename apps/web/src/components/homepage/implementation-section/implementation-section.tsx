@@ -30,9 +30,9 @@ export const ImplementationSection = (): JSX.Element => {
             components, you can start building right away—no complex setups required.
           </Text>
         </Box>
-        <ImplementationTemplateCards />
       </Section>
 
+      <ImplementationTemplateCards />
       <ImplementationFeatures />
       <ImplementationExample codeExample={<ImplementationCodeExample />} />
       <ImplementationSubfeatures />

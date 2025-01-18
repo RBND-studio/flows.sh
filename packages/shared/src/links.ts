@@ -21,6 +21,8 @@ export const links = (domain = "flows.sh") => ({
   sdk: {
     reactTemplate: `https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/vite`,
     nextTemplate: `https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/next`,
+    nuxtTemplate:
+      "https://github.com/RBND-studio/flows-sdk/tree/main/examples/vue/nuxt-custom-components",
   },
   docs: {
     home: `https://${domain}/docs`,

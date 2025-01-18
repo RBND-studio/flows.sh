@@ -19,6 +19,11 @@ npm i @flows/react
 
 ## Usage
 
+<BetterCallout>
+  Check out our [template projects](https://github.com/RBND-studio/flows-sdk/tree/main/examples) for
+  implementation examples.
+</BetterCallout>
+
 The SDK provides a `FlowsProvider` component that you can use to wrap your app. Initialize it with your organization ID and environment key, which you can find in the **Settings > General** and **Settings > Environments** sections of the Flows dashboard.
 
 ```tsx filename="layout.tsx"
@@ -29,6 +34,9 @@ const App = () => {
     <FlowsProvider
       organizationId="your-organization-id" // Find this in Settings > General
       environment="production" // Default environment
+      userId="your-user-id" // Identify the user
+      components={{}}
+      tourComponents={{}}
     >
       {/* Your app code here */}
     </FlowsProvider>
@@ -36,16 +44,17 @@ const App = () => {
 };
 ```
 
-FlowsProvider accepts the following props:
+The `FlowsProvider` accepts the following props:
 
 | Name             | Type     | Required | Notes                                                                                                            |
 | ---------------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------- |
 | `organizationId` | `string` | Yes      | Your organization ID. Find this in **Settings > General**.                                                       |
 | `environment`    | `string` | Yes      | The environment key. Find this in **Settings > Environments**.                                                   |
-| `userId`         | `string` | Yes      | Unique user ID. If no ID is provided, all users will be treated as one.                                          |
+| `userId`         | `string` | Yes      | Unique ID for identifying the user.                                                                              |
 | `components`     | `object` | Yes      | Custom components to use in your workflows.                                                                      |
 | `tourComponents` | `object` | Yes      | Custom tour components to use in tour blocks.                                                                    |
 | `userProperties` | `object` | No       | Object with custom [user properties](/users/properties). Values can be `string`, `number`, `boolean`, or `date`. |
+| `apiUrl`         | `string` | No       | Custom API URL useful when using proxy to send Flows requests through your own domain.                           |
 
 ### FlowsSlot
 
@@ -98,6 +107,7 @@ const App = () => {
     <FlowsProvider
       organizationId="your-organization-id" // Find this in Settings > General
       environment="production" // Default environment
+      userId="your-user-id" // Identify the user
       tourComponents={{
         ...tourComponents,
       }}
