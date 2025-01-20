@@ -19,11 +19,11 @@ COPY .gitignore .gitignore
 COPY --from=builder /app/out/json/ .
 COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
 COPY --from=builder /app/out/pnpm-workspace.yaml ./pnpm-workspace.yaml
-RUN corepack enable pnpm
-RUN pnpm install --ignore-scripts --frozen-lockfile
-
 COPY --from=builder /app/out/full/ .
+
+RUN corepack enable pnpm
 RUN pnpm install --frozen-lockfile
+
 RUN pnpm turbo run build --filter=backend...
 
 FROM base AS prod-installer

@@ -21,12 +21,12 @@ COPY .gitignore .gitignore
 COPY --from=builder /app/out/json/ .
 COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
 COPY --from=builder /app/out/pnpm-workspace.yaml ./pnpm-workspace.yaml
+COPY --from=builder /app/out/full/ .
+
 RUN corepack enable pnpm
-RUN pnpm install --ignore-scripts --frozen-lockfile
+RUN pnpm install --frozen-lockfile
 
 # Build the project
-COPY --from=builder /app/out/full/ .
-RUN PROD=true pnpm install --frozen-lockfile
 ARG APP
 RUN pnpm turbo run build --filter=${APP}...
 
