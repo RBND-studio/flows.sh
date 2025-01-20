@@ -19,6 +19,8 @@ export const links = (domain = "flows.sh") => ({
   pricing: `https://${domain}/pricing`,
   changelog: `https://${domain}/changelog`,
   sdk: {
+    javascriptGuide: `https://${domain}/docs/sdk/javascript/guide`,
+
     reactTemplate: `https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/vite`,
     nextTemplate: `https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/next`,
     nuxtTemplate:
