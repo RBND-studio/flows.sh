@@ -29,6 +29,10 @@ const footerGroups: FooterGroup[] = [
         title: "Changelog",
         href: routes.changelog,
       },
+      {
+        title: "Examples",
+        href: routes.example.card,
+      },
     ],
   },
   {

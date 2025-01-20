@@ -1,0 +1,36 @@
+.gradientBorder {
+  position: relative;
+  max-width: 100%;
+  padding: 3px;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.gradientBorder::before {
+  content: "";
+  position: absolute;
+  top: -500%;
+  left: -25%;
+  width: 1400px;
+  height: 1400px;
+  background: conic-gradient(from 0deg, #6366f1, #ec4899, #ef4444, #6366f1);
+  animation: rotate 2s linear infinite;
+}
+
+.content {
+  position: absolute;
+  inset: 3px;
+  background-color: hsl(var(--card));
+  border-radius: 0.375rem;
+  z-index: 1;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -44,6 +44,7 @@ export * from "./src/mail16";
 export * from "./src/menu16";
 export * from "./src/minus16";
 export * from "./src/modal16";
+export * from "./src/next-js16";
 export * from "./src/next-js32";
 export * from "./src/number16";
 export * from "./src/nuxt32";

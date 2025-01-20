@@ -18,7 +18,7 @@ const cspHeader = `
     object-src 'none';
     base-uri 'self';
     form-action 'self';
-    frame-src 'none';
+    frame-src https://*.examples.flows.sh;
     frame-ancestors 'none';
     upgrade-insecure-requests;
 `;

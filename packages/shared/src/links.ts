@@ -26,6 +26,10 @@ export const links = (domain = "flows.sh") => ({
     nuxtTemplate:
       "https://github.com/RBND-studio/flows-sdk/tree/main/examples/vue/nuxt-custom-components",
   },
+  examples: {
+    card: "https://card.examples.flows.sh",
+    cardSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/card",
+  },
   docs: {
     home: `https://${domain}/docs`,
     migrateToFlows2: `https://${domain}/docs/getting-started/migrate-to-flows-2`,
