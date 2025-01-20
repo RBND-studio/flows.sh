@@ -24,10 +24,6 @@ Flows 2 introduces [workflows](/workflows), enabling you to create complex, mult
 
 For step-by-step guides to specific tasks, use a [tour](/tours) within a workflow. Tours work similarly to old flows but offer [special features](/tours#tours-vs-workflows), making them ideal for linear user journeys.
 
-### React-only support
-
-Flows 2 is currently available only for React applications. A JavaScript SDK is in progress and will launch before Flows 1 is fully deprecated. If you are using a different framework, let us know at hello@flows.sh.
-
 ### Pricing changes
 
 We’re transitioning from a “Monthly Started Flows” model to a “Monthly Tracked Users (MTU)” model. This means you’ll pay based on the number of users initialized in a given month, with unlimited workflows included. For full details, visit our [pricing page](https://flows.sh/pricing).
@@ -47,18 +43,13 @@ Flows 2 does not support adding custom CSS in Flows Cloud. To customize componen
 
 ### 1. Install the new SDK
 
-Flows 2 requires the `@flows/react` package. The old `@flows/js` is deprecated and no longer updated.
+Intall `@flows/react` package or update `@flows/js` to the latest version.
 
 ```sh npm2yarn
 npm install @flows/react
 ```
 
-Refer to the [getting started guide](/getting-started/quickstart) or [SDK documentation](/sdk/react) for setup details.
-
-<BetterCallout variant="info">
-  If you need to keep serving old flows in your application during the migration, keep the old
-  `@flows/js` package installed.
-</BetterCallout>
+Refer to the [getting started guide](/getting-started/quickstart) and [React SDK docs](/sdk/react), [JS SDK docs](/sdk/javascript/guide) for setup details.
 
 ### 2. Use built-in components
 

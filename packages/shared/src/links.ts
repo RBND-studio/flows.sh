@@ -19,8 +19,16 @@ export const links = (domain = "flows.sh") => ({
   pricing: `https://${domain}/pricing`,
   changelog: `https://${domain}/changelog`,
   sdk: {
+    javascriptGuide: `https://${domain}/docs/sdk/javascript/guide`,
+
     reactTemplate: `https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/vite`,
     nextTemplate: `https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/next`,
+    nuxtTemplate:
+      "https://github.com/RBND-studio/flows-sdk/tree/main/examples/vue/nuxt-custom-components",
+  },
+  examples: {
+    card: "https://card.examples.flows.sh",
+    cardSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/card",
   },
   docs: {
     home: `https://${domain}/docs`,

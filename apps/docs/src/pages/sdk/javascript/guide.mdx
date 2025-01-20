@@ -1,0 +1,175 @@
+---
+title: JavaScript SDK
+description: JavaScript SDK for Flows.
+---
+
+# JavaScript SDK
+
+The official Flows SDK for JavaScript.
+
+![Flows JavaScript SDK](/sdk/javascript.png)
+
+Flows JS SDK is a lightweight library that allows you to integrate Flows into any application that runs JavaScript. Similar to our [React SDK](/sdk/react), this SDK includes a components package to simplify getting started with Flows in your application.
+
+## Installation
+
+You can install the Flows JavaScript SDK [from npm](https://www.npmjs.com/package/@flows/js):
+
+```sh npm2yarn
+npm i @flows/js
+```
+
+## Usage
+
+<BetterCallout>
+  Check out our [template projects](https://github.com/RBND-studio/flows-sdk/tree/main/examples) for
+  implementation examples.
+</BetterCallout>
+
+### Initializing the SDK
+
+Use the `init` function to initialize the SDK with your organization ID and environment key, which you can find in the **Settings > General** and **Settings > Environments** sections of the Flows dashboard.
+
+```js filename="main.js"
+import { init } from "@flows/js";
+
+init({
+  organizationId: "your-organization-id", // Found in Settings > General
+  environment: "production", // Default environment
+  userId: "your-user-id", // Identify the user
+});
+```
+
+Refer to the [init function documentation](./reference.mdx#init) for details on configurable options.
+
+### Integrating with UI frameworks / libraries
+
+The SDK includes utilities for rendering blocks in JavaScript applications. You can implement block rendering using these methods:
+
+- [`addFloatingBlocksChangeListener`](./reference.mdx#addfloatingblockschangelistener): Listen for floating block changes.
+- [`addSlotBlocksChangeListener`](./reference.mdx#addslotblockschangelistener): Listen for changes to slot blocks.
+- [`getCurrentFloatingBlocks`](./reference.mdx#getcurrentfloatingblocks): Retrieves current floating blocks.
+- [`getCurrentSlotBlocks`](./reference.mdx#getcurrentslotblocks): Retrieves current slottable blocks.
+
+#### Rendering floating blocks
+
+Here’s a high-level example of rendering floating blocks using a pseudo UI library. Since `@flows/js` is designed to work with any JavaScript UI library/framework the example is in a generic code that illustrates how to use it with concepts that are common in most UI frameworks.
+
+```js filename="main.js"
+import { addFloatingBlocksChangeListener } from "@flows/js";
+
+// Pseudo UI library reactive state for managing blocks
+const blocksState = uiState();
+
+const dispose = addFloatingBlocksChangeListener((blocks) => {
+  blocksState.set(blocks);
+});
+
+// Call `dispose` when you want to stop listening to the changes and avoid memory leaks
+dispose();
+
+// Define your components and tour components
+const components = { ... }
+const tourComponents = { ... }
+
+// Pseudo UI library code that renders the blocks
+const render = () => {
+  return blocksState.map(block => {
+    if(block.type === "component") {
+      const Component = components[block.component]
+      return <Component {...block.props} />
+    }
+
+    if(block.type === "tour-component") {
+      const TourComponent = tourComponents[block.component]
+      return <TourComponent {...block.props} />
+    }
+  })
+}
+```
+
+#### Slot rendering
+
+Rendering slot-specific blocks can be done by creating a reusable `FlowsSlot` component. This component listens for changes to slot blocks in a specific slot ID and renders the blocks accordingly.
+
+```js filename="flows-slot.js"
+import { addSlotBlocksChangeListener } from "@flows/js";
+// Import your components that we defined earlier
+import { components, tourComponents } from "@/my-flows-components";
+
+// Pseudo UI library reactive state
+const mySlotBlocksState = uiState();
+
+const dispose = addSlotBlocksChangeListener(
+  // Pass a `slotId` prop to the component
+  props.slotId,
+  (blocks) => {
+    blocksState.set(blocks);
+  },
+);
+// Call `dispose` when you want to stop listening to the changes and avoid memory leaks
+dispose();
+
+// Pseudo UI library code that renders slot
+const FlowsSlotRender = () => {
+  // Without any blocks, render optional placeholder
+  if (mySlotBlocksState.length === 0) return props.placeholder ?? null;
+
+  return mySlotBlocksState.map((block) => {
+    if (block.type === "component") {
+      const Component = components[block.component];
+      return <Component {...block.props} />;
+    }
+
+    if (block.type === "tour-component") {
+      const TourComponent = tourComponents[block.component];
+      return <TourComponent {...block.props} />;
+    }
+  });
+};
+```
+
+### Using `@flows/js-components`
+
+To simplify implementation, you can use the `@flows/js-components` package, which provides pre-built components and utilities for block rendering.
+
+You can install the Flows JavaScript Components SDK [from npm](https://www.npmjs.com/package/@flows/js-components):
+
+```sh npm2yarn
+npm i @flows/js-components
+```
+
+Then setup the slot components and render function for the floating blocks. Rendering of slot blocks will be handled by the [`<flows-slot>`](#flows-slot) element.
+
+```js filename="main.js"
+import { init, addFloatingBlocksChangeListener } from "@flows/js";
+import { render, updateSlotComponents } from "@flows/js-components";
+import * as components from "@flows/js-components/components";
+import * as tourComponents from "@flows/js-components/tour-components";
+
+// Import the styles or copy them to your project and <link> them in your HTML
+import "@flows/js-components/index.css";
+
+init({ ... })
+updateSlotComponents({ components, tourComponents })
+const dispose = addFloatingBlocksChangeListener((blocks) => {
+  render({ blocks, components,tourComponents });
+});
+// Call `dispose` when you want to stop listening to the changes to avoid memory leaks
+dispose()
+```
+
+You can then use custom `<flows-slot>` HTML element with optional placeholder content anywhere in your HTML document to render slottable blocks.
+
+```html filename="page.html"
+<body>
+  <!-- ... -->
+  <flows-slot data-slot-id="my-slot">
+    <!-- Optionally you can pass one child element with `data-placeholder` attribute -->
+    <div data-placeholder>
+      <p>Optionally pass placeholder content here</p>
+    </div>
+  </flows-slot>
+  <!-- ... -->
+</body>
+```

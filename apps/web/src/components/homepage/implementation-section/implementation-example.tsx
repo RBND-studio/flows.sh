@@ -115,18 +115,24 @@ export const ImplementationExample: FC<Props> = ({ codeExample }) => {
         width="100%"
         borderLeftColor="newBorder.neutral"
         borderLeftWidth="1px"
+        borderRightColor="newBorder.neutral"
+        borderRightWidth="1px"
         linesWrapper
         flexDirection="column"
-        md={{ flexDirection: "row", height: "460px" }}
+        md={{
+          flexDirection: "row",
+          height: "460px",
+          borderRightWidth: "0px",
+        }}
         linesWrapperClassName={css({ layerStyle: "dotBackground" })}
       >
         <Box
-          maxWidth={360}
           width="100%"
           backgroundColor="newBg.neutral"
           borderBottomColor="newBorder.neutral"
           borderBottomWidth="1px"
           md={{
+            maxWidth: "360px",
             borderRightColor: "newBorder.neutral",
             borderRightWidth: "1px",
             borderBottomWidth: 0,

@@ -1,6 +1,7 @@
 import { css, cva } from "@flows/styled-system/css";
-import { Flex, Grid } from "@flows/styled-system/jsx";
-import { ExternalLink16, NextJS32, React32 } from "icons";
+import { Box, Flex, Grid } from "@flows/styled-system/jsx";
+import { Section } from "components/ui";
+import { ExternalLink16, NextJS32, Nuxt32, React32 } from "icons";
 import { links } from "lib/links";
 import { type FC, type JSX, type SVGProps } from "react";
 import { Icon, Text } from "ui";
@@ -18,21 +19,43 @@ const templates: TemplateCardProps[] = [
     backgroundColor: "react",
     link: links.sdk.reactTemplate,
   },
+  {
+    title: "Nuxt",
+    icon: Nuxt32,
+    backgroundColor: "vue",
+    link: links.sdk.nuxtTemplate,
+  },
 ];
 
 export const ImplementationTemplateCards = (): JSX.Element => {
   return (
-    <Grid width="100%" gap="space12" gridTemplateColumns="1fr 1fr">
-      {templates.map((template) => (
-        <TemplateCard key={template.title} {...template} />
-      ))}
-    </Grid>
+    <Section>
+      <Grid
+        width="100%"
+        gap="space12"
+        gridTemplateColumns="1fr 1fr 1fr 1fr"
+        mdDown={{ gridTemplateColumns: "1fr 1fr" }}
+      >
+        {templates.map((template) => (
+          <TemplateCard key={template.title} {...template} />
+        ))}
+        {/* Placeholder box until we add another template */}
+        <Box
+          height="100%"
+          width="100%"
+          borderWidth="2px"
+          borderColor="newBorder.neutral.muted"
+          borderRadius="radius8"
+          borderStyle="dashed"
+        />
+      </Grid>
+    </Section>
   );
 };
 
 type TemplateCardProps = {
   icon: FC<SVGProps<SVGSVGElement>>;
-  backgroundColor: "nextjs" | "react";
+  backgroundColor: (typeof background.variantMap.variant)[number];
   title: string;
   link: string;
 };
@@ -84,11 +107,24 @@ const background = cva({
   variants: {
     variant: {
       nextjs: {
-        backgroundColor: "newBg.neutral.strong",
+        backgroundColor: "hsl(214, 10%, 97%)",
+        _dark: {
+          backgroundColor: "hsl(214, 15%, 14%)",
+        },
       },
       react: {
         color: "#149ECA",
-        backgroundColor: "newBg.primary.muted",
+        backgroundColor: "hsl(195, 100%, 97%)",
+        _dark: {
+          backgroundColor: "hsl(195, 80%, 9%)",
+        },
+      },
+      vue: {
+        color: "#00dc80",
+        backgroundColor: "hsl(155, 100%, 97%)",
+        _dark: {
+          backgroundColor: "hsl(155, 80%, 9%)",
+        },
       },
     },
   },

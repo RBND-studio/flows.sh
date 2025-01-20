@@ -13,11 +13,11 @@ WORKDIR /app
 
 COPY .gitignore .gitignore
 COPY --from=builder /app/out/json/ .
-RUN corepack enable pnpm
-RUN pnpm install --ignore-scripts --frozen-lockfile
-
 COPY --from=builder /app/out/full/ .
-RUN pnpm install
+
+RUN corepack enable pnpm
+RUN pnpm install --frozen-lockfile
+
 RUN pnpm turbo run build --filter=ui
 
 FROM nginx:alpine AS runner
