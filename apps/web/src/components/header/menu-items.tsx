@@ -17,6 +17,10 @@ export const menuItems: MenuItemProps[] = [
     subItems: (close) => <SolutionsSubItems close={close} />,
   },
   {
+    title: "Examples",
+    href: routes.example.main,
+  },
+  {
     title: "Blog",
     href: routes.blog,
   },

@@ -9,6 +9,8 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
 
+const dev = process.env.NODE_ENV !== "production";
+
 const cspHeader = `
     default-src 'self';
     script-src 'self' 'unsafe-eval' 'unsafe-inline';
@@ -18,7 +20,7 @@ const cspHeader = `
     object-src 'none';
     base-uri 'self';
     form-action 'self';
-    frame-src https://*.examples.flows.sh;
+    frame-src https://*.examples.flows.sh${dev ? " http://localhost:3000" : ""};
     frame-ancestors 'none';
     upgrade-insecure-requests;
 `;

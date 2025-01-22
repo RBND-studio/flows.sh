@@ -17,7 +17,7 @@ import workflowPng from "./workflow.png";
 
 export const content: ContentType = {
   title: "Card example",
-  description: "A custom card component built with the Flows SDK to render content inline.",
+  description: "A custom card component built to render content inside your product, not above it.",
   embed: {
     src: links.examples.card,
     title: "Card example application – Flows",
@@ -41,6 +41,7 @@ export const content: ContentType = {
         Cards are particularly useful for presenting contextual information—such as new feature
         announcements or helpful tips—without overwhelming the user.
       </Paragraph>
+
       <Heading>Features</Heading>
       <Paragraph>
         When a user enters the Card block in a workflow and visits the home page, the card component
@@ -109,7 +110,7 @@ export const content: ContentType = {
             </li>
           </UnorderedList>
         </li>
-        <li>Recreate the workflow in your organization. </li>
+        <li>Recreate the workflow in your organization and publish it.</li>
         <li>
           Run the development server with <InlineCode>pnpm dev</InlineCode>.
         </li>
