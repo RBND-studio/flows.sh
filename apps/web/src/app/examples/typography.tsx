@@ -11,6 +11,14 @@ export const Heading = ({ children }): ReactElement => {
   );
 };
 
+export const Heading2 = ({ children }): ReactElement => {
+  return (
+    <Text variant="titleL" mb="space16" mt="space32" as="h3">
+      {children}
+    </Text>
+  );
+};
+
 export const Paragraph = ({ children }): ReactElement => {
   return (
     <Text mb="space24" variant="bodyL">

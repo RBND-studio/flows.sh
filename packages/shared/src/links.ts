@@ -29,6 +29,8 @@ export const links = (domain = "flows.sh") => ({
   examples: {
     card: "https://card.examples.flows.sh",
     cardSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/card",
+    tour: "https://tour.examples.flows.sh",
+    tourSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/tour",
   },
   docs: {
     home: `https://${domain}/docs`,

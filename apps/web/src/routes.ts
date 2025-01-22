@@ -13,7 +13,9 @@ export const routes = {
   },
 
   example: {
+    main: "/examples",
     card: "/examples/card",
+    tour: "/examples/tour",
   },
 
   blog: "/blog",

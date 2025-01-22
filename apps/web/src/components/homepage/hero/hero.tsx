@@ -6,7 +6,7 @@ import { Text } from "ui";
 type Props = {
   title: ReactNode;
   description: string;
-  actions: ReactNode;
+  actions?: ReactNode;
 };
 
 export const Hero = ({ title, description, actions }: Props): ReactElement => {
@@ -34,18 +34,19 @@ export const Hero = ({ title, description, actions }: Props): ReactElement => {
       >
         {description}
       </Text>
-
-      <Flex
-        justifyContent="center"
-        gap="space12"
-        width="100%"
-        opacity={0}
-        animation="topSlideIn 0.6s ease-out"
-        animationDelay="0.6s"
-        animationFillMode="forwards"
-      >
-        {actions}
-      </Flex>
+      {actions ? (
+        <Flex
+          justifyContent="center"
+          gap="space12"
+          width="100%"
+          opacity={0}
+          animation="topSlideIn 0.6s ease-out"
+          animationDelay="0.6s"
+          animationFillMode="forwards"
+        >
+          {actions}
+        </Flex>
+      ) : null}
     </Section>
   );
 };
