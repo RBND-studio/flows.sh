@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: content.description,
 };
 
-export default function TourExamplePage(): ReactNode {
+export default function HintExamplePage(): ReactNode {
   return (
     <>
       <ExampleHeader title={content.title} description={content.description} />
