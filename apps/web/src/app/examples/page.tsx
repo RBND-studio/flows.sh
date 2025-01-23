@@ -9,6 +9,7 @@ import { routes } from "routes";
 
 import { content as cardContent } from "./card/content";
 import { ExampleCard } from "./example-card";
+import { content as hintContent } from "./hint/content";
 import { content as tourContent } from "./tour/content";
 
 export const metadata: Metadata = {
@@ -28,6 +29,12 @@ const examples = [
     title: tourContent.title,
     description: tourContent.description,
     href: routes.example.tour,
+    icon: Tooltip16,
+  },
+  {
+    title: hintContent.title,
+    description: hintContent.description,
+    href: routes.example.hint,
     icon: Tooltip16,
   },
 ];

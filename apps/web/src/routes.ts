@@ -16,6 +16,7 @@ export const routes = {
     main: "/examples",
     card: "/examples/card",
     tour: "/examples/tour",
+    hint: "/examples/hint",
   },
 
   blog: "/blog",
