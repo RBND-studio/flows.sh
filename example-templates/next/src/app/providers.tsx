@@ -30,14 +30,14 @@ export const Providers: FC<Props> = ({ children }) => {
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       {userId ? (
         <FlowsProvider
-          // Replace with your own organization ID
+          // Replace with your organizationId
           organizationId="df8c5b97-5c1a-4cba-a1e8-ab9b348c9330"
           environment="production"
           userId={userId}
-          components={{ ...components }}
-          tourComponents={{ ...tourComponents }}
-          userProperties={{
-            example: "tour",
+          components=\{{ ...components }}
+          tourComponents=\{{ ...tourComponents }}
+          userProperties=\{{
+            example: "-- PLOP EXAMPLE NAME HERE --"
           }}
         >
           {content}

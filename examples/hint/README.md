@@ -1,8 +1,6 @@
-# Hint example application – Flows
+# Hint example application – Flows example
 
 This example showcases a set of custom hints powered by `@flows/react` which uses `@floating-ui/react-dom`.
-
-[View the live demo](https://flows.sh/examples/hint)
 
 Hints provide users with on-demand and contextual guidance. Hints use small beacons that encourage users to focus on certain features, then progressively disclose more information when the user interacts with them.
 
@@ -11,6 +9,10 @@ Hints are useful for:
 - Contextual education and help
 - To draw attention to a new feature without interrupting a user’s workflow.
 - Gently nudge users to explore, learn, or take action.
+
+## Demo
+
+[View the live demo](https://flows.sh/examples/hint)
 
 ## Features
 

@@ -18,7 +18,8 @@
     "e2e": "pnpm --filter e2e",
     "prepare": "husky || true",
     "pre-push": "turbo lint tsc test spellcheck pre-commit",
-    "spellcheck": "pnpm cspell . --quiet"
+    "spellcheck": "pnpm cspell . --quiet",
+    "new-example": "pnpm dlx plop example"
   },
   "devDependencies": {
     "cspell": "^8.16.1",

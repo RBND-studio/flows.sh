@@ -1,12 +1,14 @@
-# Card example application – Flows
+# Card example application – Flows example
 
 A custom card component built with the Flows SDK to render content inline.
 
 This example showcases an inline card component powered by `@flows/react` which uses `FlowsSlot` to display content based on the user’s workflow state.
 
-[View the live demo](https://flows.sh/examples/card)
-
 Cards are particularly useful for presenting contextual information—such as new feature announcements or helpful tips—without overwhelming the user.
+
+## Demo
+
+[View the live demo](https://flows.sh/examples/card)
 
 ## Features
 
