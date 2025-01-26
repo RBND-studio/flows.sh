@@ -8,6 +8,7 @@
     "AAAAAL",
     "Astrodon",
     "authjs",
+    "bitnami",
     "CCPA",
     "clpxmw",
     "easings",
@@ -17,6 +18,8 @@
     "flows",
     "grecaptcha",
     "Hlavenec",
+    "Ilike",
+    "initdb",
     "kafkajs",
     "Lekgu",
     "lemonsqueezy",
@@ -26,11 +29,13 @@
     "nextjs",
     "nextra",
     "noflash",
+    "nuxt",
     "Ondrej",
     "opesicka",
     "Pesicka",
     "pesickadavid",
     "rbnd",
+    "reauthentication",
     "rehype",
     "reimagined",
     "shiki",
@@ -44,9 +49,7 @@
     "Vixww",
     "Vojtech",
     "waivable",
-    "zustand",
-    "Ilike",
-    "nuxt"
+    "zustand"
   ],
   // flagWords - list of words to be always considered incorrect
   // This is useful for offensive words and common spelling errors.

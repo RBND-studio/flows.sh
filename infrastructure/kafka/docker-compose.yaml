@@ -1,0 +1,28 @@
+services:
+  kafka:
+    image: bitnami/kafka:3.8
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1g
+    ports:
+      - ${KAFKA_PORT}:9094
+    volumes:
+      - "kafka_data:/bitnami"
+    environment:
+      - KAFKA_CFG_NODE_ID=0
+      - KAFKA_CFG_PROCESS_ROLES=controller,broker
+      - KAFKA_CFG_LISTENERS=${KAFKA_CFG_LISTENERS}
+      - KAFKA_CFG_ADVERTISED_LISTENERS=${KAFKA_CFG_ADVERTISED_LISTENERS}
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=${KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP}
+      - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka:9093
+      - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+
+volumes:
+  kafka_data: 
+    driver: local
+networks:
+  default:
+    name: ${COMPOSE_PROJECT_NAME}
+    external: true
