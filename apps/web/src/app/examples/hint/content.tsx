@@ -1,5 +1,6 @@
 import { css } from "@flows/styled-system/css";
 import { SignupClick } from "components/utils/signup-click";
+import { BlockTemplate16 } from "icons";
 import { links } from "lib/links";
 import Image from "next/image";
 
@@ -15,8 +16,10 @@ import {
 } from "../typography";
 import workflowPng from "./workflow.png";
 
-export const content: ContentType = {
-  title: "Hint example",
+export const hintContent: ContentType = {
+  slug: "hint",
+  title: "Hint",
+  icon: BlockTemplate16,
   description: "Self-guided contextual hints that help with feature discovery and education.",
   embed: {
     src: links.examples.hint,
@@ -81,7 +84,7 @@ export const content: ContentType = {
         </li>
         <li>
           Clone the repository from{" "}
-          <ParagraphLink href={links.examples.cardSource}>GitHub</ParagraphLink> and install the
+          <ParagraphLink href={links.examples.hintSource}>GitHub</ParagraphLink> and install the
           required dependencies in the project directory.
         </li>
         <li>

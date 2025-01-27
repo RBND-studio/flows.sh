@@ -25,6 +25,7 @@ module.exports = function (plop) {
           destination: plopPath,
           base: templatePath,
           templateFiles: `${templatePath}/**/*`,
+          globOptions: { dot: true },
         },
         // README.md
         {

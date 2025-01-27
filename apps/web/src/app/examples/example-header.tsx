@@ -15,7 +15,7 @@ export const ExampleHeader = ({ title, description }: Props): ReactNode => {
   return (
     <Section pt="space40" pb="space32" md={{ pt: "space80", pb: "space64" }}>
       <Link
-        href={routes.example.main}
+        href={routes.examples}
         className={css({
           display: "flex",
           gap: "space6",

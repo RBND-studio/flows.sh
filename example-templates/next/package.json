@@ -1,5 +1,6 @@
 {
   "name": "-- PLOP EXAMPLE NAME HERE --",
+  "version": "0.1.0",
   "repository": "https://github.com/RBND-studio/flows.sh/tree/main/examples",
   "license": "MIT",
   "private": true,
@@ -36,5 +37,6 @@
     "prettier-plugin-tailwindcss": "^0.6.10",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
-  }
+  },
+  "packageManager": "pnpm@9.15.4"
 }

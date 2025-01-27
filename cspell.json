@@ -41,6 +41,7 @@
     "shiki",
     "signup",
     "Sonner",
+    "spammy",
     "squeezy",
     "Usetiful",
     "vdpl",
@@ -56,18 +57,18 @@
   // For example "hte" should be "the"
   "flagWords": ["hte"],
   "ignorePaths": [
-    "**/node_modules/**",
-    "**/tsconfig.*",
-    "**.html",
-    "**/package.json",
-    "**/dist/**/*",
-    "**/storybook-static/**/*",
-    "out/**/*",
     "_journal.json",
-    "pnpm-lock.yaml",
+    "**.html",
+    "**/dist/**/*",
+    "**/drizzle/**/*",
+    "**/node_modules/**",
+    "**/package.json",
+    "**/storybook-static/**/*",
+    "**/tsconfig.*",
     "cspell.json",
+    "out/**/*",
     "pandacss-generated",
-    "**/drizzle/**/*"
+    "pnpm-lock.yaml",
   ],
   "allowCompoundWords": true
 }

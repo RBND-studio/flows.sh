@@ -18,7 +18,7 @@ export const menuItems: MenuItemProps[] = [
   },
   {
     title: "Examples",
-    href: routes.example.main,
+    href: routes.examples,
   },
   {
     title: "Blog",
