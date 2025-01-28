@@ -12,12 +12,8 @@ export const routes = {
     featureAdoption: "/solution/feature-adoption",
   },
 
-  example: {
-    main: "/examples",
-    card: "/examples/card",
-    tour: "/examples/tour",
-    hint: "/examples/hint",
-  },
+  examples: "/examples",
+  exampleDetail: (slug: string) => `/examples/${slug}`,
 
   blog: "/blog",
   blogPostDetail: ({ postId }: { postId: string }) => `/blog/${postId}`,

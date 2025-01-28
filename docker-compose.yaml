@@ -1,0 +1,3 @@
+include:
+  - infrastructure/postgres/docker-compose.yaml
+  - infrastructure/kafka/docker-compose.yaml

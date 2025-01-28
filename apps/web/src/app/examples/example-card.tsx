@@ -22,7 +22,6 @@ export const ExampleCard = ({ title, description, href, icon }: Props): ReactNod
         borderColor: "pane.border.elevated",
         backgroundColor: "pane.bg.elevated",
         fastEaseInOut: "all",
-        maxWidth: "300px",
         overflow: "hidden",
 
         _hover: {

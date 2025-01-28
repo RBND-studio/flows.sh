@@ -1,10 +1,6 @@
-# Tour example application – Flows
-
-A custom card component built with the Flows SDK to render content inline.
+# Tour example application – Flows example
 
 This example showcases an inline card component powered by `@flows/react` and the built-in components from `@flows/react-components`.
-
-[View the live demo](https://flows.sh/examples/tour)
 
 Tours are multi-step flows used to guide users through new, undiscovered, or changed products and features.
 
@@ -13,6 +9,10 @@ Good tours:
 - Are concise and direct (try to limit them to five steps).
 - Match the user’s context (don’t show a tour for a feature the user has already explored).
 - Use short, meaningful copy.
+
+## Demo
+
+[View the live demo](https://flows.sh/examples/tour)
 
 ## Features
 

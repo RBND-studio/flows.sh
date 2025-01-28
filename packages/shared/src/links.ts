@@ -33,6 +33,8 @@ export const links = (domain = "flows.sh") => ({
     tourSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/tour",
     hint: "https://hint.examples.flows.sh",
     hintSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/hint",
+    embeddedTips: "https://embedded-tips.examples.flows.sh",
+    embeddedTipsSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/embedded-tips",
   },
   docs: {
     home: `https://${domain}/docs`,

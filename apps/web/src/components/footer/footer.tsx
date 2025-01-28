@@ -31,7 +31,7 @@ const footerGroups: FooterGroup[] = [
       },
       {
         title: "Examples",
-        href: routes.example.main,
+        href: routes.examples,
       },
     ],
   },

@@ -1,5 +1,6 @@
 import { css } from "@flows/styled-system/css";
 import { SignupClick } from "components/utils/signup-click";
+import { Tooltip16 } from "icons";
 import { links } from "lib/links";
 import Image from "next/image";
 import { CodeHighlight } from "ui/server";
@@ -21,8 +22,10 @@ import tooltipsPng from "./tooltips.png";
 import waitPng from "./wait.png";
 import workflowPng from "./workflow.png";
 
-export const content: ContentType = {
-  title: "Tour example",
+export const tourContent: ContentType = {
+  slug: "tour",
+  title: "Tour",
+  icon: Tooltip16,
   description: "Guide users along their journey through your product",
   embed: {
     src: links.examples.tour,
@@ -249,7 +252,7 @@ export const content: ContentType = {
         </li>
         <li>
           Clone the repository from{" "}
-          <ParagraphLink href={links.examples.cardSource}>GitHub</ParagraphLink> and install the
+          <ParagraphLink href={links.examples.tourSource}>GitHub</ParagraphLink> and install the
           required dependencies in the project directory.
         </li>
         <li>

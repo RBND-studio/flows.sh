@@ -1,5 +1,6 @@
 import { css } from "@flows/styled-system/css";
 import { SignupClick } from "components/utils/signup-click";
+import { Modal16 } from "icons";
 import { links } from "lib/links";
 import Image from "next/image";
 
@@ -15,8 +16,10 @@ import {
 } from "../typography";
 import workflowPng from "./workflow.png";
 
-export const content: ContentType = {
-  title: "Card example",
+export const cardContent: ContentType = {
+  slug: "card",
+  title: "Card",
+  icon: Modal16,
   description: "A custom card component built to render content inside your product, not above it.",
   embed: {
     src: links.examples.card,

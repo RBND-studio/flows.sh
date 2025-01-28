@@ -1,0 +1,33 @@
+---
+title: JavaScript SDK and Workflow Examples
+date: "2025-01-27"
+description: Introducing the Flows JavaScript SDK and workflow examples.
+---
+
+<Image
+  src="/images/changelog/2025-01-27-javascript.png"
+  alt="Flows JavaScript SDK"
+  width={1800}
+  height={960}
+/>
+
+To make Flows 2.0 more accessible to a wider range of developers, we have introduced a JavaScript SDK. This new SDK offers functionality similar to the React SDK but is designed to be framework-agnostic, allowing it to integrate with any JavaScript application.
+
+To see how it works, check out our [Nuxt template](https://github.com/RBND-studio/flows-sdk/tree/main/examples/vue/nuxt-custom-components), which demonstrates how the JavaScript SDK can replicate the functionality of the React SDK example. For additional details, refer to the [JavaScript SDK documentation](https://flows.sh/docs/sdk/javascript/reference).
+
+## Workflow Examples
+
+Saying "you can build anything with Flows" is one thing, but showing it is another. That’s why we’ve released an [examples library](https://flows.sh/examples) showcasing various workflows built with Flows.
+
+The examples are open-source and can be used as a starting point for your own workflows. We will be adding more examples in the future, so stay tuned.
+
+## Other improvements
+
+- The right sidebar in the workflow editor is now resizable, enhancing the editing experience
+- Workflow validation now checks for slottable blocks missing a slot ID
+- The React SDK has improved test coverage
+- Websocket event handling in the React SDK has been optimized
+
+## Bug fixes
+
+- Removed extra bottom spacing when no footer buttons are present in built-in components
