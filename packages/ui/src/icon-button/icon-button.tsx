@@ -1,4 +1,4 @@
-import { cva, cx } from "@flows/styled-system/css";
+import { css, cva, cx } from "@flows/styled-system/css";
 import { type HTMLStyledProps, styled } from "@flows/styled-system/jsx";
 import { Slot, Slottable } from "@radix-ui/react-slot";
 import { type ButtonHTMLAttributes, forwardRef, type JSX } from "react";
@@ -6,7 +6,6 @@ import { type ButtonHTMLAttributes, forwardRef, type JSX } from "react";
 import { Spinner } from "../spinner";
 import { Tooltip, type TooltipSide } from "../tooltip/tooltip";
 
-//TODO: asChild doesn't work with tooltip?
 type Props = ButtonHTMLAttributes<HTMLButtonElement> &
   HTMLStyledProps<"button"> & {
     /**
@@ -48,12 +47,23 @@ export const IconButton = forwardRef<HTMLButtonElement, Props>(function Button(
       type={!asChild ? "button" : undefined}
       {...props}
       className={cx(button({ size, variant }), props.className)}
-      disabled={disabled}
+      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- nullish coalescing cannot be used here
+      disabled={disabled || loading}
+      data-loading={loading ? "" : undefined}
+      aria-busy={loading}
       ref={ref}
     >
-      <Slottable>
-        <Icon>{loading ? <Spinner color="inherit" size={16} /> : children}</Icon>
-      </Slottable>
+      {loading ? (
+        <Spinner
+          className={css({
+            position: "absolute",
+            visibility: "visible!",
+          })}
+          color="inherit"
+          size={16}
+        />
+      ) : null}
+      <Slottable>{children}</Slottable>
     </Component>
   );
 
@@ -62,22 +72,6 @@ export const IconButton = forwardRef<HTMLButtonElement, Props>(function Button(
   return (
     <Tooltip side={tooltipSide} content={tooltip} delayDuration={800} trigger={buttonRender} />
   );
-});
-
-const Icon = styled("span", {
-  base: {
-    display: "inline-flex",
-  },
-  variants: {
-    position: {
-      start: {
-        marginRight: 8,
-      },
-      end: {
-        marginLeft: 8,
-      },
-    },
-  },
 });
 
 const button = cva({
@@ -97,6 +91,12 @@ const button = cva({
     shadow: "none",
 
     superFastEaseInOut: "all",
+
+    _loading: {
+      "& > *": {
+        visibility: "hidden",
+      },
+    },
 
     _disabled: {
       pointerEvents: "none",
