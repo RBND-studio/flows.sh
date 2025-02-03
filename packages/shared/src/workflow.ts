@@ -1,4 +1,4 @@
-export const propertyTypes = ["string", "number", "boolean", "select"] as const;
+export const propertyTypes = ["string", "number", "boolean", "select", "array"] as const;
 export const defaultPropertyType = propertyTypes[0];
 
 export const builtInBlockDescriptions: Record<string, string> = {
