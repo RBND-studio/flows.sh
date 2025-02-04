@@ -18,15 +18,16 @@ WORKDIR /app
 
 # First install the dependencies (as they change less often)
 COPY .gitignore .gitignore
-COPY --from=builder /app/out/json/ .
-COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
-COPY --from=builder /app/out/pnpm-workspace.yaml ./pnpm-workspace.yaml
+# We cannot use json output because `prepare` script is missing the pandacss config file
+# COPY --from=builder /app/out/json/ .
+COPY --from=builder /app/out/pnpm-lock.yaml .
+COPY --from=builder /app/out/full/ .
+
 
 RUN npm i -g corepack@latest
 RUN corepack enable pnpm
 RUN pnpm install --frozen-lockfile
 
-COPY --from=builder /app/out/full/ .
 
 # Build the project
 ARG APP
