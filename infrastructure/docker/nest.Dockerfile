@@ -19,18 +19,20 @@ COPY .gitignore .gitignore
 COPY --from=builder /app/out/json/ .
 COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
 COPY --from=builder /app/out/pnpm-workspace.yaml ./pnpm-workspace.yaml
-COPY --from=builder /app/out/full/ .
 
+RUN npm i -g corepack@latest
 RUN corepack enable pnpm
 RUN pnpm install --frozen-lockfile
 
+COPY --from=builder /app/out/full/ .
 RUN pnpm turbo run build --filter=backend...
 
 FROM base AS prod-installer
 WORKDIR /app
-RUN corepack enable pnpm
 COPY --from=builder /app/out/full/ .
 COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
+RUN npm i -g corepack@latest
+RUN corepack enable pnpm
 RUN pnpm install --production --frozen-lockfile
 
 FROM base AS runner

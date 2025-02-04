@@ -21,10 +21,12 @@ COPY .gitignore .gitignore
 COPY --from=builder /app/out/json/ .
 COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
 COPY --from=builder /app/out/pnpm-workspace.yaml ./pnpm-workspace.yaml
-COPY --from=builder /app/out/full/ .
 
+RUN npm i -g corepack@latest
 RUN corepack enable pnpm
 RUN pnpm install --frozen-lockfile
+
+COPY --from=builder /app/out/full/ .
 
 # Build the project
 ARG APP
