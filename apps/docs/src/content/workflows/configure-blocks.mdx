@@ -1,0 +1,46 @@
+---
+title: Configure blocks
+description: Customize block properties and their behavior.
+---
+
+![Configure blocks](/workflows/configure-blocks.png)
+
+## Overview
+
+Blocks are individual steps of [workflows](/workflows/overview), with configurable **properties** and **exit nodes**. Properties control the block's behavior and appearance, while exit nodes define the paths [users](/users/overview) take after interacting with the block.
+
+## Block name and description
+
+Every block includes a name and description. The name is displayed in the workflow, while the description can be used to provide additional context about the block.
+
+![Block name and description](/workflows/block-name.png)
+
+## Block properties
+
+[Block properties](/block-properties/overview) define a block's behavior and appearance. Access these properties in the block edit panel. Hover over a property name to view additional details, such as description, key, and type.
+
+## Exit nodes
+
+Exit nodes are transitions triggered by user interactions with a block. To configure:
+
+1. Click the **`+`** button beside the node key.
+2. Select the destination block(s) to connect.
+
+Users can transition to multiple blocks. If no exit nodes are connected, the workflow halts at the current block.
+
+Each exit node can transition to multiple blocks. If no blocks are connected, the user instance stops at the current block. However, the workflows may continue if user is currently in other blocks.
+
+![Exit nodes](/workflows/exit-nodes.png)
+
+## Block positioning
+
+You can drag and drop blocks within the workflow editor to adjust their visual layout. Note that position changes do not affect block functionality.
+
+## Removing a block
+
+To remove a block:
+
+1. Click the **`•••`** menu in the block's edit panel.
+2. Select **Delete block**.
+
+This removes the block and disconnects all associated paths.

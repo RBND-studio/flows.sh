@@ -6,20 +6,19 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "tsc": "tsc",
     "prepare": "panda codegen",
-    "export-mdx": "node ./src/lib/export-mdx.js",
-    "import-mdx": "node ./src/lib/import-mdx.js"
+    "postinstall": "fumadocs-mdx"
   },
   "dependencies": {
+    "fumadocs-core": "15.0.2",
+    "fumadocs-mdx": "11.4.1",
+    "fumadocs-ui": "15.0.2",
+    "fumadocs-docgen": "1.3.6",
     "icons": "workspace:*",
-    "next": "15.1.4",
-    "next-sitemap": "^4.2.3",
-    "nextra": "^3.2.4",
-    "nextra-theme-docs": "^3.2.4",
+    "next": "15.1.6",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "shared": "workspace:*",
@@ -27,8 +26,9 @@
     "ui": "workspace:*"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "15.1.4",
+    "@next/eslint-plugin-next": "15.1.6",
     "@pandacss/dev": "0.52.0",
+    "@types/mdx": "^2.0.13",
     "@types/node": "^20.14.10",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",

@@ -1,0 +1,21 @@
+---
+title: Wait property
+description: Wait for user interaction to proceed in a tour step.
+---
+
+![Wait property](/block-properties/wait-property.png)
+
+<Callout>Wait properties are only available in [tour steps](/tour-block).</Callout>
+
+## Overview
+
+The wait property is automatically added to each step in the [tour block](/tour-block). When enabled, it pauses the tour at a specific step until the user performs a defined action, such as clicking a button or navigating to a page.
+
+## Options
+
+- **Interaction**: Defines the type of interaction required to proceed. Options include:
+  - **Click**: Proceeds when the user clicks a specified element.
+  - **Navigation**: Proceeds when the user navigates to a specific page.
+  - **None**: Disables the wait property, requiring manual progression (e.g., via a button click).
+- **Element**: The CSS selector of the element needed to be clicked to proceed (available when **Click** is selected).
+- **Page**: Defines the target page or page for the interaction (available for both **Click** and **Navigation**). See the [page targeting](/block-properties/page-targeting) section for configuration details.

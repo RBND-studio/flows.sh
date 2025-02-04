@@ -1,0 +1,235 @@
+---
+title: Reference
+description: Discover methods and types available in the @flows/js and @flows/js-components packages.
+---
+
+## @flows/js
+
+Flows JS SDK is a lightweight library that allows you to integrate Flows into any application that runs JavaScript.
+
+Install the package [from npm](https://www.npmjs.com/package/@flows/js):
+
+```package-install
+npm i @flows/js
+```
+
+### Methods
+
+#### init()
+
+Initializes the `@flows/js` SDK and identifies the user. This method must be called at least once in your application.
+
+```js title="main.js"
+import { init } from "@flows/js";
+
+init({
+  organizationId: "your-organization-id", // Find this in Settings > General
+  environment: "production", // Default environment
+  userId="your-user-id" // Identify the user
+})
+```
+
+Parameters:
+
+| Name             | Type     | Required | Notes                                                                                                                         |
+| ---------------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `organizationId` | `string` | Yes      | Your organization ID, available in **Settings > General**.                                                                    |
+| `environment`    | `string` | Yes      | The environment key, available in **Settings > Environments**.                                                                |
+| `userId`         | `string` | Yes      | Unique ID for identifying the user.                                                                                           |
+| `userProperties` | `object` | No       | Object with custom [user properties](/users/properties) as key-value pairs. Accepts `string`, `number`, `boolean`, or `date`. |
+| `apiUrl`         | `string` | No       | Custom API URL for proxying requests through your domain.                                                                     |
+
+---
+
+#### addFloatingBlocksChangeListener()
+
+Registers a listener for updates to floating workflow and tour blocks. Slottable blocks are not included.
+
+Parameters:
+
+| Name       | Type       | Required | Notes                                                                  |
+| ---------- | ---------- | -------- | ---------------------------------------------------------------------- |
+| `listener` | `function` | Yes      | Callback invoked with the updated [`ActiveBlock`](#activeblock) array. |
+
+Returns:
+
+A function to unsubscribe the listener and avoid memory leaks.
+
+---
+
+#### addSlotBlocksChangeListener()
+
+Registers a listener for updates to blocks in a specific slot.
+
+Parameters:
+
+| Name       | Type       | Required | Notes                                                                            |
+| ---------- | ---------- | -------- | -------------------------------------------------------------------------------- |
+| `slotId`   | `string`   | Yes      | Slot ID of the slot to monitor.                                                  |
+| `listener` | `function` | Yes      | Callback function that receives updated array of [`ActiveBlock`](#activeblock) . |
+
+Returns:
+
+A function to unsubscribe the listener and avoid memory leaks.
+
+---
+
+#### getCurrentFloatingBlocks()
+
+Retrieves all currently active floating workflow and tour blocks. Slot blocks are not included.
+Parameters:
+
+None
+
+Returns:
+
+An array of [`ActiveBlock`](#activeblock) objects.
+
+---
+
+#### getCurrentSlotBlocks()
+
+Retrieves all currently active blocks for a specific slot.
+
+Parameters:
+
+| Name     | Type     | Required | Notes             |
+| -------- | -------- | -------- | ----------------- |
+| `slotId` | `string` | Yes      | Slot ID to query. |
+
+Returns:
+
+An array of [`ActiveBlock`](#activeblock) objects.
+
+---
+
+### Types
+
+#### ActiveBlock
+
+Represents a block visible to the user.
+
+| Name        | Type                              | Notes                                                                  |
+| ----------- | --------------------------------- | ---------------------------------------------------------------------- |
+| `id`        | `string`                          | Unique identifier for the block.                                       |
+| `type`      | `"component" \| "tour-component"` | The block type.                                                        |
+| `component` | `string`                          | The UI component that should be used to render the block.              |
+| `props`     | `object`                          | Props passed to the component, including data and exit node callbacks. |
+
+---
+
+## @flows/js-components
+
+To simplify implementation, you can use the `@flows/js-components` package, which provides pre-built UI components and utilities for block rendering.
+
+Install the package [from npm](https://www.npmjs.com/package/@flows/js-components):
+
+```package-install
+npm i @flows/js-components
+```
+
+### @flows/js-components methods
+
+#### render()
+
+Renders floating blocks into the body element. This should be called every time the floating blocks change.
+
+Parameters:
+
+| Name             | Type            | Required | Notes                               |
+| ---------------- | --------------- | -------- | ----------------------------------- |
+| `blocks`         | `ActiveBlock[]` | Yes      | Array of floating blocks to render. |
+| `components`     | `object`        | Yes      | Workflow block components.          |
+| `tourComponents` | `object`        | Yes      | Tour block components.              |
+
+```js
+import { addFloatingBlocksChangeListener } from "@flows/js";
+import { render } from "@flows/js-components";
+
+addFloatingBlocksChangeListener((blocks) => {
+  render({
+    blocks,
+    components: {},
+    tourComponents: {},
+  });
+});
+```
+
+---
+
+#### updateSlotComponents()
+
+Updates the components available for slot-based rendering and registers `<flows-slot>` element.
+
+Parameters:
+
+| Name             | Type     | Required | Notes                      |
+| ---------------- | -------- | -------- | -------------------------- |
+| `components`     | `object` | Yes      | Workflow block components. |
+| `tourComponents` | `object` | Yes      | Tour block components.     |
+
+```js
+import { updateSlotComponents } from "@flows/js-components";
+
+updateSlotComponents({
+  components: {},
+  tourComponents: {},
+});
+```
+
+---
+
+#### flows-slot
+
+A custom HTML element for rendering slot blocks. Use the `data-slot-id` attribute to specify the slot. For this custom element to function correctly, you need to call `updateSlotComponents()` with your slottable components after initializing the SDK.
+
+```html title="page.html"
+<body>
+  <!-- ... -->
+  <flows-slot data-slot-id="my-slot">
+    <!-- Only one child element with `data-placeholder` attribute is supported -->
+    <div data-placeholder>
+      <p>Optionally pass placeholder content here</p>
+    </div>
+  </flows-slot>
+  <!-- ... -->
+</body>
+```
+
+---
+
+### @flows/js-components types
+
+#### Component
+
+Helps with defining a custom component for use with `@flows/js-components`. Define the props that you have entered in your [block template](/block-templates) and return object with root `element` and `cleanup` function that will be run before the element is removed from the DOM.
+
+```ts title="modal.ts"
+import { Component } from "@flows/js-components";
+
+type ModalProps = {
+  text: string;
+  continue: () => void;
+};
+
+export const Modal: Component<ModalProps> = (props) => {
+  const modal = document.createElement("div");
+  modal.className = "my-modal";
+
+  const text = document.createElement("p");
+  modal.appendChild(text);
+  text.textContent = props.text;
+
+  const continueButton = document.createElement("button");
+  modal.appendChild(continueButton);
+  continueButton.textContent = "Continue";
+  continueButton.addEventListener("click", props.continue);
+
+  return {
+    element: modal,
+    cleanup: () => {
+      continueButton.removeEventListener("click", props.continue);
+    },
+  };
+};
+```

@@ -1,0 +1,106 @@
+---
+title: Installation
+description: How to set up Flows in your React application.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+The [Flows React SDK](https://www.npmjs.com/package/@flows/react) is a library that allows you to integrate Flows into React applications. It includes a components package to simplify getting started with Flows in your application.
+
+<Callout>
+  Check out our [template projects](https://github.com/RBND-studio/flows-sdk/tree/main/examples) for
+  examples of how to implement Flows in your application.
+</Callout>
+
+<Steps>
+
+<Step>
+
+## Install the React SDK
+
+You can install the Flows React SDK [from npm](https://www.npmjs.com/package/@flows/react):
+
+```package-install
+npm i @flows/react
+```
+
+</Step>
+
+<Step>
+
+## Add the FlowsProvider
+
+The SDK provides a `FlowsProvider` component that you can use to wrap your app. Initialize it with your organization ID and environment key, which you can find in the **Settings > General** and **Settings > Environments** sections of the Flows dashboard.
+
+```tsx title="layout.tsx"
+import { FlowsProvider } from "@flows/react";
+
+const App = () => {
+  return (
+    <FlowsProvider
+      organizationId="your-organization-id" // Find this in Settings > General
+      environment="production" // Default environment
+      userId="your-user-id" // Identify the user
+      components={{}}
+      tourComponents={{}}
+    >
+      {/* Your app code here */}
+    </FlowsProvider>
+  );
+};
+```
+
+For a full list of supported properties, see the [FlowsProvider documentation](/react/reference#flowsprovider).
+
+</Step>
+
+<Step>
+
+## Optional: Use built-in components
+
+To simplify implementation, you can use the `@flows/react-components` package, which provides pre-built components and utilities for block rendering.
+
+You can install the Flows JavaScript Components SDK [from npm](https://www.npmjs.com/package/@flows/react-components):
+
+```sh npm2yarn
+npm i @flows/react-components
+```
+
+Then, import and use the components in your app:
+
+```tsx title="layout.tsx"
+import { FlowsProvider } from "@flows/react";
+import * as components from "@flows/react-components"; // [!code highlight]
+import * as tourComponents from "@flows/react-components/tour"; // [!code highlight]
+import "@flows/react-components/index.css";
+
+const App = () => {
+  return (
+    <FlowsProvider
+      organizationId="your-organization-id" // Find this in Settings > General
+      environment="production" // Default environment
+      userId="your-user-id" // Identify the user
+      tourComponents={{
+        ...tourComponents, // [!code highlight]
+      }}
+      components={{
+        ...components, // [!code highlight]
+      }}
+    >
+      {/* Your app code here */}
+    </FlowsProvider>
+  );
+};
+```
+
+</Step>
+
+<Step>
+
+## Create your first workflow
+
+That's it! You're now ready to create your first workflow. See our [quickstart guide](/quickstart) for more information.
+
+</Step>
+
+</Steps>

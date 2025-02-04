@@ -1,0 +1,77 @@
+---
+title: Environments
+description: Separate Flows deployments for different stages of your development lifecycle.
+---
+
+![Environments list](/environments.png)
+
+## Overview
+
+Environments allow you to manage [workflows](/workflows/overview) across the entire development lifecycle, from local development to production. Each environment operates independently with its own:
+
+- Active workflow versions and statuses
+- Workflow analytics
+- Users
+
+You can create an unlimited number of environments.
+
+## Create an Environment
+
+To create a new environment:
+
+1. Navigate to **Settings > Environment**.
+2. Enter a **unique key** for the environment. This key is used to identify the environment in the SDK.
+
+## Edit an Environment
+
+To modify an existing environment:
+
+1. Navigate to **Settings > Environment**.
+2. Update the **environment key** as needed.
+
+**Important:** If you update the environment key, ensure the key is updated in your SDK setup to
+prevent service disruptions.
+
+## Using Environments
+
+Each environment is associated with a unique key that links your application to the correct workflows. Include this key in your SDK setup:
+
+<Tabs items={['React', 'JavaScript']}>
+
+  <Tab>
+
+```tsx title="layout.tsx" {7}
+import { FlowsProvider } from "@flows/react";
+
+const App = () => {
+  return (
+    <FlowsProvider
+      organizationId="your-organization-id"
+      environment="your-environment" // [!code highlight]
+      userId="your-user-id",
+    >
+      {/* Your app code here */}
+    </FlowsProvider>
+  );
+};
+```
+
+  </Tab>
+
+  <Tab>
+  
+```js title="main.js"
+import { init } from "@flows/js";
+
+init({
+organizationId: "your-organization-id",
+environment: "your-environment", // [!code highlight]
+userId: "your-user-id",
+});
+
+```
+
+  </Tab>
+
+</Tabs>
+```

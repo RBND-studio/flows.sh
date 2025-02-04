@@ -1,0 +1,93 @@
+---
+title: Quickstart
+description: Welcome to Flows, the platform for building native product growth experiences, your way.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { Card, Cards } from "fumadocs-ui/components/card";
+import { React16, JavaScript16 } from "icons";
+import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
+
+![Book](/quick-start.png)
+
+## Overview
+
+Flows enables you to build engaging in-app experiences—such as user onboarding and feature announcements—that help users get the most out of your product. This no-code platform empowers you to design and manage these experiences without writing code, while still offering the freedom to integrate your own custom UI components into your workflows.
+
+<Steps>
+
+  <Step>
+  
+    ## Install the Flows SDK
+
+    Begin by installing the Flows SDK in your app. We offer SDKs tailored for both React and JavaScript applications. Follow the installation guide that matches your app’s stack, then return to this guide.
+
+    <Cards>
+      <Card icon={<React16 />} title="React" href="/react/installation">
+        The Flows SDK built specifically for React applications.
+      </Card>
+      <Card icon={<JavaScript16 />} title="JavaScript" href="/javascript/installation">
+        The Flows SDK for integrating with any JavaScript framework.
+      </Card>
+    </Cards>
+
+  </Step>
+
+  <Step>
+
+    ## Create your first workflow
+
+    You’re ready to create a workflow! Navigate to **Workflows**, click **Create workflow**, and begin building.
+
+    <Accordions>
+      <Accordion title="Add blocks" id="add-blocks">
+        To build a workflow, add blocks. Blocks define the behavior of a workflow and can represent UI elements, logical steps, or actions. Flows offers a set of built-in blocks to get started, and you can also create your own custom blocks.
+
+        1. Click the **Add block** button.
+        2. Choose a block from the list.
+        3. [Configure the block properties](/workflows/configure-blocks) to define its behavior.
+
+        Remember, a useful workflow needs:
+        - A **Start block** to define the how users enter the workflow.
+        - At least one **Component block** or **Tour block** to deliver the UI.
+        - An **End block** to mark the exit.
+      </Accordion>
+
+      <Accordion title="User targeting" id="user-targeting">
+        Ensure your workflow reaches the right users by targeting based on user properties. For example, you can show a welcome message exclusively to users who signed up in the last 7 days. Flows lets you filter users using the [Start block](/start-blocks/automatic-start).
+
+        1. Select a Start block in your workflow.
+        2. Define the [user properties](/block-properties/user-properties) for targeting.
+        3. Only users matching these properties will be able to enter via the Start block.
+
+        Make sure to send these user properties to Flows using one of our [SDKs](/sdk-overview).
+
+        ![User properties](/block-properties/user-properties.png)
+      </Accordion>
+
+      <Accordion title="Custom components" id="custom-components">
+        Prefer your own design? Build custom components for your workflows. See our [custom components guide](/create-custom-components) to get started.
+      </Accordion>
+
+      <Accordion title="Test workflow" id="test-workflow">
+        Test your workflow before going live by publishing it to a test environment and previewing it in your app. For more details, refer to the [testing guide](/workflows/testing) and [environments page](/environments).
+      </Accordion>
+
+      <Accordion title="Publish a workflow" id="publish-workflow">
+        When you’re ready to go live, publish your workflow to your users. Learn more in our [publishing guide](/workflows/publishing).
+      </Accordion>
+    </Accordions>
+
+    Check out our [workflow examples](https://flows.sh/examples) to see what’s possible with Flows.
+
+  </Step>
+
+  <Step>
+    ## Good job!
+
+    You’ve created your first Flows workflow. Our documentation covers everything you need to build and manage workflows, including topics like [environments](/environments), [creating custom components](/create-custom-components), and [inspecting users](/users/overview).
+
+    If you have any questions, feel free to reach out to us at hello@flows.sh.
+
+  </Step>
+</Steps>

@@ -1,6 +1,6 @@
-## Development
+# Development
 
-### Requirements
+## Requirements
 
 - Node.js 18+ [nodejs.org](https://nodejs.org/)
 - Special node package manager `pnpm`. [visit `pnpm` installation docs](https://pnpm.io/installation)

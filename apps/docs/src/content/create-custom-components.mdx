@@ -1,0 +1,252 @@
+---
+title: Create custom components
+description: Create custom block templates to add your own UI elements into workflows.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+![Block templates](/blocks/template.png)
+
+Custom components can be created in Flows using block templates. Block templates store the properties and exit nodes for your custom component so Flows knows how your components work. Each block template requires a corresponding component in your application.
+
+<Steps>
+
+<Step>
+
+## Create a UI component
+
+Block templates rely on your custom UI components. First, create or reuse a component within your application. This component will be rendered when users enter the block in a workflow.
+
+In this guide, we’ll build a marketing banner with the following customizable properties:
+
+- Title
+- Description
+- Button label and link
+- Option to hide a close button
+
+If you would like to add different properties to your component, you can use the following types:
+
+- `string`
+- `number`
+- `boolean`
+- select (dropdown) - `"foo" | "bar" | "baz"`
+
+```tsx title="banner.tsx"
+type Props = {
+  title: string;
+  description: string;
+  buttonLabel: string;
+  buttonLink: string;
+  hideCloseButton?: boolean;
+};
+
+export const MyBanner = (props: Props): ReactNode => {
+  return (
+    <div>
+      <div>
+        <h2>{props.title}</h2>
+        {!props.hideCloseButton && <button>X</button>}
+      </div>
+      <div>
+        <p>{props.description}</p>
+        <a href={props.buttonLink}>{props.buttonLabel}</a>
+      </div>
+    </div>
+  );
+};
+```
+
+</Step>
+
+<Step>
+
+## Add exit node props
+
+Now we will add exit node props that will allow Flows to react to user interactions with the block. Let's add `complete` and `close` props that will be called when the user clicks the button or the close button.
+
+```tsx title="banner.tsx"
+type Props = {
+  title: string;
+  description: string;
+  buttonLabel: string;
+  buttonLink: string;
+  hideCloseButton?: boolean;
+  complete: () => void; // [!code highlight]
+  close: () => void; // [!code highlight]
+};
+```
+
+In case of a tour component, you should use `TourComponentProps` from `@flows/react` package. This will give you access to `previous`, `continue` and `cancel` props that are used to navigate through the tour.
+
+```tsx title="tour-banner.tsx"
+import { TourComponentProps } from "@flows/react"; // [!code highlight]
+
+// [!code word:TourComponentProps]
+type Props = TourComponentProps<{
+  title: string;
+  description: string;
+  buttonLabel: string;
+  buttonLink: string;
+  hideCloseButton?: boolean;
+}>;
+```
+
+And then use these props in the component:
+
+```tsx title="banner.tsx"
+export const MyBanner = (props: Props): ReactNode => (
+  <div>
+    <div>
+      <h2>{props.title}</h2>
+      // [!code word:props.close]
+      {!props.hideCloseButton && <button onClick={props.close}>X</button>}
+    </div>
+    <div>
+      <p>{props.description}</p>
+      // [!code word:props.complete]
+      <a onClick={props.complete} href={props.buttonLink}>
+        {props.buttonLabel}
+      </a>
+    </div>
+  </div>
+);
+```
+
+</Step>
+
+<Step>
+
+## Add component into the Flows provider
+
+To make the component available to Flows, you need to add it to the `FlowsProvider` in your application.
+
+```tsx title="layout.tsx"
+import { FlowsProvider } from "@flows/react";
+import { MyBanner } from "./banner";
+
+const App = () => {
+  return (
+    <FlowsProvider
+      organizationId="your-organization-id"
+      environment="your-environment"
+      // Add tour specific components here
+      tourComponents={{}}
+      components={{
+        Banner: MyBanner, // [!code highlight]
+      }}
+    >
+      {/* Your app code here */}
+    </FlowsProvider>
+  );
+};
+```
+
+</Step>
+
+<Step>
+
+## Create a block template
+
+Now that we have our component, we can create a block template in Flows. Navigate to **Block templates** and click **Create new template**.
+
+A dialog will appear where you need to enter a name for the block template and select if the component is going to be used in a workflow or a tour.
+
+</Step>
+
+<Step>
+
+## Specify component
+
+To tell the Flows SDK which component to use, you need to enter the key you used in the `components` object passed to FlowsProvider. In our case, it's `Banner`.
+
+![Template component](/blocks/template-component.png)
+
+</Step>
+
+<Step>
+
+## Select if the component is slottable
+
+If your component is intended to be rendered inside the application, you need to select the **Slottable** option. This will allow you to specify a slot id when adding the block to a workflow. In our case, the banner component is /[slottable](/block-properties/slot) because we want to embed it into our application UI.
+
+![Template slot](/blocks/template-slot.png)
+
+</Step>
+
+<Step>
+
+## Define block properties
+
+Block properties are the fields that your editors can customize when they add the block to a workflow. They are the same as the props you defined in your component. For our banner component, we'll add the following properties:
+
+| Name              | Key             | Type    |
+| ----------------- | --------------- | ------- |
+| Title             | title           | string  |
+| Description       | description     | string  |
+| Button label      | buttonLabel     | string  |
+| Button link       | buttonLink      | string  |
+| Hide close button | hideCloseButton | boolean |
+
+Each property has:
+
+- **Title** - the name of the property
+- **Description** - a short description of the property for the editor (e.g. instructions)
+- **Key** - the key that will be used to pass the value to the component
+- **Type** - the type of the property
+
+![Template properties](/blocks/template-properties.png)
+
+</Step>
+
+<Step>
+
+## Add exit nodes
+
+Exit nodes are the transitions that can be triggered when the user interacts with the block. For our banner component, we'll add two exit nodes:
+
+- **`complete`** - when the user clicks the button
+- **`close`** - when the user clicks the close button
+
+The exit node has only a `key` field that needs to match the prop name in your component.
+
+![Template exit nodes](/blocks/template-exit-nodes.png)
+
+</Step>
+
+<Step>
+
+## Optional: More customization
+
+You can also change the icon of your block template by clicking on the icon above the block template name.
+
+</Step>
+
+<Step>
+
+## Save and publish
+
+Once you've defined your properties and exit nodes, click **Publish changes** to make the latest version of the block template available to use in your workflows.
+
+![Template publish](/blocks/template-publish.png)
+
+</Step>
+
+<Step>
+
+## Add block to workflow
+
+Now that we have our block template, we can add it to a workflow. Navigate to a workflow and click **Add block**. Select the block template you created and configure the properties.
+
+![Template add to workflow](/blocks/template-add-to-workflow.png)
+
+</Step>
+
+<Step>
+
+## Finish the workflow
+
+Once you've added the block to the workflow, you can connect it to other blocks and paths to create a complete workflow. Users will see your custom component when they reach the block in the workflow.
+
+</Step>
+  
+</Steps>

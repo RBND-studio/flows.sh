@@ -17,14 +17,17 @@
     "db": "pnpm --filter db",
     "e2e": "pnpm --filter e2e",
     "prepare": "husky || true",
-    "pre-push": "turbo lint tsc test spellcheck pre-commit",
+    "pre-push": "turbo lint tsc test spellcheck pre-commit lint:md",
     "spellcheck": "pnpm cspell . --quiet",
-    "new-example": "pnpm dlx plop example"
+    "new-example": "pnpm dlx plop example",
+    "lint:md": "pnpm markdownlint '**/*.mdx' '**/*.md'",
+    "check-links": "pnpm dlx hyperlink http://localhost:3000/docs --recursive --internal --concurency 1"
   },
   "devDependencies": {
     "cspell": "^8.16.1",
     "eslint": "8.57.0",
     "husky": "^9.1.7",
+    "markdownlint-cli": "^0.44.0",
     "prettier": "^3.4.2",
     "tsconfig": "workspace:*",
     "turbo": "^2.4.0"

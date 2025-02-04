@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "index",
+    "quickstart",
+    "concepts",
+    "migrate-to-flows-2",
+
+    "---Platform---",
+    "workflows",
+    "tours",
+    "block-templates",
+    "users",
+    "environments",
+    "organization-setup",
+
+    "---Blocks---",
+    "blocks-overview",
+    "start-blocks",
+    "components",
+    "tour-block",
+    "logic-blocks",
+    "end-block",
+    "block-properties",
+
+    "---SDK---",
+    "sdk-overview",
+    "react",
+    "javascript",
+
+    "---Guides---",
+    "create-custom-components",
+
+    "---Links---",
+    "contact-us",
+
+    "..."
+  ]
+}

@@ -1,0 +1,37 @@
+---
+title: Blocks overview
+description: Understand the blocks that power your workflows.
+---
+
+import { Card, Cards } from "fumadocs-ui/components/card";
+import { Start16, Block16, Tour16, Filter16, Exit16 } from "icons";
+
+![Workflow](/workflows/main.png)
+
+## Overview
+
+Blocks define the behavior of a workflow. They can represent UI elements, logical steps, or actions. Each block has customizable properties that define its behavior and can be connected to other blocks to form a workflow.
+
+The connections between blocks (paths) determine how users navigate through the process.
+
+## Block types
+
+In Flows there are different types of blocks based on their functionality.
+
+<Cards>
+  <Card title="Start" href="/start-blocks/automatic-start" icon={<Start16 />}>
+    The start of every workflow.
+  </Card>
+  <Card title="Components" href="/components/overview" icon={<Block16 />}>
+    Display UI elements within your application.
+  </Card>
+  <Card title="Tour" href="/tour-block" icon={<Tour16 />}>
+    Used to guide users through a series of steps.
+  </Card>
+  <Card title="Logic" href="/logic-blocks/overview" icon={<Filter16 />}>
+    Define branching logic, conditions, and other rules.
+  </Card>
+  <Card title="End" href="/end-block" icon={<Exit16 />}>
+    Exits the workflow.
+  </Card>
+</Cards>
