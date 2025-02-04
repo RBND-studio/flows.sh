@@ -32,7 +32,7 @@
     "sonner": "^1.5.0"
   },
   "devDependencies": {
-    "@pandacss/dev": "0.51.1",
+    "@pandacss/dev": "0.52.0",
     "@storybook/addon-essentials": "^8.5.2",
     "@storybook/addon-interactions": "^8.5.2",
     "@storybook/addon-links": "^8.5.2",
@@ -47,7 +47,7 @@
     "storybook": "^8.5.0",
     "storybook-dark-mode": "^4.0.2",
     "tsconfig": "workspace:*",
-    "typescript": "5.7.2",
+    "typescript": "5.7.3",
     "vite": "^6.0.11",
     "vite-tsconfig-paths": "^5.1.3"
   }

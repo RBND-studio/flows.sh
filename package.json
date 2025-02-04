@@ -27,7 +27,7 @@
     "husky": "^9.1.7",
     "prettier": "^3.4.2",
     "tsconfig": "workspace:*",
-    "turbo": "^2.3.3"
+    "turbo": "^2.4.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
@@ -43,5 +43,5 @@
       "sharp"
     ]
   },
-  "packageManager": "pnpm@10.0.0"
+  "packageManager": "pnpm@10.2.0"
 }

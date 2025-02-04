@@ -1,4 +1,5 @@
 export * from "./src/alert16";
+export * from "./src/array16";
 export * from "./src/arrow-left16";
 export * from "./src/arrow-right16";
 export * from "./src/banner16";
@@ -51,6 +52,7 @@ export * from "./src/nuxt32";
 export * from "./src/organization16";
 export * from "./src/paintbrush16";
 export * from "./src/person24";
+export * from "./src/placeholder16";
 export * from "./src/play40";
 export * from "./src/plus16";
 export * from "./src/pointer16";

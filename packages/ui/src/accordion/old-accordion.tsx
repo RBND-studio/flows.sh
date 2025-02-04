@@ -20,7 +20,10 @@ type Props = {
   hideMode?: "unmount" | "css";
 };
 
-export const Accordion: FC<Props> = ({
+/**
+ * @deprecated Use `Accordion` instead
+ */
+export const OldAccordion: FC<Props> = ({
   title,
   children,
   onOpenChange,
@@ -35,14 +38,18 @@ export const Accordion: FC<Props> = ({
   const toggleExpanded = (): void => setExpanded(!expanded);
 
   return (
-    <Box overflow="hidden" {...props}>
+    <Box
+      cardWrap="-"
+      overflow="hidden"
+      {...props}
+      borderColor={expanded ? "border.strong" : "border"}
+    >
       <Flex
         _hover={{
           bg: "bg.subtleHover",
         }}
         alignItems="center"
-        borderBottomWidth={expanded ? "1px" : undefined}
-        borderBottomColor="newBorder.neutral"
+        borBottom={expanded ? "1px" : undefined}
         cursor="pointer"
         onClick={toggleExpanded}
         px="space12"
@@ -63,9 +70,13 @@ export const Accordion: FC<Props> = ({
       </Flex>
 
       {expanded ? (
-        <Box>{children}</Box>
+        <Box px="space12" py="space16">
+          {children}
+        </Box>
       ) : hideMode === "css" ? (
-        <Box style={{ display: "none" }}>{children}</Box>
+        <Box px="space12" py="space16" style={{ display: "none" }}>
+          {children}
+        </Box>
       ) : null}
     </Box>
   );
