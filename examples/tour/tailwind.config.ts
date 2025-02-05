@@ -70,7 +70,7 @@ export default {
     "text-sm",
     "font-semibold",
     "max-w-[400px]",
-    "rounded-lb",
+    "rounded-lg",
   ],
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;

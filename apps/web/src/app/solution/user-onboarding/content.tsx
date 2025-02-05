@@ -158,7 +158,7 @@ export const questions = [
         Flows are designed to be a “Headless product adoption platform“. This means that you can{" "}
         <Link
           className={css({ textDecoration: "underline" })}
-          href={links.docs.blockTemplates.createCustomComponents}
+          href={links.docs.blocks.components.custom}
         >
           create your own UI components
         </Link>{" "}

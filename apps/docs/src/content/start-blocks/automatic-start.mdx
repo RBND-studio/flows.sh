@@ -1,0 +1,25 @@
+---
+title: Automatic start
+description: Lets users enter a workflow when they meet certain conditions.
+---
+
+![Start block](/blocks/start.png)
+
+## Overview
+
+Start blocks determine which users can enter a workflow and define their starting point. They enable you to target a specific set of users for a given workflow. Multiple start blocks can be used within a single workflow to accommodate different entry conditions. Once a user enters a workflow, they will not be allowed to re-enter until they have exited.
+
+## Input
+
+A start block uses user property conditions to control how users enter the workflow. These conditions allow you to evaluate users properties to determine whether user should qualify to enter the workflow. For example, you might filter users who signed up before a certain date.
+
+User property conditions are specified as an array where all conditions must be met for a user to enter. Each condition includes the following attributes:
+
+- **Property name**: The key of the user property to evaluate (eg. `createdAt`).
+- **Data type**: The type of the user property. Options include `string`, `number`, `boolean`, or `date`.
+- **Operator**: The operator used for the comparison. The available operators depend on the data type.
+- **Values**: The comparison values. When multiple values are specified, they are evaluated using the `OR` operator.
+
+## Multiple start blocks
+
+You can use multiple start blocks within a single workflow to establish different entry conditions. Remember, once a user enters a workflow through any start block, they cannot re-enter until they exit.

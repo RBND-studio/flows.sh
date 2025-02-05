@@ -7,6 +7,7 @@ export const links = (domain = "flows.sh") => ({
   twitter: `https://x.com/flows_sh`,
   rbnd: `https://rbnd.studio`,
   rbndGithub: `https://github.com/RBND-studio`,
+  publicRepo: `https://github.com/RBND-studio/flows.sh`,
   status: `https://status.flows.sh`,
   slack: `https://flows.sh/join-slack`,
   signUp: `https://app.${domain}/signup`,
@@ -19,8 +20,6 @@ export const links = (domain = "flows.sh") => ({
   pricing: `https://${domain}/pricing`,
   changelog: `https://${domain}/changelog`,
   sdk: {
-    javascriptGuide: `https://${domain}/docs/sdk/javascript/guide`,
-
     reactTemplate: `https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/vite`,
     nextTemplate: `https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/next`,
     nuxtTemplate:
@@ -35,47 +34,56 @@ export const links = (domain = "flows.sh") => ({
     hintSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/hint",
     embeddedTips: "https://embedded-tips.examples.flows.sh",
     embeddedTipsSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/embedded-tips",
+    modal: "https://modal.examples.flows.sh",
+    modalSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/modal",
   },
   docs: {
     home: `https://${domain}/docs`,
-    migrateToFlows2: `https://${domain}/docs/getting-started/migrate-to-flows-2`,
+    migrateToFlows2: `https://${domain}/docs/migrate-to-flows-2`,
     users: {
-      main: `https://${domain}/docs/users`,
+      main: `https://${domain}/docs/users/overview`,
       properties: `https://${domain}/docs/users/properties`,
     },
     workflows: {
-      main: `https://${domain}/docs/workflows`,
+      main: `https://${domain}/docs/workflows/overview`,
       publish: `https://${domain}/docs/workflows/publishing`,
       environments: `https://${domain}/docs/workflows/publishing#managing-active-versions`,
-      frequency: `https://${domain}/docs/workflows#workflow-frequency`,
+      frequency: `https://${domain}/docs/workflows/overview#workflow-frequency`,
     },
     blockTemplates: {
-      main: `https://${domain}/docs/blocks/templates`,
-      updateInstances: `https://${domain}/docs/blocks/templates#updating-block-template-instances`,
-      createCustomComponents: `https://${domain}/docs/blocks/create-custom-components`,
+      main: `https://${domain}/docs/block-templates`,
+      updateInstances: `https://${domain}/docs/block-templates#updating-block-template-instances`,
     },
     organization: {
       main: `https://${domain}/docs/organization-setup/organizations`,
-      environments: `https://${domain}/docs/organization-setup/environments`,
       members: `https://${domain}/docs/organization-setup/manage-members`,
       billing: `https://${domain}/docs/organization-setup/billing`,
     },
+    environments: `https://${domain}/docs/organization-setup/environments`,
     blocks: {
-      start: `https://${domain}/docs/blocks/library#start-block`,
-      tour: `https://${domain}/docs/blocks/library#tour-block`,
-      filter: `https://${domain}/docs/blocks/library#filter`,
-      end: `https://${domain}/docs/blocks/library#end-block`,
+      start: `https://${domain}/docs/start-blocks/automatic-start`,
+      tour: `https://${domain}/docs/tour-block`,
+      filter: `https://${domain}/docs/logic-blocks/filter`,
+      end: `https://${domain}/docs/end-block`,
+      components: {
+        custom: `https://${domain}/docs/components/custom`,
+      },
+    },
+    blockProperties: {
+      slot: `https://${domain}/docs/block-properties/slot`,
+      pageTargeting: `https://${domain}/docs/block-properties/page-targeting`,
+      userProperties: `https://${domain}/docs/block-properties/user-properties`,
+      waitProperty: `https://${domain}/docs/block-properties/wait`,
     },
     configureBlocks: {
-      slot: `https://${domain}/docs/workflows/configure-blocks#slot-configuration`,
-      pageTargeting: `https://${domain}/docs/workflows/configure-blocks#page-targeting`,
-      userProperties: `https://${domain}/docs/workflows/configure-blocks#user-properties`,
       exitNodes: `https://${domain}/docs/workflows/configure-blocks#exit-nodes`,
     },
     tour: {
-      steps: `https://${domain}/docs/tours/tour-steps`,
-      waitStep: `https://${domain}/docs/tours/tour-steps#wait-step`,
-      waitProperty: `https://${domain}/docs/tours/tour-steps#wait-property`,
+      steps: `https://${domain}/docs/tour-block#tour-steps`,
+      waitStep: `https://${domain}/docs/tour-block#wait-step`,
+    },
+    sdk: {
+      javascriptInstallation: `https://${domain}/docs/javascript/installation`,
     },
     contact: `https://${domain}/docs/contact-us`,
     /**

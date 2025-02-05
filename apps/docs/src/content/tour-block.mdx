@@ -1,0 +1,54 @@
+---
+title: Tour block
+description: Guide users through your application with step-by-step, interactive experiences.
+---
+
+![Tour steps](/workflows/tour-steps.png)
+
+## Overview
+
+Tours consist of tour-specific blocks from your block library. Each tour step functions like a regular block but comes with built-in features that help with creating step-by-step linear guides.
+
+## Tour steps
+
+The steps property in a tour block defines the individual steps. Each step acts as an independent block but is automatically linked to the previous and next steps through the built-in `previous` and `continue` exit nodes. Users can exit the tour at any step using the `cancel` exit node.
+
+When adding steps into a tour block, you can add:
+
+- Tour specific blocks from your library.
+- Built-in wait steps that pause the tour until the user interacts with your application (for example, by clicking a button or navigating to a specific page).
+
+![Tour steps](/workflows/tour-steps.png)
+
+### Custom steps
+
+Custom steps are blocks from your block library that you can add into a tour. When creating a [block template](/block-templates), you can mark it as a tour block, making it available for tours.
+
+### Tour step exit nodes
+
+Tour-specific blocks come with predefined exit nodes to ensure reliable navigation through the tour:
+
+- **`continue`**: Connects to the next step in the tour.
+- **`previous`**: Connects to the previous step in the tour.
+- **`cancel`**: Connects to the `cancel` exit node of the tour block.
+
+To ensure compatibility, use these exit node keys in the underlying component.
+
+## Wait property
+
+Every tour step includes a **wait property** that pauses the tour until the user interacts with your application. This interaction can be a click event, navigation to a specific page, or no interaction at all. See the [wait property](/block-properties/wait) page for configuration details.
+
+## Wait step
+
+The **wait step** works similarly to the **wait property** but is implemented as a separate step within tour blocks. It pauses the tour until the user takes a specified action.
+
+**Options:**
+
+- **Interaction**: Defines the type of interaction required to proceed. Options include:
+  - **Click**: Proceeds when the user clicks a specified element.
+  - **Navigation**: Proceeds when the user navigates to a specific page.
+  - **None**: Disables the wait property, requiring manual progression (e.g., via a button click).
+- **Element**: The CSS selector of the element needed to be clicked to proceed (available when **Click** is selected).
+- **Page**: Defines the target page or page for the interaction (available for both **Click** and **Navigation**). See the [page targeting](/block-properties/page-targeting) section for configuration details.
+
+![Wait step](/block-properties/wait-step.png)

@@ -1,0 +1,9 @@
+{
+  "pages": [
+    "overview",
+    "add-blocks",
+    "configure-blocks",
+    "publishing",
+    "testing"
+  ]
+}

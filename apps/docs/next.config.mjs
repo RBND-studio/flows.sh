@@ -1,13 +1,8 @@
 import path from "node:path";
 
-import nextra from "nextra";
+import { createMDX } from "fumadocs-mdx/next";
 
-const withNextra = nextra({
-  theme: "nextra-theme-docs",
-  themeConfig: "./src/theme.config.tsx",
-  defaultShowCopyCode: true,
-  staticImage: true,
-});
+const withMDX = createMDX();
 
 const cspHeader = `
     default-src 'self';
@@ -47,6 +42,15 @@ const nextConfig = {
   images: {
     formats: ["image/webp"],
   },
+  async redirects() {
+    return [
+      {
+        source: "/getting-started/migrate-to-flows-2",
+        destination: "/migrate-to-flows-2",
+        permanent: true,
+      },
+    ];
+  },
 };
 
-export default withNextra(nextConfig);
+export default withMDX(nextConfig);

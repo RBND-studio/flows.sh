@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "overview",
+    "string",
+    "number",
+    "boolean",
+    "select",
+    "slot",
+    "page-targeting",
+    "user-properties",
+    "wait"
+  ]
+}

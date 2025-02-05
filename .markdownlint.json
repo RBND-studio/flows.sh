@@ -1,0 +1,8 @@
+{
+  "line-length": false,
+  "no-inline-html": false,
+  "no-multiple-blanks": {
+    "maximum": 1
+  },
+  "no-bare-urls": false
+}

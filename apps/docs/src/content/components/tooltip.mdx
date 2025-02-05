@@ -1,0 +1,56 @@
+---
+title: Tooltip
+description: Call attention to UI elements and guide users through a process.
+---
+
+![Tooltip](/components/tooltip.png)
+
+## Overview
+
+The tooltip component is great to call attention to UI elements and guide users through a process. It is typically used as a part of a tour or to provide additional information about a specific element. You can use the tooltip component out of the box as a built-in component.
+
+## Installation
+
+To integrate the tooltip component into your application, install the Flows components package. This package provides the tooltip along with other built-in components. For detailed instructions, see [React installation](/react/installation#optional-use-built-in-components) or [JavaScript installation](/javascript/installation#optional-use-built-in-components).
+
+## Workflow properties
+
+When using the tooltip component in a workflow, you can define the following properties:
+
+| Name              | Type    | Notes                                                                   |
+| ----------------- | ------- | ----------------------------------------------------------------------- |
+| Title             | string  | The title of the tooltip.                                               |
+| Body              | string  | The body of the tooltip. Supports HTML.                                 |
+| Continue text     | string  | The text of the continue button. When empty the button is not rendered. |
+| Target element    | string  | The CSS selector of the element the tooltip should be attached to.      |
+| Placement         | select  | The placement of the tooltip.                                           |
+| Show close button | boolean | Show a close button in the top right corner. Default is `false`.        |
+| Hide overlay      | boolean | Hide the overlay when the tooltip is open. Default is `false`.          |
+
+**Exit nodes:**
+
+- Continue: The user clicks the continue button.
+- Close: The user closes the tooltip.
+
+## Tour properties
+
+When using the tooltip component in a tour, you can define additional properties to control the tour flow.
+
+| Name              | Type    | Notes                                                                                              |
+| ----------------- | ------- | -------------------------------------------------------------------------------------------------- |
+| Title             | string  | The title of the tooltip.                                                                          |
+| Body              | string  | The body of the tooltip. Supports HTML.                                                            |
+| Continue text     | string  | The text of the continue button. When empty the button is not rendered.                            |
+| Previous text     | string  | The text of the previous button. When empty the button is not rendered.                            |
+| Target element    | string  | The CSS selector of the element the tooltip should be attached to.                                 |
+| Placement         | select  | The placement of the tooltip.                                                                      |
+| Show close button | boolean | Show a close button in the top right corner. Default is `false`.                                   |
+| Hide overlay      | boolean | Hide the overlay when the tooltip is open. Default is `false`.                                     |
+| Page targeting    | ---     | What page the tour should be shown on. [Learn more](/block-properties/page-targeting)              |
+| Wait              | ---     | Used to define what interaction should trigger the next step. [Learn more](/block-properties/wait) |
+
+**Exit nodes:**
+
+- Continue: When the user clicks the continue button the tour moves to the next step.
+- Previous: When the user clicks the previous button the tour moves to the previous step.
+- Cancel: When the user closes the tooltip the tour is canceled.
