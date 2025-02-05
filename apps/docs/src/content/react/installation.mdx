@@ -60,9 +60,9 @@ For a full list of supported properties, see the [FlowsProvider documentation](/
 
 To simplify implementation, you can use the `@flows/react-components` package, which provides pre-built components and utilities for block rendering.
 
-You can install the Flows JavaScript Components SDK [from npm](https://www.npmjs.com/package/@flows/react-components):
+You can install the Flows React Components SDK [from npm](https://www.npmjs.com/package/@flows/react-components):
 
-```sh npm2yarn
+```package-install
 npm i @flows/react-components
 ```
 
@@ -72,7 +72,7 @@ Then, import and use the components in your app:
 import { FlowsProvider } from "@flows/react";
 import * as components from "@flows/react-components"; // [!code highlight]
 import * as tourComponents from "@flows/react-components/tour"; // [!code highlight]
-import "@flows/react-components/index.css";
+import "@flows/react-components/index.css"; // [!code highlight]
 
 const App = () => {
   return (

@@ -11,6 +11,15 @@ When a user reaches an end block, they will exit the workflow. This happens even
 
 Once the workflow is exited, the user will not be able to re-enter unless the workflow frequency is set to **Every time**.
 
+## Automatic end
+
+End blocks are optional. The workflow will automatically complete when all blocks are finished. In other words, when a user exits a block that isn't connected to any other blocks:
+
+- If there are no other uncompleted blocks in the workflow, the **workflow will end**.
+- If there are blocks that were not completed yet, the **workflow will not end**.
+
+End blocks are useful when you want to ensure that a user exits the workflow at a specific point, regardless of the path they took to get there or the blocks they have completed.
+
 ## Multiple end blocks
 
 Multiple end blocks can be used in a single workflow to allow different exit conditions. Regardless of which end block a user reaches, they will exit the whole workflow.

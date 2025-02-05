@@ -7,24 +7,22 @@ description: Guide users through your application with step-by-step, interactive
 
 ## Overview
 
-Tours consist of tour-specific blocks from your block library. Each tour step functions like a regular block but comes with built-in connections to the previous and next steps via the `previous` and `continue` exit nodes. Additionally, a `cancel` exit node lets users exit the tour at any point.
-
-Tours also feature an integrated wait step that pauses the tour until the user interacts with your application—such as clicking a button or navigating to a new page.
+Tours consist of tour-specific blocks from your block library. Each tour step functions like a regular block but comes with built-in features that help with creating step-by-step linear guides.
 
 ## Tour steps
 
 The steps property in a tour block defines the individual steps. Each step acts as an independent block but is automatically linked to the previous and next steps through the built-in `previous` and `continue` exit nodes. Users can exit the tour at any step using the `cancel` exit node.
 
-When adding steps into a tour block, you can:
+When adding steps into a tour block, you can add:
 
-- Add tour specific blocks from your library.
-- Use built-in wait steps that pause the tour until the user interacts with your application (for example, by clicking a button or navigating to a specific page).
+- Tour specific blocks from your library.
+- Built-in wait steps that pause the tour until the user interacts with your application (for example, by clicking a button or navigating to a specific page).
 
 ![Tour steps](/workflows/tour-steps.png)
 
 ### Custom steps
 
-Custom steps are blocks from your block library that you can add into a tour. When creating a [block template](/block-templates), you can designate a block as a tour step, making it available for tours.
+Custom steps are blocks from your block library that you can add into a tour. When creating a [block template](/block-templates), you can mark it as a tour block, making it available for tours.
 
 ### Tour step exit nodes
 

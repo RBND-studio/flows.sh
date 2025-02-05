@@ -2,6 +2,7 @@ import { DocsImage } from "components/docs-image";
 import { DocsLink } from "components/docs-link";
 import { DocsTable } from "components/docs-table";
 import { DocsTab, DocsTabs } from "components/docs-tabs";
+import { H2, H3, H4 } from "components/docs-typography";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
 import { source } from "lib/source";
@@ -41,6 +42,9 @@ export default async function Page(props: { params: Promise<Params> }): Promise<
             Tab: DocsTab,
             Tabs: DocsTabs,
             table: DocsTable,
+            h2: H2,
+            h3: H3,
+            h4: H4,
           }}
         />
       </DocsBody>

@@ -9,13 +9,13 @@ Flows React SDK is a library that allows you to integrate Flows into React appli
 
 Install the package [from npm](https://www.npmjs.com/package/@flows/react):
 
-```sh npm2yarn
+```package-install
 npm i @flows/react
 ```
 
-## Components
+### Components
 
-### FlowsProvider
+#### FlowsProvider
 
 The `<FlowsProvider />` component is the main component of the Flows SDK. It initializes the SDK and keeps track of the user's state.
 
@@ -49,7 +49,7 @@ The `<FlowsProvider />` accepts the following props:
 | `userProperties` | `object` | No       | Object with custom [user properties](/users/properties). Values can be `string`, `number`, `boolean`, or `date`. |
 | `apiUrl`         | `string` | No       | Custom API URL useful when using proxy to send Flows requests through your own domain.                           |
 
-### FlowsSlot
+#### FlowsSlot
 
 The `<FlowsSlot />` is a component used to create Slots in your app where you can insert components using Workflows. Learn more about using Slots in the Flows editor [here](/block-properties/slot).
 
@@ -87,7 +87,7 @@ Then, import and use the components in your app:
 import { FlowsProvider } from "@flows/react";
 import * as components from "@flows/react-components"; // [!code highlight]
 import * as tourComponents from "@flows/react-components/tour"; // [!code highlight]
-import "@flows/react-components/index.css";
+import "@flows/react-components/index.css"; // [!code highlight]
 
 const App = () => {
   return (
