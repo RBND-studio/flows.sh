@@ -1,0 +1,90 @@
+---
+title: Array
+description: Create multiple items with the same structure but different values.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+![Array properties](/block-properties/array.png)
+
+## Overview
+
+The Array property is used to create multiple items with the same structure but different values. This is ideal for lists where every item follows a consistent format—such as checklists or collections of useful links.
+
+## Defining an array
+
+When you set up an array property, you can specify common attributes like title, description, and key. Additionally, you define an items property, which is a list of sub-properties that determine each array item’s structure. These sub-properties can be any basic type (e.g., String, Number, Boolean, or Select).
+
+## Filling an array in a workflow
+
+In a workflow, adding items to an array is as simple as clicking the + button next to the array title. Each added item conforms to the defined structure, and the order in which you add them determines their display order.
+
+## Example implementation
+
+In this example, we’ll create a list where each link has a title and a URL.
+
+<Steps>
+
+<Step>
+
+### Create a block template
+
+Create a block template with an array named links. Each item in the array includes a title and a url.
+
+![Block template](/block-properties/array-template.png)
+
+</Step>
+
+<Step>
+
+### Create a UI component
+
+Next, build a matching component in your application to render the list of links:
+
+```tsx
+type Props = {
+  links: {
+    title: string;
+    url: string;
+  }[];
+};
+
+export const LinksList = ({ links }: Props): JSX.Element => {
+  return (
+    <ul>
+      <p className="font-semibold">Links:</p>
+      {links.map((item) => (
+        <li className="list-disc text-blue-500 underline" key={item.title}>
+          <a href={item.url}>{item.title}</a>
+        </li>
+      ))}
+    </ul>
+  );
+};
+```
+
+Here, Tailwind CSS classes style the list. You can customize the component to match your application’s design system as needed.
+
+</Step>
+
+<Step>
+
+### Use the component in a workflow
+
+Now we can use the **Links List** component in a workflow. When the user enters the block, the LinksList component will render the list of links.
+
+![Block template](/block-properties/array-workflow.png)
+
+</Step>
+
+<Step>
+
+### Result
+
+Now you have a block that renders a list of usefull links. You can add as many links as you want and they will be rendered in the order you added them.
+
+![Rendered array](/block-properties/array-example.png)
+
+</Step>
+
+</Steps>
