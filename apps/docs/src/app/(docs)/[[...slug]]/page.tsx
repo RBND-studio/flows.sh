@@ -6,6 +6,7 @@ import { H2, H3, H4 } from "components/docs-typography";
 import { getGithubLastEdit } from "fumadocs-core/server";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
+import { GH_ACCESS_TOKEN } from "lib/constants";
 import { source } from "lib/source";
 import { type Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -25,6 +26,7 @@ export default async function Page(props: { params: Promise<Params> }): Promise<
     repo: "flows.sh",
     sha: "main",
     path: `apps/docs/src/content/${page.file.path}`,
+    token: GH_ACCESS_TOKEN,
   });
 
   return (
