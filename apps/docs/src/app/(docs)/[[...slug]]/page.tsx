@@ -3,6 +3,7 @@ import { DocsLink } from "components/docs-link";
 import { DocsTable } from "components/docs-table";
 import { DocsTab, DocsTabs } from "components/docs-tabs";
 import { H2, H3, H4 } from "components/docs-typography";
+import { getGithubLastEdit } from "fumadocs-core/server";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
 import { source } from "lib/source";
@@ -19,17 +20,24 @@ export default async function Page(props: { params: Promise<Params> }): Promise<
 
   const Mdx = page.data.body;
 
+  const time = await getGithubLastEdit({
+    owner: "RBND-studio",
+    repo: "flows.sh",
+    sha: "main",
+    path: `apps/docs/src/content/${page.file.path}`,
+  });
+
   return (
     <DocsPage
-      // TODO: add this back after we release the new version
-      // editOnGithub={{
-      //   owner: "RBND-studio",
-      //   repo: "flows.sh",
-      //   sha: "main",
-      //   path: `apps/docs/src/content/docs/${page.file.path}.mdx`,
-      // }}
+      editOnGithub={{
+        owner: "RBND-studio",
+        repo: "flows.sh",
+        sha: "main",
+        path: `apps/docs/src/content/${page.file.path}`,
+      }}
       toc={page.data.toc}
       full={page.data.full}
+      lastUpdate={time ? time : undefined}
     >
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
@@ -63,7 +71,20 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
   if (!page) notFound();
 
   return {
-    title: page.data.title,
+    title: `${page.data.title} – Flows Docs`,
     description: page.data.description,
+    openGraph: {
+      title: `${page.data.title} – Flows Docs`,
+      description: page.data.description,
+      type: "website",
+      url: `https://flows.sh/docs/${params.slug?.join("/")}`,
+      images: [{ url: "https://flows.sh/docs/og.png" }],
+    },
+    twitter: {
+      title: `${page.data.title} – Flows Docs`,
+      description: page.data.description,
+      card: "summary_large_image",
+      images: [{ url: "https://flows.sh/docs/og.png" }],
+    },
   };
 }

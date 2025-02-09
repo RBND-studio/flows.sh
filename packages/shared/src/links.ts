@@ -74,6 +74,7 @@ export const links = (domain = "flows.sh") => ({
       pageTargeting: `https://${domain}/docs/block-properties/page-targeting`,
       userProperties: `https://${domain}/docs/block-properties/user-properties`,
       waitProperty: `https://${domain}/docs/block-properties/wait`,
+      array: `https://${domain}/docs/block-properties/array`,
     },
     configureBlocks: {
       exitNodes: `https://${domain}/docs/workflows/configure-blocks#exit-nodes`,

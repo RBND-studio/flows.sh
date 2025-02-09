@@ -5,6 +5,7 @@
     "number",
     "boolean",
     "select",
+    "array",
     "slot",
     "page-targeting",
     "user-properties",

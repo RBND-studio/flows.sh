@@ -4,7 +4,17 @@ description: Block properties are used to customize the block's content, appeara
 ---
 
 import { Card, Cards } from "fumadocs-ui/components/card";
-import { String16, Number16, Boolean16, Select16, Slot16, Globe16, Wait16, User16 } from "icons";
+import {
+  Array16,
+  Boolean16,
+  Globe16,
+  Number16,
+  Select16,
+  Slot16,
+  String16,
+  User16,
+  Wait16,
+} from "icons";
 
 ![Basic properties](/block-properties/basic-properties.png)
 
@@ -24,6 +34,9 @@ Customizable properties are the properties that you can define and use in your b
   </Card>
   <Card title="Select" icon={<Select16 />} href="/block-properties/select">
     Used for selecting from a list of options.
+  </Card>
+  <Card title="Array" icon={<Array16 />} href="/block-properties/array">
+    Create multiple items with the same structure but different values.
   </Card>
 </Cards>
 
