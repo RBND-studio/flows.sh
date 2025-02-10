@@ -17,7 +17,7 @@ type Props = {
   value?: string | number;
   placeholder?: string;
   defaultValue?: string | number;
-  type?: string;
+  type?: React.InputHTMLAttributes<HTMLInputElement>["type"];
   required?: boolean;
   inputClassName?: string;
   onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
@@ -163,6 +163,9 @@ const input = cva({
     fastEaseInOut: "border-color, background-color, box-shadow",
     color: "newControl.fg",
     width: "100%",
+    _invalid: {
+      "&&": { borderColor: "newBorder.danger" },
+    },
     _hover: {
       borderColor: "newControl.border.hover",
     },
