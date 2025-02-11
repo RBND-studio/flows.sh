@@ -1,4 +1,5 @@
 export * from "./src/alert16";
+export * from "./src/angular32";
 export * from "./src/array16";
 export * from "./src/arrow-left16";
 export * from "./src/arrow-right16";
