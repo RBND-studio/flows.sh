@@ -1,7 +1,7 @@
 import { css, cva } from "@flows/styled-system/css";
-import { Box, Flex, Grid } from "@flows/styled-system/jsx";
+import { Flex, Grid } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
-import { ExternalLink16, NextJS32, Nuxt32, React32 } from "icons";
+import { Angular32, ExternalLink16, NextJS32, Nuxt32, React32 } from "icons";
 import { links } from "lib/links";
 import { type FC, type JSX, type SVGProps } from "react";
 import { Icon, Text } from "ui";
@@ -25,6 +25,12 @@ const templates: TemplateCardProps[] = [
     backgroundColor: "vue",
     link: links.sdk.nuxtTemplate,
   },
+  {
+    title: "Angular",
+    icon: Angular32,
+    backgroundColor: "angular",
+    link: links.sdk.angularTemplate,
+  },
 ];
 
 export const ImplementationTemplateCards = (): JSX.Element => {
@@ -39,15 +45,6 @@ export const ImplementationTemplateCards = (): JSX.Element => {
         {templates.map((template) => (
           <TemplateCard key={template.title} {...template} />
         ))}
-        {/* Placeholder box until we add another template */}
-        <Box
-          height="100%"
-          width="100%"
-          borderWidth="2px"
-          borderColor="newBorder.neutral.muted"
-          borderRadius="radius8"
-          borderStyle="dashed"
-        />
       </Grid>
     </Section>
   );
@@ -124,6 +121,13 @@ const background = cva({
         backgroundColor: "hsl(155, 100%, 97%)",
         _dark: {
           backgroundColor: "hsl(155, 80%, 9%)",
+        },
+      },
+      angular: {
+        color: "#dd0031",
+        backgroundColor: "hsl(348, 100%, 98%)",
+        _dark: {
+          backgroundColor: "hsl(348, 50%, 11%)",
         },
       },
     },

@@ -1,4 +1,5 @@
 export * from "./src/alert16";
+export * from "./src/angular32";
 export * from "./src/array16";
 export * from "./src/arrow-left16";
 export * from "./src/arrow-right16";
@@ -43,6 +44,7 @@ export * from "./src/language16";
 export * from "./src/link16";
 export * from "./src/log16";
 export * from "./src/mail16";
+export * from "./src/memory16";
 export * from "./src/menu16";
 export * from "./src/minus16";
 export * from "./src/modal16";

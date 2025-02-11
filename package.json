@@ -24,7 +24,7 @@
     "check-links": "pnpm dlx hyperlink http://localhost:3000/docs --recursive --internal --concurency 1"
   },
   "devDependencies": {
-    "cspell": "^8.16.1",
+    "cspell": "^8.17.3",
     "eslint": "8.57.0",
     "husky": "^9.1.7",
     "markdownlint-cli": "^0.44.0",
@@ -46,5 +46,5 @@
       "sharp"
     ]
   },
-  "packageManager": "pnpm@10.2.0"
+  "packageManager": "pnpm@10.3.0"
 }

@@ -43,6 +43,7 @@ type Props = {
   autoComplete?: React.InputHTMLAttributes<HTMLInputElement>["autoComplete"];
   autoFocus?: boolean;
   "data-test"?: string;
+  highlightInvalid?: boolean;
 };
 
 export const Input = forwardRef<HTMLInputElement, Props>(function Input(
@@ -61,6 +62,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
     endIcon,
     disabled,
     variant = "default",
+    highlightInvalid,
     ...props
   },
   ref,
@@ -90,7 +92,14 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
         ) : null}
         <Comp
           className={cx(
-            input({ size, startIcon: !!startIcon, endIcon: !!endIcon, variant, error }),
+            input({
+              size,
+              startIcon: !!startIcon,
+              endIcon: !!endIcon,
+              variant,
+              error,
+              highlightInvalid,
+            }),
             inputClassName,
           )}
           ref={ref}
@@ -163,9 +172,6 @@ const input = cva({
     fastEaseInOut: "border-color, background-color, box-shadow",
     color: "newControl.fg",
     width: "100%",
-    _invalid: {
-      "&&": { borderColor: "newBorder.danger" },
-    },
     _hover: {
       borderColor: "newControl.border.hover",
     },
@@ -238,6 +244,13 @@ const input = cva({
         borderColor: "newControl.border.error",
         _hover: {
           borderColor: "newControl.border.error",
+        },
+      },
+    },
+    highlightInvalid: {
+      true: {
+        _invalid: {
+          "&&": { borderColor: "newBorder.danger" },
         },
       },
     },
