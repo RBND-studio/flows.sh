@@ -11,11 +11,12 @@ type Props = {
   trigger: ReactNode;
   children?: ReactNode;
   align?: ComponentProps<typeof PopoverContent>["align"];
+  open?: boolean;
 };
 
-export const Menu: FC<Props> = ({ trigger, children, align }) => {
+export const Menu: FC<Props> = ({ trigger, children, align, open }) => {
   return (
-    <Popover>
+    <Popover open={open}>
       <PopoverTrigger asChild>{trigger}</PopoverTrigger>
       <PopoverContent align={align ?? "start"}>
         <Flex flexDir="column" justifyContent="center" minW="240px" p="6px">
@@ -32,18 +33,23 @@ type MenuItemProps = {
   disabled?: boolean;
   className?: string;
   onClick?: () => void;
+  active?: boolean;
   /**
    * @defaultValue true
    */
   closeOnClick?: boolean;
 };
 export const MenuItem: FC<MenuItemProps> = forwardRef<HTMLButtonElement, MenuItemProps>(
-  function MenuItem({ children, asChild, disabled, className, closeOnClick, ...props }, ref) {
+  function MenuItem(
+    { children, asChild, disabled, className, closeOnClick, active, ...props },
+    ref,
+  ) {
     const Component = asChild ? Slot : "button";
 
     const component = (
       <Component
         ref={ref}
+        data-highlighted={active ? "" : undefined}
         {...props}
         className={cx(
           css({
@@ -60,6 +66,12 @@ export const MenuItem: FC<MenuItemProps> = forwardRef<HTMLButtonElement, MenuIte
             textStyle: "bodyS",
             color: disabled ? "text.disabled" : undefined,
 
+            _highlighted: {
+              bg: "newBg.primary.muted",
+              _hover: {
+                bg: "newBg.primary.muted",
+              },
+            },
             _hover: {
               bg: disabled ? "transparent" : "bg.hover",
             },

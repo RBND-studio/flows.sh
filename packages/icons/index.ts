@@ -44,6 +44,7 @@ export * from "./src/language16";
 export * from "./src/link16";
 export * from "./src/log16";
 export * from "./src/mail16";
+export * from "./src/memory16";
 export * from "./src/menu16";
 export * from "./src/minus16";
 export * from "./src/modal16";
