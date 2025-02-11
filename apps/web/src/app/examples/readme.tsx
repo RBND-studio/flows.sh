@@ -12,7 +12,7 @@ type Props = {
 export const Readme = ({ readme, sidebar }: Props): ReactNode => {
   return (
     <Section
-      py="space40"
+      pt="space40"
       flexDirection="column-reverse"
       display="flex"
       gap="space48"

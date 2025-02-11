@@ -7,6 +7,7 @@ import { examplesContent } from "../content";
 import { Embed } from "../embed";
 import { ExampleHeader } from "../example-header";
 import { Readme } from "../readme";
+import { Suggestions } from "../suggestions";
 
 type Params = {
   slug: string;
@@ -39,6 +40,7 @@ export default async function ExampleDetailPage({ params }: Props): Promise<Reac
       <ExampleHeader title={content.title} description={content.description} />
       <Embed {...content.embed} />
       <Readme readme={content.readme} sidebar={content.sidebar} />
+      <Suggestions slug={content.slug} />
       <CtaBanner />
     </>
   );
