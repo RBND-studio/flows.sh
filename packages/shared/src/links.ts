@@ -76,6 +76,7 @@ export const links = (domain = "flows.sh") => ({
       userProperties: `https://${domain}/docs/block-properties/user-properties`,
       waitProperty: `https://${domain}/docs/block-properties/wait`,
       array: `https://${domain}/docs/block-properties/array`,
+      stateMemory: `https://${domain}/docs/block-properties/state-memory`,
     },
     configureBlocks: {
       exitNodes: `https://${domain}/docs/workflows/configure-blocks#exit-nodes`,

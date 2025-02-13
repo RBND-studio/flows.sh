@@ -6,6 +6,7 @@
     "boolean",
     "select",
     "array",
+    "state-memory",
     "slot",
     "page-targeting",
     "user-properties",
