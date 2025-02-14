@@ -37,7 +37,7 @@ export const Providers: FC<Props> = ({ children }) => {
           components=\{{ ...components }}
           tourComponents=\{{ ...tourComponents }}
           userProperties=\{{
-            example: "-- PLOP EXAMPLE NAME HERE --"
+            example: "-- PLOP EXAMPLE SLUG HERE --"
           }}
         >
           {content}

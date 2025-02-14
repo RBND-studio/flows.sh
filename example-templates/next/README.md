@@ -4,7 +4,7 @@ This example shows how TODO: describe the example.
 
 ## Demo
 
-[View the live demo](https://flows.sh/examples/-- PLOP EXAMPLE NAME HERE --)
+[View the live demo](https://flows.sh/examples/-- PLOP EXAMPLE SLUG HERE --)
 
 ## Features
 
