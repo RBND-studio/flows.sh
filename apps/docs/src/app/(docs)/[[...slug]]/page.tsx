@@ -26,7 +26,7 @@ export default async function Page(props: { params: Promise<Params> }): Promise<
     repo: "flows.sh",
     sha: "main",
     path: `apps/docs/src/content/${page.file.path}`,
-    token: GH_ACCESS_TOKEN,
+    token: `Bearer ${GH_ACCESS_TOKEN}`,
   });
 
   return (
