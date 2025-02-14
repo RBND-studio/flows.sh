@@ -37,6 +37,9 @@ export const links = (domain = "flows.sh") => ({
     embeddedTipsSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/embedded-tips",
     modal: "https://modal.examples.flows.sh",
     modalSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/modal",
+    interactiveFeatureAnnouncement: "https://interactive-feature-announcement.examples.flows.sh",
+    interactiveFeatureAnnouncementSource:
+      "https://github.com/RBND-studio/flows.sh/tree/main/examples/interactive-feature-announcement",
     // --PLOP_NEW_EXAMPLE_LINK--
   },
   docs: {
