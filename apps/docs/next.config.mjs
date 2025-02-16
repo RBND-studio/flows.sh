@@ -49,6 +49,11 @@ const nextConfig = {
         destination: "/migrate-to-flows-2",
         permanent: true,
       },
+      {
+        source: "/getting-started/quickstart",
+        destination: "/quickstart",
+        permanent: true,
+      },
     ];
   },
 };

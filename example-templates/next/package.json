@@ -1,5 +1,5 @@
 {
-  "name": "-- PLOP EXAMPLE NAME HERE --",
+  "name": "-- PLOP EXAMPLE SLUG HERE --",
   "version": "0.1.0",
   "repository": "https://github.com/RBND-studio/flows.sh/tree/main/examples",
   "license": "MIT",
@@ -11,7 +11,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@floating-ui/react-dom": "^2.1.2",
     "@flows/react": "1.0.0",
     "@flows/react-components": "1.0.0",
     "@radix-ui/react-dropdown-menu": "^2.1.5",

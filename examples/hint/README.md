@@ -33,8 +33,6 @@ Below is a screenshot of how the workflow is set up:
    - **Custom properties:**
      - Title
      - Body
-     - Title
-     - Body
      - Button label
      - Target element
      - Side: top, right, bottom, left
