@@ -10,9 +10,6 @@ export const H2 = (props: HTMLAttributes<HTMLHeadingElement>): JSX.Element => {
         textStyle: "titleXl!",
         mt: "space64!",
         mb: "space16!",
-        _first: {
-          mt: "0!",
-        },
       })}
       {...props}
     />
