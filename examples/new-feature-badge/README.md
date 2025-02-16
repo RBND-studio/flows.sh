@@ -1,22 +1,18 @@
-# Hint example application – Flows example
+# New feature badge – Flows example
 
-This example showcases a set of custom hints powered by `@flows/react` which uses `@floating-ui/react-dom`.
+This example showcases new feature badge powered by `@flows/react` and `floating-ui`.
 
-Hints provide users with on-demand and contextual guidance. Hints use small beacons that encourage users to focus on certain features, then progressively disclose more information when the user interacts with them.
+The badge is a small, floating element that can be positioned next to a new feature's name, location, or any component you want to emphasize. It effectively draws attention to updates and changes in your application.
 
-Hints are useful for:
-
-- Contextual education and help
-- To draw attention to a new feature without interrupting a user’s workflow.
-- Gently nudge users to explore, learn, or take action.
+As products continuously evolve, keeping users informed is essential. The new feature badge offers a straightforward and effective way to communicate these changes.
 
 ## Demo
 
-[View the live demo](https://flows.sh/examples/hint)
+[View the live demo](https://flows.sh/examples/new-feature-badge)
 
 ## Features
 
-WhWhen a user enters the workflow and visits the home page, three hints are shown to gently nudge users to explore the features of the application. The hint next to the description label is linked to another hint that shows up after the previous hint is completed.
+When a user enters the workflow and visits one of the application pages, a new feature badge will appear next a specific element on the page, helping to draw attention to the new feature. The badge is using a custom component to create a floating element that can be positioned anywhere on the page.
 
 Below is a screenshot of how the workflow is set up:
 
@@ -28,19 +24,16 @@ Below is a screenshot of how the workflow is set up:
 2. Clone the repository from GitHub and install the required dependencies in the project directory.
 3. Add your organization ID in the [`providers.tsx`](./src/app/providers.tsx) file.
 4. Create a new block template in your organization with the following configuration:
-   - **UI component:** FlowsHint
+   - **UI component:** NewFeatureBadge
    - **Slottable:** false
    - **Custom properties:**
      - Title
-     - Body
-     - Button label
      - Target element
      - Side: top, right, bottom, left
      - Offset X: number
      - Offset Y: number
    - **Exit nodes:**
-     - `continue`
-     - `close`
+     - No exit nodes
 5. Recreate the workflow in your organization and publish it.
 6. Run the development server with `pnpm dev`.
 

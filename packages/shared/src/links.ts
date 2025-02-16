@@ -40,6 +40,8 @@ export const links = (domain = "flows.sh") => ({
     interactiveFeatureAnnouncement: "https://interactive-feature-announcement.examples.flows.sh",
     interactiveFeatureAnnouncementSource:
       "https://github.com/RBND-studio/flows.sh/tree/main/examples/interactive-feature-announcement",
+    newFeatureBadge: "https://new-feature-badge.examples.flows.sh",
+    newFeatureBadgeSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/new-feature-badge",
     // --PLOP_NEW_EXAMPLE_LINK--
   },
   docs: {

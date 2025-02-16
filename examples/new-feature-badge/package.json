@@ -1,5 +1,5 @@
 {
-  "name": "-- PLOP EXAMPLE SLUG HERE --",
+  "name": "new-feature-badge",
   "version": "0.1.0",
   "repository": "https://github.com/RBND-studio/flows.sh/tree/main/examples",
   "license": "MIT",
@@ -11,17 +11,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@floating-ui/react-dom": "^2.1.2",
     "@flows/react": "1.0.0",
     "@flows/react-components": "1.0.0",
     "@radix-ui/react-dropdown-menu": "^2.1.5",
+    "@radix-ui/react-label": "^2.1.1",
+    "@radix-ui/react-popover": "^1.1.5",
+    "@radix-ui/react-select": "^2.1.5",
     "@radix-ui/react-slot": "^1.1.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
     "lucide-react": "^0.473.0",
     "next": "15.1.6",
     "next-themes": "^0.4.4",
     "react": "^19.0.0",
+    "react-day-picker": "8.10.1",
     "react-dom": "^19.0.0",
+    "recharts": "^2.15.0",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7"
   },

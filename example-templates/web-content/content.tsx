@@ -14,11 +14,10 @@ import {
   ParagraphLink,
   UnorderedList,
 } from "../typography";
-
 // TODO: Replace with actual image
 import workflowPng from "./workflow.png";
 
-export const cardContent: ContentType = {
+export const -- PLOP EXAMPLE CAMEL HERE --Content: ContentType = {
   slug: "-- PLOP EXAMPLE SLUG HERE --",
   title: "-- PLOP TITLE HERE --",
   icon: Modal16, //TODO: Replace with actual icon

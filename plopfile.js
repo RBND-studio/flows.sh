@@ -22,6 +22,7 @@ module.exports = function (plop) {
     ],
     actions: (data) => {
       const exampleSlug = toKebabCase(data.name);
+      const exampleCamel = toCamelCase(data.name);
 
       const destinationPath = `examples/${exampleSlug}`;
       const templatePath = "example-templates/next";
@@ -115,6 +116,12 @@ module.exports = function (plop) {
           path: `${contentDestinationPath}/content.tsx`,
           pattern: /(-- PLOP EXAMPLE SOURCE HERE --)/gi,
           template: `${exampleSourceUrlName}`,
+        },
+        {
+          type: "modify",
+          path: `${contentDestinationPath}/content.tsx`,
+          pattern: /(-- PLOP EXAMPLE CAMEL HERE --)/gi,
+          template: `${exampleCamel}`,
         },
       ];
     },
