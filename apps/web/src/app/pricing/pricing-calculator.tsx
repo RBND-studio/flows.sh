@@ -59,7 +59,7 @@ export const PricingCalculator = (): ReactElement => {
             mb="space16"
             mdDown={{ flexDirection: "column", gap: "space8" }}
           >
-            <Text id="calculatorLabel" variant="titleL">
+            <Text id="calculatorLabel" variant="titleL" as="h2">
               Monthly tracked users
             </Text>
             <Flex gap="space8" alignItems="baseline">

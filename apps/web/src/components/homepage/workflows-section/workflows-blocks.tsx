@@ -3,7 +3,7 @@
 import { Box, Flex, Wrap } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
 import { BlockTemplate16 } from "icons";
-import { type JSX,useState } from "react";
+import { type JSX, useState } from "react";
 import { BlockIcon, Icon, Text } from "ui";
 
 import { WorkflowsBlocksTabs } from "./workflows-blocks-tabs";
@@ -98,7 +98,7 @@ export const WorkflowsBlocks = (): JSX.Element => {
       md={{ flexDirection: "row" }}
     >
       <Box md={{ maxWidth: "320px" }} width="100%" px="space32" py="space32">
-        <Text maxWidth={240} md={{ maxWidth: "unset" }} mb="space16" variant="titleXl">
+        <Text maxWidth={240} md={{ maxWidth: "unset" }} mb="space16" variant="titleXl" as="h3">
           Create complex workflows with blocks
         </Text>
         <WorkflowsBlocksTabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />

@@ -43,7 +43,7 @@ export const Suggestions = ({ slug }: Props): ReactNode => {
         gap="space12"
       >
         {suggestionItems.map((item) => (
-          <ExampleCard key={item.title} {...item} />
+          <ExampleCard headingLevel="h3" key={item.title} {...item} />
         ))}
       </Section>
     </>

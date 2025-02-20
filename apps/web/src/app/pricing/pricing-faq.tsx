@@ -70,13 +70,14 @@ export const PricingFaq = (): ReactElement => {
         })}
         variant="title2xl"
         align="center"
+        as="h2"
       >
         FAQs
       </Text>
 
       <Box>
         {questions.map((item) => (
-          <FaqAccordion key={item.title} title={item.title}>
+          <FaqAccordion headingLevel="h3" key={item.title} title={item.title}>
             <Text color="muted" variant="bodyL">
               {item.content}
             </Text>

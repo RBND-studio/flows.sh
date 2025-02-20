@@ -44,7 +44,7 @@ export const WorkflowsSubfeatures = (): JSX.Element => {
       }}
     >
       {subFeatures.map((feature) => (
-        <SmallFeature key={feature.title} {...feature} />
+        <SmallFeature headingLevel="h4" key={feature.title} {...feature} />
       ))}
     </Section>
   );

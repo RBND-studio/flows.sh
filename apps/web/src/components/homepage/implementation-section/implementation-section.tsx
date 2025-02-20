@@ -22,7 +22,7 @@ export const ImplementationSection = (): JSX.Element => {
         md={{ pt: "space140", pb: "space64", flexDirection: "row" }}
       >
         <Box width="100%">
-          <Text mb="space24" variant="title3xl">
+          <Text mb="space24" variant="title3xl" as="h2">
             Deploy your first workflow in minutes
           </Text>
           <Text maxWidth="480px" color="muted" variant="bodyL">
