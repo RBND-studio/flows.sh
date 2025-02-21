@@ -11,13 +11,18 @@ import { Step, Steps } from "fumadocs-ui/components/steps";
 
 The State memory property is used to store a boolean value in the block's state. This is ideal for tracking user progress such as whether a user has completed a task in a checklist.
 
-## Defining a State memory property
-
-When you set up a State memory property, you can specify common attributes like title, description, and key. The boolean value is automatically stored in the block's state and can be accessed by using the property key in your application.
-
-## Configuring a State memory property in a workflow
+## Usage in a workflow
 
 In a workflow, you can configure the state memory to track whether a user has exited a specific block. To configure the state memory, click on the field and select the block you want to track. The state memory will be set to `true` when the user exits the selected block.
+
+## Usage in a block template
+
+In a block template, you can define the state memory like any other property. The properties to fill out are:
+
+- **Title**: The title of the state memory shown in the block editor.
+- **Description**: The description of the state memory shown in the block editor (optional).
+- **Type**: Select state memory from the dropdown.
+- **Key**: The key of the boolean value stored in the block's state. This key is used to access the value in your application.
 
 ## Example implementation
 

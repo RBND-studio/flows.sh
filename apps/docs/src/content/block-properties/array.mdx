@@ -11,13 +11,19 @@ import { Step, Steps } from "fumadocs-ui/components/steps";
 
 The Array property is used to create multiple items with the same structure but different values. This is ideal for lists where every item follows a consistent format—such as checklists or collections of useful links.
 
-## Defining an array
-
-When you set up an array property, you can specify common attributes like title, description, and key. Additionally, you define an items property, which is a list of sub-properties that determine each array item’s structure. These sub-properties can be any basic type (e.g., String, Number, Boolean, or Select).
-
-## Filling an array in a workflow
+## Usage in a workflow
 
 In a workflow, adding items to an array is as simple as clicking the + button next to the array title. Each added item conforms to the defined structure, and the order in which you add them determines their display order.
+
+## Usage in a block template
+
+In a block template, you can define the array property like any other property. The properties to fill out are:
+
+- **Title**: The title of the array shown in the block editor.
+- **Description**: The description of the array shown in the block editor (optional).
+- **Type**: Select array from the dropdown.
+- **Key**: The key of the array of items. This key is used to access the array items in your application.
+- **Items**: The individual items in the array. Each item can be any type except for another array.
 
 ## Example implementation
 

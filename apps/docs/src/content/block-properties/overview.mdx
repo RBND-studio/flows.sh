@@ -6,13 +6,14 @@ description: Block properties are used to customize the block's content, appeara
 import { Card, Cards } from "fumadocs-ui/components/card";
 import {
   Array16,
+  BlockTrigger16,
   Boolean16,
   Globe16,
+  Memory16,
   Number16,
   Select16,
   Slot16,
   String16,
-  Memory16,
   User16,
   Wait16,
 } from "icons";
@@ -41,6 +42,9 @@ Customizable properties are the properties that you can define and use in your b
   </Card>
   <Card title="State memory" icon={<Memory16 />} href="/block-properties/state-memory">
     Store a boolean value in the block's state to track user progress.
+  </Card>
+  <Card title="Block trigger" icon={<BlockTrigger16 />} href="/block-properties/block-trigger">
+    Launch a block from another block without exiting it.
   </Card>
 </Cards>
 

@@ -1,0 +1,43 @@
+---
+title: "Block trigger"
+description: "Launch a block from another block without exiting it."
+---
+
+![Block trigger](/block-properties/block-trigger.png)
+
+## Overview
+
+The block trigger property allows you to launch a block from another block without exiting it. This can be used to launch a tour or a modal from an onboarding checklist.
+
+## Usage in a workflow
+
+In a workflow, you can configure the block trigger to launch another block in the workflow. To configure the block trigger, click on the field and select the block you want to trigger. Now when user does the action that triggers the block, the block will be launched (eg. button click).
+
+When block trigger is connected to another block a dashed line will appear between the two blocks to indicate the connection.
+
+## Usage in a block template
+
+In a block template, you can define the block trigger like any other property. The properties to fill out are:
+
+- **Title**: The title of the block trigger shown in the block editor.
+- **Description**: The description of the block trigger shown in the block editor (optional).
+- **Type**: Select block trigger from the dropdown.
+- **Key**: The key of the function you need to call in your component for the block trigger to activate.
+
+Below is an example usage of block trigger in a component:
+
+```tsx title="Block trigger component example"
+type Props = {
+  // The function will be undefined without any connections
+  triggerBlock?: () => void;
+};
+
+export const BlockTriggerComponent = ({ triggerBlock }: Props) => {
+  return (
+    <div>
+      <button onClick={triggerBlock}>Trigger another block</button>
+      {/* When the button is clicked, the specified block in your workflow will be triggered */}
+    </div>
+  );
+};
+```

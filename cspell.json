@@ -34,6 +34,7 @@
     "opesicka",
     "Pesicka",
     "pesickadavid",
+    "pglite",
     "rbnd",
     "reauthentication",
     "rehype",
@@ -68,7 +69,7 @@
     "cspell.json",
     "out/**/*",
     "pandacss-generated",
-    "pnpm-lock.yaml",
+    "pnpm-lock.yaml"
   ],
   "allowCompoundWords": true
 }
