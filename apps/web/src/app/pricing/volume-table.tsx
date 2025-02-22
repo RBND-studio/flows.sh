@@ -38,7 +38,9 @@ export const VolumeTable = (): ReactElement => {
   return (
     <>
       <Section pt="space120" mb="space40" display="flex" flexDirection="column" gap="space12">
-        <Text variant="title2xl">Volume pricing</Text>
+        <Text variant="title2xl" as="h2">
+          Volume pricing
+        </Text>
         <Text variant="bodyL" color="muted">
           Flows offers volume based pricing, the more MTUs you have the less you pay.
         </Text>

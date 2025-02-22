@@ -6,6 +6,7 @@ export * from "./src/arrow-right16";
 export * from "./src/banner16";
 export * from "./src/block-plus16";
 export * from "./src/block-template16";
+export * from "./src/block-trigger16";
 export * from "./src/block16";
 export * from "./src/book16";
 export * from "./src/boolean16";

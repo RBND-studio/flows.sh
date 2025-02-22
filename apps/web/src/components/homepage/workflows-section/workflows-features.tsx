@@ -14,7 +14,7 @@ export const WorkflowsFeatures = (): JSX.Element => {
       md={{ flexDirection: "row", pt: "space96", pb: "space96" }}
     >
       <Box width="100%">
-        <Text mb="space12" variant="titleXl">
+        <Text mb="space12" variant="titleXl" as="h3">
           Product tours
         </Text>
         <Text mb="space32" color="muted" variant="bodyL">
@@ -53,7 +53,7 @@ export const WorkflowsFeatures = (): JSX.Element => {
         </Box>
       </Box>
       <Box width="100%">
-        <Text mb="space12" variant="titleXl">
+        <Text mb="space12" variant="titleXl" as="h3">
           Embeddable components
         </Text>
         <Text mb="space32" color="muted" variant="bodyL">

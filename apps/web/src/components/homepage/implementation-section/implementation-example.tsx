@@ -102,7 +102,7 @@ export const ImplementationExample: FC<Props> = ({ codeExample }) => {
   return (
     <>
       <Section>
-        <Text mb="space12" variant="titleXl">
+        <Text mb="space12" variant="titleXl" as="h3">
           Bring your own UI
         </Text>
         <Text maxWidth={528} mb="space32" color="muted" variant="bodyL">

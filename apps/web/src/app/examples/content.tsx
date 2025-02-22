@@ -1,5 +1,6 @@
 import { cardContent } from "./card/content";
 import { embeddedTipsContent } from "./embedded-tips/content";
+import { enterpriseUpsellContent } from "./enterprise-upsell/content";
 import { hintContent } from "./hint/content";
 import { interactiveFeatureAnnouncementContent } from "./interactive-feature-announcement/content";
 import { modalContent } from "./modal/content";
@@ -15,4 +16,5 @@ export const examplesContent: ContentType[] = [
   embeddedTipsContent,
   interactiveFeatureAnnouncementContent,
   newFeatureContent,
+  enterpriseUpsellContent,
 ];

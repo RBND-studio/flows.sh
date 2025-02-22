@@ -37,6 +37,7 @@ export default function ExamplePage(): ReactNode {
               icon={example.icon}
               description={example.description}
               title={example.title}
+              headingLevel="h2"
             />
           ))}
         </Grid>

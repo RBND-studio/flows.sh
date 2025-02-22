@@ -9,9 +9,10 @@ type Props = {
   description: string;
   href: string;
   icon: FC<SVGProps<SVGSVGElement>>;
+  headingLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 };
 
-export const ExampleCard = ({ title, description, href, icon }: Props): ReactNode => {
+export const ExampleCard = ({ title, description, href, icon, headingLevel }: Props): ReactNode => {
   return (
     <Link
       href={href}
@@ -50,7 +51,9 @@ export const ExampleCard = ({ title, description, href, icon }: Props): ReactNod
         </Flex>
       </Flex>
       <Flex p="12" gap="space4" flexDirection="column">
-        <Text weight="600">{title}</Text>
+        <Text weight="600" as={headingLevel}>
+          {title}
+        </Text>
         <Text variant="bodyXs" color="muted">
           {description}
         </Text>

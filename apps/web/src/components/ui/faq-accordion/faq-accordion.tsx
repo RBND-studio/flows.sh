@@ -9,9 +9,10 @@ import { Icon, Text } from "ui";
 type Props = {
   title: string;
   children: ReactElement;
+  headingLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 };
 
-export const FaqAccordion = ({ title, children }: Props): ReactElement => {
+export const FaqAccordion = ({ title, children, headingLevel }: Props): ReactElement => {
   const [isOpen, setIsOpen] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState("0px");
@@ -40,7 +41,7 @@ export const FaqAccordion = ({ title, children }: Props): ReactElement => {
         })}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <Text variant="bodyL" weight="700">
+        <Text variant="bodyL" weight="700" as={headingLevel}>
           {title}
         </Text>
         <Icon

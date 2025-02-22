@@ -41,7 +41,11 @@ export const links = (domain = "flows.sh") => ({
     interactiveFeatureAnnouncementSource:
       "https://github.com/RBND-studio/flows.sh/tree/main/examples/interactive-feature-announcement",
     newFeatureBadge: "https://new-feature-badge.examples.flows.sh",
-    newFeatureBadgeSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/new-feature-badge",
+    newFeatureBadgeSource:
+      "https://github.com/RBND-studio/flows.sh/tree/main/examples/new-feature-badge",
+    enterpriseUpsell: "https://enterprise-upsell.examples.flows.sh",
+    enterpriseUpsellSource:
+      "https://github.com/RBND-studio/flows.sh/tree/main/examples/enterprise-upsell",
     // --PLOP_NEW_EXAMPLE_LINK--
   },
   docs: {
@@ -77,12 +81,14 @@ export const links = (domain = "flows.sh") => ({
       },
     },
     blockProperties: {
+      overview: `https://${domain}/docs/block-properties/overview`,
       slot: `https://${domain}/docs/block-properties/slot`,
       pageTargeting: `https://${domain}/docs/block-properties/page-targeting`,
       userProperties: `https://${domain}/docs/block-properties/user-properties`,
       waitProperty: `https://${domain}/docs/block-properties/wait`,
       array: `https://${domain}/docs/block-properties/array`,
       stateMemory: `https://${domain}/docs/block-properties/state-memory`,
+      blockTrigger: `https://${domain}/docs/block-properties/block-trigger`,
     },
     configureBlocks: {
       exitNodes: `https://${domain}/docs/workflows/configure-blocks#exit-nodes`,

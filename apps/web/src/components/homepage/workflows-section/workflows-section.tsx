@@ -13,7 +13,7 @@ export const WorkflowsSection = (): JSX.Element => {
   return (
     <>
       <Section pt="space80" pb="space40" md={{ pt: "space140", pb: "space64" }}>
-        <Text mb="space24" variant="title3xl">
+        <Text mb="space24" variant="title3xl" as="h2">
           Design the user journey
         </Text>
         <Text maxWidth="480px" color="muted" variant="bodyL">

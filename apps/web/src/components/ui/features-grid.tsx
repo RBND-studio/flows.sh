@@ -38,6 +38,7 @@ export const FeaturesGrid = ({ features }: Props): ReactElement => {
             title={feature.title}
             description={feature.description}
             comingSoon={feature.comingSoon}
+            headingLevel="h3"
             className={css({
               display: "flex",
               flexDirection: "column",

@@ -5,6 +5,7 @@ export const propertyTypes = [
   "select",
   "array",
   "state-memory",
+  "block-trigger",
 ] as const;
 export const defaultPropertyType = propertyTypes[0];
 
