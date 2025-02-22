@@ -43,6 +43,9 @@ export const links = (domain = "flows.sh") => ({
     newFeatureBadge: "https://new-feature-badge.examples.flows.sh",
     newFeatureBadgeSource:
       "https://github.com/RBND-studio/flows.sh/tree/main/examples/new-feature-badge",
+    enterpriseUpsell: "https://enterprise-upsell.examples.flows.sh",
+    enterpriseUpsellSource:
+      "https://github.com/RBND-studio/flows.sh/tree/main/examples/enterprise-upsell",
     // --PLOP_NEW_EXAMPLE_LINK--
   },
   docs: {
