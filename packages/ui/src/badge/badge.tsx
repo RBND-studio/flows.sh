@@ -16,7 +16,6 @@ const badge = cva({
     display: "inline-flex",
     borderRadius: "radius24",
     textStyle: "titleS",
-    justifyContent: "center",
   },
   variants: {
     size: {

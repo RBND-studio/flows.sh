@@ -19,6 +19,7 @@ export const links = (domain = "flows.sh") => ({
   dpa: `https://${domain}/legal/dpa`,
   pricing: `https://${domain}/pricing`,
   changelog: `https://${domain}/changelog`,
+  examplesList: `https://${domain}/examples`,
   sdk: {
     reactTemplate: `https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/vite`,
     nextTemplate: `https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/next`,

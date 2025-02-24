@@ -1,0 +1,38 @@
+---
+title: State memory and block trigger properties
+date: "2025-02-24"
+description: Introducing two new block properties to help you create more interactive workflows. We've also made some SDK improvements and fixed a few bugs.
+---
+
+These new block properties finally enable building onboarding checklists and hubs.
+
+## State memory property
+
+Use a boolean value stored in the block’s state to keep track of user progress. This lets you mark whether someone has finished a certain task or seen a particular message. State memory is perfect for onboarding flows or checklists where you need to remember the user’s progress.
+
+<Image
+  src="/images/changelog/2025-02-24-state-memory.png"
+  alt="State memory block property"
+  width={1800}
+  height={900}
+/>
+
+## Block trigger property
+
+With the block trigger property, you can launch one block directly from another without exiting the current block. This is useful for starting a tour or opening a modal from an onboarding checklist or hub.
+
+<Image
+  src="/images/changelog/2025-02-24-block-trigger.png"
+  alt="Block trigger block property"
+  width={1800}
+  height={900}
+/>
+
+## SDK improvements
+
+- Added a template for using the Flows JS SDK in Angular applications. Check out the [Angular template](https://github.com/RBND-studio/flows-sdk/tree/main/examples/angular) in the Flows SDK repository.
+
+## Bug fixes
+
+- When adding a wait step to a tour, the add popup now closes right after the step is added
+- Workflows no longer display to active users once the workflow live status is turned off
