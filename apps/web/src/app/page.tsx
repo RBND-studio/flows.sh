@@ -1,5 +1,11 @@
 import { css } from "@flows/styled-system/css";
-import { DemoSection, Hero, ImplementationSection, WorkflowsSection } from "components";
+import {
+  DemoSection,
+  ExamplesSection,
+  Hero,
+  ImplementationSection,
+  WorkflowsSection,
+} from "components";
 import { CtaBanner } from "components/cta-banner";
 import { SignupClick } from "components/utils/signup-click";
 import { links } from "lib/links";
@@ -40,7 +46,8 @@ const Page = (): ReactElement => {
       <DemoSection />
       <WorkflowsSection />
       <ImplementationSection />
-      <CtaBanner />
+      <ExamplesSection />
+      <CtaBanner title="Start building today" />
     </>
   );
 };

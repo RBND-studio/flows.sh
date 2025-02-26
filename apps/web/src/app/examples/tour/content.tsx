@@ -1,6 +1,5 @@
 import { css } from "@flows/styled-system/css";
 import { SignupClick } from "components/utils/signup-click";
-import { Tooltip16 } from "icons";
 import { links } from "lib/links";
 import Image from "next/image";
 import { CodeHighlight } from "ui/server";
@@ -19,13 +18,18 @@ import {
 import introModalPng from "./intro-modal.png";
 import lastModalPng from "./last-modal.png";
 import tooltipsPng from "./tooltips.png";
+import darkPng from "./tour-dark.png";
+import lightPng from "./tour-light.png";
 import waitPng from "./wait.png";
 import workflowPng from "./workflow.png";
 
 export const tourContent: ContentType = {
   slug: "tour",
   title: "Tour",
-  icon: Tooltip16,
+  images: {
+    light: lightPng,
+    dark: darkPng,
+  },
   description: "Guide users along their journey through your product",
   embed: {
     src: links.examples.tour,

@@ -30,7 +30,9 @@ export const Suggestions = ({ slug }: Props): ReactNode => {
     title: content.title,
     description: content.description,
     href: routes.exampleDetail(content.slug),
-    icon: content.icon,
+    lightImage: content.images.light,
+    darkImage: content.images.dark,
+    alt: content.title,
   }));
 
   return (

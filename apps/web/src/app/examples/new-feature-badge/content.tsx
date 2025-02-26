@@ -1,6 +1,5 @@
 import { css } from "@flows/styled-system/css";
 import { SignupClick } from "components/utils/signup-click";
-import { Upgrade16 } from "icons";
 import { links } from "lib/links";
 import Image from "next/image";
 
@@ -14,12 +13,17 @@ import {
   ParagraphLink,
   UnorderedList,
 } from "../typography";
+import darkPng from "./new-feature-badge-dark.png";
+import lightPng from "./new-feature-badge-light.png";
 import workflowPng from "./workflow.png";
 
 export const newFeatureContent: ContentType = {
   slug: "new-feature-badge",
   title: "New feature badge",
-  icon: Upgrade16,
+  images: {
+    light: lightPng,
+    dark: darkPng,
+  },
   description: "Highlight new features in your application with a badge.",
   embed: {
     src: links.examples.newFeatureBadge,

@@ -1,6 +1,5 @@
 import { css } from "@flows/styled-system/css";
 import { SignupClick } from "components/utils/signup-click";
-import { Modal16 } from "icons";
 import { links } from "lib/links";
 import Image from "next/image";
 
@@ -14,12 +13,17 @@ import {
   ParagraphLink,
   UnorderedList,
 } from "../typography";
+import darkPng from "./modal-dark.png";
+import lightPng from "./modal-light.png";
 import workflowPng from "./workflow.png";
 
 export const modalContent: ContentType = {
   slug: "modal",
   title: "Modal",
-  icon: Modal16,
+  images: {
+    light: lightPng,
+    dark: darkPng,
+  },
   description: "A dialog to focus user attention on relevant information",
   embed: {
     src: links.examples.modal,
