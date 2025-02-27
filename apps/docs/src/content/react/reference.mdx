@@ -49,6 +49,8 @@ The `<FlowsProvider />` accepts the following props:
 | `userProperties` | `object` | No       | Object with custom [user properties](/users/properties). Values can be `string`, `number`, `boolean`, or `date`. |
 | `apiUrl`         | `string` | No       | Custom API URL useful when using proxy to send Flows requests through your own domain.                           |
 
+---
+
 #### FlowsSlot
 
 The `<FlowsSlot />` is a component used to create Slots in your app where you can insert components using Workflows. Learn more about using Slots in the Flows editor [here](/block-properties/slot).
@@ -70,6 +72,42 @@ const Sidebar = () => {
 | ------------- | ----------- | -------- | ------------------------------------------------------------------ |
 | `id`          | `string`    | Yes      | The Slot ID used to refer to the slot when creating workflows.     |
 | `placeholder` | `ReactNode` | No       | The component to render when no component is inserted in the slot. |
+
+---
+
+### Functions
+
+#### resetWorkflowProgress()
+
+The `resetWorkflowProgress()` function resets the progress of a specific workflow for the current user in the current environment.
+
+```tsx
+import { resetWorkflowProgress } from "@flows/react";
+
+<Button onClick={() => resetWorkflowProgress("workflow-id")}>Reset progress</Button>;
+```
+
+Parameters:
+
+| Name         | Type     | Required | Notes                                                                                     |
+| ------------ | -------- | -------- | ----------------------------------------------------------------------------------------- |
+| `workflowId` | `string` | Yes      | The ID of the workflow to reset. You can find it in the Flows app in the workflow detail. |
+
+---
+
+#### resetAllWorkflowsProgress()
+
+The `resetAllWorkflowsProgress()` function resets the progress of all workflows for the current user in the current environment.
+
+```tsx
+import { resetAllWorkflowsProgress } from "@flows/react";
+
+<Button onClick={() => resetAllWorkflowsProgress()}>Reset all progress</Button>;
+```
+
+Parameters: None
+
+---
 
 ## @flows/react-components
 

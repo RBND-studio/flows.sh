@@ -77,9 +77,8 @@ A function to unsubscribe the listener and avoid memory leaks.
 #### getCurrentFloatingBlocks()
 
 Retrieves all currently active floating workflow and tour blocks. Slot blocks are not included.
-Parameters:
 
-None
+Parameters: None
 
 Returns:
 
@@ -100,6 +99,42 @@ Parameters:
 Returns:
 
 An array of [ActiveBlock](#activeblock) objects.
+
+---
+
+#### resetWorkflowProgress()
+
+The `resetWorkflowProgress()` function resets the progress of a specific workflow for the current user in the current environment.
+
+```js
+import { resetWorkflowProgress } from "@flows/js";
+
+document.querySelector("#my-button").addEventListener("click", () => {
+  resetWorkflowProgress("workflow-id");
+});
+```
+
+Parameters:
+
+| Name         | Type     | Required | Notes                                                                                     |
+| ------------ | -------- | -------- | ----------------------------------------------------------------------------------------- |
+| `workflowId` | `string` | Yes      | The ID of the workflow to reset. You can find it in the Flows app in the workflow detail. |
+
+---
+
+#### resetAllWorkflowsProgress()
+
+The `resetAllWorkflowsProgress()` function resets the progress of all workflows for the current user in the current environment.
+
+```js
+import { resetAllWorkflowsProgress } from "@flows/js";
+
+document.querySelector("#my-button").addEventListener("click", () => {
+  resetAllWorkflowsProgress();
+});
+```
+
+Parameters: None
 
 ---
 
