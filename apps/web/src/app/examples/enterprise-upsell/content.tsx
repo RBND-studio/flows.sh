@@ -1,6 +1,5 @@
 import { css } from "@flows/styled-system/css";
 import { SignupClick } from "components/utils/signup-click";
-import { Versioning16 } from "icons";
 import { links } from "lib/links";
 import Image from "next/image";
 
@@ -14,12 +13,17 @@ import {
   ParagraphLink,
   UnorderedList,
 } from "../typography";
+import darkPng from "./enterprise-upsell-dark.png";
+import lightPng from "./enterprise-upsell-light.png";
 import workflowPng from "./workflow.png";
 
 export const enterpriseUpsellContent: ContentType = {
   slug: "enterprise-upsell",
   title: "Enterprise upsell",
-  icon: Versioning16,
+  images: {
+    light: lightPng,
+    dark: darkPng,
+  },
   description: "Nudge users to upgrade with an in-page promotion card",
   embed: {
     src: links.examples.enterpriseUpsell,

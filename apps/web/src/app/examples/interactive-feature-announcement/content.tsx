@@ -1,6 +1,5 @@
 import { css } from "@flows/styled-system/css";
 import { SignupClick } from "components/utils/signup-click";
-import { Pointer16 } from "icons";
 import { links } from "lib/links";
 import Image from "next/image";
 
@@ -14,12 +13,17 @@ import {
   ParagraphLink,
   UnorderedList,
 } from "../typography";
+import darkPng from "./interactive-feature-announcement-dark.png";
+import lightPng from "./interactive-feature-announcement-light.png";
 import workflowPng from "./workflow.png";
 
 export const interactiveFeatureAnnouncementContent: ContentType = {
   slug: "interactive-feature-announcement",
   title: "Interactive feature announcement",
-  icon: Pointer16,
+  images: {
+    light: lightPng,
+    dark: darkPng,
+  },
   description: "Show how your new feature works instead of just telling users about it.",
   embed: {
     src: links.examples.interactiveFeatureAnnouncement,

@@ -28,13 +28,15 @@ export default function ExamplePage(): ReactNode {
           sm={{ gridTemplateColumns: "1fr 1fr" }}
           md={{ gridTemplateColumns: "1fr 1fr 1fr" }}
           width="100%"
-          gap="space12"
+          gap="space20"
         >
           {examplesContent.map((example) => (
             <ExampleCard
+              darkImage={example.images.dark}
+              lightImage={example.images.light}
               key={example.title}
+              alt={example.title}
               href={routes.exampleDetail(example.slug)}
-              icon={example.icon}
               description={example.description}
               title={example.title}
               headingLevel="h2"
