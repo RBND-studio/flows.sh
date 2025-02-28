@@ -1,6 +1,5 @@
 import { css } from "@flows/styled-system/css";
 import { SignupClick } from "components/utils/signup-click";
-import { Slot16 } from "icons";
 import { links } from "lib/links";
 import Image from "next/image";
 
@@ -14,12 +13,17 @@ import {
   ParagraphLink,
   UnorderedList,
 } from "../typography";
+import darkPng from "./embedded-tips-dark.png";
+import lightPng from "./embedded-tips-light.png";
 import workflowPng from "./workflow.png";
 
 export const embeddedTipsContent: ContentType = {
   slug: "embedded-tips",
   title: "Embedded tips",
-  icon: Slot16,
+  images: {
+    light: lightPng,
+    dark: darkPng,
+  },
   description: "Inline contextual tips to help users learn about product and UI concepts",
   embed: {
     src: links.examples.embeddedTips,

@@ -77,9 +77,8 @@ A function to unsubscribe the listener and avoid memory leaks.
 #### getCurrentFloatingBlocks()
 
 Retrieves all currently active floating workflow and tour blocks. Slot blocks are not included.
-Parameters:
 
-None
+Parameters: None
 
 Returns:
 
@@ -103,18 +102,55 @@ An array of [ActiveBlock](#activeblock) objects.
 
 ---
 
+#### resetWorkflowProgress()
+
+The `resetWorkflowProgress()` function resets the progress of a specific workflow for the current user in the current environment.
+
+```js
+import { resetWorkflowProgress } from "@flows/js";
+
+document.querySelector("#my-button").addEventListener("click", () => {
+  resetWorkflowProgress("workflow-id");
+});
+```
+
+Parameters:
+
+| Name         | Type     | Required | Notes                                                                                     |
+| ------------ | -------- | -------- | ----------------------------------------------------------------------------------------- |
+| `workflowId` | `string` | Yes      | The ID of the workflow to reset. You can find it in the Flows app in the workflow detail. |
+
+---
+
+#### resetAllWorkflowsProgress()
+
+The `resetAllWorkflowsProgress()` function resets the progress of all workflows for the current user in the current environment.
+
+```js
+import { resetAllWorkflowsProgress } from "@flows/js";
+
+document.querySelector("#my-button").addEventListener("click", () => {
+  resetAllWorkflowsProgress();
+});
+```
+
+Parameters: None
+
+---
+
 ### Types
 
 #### ActiveBlock
 
 Represents a block visible to the user.
 
-| Name        | Type                              | Notes                                                                  |
-| ----------- | --------------------------------- | ---------------------------------------------------------------------- |
-| `id`        | `string`                          | Unique identifier for the block.                                       |
-| `type`      | `"component" \| "tour-component"` | The block type.                                                        |
-| `component` | `string`                          | The UI component that should be used to render the block.              |
-| `props`     | `object`                          | Props passed to the component, including data and exit node callbacks. |
+| Name                | Type                              | Notes                                                                                                                      |
+| ------------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `id`                | `string`                          | Internal identifier for the block. Changes with every workflow version, for persistent identifier use `props.__flows.key`. |
+| `type`              | `"component" \| "tour-component"` | The block type.                                                                                                            |
+| `component`         | `string`                          | The UI component that should be used to render the block.                                                                  |
+| `props`             | `object`                          | Props passed to the component, including data and exit node callbacks.                                                     |
+| `props.__flows.key` | `string`                          | Unique key for the block. Set by you in a workflow. [Learn more](/block-properties/block-key)                              |
 
 ---
 

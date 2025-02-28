@@ -6,7 +6,11 @@ import { links } from "lib/links";
 import type { ReactElement } from "react";
 import { Button, Text } from "ui";
 
-export const CtaBanner = (): ReactElement => {
+type Props = {
+  title?: string;
+};
+
+export const CtaBanner = ({ title = "Build anything with Flows" }: Props): ReactElement => {
   return (
     <Box
       position="relative"
@@ -26,7 +30,7 @@ export const CtaBanner = (): ReactElement => {
         gap="space24"
       >
         <Text align="center" as="h2" maxWidth={400} variant="title3xl">
-          Build anything with Flows
+          {title}
         </Text>
         <Wrap gap="space16" mt="space8" justifyContent="center">
           <SignupClick>

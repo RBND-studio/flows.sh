@@ -1,6 +1,5 @@
 import { css } from "@flows/styled-system/css";
 import { SignupClick } from "components/utils/signup-click";
-import { BlockTemplate16 } from "icons";
 import { links } from "lib/links";
 import Image from "next/image";
 
@@ -14,12 +13,17 @@ import {
   ParagraphLink,
   UnorderedList,
 } from "../typography";
+import darkPng from "./hint-dark.png";
+import lightPng from "./hint-light.png";
 import workflowPng from "./workflow.png";
 
 export const hintContent: ContentType = {
   slug: "hint",
   title: "Hint",
-  icon: BlockTemplate16,
+  images: {
+    light: lightPng,
+    dark: darkPng,
+  },
   description: "Self-guided contextual hints that help with feature discovery and education.",
   embed: {
     src: links.examples.hint,

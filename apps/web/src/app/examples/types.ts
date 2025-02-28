@@ -1,4 +1,5 @@
-import { type FC, type ReactNode, type SVGProps } from "react";
+import { type StaticImport } from "next/dist/shared/lib/get-img-props";
+import { type ReactNode } from "react";
 
 import { type EmbedProps } from "./embed";
 import { type InfoSidebarProps } from "./info-sidebar";
@@ -6,7 +7,10 @@ import { type InfoSidebarProps } from "./info-sidebar";
 export type ContentType = {
   slug: string;
   title: string;
-  icon: FC<SVGProps<SVGSVGElement>>;
+  images: {
+    light: string | StaticImport;
+    dark: string | StaticImport;
+  };
   description: string;
   embed: EmbedProps;
   sidebar: InfoSidebarProps;

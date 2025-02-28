@@ -49,6 +49,8 @@ The `<FlowsProvider />` accepts the following props:
 | `userProperties` | `object` | No       | Object with custom [user properties](/users/properties). Values can be `string`, `number`, `boolean`, or `date`. |
 | `apiUrl`         | `string` | No       | Custom API URL useful when using proxy to send Flows requests through your own domain.                           |
 
+---
+
 #### FlowsSlot
 
 The `<FlowsSlot />` is a component used to create Slots in your app where you can insert components using Workflows. Learn more about using Slots in the Flows editor [here](/block-properties/slot).
@@ -70,6 +72,106 @@ const Sidebar = () => {
 | ------------- | ----------- | -------- | ------------------------------------------------------------------ |
 | `id`          | `string`    | Yes      | The Slot ID used to refer to the slot when creating workflows.     |
 | `placeholder` | `ReactNode` | No       | The component to render when no component is inserted in the slot. |
+
+---
+
+### Functions
+
+#### useCurrentFloatingBlocks()
+
+The `useCurrentFloatingBlocks()` hook returns the active floating blocks for the user in the current environment.
+
+```tsx
+import { useCurrentFloatingBlocks } from "@flows/react";
+
+// Get the floating blocks for the current user
+const blocks = useCurrentFloatingBlocks();
+
+// Find a specific block by key
+const specificBlock = blocks.find((block) => block.props.__flows.key === "your-block-key");
+```
+
+Parameters: None
+
+Returns:
+
+An array of [ActiveBlock](#activeblock) objects representing the current floating blocks.
+
+---
+
+#### useCurrentSlotBlocks()
+
+The `useCurrentSlotBlocks()` hook returns the active slottable blocks for the user in the current environment.
+
+```tsx
+import { useCurrentSlotBlocks } from "@flows/react";
+
+// Get the slottable blocks for the current user in the specified slot
+const blocks = useCurrentSlotBlocks("your-slot-id");
+
+// Find a specific block by key
+const specificBlock = blocks.find((block) => block.props.__flows.key === "your-block-key");
+```
+
+Parameters:
+
+| Name     | Type     | Required | Notes                                                                             |
+| -------- | -------- | -------- | --------------------------------------------------------------------------------- |
+| `slotId` | `string` | Yes      | The ID of the slot to query. You can find it in the Flows app in the slot detail. |
+
+Returns:
+
+An array of [ActiveBlock](#activeblock) objects representing the current slottable blocks for the specified slot.
+
+---
+
+#### resetWorkflowProgress()
+
+The `resetWorkflowProgress()` function resets the progress of a specific workflow for the current user in the current environment.
+
+```tsx
+import { resetWorkflowProgress } from "@flows/react";
+
+<Button onClick={() => resetWorkflowProgress("workflow-id")}>Reset progress</Button>;
+```
+
+Parameters:
+
+| Name         | Type     | Required | Notes                                                                                     |
+| ------------ | -------- | -------- | ----------------------------------------------------------------------------------------- |
+| `workflowId` | `string` | Yes      | The ID of the workflow to reset. You can find it in the Flows app in the workflow detail. |
+
+---
+
+#### resetAllWorkflowsProgress()
+
+The `resetAllWorkflowsProgress()` function resets the progress of all workflows for the current user in the current environment.
+
+```tsx
+import { resetAllWorkflowsProgress } from "@flows/react";
+
+<Button onClick={() => resetAllWorkflowsProgress()}>Reset all progress</Button>;
+```
+
+Parameters: None
+
+---
+
+### Types
+
+#### ActiveBlock
+
+Represents a block visible to the user.
+
+| Name                | Type                              | Notes                                                                                                                      |
+| ------------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `id`                | `string`                          | Internal identifier for the block. Changes with every workflow version, for persistent identifier use `props.__flows.key`. |
+| `type`              | `"component" \| "tour-component"` | The block type.                                                                                                            |
+| `component`         | `string`                          | The UI component that should be used to render the block.                                                                  |
+| `props`             | `object`                          | Props passed to the component, including data and exit node callbacks.                                                     |
+| `props.__flows.key` | `string`                          | Unique key for the block. Set by you in a workflow. [Learn more](/block-properties/block-key)                              |
+
+---
 
 ## @flows/react-components
 
