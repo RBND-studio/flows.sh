@@ -11,6 +11,7 @@
     "slot",
     "page-targeting",
     "user-properties",
-    "wait"
+    "wait",
+    "block-key"
   ]
 }

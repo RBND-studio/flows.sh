@@ -144,12 +144,13 @@ Parameters: None
 
 Represents a block visible to the user.
 
-| Name        | Type                              | Notes                                                                  |
-| ----------- | --------------------------------- | ---------------------------------------------------------------------- |
-| `id`        | `string`                          | Unique identifier for the block.                                       |
-| `type`      | `"component" \| "tour-component"` | The block type.                                                        |
-| `component` | `string`                          | The UI component that should be used to render the block.              |
-| `props`     | `object`                          | Props passed to the component, including data and exit node callbacks. |
+| Name                | Type                              | Notes                                                                                                                      |
+| ------------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `id`                | `string`                          | Internal identifier for the block. Changes with every workflow version, for persistent identifier use `props.__flows.key`. |
+| `type`              | `"component" \| "tour-component"` | The block type.                                                                                                            |
+| `component`         | `string`                          | The UI component that should be used to render the block.                                                                  |
+| `props`             | `object`                          | Props passed to the component, including data and exit node callbacks.                                                     |
+| `props.__flows.key` | `string`                          | Unique key for the block. Set by you in a workflow. [Learn more](/block-properties/block-key)                              |
 
 ---
 
