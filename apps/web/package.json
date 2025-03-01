@@ -37,8 +37,8 @@
     "@next/eslint-plugin-next": "15.2.0",
     "@pandacss/dev": "0.53.0",
     "@types/node": "^20.14.10",
-    "@types/react": "^19.0.1",
-    "@types/react-dom": "^19.0.1",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "5.7.3"
