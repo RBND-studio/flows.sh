@@ -24,7 +24,11 @@ export const Default: Story = {
         <Button onClick={() => toast("Hello!", { description: "How are you?", duration: 50000 })}>
           Description
         </Button>
-        <Button onClick={() => toast.success("Success!")}>Success</Button>
+        <Button
+          onClick={() => toast.success("Success!", { description: "Something great happened!" })}
+        >
+          Success
+        </Button>
         <Button onClick={() => toast.info("Info!")}>Info</Button>
         <Button onClick={() => toast.warning("Warning!", { duration: 100000 })}>Warning</Button>
         <Button onClick={() => toast.error("Error!")}>Error</Button>
