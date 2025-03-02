@@ -1,15 +1,16 @@
 import { Star } from "lucide-react";
 import { Button } from "../ui/button";
+import { ComponentProps } from "@flows/react";
 
 // These props are passed to the component via the Flows SDK. The passed in props need to be set up in the block template.
-type Props = {
+type Props = ComponentProps<{
   title: string;
   description: string;
   learnMoreUrl: string;
 
   // function that triggers the `continue` exit node of the block
   continue: () => void;
-};
+}>;
 
 export const AppsTip = (props: Props) => {
   return (

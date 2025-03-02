@@ -163,13 +163,31 @@ Parameters: None
 
 Represents a block visible to the user.
 
-| Name                | Type                              | Notes                                                                                                                      |
-| ------------------- | --------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `id`                | `string`                          | Internal identifier for the block. Changes with every workflow version, for persistent identifier use `props.__flows.key`. |
-| `type`              | `"component" \| "tour-component"` | The block type.                                                                                                            |
-| `component`         | `string`                          | The UI component that should be used to render the block.                                                                  |
-| `props`             | `object`                          | Props passed to the component, including data and exit node callbacks.                                                     |
-| `props.__flows.key` | `string`                          | Unique key for the block. Set by you in a workflow. [Learn more](/block-properties/block-key)                              |
+| Name        | Type                                                                           | Notes                                                                                                                      |
+| ----------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
+| `id`        | `string`                                                                       | Internal identifier for the block. Changes with every workflow version, for persistent identifier use `props.__flows.key`. |
+| `type`      | `"component" \| "tour-component"`                                              | The block type.                                                                                                            |
+| `component` | `string`                                                                       | The UI component that should be used to render the block.                                                                  |
+| `props`     | [ComponentProps](#componentprops) \| [TourComponentProps](#tourcomponentprops) | Props passed to the component, including data and exit node callbacks.                                                     |
+
+#### ComponentProps
+
+Represents the props passed to a component. In addition to your custom props, it includes the `__flows` object with Flows properties.
+
+| Name          | Type     | Required | Notes                                                                                         |
+| ------------- | -------- | -------- | --------------------------------------------------------------------------------------------- |
+| `__flows.key` | `string` | No       | Unique key for the block. Set by you in a workflow. [Learn more](/block-properties/block-key) |
+
+#### TourComponentProps
+
+Represents the props passed to a tour component. In addition to your custom props, it includes tour component exit nodes and the `__flows` object with Flows properties.
+
+| Name          | Type       | Required | Notes                                                                                         |
+| ------------- | ---------- | -------- | --------------------------------------------------------------------------------------------- |
+| `continue`    | `function` | Yes      | Callback to go to the next step.                                                              |
+| `previous`    | `function` | No       | Callback to go back to the previous step.                                                     |
+| `cancel`      | `function` | Yes      | Callback to cancel the tour.                                                                  |
+| `__flows.key` | `string`   | No       | Unique key for the block. Set by you in a workflow. [Learn more](/block-properties/block-key) |
 
 ---
 

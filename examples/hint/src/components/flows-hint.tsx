@@ -5,8 +5,9 @@ import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { autoUpdate, Placement, useFloating } from "@floating-ui/react-dom";
 import { Button } from "./ui/button";
 import { X } from "lucide-react";
+import { ComponentProps } from "@flows/react";
 
-type Props = {
+type Props = ComponentProps<{
   title: string;
   description: string;
   buttonLabel: string;
@@ -18,7 +19,7 @@ type Props = {
 
   continue: () => void;
   close: () => void;
-};
+}>;
 
 const WIDTH = 16;
 const HEIGHT = 16;

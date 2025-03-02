@@ -5,10 +5,11 @@ import { ToggleGroup, ToggleGroupItem } from "../ui/toggle-group";
 import { SkeletonIllustration } from "../ui/skeleton-illustration";
 import { Button } from "../ui/button";
 import { Computer, Moon, Sun } from "lucide-react";
+import { ComponentProps } from "@flows/react";
 
-type Props = {
+type Props = ComponentProps<{
   apply: () => void;
-};
+}>;
 
 export const AnnouncementModal = ({ apply }: Props) => {
   const { setTheme, theme } = useTheme();

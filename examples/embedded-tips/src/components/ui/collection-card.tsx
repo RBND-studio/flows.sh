@@ -1,23 +1,24 @@
+import { ComponentProps } from "@flows/react";
 import { ArrowRight } from "lucide-react";
 import { ReactNode } from "react";
 
-type Props = {
+type Props = ComponentProps<{
   title: string;
   description: string;
   icon: ReactNode;
-};
+}>;
 
 export const CollectionCard: React.FC<Props> = ({ title, description, icon }) => {
   return (
-    <div className="bg-card border rounded-lg p-4">
-      <div className="flex items-center gap-2 mb-2">
-        <div className="flex items-center justify-center w-8 h-8 bg-muted border  text-primary rounded-lg">
+    <div className="rounded-lg border bg-card p-4">
+      <div className="mb-2 flex items-center gap-2">
+        <div className="flex h-8 w-8 items-center justify-center rounded-lg border bg-muted text-primary">
           {icon}
         </div>
         <p className="text-sm font-semibold">{title}</p>
       </div>
       <p className="text-sm text-muted-foreground">{description}</p>
-      <div className="flex items-center gap-2 mt-5 ">
+      <div className="mt-5 flex items-center gap-2">
         <p className="text-sm font-semibold">Launch App</p>
         <ArrowRight size={12} />
       </div>

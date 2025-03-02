@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { Rocket, X } from "lucide-react";
+import { ComponentProps } from "@flows/react";
 
-type Props = {
+type Props = ComponentProps<{
   title: string;
   description: string;
 
@@ -16,7 +17,7 @@ type Props = {
 
   continue: () => void;
   close: () => void;
-};
+}>;
 
 export const EnterpriseUpsell = (props: Props) => {
   return (
