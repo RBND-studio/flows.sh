@@ -2,6 +2,10 @@
 
 Learn what good product onboarding and education looks like and explore how Flows makes building it simple and easy.
 
+## See live demos
+
+To see live demos of the examples, visit the [examples page](https://flows.sh/examples).
+
 ## Use an example
 
 To use an example, see the `README.md` file in the example's directory. It contains detailed instructions on how to set up and run the example.

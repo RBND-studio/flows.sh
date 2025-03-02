@@ -1,6 +1,6 @@
 # Flows private repository
 
-TODO: Write an internal README.
+This a private repository for Flows. Some parts of the repository get mirrored to the public [RBND-studio/flows.sh](https://github.com/RBND-studio/flows.sh) repository with proprietary code removed.
 
 ## Local development
 
