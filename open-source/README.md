@@ -1,23 +1,35 @@
 <p align="center">
-  <img alt="Flows banner" src="./docs/github-banner.png">
+  <a href="https://flows.sh">
+    <img src="./docs/avatar.png" height="96">
+    <h3 align="center">Flows</h3>
+  </a>
 </p>
 
-## Flows the platform for building modern in-app experiences
+<p align="center">
+  Build native product growth experiences, your way.
+</p>
 
-Flows lets you build any onboarding you want. Guide users, increase feature adoption, and improve revenue.
+<p align="center">
+  <a href="https://flows.sh/docs"><strong>Documentation</strong></a> ·
+  <a href="https://flows.sh/changelog"><strong>Changelog</strong></a> ·
+  <a href="https://flows.sh/examples"><strong>Examples</strong></a> ·
+  <a href="https://flows.sh/docs/sdk-overview"><strong>SDKs</strong></a>
+</p>
 
-- Create flows with a WYSIWYG editor
-- With Flows Cloud you can create and update flows on the fly without having to redeploy your app
-- Automatically track the performance of your flows
-- Use advanced step types like wait and conditional steps
-- Customize anything with CSS and JS
-- Connect to external analytics tools to get the full picture of your user's journey
+## Flows
 
-With its flexible approach, Flows unlocks the potential of your product by providing the tools to build seamless onboarding experiences for your users. It is the tool of choice for modern SaaS companies.
+Meet Flows, the flexible platform for building in-app experiences. Focus on your product, not creating one-off logic.
+
+- Build powerful in-app experiences to drive product growth
+- Embed components directly into your app
+- Create onboarding, product adoption, in-app messaging, growth experiments, and more
+- Bring your own UI components or use Flows' built-in components
+
+Visit our [website](https://flows.sh) to learn more about Flows
 
 ## Get started for free
 
-The fastest and most reliable way to get started with Flows is signing up for free to [Flows Cloud](https://app.flows.sh/signup). Your first 1,000 flows started are free every month, after which you pay based on usage. See our [pricing](https://flows.sh/pricing) for more details.
+The fastest and most reliable way to get started with Flows is [signing up for free](https://app.flows.sh/signup). Your first 500 MTUs (monthly tracked users) are free every month, after which you pay based on usage. See our [pricing](https://flows.sh/pricing) for more details.
 
 ## Contributing
 

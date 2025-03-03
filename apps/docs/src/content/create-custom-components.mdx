@@ -32,13 +32,15 @@ If you would like to add different properties to your component, you can use the
 - select (dropdown) - `"foo" | "bar" | "baz"`
 
 ```tsx title="banner.tsx"
-type Props = {
+import { ComponentProps } from "@flows/react";
+
+type Props = ComponentProps<{
   title: string;
   description: string;
   buttonLabel: string;
   buttonLink: string;
   hideCloseButton?: boolean;
-};
+}>;
 
 export const MyBanner = (props: Props): ReactNode => {
   return (
@@ -65,7 +67,9 @@ export const MyBanner = (props: Props): ReactNode => {
 Now we will add exit node props that will allow Flows to react to user interactions with the block. Let's add `complete` and `close` props that will be called when the user clicks the button or the close button.
 
 ```tsx title="banner.tsx"
-type Props = {
+import { ComponentProps } from "@flows/react";
+
+type Props = ComponentProps<{
   title: string;
   description: string;
   buttonLabel: string;
@@ -73,7 +77,7 @@ type Props = {
   hideCloseButton?: boolean;
   complete: () => void; // [!code highlight]
   close: () => void; // [!code highlight]
-};
+}>;
 ```
 
 In case of a tour component, you should use `TourComponentProps` from `@flows/react` package. This will give you access to `previous`, `continue` and `cancel` props that are used to navigate through the tour.

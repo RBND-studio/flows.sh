@@ -47,6 +47,8 @@ export const links = (domain = "flows.sh") => ({
     enterpriseUpsell: "https://enterprise-upsell.examples.flows.sh",
     enterpriseUpsellSource:
       "https://github.com/RBND-studio/flows.sh/tree/main/examples/enterprise-upsell",
+    newFeatureCard: "https://new-feature-card.examples.flows.sh",
+    newFeatureCardSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/new-feature-card",
     // --PLOP_NEW_EXAMPLE_LINK--
   },
   docs: {

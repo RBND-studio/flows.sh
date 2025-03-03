@@ -1,14 +1,15 @@
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import styles from "./flows-card.module.css";
+import { ComponentProps } from "@flows/react";
 
-type Props = {
+type Props = ComponentProps<{
   title: string;
   body: string;
 
   continue: () => void;
   close: () => void;
-};
+}>;
 
 export const FlowsCard = (props: Props) => {
   return (

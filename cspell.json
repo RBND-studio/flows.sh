@@ -29,6 +29,7 @@
     "nestjs",
     "nextjs",
     "noflash",
+    "nums",
     "nuxt",
     "Ondrej",
     "opesicka",
@@ -51,7 +52,7 @@
     "Vixww",
     "Vojtech",
     "waivable",
-    "zustand"
+    "zustand",
   ],
   // flagWords - list of words to be always considered incorrect
   // This is useful for offensive words and common spelling errors.

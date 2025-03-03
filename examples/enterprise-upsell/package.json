@@ -11,8 +11,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@flows/react": "1.0.0",
-    "@flows/react-components": "1.0.0",
+    "@flows/react": "latest",
+    "@flows/react-components": "latest",
     "@radix-ui/react-dropdown-menu": "^2.1.6",
     "@radix-ui/react-slot": "^1.1.2",
     "class-variance-authority": "^0.7.1",

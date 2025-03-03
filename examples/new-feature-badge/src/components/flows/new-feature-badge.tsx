@@ -1,17 +1,18 @@
 "use client";
 
 import { autoUpdate, Placement, useFloating } from "@floating-ui/react-dom";
+import { ComponentProps } from "@flows/react";
 import { Star } from "lucide-react";
 import { useEffect } from "react";
 
-type Props = {
+type Props = ComponentProps<{
   title?: string;
 
   targetElement: string;
   placement: Placement;
   offsetX?: number;
   offsetY?: number;
-};
+}>;
 
 export const NewFeatureBadge = (props: Props) => {
   const reference = props.targetElement ? document.querySelector(props.targetElement) : null;

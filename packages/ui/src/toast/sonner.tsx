@@ -19,8 +19,10 @@ export const Toaster: FC = () => {
             textStyle: "bodyS",
             display: "flex",
             gap: "space8",
-            "& div svg": {
-              mt: "space4",
+            "& div[data-content]": {
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
             },
             backgroundColor: "bg",
             color: "text",
