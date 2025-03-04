@@ -26,4 +26,5 @@ export type TourWait = {
   interaction?: string;
   page?: { operator: string; value: string[] };
   element?: string;
+  ms?: number;
 };
