@@ -93,7 +93,9 @@ const MobileMainMenuItem = ({ item, path, handleClose }: MainMenuItemProps): Rea
     return (
       <Flex flexDirection="column">
         {MenuItemComp}
-        <Box display={isOpen ? "block" : "none"}>{item.subItems(handleSubItemClick)}</Box>
+        <Box mb="space16" display={isOpen ? "block" : "none"}>
+          {item.subItems(handleSubItemClick)}
+        </Box>
       </Flex>
     );
   }
