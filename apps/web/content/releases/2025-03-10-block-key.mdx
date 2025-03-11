@@ -1,0 +1,43 @@
+---
+title: Block key
+date: "2025-03-10"
+description: Block key allows you to define a persistent, unique identifier for a block, making it easier to reference in your code. We've also improved tables and added a tour wait delay.
+---
+
+Block key allows you to define a persistent, unique identifier for a block, making it easier to reference in your code. Learn more in the [docs](/docs/block-properties/block-key).
+
+<Image
+  src="/images/changelog/2025-03-10-block-key.png"
+  alt="Block key property"
+  width={1800}
+  height={900}
+/>
+
+## Better tables
+
+Workflow, User, and Block tables now display more detailed information. You can track workflow statuses, the number of active workflows for a user, and the last updated date for block templates among other things.
+
+We've also improved the pagination in the Users table, now even with a lot of users, you can easily navigate through them.
+
+## Tour wait delay
+
+Setup a delay between tour steps to give users time to process content or wait for elements to load. Learn more in the [docs](/docs/tour-block#wait-property).
+
+## SDK improvements
+
+- Added [resetWorkflowProgress](/docs/react/reference#resetworkflowprogress) and [resetAllWorkflowsProgress](/docs/react/reference#resetallworkflowsprogress) functions to the JS and React SDKs.
+- Added [useCurrentFloatingBlocks](/docs/react/reference#usecurrentfloatingblocks) and [useCurrentSlotBlocks](/docs/react/reference#usecurrentslotblocks) hooks in the React SDK. Use them to track active blocks and trigger actions in your product.
+- Fixed an issue where the tooltip rendered even when the target element didn't exist on the page.
+
+## Other improvements
+
+- Paths with identical origins and destinations are now grouped in the workflow editor, preventing overlapping exit node labels.
+- Added **equals** and **not equals** operators to page targeting.
+- Tour steps can now be reordered with drag-and-drop.
+- Added unique key validation for block template properties and exit nodes.
+
+## Bug fixes
+
+- Fixed an issue where the Environments dialog sometimes failed to load fully.
+- The workflow **updated at** column now displays the correct date.
+- Improved performance when publishing a new workflow with a lot of users.
