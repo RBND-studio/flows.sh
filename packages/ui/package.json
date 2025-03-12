@@ -47,7 +47,7 @@
     "storybook": "^8.6.2",
     "storybook-dark-mode": "^4.0.2",
     "tsconfig": "workspace:*",
-    "typescript": "5.7.3",
+    "typescript": "5.8.2",
     "vite": "^6.2.0",
     "vite-tsconfig-paths": "^5.1.4"
   }
