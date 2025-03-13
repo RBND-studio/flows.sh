@@ -21,6 +21,7 @@ export type IconCmp = FC<SVGProps<SVGSVGElement>>;
 
 export const builtInBlockIcons: Record<string, IconCmp> = {
   start: Start16,
+  "manual-start": Start16,
   tour: Tour16,
   end: Exit16,
   filter: Filter16,
@@ -57,6 +58,7 @@ export const BlockIcon = forwardRef<HTMLDivElement, Props>(function BlockIcon(
 
   const type = useMemo(() => {
     if (["filter", "wait"].includes(blockType)) return "logic";
+    if (blockType === "manual-start") return "start";
     return blockType as (typeof boxStyles.variantMap.type)[number];
   }, [blockType]);
 

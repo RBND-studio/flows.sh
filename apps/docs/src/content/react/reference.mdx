@@ -125,6 +125,31 @@ An array of [ActiveBlock](#activeblock) objects representing the current slottab
 
 ---
 
+#### startWorkflow()
+
+Starts a workflow for the current user in the current environment using a the block key of a manual start block. The workflow will start only if:
+
+- Workflow is published in the current environment
+- Workflow has a manual start block with a matching block key
+- The current user can access the workflow based on the frequency setting
+- The current user matches the start block's user property conditions
+
+```tsx
+import { startWorkflow } from "@flows/react";
+
+startWorkflow("your-manual-start-block-key");
+```
+
+Parameters:
+
+| Name       | Type     | Required | Notes                                                                                                 |
+| ---------- | -------- | -------- | ----------------------------------------------------------------------------------------------------- |
+| `blockKey` | `string` | Yes      | The block key of the manual start block you want to trigger. [Learn more](/start-blocks/manual-start) |
+
+Returns: `Promise<void>`
+
+---
+
 #### resetWorkflowProgress()
 
 The `resetWorkflowProgress()` function resets the progress of a specific workflow for the current user in the current environment.
