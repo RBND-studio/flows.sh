@@ -11,6 +11,7 @@ export const defaultPropertyType = propertyTypes[0];
 
 export const builtInBlockDescriptions: Record<string, string> = {
   start: "Start block allows users to enter the workflow if they meet the conditions",
+  "manual-start": "Start the workflow manually from your application",
   tour: "Tour is a sequence of steps that guide users through a process.",
   end: "When user reaches an end block, the whole workflow ends and is marked as completed.",
   filter: "Filter lets through only the users that meet the conditions",
@@ -28,8 +29,15 @@ export const blockTranslation = {
   component: "Workflow block",
   "tour-component": "Tour block",
   start: "Start",
+  "manual-start": "Manual start",
   end: "End",
   tour: "Tour",
   filter: "Filter",
   wait: "Wait",
 } as const;
+
+// TODO: consider adding descriptions for more built-in blocks
+export const defaultBuiltInBlockDescription: Record<string, string> = {
+  "manual-start":
+    "Starts the workflow manually when you call the startWorkflow method from your application. For more information, see the Manual start snippet below.",
+};

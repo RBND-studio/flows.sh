@@ -48,7 +48,8 @@ export const links = (domain = "flows.sh") => ({
     enterpriseUpsellSource:
       "https://github.com/RBND-studio/flows.sh/tree/main/examples/enterprise-upsell",
     newFeatureCard: "https://new-feature-card.examples.flows.sh",
-    newFeatureCardSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/new-feature-card",
+    newFeatureCardSource:
+      "https://github.com/RBND-studio/flows.sh/tree/main/examples/new-feature-card",
     // --PLOP_NEW_EXAMPLE_LINK--
   },
   docs: {
@@ -76,6 +77,7 @@ export const links = (domain = "flows.sh") => ({
     environments: `https://${domain}/docs/organization-setup/environments`,
     blocks: {
       start: `https://${domain}/docs/start-blocks/automatic-start`,
+      "manual-start": `https://${domain}/docs/start-blocks/manual-start`,
       tour: `https://${domain}/docs/tour-block`,
       filter: `https://${domain}/docs/logic-blocks/filter`,
       end: `https://${domain}/docs/end-block`,
