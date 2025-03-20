@@ -17,7 +17,10 @@ The State memory property is used to store a boolean value in the block's state.
 
 ## Usage in a workflow
 
-In a workflow, you can configure the state memory to track whether a user has exited a specific block. To configure the state memory, click on the field and select the block you want to track. The state memory will be set to `true` when the user exits the selected block.
+In a workflow, you can configure the state memory to track whether a user has exited a specific block. To configure the state memory, select the trigger type:
+
+- **Manual**: The state memory can be set from your application using the SDK. For example by clicking a button and calling `setValue`.
+- **Block exit**: The state memory will be set to `true` when the user exits the selected block.
 
 ## Usage in a block template
 
@@ -51,14 +54,14 @@ Create a block template with an [array](/block-properties/array) named tasks. Ea
 Next, build a matching component in your application to render the checklist:
 
 ```tsx
-import { CheckCircle, Circle } from "lucide-react";
+import { ComponentProps, StateMemory } from "@flows/react";
 
-type Props = {
+type Props = ComponentProps<{
   items: {
     title: string;
-    completed: boolean;
+    completed: StateMemory;
   }[];
-};
+}>;
 
 export const Checklist = ({ items }: Props) => {
   return (
