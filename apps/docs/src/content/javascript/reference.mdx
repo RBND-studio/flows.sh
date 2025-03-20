@@ -176,13 +176,38 @@ Represents a block visible to the user.
 | `component` | `string`                                                                       | The UI component that should be used to render the block.                                                                  |
 | `props`     | [ComponentProps](#componentprops) \| [TourComponentProps](#tourcomponentprops) | Props passed to the component, including data and exit node callbacks.                                                     |
 
+---
+
 #### ComponentProps
 
 Represents the props passed to a component. In addition to your custom props, it includes the `__flows` object with Flows properties.
 
-| Name          | Type     | Required | Notes                                                                                         |
-| ------------- | -------- | -------- | --------------------------------------------------------------------------------------------- |
-| `__flows.key` | `string` | No       | Unique key for the block. Set by you in a workflow. [Learn more](/block-properties/block-key) |
+| Name                 | Type     | Required | Notes                                                                                         |
+| -------------------- | -------- | -------- | --------------------------------------------------------------------------------------------- |
+| `__flows.key`        | `string` | No       | Unique key for the block. Set by you in a workflow. [Learn more](/block-properties/block-key) |
+| `__flows.workflowId` | `string` | Yes      | The ID of the workflow. Set by Flows.                                                         |
+
+---
+
+#### StateMemory
+
+Represents the [state memory](/block-properties/state-memory) property of a block.
+
+| Name       | Type       | Required | Notes                                                             |
+| ---------- | ---------- | -------- | ----------------------------------------------------------------- |
+| `value`    | `boolean`  | Yes      | The value of the state memory.                                    |
+| `setValue` | `function` | Yes      | Callback to set the value of the state memory.                    |
+| `triggers` | `array`    | Yes      | Object with triggers to update the state memory. See table below. |
+
+`triggers` type:
+
+| Name       | Type     | Required | Notes                                                      |
+| ---------- | -------- | -------- | ---------------------------------------------------------- |
+| `type`     | `string` | Yes      | The trigger type. Can be `manual` or `transition`.         |
+| `blockId`  | `string` | Yes      | The block ID of the block that triggers the state memory.  |
+| `blockKey` | `string` | No       | The block key of the block that triggers the state memory. |
+
+---
 
 #### TourComponentProps
 
