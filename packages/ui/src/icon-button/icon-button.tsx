@@ -1,7 +1,7 @@
 import { css, cva, cx } from "@flows/styled-system/css";
 import { type HTMLStyledProps, styled } from "@flows/styled-system/jsx";
 import { Slot, Slottable } from "@radix-ui/react-slot";
-import { type ButtonHTMLAttributes, forwardRef, type JSX } from "react";
+import { type ButtonHTMLAttributes, type FC, forwardRef, type JSX, memo, useMemo } from "react";
 
 import { Spinner } from "../spinner";
 import { Tooltip, type TooltipSide } from "../tooltip/tooltip";
@@ -23,56 +23,67 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> &
      */
     tooltip?: string;
     tooltipSide?: TooltipSide;
+    icon?: FC<React.SVGProps<SVGSVGElement>>;
   };
 
-export const IconButton = forwardRef<HTMLButtonElement, Props>(function Button(
-  {
-    size = "default",
-    variant = "black",
-    children,
-    tooltip,
-    asChild,
-    disabled,
-    tooltipSide = "bottom",
-    loading,
-    ...props
-  },
-  ref,
-): JSX.Element {
-  const Component = asChild ? Slot : styled.button;
+export const IconButton = memo(
+  forwardRef<HTMLButtonElement, Props>(function IconButton(
+    {
+      size = "default",
+      variant = "black",
+      tooltip,
+      asChild,
+      disabled,
+      tooltipSide = "bottom",
+      loading,
+      icon: Icon,
+      children: _children,
+      ...props
+    },
+    ref,
+  ): JSX.Element {
+    const Component = asChild ? Slot : styled.button;
+    const children = useMemo(() => {
+      if (Icon) return <Icon />;
+      return _children;
+    }, [Icon, _children]);
 
-  const buttonRender = (
-    <Component
-      aria-label={tooltip}
-      type={!asChild ? "button" : undefined}
-      {...props}
-      className={cx(button({ size, variant }), props.className)}
-      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- nullish coalescing cannot be used here
-      disabled={disabled || loading}
-      data-loading={loading ? "" : undefined}
-      aria-busy={loading}
-      ref={ref}
-    >
-      {loading ? (
-        <Spinner
-          className={css({
-            position: "absolute",
-            visibility: "visible!",
-          })}
-          color="inherit"
-          size={16}
-        />
-      ) : null}
-      <Slottable>{children}</Slottable>
-    </Component>
-  );
+    const buttonRender = useMemo(
+      () => (
+        <Component
+          aria-label={tooltip}
+          type={!asChild ? "button" : undefined}
+          {...props}
+          className={cx(button({ size, variant }), props.className)}
+          // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- nullish coalescing cannot be used here
+          disabled={disabled || loading}
+          data-loading={loading ? "" : undefined}
+          aria-busy={loading}
+          ref={ref}
+        >
+          {loading ? (
+            <Spinner
+              className={css({
+                position: "absolute",
+                visibility: "visible!",
+              })}
+              color="inherit"
+              size={16}
+            />
+          ) : null}
+          <Slottable>{children}</Slottable>
+        </Component>
+      ),
+      [Component, asChild, children, disabled, loading, props, ref, size, tooltip, variant],
+    );
 
-  if (!tooltip) return buttonRender;
+    if (!tooltip) return buttonRender;
 
-  return (
-    <Tooltip side={tooltipSide} content={tooltip} delayDuration={800} trigger={buttonRender} />
-  );
-});
+    return (
+      <Tooltip side={tooltipSide} content={tooltip} delayDuration={800} trigger={buttonRender} />
+    );
+  }),
+);
 
 const button = cva({
   base: {
