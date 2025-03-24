@@ -1,0 +1,34 @@
+---
+title: Manual start block
+date: "2025-03-24"
+description: Manual start block allows you to start a workflow manually from the SDK by calling `startWorkflow` function. We've also added the ability to set state memory from the SDK and made other improvements.
+---
+
+Manual start block allows you to start a workflow manually from the SDK by calling `startWorkflow` function. Learn more in [docs](/docs/block-types/manual-start).
+
+<Image
+  src="/images/changelog/2025-03-24-start-block.png"
+  alt="Start block illustration"
+  width={1800}
+  height={636}
+/>
+
+## Set state memory from SDK
+
+You can now set the state memory value from the SDK by calling `setValue` function in the active block. We've also added more information about the memory configuration to the block properties. Learn more in [docs](/docs/react/reference#statememory).
+
+## Other improvements
+
+- Workflow environments dialog now shows the frequency next to the active version.
+
+## SDK improvements
+
+- Added workflow ID to active block response.
+- Sped up exit node execution - now it doesn't wait for network requests to finish.
+
+## Bug fixes
+
+- Fixed a bug where the workflow editor could save a broken page targeting condition, resulting in the block never showing.
+- Every block property now shows its description in the editor.
+- Fixed a bug where the tooltip sometimes didn't render in the right place when showing on animated elements.
+- Fixed modal overlay z-index sometimes not overlaying all elements.
