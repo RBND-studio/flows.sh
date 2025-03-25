@@ -1,7 +1,7 @@
 import { css, cva, cx } from "@flows/styled-system/css";
 import { type HTMLStyledProps, styled } from "@flows/styled-system/jsx";
 import { Slot, Slottable } from "@radix-ui/react-slot";
-import { type ButtonHTMLAttributes, forwardRef, type JSX } from "react";
+import { type ButtonHTMLAttributes, forwardRef, type JSX, memo } from "react";
 
 import { Spinner } from "../spinner";
 
@@ -24,58 +24,60 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> &
      */
   };
 
-export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
-  {
-    size = "default",
-    variant = "black",
-    children,
-    startIcon,
-    endIcon,
-    asChild,
-    disabled,
-    loading,
-    ...props
-  },
-  ref,
-): JSX.Element {
-  const Component = asChild ? Slot : styled.button;
-  return (
-    <Component
-      type={!asChild ? "button" : undefined}
-      {...props}
-      className={cx(button({ size, variant }), props.className)}
-      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- nullish coalescing cannot be used here
-      disabled={disabled || loading}
-      ref={ref}
-      data-loading={loading ? "" : undefined}
-      aria-busy={loading}
-    >
-      {startIcon ? (
-        <Icon size={size} position="start">
-          {startIcon}
-        </Icon>
-      ) : null}
-      {loading ? (
-        <Spinner
-          className={css({
-            position: "absolute",
-            visibility: "visible!",
-          })}
-          // TODO: use correct color for each variant
-          color="button.secondary.fg.disabled"
-          size={16}
-        />
-      ) : null}
+export const Button = memo(
+  forwardRef<HTMLButtonElement, Props>(function Button(
+    {
+      size = "default",
+      variant = "black",
+      children,
+      startIcon,
+      endIcon,
+      asChild,
+      disabled,
+      loading,
+      ...props
+    },
+    ref,
+  ): JSX.Element {
+    const Component = asChild ? Slot : styled.button;
+    return (
+      <Component
+        type={!asChild ? "button" : undefined}
+        {...props}
+        className={cx(button({ size, variant }), props.className)}
+        // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- nullish coalescing cannot be used here
+        disabled={disabled || loading}
+        ref={ref}
+        data-loading={loading ? "" : undefined}
+        aria-busy={loading}
+      >
+        {startIcon ? (
+          <Icon size={size} position="start">
+            {startIcon}
+          </Icon>
+        ) : null}
+        {loading ? (
+          <Spinner
+            className={css({
+              position: "absolute",
+              visibility: "visible!",
+            })}
+            // TODO: use correct color for each variant
+            color="button.secondary.fg.disabled"
+            size={16}
+          />
+        ) : null}
 
-      <Slottable>{children}</Slottable>
-      {endIcon ? (
-        <Icon size={size} position="end">
-          {endIcon}
-        </Icon>
-      ) : null}
-    </Component>
-  );
-});
+        <Slottable>{children}</Slottable>
+        {endIcon ? (
+          <Icon size={size} position="end">
+            {endIcon}
+          </Icon>
+        ) : null}
+      </Component>
+    );
+  }),
+);
 
 const Icon = styled("span", {
   base: {

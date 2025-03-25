@@ -21,7 +21,7 @@
     "dayjs": "^1.11.12",
     "icons": "workspace:*",
     "mdx-bundler": "^10.1.0",
-    "next": "15.2.0",
+    "next": "15.2.3",
     "next-contentlayer2": "^0.5.4",
     "next-sitemap": "^4.2.3",
     "react": "19.0.0",

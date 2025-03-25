@@ -4,7 +4,7 @@ import { css, cva, cx } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import * as RadixSelect from "@radix-ui/react-select";
 import { CaretDown16, Check16 } from "icons";
-import { type JSX, type ReactNode, useId } from "react";
+import { type JSX, memo, type ReactNode, useId } from "react";
 
 import { Button } from "../button";
 import { Description } from "../description";
@@ -34,7 +34,8 @@ type Props<T extends string> = {
   "data-test"?: string;
 };
 
-export function Select<T extends string>({
+export const Select = memo(SelectInner) as typeof SelectInner;
+function SelectInner<T extends string>({
   options,
   className,
   buttonClassName,
