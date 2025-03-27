@@ -4,7 +4,7 @@ import { css, cva, cx } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import * as RadixSelect from "@radix-ui/react-select";
 import { CaretDown16, Check16 } from "icons";
-import { type JSX, memo, type ReactNode, useId } from "react";
+import { type JSX, memo, type ReactNode, useId, useMemo } from "react";
 
 import { Button } from "../button";
 import { Description } from "../description";
@@ -55,7 +55,10 @@ function SelectInner<T extends string>({
   ...props
 }: Props<T>): JSX.Element {
   const id = useId();
-  const currentOption = options.find((opt) => opt.value === (props.value ?? props.defaultValue));
+  const currentOption = useMemo(
+    () => options.find((opt) => opt.value === (props.value ?? props.defaultValue)),
+    [options, props.defaultValue, props.value],
+  );
 
   const selectRender = (
     <RadixSelect.Root

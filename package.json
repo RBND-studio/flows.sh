@@ -25,12 +25,12 @@
   },
   "devDependencies": {
     "cspell": "^8.17.3",
-    "eslint": "8.57.0",
+    "eslint": "8.57.1",
     "husky": "^9.1.7",
     "markdownlint-cli": "^0.44.0",
     "prettier": "^3.4.2",
     "tsconfig": "workspace:*",
-    "turbo": "^2.4.0"
+    "turbo": "^2.4.4"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
@@ -46,5 +46,5 @@
       "sharp"
     ]
   },
-  "packageManager": "pnpm@10.6.2"
+  "packageManager": "pnpm@10.7.0"
 }
