@@ -48,8 +48,9 @@ export const links = (domain = "flows.sh") => ({
     enterpriseUpsellSource:
       "https://github.com/RBND-studio/flows.sh/tree/main/examples/enterprise-upsell",
     newFeatureCard: "https://new-feature-card.examples.flows.sh",
-    newFeatureCardSource:
-      "https://github.com/RBND-studio/flows.sh/tree/main/examples/new-feature-card",
+    newFeatureCardSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/new-feature-card",
+    floatingChecklist: "https://floating-checklist.examples.flows.sh",
+    floatingChecklistSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/floating-checklist",
     // --PLOP_NEW_EXAMPLE_LINK--
   },
   docs: {

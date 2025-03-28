@@ -1,6 +1,13 @@
 import { Flex } from "@flows/styled-system/jsx";
-import { examplesContent } from "app/examples/content";
+import { cardContent } from "app/examples/card/content";
+import { embeddedTipsContent } from "app/examples/embedded-tips/content";
+import { enterpriseUpsellContent } from "app/examples/enterprise-upsell/content";
 import { ExampleCard } from "app/examples/example-card";
+import { floatingChecklistContent } from "app/examples/floating-checklist/content";
+import { hintContent } from "app/examples/hint/content";
+import { interactiveFeatureAnnouncementContent } from "app/examples/interactive-feature-announcement/content";
+import { newFeatureCardContent } from "app/examples/new-feature-card/content";
+import { tourContent } from "app/examples/tour/content";
 import { Section } from "components/ui";
 import Link from "next/link";
 import { type ReactElement } from "react";
@@ -8,10 +15,10 @@ import { routes } from "routes";
 import { Button, Text } from "ui";
 
 const examples = {
-  firstRow: [examplesContent[7], examplesContent[1]],
-  secondRow: [examplesContent[2], examplesContent[0]],
-  thirdRow: [examplesContent[4], examplesContent[3]],
-  fourthRow: [examplesContent[6], examplesContent[5]],
+  firstRow: [enterpriseUpsellContent, tourContent],
+  secondRow: [floatingChecklistContent, cardContent],
+  thirdRow: [embeddedTipsContent, hintContent],
+  fourthRow: [newFeatureCardContent, interactiveFeatureAnnouncementContent],
 };
 
 export const ExamplesSection = (): ReactElement => {
