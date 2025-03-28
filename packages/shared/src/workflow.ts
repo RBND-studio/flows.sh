@@ -1,3 +1,5 @@
+import { type BlockType } from "@flows/types";
+
 export const propertyTypes = [
   "string",
   "number",
@@ -8,6 +10,7 @@ export const propertyTypes = [
   "block-trigger",
 ] as const;
 export const defaultPropertyType = propertyTypes[0];
+export type PropertyType = (typeof propertyTypes)[number];
 
 export const builtInBlockDescriptions: Record<string, string> = {
   start: "Start block allows users to enter the workflow if they meet the conditions",
@@ -41,3 +44,15 @@ export const defaultBuiltInBlockDescription: Record<string, string> = {
   "manual-start":
     "Starts the workflow manually when you call the startWorkflow method from your application. For more information, see the Manual start snippet below.",
 };
+
+export const blocksWithoutEntryNode: BlockType[] = ["start", "manual-start"];
+
+export const defaultPropertyValue = {
+  string: "",
+  select: "",
+  number: 0,
+  boolean: false,
+  array: [],
+  "state-memory": { trigger: "manual" },
+  "block-trigger": true,
+} satisfies Record<PropertyType, unknown>;
