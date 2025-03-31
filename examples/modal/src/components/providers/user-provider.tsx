@@ -1,8 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-const LS_KEY = "flows-userId";
+const LS_KEY = "flows-userId-modal";
 const generateNewId = () => `anonymous-${Math.random().toString(36).substring(2)}`;
 
 // Generates a random user id and stores it in local storage
@@ -22,11 +22,5 @@ export const useUserId = () => {
     }
   }, []);
 
-  const resetUserId = useCallback(() => {
-    const newId = generateNewId();
-    localStorage.setItem(LS_KEY, newId);
-    setUserId(newId);
-  }, []);
-
-  return { userId, resetUserId };
+  return { userId };
 };

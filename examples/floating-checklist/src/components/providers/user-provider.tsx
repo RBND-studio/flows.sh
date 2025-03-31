@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const LS_KEY = "flows-userId";
+const LS_KEY = "flows-userId-floating-checklist";
 const generateNewId = () => `anonymous-${Math.random().toString(36).substring(2)}`;
 
 // Generates a random user id and stores it in local storage

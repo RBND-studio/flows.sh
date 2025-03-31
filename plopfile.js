@@ -78,6 +78,13 @@ module.exports = function (plop) {
           pattern: /(-- PLOP EXAMPLE SLUG HERE --)/gi,
           template: `${exampleSlug}`,
         },
+        // user-provider.tsx
+        {
+          type: "modify",
+          path: `${destinationPath}/src/components/providers/user-provider.tsx`,
+          pattern: /(-- PLOP EXAMPLE SLUG HERE --)/gi,
+          template: `${exampleSlug}`,
+        },
         // package.json
         {
           type: "modify",

@@ -1,21 +1,17 @@
+import { resetAllWorkflowsProgress } from "@flows/react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
-type Props = {
-  resetUserId: () => void;
-};
-
-export const ExampleControls = ({ resetUserId }: Props) => {
+export const ExampleControls = () => {
   return (
-    <div className="pointer-events-none fixed left-3 right-3 top-3 z-50 flex justify-between gap-2">
-      <div />
-      <Button
-        className="pointer-events-auto shadow-sm"
-        onClick={resetUserId}
-        variant="outline"
-        size="sm"
-      >
-        Reset demo
-      </Button>
-    </div>
+    <Button
+      className="fixed right-3 top-3 shadow-sm"
+      onClick={() => resetAllWorkflowsProgress()}
+      variant="outline"
+      size="sm"
+      asChild
+    >
+      <Link href="/">Reset demo</Link>
+    </Button>
   );
 };

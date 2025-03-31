@@ -18,12 +18,12 @@ type Props = {
 };
 
 export const Providers: FC<Props> = ({ children }) => {
-  const { userId, resetUserId } = useUserId();
+  const { userId } = useUserId();
 
   const content = (
     <>
       {children}
-      <ExampleControls resetUserId={resetUserId} />
+      <ExampleControls />
     </>
   );
 

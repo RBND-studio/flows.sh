@@ -17,9 +17,6 @@ type Props = {
   children: ReactNode;
 };
 
-// The current example workflowId used in demo controls to reset progress
-export const workflowId = "201be2b3-f0ff-46e4-ad64-c57f58c22c85";
-
 export const Providers: FC<Props> = ({ children }) => {
   const { userId } = useUserId();
 
