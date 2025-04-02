@@ -107,16 +107,18 @@ export const Tooltip = React.forwardRef<HTMLButtonElement, TooltipProps>(functio
           {trigger}
         </TooltipTrigger>
         {content ? (
-          <TooltipContent
-            arrowPadding={12}
-            align={align}
-            className={className}
-            side={side}
-            sideOffset={sideOffset}
-          >
-            <TooltipArrow />
-            {content}
-          </TooltipContent>
+          <TooltipPrimitive.Portal>
+            <TooltipContent
+              arrowPadding={12}
+              align={align}
+              className={className}
+              side={side}
+              sideOffset={sideOffset}
+            >
+              <TooltipArrow />
+              {content}
+            </TooltipContent>
+          </TooltipPrimitive.Portal>
         ) : null}
       </TooltipRoot>
     </TooltipProvider>
