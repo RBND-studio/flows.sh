@@ -1,12 +1,11 @@
-import { ComponentProps } from "@flows/react";
 import { ArrowRight } from "lucide-react";
 import { ReactNode } from "react";
 
-type Props = ComponentProps<{
+type Props = {
   title: string;
   description: string;
   icon: ReactNode;
-}>;
+};
 
 export const CollectionCard: React.FC<Props> = ({ title, description, icon }) => {
   return (
