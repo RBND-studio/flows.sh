@@ -1,6 +1,5 @@
 import { css } from "@flows/styled-system/css";
 import { SignupClick } from "components/utils/signup-click";
-import { Modal16 } from "icons";
 import { links } from "lib/links";
 import Image from "next/image";
 
@@ -14,14 +13,20 @@ import {
   ParagraphLink,
   UnorderedList,
 } from "../typography";
+// TODO: Replace with actual images
+import darkPng from "./card-dark.png";
+import lightPng from "./card-light.png";
 // TODO: Replace with actual image
 import workflowPng from "./workflow.png";
 
 export const -- PLOP EXAMPLE CAMEL HERE --Content: ContentType = {
   slug: "-- PLOP EXAMPLE SLUG HERE --",
   title: "-- PLOP TITLE HERE --",
-  icon: Modal16, //TODO: Replace with actual icon
   description: "TODO: replace with actual description",
+  images: {
+    light: lightPng,
+    dark: darkPng,
+  },
   embed: {
     src: links.examples.-- PLOP EXAMPLE DEMO HERE --,
     title: "-- PLOP TITLE HERE -- example application – Flows",
