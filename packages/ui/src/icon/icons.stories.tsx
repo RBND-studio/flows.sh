@@ -1,6 +1,6 @@
 import { Box } from "@flows/styled-system/jsx";
-import * as icons from "icons";
-import type { JSX } from "react";
+import * as allIcons from "icons";
+import type { FC, JSX, SVGProps } from "react";
 
 import { Text } from "../text";
 import { Icon } from "./icon";
@@ -9,35 +9,28 @@ export default {
   title: "Tokens/Icons",
 };
 
+const categoryNames = ["16"];
+const categories = new Map<string, { key: string; IconComponent: FC<SVGProps<SVGSVGElement>> }[]>(
+  categoryNames.map((size) => [size, []]),
+);
+categories.set("leftovers", []);
+
+Object.entries(allIcons).forEach(([key, IconComponent]) => {
+  const category = categoryNames.find((cat) => key.endsWith(cat.toString()));
+  if (category) categories.get(category)?.push({ IconComponent, key });
+  else categories.get("leftovers")?.push({ IconComponent, key });
+});
+
 export function Default(): JSX.Element {
-  const icons16 = Object.fromEntries(Object.entries(icons).filter(([key]) => key.endsWith("16")));
-
-  const icons24 = Object.fromEntries(Object.entries(icons).filter(([key]) => key.endsWith("24")));
-
-  const icons40 = Object.fromEntries(Object.entries(icons).filter(([key]) => key.endsWith("40")));
-
-  const leftovers = Object.fromEntries(
-    Object.entries(icons).filter(
-      ([key]) => !key.endsWith("16") && !key.endsWith("24") && !key.endsWith("40"),
-    ),
-  );
-
-  const iconSets = [
-    { iconGroup: icons16, size: 16 },
-    { iconGroup: icons24, size: 24 },
-    { iconGroup: icons40, size: 40 },
-    { iconGroup: leftovers, size: "leftovers" },
-  ];
-
   return (
     <Box display="flex" flexDir="column" gap={16}>
-      {iconSets.map(({ iconGroup, size }) => (
+      {Array.from(categories.entries()).map(([size, icons]) => (
         <>
           <Text key={size} variant="titleL">
             {size}
           </Text>
           <Box key={size} display="flex" flexWrap="wrap" gap={8}>
-            {Object.entries(iconGroup).map(([key, IconComponent]) => (
+            {icons.map(({ IconComponent, key }) => (
               <Box
                 key={key}
                 display="flex"

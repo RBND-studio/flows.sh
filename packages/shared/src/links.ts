@@ -48,16 +48,17 @@ export const links = (domain = "flows.sh") => ({
     enterpriseUpsellSource:
       "https://github.com/RBND-studio/flows.sh/tree/main/examples/enterprise-upsell",
     newFeatureCard: "https://new-feature-card.examples.flows.sh",
-    newFeatureCardSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/new-feature-card",
+    newFeatureCardSource:
+      "https://github.com/RBND-studio/flows.sh/tree/main/examples/new-feature-card",
     floatingChecklist: "https://floating-checklist.examples.flows.sh",
-    floatingChecklistSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/floating-checklist",
+    floatingChecklistSource:
+      "https://github.com/RBND-studio/flows.sh/tree/main/examples/floating-checklist",
     featureHint: "https://feature-hint.examples.flows.sh",
     featureHintSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/feature-hint",
     // --PLOP_NEW_EXAMPLE_LINK--
   },
   docs: {
     home: `https://${domain}/docs`,
-    migrateToFlows2: `https://${domain}/docs/migrate-to-flows-2`,
     users: {
       main: `https://${domain}/docs/users/overview`,
       properties: `https://${domain}/docs/users/properties`,
@@ -110,75 +111,5 @@ export const links = (domain = "flows.sh") => ({
       javascriptInstallation: `https://${domain}/docs/javascript/installation`,
     },
     contact: `https://${domain}/docs/contact-us`,
-    /**
-     * @deprecated old flows docs
-     */
-    stepsEditor: `https://github.com/RBND-studio/flows.sh/tree/8007d587b7904f0718b9246d97eddeb484539277/apps/docs/src/pages/creating-flows/steps-editor.mdx`,
-    /**
-     * @deprecated old flows docs
-     */
-    installFlows: `https://github.com/RBND-studio/flows.sh/tree/8007d587b7904f0718b9246d97eddeb484539277/apps/docs/src/pages/getting-started/install-flows.mdx`,
-    /**
-     * @deprecated old flows docs
-     */
-    startFlow: `https://github.com/RBND-studio/flows.sh/tree/8007d587b7904f0718b9246d97eddeb484539277/apps/docs/src/pages/creating-flows/start-flow.mdx`,
-    /**
-     * @deprecated old flows docs
-     */
-    targetFlow: `https://github.com/RBND-studio/flows.sh/tree/8007d587b7904f0718b9246d97eddeb484539277/apps/docs/src/pages/creating-flows/targeting.mdx`,
-    /**
-     * @deprecated old flows docs
-     */
-    flowFrequency: `https://github.com/RBND-studio/flows.sh/tree/8007d587b7904f0718b9246d97eddeb484539277/apps/docs/src/pages/creating-flows/frequency.mdx`,
-    step: {
-      /**
-       * @deprecated old flows docs
-       */
-      tooltip: `https://github.com/RBND-studio/flows.sh/tree/8007d587b7904f0718b9246d97eddeb484539277/apps/docs/src/pages/step-types/tooltip.mdx`,
-      /**
-       * @deprecated old flows docs
-       */
-      modal: `https://github.com/RBND-studio/flows.sh/tree/8007d587b7904f0718b9246d97eddeb484539277/apps/docs/src/pages/step-types/modal.mdx`,
-      /**
-       * @deprecated old flows docs
-       */
-      banner: `https://github.com/RBND-studio/flows.sh/tree/8007d587b7904f0718b9246d97eddeb484539277/apps/docs/src/pages/step-types/banner.mdx`,
-      /**
-       * @deprecated old flows docs
-       */
-      wait: `https://github.com/RBND-studio/flows.sh/tree/8007d587b7904f0718b9246d97eddeb484539277/apps/docs/src/pages/step-types/wait.mdx`,
-    },
-    /**
-     * @deprecated old flows docs
-     */
-    branchTargeting: `https://github.com/RBND-studio/flows.sh/tree/8007d587b7904f0718b9246d97eddeb484539277/apps/docs/src/pages/step-types/fork.mdx#targeting-branches`,
-    /**
-     * @deprecated old flows docs
-     */
-    previewFlow: `https://github.com/RBND-studio/flows.sh/tree/8007d587b7904f0718b9246d97eddeb484539277/apps/docs/src/pages/creating-flows/preview.mdx`,
-    /**
-     * @deprecated old flows docs
-     */
-    publishFlow: `https://github.com/RBND-studio/flows.sh/tree/8007d587b7904f0718b9246d97eddeb484539277/apps/docs/src/pages/creating-flows/enable-flow.mdx#publishing-changes`,
-    /**
-     * @deprecated old flows docs
-     */
-    makeFlowLive: `https://github.com/RBND-studio/flows.sh/tree/8007d587b7904f0718b9246d97eddeb484539277/apps/docs/src/pages/creating-flows/enable-flow.mdx#making-your-flow-live`,
-    /**
-     * @deprecated old flows docs
-     */
-    projectDomains: `https://github.com/RBND-studio/flows.sh/tree/8007d587b7904f0718b9246d97eddeb484539277/apps/docs/src/pages/project-setup/project-domains.mdx`,
-    /**
-     * @deprecated old flows docs
-     */
-    customStyles: `https://github.com/RBND-studio/flows.sh/tree/8007d587b7904f0718b9246d97eddeb484539277/apps/docs/src/pages/customization-and-styling/custom-styles.mdx`,
-    /**
-     * @deprecated old flows docs
-     */
-    migrateToFlows: `https://github.com/RBND-studio/flows.sh/tree/8007d587b7904f0718b9246d97eddeb484539277/apps/docs/src/pages/migrate-to-flows.mdx`,
-    /**
-     * @deprecated old flows docs
-     */
-    resetFlow: `https://github.com/RBND-studio/flows.sh/tree/8007d587b7904f0718b9246d97eddeb484539277/apps/docs/src/pages/project-setup/reset-user-progress.mdx`,
   },
 });

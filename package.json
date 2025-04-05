@@ -1,5 +1,7 @@
 {
-  "name": "flows-monorepo",
+  "name": "flows.sh",
+  "description": "User onboarding for modern SaaS – Flows lets you build any onboarding you want. Guide users, increase feature adoption, and improve revenue.",
+  "homepage": "https://flows.sh",
   "private": true,
   "sideEffects": false,
   "scripts": {

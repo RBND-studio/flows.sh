@@ -72,8 +72,8 @@ export const FeatureHint = (props: Props) => {
       >
         <div className="flex items-center justify-between px-3 py-2">
           <p className="text-sm font-semibold">{props.title}</p>
-          <Button variant="ghost" size="smIcon">
-            <X size={16} onClick={props.close} />
+          <Button variant="ghost" size="smIcon" onClick={props.close}>
+            <X size={16} />
           </Button>
         </div>
 
