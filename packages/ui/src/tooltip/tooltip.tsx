@@ -32,12 +32,16 @@ const TooltipContent = ({
         color: "pane.fg.tooltip",
         borderColor: "pane.border.tooltip",
         borderWidth: "1px",
-        maxWidth: "280px",
+        maxWidth: "240px",
         boxShadow: "l2",
+        "&[data-state=delayed-open]": {
+          animationDuration: "120ms",
+          animationName: "fadein",
+        },
       }),
       className,
     )}
-    collisionPadding={4}
+    collisionPadding={6}
     sideOffset={sideOffset}
     {...props}
   />
