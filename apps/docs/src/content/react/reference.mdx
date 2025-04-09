@@ -39,15 +39,15 @@ const App = () => {
 
 The `<FlowsProvider />` accepts the following props:
 
-| Name             | Type     | Required | Notes                                                                                                            |
-| ---------------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------- |
-| `organizationId` | `string` | Yes      | Your organization ID. Find this in **Settings > General**.                                                       |
-| `environment`    | `string` | Yes      | The environment key. Find this in **Settings > Environments**.                                                   |
-| `userId`         | `string` | Yes      | Unique ID for identifying the user.                                                                              |
-| `components`     | `object` | Yes      | Custom components to use in your workflows.                                                                      |
-| `tourComponents` | `object` | Yes      | Custom tour components to use in tour blocks.                                                                    |
-| `userProperties` | `object` | No       | Object with custom [user properties](/users/properties). Values can be `string`, `number`, `boolean`, or `date`. |
-| `apiUrl`         | `string` | No       | Custom API URL useful when using proxy to send Flows requests through your own domain.                           |
+| Name             | Type     | Required | Notes                                                                                                                                                                                         |
+| ---------------- | -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `organizationId` | `string` | Yes      | Your organization ID. Find this in **Settings > General**.                                                                                                                                    |
+| `environment`    | `string` | Yes      | The environment key. Find this in **Settings > Environments**.                                                                                                                                |
+| `userId`         | `string` | No       | Unique ID used to identify the user. If set to `null`, the SDK will be disabled and `children` will render while waiting for the `userId`. This is useful when loading the ID asynchronously. |
+| `components`     | `object` | Yes      | Custom components to use in your workflows.                                                                                                                                                   |
+| `tourComponents` | `object` | Yes      | Custom tour components to use in tour blocks.                                                                                                                                                 |
+| `userProperties` | `object` | No       | Object with custom [user properties](/users/properties). Values can be `string`, `number`, `boolean`, or `date`.                                                                              |
+| `apiUrl`         | `string` | No       | Custom API URL useful when using proxy to send Flows requests through your own domain.                                                                                                        |
 
 ---
 
