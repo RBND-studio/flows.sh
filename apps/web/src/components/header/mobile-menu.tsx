@@ -29,7 +29,7 @@ export const MobileMenu: FC = () => {
         <span className={css({ srOnly: true })}>Open main menu</span>
       </IconButton>
       <Box
-        backgroundColor="bg"
+        backgroundColor="newBg.neutral"
         borBottom="1px"
         display={open ? undefined : "none"}
         left={0}

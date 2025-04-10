@@ -3,6 +3,7 @@ import { defineSemanticTokens } from "@pandacss/dev";
 export const semanticTokens = defineSemanticTokens({
   colors: {
     bg: {
+      // Whole bg is deprecated
       DEFAULT: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
       main: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.900}" } },
       muted: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.875}" } },
@@ -66,6 +67,7 @@ export const semanticTokens = defineSemanticTokens({
       white: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
     },
     icon: {
+      // Whole icon is deprecated
       DEFAULT: {
         value: { base: "{colors.neutral.650}", _dark: "{colors.neutral.300}" },
         deprecated: true,

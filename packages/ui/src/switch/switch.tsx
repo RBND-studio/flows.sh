@@ -66,7 +66,7 @@ const thumb = cva({
     width: 16,
     height: 16,
     borderRadius: 9999,
-    bg: "bg",
+    bg: "newBg.neutral",
     boxShadow: "l1",
     transitionDuration: "fast",
     transitionTimingFunction: "easeInOut",
