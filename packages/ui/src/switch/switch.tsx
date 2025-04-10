@@ -47,14 +47,14 @@ const root = cva({
     position: "relative",
     transitionDuration: "fast",
     transitionTimingFunction: "easeInOut",
-    bg: "bg.strong",
+    bg: "newControl.bg.strong",
     _hover: {
-      bg: "bg.strongHover",
+      bg: "newControl.bg.strongHover",
     },
     "&[data-state='checked']": {
-      bg: "bg.success",
+      bg: "newControl.bg.success",
       _hover: {
-        bg: "bg.successHover",
+        bg: "newControl.bg.successHover",
       },
     },
   },

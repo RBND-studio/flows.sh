@@ -22,12 +22,12 @@ export const HeadingCopyButton = ({
       aria-label="Copy link to heading"
       className={cx(
         css({
-          color: "icon",
+          color: "newFg.neutral.subtle",
           fastEaseInOut: "all",
           padding: "space4",
           cursor: "pointer",
           _hover: {
-            color: "icon.strong",
+            color: "newFg.neutral",
           },
         }),
         className,

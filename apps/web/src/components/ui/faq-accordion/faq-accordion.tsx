@@ -35,9 +35,6 @@ export const FaqAccordion = ({ title, children, headingLevel }: Props): ReactEle
           borderRadius: "4px",
           border: "none",
           cursor: "pointer",
-          "&:hover": {
-            background: "bg.mutedHover",
-          },
         })}
         onClick={() => setIsOpen(!isOpen)}
       >

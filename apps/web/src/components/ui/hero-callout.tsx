@@ -42,7 +42,7 @@ export const HeroCallout: FC<Props> = ({ children, link, delay }) => {
       })}
     >
       <Text>{children}</Text>
-      <Icon icon={ArrowRight16} color="icon.primary" />
+      <Icon icon={ArrowRight16} color="newFg.primary" />
     </Link>
   );
 };

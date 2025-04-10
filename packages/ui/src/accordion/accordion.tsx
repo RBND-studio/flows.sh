@@ -37,8 +37,9 @@ export const Accordion: FC<Props> = ({
   return (
     <Box overflow="hidden" {...props}>
       <Flex
+        fastEaseInOut="background-color"
         _hover={{
-          bg: "bg.subtleHover",
+          bg: "newBg.neutral.muted",
         }}
         alignItems="center"
         borderBottomWidth={expanded ? "1px" : undefined}
