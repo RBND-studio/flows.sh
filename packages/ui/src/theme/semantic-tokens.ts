@@ -3,6 +3,7 @@ import { defineSemanticTokens } from "@pandacss/dev";
 export const semanticTokens = defineSemanticTokens({
   colors: {
     bg: {
+      // Whole bg is deprecated
       DEFAULT: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
       main: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.900}" } },
       muted: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.875}" } },
@@ -66,13 +67,35 @@ export const semanticTokens = defineSemanticTokens({
       white: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
     },
     icon: {
-      DEFAULT: { value: { base: "{colors.neutral.650}", _dark: "{colors.neutral.300}" } },
-      strong: { value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.25}" } },
-      primary: { value: { base: "{colors.primary.500}", _dark: "{colors.primary-dark.400}" } },
-      info: { value: { base: "{colors.info.500}", _dark: "{colors.info-dark.500}" } },
-      success: { value: { base: "{colors.success.500}", _dark: "{colors.success-dark.500}" } },
-      warning: { value: { base: "{colors.warning.300}", _dark: "{colors.warning-dark.400}" } },
-      danger: { value: { base: "{colors.danger.500}", _dark: "{colors.danger-dark.500}" } },
+      // Whole icon is deprecated
+      DEFAULT: {
+        value: { base: "{colors.neutral.650}", _dark: "{colors.neutral.300}" },
+        deprecated: true,
+      },
+      strong: {
+        value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.25}" },
+        deprecated: true,
+      },
+      primary: {
+        value: { base: "{colors.primary.500}", _dark: "{colors.primary-dark.400}" },
+        deprecated: true,
+      },
+      info: {
+        value: { base: "{colors.info.500}", _dark: "{colors.info-dark.500}" },
+        deprecated: true,
+      },
+      success: {
+        value: { base: "{colors.success.500}", _dark: "{colors.success-dark.500}" },
+        deprecated: true,
+      },
+      warning: {
+        value: { base: "{colors.warning.300}", _dark: "{colors.warning-dark.400}" },
+        deprecated: true,
+      },
+      danger: {
+        value: { base: "{colors.danger.500}", _dark: "{colors.danger-dark.500}" },
+        deprecated: true,
+      },
     },
     special: {
       dotBg: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.800}" } },
@@ -91,10 +114,15 @@ export const semanticTokens = defineSemanticTokens({
       },
       primary: {
         DEFAULT: { value: { base: "{colors.primary.500}", _dark: "{colors.primary-dark.400}" } },
-        muted: { value: { base: "{colors.primary.50}", _dark: "{colors.primary-dark.800}" } },
+        subtle: { value: { base: "{colors.primary.50}", _dark: "{colors.primary-dark.800}" } },
+        muted: { value: { base: "{colors.primary.25}", _dark: "{colors.primary-dark.900}" } },
       },
       warning: {
-        muted: { value: { base: "{colors.warning.50}", _dark: "{colors.warning-dark.800}" } },
+        subtle: { value: { base: "{colors.warning.50}", _dark: "{colors.warning-dark.800}" } },
+        muted: { value: { base: "{colors.warning.25}", _dark: "{colors.warning-dark.900}" } },
+      },
+      success: {
+        muted: { value: { base: "{colors.success.25}", _dark: "{colors.success-dark.900}" } },
       },
       danger: {
         subtle: { value: { base: "{colors.danger.50}", _dark: "{colors.danger-dark.800}" } },
@@ -112,6 +140,10 @@ export const semanticTokens = defineSemanticTokens({
       },
       primary: {
         DEFAULT: { value: { base: "{colors.primary.600}", _dark: "{colors.primary-dark.400}" } },
+      },
+      warning: {
+        DEFAULT: { value: { base: "{colors.warning.500}", _dark: "{colors.warning-dark.400}" } },
+        light: { value: { base: "{colors.warning.300}", _dark: "{colors.warning-dark.400}" } },
       },
       success: {
         DEFAULT: { value: { base: "{colors.success.500}", _dark: "{colors.success-dark.400}" } },
@@ -131,13 +163,22 @@ export const semanticTokens = defineSemanticTokens({
       },
       primary: {
         DEFAULT: { value: { base: "{colors.primary.500}", _dark: "{colors.primary-dark.400}" } },
-        subtle: { value: { base: "{colors.primary.200}", _dark: "{colors.primary-dark.600}" } },
+        subtle: { value: { base: "{colors.primary.300}", _dark: "{colors.primary-dark.600}" } },
+      },
+      warning: {
+        subtle: { value: { base: "{colors.warning.200}", _dark: "{colors.warning-dark.600}" } },
       },
       success: {
         DEFAULT: { value: { base: "{colors.success.400}", _dark: "{colors.success-dark.400}" } },
+        subtle: {
+          value: { base: "{colors.success.300}", _dark: "{colors.success-dark.600}" },
+        },
       },
       danger: {
         DEFAULT: { value: { base: "{colors.danger.400}", _dark: "{colors.danger-dark.400}" } },
+        subtle: {
+          value: { base: "{colors.danger.300}", _dark: "{colors.danger-dark.600}" },
+        },
       },
     },
 
@@ -149,6 +190,12 @@ export const semanticTokens = defineSemanticTokens({
         subtleHover: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.875}" } },
         selected: { value: { base: "{colors.primary.50}", _dark: "{colors.primary-dark.800}" } },
         disabled: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.850}" } },
+        strong: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.650}" } },
+        strongHover: { value: { base: "{colors.neutral.150}", _dark: "{colors.neutral.500}" } },
+        success: { value: { base: "{colors.success.400}", _dark: "{colors.success-dark.400}" } },
+        successHover: {
+          value: { base: "{colors.success.500}", _dark: "{colors.success-dark.500}" },
+        },
       },
       fg: {
         DEFAULT: { value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.25}" } },

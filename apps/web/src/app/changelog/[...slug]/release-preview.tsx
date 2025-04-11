@@ -24,7 +24,7 @@ export const ReleasePreview: FC<Props> = ({ release, variant }) => {
         display: "block",
         fastEaseInOut: "background-color",
         _hover: {
-          bg: "bg.hover",
+          bg: "newBg.neutral.muted",
         },
       })}
     >

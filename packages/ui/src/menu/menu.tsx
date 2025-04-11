@@ -67,13 +67,13 @@ export const MenuItem: FC<MenuItemProps> = forwardRef<HTMLButtonElement, MenuIte
             color: disabled ? "text.disabled" : undefined,
 
             _highlighted: {
-              bg: "newBg.primary.muted",
+              bg: "newBg.primary.subtle",
               _hover: {
-                bg: "newBg.primary.muted",
+                bg: "newBg.primary.subtle",
               },
             },
             _hover: {
-              bg: disabled ? "transparent" : "bg.hover",
+              bg: disabled ? "transparent" : "newBg.neutral.subtle",
             },
             "& svg": {
               color: disabled ? "text.disabled" : undefined,

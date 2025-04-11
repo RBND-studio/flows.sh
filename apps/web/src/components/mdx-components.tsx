@@ -153,7 +153,7 @@ const mdxComponents = {
       className={css({
         mb: "space24",
         "& code": {
-          backgroundColor: "bg.subtle",
+          backgroundColor: "newBg.neutral.subtle",
           color: "text",
           paddingX: "space4",
           paddingY: "2px",

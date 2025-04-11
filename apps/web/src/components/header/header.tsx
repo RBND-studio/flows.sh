@@ -15,7 +15,7 @@ export const Header = (): ReactElement => {
   return (
     <header
       className={css({
-        backgroundColor: "bg",
+        backgroundColor: "newBg.neutral",
         borderBottomWidth: "1px",
         borderBottomColor: "newBorder.neutral",
         paddingX: "space16",
