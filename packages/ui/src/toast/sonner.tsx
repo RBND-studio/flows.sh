@@ -24,9 +24,9 @@ export const Toaster: FC = () => {
               flexDirection: "column",
               justifyContent: "center",
             },
-            backgroundColor: "bg",
+            backgroundColor: "pane.bg.elevated",
             color: "text",
-            borderColor: "border",
+            borderColor: "newBorder.neutral",
           }),
           title: css({
             textStyle: "bodyS!",
@@ -36,32 +36,32 @@ export const Toaster: FC = () => {
             color: "text.muted!",
           }),
           success: css({
-            backgroundColor: "bg.successSubtle",
-            borderColor: "border.successSubtle",
+            backgroundColor: "newBg.success.muted",
+            borderColor: "newBorder.success.subtle",
 
             "& div svg": {
-              color: "icon.success",
+              color: "newFg.success",
             },
           }),
           warning: css({
-            backgroundColor: "bg.warningSubtle",
-            borderColor: "border.warningSubtle",
+            backgroundColor: "newBg.warning.muted",
+            borderColor: "newBorder.warning.subtle",
             "& div svg": {
-              color: "icon.warning",
+              color: "newFg.warning.light",
             },
           }),
           error: css({
-            backgroundColor: "bg.dangerSubtle",
-            borderColor: "border.dangerSubtle",
+            backgroundColor: "newBg.danger.muted",
+            borderColor: "newBorder.danger.subtle",
             "& div svg": {
-              color: "icon.danger",
+              color: "newFg.danger",
             },
           }),
           info: css({
-            backgroundColor: "bg.infoSubtle",
-            borderColor: "border.infoSubtle",
+            backgroundColor: "newBg.primary.muted",
+            borderColor: "newBorder.primary.subtle",
             "& div svg": {
-              color: "icon.info",
+              color: "newFg.primary",
             },
           }),
         },

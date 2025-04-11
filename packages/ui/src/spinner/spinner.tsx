@@ -1,5 +1,5 @@
 import { css, cva, cx } from "@flows/styled-system/css";
-import type { SystemStyleObject } from "@flows/styled-system/types";
+import { type SystemStyleObject } from "@flows/styled-system/types";
 import { Spinner20 } from "icons";
 import { forwardRef } from "react";
 
@@ -19,7 +19,7 @@ export const Spinner = forwardRef<HTMLDivElement, Props>(function Spinner(
     <div {...props} className={cx(spinner(), className)} ref={ref}>
       <Icon
         className={css({ w: size, h: size })}
-        color={color ?? "icon.primary"}
+        color={color ?? "newFg.primary"}
         icon={Spinner20}
       />
     </div>

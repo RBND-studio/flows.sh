@@ -25,7 +25,7 @@ const box = css({
   height: 80,
   margin: 8,
   borderRadius: 8,
-  backgroundColor: "bg",
+  backgroundColor: "newBg.neutral",
 });
 
 export const Default = {
@@ -36,7 +36,7 @@ export const Default = {
           display: "flex",
           gap: "space24",
           padding: "space24",
-          background: "bg",
+          background: "newBg.neutral",
         })}
       >
         <div

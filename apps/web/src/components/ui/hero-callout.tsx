@@ -19,7 +19,7 @@ export const HeroCallout: FC<Props> = ({ children, link, delay }) => {
         display: "flex",
         paddingX: "space12",
         paddingY: "space4",
-        background: "bg",
+        background: "newBg.neutral",
         borderRadius: "radius24",
         alignItems: "center",
         gap: "space8",
@@ -42,7 +42,7 @@ export const HeroCallout: FC<Props> = ({ children, link, delay }) => {
       })}
     >
       <Text>{children}</Text>
-      <Icon icon={ArrowRight16} color="icon.primary" />
+      <Icon icon={ArrowRight16} color="newFg.primary" />
     </Link>
   );
 };
