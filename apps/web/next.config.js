@@ -44,8 +44,6 @@ const nextConfig = {
   output: "standalone",
   outputFileTracingRoot: path.join(__dirname, "../../"),
   experimental: {
-    // This is needed to avoid next from logging warning because of `next-contentlayer2`
-    turbo: {},
     optimizePackageImports: ["ui", "icons", "shared"],
   },
   images: {
