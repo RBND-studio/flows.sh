@@ -30,7 +30,7 @@
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.0",
     "shared": "workspace:*",
-    "sharp": "^0.33.5",
+    "sharp": "^0.34.1",
     "ui": "workspace:*"
   },
   "devDependencies": {
