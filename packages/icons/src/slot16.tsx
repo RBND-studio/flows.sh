@@ -1,4 +1,5 @@
 import type { JSX } from "react";
+
 export function Slot16(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg

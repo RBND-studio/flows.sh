@@ -1,4 +1,5 @@
 import type { JSX } from "react";
+
 export function React32(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg fill="currentColor" height={32} width={32} xmlns="http://www.w3.org/2000/svg" {...props}>
