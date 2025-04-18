@@ -6,7 +6,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "dayjs": "1.11.12"
+    "dayjs": "^1.11.13"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
