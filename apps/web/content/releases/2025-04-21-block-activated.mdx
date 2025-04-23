@@ -1,0 +1,20 @@
+---
+title: Block activated event
+date: "2025-04-21"
+description: This update introduces a new "block activated" event for improved workflow usage tracking and prepares for upcoming pricing changes based on actual user engagement. It also includes an improved billing page and improvements to the React SDK.
+---
+
+We’ve introduced a new “block activated” event, which is triggered whenever a component block is rendered in your product. This gives you better insight into how users engage with workflows and enables more accurate, usage-based pricing. Instead of counting every user you send to us, we will be able to measure actual workflow usage. These pricing changes will be rolled out in the coming weeks.
+
+## SDK improvements
+
+- The userId is now optional in the React SDK, removing the need to create special logic when fetching it asynchronously. Learn more in the [docs](/docs/react/reference#flowsprovider).
+- Enabled response compression for SDK endpoints, reducing data transfer and improving load times.
+
+## Other improvements
+
+- Improved billing page to be more transparent
+
+## Bug fixes
+
+- Fixed an issue where free organizations incorrectly triggered usage alerts when their usage reset at the start of the month.
