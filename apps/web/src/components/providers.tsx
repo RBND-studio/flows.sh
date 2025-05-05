@@ -1,6 +1,7 @@
 "use client";
 
 import { DarkModeProvider } from "@rbnd/react-dark-mode";
+import { Affiliate } from "components/utils/affiliate";
 import type { FC, ReactNode } from "react";
 import { Toaster } from "ui";
 
@@ -13,6 +14,7 @@ export const Providers: FC<Props> = ({ children }) => {
     <DarkModeProvider>
       <Toaster />
       {children}
+      <Affiliate />
     </DarkModeProvider>
   );
 };
