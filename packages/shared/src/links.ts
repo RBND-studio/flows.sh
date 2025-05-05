@@ -77,6 +77,7 @@ export const links = (domain = "flows.sh") => ({
       main: `https://${domain}/docs/organization-setup/organizations`,
       members: `https://${domain}/docs/organization-setup/manage-members`,
       billing: `https://${domain}/docs/organization-setup/billing`,
+      howWeCountMTus: `https://${domain}/docs/organization-setup/billing#how-do-we-calculate-monthly-tracked-users-mtus`,
     },
     environments: `https://${domain}/docs/organization-setup/environments`,
     blocks: {

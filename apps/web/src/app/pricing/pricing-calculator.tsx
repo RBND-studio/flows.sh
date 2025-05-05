@@ -117,9 +117,9 @@ export const PricingCalculator = (): ReactElement => {
             textWrap: "balance",
           })}
         >
-          Starts at ${pricingTiers.tier1.price}/MTU with first{" "}
-          {formatNumberWithThousandSeparator(pricingTiers.free.flowsRange[1])} free every month. We
-          count every user that you initialize, regardless if they enter a workflow or not.
+          Starts at ${pricingTiers.tier1.price} per MTU with your first{" "}
+          {formatNumberWithThousandSeparator(pricingTiers.free.flowsRange[1])} MTUs completely free.
+          We only charge for users who experience a Flows workflow in the current billing period.
         </Text>
       </Section>
     </>
