@@ -1,6 +1,6 @@
 services:
   kafka:
-    image: bitnami/kafka:3.8
+    image: bitnami/kafka:4.0
     restart: unless-stopped
     deploy:
       resources:
