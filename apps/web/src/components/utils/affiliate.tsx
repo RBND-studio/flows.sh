@@ -1,5 +1,4 @@
 import Cookies from "js-cookie";
-import { useSearchParams } from "next/navigation";
 import { type FC, useEffect } from "react";
 
 const generateVisitorId = async (): Promise<string> => {
@@ -44,14 +43,16 @@ const setAffiliateCookie = async (affiliateCode: string): Promise<void> => {
 };
 
 export const Affiliate: FC = () => {
-  const searchParams = useSearchParams();
-  const affiliateCode = searchParams.get("aff");
-
   useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const affiliateCode = searchParams.get("aff");
     if (!affiliateCode) return;
 
     void setAffiliateCookie(affiliateCode);
-  }, [affiliateCode]);
+
+    // Empty dependencies to avoid using useSearchParams that would prevent doing SSG
+    // As a result the affiliate code is checked only on the first load of the first page
+  }, []);
 
   return null;
 };
