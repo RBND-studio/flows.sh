@@ -5,7 +5,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 1g
+          memory: 2g
     ports:
       - ${KAFKA_PORT}:9094
     volumes:
