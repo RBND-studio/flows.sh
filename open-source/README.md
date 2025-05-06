@@ -29,7 +29,7 @@ Visit our [website](https://flows.sh) to learn more about Flows
 
 ## Get started for free
 
-The fastest and most reliable way to get started with Flows is [signing up for free](https://app.flows.sh/signup). Your first 500 MTUs (monthly tracked users) are free every month, after which you pay based on usage. See our [pricing](https://flows.sh/pricing) for more details.
+The fastest and most reliable way to get started with Flows is [signing up for free](https://app.flows.sh/signup). Your first 250 MTUs (monthly tracked users) are free every month, after which you pay based on usage. See our [pricing](https://flows.sh/pricing) for more details.
 
 ## Contributing
 

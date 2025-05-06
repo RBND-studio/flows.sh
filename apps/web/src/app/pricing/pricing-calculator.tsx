@@ -5,15 +5,15 @@ import { Box, Flex } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
 import { sum } from "lib/sum";
 import { type ReactElement, useState } from "react";
-import { formatNumberWithThousandSeparator, pricingTiers } from "shared";
+import { formatNumberWithThousandSeparator, FREE_LIMIT, pricingTiers } from "shared";
 import { Slider, Text } from "ui";
 
 export const PricingCalculator = (): ReactElement => {
-  const [selectedValue, setSelectedValue] = useState(500);
+  const [selectedValue, setSelectedValue] = useState(FREE_LIMIT);
 
   const handleSliderChange = (value: number): void => {
     const result = sum([
-      500,
+      FREE_LIMIT,
       Math.min(value, 40) * 37.5,
       Math.min(Math.max(value - 40, 0), 40) * 200,
       Math.min(Math.max(value - 80, 0), 40) * 1000,
@@ -79,7 +79,7 @@ export const PricingCalculator = (): ReactElement => {
           />
           <Flex justifyContent="space-between" mt="space16">
             <Text variant="bodyS" color="muted">
-              500
+              {FREE_LIMIT}
             </Text>
             <Text variant="bodyS" color="muted">
               2k
