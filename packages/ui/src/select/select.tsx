@@ -2,6 +2,7 @@
 
 import { css, cva, cx } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
+import { token } from "@flows/styled-system/tokens";
 import * as RadixSelect from "@radix-ui/react-select";
 import { CaretDown16, Check16 } from "icons";
 import { type JSX, memo, type ReactNode, useId, useMemo } from "react";
@@ -116,6 +117,7 @@ function SelectInner<T extends string>({
             borderWidth: 1,
             borderStyle: "solid",
             borderColor: "pane.border.elevated",
+            maxHeight: "min(500px, var(--radix-select-content-available-height))",
             "&[data-state=open]": {
               animationName: "enter",
               animationDuration: "120ms",
@@ -134,7 +136,11 @@ function SelectInner<T extends string>({
               display: "flex",
               flexDirection: "column",
               gap: "2px",
+              scrollbarWidth: "thin!",
             })}
+            style={{
+              scrollbarColor: `${token.var("colors.pane.fg.scroll")} transparent`,
+            }}
           >
             {options.map((option) => (
               <RadixSelect.Item
