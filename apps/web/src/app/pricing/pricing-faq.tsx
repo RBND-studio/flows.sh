@@ -1,6 +1,7 @@
 import { css } from "@flows/styled-system/css";
 import { Box } from "@flows/styled-system/jsx";
-import { FaqAccordion, Section } from "components/ui";
+import { FaqAccordion, Section, SmartLink } from "components/ui";
+import { links } from "lib/links";
 import { type ReactElement } from "react";
 import { formatNumberWithThousandSeparator, pricingTiers } from "shared";
 import { Text } from "ui";
@@ -10,12 +11,21 @@ const questions = [
     title: "How are MTUs (monthly tracked users) calculated?",
     content: (
       <>
-        MTUs are the number of unique users that have been initialized in a given month. We count
-        every users that has been initialized regardless if they have entered a workflow or not.
+        We count an MTU as a unique user that has experienced a Flows workflow in the current
+        billing cycle. We don’t count users that have only entered a workflow but haven’t
+        experienced it.
         <br />
         <br />
-        If user is initialized multiple times in a month, they are only counted once. And if that
-        user doesn’t initialize the next month, they are not counted in your usage for that month.
+        If user experiences a workflow multiple times in a month, they are only counted once. And if
+        that user doesn’t experience a workflow in the next month, they are not counted in your
+        usage for that month.
+        <br />
+        <br />
+        Experiencing a workflow means that at least one component block has been rendered to the
+        user.{" "}
+        <SmartLink underline target="_blank" href={links.docs.organization.howWeCountMTus}>
+          Learn more
+        </SmartLink>
       </>
     ),
   },

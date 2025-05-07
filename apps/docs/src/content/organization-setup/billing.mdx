@@ -19,6 +19,24 @@ Billing is calculated based on Monthly Tracked Users (MTUs) identified across al
 
 **Free Plan:** Usage limits reset at the start of every month. If you reach the limit, you cannot identify new [users](/users/overview) until the next cycle, but existing users continue to access workflows without interruption.
 
+### How do we calculate Monthly Tracked Users (MTUs)?
+
+MTUs are the number of unique users that have experienced a Flows workflow in the current billing cycle. Individual users are counted based on the `userId` you provide in the Flows SDK.
+
+**User is counted if:**
+
+- The Flows SDK has rendered a component in their browser
+- The user has exited a component block using one of the blocks exit nodes (resetting a workflow or publishing a new version doesn't count) - this is a temporary solution for customers with SDKs older than 1.9.0
+
+**User is not counted if:**
+
+- They have entered a workflow, but no components have been rendered.
+- They are active in a workflow but have not visited your product in the current billing cycle.
+- They are not active in any workflow.
+- They have not visited your product in the current billing cycle.
+
+If a user is counted as MTU, they can experience any number of workflows in the current billing cycle.
+
 ## Manage your billing
 
 To manage your subscription, navigate to **Settings > Billing**, where you can:
@@ -40,7 +58,7 @@ To cancel a subscription, navigate to **Settings > Billing**. Your subscription 
 The **Pay-As-You-Go** plan includes the option to set usage limits to avoid surprises. Configure these limits in the **Usage Limit** section of **Settings > Billing**.
 
 - Notifications are sent when you reach 80% and 100% of your limit.
-- Once the limit is reached, no new [users](/users/overview) can be identified until the next billing cycle. The existing users can continue to access workflows without interruption.
+- Once the limit is reached, new users will not be identified until the next billing cycle or the limit is increased. Users already counted in MTUs can continue to experience workflows without interruption.
 
 ### Add a VAT number
 

@@ -17,12 +17,14 @@
     "@next/bundle-analyzer": "15.3.1",
     "@radix-ui/react-slot": "^1.2.0",
     "@rbnd/react-dark-mode": "^2.0.2",
-    "contentlayer2": "^0.5.5",
+    "contentlayer2": "^0.5.8",
     "dayjs": "^1.11.13",
     "icons": "workspace:*",
+    "js-cookie": "^3.0.5",
+    "@fingerprintjs/fingerprintjs": "^4.6.2",
     "mdx-bundler": "^10.1.1",
     "next": "15.3.1",
-    "next-contentlayer2": "^0.5.5",
+    "next-contentlayer2": "^0.5.8",
     "next-sitemap": "^4.2.3",
     "react": "19.1.0",
     "react-dom": "19.1.0",
@@ -34,14 +36,15 @@
     "ui": "workspace:*"
   },
   "devDependencies": {
+    "@flows/types": "workspace:*",
+    "@types/js-cookie": "^3.0.6",
     "@next/eslint-plugin-next": "15.3.1",
-    "@pandacss/dev": "0.53.6",
+    "@pandacss/dev": "0.53.0",
     "@types/node": "^20.14.10",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.0",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
-    "@flows/types": "workspace:*",
     "typescript": "5.8.3"
   }
 }

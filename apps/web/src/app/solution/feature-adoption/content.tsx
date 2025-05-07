@@ -4,6 +4,7 @@ import { WorkflowsExample } from "components/homepage/workflows-section/workflow
 import { links } from "lib/links";
 import Link from "next/link";
 import { routes } from "routes";
+import { FREE_LIMIT } from "shared";
 
 import {
   PlaceholderApplication,
@@ -131,8 +132,8 @@ export const questions = [
         <br />
         <br />
         Flows includes built-in UI components and supports custom components for a native
-        experience. Its scalable pricing model starts with a free tier for up to 500 active users
-        per month, making it cost-effective for businesses of all sizes.
+        experience. Its scalable pricing model starts with a free tier for up to {FREE_LIMIT}{" "}
+        monthly tracked users (MTUs), making it cost-effective for businesses of all sizes.
       </>
     ),
   },
@@ -171,8 +172,8 @@ export const questions = [
     title: "How much does Flows cost?",
     content: (
       <>
-        Flows is free for up to 500 active users per month. After that, the pricing starts at $0.075
-        per active user per month. Our pricing is volume based, so the more active users you have,
+        Flows is free for up to {FREE_LIMIT} monthly tracked users (MTUs). After that, the pricing
+        starts at $0.075 per MTU. Our pricing is volume based, so the more active users you have,
         the lower the less you pay per user. For more information, check out our{" "}
         <Link className={css({ textDecoration: "underline" })} href={routes.pricing}>
           pricing page

@@ -15,58 +15,65 @@ export const metadata: Metadata = {
 const cookies: Cookie[] = [
   {
     name: "scheme-mode",
-    description: "Internal cookie used to store the user's preference for the color scheme",
+    description: "Stores the user's color scheme preference (e.g., light or dark mode) (internal).",
     type: "Strictly necessary",
     duration: "infinite",
   },
   {
     name: "theme",
     description:
-      "Internal cookie used to store the user's preference for the color scheme in /docs",
+      "Stores the user's color scheme preference specifically for the /docs section (internal).",
     type: "Strictly necessary",
     duration: "infinite",
   },
   {
     name: "__Host-authjs.csrf-token",
-    description: "Internal cookie used to sse to prevent CSRF attacks",
+    description:
+      "Prevents Cross-Site Request Forgery (CSRF) attacks during authentication (internal).",
     type: "Strictly necessary",
     duration: "session",
   },
   {
     name: "__Secure-authjs.callback-url",
-    description: "Internal cookie used to store the callback URL for the OAuth flow",
+    description: "Stores the callback URL for the OAuth authentication flow (internal).",
     type: "Strictly necessary",
     duration: "session",
   },
   {
     name: "__Secure-authjs.session-token",
-    description: "Internal cookie used to store the user's session token",
+    description: "Stores the user's session token for authentication purposes (internal).",
     type: "Strictly necessary",
     duration: "30 days",
   },
   {
     name: "__vdpl",
-    description: "Identifies checkout id when opening Lemon squeezy checkout",
+    description: "Tracks the checkout ID when initiating a Lemon Squeezy checkout process.",
     type: "Strictly necessary",
     duration: "session",
   },
   {
     name: "laravel_session",
-    description: "Identifies the session in Lemon squeezy checkout",
+    description: "Identifies the session during the Lemon Squeezy checkout process.",
     type: "Strictly necessary",
     duration: "1 hour",
   },
   {
     name: "ls_checkout_origin",
-    description: "Identifies the origin of the checkout",
+    description: "Tracks the origin of the Lemon Squeezy checkout process.",
     type: "Strictly necessary",
     duration: "session",
   },
   {
     name: "XSRF-TOKEN",
-    description: "Lemon squeezy CSRF token",
+    description: "CSRF token used by Lemon Squeezy to prevent unauthorized requests.",
     type: "Strictly necessary",
     duration: "1 hour",
+  },
+  {
+    name: "flows_affiliate",
+    description: "Stores the affiliate code associated with the user's referral source (internal).",
+    type: "Strictly necessary",
+    duration: "90 days",
   },
 ];
 
@@ -182,7 +189,7 @@ const Page = (): ReactElement => {
       <CookiesTable cookies={cookies} />
 
       <Text className={paragraphCss} variant="bodyM">
-        Last updated: December 13, 2024
+        Last updated: May 6, 2025
       </Text>
     </Section>
   );
