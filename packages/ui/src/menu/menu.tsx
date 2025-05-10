@@ -1,5 +1,6 @@
 import { css, cx } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
+import { token } from "@flows/styled-system/tokens";
 import { Slot } from "@radix-ui/react-slot";
 import type { ComponentProps, FC, ReactNode } from "react";
 import { forwardRef } from "react";
@@ -19,7 +20,17 @@ export const Menu: FC<Props> = ({ trigger, children, align, open }) => {
     <Popover open={open}>
       <PopoverTrigger asChild>{trigger}</PopoverTrigger>
       <PopoverContent align={align ?? "start"}>
-        <Flex flexDir="column" justifyContent="center" minW="240px" p="6px">
+        <Flex
+          flexDir="column"
+          minW="240px"
+          p="6px"
+          maxHeight="min(500px, var(--radix-popover-content-available-height))"
+          overflowY="auto"
+          scrollbarWidth="thin"
+          style={{
+            scrollbarColor: `${token.var("colors.pane.fg.scroll")} transparent`,
+          }}
+        >
           {children}
         </Flex>
       </PopoverContent>
