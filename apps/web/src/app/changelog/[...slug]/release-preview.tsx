@@ -18,13 +18,15 @@ export const ReleasePreview: FC<Props> = ({ release, variant }) => {
     <a
       href={href}
       className={css({
-        bor: "1px",
+        borderWidth: 1,
+        borderColor: "newBorder.neutral",
         borderRadius: "radius8",
         p: "space12",
         display: "block",
         fastEaseInOut: "background-color",
+        cursor: "pointer",
         _hover: {
-          bg: "newBg.neutral.muted",
+          bg: "newBg.neutral",
         },
       })}
     >

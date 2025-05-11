@@ -8,7 +8,7 @@ export type MenuItemProps = {
   title: string;
   href?: string;
   target?: string;
-  subItems?: (close) => ReactNode;
+  subItems?: (close: () => void) => ReactNode;
 };
 
 export const menuItems: MenuItemProps[] = [

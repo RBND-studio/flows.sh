@@ -26,8 +26,10 @@ export default function ExamplePage(): ReactNode {
         <Grid
           gridTemplateColumns="1fr"
           sm={{ gridTemplateColumns: "1fr 1fr" }}
-          md={{ gridTemplateColumns: "1fr 1fr 1fr" }}
-          width="100%"
+          md={{
+            gridTemplateColumns: "1fr 1fr 1fr",
+            mx: "space32",
+          }}
           gap="space20"
         >
           {examplesContent.map((example) => (

@@ -4,7 +4,6 @@ import { Section } from "components/ui";
 import { allPosts } from "contentlayer/generated";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
-import React from "react";
 import { Text } from "ui";
 
 export const metadata: Metadata = {

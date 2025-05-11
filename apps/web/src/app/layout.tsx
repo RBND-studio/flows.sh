@@ -2,7 +2,6 @@ import "./globals.css";
 
 import { css, cx } from "@flows/styled-system/css";
 import { Providers } from "components/providers";
-import { LinesBox } from "components/ui";
 import { DOMAIN, PRODUCTION } from "lib";
 import type { Metadata } from "next";
 import { Figtree, Inter } from "next/font/google";
@@ -23,23 +22,23 @@ const InterFont = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${DOMAIN}`),
-  title: "Flows – User onboarding for modern SaaS",
+  title: "Flows – The better way to build product adoption",
   description:
-    "Flows lets you build any onboarding you want. Guide users, increase feature adoption, and improve revenue.",
+    "Flows is a fully customizable product adoption platform for modern companies building onboarding and user engagement experiences.",
   openGraph: {
     type: "website",
-    title: "Flows: Onboarding for modern SaaS",
+    title: "Flows: The better way to build product adoption",
     description:
-      "Flows lets you build any onboarding you want. Guide users, increase feature adoption, and improve revenue.",
+      "Flows is a fully customizable product adoption platform for modern companies building onboarding and user engagement experiences.",
     images: "/og.png",
     url: "/",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Flows: Onboarding for modern SaaS",
+    title: "Flows: The better way to build product adoption",
     description:
-      "Flows lets you build any onboarding you want. Guide users, increase feature adoption, and improve revenue.",
+      "Flows is a fully customizable product adoption platform for modern companies building onboarding and user engagement experiences.",
     images: "/og.png",
     creator: "@flows_sh",
   },
@@ -54,17 +53,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
       lang="en"
       suppressHydrationWarning
     >
-      <head>
-        {/* eslint-disable-next-line @next/next/no-sync-scripts -- needed for noflash script */}
-        <script src="/noflash.min.js" />
-      </head>
-      <body className={css({ background: "pane.bg" })}>
+      <body className={css({ background: "pane.bg.secondary", overflowX: "hidden" })}>
         <Providers>
-          <LinesBox>
-            <Header />
-            <main>{children}</main>
-            <Footer />
-          </LinesBox>
+          <Header />
+          <main
+            className={css({
+              overflowX: "hidden",
+            })}
+          >
+            {children}
+          </main>
+          <Footer />
         </Providers>
       </body>
       {PRODUCTION ? (

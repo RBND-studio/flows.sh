@@ -60,7 +60,7 @@ export const BlogPostPreview = ({ post }: Props): ReactElement => {
         <Link
           className={css({
             textStyle: "titleL",
-            color: "text.primary",
+            color: "newFg.neutral",
             display: "flex",
             alignItems: "center",
             gap: "space4",

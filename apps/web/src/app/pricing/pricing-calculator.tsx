@@ -39,21 +39,13 @@ export const PricingCalculator = (): ReactElement => {
   return (
     <>
       <Section
-        linesWrapper
-        borderLeftWidth="1px"
-        borderLeftColor="newBorder.neutral"
-        borderRightWidth="1px"
-        borderRightColor="newBorder.neutral"
-        linesWrapperClassName={css({
-          layerStyle: "dotBackground",
-        })}
+        bg="pane.bg.elevated"
+        borderRadius="radius12"
+        borderWidth="1px"
+        borderColor="newBorder.neutral.placeholder"
+        shadow="antimetal"
       >
-        <Box
-          padding="space24"
-          borderBottomWidth="1px"
-          borderBottomColor="newBorder.neutral"
-          backgroundColor="pane.bg.elevated"
-        >
+        <Box padding="space24" borderBottomWidth="1px" borderBottomColor="newBorder.neutral">
           <Flex
             justifyContent="space-between"
             mb="space16"
@@ -92,12 +84,7 @@ export const PricingCalculator = (): ReactElement => {
             </Text>
           </Flex>
         </Box>
-        <Flex
-          backgroundColor="pane.bg.elevated"
-          padding="space24"
-          justifyContent="space-between"
-          alignItems="baseline"
-        >
+        <Flex padding="space24" justifyContent="space-between" alignItems="baseline">
           <Text variant="titleL">Estimate</Text>
           <Flex alignItems="baseline" gap="space8">
             <Text variant="title2xl">${estimatedCost}</Text>

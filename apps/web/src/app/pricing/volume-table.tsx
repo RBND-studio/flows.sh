@@ -1,4 +1,3 @@
-import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
 import { type ReactElement } from "react";
@@ -47,12 +46,12 @@ export const VolumeTable = (): ReactElement => {
       </Section>
 
       <Section
-        borderLeftWidth="1px"
-        borderLeftColor="newBorder.neutral"
-        borderRightWidth="1px"
-        borderRightColor="newBorder.neutral"
-        linesWrapper
-        linesWrapperClassName={css({ layerStyle: "dotBackground" })}
+        bg="pane.bg.elevated"
+        borderRadius="radius12"
+        borderWidth="1px"
+        borderColor="newBorder.neutral.placeholder"
+        shadow="antimetal"
+        overflow="hidden"
       >
         {pricing.map((item) => (
           <Flex
@@ -60,9 +59,10 @@ export const VolumeTable = (): ReactElement => {
             backgroundColor="newBg.neutral"
             paddingX="space24"
             paddingY="space16"
-            borBottom="1px"
+            borderBottomWidth="1px"
+            borderColor="newBorder.neutral.placeholder"
             justifyContent="space-between"
-            _last={{ border: "none" }}
+            _last={{ borderBottomWidth: "0px" }}
           >
             <Text variant="titleM">{item.range}</Text>
             <Text variant="titleM">{item.price}</Text>

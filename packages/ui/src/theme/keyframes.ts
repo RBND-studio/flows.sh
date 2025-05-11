@@ -63,6 +63,26 @@ export const keyframes: CssKeyframes = {
       boxShadow: "focus",
     },
   },
+  glowFadeIn: {
+    "0%": {
+      opacity: 0,
+      transform: "translate(-50%, 0) scale(0.9)",
+    },
+    "100%": {
+      opacity: 0.7,
+      transform: "translate(-50%, 0) scale(1)",
+    },
+  },
+  glowLineFadeIn: {
+    "0%": {
+      opacity: 0,
+      transform: "translate(-50%, 0) scale(0.9)",
+    },
+    "100%": {
+      opacity: 1,
+      transform: "translate(-50%, 0) scale(1)",
+    },
+  },
   blinking: {
     "0%": {
       opacity: 0,
@@ -71,6 +91,14 @@ export const keyframes: CssKeyframes = {
       opacity: 1,
     },
     "100%": {
+      opacity: 0,
+    },
+  },
+  blinkingWithDelay: {
+    "0%, 20%, 100%": {
+      opacity: 1,
+    },
+    "10%": {
       opacity: 0,
     },
   },

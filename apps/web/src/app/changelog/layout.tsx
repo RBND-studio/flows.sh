@@ -3,8 +3,7 @@ import { Flex } from "@flows/styled-system/jsx";
 import { Section } from "components/ui/section";
 import { links } from "lib/links";
 import { type Metadata } from "next";
-import type { JSX,ReactNode } from "react";
-import React from "react";
+import type { JSX, ReactNode } from "react";
 import { Text } from "ui";
 
 type Props = {
@@ -37,7 +36,8 @@ export default function ChangelogLayout({ children }: Props): JSX.Element {
       <Flex
         flexDirection="column"
         gap="space4"
-        borBottom="1px"
+        borderBottomWidth={1}
+        borderBottomColor="newBorder.neutral"
         pb="space64"
         mdDown={{ pb: "space40" }}
         alignItems="flex-start"

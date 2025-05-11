@@ -1,5 +1,5 @@
 import { css } from "@flows/styled-system/css";
-import { DemoSection, Hero } from "components";
+import { Hero, HeroIllustration } from "components";
 import { CtaBanner } from "components/cta-banner";
 import { FaqAccordion, Section, SectionIntro } from "components/ui";
 import { RiverItem } from "components/ui/river-item";
@@ -31,26 +31,21 @@ const Page = (): ReactElement => {
         }
         description="Build engaging onboarding flows that guide users to value. Improve new user experience and drive activation while being on-brand."
         actions={
-          <>
-            <SignupClick>
-              <Button
-                className={css({
-                  shadow: "neutralFocus",
-                })}
-                asChild
-                size="large"
-              >
-                <a href={links.signUp}>Start onboarding</a>
-              </Button>
-            </SignupClick>
-            <Button variant="secondary" asChild size="large">
-              <a href={links.docs.contact}>Talk to us</a>
+          <SignupClick>
+            <Button
+              className={css({
+                shadow: "neutralFocus",
+              })}
+              asChild
+              size="large"
+            >
+              <a href={links.signUp}>Start onboarding</a>
             </Button>
-          </>
+          </SignupClick>
         }
       />
 
-      <DemoSection />
+      <HeroIllustration />
 
       <SectionIntro
         title="How Flows works for user onboarding"
@@ -73,7 +68,7 @@ const Page = (): ReactElement => {
           </>
         }
       />
-      <Section maxWidth={640} mx="auto">
+      <Section maxWidth="640px!" mx="auto">
         {questions.map((question) => (
           <FaqAccordion headingLevel="h3" key={question.title} title={question.title}>
             <Text color="muted" variant="bodyL">

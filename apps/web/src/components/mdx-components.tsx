@@ -14,7 +14,8 @@ const mdxComponents = {
       alt={props.alt ?? "Blog post cover image"}
       className={css({
         borderRadius: "radius8",
-        bor: "1px",
+        borderWidth: "1px",
+        borderColor: "newBorder.neutral",
         mb: "space24",
       })}
       height={Number(props.height)}

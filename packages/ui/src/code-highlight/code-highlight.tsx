@@ -20,7 +20,7 @@ export const CodeHighlight: FC<Props> = ({ lineNumbers = true, ...props }) => {
     <Code
       lang={props.lang}
       extensions={[fileIcons, tabs]}
-      theme={{ dark: "github-dark-dimmed", light: "github-light", lightSelector: ".light-mode" }}
+      theme={{ dark: "github-dark-dimmed", light: "github-light", lightSelector: ".light" }}
       {...props}
       className={cx(
         css({

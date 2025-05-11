@@ -4,17 +4,14 @@ import { css, cva } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { SmartLink } from "components/ui";
 import { ChevronDown16 } from "icons";
-import { usePathname } from "next/navigation";
 import type { ReactElement } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Icon, Text } from "ui";
 
 import { type MenuItemProps, menuItems } from "./menu-items";
 
 export const DesktopMenu = (): ReactElement => {
-  const pathName = usePathname();
-  const path = `/${pathName.split("/").slice(1, 2)[0]}`;
-
   return (
     <ul
       className={css({
@@ -24,7 +21,7 @@ export const DesktopMenu = (): ReactElement => {
     >
       {menuItems.map((item) => (
         <li key={item.title}>
-          <MainMenuItem item={item} path={path} />
+          <MainMenuItem item={item} />
         </li>
       ))}
     </ul>
@@ -33,11 +30,16 @@ export const DesktopMenu = (): ReactElement => {
 
 type MainMenuItemProps = {
   item: MenuItemProps;
-  path: string;
 };
 
-const MainMenuItem = ({ item, path }: MainMenuItemProps): ReactElement => {
+const MainMenuItem = ({ item }: MainMenuItemProps): ReactElement => {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  // Handle client-side mounting for the portal
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const Component = item.href ? SmartLink : "button";
 
@@ -47,21 +49,22 @@ const MainMenuItem = ({ item, path }: MainMenuItemProps): ReactElement => {
       onMouseEnter={item.subItems ? () => setIsOpen(true) : undefined}
       className={css({
         display: "flex",
-        py: "space4",
+        py: "space6",
         px: "space8",
         fastEaseInOut: "all",
-        borderRadius: "radius4",
-        backgroundColor: path === item.href ? "newBg.neutral.subtle" : "transparent",
+        borderRadius: "radius8",
+        color: "newFg.neutral.muted",
         alignItems: "center",
         gap: "space4",
         zIndex: 1,
         cursor: "pointer",
         _hover: {
-          backgroundColor: "newBg.neutral.subtle",
+          color: "newFg.neutral",
+          backgroundColor: "special.translucentHover",
         },
       })}
     >
-      <Text variant="bodyS" weight="700">
+      <Text variant="bodyS" color="inherit" weight="700">
         {item.title}
       </Text>
       {item.subItems ? <Icon icon={ChevronDown16} className={iconClass({ open: isOpen })} /> : null}
@@ -76,37 +79,51 @@ const MainMenuItem = ({ item, path }: MainMenuItemProps): ReactElement => {
           // Prevents mouseEvent getting to the close layer between the menu and the subItems
           position="absolute"
           top="100%"
-          height={4}
+          height={12}
           width="100%"
           zIndex={1}
           display={isOpen ? "block" : "none"}
         />
         <Box
           position="absolute"
-          padding="space8"
+          padding="space4"
           borderWidth="1px"
-          borderColor="pane.border.elevated"
-          backgroundColor="pane.bg.elevated"
-          top="calc(100% + 4px)"
+          borderColor="newBorder.neutral.placeholder"
+          background="special.glassMorph"
+          backdropFilter="blur(4px)"
+          top="calc(100% + 12px)"
           borderRadius="radius12"
-          shadow="newL2"
           zIndex={1}
           animation="bottomSlideIn 0.3s ease-out"
           width="max-content"
           display={isOpen ? "block" : "none"}
         >
-          {item.subItems(() => setIsOpen(false))}
+          <Box
+            borderWidth="1px"
+            borderColor="pane.border.elevated"
+            backgroundColor="pane.bg.elevated"
+            padding="space8"
+            borderRadius="radius8"
+          >
+            {item.subItems(() => setIsOpen(false))}
+          </Box>
         </Box>
-        <Box
-          position="fixed"
-          top="0"
-          left="0"
-          right="0"
-          bottom="0"
-          onClick={() => setIsOpen(false)}
-          onMouseEnter={() => setIsOpen(false)}
-          display={isOpen ? "block" : "none"}
-        />
+
+        {/* Render overlay with portal to escape stacking context */}
+        {mounted && isOpen
+          ? createPortal(
+              <Box
+                position="fixed"
+                top="0"
+                left="0"
+                right="0"
+                bottom="0"
+                onClick={() => setIsOpen(false)}
+                onMouseEnter={() => setIsOpen(false)}
+              />,
+              document.body,
+            )
+          : null}
       </Flex>
     );
   }

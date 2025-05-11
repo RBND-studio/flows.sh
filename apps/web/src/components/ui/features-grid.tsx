@@ -1,54 +1,61 @@
-import { css } from "@flows/styled-system/css";
 import { Grid } from "@flows/styled-system/jsx";
 import { type ReactElement } from "react";
 
+import { EndLine, LinesWrapper, NewLine, NewLineDecorator } from "./lines";
 import { Section } from "./section";
-import { SmallFeature, type SmallFeatureProps } from "./small-feature";
+import { SmallFeatureCard, type SmallFeatureCardProps } from "./small-feature-card";
 
 type Props = {
-  features: SmallFeatureProps[];
+  features: SmallFeatureCardProps[];
 };
 
 export const FeaturesGrid = ({ features }: Props): ReactElement => {
   return (
-    <Section
-      linesWrapper
-      linesWrapperClassName={css({ layerStyle: "dotBackground" })}
-      borderRightWidth="1px"
-      borderRightColor="newBorder.neutral"
-      borderLeftWidth="1px"
-      borderLeftColor="newBorder.neutral"
-    >
+    <Section>
+      <LinesWrapper justifyContent="space-between">
+        <EndLine side="top" />
+        <EndLine side="top" />
+      </LinesWrapper>
+      <LinesWrapper>
+        <EndLine side="left" />
+        <NewLineDecorator />
+        <NewLine />
+        <NewLineDecorator />
+        <EndLine side="right" />
+      </LinesWrapper>
+
       <Grid
-        gridTemplateColumns="repeat(2, 1fr)"
-        md={{ gridTemplateColumns: "repeat(4, 1fr)" }}
-        backgroundColor="newBorder.neutral"
-        borderRadius="radius8"
-        gap={1}
-        outlineStyle="solid"
-        outlineWidth="1px"
-        outlineColor="newBorder.neutral"
-        shadow="solid"
-        overflow="hidden"
+        gridTemplateColumns={{
+          base: "repeat(2, 1fr)",
+          md: "repeat(4, auto)",
+        }}
+        gap="0"
+        mx="auto"
+        justifyContent="center"
+        alignItems="center"
       >
-        {features.map((feature) => (
-          <SmallFeature
-            key={feature.title}
-            icon={feature.icon}
-            title={feature.title}
-            description={feature.description}
-            comingSoon={feature.comingSoon}
-            headingLevel="h3"
-            className={css({
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              p: "space24",
-              backgroundColor: "pane.bg.elevated",
-            })}
-          />
-        ))}
+        {features.map((feature) => {
+          return (
+            <SmallFeatureCard
+              key={feature.title}
+              title={feature.title}
+              description={feature.description}
+              icon={feature.icon}
+            />
+          );
+        })}
       </Grid>
+      <LinesWrapper>
+        <EndLine side="left" />
+        <NewLineDecorator />
+        <NewLine />
+        <NewLineDecorator />
+        <EndLine side="right" />
+      </LinesWrapper>
+      <LinesWrapper justifyContent="space-between">
+        <EndLine side="bottom" />
+        <EndLine side="bottom" />
+      </LinesWrapper>
     </Section>
   );
 };

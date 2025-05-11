@@ -6,7 +6,6 @@ import { Text } from "ui";
 import { ImplementationCodeExample } from "./implementation-code-example";
 import { ImplementationExample } from "./implementation-example";
 import { ImplementationFeatures } from "./implementation-features";
-import { ImplementationSubfeatures } from "./implementation-subfeatures";
 import { ImplementationTemplateCards } from "./implementation-template-cards";
 
 export const ImplementationSection = (): JSX.Element => {
@@ -35,7 +34,6 @@ export const ImplementationSection = (): JSX.Element => {
       <ImplementationTemplateCards />
       <ImplementationFeatures />
       <ImplementationExample codeExample={<ImplementationCodeExample />} />
-      <ImplementationSubfeatures />
     </>
   );
 };

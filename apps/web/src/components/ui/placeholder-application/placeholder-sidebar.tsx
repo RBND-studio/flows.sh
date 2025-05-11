@@ -107,6 +107,7 @@ const DesktopSidebar = ({ sidebarTooltipSlot, sidebarBannerSlot }: Props): JSX.E
             borderRadius="radius4"
           />
         </Flex>
+        {sidebarBannerSlot}
         <Flex flexDirection="column" gap="space8">
           <Box
             height={8}
@@ -210,17 +211,6 @@ const DesktopSidebar = ({ sidebarTooltipSlot, sidebarBannerSlot }: Props): JSX.E
           />
         </Flex>
       </Flex>
-      {sidebarBannerSlot ? (
-        sidebarBannerSlot
-      ) : (
-        <Box
-          flexShrink={0}
-          width="100%"
-          borderRadius="radius4"
-          height={56}
-          backgroundColor="newBg.neutral.strong"
-        />
-      )}
     </Flex>
   );
 };
