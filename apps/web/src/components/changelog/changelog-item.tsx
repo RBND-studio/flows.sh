@@ -1,4 +1,4 @@
-import { css } from "@flows/styled-system/css";
+import { css, cva } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { Mdx } from "components";
 import type { Release } from "contentlayer/generated";
@@ -53,10 +53,12 @@ export const ChangelogItem = ({ release, detail }: Props): ReactElement => {
     <Flex
       gap="space40"
       justifyContent="center"
-      borBottom="1px"
+      borderBottomWidth={1}
+      borderBottomColor="newBorder.neutral"
       py="space64"
       mdDown={{ flexDirection: "column", py: "space40" }}
       _last={{ border: "none" }}
+      className={itemStyles({ detail })}
     >
       <Box maxWidth={200} width="100%" mt="space12">
         {dateComponent}
@@ -68,3 +70,27 @@ export const ChangelogItem = ({ release, detail }: Props): ReactElement => {
     </Flex>
   );
 };
+
+const itemStyles = cva({
+  base: {
+    gap: "space40",
+    justifyContent: "center",
+    borderBottomWidth: 1,
+    borderBottomColor: "newBorder.neutral",
+    py: "space64",
+    mdDown: {
+      flexDirection: "column",
+      py: "space40",
+    },
+    _last: {
+      borderBottomWidth: 0,
+    },
+  },
+  variants: {
+    detail: {
+      true: {
+        borderBottomWidth: 0,
+      },
+    },
+  },
+});

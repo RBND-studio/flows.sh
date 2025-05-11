@@ -9,6 +9,7 @@ export const links = (domain = "flows.sh") => ({
   rbndGithub: `https://github.com/RBND-studio`,
   publicRepo: `https://github.com/RBND-studio/flows.sh`,
   status: `https://status.flows.sh`,
+  youtube: `https://www.youtube.com/@flows-sh`,
   slack: `https://flows.sh/join-slack`,
   signUp: `https://app.${domain}/signup`,
   logIn: `https://app.${domain}/login`,
@@ -21,6 +22,7 @@ export const links = (domain = "flows.sh") => ({
   changelog: `https://${domain}/changelog`,
   examplesList: `https://${domain}/examples`,
   sdk: {
+    overview: `https://github.com/RBND-studio/flows-sdk/tree/main/examples`,
     reactTemplate: `https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/vite`,
     nextTemplate: `https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/next`,
     nuxtTemplate:
@@ -30,6 +32,7 @@ export const links = (domain = "flows.sh") => ({
   examples: {
     card: "https://card.examples.flows.sh",
     cardSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/card",
+    cardPage: `https://${domain}/examples/card`,
     tour: "https://tour.examples.flows.sh",
     tourSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/tour",
     hint: "https://hint.examples.flows.sh",
@@ -53,6 +56,7 @@ export const links = (domain = "flows.sh") => ({
     floatingChecklist: "https://floating-checklist.examples.flows.sh",
     floatingChecklistSource:
       "https://github.com/RBND-studio/flows.sh/tree/main/examples/floating-checklist",
+    floatinChecklistPage: `https://${domain}/examples/floating-checklist`,
     featureHint: "https://feature-hint.examples.flows.sh",
     featureHintSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/feature-hint",
     // --PLOP_NEW_EXAMPLE_LINK--
@@ -109,6 +113,7 @@ export const links = (domain = "flows.sh") => ({
       waitStep: `https://${domain}/docs/tour-block#wait-step`,
     },
     sdk: {
+      overview: `https://${domain}/docs/sdk-overview`,
       javascriptInstallation: `https://${domain}/docs/javascript/installation`,
     },
     contact: `https://${domain}/docs/contact-us`,

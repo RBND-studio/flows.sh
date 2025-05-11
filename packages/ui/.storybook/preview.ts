@@ -13,8 +13,8 @@ const preview: Preview = {
 
     darkMode: {
       stylePreview: true,
-      darkClass: "dark-mode",
-      lightClass: "light-mode",
+      darkClass: "dark",
+      lightClass: "light",
       classTarget: "html",
     },
   },

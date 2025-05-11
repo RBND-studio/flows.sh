@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  Build native product growth experiences, your way.
+  The better way to build product adoption
 </p>
 
 <p align="center">
@@ -18,7 +18,7 @@
 
 ## Flows
 
-Meet Flows, the flexible platform for building in-app experiences. Focus on your product, not creating one-off logic.
+Flows is a fully customizable product adoption platform for modern companies building onboarding and user engagement experiences.
 
 - Build powerful in-app experiences to drive product growth
 - Embed components directly into your app

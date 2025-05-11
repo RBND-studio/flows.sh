@@ -18,6 +18,7 @@ export const Readme = ({ readme, sidebar }: Props): ReactNode => {
       gap="space48"
       justifyContent="space-between"
       md={{ flexDirection: "row" }}
+      maxWidth="1024px!"
     >
       <Box maxWidth={720}>{readme}</Box>
       <InfoSidebar {...sidebar} />

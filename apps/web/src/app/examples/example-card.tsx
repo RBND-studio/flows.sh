@@ -29,16 +29,15 @@ export const ExampleCard = ({
     <Link
       href={href}
       className={css({
-        shadow: "newL1",
-        borderRadius: "radius8",
+        shadow: "antimetal",
+        borderRadius: "radius12",
         borderWidth: "1px",
-        borderColor: "pane.border.elevated",
+        borderColor: "newBorder.neutral.placeholder",
         backgroundColor: "pane.bg.elevated",
         fastEaseInOut: "all",
         overflow: "hidden",
 
         _hover: {
-          shadow: "newL2",
           borderColor: "newBorder.neutral.strong",
         },
       })}

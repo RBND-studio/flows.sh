@@ -41,8 +41,9 @@ export const Suggestions = ({ slug }: Props): ReactNode => {
       <Section
         display="grid"
         gridTemplateColumns="1fr"
-        md={{ gridTemplateColumns: "1fr 1fr 1fr" }}
+        md={{ gridTemplateColumns: "1fr 1fr 1fr", maxWidth: "1056px" }}
         gap="space12"
+        mb="space40"
       >
         {suggestionItems.map((item) => (
           <ExampleCard headingLevel="h3" key={item.title} {...item} />

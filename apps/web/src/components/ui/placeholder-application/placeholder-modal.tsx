@@ -1,3 +1,4 @@
+import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import Image from "next/image";
 import type { JSX } from "react";
@@ -50,7 +51,13 @@ export const PlaceholderModal = ({
       </Text>
       {/* Button is rendered as div to prevent taking focus and messing with aria-hidden */}
       <Button asChild variant="primary" size="small">
-        <div>{buttonLabel}</div>
+        <div
+          className={css({
+            pointerEvents: "none",
+          })}
+        >
+          {buttonLabel}
+        </div>
       </Button>
     </Flex>
   );

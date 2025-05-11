@@ -3,63 +3,50 @@
 import { css, cva } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { SmartLink } from "components/ui";
-import { ChevronDown16, Menu16 } from "icons";
-import { usePathname } from "next/navigation";
+import { ChevronDown16 } from "icons";
 import { type FC, type ReactNode, useState } from "react";
-import { Icon, IconButton, Text } from "ui";
+import { Icon, Text } from "ui";
 
 import { type MenuItemProps, menuItems } from "./menu-items";
 
-export const MobileMenu: FC = () => {
-  const pathName = usePathname();
-  const path = `/${pathName.split("/").slice(1, 2)[0]}`;
-  const [open, setOpen] = useState(false);
-  const toggleOpen = (): void => setOpen((p) => !p);
-  const handleClose = (): void => setOpen(false);
+type Props = {
+  open: boolean;
+  handleClose: () => void;
+};
 
+export const MobileMenu: FC<Props> = ({ open, handleClose }): ReactNode => {
   return (
-    <>
-      {/* eslint-disable-next-line no-restricted-syntax -- hamburger menu */}
-      <IconButton
-        className={css({ sm: { display: "none" }, px: "8px" })}
-        onClick={toggleOpen}
-        variant="ghost"
-      >
-        <Menu16 />
-        <span className={css({ srOnly: true })}>Open main menu</span>
-      </IconButton>
-      <Box
-        backgroundColor="newBg.neutral"
-        borBottom="1px"
-        display={open ? undefined : "none"}
-        left={0}
-        pb="space12"
-        position="fixed"
-        pt="space4"
-        px="space16"
-        sm={{ display: "none" }}
-        top="49px"
-        width="100%"
-      >
-        <ul className={css({ display: "flex", flexDir: "column" })}>
-          {menuItems.map((item) => (
-            <li key={item.title}>
-              <MobileMainMenuItem item={item} path={path} handleClose={handleClose} />
-            </li>
-          ))}
-        </ul>
-      </Box>
-    </>
+    <Box
+      backgroundColor="newBg.neutral"
+      display={open ? undefined : "none"}
+      position="absolute"
+      py="space12"
+      px="space16"
+      sm={{ display: "none" }}
+      top="66px"
+      width="calc(100% - 48px)"
+      borderRadius="radius12"
+      borderWidth="1px"
+      borderColor="newBorder.neutral.placeholder"
+      shadow="newL1"
+    >
+      <ul className={css({ display: "flex", flexDir: "column" })}>
+        {menuItems.map((item) => (
+          <li key={item.title}>
+            <MobileMainMenuItem item={item} handleClose={handleClose} />
+          </li>
+        ))}
+      </ul>
+    </Box>
   );
 };
 
 type MainMenuItemProps = {
   item: MenuItemProps;
-  path: string;
   handleClose: () => void;
 };
 
-const MobileMainMenuItem = ({ item, path, handleClose }: MainMenuItemProps): ReactNode => {
+const MobileMainMenuItem = ({ item, handleClose }: MainMenuItemProps): ReactNode => {
   const [isOpen, setIsOpen] = useState(false);
   const handleSubItemClick = (): void => {
     setIsOpen(false);
@@ -76,7 +63,6 @@ const MobileMainMenuItem = ({ item, path, handleClose }: MainMenuItemProps): Rea
         display: "flex",
         justifyContent: "space-between",
         borderRadius: "radius6",
-        backgroundColor: path === item.href ? "newBg.neutral.subtle" : "transparent",
         alignItems: "center",
         py: "space12",
         px: "space8",

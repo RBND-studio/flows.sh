@@ -40,7 +40,6 @@ export const RiverItem = ({ title, description, visual, first, last }: Props): R
         position="relative"
         className={wrapClass({ first, last })}
         md={{
-          layerStyle: "dotBackground",
           borderLeftWidth: "1px",
           borderLeftColor: "newBorder.neutral",
           borderRightWidth: "1px",
@@ -81,7 +80,7 @@ const wrapClass = cva({
           height: 40,
           zIndex: 1,
           backgroundImage:
-            "linear-gradient(180deg, token(colors.newBg.neutral) 0%, transparent 100%)",
+            "linear-gradient(180deg, token(colors.pane.bg.secondary) 0%, transparent 100%)",
         },
       },
     },
@@ -98,7 +97,7 @@ const wrapClass = cva({
           height: 40,
           zIndex: 1,
           backgroundImage:
-            "linear-gradient(0deg, token(colors.newBg.neutral) 0%, transparent 100%)",
+            "linear-gradient(180deg, transparent 0%, token(colors.pane.bg.secondary) 100%)",
         },
       },
     },

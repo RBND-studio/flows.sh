@@ -1,5 +1,5 @@
 import { css } from "@flows/styled-system/css";
-import { DemoSection, Hero } from "components";
+import { Hero, HeroIllustration } from "components";
 import { CtaBanner } from "components/cta-banner";
 import { FaqAccordion, Section, SectionIntro } from "components/ui";
 import { RiverItem } from "components/ui/river-item";
@@ -43,8 +43,7 @@ const Page = (): ReactElement => {
           </>
         }
       />
-
-      <DemoSection defaultTab="Product adoption" />
+      <HeroIllustration defaultTab="Product adoption" />
 
       <SectionIntro
         title="How Flows helps with feature adoption"
@@ -67,7 +66,7 @@ const Page = (): ReactElement => {
           </>
         }
       />
-      <Section maxWidth={640} mx="auto">
+      <Section maxWidth="640px!" mx="auto">
         {questions.map((question) => (
           <FaqAccordion headingLevel="h3" key={question.title} title={question.title}>
             <Text color="muted" variant="bodyL">

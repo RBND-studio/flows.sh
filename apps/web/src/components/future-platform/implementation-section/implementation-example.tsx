@@ -117,14 +117,12 @@ export const ImplementationExample: FC<Props> = ({ codeExample }) => {
         borderLeftWidth="1px"
         borderRightColor="newBorder.neutral"
         borderRightWidth="1px"
-        linesWrapper
         flexDirection="column"
         md={{
           flexDirection: "row",
           height: "460px",
           borderRightWidth: "0px",
         }}
-        linesWrapperClassName={css({ layerStyle: "dotBackground" })}
       >
         <Box
           width="100%"

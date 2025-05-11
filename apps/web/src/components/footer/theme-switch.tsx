@@ -1,44 +1,73 @@
 "use client";
 
-import { css } from "@flows/styled-system/css";
-import type { Mode } from "@rbnd/react-dark-mode";
-import { useDarkMode } from "@rbnd/react-dark-mode";
+import { cva } from "@flows/styled-system/css";
+import { Flex } from "@flows/styled-system/jsx";
 import { useFirstRender } from "hooks";
-import { type FC } from "react";
-import { Select } from "ui";
+import { Moon16, Sun16, System16 } from "icons";
+import { useTheme } from "next-themes";
+import { type FC, type ReactNode } from "react";
 
 const options: {
-  value: Mode;
+  value: string;
   label: string;
+  icon: ReactNode;
 }[] = [
-  { value: "light", label: "Light" },
-  { value: "dark", label: "Dark" },
-  { value: "system", label: "System" },
+  { value: "system", label: "System", icon: <System16 /> },
+  { value: "light", label: "Light", icon: <Sun16 /> },
+  { value: "dark", label: "Dark", icon: <Moon16 /> },
 ];
-
-const selectWidth = "88px";
 
 export const ThemeSwitch: FC = () => {
   const firstRender = useFirstRender();
-  const { mode, setMode } = useDarkMode();
-
-  if (firstRender)
-    return (
-      <div
-        className={css({
-          width: selectWidth,
-          height: "29px",
-        })}
-      />
-    );
+  const { theme, setTheme } = useTheme();
 
   return (
-    <Select
-      aria-label="Theme switch"
-      className={css({ width: selectWidth })}
-      value={mode}
-      onChange={setMode}
-      options={options}
-    />
+    <Flex
+      borderWidth={1}
+      borderColor="newBorder.neutral"
+      bg="pane.bg.secondary"
+      borderRadius="radius6"
+      p="space2"
+      gap="space6"
+      mb="space16"
+    >
+      {options.map((option) => (
+        <button
+          key={option.value}
+          aria-label={option.label}
+          title={option.label}
+          type="button"
+          onClick={() => setTheme(option.value)}
+          className={buttonStyles({ active: firstRender ? false : theme === option.value })}
+        >
+          {option.icon}
+        </button>
+      ))}
+    </Flex>
   );
 };
+
+const buttonStyles = cva({
+  base: {
+    p: "3px",
+    borderRadius: "radius4",
+    cursor: "pointer",
+    fastEaseInOut: "all",
+    borderWidth: 1,
+    borderColor: "transparent",
+  },
+  variants: {
+    active: {
+      true: {
+        borderColor: "pane.border.elevated",
+        backgroundColor: "pane.bg.elevated",
+        shadow: "l1",
+      },
+      false: {
+        _hover: {
+          backgroundColor: "newBg.neutral.strong",
+        },
+      },
+    },
+  },
+});

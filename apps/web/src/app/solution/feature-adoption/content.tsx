@@ -1,6 +1,5 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
-import { WorkflowsExample } from "components/homepage/workflows-section/workflows-example";
 import { links } from "lib/links";
 import Link from "next/link";
 import { routes } from "routes";
@@ -12,6 +11,7 @@ import {
   PlaceholderTable,
   PlaceholderTooltip,
 } from "../../../components/ui";
+import { WorkflowsExample } from "../workflows-example";
 
 export const riverFeatures = [
   {
@@ -75,7 +75,6 @@ export const riverFeatures = [
       "Flows comes with a set of built-in UI components to get you started. Not enough? Create your own components with custom styling and logic to create a native experience.",
     visual: (
       <Flex
-        background="pane.bg.secondary"
         alignItems="center"
         justifyContent="center"
         width="100%"
@@ -83,6 +82,7 @@ export const riverFeatures = [
         p="space12"
         gap="space24"
         role="img"
+        layerStyle="dotBackground"
       >
         <PlaceholderTooltip
           title="Click here"

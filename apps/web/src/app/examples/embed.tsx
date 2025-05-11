@@ -1,4 +1,3 @@
-import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
 import { type FC } from "react";
@@ -11,12 +10,7 @@ export type EmbedProps = {
 
 export const Embed: FC<EmbedProps> = ({ src, title }) => {
   return (
-    <Section
-      linesWrapper
-      linesWrapperClassName={css({
-        layerStyle: "dotBackground",
-      })}
-    >
+    <Section maxWidth="1024px!">
       <Flex
         borderWidth="1px"
         borderColor="newBorder.neutral.strong"

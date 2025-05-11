@@ -1,10 +1,11 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
-import { SmartLink, TopLine } from "components/ui";
+import { SmartLink } from "components/ui";
+import { GitHub16, Slack16, Twitter16, YouTube16 } from "icons";
 import { links } from "lib/links";
 import type { ReactElement } from "react";
 import { routes } from "routes";
-import { Logo, Text } from "ui";
+import { Icon, Logo, Text } from "ui";
 
 import { ThemeSwitch } from "./theme-switch";
 
@@ -88,21 +89,40 @@ const footerGroups: FooterGroup[] = [
   },
 ];
 
+const socialLinks = [
+  {
+    icon: Twitter16,
+    href: links.twitter,
+    label: "X (Twitter)",
+  },
+  {
+    icon: Slack16,
+    href: links.slack,
+    label: "Slack community",
+  },
+  {
+    icon: GitHub16,
+    href: links.rbndGithub,
+    label: "GitHub",
+  },
+  {
+    icon: YouTube16,
+    href: links.youtube,
+    label: "YouTube",
+  },
+];
+
 export const Footer = (): ReactElement => {
   return (
     <footer
       className={css({
         paddingX: "space24",
-        borderTopWidth: "1px",
-        borderTopColor: "newBorder.neutral",
         position: "relative",
       })}
     >
-      <TopLine />
       <Flex
-        flexDirection="column-reverse"
+        flexDirection="column"
         gap="space40"
-        alignItems="flex-start"
         maxWidth="1024px"
         mx="auto"
         py="space40"
@@ -111,39 +131,39 @@ export const Footer = (): ReactElement => {
           justifyContent: "space-between",
         }}
       >
-        <Box>
+        <Flex flexDirection="column" alignItems="flex-start">
           <Box display="inline-flex" alignItems="center" gap="space8" marginBottom="space24">
             <Logo type="type" size={20} />
           </Box>
-          <Box marginBottom="space16">
-            <Text color="subtle" variant="bodyS">
-              Follow us
-            </Text>
-            <Flex gap="space16" alignItems="center">
-              <Text asChild variant="bodyS" weight="700">
-                <a
-                  href={links.twitter}
-                  rel="noopener"
-                  target="_blank"
-                  className={css({ _hover: { textDecoration: "underline" } })}
-                >
-                  Twitter
-                </a>
-              </Text>
-              <Text asChild variant="bodyS" weight="700">
-                <a
-                  href={links.rbndGithub}
-                  rel="noopener"
-                  target="_blank"
-                  className={css({ _hover: { textDecoration: "underline" } })}
-                >
-                  Github
-                </a>
-              </Text>
+          <Box marginBottom="space40">
+            <Flex gap="space12">
+              {socialLinks.map((link) => {
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={link.label}
+                    className={css({
+                      display: "flex",
+                      alignItems: "center",
+                      color: "newFg.neutral.subtle",
+                      fastEaseInOut: "color",
+                      "&:hover": {
+                        color: "newFg.neutral",
+                      },
+                    })}
+                  >
+                    <Icon icon={link.icon} color="inherit" />
+                  </a>
+                );
+              })}
             </Flex>
           </Box>
+          <ThemeSwitch />
           <Text color="subtle" variant="bodyS">
-            © 2024{" "}
+            © 2025{" "}
             <a
               target="_blank"
               href={links.rbnd}
@@ -153,7 +173,7 @@ export const Footer = (): ReactElement => {
               RBND studio s.r.o.
             </a>
           </Text>
-        </Box>
+        </Flex>
         <Flex
           flexDirection="row"
           flexWrap="wrap"
@@ -207,7 +227,6 @@ export const Footer = (): ReactElement => {
               ))}
             </Flex>
           ))}
-          <ThemeSwitch />
         </Flex>
       </Flex>
     </footer>

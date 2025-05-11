@@ -7,7 +7,7 @@ import { Button, Icon, Text } from "ui";
 
 import bannerImage from "./banner-image.jpg";
 
-export const tabs = [
+export const illustrationData = [
   {
     title: "User onboarding",
     element: (

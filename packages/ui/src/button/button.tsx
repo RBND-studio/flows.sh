@@ -123,8 +123,6 @@ const button = cva({
     borderWidth: 1,
     borderColor: "transparent",
 
-    shadow: "none",
-
     superFastEaseInOut: "all",
 
     _loading: {

@@ -1,3 +1,3 @@
-export * from "./horizontal-lines-box";
-export * from "./lines-box";
-export * from "./single-lines";
+export * from "./end-line";
+export * from "./line-decorator";
+export * from "./lines-wrapper";

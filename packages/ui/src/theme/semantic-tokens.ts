@@ -99,6 +99,18 @@ export const semanticTokens = defineSemanticTokens({
     },
     special: {
       dotBg: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.800}" } },
+      glassMorph: {
+        value: {
+          base: "hsla(214.3, 7%, 58%, 10%)",
+          _dark: "hsla(214.3, 7%, 58%, 10%)",
+        },
+      },
+      translucentHover: {
+        value: {
+          base: "hsla(214.3, 14.3%, 9.6%, 6%)",
+          _dark: "hsla(217.5, 25%, 93.7%, 8%)",
+        },
+      },
     },
 
     // --------------------------------------------
@@ -157,6 +169,7 @@ export const semanticTokens = defineSemanticTokens({
       DEFAULT: { value: { base: "{colors.neutral.150}", _dark: "{colors.neutral.700}" } },
       neutral: {
         DEFAULT: { value: { base: "{colors.neutral.150}", _dark: "{colors.neutral.700}" } },
+        placeholder: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.800}" } },
         muted: { value: { base: "{colors.neutral.75}", _dark: "{colors.neutral.850}" } },
         strong: { value: { base: "{colors.neutral.200}", _dark: "{colors.neutral.600}" } },
         onBlack: { value: { base: "{colors.neutral.700}", _dark: "{colors.neutral.750}" } },
@@ -220,6 +233,12 @@ export const semanticTokens = defineSemanticTokens({
         secondary: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.950}" } },
         elevated: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
         tooltip: { value: { base: "{colors.neutral.850}", _dark: "{colors.neutral.1000}" } },
+        translucentBackground: {
+          value: {
+            base: "hsla(0, 0%, 100%, 0.85)",
+            _dark: "hsla(216, 11.1%, 8.8%, 0.80)",
+          },
+        },
         translucentOverlay: {
           value: { base: "rgba(0, 0, 0, 0.75)", _dark: "rgba(0, 0, 0, 0.50)" },
         },
@@ -392,6 +411,14 @@ export const semanticTokens = defineSemanticTokens({
       value: {
         base: "{shadows.lightSolid}",
         _dark: "{shadows.darkSolid}",
+      },
+    },
+
+    antimetal: {
+      value: {
+        base: "0 24px 24px -12px hsla(216, 15%, 20%, 0.04), 0 12px 12px -6px hsla(216, 15%, 20%, 0.04), 0 6px 6px -3px hsla(216, 15%, 20%, 0.04), 0 3px 3px -1.5px hsla(216, 15%, 20%, 0.04), 0 1px 1px -0.5px hsla(216, 15%, 20%, 0.04)",
+        _dark:
+          "0 24px 24px -12px hsla(216, 15%, 20%, 0.04), 0 12px 12px -6px hsla(216, 15%, 20%, 0.04), 0 6px 6px -3px hsla(216, 15%, 20%, 0.04), 0 3px 3px -1.5px hsla(216, 15%, 20%, 0.04), 0 1px 1px -0.5px hsla(216, 15%, 20%, 0.04)",
       },
     },
   },

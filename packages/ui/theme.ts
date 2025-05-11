@@ -41,9 +41,7 @@ export const theme: Config["theme"] = {
   layerStyles,
 };
 
-export const conditions: Config["conditions"] = {
-  dark: ".dark-mode &",
-};
+export const conditions: Config["conditions"] = {};
 
 export const utilities: Config["utilities"] = {
   extend: {

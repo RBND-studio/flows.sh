@@ -1,4 +1,3 @@
-import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
 import type { JSX } from "react";
@@ -7,7 +6,6 @@ import { Text } from "ui";
 import { WorkflowsBlocks } from "./workflows-blocks";
 import { WorkflowsExample } from "./workflows-example";
 import { WorkflowsFeatures } from "./workflows-features";
-import { WorkflowsSubfeatures } from "./workflows-subfeatures";
 
 export const WorkflowsSection = (): JSX.Element => {
   return (
@@ -22,7 +20,7 @@ export const WorkflowsSection = (): JSX.Element => {
         </Text>
       </Section>
 
-      <Section linesWrapper linesWrapperClassName={css({ layerStyle: "dotBackground" })}>
+      <Section>
         <Flex alignItems="center" justifyContent="center" width="100%" height={400} role="img">
           <WorkflowsExample />
         </Flex>
@@ -30,7 +28,6 @@ export const WorkflowsSection = (): JSX.Element => {
 
       <WorkflowsFeatures />
       <WorkflowsBlocks />
-      <WorkflowsSubfeatures />
     </>
   );
 };

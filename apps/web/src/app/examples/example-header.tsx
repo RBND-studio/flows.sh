@@ -13,7 +13,7 @@ type Props = {
 
 export const ExampleHeader = ({ title, description }: Props): ReactNode => {
   return (
-    <Section pt="space40" pb="space32" md={{ pt: "space80", pb: "space64" }}>
+    <Section pt="space40" pb="space32" md={{ pt: "space80", pb: "space64", maxWidth: "1024px" }}>
       <Link
         href={routes.examples}
         className={css({

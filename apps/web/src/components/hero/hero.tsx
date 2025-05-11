@@ -19,7 +19,7 @@ export const Hero = ({ title, description, actions }: Props): ReactElement => {
       md={{ py: "space80" }}
       alignItems="center"
     >
-      <Text as="h1" variant="title4xl" animation="topSlideIn 0.6s ease-out" align="center">
+      <Text as="h1" variant="title5xl" animation="topSlideIn 0.6s ease-out" align="center">
         {title}
       </Text>
       <Text
@@ -31,6 +31,7 @@ export const Hero = ({ title, description, actions }: Props): ReactElement => {
         color="muted"
         variant="bodyL"
         align="center"
+        textWrap="balance"
       >
         {description}
       </Text>

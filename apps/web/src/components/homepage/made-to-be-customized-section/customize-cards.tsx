@@ -1,0 +1,151 @@
+import { css } from "@flows/styled-system/css";
+import { Box, Flex } from "@flows/styled-system/jsx";
+import { PlaceholderModal, PlaceholderTable, PlaceholderTooltip } from "components/ui";
+import { ArrowRight16 } from "icons";
+import { links } from "lib/links";
+import Link from "next/link";
+import { type ReactNode } from "react";
+import { Text } from "ui";
+
+const cards = [
+  {
+    title: "Embeddable components",
+    description:
+      "Render inline components directly within your app’s UI. Don’t just put tooltips over your product.",
+    linkUrl: links.examples.cardPage,
+    linkText: "See example",
+    element: (
+      <Box
+        h="100%"
+        overflow="hidden"
+        p="space8"
+        role="img"
+        maskImage="linear-gradient(
+            rgb(0, 0, 0) 70%,
+            rgba(0, 0, 0, 0.886) 76.6%,
+            rgba(0, 0, 0, 0.733) 81.4%, 
+            rgba(0, 0, 0, 0.557) 85.3%,
+            rgba(0, 0, 0, 0.376) 88.3%,
+            rgba(0, 0, 0, 0.21) 91%, 
+            rgba(0, 0, 0, 0.082) 94%, 
+            rgba(0, 0, 0, 0.01) 97.6%,
+            rgba(0, 0, 0, 0) 100%)"
+      >
+        <PlaceholderTable />
+      </Box>
+    ),
+  },
+  {
+    title: "Custom UI components",
+    description:
+      "Leverage our APIs and your design system for full control. Build your own components and create a native experience.",
+    linkUrl: links.examples.floatinChecklistPage,
+    linkText: "See example",
+    element: (
+      <Box
+        h="100%"
+        overflow="hidden"
+        role="img"
+        maskImage="linear-gradient(
+            rgb(0, 0, 0) 70%,
+            rgba(0, 0, 0, 0.886) 76.6%,
+            rgba(0, 0, 0, 0.733) 81.4%, 
+            rgba(0, 0, 0, 0.557) 85.3%,
+            rgba(0, 0, 0, 0.376) 88.3%,
+            rgba(0, 0, 0, 0.21) 91%, 
+            rgba(0, 0, 0, 0.082) 94%, 
+            rgba(0, 0, 0, 0.01) 97.6%,
+            rgba(0, 0, 0, 0) 100%)"
+      >
+        <Flex
+          alignItems="center"
+          justifyContent="center"
+          layerStyle="dotBackground"
+          width="100%"
+          height="288px"
+          borderRadius={6}
+          p="space12"
+          gap="space24"
+          aria-hidden="true"
+        >
+          <PlaceholderTooltip
+            title="Click here"
+            description="Tooltips are great for guiding users through a process."
+          />
+
+          <PlaceholderModal
+            title="New feature announcement"
+            description="Modals are better for catching attention or more information."
+            className={css({
+              display: "none",
+              md: { display: "flex" },
+            })}
+          />
+        </Flex>
+      </Box>
+    ),
+  },
+];
+
+export const CustomizeCards = (): ReactNode => {
+  return (
+    <Flex
+      gap="space24"
+      flexDirection="column"
+      md={{
+        flexDirection: "row",
+        mx: "space16",
+      }}
+      position="relative"
+    >
+      {cards.map((item) => (
+        <Flex
+          flexDirection="column"
+          h={460}
+          w="100%"
+          justifyContent="flex-end"
+          borderRadius="radius12"
+          background="pane.bg.elevated"
+          borderWidth={1}
+          borderColor="newBorder.neutral.placeholder"
+          shadow="antimetal"
+          key={item.title}
+          overflow="hidden"
+        >
+          {item.element}
+          <Flex flexDirection="column" p="space24">
+            <Text as="h3" mb="space12" variant="titleL">
+              {item.title}
+            </Text>
+            <Text mb="space24" variant="bodyM" color="muted">
+              {item.description}
+            </Text>
+            <Link
+              className={css({
+                textStyle: "titleL",
+                color: "text",
+                display: "flex",
+                alignItems: "center",
+                gap: "space4",
+                width: "fit-content",
+                _hover: {
+                  "& svg": {
+                    transform: "translateX(4px)",
+                  },
+                },
+                "& svg": {
+                  fastEaseInOut: "transform",
+                },
+              })}
+              href={item.linkUrl}
+              target="_blank"
+            >
+              {item.linkText}
+              <ArrowRight16 />
+            </Link>
+          </Flex>
+        </Flex>
+      ))}
+    </Flex>
+  );
+};

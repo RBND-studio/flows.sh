@@ -1,5 +1,6 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
+import { CtaBanner } from "components/cta-banner";
 import { Section, SmartLink } from "components/ui";
 import { DOMAIN } from "lib";
 import { links } from "lib/links";
@@ -15,13 +16,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(`https://${DOMAIN}`),
   title: "Pricing – Flows",
   description:
-    "The new standard for building user onboarding. With volume pricing starting at $0/month.",
+    "The better way to build product adoption. With volume pricing starting at $0/month.",
   openGraph: {
     type: "website",
     title: "Pricing – Flows",
     description:
-      "The new standard for building user onboarding. With volume pricing starting at $0/month.",
-    images: "/og.png",
+      "The better way to build product adoption. With volume pricing starting at $0/month.",
+    images: "/images/pricing-og.png",
     url: "/pricing",
     locale: "en_US",
   },
@@ -29,8 +30,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pricing – Flows",
     description:
-      "The new standard for building user onboarding. With volume pricing starting at $0/month.",
-    images: "/og.png",
+      "The better way to build product adoption. With volume pricing starting at $0/month.",
+    images: "/images/pricing-og.png",
     creator: "@flows_sh",
   },
 };
@@ -72,6 +73,7 @@ const Page = (): ReactElement => {
       <PricingCalculator />
       <VolumeTable />
       <PricingFaq />
+      <CtaBanner />
     </>
   );
 };

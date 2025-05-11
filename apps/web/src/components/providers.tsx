@@ -1,7 +1,7 @@
 "use client";
 
-import { DarkModeProvider } from "@rbnd/react-dark-mode";
 import { Affiliate } from "components/utils/affiliate";
+import { ThemeProvider } from "next-themes";
 import type { FC, ReactNode } from "react";
 import { Toaster } from "ui";
 
@@ -11,10 +11,10 @@ type Props = {
 
 export const Providers: FC<Props> = ({ children }) => {
   return (
-    <DarkModeProvider>
+    <ThemeProvider attribute="class">
       <Toaster />
       {children}
       <Affiliate />
-    </DarkModeProvider>
+    </ThemeProvider>
   );
 };

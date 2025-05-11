@@ -38,8 +38,8 @@ export const textStyles = defineTextStyles({
     value: {
       fontStyle: "normal",
       fontWeight: "750",
-      fontSize: { base: "26px", sm: "28px", md: "38px" },
-      lineHeight: { base: "32px", sm: "32px", md: "48px" },
+      fontSize: { base: "26px", sm: "28px", md: "36px" },
+      lineHeight: { base: "32px", sm: "32px", md: "44px" },
       fontFamily: "var(--font-main)",
     },
   },

@@ -94,7 +94,6 @@ export const WorkflowsBlocks = (): JSX.Element => {
       borderRightColor="newBorder.neutral"
       borderRightWidth="1px"
       alignItems="center"
-      linesWrapper
       md={{ flexDirection: "row" }}
     >
       <Box md={{ maxWidth: "320px" }} width="100%" px="space32" py="space32">
