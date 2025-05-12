@@ -54,7 +54,7 @@ export const BlogPostPreview = ({ post }: Props): ReactElement => {
         >
           <Link href={href}>{post.title}</Link>
         </Text>
-        <Text as="p" mb="space12" variant="bodyM" color="muted">
+        <Text as="p" mb="space12" variant="bodyM" color="newFg.neutral.muted">
           {post.description}
         </Text>
         <Link

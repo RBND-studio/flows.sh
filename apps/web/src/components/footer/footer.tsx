@@ -162,7 +162,7 @@ export const Footer = (): ReactElement => {
             </Flex>
           </Box>
           <ThemeSwitch />
-          <Text color="subtle" variant="bodyS">
+          <Text color="newFg.neutral.subtle" variant="bodyS">
             © 2025{" "}
             <a
               target="_blank"
@@ -218,7 +218,7 @@ export const Footer = (): ReactElement => {
                   })}
                   key={link.href}
                   variant="bodyS"
-                  color="muted"
+                  color="newFg.neutral.muted"
                 >
                   <SmartLink href={link.href} target={link.target}>
                     {link.title}

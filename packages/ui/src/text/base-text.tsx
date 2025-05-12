@@ -1,5 +1,6 @@
-import { cva, cx } from "@flows/styled-system/css";
+import { css, cva, cx } from "@flows/styled-system/css";
 import { type HTMLStyledProps, styled } from "@flows/styled-system/jsx";
+import { type SystemStyleObject } from "@flows/styled-system/types";
 import { Slot } from "@radix-ui/react-slot";
 import { forwardRef, type HTMLAttributes } from "react";
 
@@ -16,7 +17,7 @@ export type TextProps = HTMLAttributes<HTMLParagraphElement> &
     /**
      * @defaultValue "black"
      */
-    color?: (typeof textVariants.variantMap.color)[number];
+    color?: SystemStyleObject["color"];
 
     asChild?: boolean;
 
@@ -30,7 +31,7 @@ export type TextProps = HTMLAttributes<HTMLParagraphElement> &
 export const BaseText = forwardRef<HTMLParagraphElement, TextProps>(function BaseText(
   {
     as = "p",
-    color = "default",
+    color,
     variant = "bodyS",
     align = "left",
     weight = "400",
@@ -46,7 +47,13 @@ export const BaseText = forwardRef<HTMLParagraphElement, TextProps>(function Bas
   return (
     <Component
       {...props}
-      className={cx(textVariants({ variant, color, align, weight, hideOverflow }), props.className)}
+      className={cx(
+        textVariants({ variant, align, weight, hideOverflow }),
+        css({
+          color: color ?? "newFg.neutral",
+        }),
+        props.className,
+      )}
       ref={ref}
     >
       {children}
@@ -79,42 +86,6 @@ const textVariants = cva({
       },
       "700": {
         fontWeight: "700",
-      },
-    },
-    color: {
-      default: {
-        color: "text",
-      },
-      white: {
-        color: "text.white",
-      },
-      primary: {
-        color: "text.primary",
-      },
-      subtle: {
-        color: "text.subtle",
-      },
-      muted: {
-        color: "text.muted",
-      },
-      // TODO: check how this will play with newControl
-      disabled: {
-        color: "text.disabled",
-      },
-      onPrimary: {
-        color: "text.onPrimary",
-      },
-      success: {
-        color: "text.success",
-      },
-      danger: {
-        color: "text.danger",
-      },
-      inherit: {
-        color: "inherit",
-      },
-      onBlack: {
-        color: "text.onBlack",
       },
     },
     align: {

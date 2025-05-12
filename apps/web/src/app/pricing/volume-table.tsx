@@ -40,7 +40,7 @@ export const VolumeTable = (): ReactElement => {
         <Text variant="title2xl" as="h2">
           Volume pricing
         </Text>
-        <Text variant="bodyL" color="muted">
+        <Text variant="bodyL" color="newFg.neutral.muted">
           Flows offers volume based pricing, the more MTUs you have the less you pay.
         </Text>
       </Section>

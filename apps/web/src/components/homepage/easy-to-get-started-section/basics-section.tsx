@@ -135,7 +135,7 @@ export const BasicsSection = (): ReactNode => {
         <Text as="h3" mb="space12" variant="titleL">
           Everything you need out of the box
         </Text>
-        <Text variant="bodyM" color="muted">
+        <Text variant="bodyM" color="newFg.neutral.muted">
           Industry proven formfactors at your fingertips. <br />
           Ready to be customized to feel native to your product.
         </Text>
@@ -178,7 +178,7 @@ export const BasicsSection = (): ReactNode => {
               <Text mb="space8" as="h4" variant="titleM">
                 {item.title}
               </Text>
-              <Text variant="bodyM" color="muted" mb="space16">
+              <Text variant="bodyM" color="newFg.neutral.muted" mb="space16">
                 {item.description}
               </Text>
               {item.element}

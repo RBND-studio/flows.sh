@@ -6,7 +6,7 @@ export const paragraphCss = css({
   my: "space24",
 
   "& a": {
-    color: "text.primary",
+    color: "newFg.primary",
     textDecoration: "underline",
   },
 });

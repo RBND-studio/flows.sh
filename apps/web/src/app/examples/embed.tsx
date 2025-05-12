@@ -51,7 +51,7 @@ export const Embed: FC<EmbedProps> = ({ src, title }) => {
           >
             <Text
               variant="bodyS"
-              color="muted"
+              color="newFg.neutral.muted"
               overflow="hidden"
               textOverflow="ellipsis"
               whiteSpace="nowrap"

@@ -65,7 +65,12 @@ export const CtaBanner = ({
             <Text as="h2" variant="title3xl" md={{ textAlign: "left" }} textAlign="center">
               {title}
             </Text>
-            <Text variant="bodyL" color="muted" md={{ textAlign: "left" }} textAlign="center">
+            <Text
+              variant="bodyL"
+              color="newFg.neutral.muted"
+              md={{ textAlign: "left" }}
+              textAlign="center"
+            >
               {description}
             </Text>
           </Flex>

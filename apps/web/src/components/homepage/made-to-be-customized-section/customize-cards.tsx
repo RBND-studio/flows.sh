@@ -117,13 +117,13 @@ export const CustomizeCards = (): ReactNode => {
             <Text as="h3" mb="space12" variant="titleL">
               {item.title}
             </Text>
-            <Text mb="space24" variant="bodyM" color="muted">
+            <Text mb="space24" variant="bodyM" color="newFg.neutral.muted">
               {item.description}
             </Text>
             <Link
               className={css({
                 textStyle: "titleL",
-                color: "text",
+                color: "newFg.neutral",
                 display: "flex",
                 alignItems: "center",
                 gap: "space4",

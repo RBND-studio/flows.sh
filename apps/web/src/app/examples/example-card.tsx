@@ -47,7 +47,7 @@ export const ExampleCard = ({
         <Text lineHeight="20px" variant="titleM" as={headingLevel}>
           {title}
         </Text>
-        <Text textWrap="balance" variant="bodyXs" color="muted">
+        <Text textWrap="balance" variant="bodyXs" color="newFg.neutral.muted">
           {description}
         </Text>
       </Flex>

@@ -17,7 +17,7 @@ export const WorkflowsFeatures = (): JSX.Element => {
         <Text mb="space12" variant="titleXl" as="h3">
           Product tours
         </Text>
-        <Text mb="space32" color="muted" variant="bodyL">
+        <Text mb="space32" color="newFg.neutral.muted" variant="bodyL">
           Guide users step-by-step through your application with interactive product tours.
         </Text>
         <Box
@@ -56,7 +56,7 @@ export const WorkflowsFeatures = (): JSX.Element => {
         <Text mb="space12" variant="titleXl" as="h3">
           Embeddable components
         </Text>
-        <Text mb="space32" color="muted" variant="bodyL">
+        <Text mb="space32" color="newFg.neutral.muted" variant="bodyL">
           Embed UI elements directly into your application without needing to redeploy.
         </Text>
         <Box

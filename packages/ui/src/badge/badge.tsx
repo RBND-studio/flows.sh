@@ -31,7 +31,7 @@ const badge = cva({
         background: "newBg.neutral",
         textStyle: "bodyS",
         fontWeight: "600",
-        color: "text.muted",
+        color: "newFg.neutral.muted",
       },
     },
   },

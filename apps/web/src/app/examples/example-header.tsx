@@ -43,7 +43,7 @@ export const ExampleHeader = ({ title, description }: Props): ReactNode => {
       <Text variant="title3xl" as="h1">
         {title}
       </Text>
-      <Text variant="bodyL" color="muted">
+      <Text variant="bodyL" color="newFg.neutral.muted">
         {description}
       </Text>
     </Section>

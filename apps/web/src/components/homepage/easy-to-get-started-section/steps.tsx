@@ -106,7 +106,7 @@ export const Steps = (): ReactNode => {
                 mb="space20"
                 variant="titleL"
                 fontFamily="monospace"
-                color="subtle"
+                color="newFg.neutral.subtle"
                 textAlign="center"
                 md={{
                   textAlign: "left",
@@ -126,7 +126,7 @@ export const Steps = (): ReactNode => {
               </Text>
               <Text
                 variant="bodyM"
-                color="muted"
+                color="newFg.neutral.muted"
                 textAlign="center"
                 md={{
                   textAlign: "left",

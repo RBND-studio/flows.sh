@@ -46,28 +46,28 @@ export default function About(): JSX.Element {
           <Text variant="titleL" mb="space4">
             Speed
           </Text>
-          <Text mb="space24" variant="bodyM" color="muted">
+          <Text mb="space24" variant="bodyM" color="newFg.neutral.muted">
             Flows should be easy to create and deploy. There shouldn’t be any unnecessary dead time
             before an onboarding flow shows up to the user after a page loads.
           </Text>
           <Text variant="titleL" mb="space4">
             Flexibility
           </Text>
-          <Text mb="space24" variant="bodyM" color="muted">
+          <Text mb="space24" variant="bodyM" color="newFg.neutral.muted">
             There shouldn’t be any limits to what you can do with Flows. You should be able to
             create any experience you can imagine.
           </Text>
           <Text variant="titleL" mb="space4">
             Reliability
           </Text>
-          <Text mb="space24" variant="bodyM" color="muted">
+          <Text mb="space24" variant="bodyM" color="newFg.neutral.muted">
             Flows should work every time. They should be robust and resilient to any changes in the
             underlying product.
           </Text>
           <Text variant="titleL" mb="space4">
             Design
           </Text>
-          <Text mb="space32" variant="bodyM" color="muted">
+          <Text mb="space32" variant="bodyM" color="newFg.neutral.muted">
             Flows should have superior UX with beautiful UI. They should be a pleasure to create and
             a joy to experience
           </Text>
@@ -80,7 +80,7 @@ export default function About(): JSX.Element {
         </Box>
       </Section>
       <Section maxWidth="720px!" py="space80">
-        <Text mb="space24" variant="bodyM" align="center" color="muted">
+        <Text mb="space24" variant="bodyM" align="center" color="newFg.neutral.muted">
           Flows is made by{" "}
           <a target="_blank" className={textLink} href={links.rbnd} rel="noopener">
             RBND studio

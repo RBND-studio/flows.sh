@@ -34,6 +34,7 @@ export const semanticTokens = defineSemanticTokens({
       section: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.900}" } },
     },
     text: {
+      // Whole text is deprecated
       DEFAULT: { value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.25}" } },
       muted: { value: { base: "{colors.neutral.650}", _dark: "{colors.neutral.300}" } },
       subtle: { value: { base: "{colors.neutral.500}", _dark: "{colors.neutral.400}" } },
@@ -149,6 +150,7 @@ export const semanticTokens = defineSemanticTokens({
         muted: { value: { base: "{colors.neutral.700}", _dark: "{colors.neutral.250}" } },
         subtle: { value: { base: "{colors.neutral.500}", _dark: "{colors.neutral.400}" } },
         onPrimary: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
+        onBlack: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
       },
       primary: {
         DEFAULT: { value: { base: "{colors.primary.600}", _dark: "{colors.primary-dark.400}" } },

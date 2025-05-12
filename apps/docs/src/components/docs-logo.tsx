@@ -10,10 +10,10 @@ export const DocsLogo = (): JSX.Element => {
       <Box background="border.strong" height="20px" width="1px" />
       <p
         className={css({
-          color: "text.subtle!",
+          color: "newFg.neutral.muted!",
           fastEaseInOut: "color",
           "&:hover": {
-            color: "text!",
+            color: "newFg.neutral!",
           },
         })}
       >

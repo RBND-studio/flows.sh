@@ -155,7 +155,7 @@ const mdxComponents = {
         mb: "space24",
         "& code": {
           backgroundColor: "newBg.neutral.subtle",
-          color: "text",
+          color: "newFg.neutral",
           paddingX: "space4",
           paddingY: "2px",
           borderRadius: "radius4",

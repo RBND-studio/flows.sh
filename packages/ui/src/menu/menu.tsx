@@ -75,7 +75,7 @@ export const MenuItem: FC<MenuItemProps> = forwardRef<HTMLButtonElement, MenuIte
             width: "100%",
             fastEaseInOut: "all",
             textStyle: "bodyS",
-            color: disabled ? "text.disabled" : undefined,
+            color: disabled ? "newFg.neutral.subtle" : undefined,
 
             _highlighted: {
               bg: "newBg.primary.subtle",
@@ -87,7 +87,7 @@ export const MenuItem: FC<MenuItemProps> = forwardRef<HTMLButtonElement, MenuIte
               bg: disabled ? "transparent" : "newBg.neutral.subtle",
             },
             "& svg": {
-              color: disabled ? "text.disabled" : undefined,
+              color: disabled ? "newFg.neutral.subtle" : undefined,
             },
           }),
 

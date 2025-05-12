@@ -50,7 +50,7 @@ export const Carousel = ({ slides, emblaRef }: Props): ReactNode => {
                 <Text mb="space12" variant="titleL">
                   {item.title}
                 </Text>
-                <Text variant="bodyM" color="muted">
+                <Text variant="bodyM" color="newFg.neutral.muted">
                   {item.description}
                 </Text>
               </Box>

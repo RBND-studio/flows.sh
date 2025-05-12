@@ -28,7 +28,7 @@ export const Hero = ({ title, description, actions }: Props): ReactElement => {
         animation="topSlideIn 0.6s ease-out"
         animationDelay="0.3s"
         animationFillMode="forwards"
-        color="muted"
+        color="newFg.neutral.muted"
         variant="bodyL"
         align="center"
         textWrap="balance"
