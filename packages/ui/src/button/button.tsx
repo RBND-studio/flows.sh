@@ -67,7 +67,6 @@ export const Button = memo(
             size={16}
           />
         ) : null}
-
         <Slottable>{children}</Slottable>
         {endIcon ? (
           <Icon size={size} position="end">
