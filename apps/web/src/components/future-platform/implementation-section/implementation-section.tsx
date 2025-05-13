@@ -24,7 +24,7 @@ export const ImplementationSection = (): JSX.Element => {
           <Text mb="space24" variant="title3xl" as="h2">
             Deploy your first workflow in minutes
           </Text>
-          <Text maxWidth="480px" color="muted" variant="bodyL">
+          <Text maxWidth="480px" color="newFg.neutral.muted" variant="bodyL">
             Install the SDK, add UI components, and create your first workflow. With built-in UI
             components, you can start building right away—no complex setups required.
           </Text>

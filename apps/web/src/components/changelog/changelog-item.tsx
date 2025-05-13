@@ -26,14 +26,14 @@ export const ChangelogItem = ({ release, detail }: Props): ReactElement => {
       <Link href={routes.changelog}>
         <Flex gap="space4" alignItems="center" mb="space8">
           <Icon icon={ArrowLeft16} />
-          <Text color="muted">All releases</Text>
+          <Text color="newFg.neutral.muted">All releases</Text>
         </Flex>
       </Link>
-      <Text color="muted">{date}</Text>
+      <Text color="newFg.neutral.muted">{date}</Text>
     </Box>
   ) : (
     <Link href={href}>
-      <Text color="muted">{date}</Text>
+      <Text color="newFg.neutral.muted">{date}</Text>
     </Link>
   );
 

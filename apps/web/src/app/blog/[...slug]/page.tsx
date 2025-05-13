@@ -119,7 +119,7 @@ export default async function PostPage(props: PostProps): Promise<ReactElement> 
             />
           </div>
         ) : null}
-        <Text className={css({ mt: "space16" })} color="subtle" variant="bodyM">
+        <Text className={css({ mt: "space16" })} color="newFg.neutral.subtle" variant="bodyM">
           <span>{post.author}</span>
           <span>{` • `}</span>
           <span>

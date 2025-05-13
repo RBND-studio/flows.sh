@@ -1,12 +1,12 @@
 import { css } from "@flows/styled-system/css";
-import { Flex } from "@flows/styled-system/jsx";
+import { Hero } from "components";
 import { CtaBanner } from "components/cta-banner";
-import { Section, SmartLink } from "components/ui";
+import { SmartLink } from "components/ui";
 import { DOMAIN } from "lib";
 import { links } from "lib/links";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
-import { Button, Text } from "ui";
+import { Button } from "ui";
 
 import { PricingCalculator } from "./pricing-calculator";
 import { PricingFaq } from "./pricing-faq";
@@ -39,37 +39,16 @@ export const metadata: Metadata = {
 const Page = (): ReactElement => {
   return (
     <>
-      <Section
-        display="flex"
-        flexDirection="column"
-        alignItems="center"
-        gap="space24"
-        pt="space40"
-        pb="space64"
-        md={{ pt: "space80" }}
-      >
-        <Flex flexDirection="column" gap="space12" maxW="800px">
-          <Text align="center" as="h1" variant="title4xl">
-            Pricing
-          </Text>
-          <Text
-            align="center"
-            className={css({
-              maxWidth: "600px",
-              marginX: "auto",
-              textWrap: "balance",
-            })}
-            color="muted"
-            variant="bodyL"
-          >
-            Flows offer a usage-based pricing that starts at $0/month with a generous free forever
-            tier.
-          </Text>
-        </Flex>
-        <Button className={css({ shadow: "neutralFocus" })} asChild size="large">
-          <SmartLink href={links.signUp}>Sign up for free</SmartLink>
-        </Button>
-      </Section>
+      <Hero
+        title="Pricing"
+        description="Flows offer a usage-based pricing that starts at $0/month with a generous free forever
+            tier."
+        actions={
+          <Button className={css({ shadow: "neutralFocus" })} asChild size="large">
+            <SmartLink href={links.signUp}>Sign up for free</SmartLink>
+          </Button>
+        }
+      />
       <PricingCalculator />
       <VolumeTable />
       <PricingFaq />

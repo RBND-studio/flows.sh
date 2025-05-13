@@ -14,7 +14,7 @@ export const WorkflowsSection = (): JSX.Element => {
         <Text mb="space24" variant="title3xl" as="h2">
           Design the user journey
         </Text>
-        <Text maxWidth="480px" color="muted" variant="bodyL">
+        <Text maxWidth="480px" color="newFg.neutral.muted" variant="bodyL">
           From simple banners to onboarding checklists and product tours. Design flexible, custom
           experiences that integrate directly into your application.
         </Text>

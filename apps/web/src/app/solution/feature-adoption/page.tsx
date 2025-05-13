@@ -69,7 +69,7 @@ const Page = (): ReactElement => {
       <Section maxWidth="640px!" mx="auto">
         {questions.map((question) => (
           <FaqAccordion headingLevel="h3" key={question.title} title={question.title}>
-            <Text color="muted" variant="bodyL">
+            <Text color="newFg.neutral.muted" variant="bodyL">
               {question.content}
             </Text>
           </FaqAccordion>

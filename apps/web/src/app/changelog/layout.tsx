@@ -45,13 +45,13 @@ export default function ChangelogLayout({ children }: Props): JSX.Element {
         <Text as="h1" variant="title4xl">
           Changelog
         </Text>
-        <Text color="muted" variant="bodyM">
+        <Text color="newFg.neutral.muted" variant="bodyM">
           New updates and improvements to Flows.
         </Text>
         <a
           className={css({
             textStyle: "bodyM",
-            color: "text.primary",
+            color: "newFg.primary",
             mt: "space8",
           })}
           href={links.twitter}

@@ -35,7 +35,7 @@ export const PlaceholderTooltip = ({
       className={className}
     >
       <Text variant="titleM">{title}</Text>
-      <Text variant="bodyXs" color="muted">
+      <Text variant="bodyXs" color="newFg.neutral.muted">
         {description}
       </Text>
       <Flex width="100%" alignItems="center" justifyContent="space-between">

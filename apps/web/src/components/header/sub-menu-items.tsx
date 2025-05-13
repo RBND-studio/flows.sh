@@ -58,7 +58,7 @@ export const SolutionsSubItems = ({ close }: Props): ReactNode => {
             <Text variant="bodyS" weight="700">
               {solution.title}
             </Text>
-            <Text color="muted">{solution.description}</Text>
+            <Text color="newFg.neutral.muted">{solution.description}</Text>
           </Flex>
         </Link>
       ))}

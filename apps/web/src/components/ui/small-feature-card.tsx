@@ -71,7 +71,7 @@ export const SmallFeatureCard = ({
           <Text align="center" mb="space4" variant="titleS">
             {title}
           </Text>
-          <Text align="center" textWrap="balance" variant="bodyS" color="muted">
+          <Text align="center" textWrap="balance" variant="bodyS" color="newFg.neutral.muted">
             {description}
           </Text>
         </Flex>

@@ -56,7 +56,7 @@ export const PricingCalculator = (): ReactElement => {
             </Text>
             <Flex gap="space8" alignItems="baseline">
               <Text variant="titleL">{formatNumberWithThousandSeparator(selectedValue)}</Text>
-              <Text variant="bodyL" color="muted">
+              <Text variant="bodyL" color="newFg.neutral.muted">
                 MTUs / month
               </Text>
             </Flex>
@@ -70,16 +70,16 @@ export const PricingCalculator = (): ReactElement => {
             onValueChange={(value) => handleSliderChange(value[0])}
           />
           <Flex justifyContent="space-between" mt="space16">
-            <Text variant="bodyS" color="muted">
+            <Text variant="bodyS" color="newFg.neutral.muted">
               {FREE_LIMIT}
             </Text>
-            <Text variant="bodyS" color="muted">
+            <Text variant="bodyS" color="newFg.neutral.muted">
               2k
             </Text>
-            <Text variant="bodyS" color="muted">
+            <Text variant="bodyS" color="newFg.neutral.muted">
               10k
             </Text>
-            <Text variant="bodyS" color="muted">
+            <Text variant="bodyS" color="newFg.neutral.muted">
               50k
             </Text>
           </Flex>
@@ -88,7 +88,7 @@ export const PricingCalculator = (): ReactElement => {
           <Text variant="titleL">Estimate</Text>
           <Flex alignItems="baseline" gap="space8">
             <Text variant="title2xl">${estimatedCost}</Text>
-            <Text variant="bodyL" color="muted">
+            <Text variant="bodyL" color="newFg.neutral.muted">
               / month
             </Text>
           </Flex>
@@ -97,7 +97,7 @@ export const PricingCalculator = (): ReactElement => {
       <Section>
         <Text
           variant="bodyM"
-          color="muted"
+          color="newFg.neutral.muted"
           align="center"
           className={css({
             mt: "space24",

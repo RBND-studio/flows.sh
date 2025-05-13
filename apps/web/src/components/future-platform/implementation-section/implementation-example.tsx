@@ -105,7 +105,7 @@ export const ImplementationExample: FC<Props> = ({ codeExample }) => {
         <Text mb="space12" variant="titleXl" as="h3">
           Bring your own UI
         </Text>
-        <Text maxWidth={528} mb="space32" color="muted" variant="bodyL">
+        <Text maxWidth={528} mb="space32" color="newFg.neutral.muted" variant="bodyL">
           Infinite customization. Just add your own UI components and use them in workflows to
           create a native user experience.
         </Text>

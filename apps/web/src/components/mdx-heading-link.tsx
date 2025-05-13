@@ -46,7 +46,7 @@ export const HeadingLink = ({
           className={css({
             scrollMarginTop: "space80",
             display: "flex",
-            color: "text",
+            color: "newFg.neutral",
           })}
         >
           {children}

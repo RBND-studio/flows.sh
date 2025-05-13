@@ -46,7 +46,7 @@ export const PlaceholderModal = ({
       <Text mb="space4" align="center" variant="titleS">
         {title}
       </Text>
-      <Text mb="space12" align="center" variant="bodyXs">
+      <Text mb="space12" color="newFg.neutral.muted" align="center" variant="bodyXs">
         {description}
       </Text>
       {/* Button is rendered as div to prevent taking focus and messing with aria-hidden */}

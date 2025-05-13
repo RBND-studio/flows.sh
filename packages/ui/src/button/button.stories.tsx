@@ -73,7 +73,7 @@ export const Grid: Story = {
                       >
                         {variant}
                       </Button>
-                      <Text variant="bodyXs" color="muted" align="center">
+                      <Text variant="bodyXs" color="newFg.neutral.muted" align="center">
                         {[size, shadow, disabled, loading, variant].join(", ")}
                       </Text>
                     </Flex>

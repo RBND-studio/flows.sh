@@ -25,7 +25,7 @@ export const Toaster: FC = () => {
               justifyContent: "center",
             },
             backgroundColor: "pane.bg.elevated",
-            color: "text",
+            color: "newFg.neutral",
             borderColor: "newBorder.neutral",
           }),
           title: css({
@@ -33,7 +33,7 @@ export const Toaster: FC = () => {
             fontWeight: "600!",
           }),
           description: css({
-            color: "text.muted!",
+            color: "newFg.neutral.muted!",
           }),
           success: css({
             backgroundColor: "newBg.success.muted",
