@@ -26,7 +26,7 @@ const Slider = React.forwardRef<
   >
     <SliderPrimitive.Track
       className={css({
-        height: "12px",
+        height: "8px",
         width: "100%",
         overflow: "hidden",
         borderRadius: "6px",
@@ -46,8 +46,8 @@ const Slider = React.forwardRef<
     <SliderPrimitive.Thumb
       className={css({
         display: "block",
-        height: "32px",
-        width: "32px",
+        height: "28px",
+        width: "28px",
         borderRadius: "100%",
         borderWidth: "3px",
         borderStyle: "solid",
