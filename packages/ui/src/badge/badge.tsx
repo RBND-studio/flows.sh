@@ -26,8 +26,8 @@ const badge = cva({
     },
     color: {
       default: {
-        bor: "1px",
-        borderColor: "border.strong",
+        borderWidth: "1px",
+        borderColor: "newBorder.neutral.strong",
         background: "newBg.neutral",
         textStyle: "bodyS",
         fontWeight: "600",

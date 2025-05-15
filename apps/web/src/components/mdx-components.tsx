@@ -214,8 +214,8 @@ const mdxComponents = {
         mt: "space24",
         mb: "space16",
         pl: "space24",
-        borderLeft: "2px solid",
-        borderColor: "border.primary",
+        borderLeftWidth: "2px",
+        borderColor: "newBorder.primary",
       })}
       variant="bodyL"
       {...props}
@@ -228,8 +228,7 @@ const mdxComponents = {
         my: "space48",
         border: "none",
         borderTopWidth: "1px",
-        borderTopStyle: "solid",
-        borderTopColor: "border.strong",
+        borderTopColor: "newBorder.neutral.strong",
       })}
       {...props}
     />

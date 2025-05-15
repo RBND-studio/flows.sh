@@ -49,6 +49,7 @@ export const semanticTokens = defineSemanticTokens({
       danger: { value: { base: "{colors.danger.500}", _dark: "{colors.danger-dark.400}" } },
     },
     border: {
+      // Whole border is deprecated
       DEFAULT: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.750}" } },
       subtle: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.850}" } },
       strong: { value: { base: "{colors.neutral.150}", _dark: "{colors.neutral.650}" } },
@@ -168,13 +169,14 @@ export const semanticTokens = defineSemanticTokens({
     },
 
     newBorder: {
-      DEFAULT: { value: { base: "{colors.neutral.150}", _dark: "{colors.neutral.700}" } },
+      DEFAULT: { value: { base: "{colors.neutral.125}", _dark: "{colors.neutral.750}" } },
       neutral: {
-        DEFAULT: { value: { base: "{colors.neutral.150}", _dark: "{colors.neutral.700}" } },
+        DEFAULT: { value: { base: "{colors.neutral.125}", _dark: "{colors.neutral.750}" } },
         placeholder: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.800}" } },
         muted: { value: { base: "{colors.neutral.75}", _dark: "{colors.neutral.850}" } },
         strong: { value: { base: "{colors.neutral.200}", _dark: "{colors.neutral.600}" } },
         onBlack: { value: { base: "{colors.neutral.700}", _dark: "{colors.neutral.750}" } },
+        white: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
       },
       primary: {
         DEFAULT: { value: { base: "{colors.primary.500}", _dark: "{colors.primary-dark.400}" } },

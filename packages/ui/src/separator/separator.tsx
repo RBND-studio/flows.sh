@@ -21,7 +21,7 @@ export const Separator = forwardRef<Ref, Props>(function Separator(props, ref) {
       {...props}
       className={cx(
         css({
-          bg: "border",
+          bg: "newBorder.neutral",
           h: props.orientation === "vertical" ? "100%" : "1px",
           w: props.orientation === "vertical" ? "1px" : "100%",
         }),

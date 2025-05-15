@@ -73,7 +73,8 @@ export const Dialog: FC<Props> = ({ open, onOpenChange, trigger, children, maxWi
 const contentCss = cva({
   base: {
     backgroundColor: "pane.bg.main",
-    bor: "1px",
+    borderWidth: "1px",
+    borderColor: "newBorder.neutral",
     width: "100%",
     borderRadius: "radius12",
     position: "fixed",

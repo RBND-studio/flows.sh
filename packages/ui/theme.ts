@@ -2,13 +2,7 @@ import type { Config } from "@pandacss/dev";
 import { defineTokens } from "@pandacss/dev";
 
 import {
-  bor,
-  borBottom,
-  borLeft,
-  borRight,
-  borTop,
   breakpoints,
-  cardWrap,
   durations,
   easings,
   fastEaseInOut,
@@ -45,12 +39,6 @@ export const conditions: Config["conditions"] = {};
 
 export const utilities: Config["utilities"] = {
   extend: {
-    bor,
-    borBottom,
-    borTop,
-    borLeft,
-    borRight,
-    cardWrap,
     fastEaseInOut,
     superFastEaseInOut,
   },
