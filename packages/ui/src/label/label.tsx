@@ -35,7 +35,7 @@ export const Label = forwardRef<HTMLLabelElement, Props>(function Label(
         <Text
           as="span"
           className={css({ ml: "space4" })}
-          color={disabled ? "disabled" : "subtle"}
+          color={disabled ? "newControl.fg.disabled" : "newFg.neutral.subtle"}
           variant="bodyXxs"
         >
           (optional)

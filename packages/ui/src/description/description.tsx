@@ -9,6 +9,8 @@ type Props = {
   disabled?: boolean;
 };
 
-export const Description: FC<Props> = ({ color = "muted", ...props }) => {
-  return <Text color={props.disabled ? "disabled" : color} variant="bodyXxs" {...props} />;
+export const Description: FC<Props> = ({ color = "newFg.neutral.muted", ...props }) => {
+  return (
+    <Text color={props.disabled ? "newFg.neutral.subtle" : color} variant="bodyXxs" {...props} />
+  );
 };
