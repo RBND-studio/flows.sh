@@ -51,7 +51,7 @@ const Slider = React.forwardRef<
         borderRadius: "100%",
         borderWidth: "3px",
         borderStyle: "solid",
-        borderColor: "border.white",
+        borderColor: "newBorder.neutral.white",
         backgroundColor: "dataViz.blue.fg",
         shadow: "l1",
         outline: "none",

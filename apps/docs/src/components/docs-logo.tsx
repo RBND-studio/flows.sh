@@ -7,7 +7,7 @@ export const DocsLogo = (): JSX.Element => {
   return (
     <Flex alignItems="center" gap="space12">
       <Logo type="type" size={20} />
-      <Box background="border.strong" height="20px" width="1px" />
+      <Box background="newBorder.neutral.strong" height="20px" width="1px" />
       <p
         className={css({
           color: "newFg.neutral.muted!",

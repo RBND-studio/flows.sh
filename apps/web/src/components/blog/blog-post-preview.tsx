@@ -35,7 +35,7 @@ export const BlogPostPreview = ({ post }: Props): ReactElement => {
                 mb: "space16",
                 borderWidth: "1px",
                 borderStyle: "solid",
-                borderColor: "border.strong",
+                borderColor: "newBorder.neutral",
               })}
               height={600}
               src={post.image}
