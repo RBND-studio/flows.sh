@@ -62,7 +62,7 @@ export const featureHintContent: ContentType = {
 
       <Image
         src={workflowPng}
-        alt="Flows workflow setup for the Card example" //TODO replace with actual alt text
+        alt="Flows workflow setup for the Feature hint example"
         width={1800}
         height={1040}
         className={css({

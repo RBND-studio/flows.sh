@@ -59,6 +59,8 @@ export const links = (domain = "flows.sh") => ({
     floatinChecklistPage: `https://${domain}/examples/floating-checklist`,
     featureHint: "https://feature-hint.examples.flows.sh",
     featureHintSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/feature-hint",
+    productHuntLaunchAnnouncement: "https://product-hunt-launch-announcement.examples.flows.sh",
+    productHuntLaunchAnnouncementSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/product-hunt-launch-announcement",
     // --PLOP_NEW_EXAMPLE_LINK--
   },
   docs: {
