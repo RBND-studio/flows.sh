@@ -8,6 +8,7 @@ import { interactiveFeatureAnnouncementContent } from "./interactive-feature-ann
 import { modalContent } from "./modal/content";
 import { newFeatureContent } from "./new-feature-badge/content";
 import { newFeatureCardContent } from "./new-feature-card/content";
+import { productHuntLaunchAnnouncementContent } from "./product-hunt-launch-announcement/content";
 import { tourContent } from "./tour/content";
 import { type ContentType } from "./types";
 
@@ -23,4 +24,5 @@ export const examplesContent: ContentType[] = [
   newFeatureCardContent,
   newFeatureContent,
   tourContent,
+  productHuntLaunchAnnouncementContent,
 ];

@@ -115,7 +115,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
         <Description
           disabled={disabled}
           className={descriptionClassName}
-          color={error ? "danger" : "muted"}
+          color={error ? "newFg.danger" : "newFg.neutral.muted"}
         >
           {description}
         </Description>

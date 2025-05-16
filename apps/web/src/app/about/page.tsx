@@ -71,7 +71,7 @@ export default function About(): JSX.Element {
             Flows should have superior UX with beautiful UI. They should be a pleasure to create and
             a joy to experience
           </Text>
-          <Text color="subtle" align="center">
+          <Text color="newFg.neutral.subtle" align="center">
             Learn more about why we created Flows in our blog post{" "}
             <Link className={textLink} href={routes.blogPostDetail({ postId: "announcing-flows" })}>
               Announcing Flows
