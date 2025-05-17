@@ -1,6 +1,6 @@
 import { css } from "@flows/styled-system/css";
-import { Box, Flex } from "@flows/styled-system/jsx";
-import { PlaceholderModal, PlaceholderTable, PlaceholderTooltip } from "components/ui";
+import { Flex } from "@flows/styled-system/jsx";
+import { CustomUIComponentsIllustration, EmbeddableComponentsIllustrations } from "components/ui";
 import { ArrowRight16 } from "icons";
 import { links } from "lib/links";
 import Link from "next/link";
@@ -14,26 +14,7 @@ const cards = [
       "Render inline components directly within your app’s UI. Don’t just put tooltips over your product.",
     linkUrl: links.examples.cardPage,
     linkText: "See example",
-    element: (
-      <Box
-        h="100%"
-        overflow="hidden"
-        p="space8"
-        role="img"
-        maskImage="linear-gradient(
-            rgb(0, 0, 0) 70%,
-            rgba(0, 0, 0, 0.886) 76.6%,
-            rgba(0, 0, 0, 0.733) 81.4%, 
-            rgba(0, 0, 0, 0.557) 85.3%,
-            rgba(0, 0, 0, 0.376) 88.3%,
-            rgba(0, 0, 0, 0.21) 91%, 
-            rgba(0, 0, 0, 0.082) 94%, 
-            rgba(0, 0, 0, 0.01) 97.6%,
-            rgba(0, 0, 0, 0) 100%)"
-      >
-        <PlaceholderTable />
-      </Box>
-    ),
+    element: <EmbeddableComponentsIllustrations />,
   },
   {
     title: "Custom UI components",
@@ -41,49 +22,7 @@ const cards = [
       "Leverage our APIs and your design system for full control. Build your own components and create a native experience.",
     linkUrl: links.examples.floatinChecklistPage,
     linkText: "See example",
-    element: (
-      <Box
-        h="100%"
-        overflow="hidden"
-        role="img"
-        maskImage="linear-gradient(
-            rgb(0, 0, 0) 70%,
-            rgba(0, 0, 0, 0.886) 76.6%,
-            rgba(0, 0, 0, 0.733) 81.4%, 
-            rgba(0, 0, 0, 0.557) 85.3%,
-            rgba(0, 0, 0, 0.376) 88.3%,
-            rgba(0, 0, 0, 0.21) 91%, 
-            rgba(0, 0, 0, 0.082) 94%, 
-            rgba(0, 0, 0, 0.01) 97.6%,
-            rgba(0, 0, 0, 0) 100%)"
-      >
-        <Flex
-          alignItems="center"
-          justifyContent="center"
-          layerStyle="dotBackground"
-          width="100%"
-          height="288px"
-          borderRadius={6}
-          p="space12"
-          gap="space24"
-          aria-hidden="true"
-        >
-          <PlaceholderTooltip
-            title="Click here"
-            description="Tooltips are great for guiding users through a process."
-          />
-
-          <PlaceholderModal
-            title="New feature announcement"
-            description="Modals are better for catching attention or more information."
-            className={css({
-              display: "none",
-              md: { display: "flex" },
-            })}
-          />
-        </Flex>
-      </Box>
-    ),
+    element: <CustomUIComponentsIllustration />,
   },
 ];
 

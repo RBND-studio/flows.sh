@@ -102,4 +102,24 @@ export const keyframes: CssKeyframes = {
       opacity: 0,
     },
   },
+  teleprompter: {
+    "0%": {
+      transform: "translateX(0)",
+    },
+    "100%": {
+      transform: "translateX(-50%)",
+    },
+  },
+  embeddableBoxKeyframes: {
+    "0%, 10%, 100%": { height: 0 },
+    "20%, 95%": { height: "100vh" },
+  },
+  embeddableSlotKeyframes: {
+    "0%, 10%, 35%, 100%": { opacity: 0 },
+    "20%, 30%": { opacity: 1 },
+  },
+  embeddableElementsKeyframes: {
+    "0%, 30%, 100%": { opacity: 0 },
+    "35%, 95%": { opacity: 1 },
+  },
 };

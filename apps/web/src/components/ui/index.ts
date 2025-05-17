@@ -1,6 +1,7 @@
 export * from "./faq-accordion";
 export * from "./heading-copy-button";
 export * from "./hero-callout";
+export * from "./illustrations";
 export * from "./line-waves";
 export * from "./lines";
 export * from "./placeholder-application";
