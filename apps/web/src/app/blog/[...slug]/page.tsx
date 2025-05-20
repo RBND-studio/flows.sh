@@ -108,6 +108,7 @@ export default async function PostPage(props: PostProps): Promise<ReactElement> 
                 borderRadius: "radius12",
                 mt: "space32",
                 borderWidth: "1px",
+                borderStyle: "solid",
                 borderColor: "newBorder.neutral",
               })}
               height={600}
