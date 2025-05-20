@@ -28,6 +28,7 @@ export const SidebarBanner = (props: Props) => {
     >
       <Link
         href={props.href}
+        target="_blank"
         className="relative flex flex-row-reverse gap-0.5 overflow-hidden rounded-lg border bg-white shadow-md transition-all hover:shadow-lg dark:bg-neutral-900 md:flex-col"
       >
         <Illustration />
