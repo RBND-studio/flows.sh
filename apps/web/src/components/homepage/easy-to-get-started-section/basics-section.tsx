@@ -35,12 +35,44 @@ const cards = [
       </Flex>
     ),
   },
-  // TODO: Uncomment when we have a hint component
-  // {
-  //   title: "Hint",
-  //   description: "Pulsating orb that draws attention to an element.",
-  //   element: <Box />,
-  // },
+  {
+    title: "Hint",
+    description: "Pulsating orb that draws attention to an element.",
+    element: (
+      <Flex flexDirection="column" alignItems="center" role="img">
+        <Box
+          mt="space4"
+          backgroundColor="newBg.primary"
+          borderRadius="50%"
+          aria-hidden="true"
+          width={16}
+          height={16}
+          position="relative"
+          _after={{
+            content: '""',
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            top: 0,
+            left: 0,
+            borderRadius: "50%",
+            backgroundColor: "newBg.primary",
+            animation: "ping 1.5s infinite",
+          }}
+        >
+          <Box width={14} height={14} backgroundColor="newBg.primary" borderRadius="100%" />
+        </Box>
+        <Box width={176} pt="space12" right={0} md={{ right: "unset" }}>
+          <PlaceholderTooltip
+            title="New feature: Issues"
+            description="This is a hint that pulsates to draw attention."
+            buttonLabel="Learn more"
+            showProgress={false}
+          />
+        </Box>
+      </Flex>
+    ),
+  },
   {
     title: "Modal",
     description: "Catch attention to announce important information.",
@@ -140,25 +172,22 @@ export const BasicsSection = (): ReactNode => {
           Ready to be customized to feel native to your product.
         </Text>
         <Grid
+          mt={{
+            base: "space16",
+            md: "space24",
+            lg: "space32",
+          }}
           gap="space16"
           mb="-28px"
           gridTemplateColumns={{
             base: "repeat(1, 1fr)",
-            md: "repeat(3, 1fr)",
+            md: "repeat(2, 1fr)",
+            lg: "repeat(4, 1fr)",
           }}
         >
           {cards.map((item) => (
             <Box
               key={item.title}
-              _first={{
-                mt: "space24",
-              }}
-              md={{
-                mt: "space32",
-                _first: {
-                  mt: "space32",
-                },
-              }}
               p="space16"
               borderWidth={1}
               borderColor="newBorder.neutral.placeholder"

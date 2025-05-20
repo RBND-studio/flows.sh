@@ -17,13 +17,14 @@ To integrate the modal component into your application, install the Flows compon
 
 When using the modal component in a workflow, you can define the following properties:
 
-| Name              | Type    | Notes                                                                   |
-| ----------------- | ------- | ----------------------------------------------------------------------- |
-| Title             | string  | The title of the modal.                                                 |
-| Body              | string  | The body of the modal. Supports HTML.                                   |
-| Continue text     | string  | The text of the continue button. When empty the button is not rendered. |
-| Show close button | boolean | Show a close button in the top right corner. Default is `false`.        |
-| Hide overlay      | boolean | Hide the overlay when the modal is open. Default is `false`.            |
+| Name              | Type    | Notes                                                                                  |
+| ----------------- | ------- | -------------------------------------------------------------------------------------- |
+| Title             | string  | The title of the modal.                                                                |
+| Body              | string  | The body of the modal. Supports HTML.                                                  |
+| Continue text     | string  | The text of the continue button. When empty the button is not rendered.                |
+| Show close button | boolean | Show a close button in the top right corner. Default is `false`.                       |
+| Hide overlay      | boolean | Hide the overlay when the modal is open. Default is `false`.                           |
+| Page targeting    | ---     | What page the modal should be shown on. [Learn more](/block-properties/page-targeting) |
 
 **Exit nodes:**
 
@@ -42,7 +43,7 @@ When using the modal component in a tour, you can define additional properties t
 | Previous text     | string  | The text of the previous button. When empty the button is not rendered.                            |
 | Show close button | boolean | Show a close button in the top right corner. Default is `false`.                                   |
 | Hide overlay      | boolean | Hide the overlay when the modal is open. Default is `false`.                                       |
-| Page targeting    | ---     | What page the tour should be shown on. [Learn more](/block-properties/page-targeting)              |
+| Page targeting    | ---     | What page the modal should be shown on. [Learn more](/block-properties/page-targeting)             |
 | Wait              | ---     | Used to define what interaction should trigger the next step. [Learn more](/block-properties/wait) |
 
 **Exit nodes:**
