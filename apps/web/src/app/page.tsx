@@ -1,6 +1,7 @@
 import { css } from "@flows/styled-system/css";
 import {
   AllPurposePlatformSection,
+  CutTheCostsSection,
   EasyToGetStartedSection,
   ExamplesSection,
   Hero,
@@ -50,6 +51,7 @@ const Page = (): ReactElement => {
       <EasyToGetStartedSection />
       <MadeToBeCustomizedSection />
       <MoreSection />
+      <CutTheCostsSection />
 
       <ExamplesSection />
       <CtaBanner title="Get started today!" />

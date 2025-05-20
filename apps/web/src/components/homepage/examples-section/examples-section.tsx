@@ -27,7 +27,6 @@ export const ExamplesSection = (): ReactElement => {
             </Link>
           </Button>
         }
-        compact
       />
 
       <Section>
