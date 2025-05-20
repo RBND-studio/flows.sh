@@ -5,6 +5,7 @@ import { Flex } from "@flows/styled-system/jsx";
 import { EndLine, LinesWrapper, NewLine, NewLineDecorator, Section } from "components/ui";
 import useEmblaCarousel from "embla-carousel-react";
 import { type ReactNode } from "react";
+import { routes } from "routes";
 import { Text } from "ui";
 
 import { Carousel } from "./carousel";
@@ -18,17 +19,20 @@ const carouselContent = [
     title: "User onboarding",
     description: "Build engaging onboarding flows that guide users to value and drive activation.",
     viz: <UserOnboardingViz />,
+    linkUrl: routes.solution.userOnboarding,
   },
   {
     title: "Feature adoption",
     description: "Support releases with engaging announcements, embeddable banners, and guides.",
     viz: <FeatureAdoptionViz />,
+    linkUrl: routes.solution.featureAdoption,
   },
   {
     title: "Product-led growth",
     description:
       "Build growth loops to drive KPIs and increase the effect of sales, support and marketing efforts.",
     viz: <PLGViz />,
+    linkUrl: routes.solution.productLedGrowth,
   },
 ];
 

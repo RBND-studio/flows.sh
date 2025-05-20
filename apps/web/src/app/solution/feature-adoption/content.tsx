@@ -3,12 +3,12 @@ import { Box, Flex } from "@flows/styled-system/jsx";
 import { links } from "lib/links";
 import Link from "next/link";
 import { routes } from "routes";
-import { FREE_LIMIT } from "shared";
+import { FREE_LIMIT, pricingTiers } from "shared";
 
 import {
+  CustomUIComponentsIllustration,
+  EmbeddableComponentsIllustrations,
   PlaceholderApplication,
-  PlaceholderModal,
-  PlaceholderTable,
   PlaceholderTooltip,
 } from "../../../components/ui";
 import { WorkflowsExample } from "../workflows-example";
@@ -18,28 +18,7 @@ export const riverFeatures = [
     title: "Embeddable components",
     description:
       "Add feature announcements directly into your application without needing to update code or re-deploying.",
-    visual: (
-      <Box
-        overflow="hidden"
-        width="100%"
-        height="100%"
-        position="relative"
-        background="pane.bg.main"
-        role="img"
-      >
-        <Box
-          bottom={0}
-          left={0}
-          height={120}
-          background="linear-gradient(0deg, token(colors.pane.bg.elevated), transparent)"
-          width="100%"
-          aria-hidden="true"
-          position="absolute"
-        />
-        <PlaceholderTable />
-      </Box>
-    ),
-    first: true,
+    visual: <EmbeddableComponentsIllustrations />,
   },
   {
     title: "In-app product tours",
@@ -73,32 +52,7 @@ export const riverFeatures = [
     title: "Flexible solution",
     description:
       "Flows comes with a set of built-in UI components to get you started. Not enough? Create your own components with custom styling and logic to create a native experience.",
-    visual: (
-      <Flex
-        alignItems="center"
-        justifyContent="center"
-        width="100%"
-        height="100%"
-        p="space12"
-        gap="space24"
-        role="img"
-        layerStyle="dotBackground"
-      >
-        <PlaceholderTooltip
-          title="Click here"
-          description="Tooltips are great for guiding users through a process."
-        />
-
-        <PlaceholderModal
-          title="New feature announcement"
-          description="Modals are better for catching attention or more information."
-          className={css({
-            display: "none",
-            md: { display: "flex" },
-          })}
-        />
-      </Flex>
-    ),
+    visual: <CustomUIComponentsIllustration />,
   },
   {
     title: "Part of a workflow",
@@ -111,11 +65,11 @@ export const riverFeatures = [
         alignItems="center"
         justifyContent="center"
         backgroundColor="pane.bg.secondary"
+        layerStyle="dotBackground"
       >
         <WorkflowsExample />
       </Flex>
     ),
-    last: true,
   },
 ];
 
@@ -147,8 +101,8 @@ export const questions = [
         <br />
         <br />
         However, Flows is a “Headless product adoption platform”, so having a front-end developer on
-        your team can be beneficial for fully leveraging its customization capabilities by creating
-        custom UI components for your workflows.
+        your team can be beneficial to fully leverage its customization capabilities by creating
+        custom UI components for your workflows
       </>
     ),
   },
@@ -173,8 +127,8 @@ export const questions = [
     content: (
       <>
         Flows is free for up to {FREE_LIMIT} monthly tracked users (MTUs). After that, the pricing
-        starts at $0.075 per MTU. Our pricing is volume based, so the more active users you have,
-        the lower the less you pay per user. For more information, check out our{" "}
+        starts at ${pricingTiers.tier1.price} per MTU. Our pricing is volume based, so the more
+        active users you have, the less you pay per user. For more information, check out our{" "}
         <Link className={css({ textDecoration: "underline" })} href={routes.pricing}>
           pricing page
         </Link>

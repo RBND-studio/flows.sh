@@ -25,22 +25,17 @@ const Page = (): ReactElement => {
         title="Improve feature adoption"
         description="Support releases with engaging announcements, embeddable banners, and guides. Nudge users to try new features and get the most out of your product."
         actions={
-          <>
-            <SignupClick>
-              <Button
-                className={css({
-                  shadow: "neutralFocus",
-                })}
-                asChild
-                size="large"
-              >
-                <a href={links.signUp}>Get started</a>
-              </Button>
-            </SignupClick>
-            <Button variant="secondary" asChild size="large">
-              <a href={links.docs.contact}>Talk to us</a>
+          <SignupClick>
+            <Button
+              className={css({
+                shadow: "neutralFocus",
+              })}
+              asChild
+              size="large"
+            >
+              <a href={links.signUp}>Get started for free</a>
             </Button>
-          </>
+          </SignupClick>
         }
       />
       <HeroIllustration defaultTab="Product adoption" />

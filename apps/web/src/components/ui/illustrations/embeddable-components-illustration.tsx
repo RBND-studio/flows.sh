@@ -11,6 +11,7 @@ export const EmbeddableComponentsIllustrations = (): ReactNode => {
       width="100%"
       p="space24"
       role="img"
+      bg="pane.bg.elevated"
       maskImage="linear-gradient(
                 rgb(0, 0, 0) 70%,
                 rgba(0, 0, 0, 0.886) 76.6%,

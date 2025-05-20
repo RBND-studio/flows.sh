@@ -29,7 +29,6 @@ export const CustomUIComponentsIllustration = (): ReactNode => {
   return (
     <Box
       h="100%"
-      width="100%"
       overflow="hidden"
       py="space24"
       role="img"

@@ -13,9 +13,9 @@ import { SharedFeatures } from "../shared-features";
 import { questions, riverFeatures } from "./content";
 
 export const metadata: Metadata = {
-  title: "User Onboarding – Flows",
+  title: "Product Led Growth – Flows",
   description:
-    "Build engaging onboarding flows that guide users to value. Improve new user experience and drive activation while being on-brand.",
+    "Build engaging growth loops to drive company KPIs and increase the effectiveness of your sales, support and marketing efforts.",
 };
 
 const Page = (): ReactElement => {
@@ -24,12 +24,12 @@ const Page = (): ReactElement => {
       <Hero
         title={
           <>
-            Create powerful
+            Create growth loops
             <br />
-            user onboarding
+            that drive revenue
           </>
         }
-        description="Build engaging onboarding flows that guide users to value. Improve new user experience and drive activation while being on-brand."
+        description="Build engaging growth loops to drive company KPIs and increase the effectiveness of your sales, support and marketing efforts."
         actions={
           <SignupClick>
             <Button
@@ -39,17 +39,18 @@ const Page = (): ReactElement => {
               asChild
               size="large"
             >
-              <a href={links.signUp}>Start onboarding for free</a>
+              <a href={links.signUp}>Get started for free</a>
             </Button>
           </SignupClick>
         }
       />
 
-      <HeroIllustration />
+      <HeroIllustration defaultTab="Growth experiments" />
 
       <SectionIntro
-        title="How Flows works for user onboarding"
-        description="Power-up your user onboarding with flexible tools that help you create engaging experiences for your users."
+        title="How Flows works for product-led growth"
+        description="
+        Leverage the power of Flows to build presonalized growth campaigns that drive user engagement and retention."
         className={css({
           mb: "space80",
           md: { mb: "0" },

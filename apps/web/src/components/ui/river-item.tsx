@@ -1,5 +1,4 @@
-import { cva } from "@flows/styled-system/css";
-import { Box, Flex } from "@flows/styled-system/jsx";
+import { Box } from "@flows/styled-system/jsx";
 import { type ReactNode } from "react";
 import { Text } from "ui";
 
@@ -9,11 +8,9 @@ type Props = {
   title: string;
   description: string;
   visual: ReactNode;
-  first?: boolean;
-  last?: boolean;
 };
 
-export const RiverItem = ({ title, description, visual, first, last }: Props): ReactNode => {
+export const RiverItem = ({ title, description, visual }: Props): ReactNode => {
   return (
     <Section
       display="flex"
@@ -26,80 +23,34 @@ export const RiverItem = ({ title, description, visual, first, last }: Props): R
       <Box
         width="100%"
         md={{
-          maxWidth: 376,
+          maxWidth: 464,
         }}
         gap="space12"
+        flex="1 0 auto"
       >
         <Text as="h3" mb="space12" variant="title2xl">
           {title}
         </Text>
-        <Text variant="bodyL">{description}</Text>
+        <Text color="newFg.neutral.muted" variant="bodyL">
+          {description}
+        </Text>
       </Box>
-      <Flex
-        width="100%"
-        position="relative"
-        className={wrapClass({ first, last })}
-        md={{
-          borderLeftWidth: "1px",
-          borderLeftColor: "newBorder.neutral",
-          borderRightWidth: "1px",
-          borderRightColor: "newBorder.neutral",
-          py: "space40",
+      <Box
+        my={{
+          base: 0,
+          md: "space40",
         }}
+        width="100%"
+        height={330}
+        outlineStyle="solid"
+        outlineWidth="1px"
+        outlineColor="newBorder.neutral"
+        borderRadius="radius8"
+        overflow="hidden"
+        shadow="antimetal"
       >
-        <Flex
-          width="100%"
-          height={330}
-          outlineStyle="solid"
-          outlineWidth="1px"
-          outlineColor="newBorder.neutral"
-          borderRadius="radius8"
-          overflow="hidden"
-          shadow="solid"
-        >
-          {visual}
-        </Flex>
-      </Flex>
+        {visual}
+      </Box>
     </Section>
   );
 };
-
-const wrapClass = cva({
-  base: {},
-  variants: {
-    first: {
-      true: {
-        _after: {
-          content: '""',
-          display: "none",
-          md: { display: "block" },
-          position: "absolute",
-          top: 0,
-          right: -1,
-          left: -1,
-          height: 40,
-          zIndex: 1,
-          backgroundImage:
-            "linear-gradient(180deg, token(colors.pane.bg.secondary) 0%, transparent 100%)",
-        },
-      },
-    },
-    last: {
-      true: {
-        _after: {
-          content: '""',
-          display: "none",
-          md: { display: "block" },
-          position: "absolute",
-          bottom: 0,
-          right: -1,
-          left: -1,
-          height: 40,
-          zIndex: 1,
-          backgroundImage:
-            "linear-gradient(180deg, transparent 0%, token(colors.pane.bg.secondary) 100%)",
-        },
-      },
-    },
-  },
-});
