@@ -49,13 +49,6 @@ const nextConfig = {
   },
   images: {
     formats: ["image/webp"],
-    remotePatterns: [
-      {
-        // For placeholder images
-        protocol: "https",
-        hostname: "via.placeholder.com",
-      },
-    ],
   },
   rewrites: async () => {
     return [
@@ -76,6 +69,12 @@ const nextConfig = {
         destination:
           "https://join.slack.com/t/flows-sh/shared_invite/zt-2dkcznh40-gmX5TfKywRKA6iUGqbI~zg",
         permanent: false,
+      },
+      // Redirect all /solution routes to /solutions (affected pages `user-onboarding` and `feature-adoption` )
+      {
+        source: "/solution/:slug",
+        destination: "/solutions/:slug",
+        permanent: true,
       },
     ];
   },

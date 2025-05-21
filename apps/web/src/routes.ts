@@ -7,10 +7,11 @@ export const routes = {
   about: "/about",
   pricing: "/pricing",
 
-  solution: {
-    userOnboarding: "/solution/user-onboarding",
-    featureAdoption: "/solution/feature-adoption",
-    productLedGrowth: "/solution/product-led-growth",
+  solutions: {
+    index: "/solutions",
+    userOnboarding: "/solutions/user-onboarding",
+    featureAdoption: "/solutions/feature-adoption",
+    productLedGrowth: "/solutions/product-led-growth",
   },
 
   examples: "/examples",

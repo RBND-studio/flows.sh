@@ -41,15 +41,15 @@ const footerGroups: FooterGroup[] = [
     links: [
       {
         title: "User onboarding",
-        href: routes.solution.userOnboarding,
+        href: routes.solutions.userOnboarding,
       },
       {
         title: "Feature adoption",
-        href: routes.solution.featureAdoption,
+        href: routes.solutions.featureAdoption,
       },
       {
         title: "Product-led growth",
-        href: routes.solution.productLedGrowth,
+        href: routes.solutions.productLedGrowth,
       },
     ],
   },
