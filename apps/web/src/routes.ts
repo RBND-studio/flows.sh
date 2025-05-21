@@ -10,6 +10,7 @@ export const routes = {
   solution: {
     userOnboarding: "/solution/user-onboarding",
     featureAdoption: "/solution/feature-adoption",
+    productLedGrowth: "/solution/product-led-growth",
   },
 
   examples: "/examples",

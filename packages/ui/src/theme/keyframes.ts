@@ -102,6 +102,16 @@ export const keyframes: CssKeyframes = {
       opacity: 0,
     },
   },
+  ping: {
+    "0%": {
+      transform: "scale(1)",
+      opacity: 0.75,
+    },
+    "75%, to": {
+      transform: "scale(2)",
+      opacity: 0,
+    },
+  },
   teleprompter: {
     "0%": {
       transform: "translateX(0)",
