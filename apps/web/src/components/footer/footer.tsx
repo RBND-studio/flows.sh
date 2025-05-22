@@ -70,6 +70,10 @@ const footerGroups: FooterGroup[] = [
         target: "_blank",
       },
       {
+        title: "Affiliate",
+        href: routes.affiliate,
+      },
+      {
         title: "Github",
         href: links.rbndGithub,
         target: "_blank",

@@ -4,8 +4,10 @@ export const routes = {
   terms: "/legal/terms",
   cookies: "/legal/cookies",
   dpa: "/legal/dpa",
+  affiliateTerms: "/legal/affiliate",
   about: "/about",
   pricing: "/pricing",
+  affiliate: "/affiliate",
 
   solutions: {
     index: "/solutions",
