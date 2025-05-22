@@ -25,7 +25,7 @@ export const Carousel = ({ slides, emblaRef }: Props): ReactNode => {
       my="space32"
       ref={emblaRef}
     >
-      <Flex touchAction="pan-y" md={{}} marginLeft="-24px">
+      <Flex touchAction="pan-y" md={{}} marginLeft="-24px" alignItems="stretch">
         {slides.map((item) => (
           <Box
             key={item.title}
@@ -36,13 +36,16 @@ export const Carousel = ({ slides, emblaRef }: Props): ReactNode => {
             }}
             paddingLeft="space24"
           >
-            <Box
+            <Flex
               bg="pane.bg.elevated"
               borderWidth={1}
               borderColor="newBorder.neutral.placeholder"
               borderRadius="radius12"
               userSelect="none"
               shadow="antimetal"
+              height="100%"
+              flexDirection="column"
+              justifyContent="space-between"
             >
               {item.viz}
               <Box
@@ -80,7 +83,7 @@ export const Carousel = ({ slides, emblaRef }: Props): ReactNode => {
                   <ArrowRight16 />
                 </Link>
               </Box>
-            </Box>
+            </Flex>
           </Box>
         ))}
       </Flex>

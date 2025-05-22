@@ -14,19 +14,19 @@ export const SolutionsSubItems = ({ close }: Props): ReactNode => {
   const solutions = [
     {
       title: "User onboarding",
-      href: routes.solution.userOnboarding,
+      href: routes.solutions.userOnboarding,
       icon: Checklist16,
       description: "Improve user activation and retention",
     },
     {
       title: "Feature adoption",
-      href: routes.solution.featureAdoption,
+      href: routes.solutions.featureAdoption,
       icon: Graph16,
       description: "Drive feature adoption and engagement",
     },
     {
       title: "Product-led growth",
-      href: routes.solution.productLedGrowth,
+      href: routes.solutions.productLedGrowth,
       icon: Upgrade16,
       description: "Build growth loops to drive company KPIs",
     },

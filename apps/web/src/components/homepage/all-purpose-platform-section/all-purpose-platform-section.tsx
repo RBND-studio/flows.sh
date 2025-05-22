@@ -2,42 +2,19 @@
 
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
+import { solutionsContent } from "components/solutions-content";
 import { EndLine, LinesWrapper, NewLine, NewLineDecorator, Section } from "components/ui";
 import useEmblaCarousel from "embla-carousel-react";
+import Link from "next/link";
 import { type ReactNode } from "react";
 import { routes } from "routes";
-import { Text } from "ui";
+import { Button, Text } from "ui";
 
 import { Carousel } from "./carousel";
-// import { CarouselControls } from "./carousel-controls";
-import { FeatureAdoptionViz } from "./feature-adoption-viz";
-import { PLGViz } from "./plg-viz";
-import { UserOnboardingViz } from "./user-onboarding-viz";
-
-const carouselContent = [
-  {
-    title: "User onboarding",
-    description: "Build engaging onboarding flows that guide users to value and drive activation.",
-    viz: <UserOnboardingViz />,
-    linkUrl: routes.solution.userOnboarding,
-  },
-  {
-    title: "Feature adoption",
-    description: "Support releases with engaging announcements, embeddable banners, and guides.",
-    viz: <FeatureAdoptionViz />,
-    linkUrl: routes.solution.featureAdoption,
-  },
-  {
-    title: "Product-led growth",
-    description:
-      "Build growth loops to drive KPIs and increase the effect of sales, support and marketing efforts.",
-    viz: <PLGViz />,
-    linkUrl: routes.solution.productLedGrowth,
-  },
-];
+import { CarouselControls } from "./carousel-controls";
 
 export const AllPurposePlatformSection = (): ReactNode => {
-  const [emblaRef] = useEmblaCarousel({
+  const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "center",
   });
 
@@ -77,16 +54,34 @@ export const AllPurposePlatformSection = (): ReactNode => {
           gap="space16"
           alignItems="center"
         >
-          {/* TODO: bring this back when we have /solutions page and more solutions */}
+          {/* TODO: uncomment when there are more than 3 solutions */}
           {/* <CarouselControls emblaApi={emblaApi} /> */}
           {/* <Box h={20} w={1} bg="newBorder.neutral" /> */}
-          {/* <Button variant="secondary" size="large">
-            View all solutions
-          </Button> */}
+          <Button variant="secondary" size="large" asChild>
+            <Link href={routes.solutions.index}>View all solutions</Link>
+          </Button>
         </Flex>
       </Flex>
 
-      <Carousel emblaRef={emblaRef} slides={carouselContent} />
+      <Carousel emblaRef={emblaRef} slides={solutionsContent} />
+
+      <Flex
+        display="flex"
+        md={{
+          display: "none",
+        }}
+        gap="space16"
+        justifyContent="space-between"
+        alignItems="center"
+        mb="space32"
+        width="100%"
+      >
+        <CarouselControls emblaApi={emblaApi} />
+
+        <Button variant="secondary" size="large">
+          <Link href={routes.solutions.index}>View all solutions</Link>
+        </Button>
+      </Flex>
 
       <LinesWrapper>
         <EndLine side="left" />
