@@ -46,7 +46,7 @@
     "@types/js-cookie": "^3.0.6",
     "@next/eslint-plugin-next": "15.3.2",
     "@pandacss/dev": "0.53.0",
-    "@types/node": "^20.14.10",
+    "@types/node": "^22.15.18",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.0",
     "@types/three": "^0.175.0",
