@@ -1,4 +1,4 @@
-import { Flex } from "@flows/styled-system/jsx";
+import { Box, Flex } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
 import { type ReactElement, type ReactNode } from "react";
 import { Text } from "ui";
@@ -20,7 +20,14 @@ export const Hero = ({ title, description, actions, eyebrow }: Props): ReactElem
       md={{ py: "space80" }}
       alignItems="center"
     >
-      {eyebrow}
+      <Box
+        animation="topSlideIn 0.6s ease-out"
+        animationDelay="0.1s"
+        opacity={0}
+        animationFillMode="forwards"
+      >
+        {eyebrow}
+      </Box>
       <Flex flexDirection="column" gap="space24" alignItems="center">
         <Text as="h1" variant="title5xl" animation="topSlideIn 0.6s ease-out" align="center">
           {title}

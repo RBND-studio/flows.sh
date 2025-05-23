@@ -21,6 +21,7 @@ export const links = (domain = "flows.sh") => ({
   pricing: `https://${domain}/pricing`,
   changelog: `https://${domain}/changelog`,
   examplesList: `https://${domain}/examples`,
+  affiliate: `https://flows-sh.lemonsqueezy.com/affiliates`,
   sdk: {
     overview: `https://github.com/RBND-studio/flows-sdk/tree/main/examples`,
     reactTemplate: `https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/vite`,
@@ -60,7 +61,8 @@ export const links = (domain = "flows.sh") => ({
     featureHint: "https://feature-hint.examples.flows.sh",
     featureHintSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/feature-hint",
     productHuntLaunchAnnouncement: "https://product-hunt-launch-announcement.examples.flows.sh",
-    productHuntLaunchAnnouncementSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/product-hunt-launch-announcement",
+    productHuntLaunchAnnouncementSource:
+      "https://github.com/RBND-studio/flows.sh/tree/main/examples/product-hunt-launch-announcement",
     // --PLOP_NEW_EXAMPLE_LINK--
   },
   docs: {

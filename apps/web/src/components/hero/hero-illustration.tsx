@@ -10,9 +10,10 @@ import { illustrationData as tabs } from "./illustration-data";
 
 type Props = {
   defaultTab?: (typeof tabs)[number]["title"];
+  hideTabs?: boolean;
 };
 
-export const HeroIllustration: FC<Props> = ({ defaultTab }) => {
+export const HeroIllustration: FC<Props> = ({ defaultTab, hideTabs }) => {
   const defaultTabTitle = defaultTab ?? tabs[0].title;
   const [activeTab, setActiveTab] = useState<string>(defaultTabTitle);
   const currentTab = tabs.find((tab) => tab.title === activeTab);
@@ -61,25 +62,27 @@ export const HeroIllustration: FC<Props> = ({ defaultTab }) => {
         <HeroIllustrationGlow />
         <HeroWaves />
       </Section>
-      <Flex
-        width="100%"
-        justifyContent="center"
-        px="space24"
-        mt="space24"
-        position="relative"
-        _after={{
-          content: '""',
-          position: "absolute",
-          bottom: 0,
-          top: 0,
-          right: "20px",
-          width: "40px",
-          background: "linear-gradient(270deg, token(colors.pane.bg), transparent)",
-          md: { display: "none" },
-        }}
-      >
-        <Tabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
-      </Flex>
+      {!hideTabs && (
+        <Flex
+          width="100%"
+          justifyContent="center"
+          px="space24"
+          mt="space24"
+          position="relative"
+          _after={{
+            content: '""',
+            position: "absolute",
+            bottom: 0,
+            top: 0,
+            right: "20px",
+            width: "40px",
+            background: "linear-gradient(270deg, token(colors.pane.bg), transparent)",
+            md: { display: "none" },
+          }}
+        >
+          <Tabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
+        </Flex>
+      )}
     </>
   );
 };
