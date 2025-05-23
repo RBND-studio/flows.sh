@@ -10,11 +10,25 @@ import { Button, Text } from "ui";
 type Props = {
   title?: string;
   description?: string;
+  actions?: ReactElement;
 };
 
 export const CtaBanner = ({
   title = "Build anything with Flows",
   description = "Build the product adoption experiences you've always wanted.",
+  actions = (
+    <SignupClick>
+      <Button
+        asChild
+        size="large"
+        className={css({
+          shadow: "neutralFocus",
+        })}
+      >
+        <a href={links.signUp}>Get started for free</a>
+      </Button>
+    </SignupClick>
+  ),
 }: Props): ReactElement => {
   return (
     <Section
@@ -74,17 +88,7 @@ export const CtaBanner = ({
               {description}
             </Text>
           </Flex>
-          <SignupClick>
-            <Button
-              asChild
-              size="large"
-              className={css({
-                shadow: "neutralFocus",
-              })}
-            >
-              <a href={links.signUp}>Get started for free</a>
-            </Button>
-          </SignupClick>
+          {actions}
         </Flex>
         <EndLine
           side="bottom"
