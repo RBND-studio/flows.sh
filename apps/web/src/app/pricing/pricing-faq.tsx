@@ -3,7 +3,7 @@ import { Box } from "@flows/styled-system/jsx";
 import { FaqAccordion, Section, SmartLink } from "components/ui";
 import { links } from "lib/links";
 import { type ReactElement } from "react";
-import { formatNumberWithThousandSeparator, pricingTiers } from "shared";
+import { formatNumberWithThousandSeparator, FREE_LIMIT, pricingTiers } from "shared";
 import { Text } from "ui";
 
 const questions = [
@@ -42,7 +42,7 @@ const questions = [
   {
     title: "Do you offer a free tier?",
     content: `Yes, we offer a free tier for the first ${formatNumberWithThousandSeparator(
-      pricingTiers.free.flowsRange[1],
+      FREE_LIMIT,
     )} MTUs. No credit card required. When you exceed the free tier, you will need to upgrade to a pay as you go plan starting at $${
       pricingTiers.tier1.price
     } per MTU.`,
