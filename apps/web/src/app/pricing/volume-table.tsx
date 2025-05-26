@@ -13,34 +13,22 @@ export const VolumeTable = (): ReactElement => {
   const contentRef = useRef<HTMLDivElement>(null);
   const height = isOpen ? `${contentRef.current?.scrollHeight}px` : "0px";
 
-  const pricing = [
-    {
-      range: `First ${formatNumberWithThousandSeparator(pricingTiers.free.flowsRange[1])} MTUs`,
-      price: "Free every month",
-    },
-    {
-      range: `${formatNumberToK(pricingTiers.tier1.flowsRange[0])} - ${formatNumberToK(
-        pricingTiers.tier1.flowsRange[1],
-      )}`,
-      price: `$${pricingTiers.tier1.price.toFixed(3)} per MTU`,
-    },
-    {
-      range: `${formatNumberToK(pricingTiers.tier2.flowsRange[0])} - ${formatNumberToK(
-        pricingTiers.tier2.flowsRange[1],
-      )}`,
-      price: `$${pricingTiers.tier2.price.toFixed(3)} per MTU`,
-    },
-    {
-      range: `${formatNumberToK(pricingTiers.tier3.flowsRange[0])} - ${formatNumberToK(
-        pricingTiers.tier3.flowsRange[1],
-      )}`,
-      price: `$${pricingTiers.tier3.price.toFixed(3)} per MTU`,
-    },
-    {
-      range: `${formatNumberToK(pricingTiers.tier4.flowsRange[0])} +`,
-      price: `$${pricingTiers.tier4.price.toFixed(3)} per MTU`,
-    },
-  ];
+  const pricing = Object.values(pricingTiers).map((tier) => {
+    const [start, end] = tier.flowsRange;
+
+    if (tier.price === 0)
+      return {
+        range: `First ${formatNumberWithThousandSeparator(end)} MTUs`,
+        price: "Free every month",
+      };
+
+    const range =
+      end === Infinity
+        ? `${formatNumberToK(start)} +`
+        : `${formatNumberToK(start)} - ${formatNumberToK(end)}`;
+    const price = `$${tier.price.toFixed(4)} per MTU`;
+    return { range, price };
+  });
 
   return (
     <Section>
