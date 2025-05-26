@@ -6,7 +6,7 @@ import { H2, H3, H4 } from "components/docs-typography";
 import { getGithubLastEdit } from "fumadocs-core/server";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
-import { GH_ACCESS_TOKEN } from "lib/constants";
+import { GH_ACCESS_TOKEN, PRODUCTION } from "lib/constants";
 import { source } from "lib/source";
 import { type Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -88,5 +88,6 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
       card: "summary_large_image",
       images: [{ url: "https://flows.sh/docs/og.png" }],
     },
+    robots: PRODUCTION ? undefined : "noindex,nofollow",
   };
 }
