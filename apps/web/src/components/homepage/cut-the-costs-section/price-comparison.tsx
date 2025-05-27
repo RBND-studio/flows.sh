@@ -30,7 +30,7 @@ const tools = [
   {
     logo: <Logo size={20} color="white" type="pill" />,
     name: "Flows",
-    monthlyPrice: 146,
+    monthlyPrice: 110,
     isCompetitor: false,
   },
 ];
