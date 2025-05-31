@@ -11,6 +11,7 @@ export const propertyTypes = [
 ] as const;
 export const defaultPropertyType = propertyTypes[0];
 export type PropertyType = (typeof propertyTypes)[number];
+export const primitivePropertyTypes: PropertyType[] = ["string", "number", "boolean", "select"];
 
 export const builtInBlockDescriptions: Record<string, string> = {
   start: "Start block allows users to enter the workflow if they meet the conditions",
@@ -54,5 +55,5 @@ export const defaultPropertyValue = {
   boolean: false,
   array: [],
   "state-memory": { trigger: "manual" },
-  "block-trigger": true,
+  "block-trigger": null,
 } satisfies Record<PropertyType, unknown>;
