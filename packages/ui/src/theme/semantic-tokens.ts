@@ -136,6 +136,7 @@ export const semanticTokens = defineSemanticTokens({
         muted: { value: { base: "{colors.warning.25}", _dark: "{colors.warning-dark.900}" } },
       },
       success: {
+        DEFAULT: { value: { base: "{colors.success.400}", _dark: "{colors.success-dark.400}" } },
         muted: { value: { base: "{colors.success.25}", _dark: "{colors.success-dark.900}" } },
       },
       danger: {

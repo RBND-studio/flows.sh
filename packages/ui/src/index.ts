@@ -11,6 +11,7 @@ export * from "./input";
 export * from "./label";
 export * from "./logo";
 export * from "./menu";
+export * from "./multiselect";
 export * from "./popover";
 export * from "./progress";
 export * from "./select";

@@ -39,15 +39,16 @@ const App = () => {
 
 The `<FlowsProvider />` accepts the following props:
 
-| Name             | Type     | Required | Notes                                                                                                                                                                                         |
-| ---------------- | -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `organizationId` | `string` | Yes      | Your organization ID. Find this in **Settings > General**.                                                                                                                                    |
-| `environment`    | `string` | Yes      | The environment key. Find this in **Settings > Environments**.                                                                                                                                |
-| `userId`         | `string` | No       | Unique ID used to identify the user. If set to `null`, the SDK will be disabled and `children` will render while waiting for the `userId`. This is useful when loading the ID asynchronously. |
-| `components`     | `object` | Yes      | Custom components to use in your workflows.                                                                                                                                                   |
-| `tourComponents` | `object` | Yes      | Custom tour components to use in tour blocks.                                                                                                                                                 |
-| `userProperties` | `object` | No       | Object with custom [user properties](/users/properties). Values can be `string`, `number`, `boolean`, or `date`.                                                                              |
-| `apiUrl`         | `string` | No       | Custom API URL useful when using proxy to send Flows requests through your own domain.                                                                                                        |
+| Name             | Type                              | Required | Notes                                                                                                                                                                                         |
+| ---------------- | --------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `organizationId` | `string`                          | Yes      | Your organization ID. Find this in **Settings > General**.                                                                                                                                    |
+| `environment`    | `string`                          | Yes      | The environment key. Find this in **Settings > Environments**.                                                                                                                                |
+| `userId`         | `string`                          | No       | Unique ID used to identify the user. If set to `null`, the SDK will be disabled and `children` will render while waiting for the `userId`. This is useful when loading the ID asynchronously. |
+| `components`     | `object`                          | Yes      | Custom components to use in your workflows.                                                                                                                                                   |
+| `tourComponents` | `object`                          | Yes      | Custom tour components to use in tour blocks.                                                                                                                                                 |
+| `userProperties` | `object`                          | No       | Object with custom [user properties](/users/properties). Values can be `string`, `number`, `boolean`, or `date`.                                                                              |
+| `language`       | [LanguageOption](#languageoption) | No       | The user's language used for [localization](/localization). When empty the user will receive the default language group.                                                                      |
+| `apiUrl`         | `string`                          | No       | Custom API URL useful when using proxy to send Flows requests through your own domain.                                                                                                        |
 
 ---
 
@@ -238,6 +239,18 @@ Represents the props passed to a tour component. In addition to your custom prop
 | `previous`    | `function` | No       | Callback to go back to the previous step.                                                     |
 | `cancel`      | `function` | Yes      | Callback to cancel the tour.                                                                  |
 | `__flows.key` | `string`   | No       | Unique key for the block. Set by you in a workflow. [Learn more](/block-properties/block-key) |
+
+---
+
+#### LanguageOption
+
+Language type used for setting the user's language in the `<FlowsProvider />` to enable [localization](/localization).
+
+Options:
+
+- `disabled` (default) - The user will be served content in the default language group of your organization.
+- `automatic` - Automatically detect the user's language and use the matching language group. The language is determined by the `Navigator.language` property in the browser.
+- Manual - A specific language string, e.g. `en-US`, `fr-FR`, etc. This will use the matching language group for the specified language. See [https://www.localeplanet.com/icu/](https://www.localeplanet.com/icu/) for a full list of supported languages.
 
 ---
 

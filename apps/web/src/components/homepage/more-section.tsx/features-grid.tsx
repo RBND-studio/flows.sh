@@ -14,7 +14,7 @@ import { type ReactNode } from "react";
 
 const features = [
   {
-    title: "Localization (soon)",
+    title: "Localization",
     description: "Support any language or locale to reach a global audience.",
     icon: Language16,
   },

@@ -1,0 +1,136 @@
+---
+title: Localization
+description: Localize your workflows to support multiple languages and regions.
+---
+
+import { Accordion, Accordions } from "fumadocs-ui/components/accordion";
+
+![Localization](/localization/settings.png)
+
+## Overview
+
+Localize your workflows and tours to support multiple languages and regions. Internationalization (i18n) allows you to adapt your content to different languages, cultures, and regions, ensuring a better user experience for diverse audiences.
+
+<Callout>
+  Localization features are hidden until you add a second language group to your organization. To
+  enable localization, go to **Organization settings** > **Localization** and create a new language
+  group.
+</Callout>
+
+## Setup
+
+<Accordions>
+
+  <Accordion title="Enable language in SDK" id="enable-language">
+    To enable localization in the Flows SDK, configure the `language` property during initialization. You have three options:
+
+    - `automatic`: Detects the user’s language from their client preferences (browser or device settings).
+    - **Manual**: Set a specific language such as `en`, `en-US`, `fr`, etc. (supports RFC 5646 / BCP 47 languages).
+    - `disabled` **(default)**: Disables localization; workflows are served in the default language.
+
+    Refer to the React or JavaScript SDK documentation for detailed configuration examples.
+
+  </Accordion>
+
+  <Accordion title="Setup language groups" id="setup-language-groups">
+    Language groups help you manage translations across similar languages – like as `en-US` and `en-GB`, or `fr-FR` and `fr-CA` – by allowing you to provide a single translation for the group.
+
+    When specifying langagues in a group, you can use the language code (e.g., `en`, `fr`) or the full language tag (e.g., `en-US`, `fr-FR`). Flows will automatically match users to the appropriate group based on the language the SDK sends.
+
+    Each organization is created with a default language group, which is used when a user's language doesn’t match any custom group.
+
+    To create a new group:
+
+    1. Go to **Organization settings > Localization**.
+    2. Click on **New language group**.
+    3. Name the group and add relevant languages to it.
+
+    ![Add new language group](/localization/new-group.png)
+
+  </Accordion>
+
+  <Accordion title="Translate and publish a workflow" id="translate-publish-workflow">
+    To translate a workflow:
+
+    1. Open the workflow editor.
+    2. Select a block and switch to the desired language group using the language switcher.
+    3. Edit the block content and properties in that language.
+
+    ![Language switch](/localization/language-switch.png)
+
+    Make sure all Component blocks and Tour blocks are translated. If a block isn't translated, it will fall back to the workflow's default language.
+
+    Once you're done, publish the workflow. Users will see it in their language if a matching translation is available.
+
+  </Accordion>
+
+</Accordions>
+## Usage
+
+### Switching languages in the workflow editor
+
+When editing blocks in a workflow you can switch between different languages using the language switcher below the block name in the right sidebar. To switch languages:
+
+1. Select a block in the workflow editor.
+2. Use the language switcher below the block name in the right sidebar.
+3. Choose the desired language from the dropdown menu (green dot indicates a translation exists, grey dot means a translation is missing).
+4. Click `Create translation` if no translation exists for the selected language.
+5. Edit content and properties in the selected language.
+
+![Language switch](/localization/language-switch.png)
+
+### Add a new translation to a block
+
+For each block in a workflow can have translations for multiple languages. To add a translation:
+
+1. Select a block in the workflow editor.
+2. Switch to the language you want to add using the language switcher.
+3. Click on the `Create translation` button that appears after switching languages.
+
+This will create a new translation for the block in the selected language. You can then edit the content and properties of the block in that language.
+
+![Add new translation](/localization/new-translation.png)
+
+### Remove a translation from a block
+
+To remove a translation:
+
+1. Select a block in the workflow editor.
+2. Switch to the language you want to remove.
+3. Click on the trash icon next to the language name and confirm the removal.
+
+This will remove the translation for that block in the selected language, and the block will fall back to the default language of your organization.
+
+![Delete translation](/localization/delete-translation.png)
+
+### Supported blocks and properties
+
+Localization is available only for **Component blocks** and **Tour blocks**. Supported block properties are `string`, `number`, `boolean`, and `select`. Unsupported blocks and properties will be the same for all language groups. You can identify unsupported blocks and properties by the globe icon next to them in the block editor.
+
+![Supported properties](/localization/supported-properties.png)
+
+### Adding new language groups
+
+To add a new language group:
+
+1. Go to **Organization settings > Localization**.
+2. Click on **New language group**.
+3. Name the group and add relevant languages to it.
+
+The new language group will become available in the workflow editor, allowing you to create translations for blocks in that group. Until you add translations for the new group, it will fall back to the default language group.
+
+![Add new language group](/localization/new-group.png)
+
+## Other
+
+### How do fallbacks work?
+
+When a user enters a block, Flows will first check if the block has a translation for the users language group. If a translation exists, it will be used. If there is no matching translation, Flows will fall back to the default language group.
+
+### How to handle RTL languages?
+
+For languages that are read from right to left (RTL), such as Arabic or Hebrew, Flows doesn't automatically apply RTL styles. You need to handle RTL languages in your custom components by applying the appropriate style changes. For example, you can use a boolean property in your custom component to indicate whether the language is RTL or not, and then apply the necessary styles based on that property.
+
+### Creating separate workflows for different languages
+
+If needed, you can create distinct workflows for each language. This gives you full control over content and structure in each version. However, it requires more upkeep if you want to keep workflows synchronized across languages.

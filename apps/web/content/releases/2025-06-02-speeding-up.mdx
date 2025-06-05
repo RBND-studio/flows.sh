@@ -1,0 +1,23 @@
+---
+title: Speeding up
+date: "2025-06-02"
+description: In the past two weeks we have focused on improving the Flows platform infrastructure to ensure smooth operation and prepare for future features.
+---
+
+The past two weeks have been focused on preparing the Flows platform for the future. We have made a bunch of improvements to the infrastructure to ensure everything runs smoothly as we release new features and scale up.
+
+## Block properties refactor
+
+In preparation for **workflow localization** we have refactored how block properties are stored and accessed. Everything works the same as before, but now we have a more flexible system that allows us to add new properties and features in the future without complicating the codebase.
+
+A nice bonus: autosave is now more reliable, thanks to handling updates at the individual property level rather than the entire block.
+
+## Optimized API
+
+Another (more visible) change is to the API that serves block data to your users. We have optimized the queries and the way data is fetched, which should result in faster response times where it matters most.
+
+Your users should notice snappier loading when initializing or requesting a block, making the overall experience smoother.
+
+## Database infrastructure migration
+
+To support the growing scale of Flows, we’ve migrated our database infrastructure. The new setup is more robust and scalable, allowing us to handle more users and data without compromising performance.
