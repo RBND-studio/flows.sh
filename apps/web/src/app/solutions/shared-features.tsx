@@ -26,7 +26,7 @@ export const SharedFeatures = (): ReactNode => {
 
 const subFeatures: SmallFeatureCardProps[] = [
   {
-    title: "Localization (soon)",
+    title: "Localization",
     description: "Support any language or locale to reach a global audience.",
     icon: Language16,
   },

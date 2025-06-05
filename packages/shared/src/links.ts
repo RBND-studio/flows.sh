@@ -70,6 +70,7 @@ export const links = (domain = "flows.sh") => ({
     users: {
       main: `https://${domain}/docs/users/overview`,
       properties: `https://${domain}/docs/users/properties`,
+      defaultProperties: `https://${domain}/docs/users/properties#default-user-properties`,
     },
     workflows: {
       main: `https://${domain}/docs/workflows/overview`,
@@ -119,6 +120,9 @@ export const links = (domain = "flows.sh") => ({
     sdk: {
       overview: `https://${domain}/docs/sdk-overview`,
       javascriptInstallation: `https://${domain}/docs/javascript/installation`,
+    },
+    localization: {
+      main: `https://${domain}/docs/localization`,
     },
     contact: `https://${domain}/docs/contact-us`,
   },

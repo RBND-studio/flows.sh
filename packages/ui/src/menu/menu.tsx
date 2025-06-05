@@ -45,9 +45,6 @@ type MenuItemProps = {
   className?: string;
   onClick?: () => void;
   active?: boolean;
-  /**
-   * @defaultValue true
-   */
   closeOnClick?: boolean;
 };
 export const MenuItem: FC<MenuItemProps> = forwardRef<HTMLButtonElement, MenuItemProps>(
@@ -61,6 +58,7 @@ export const MenuItem: FC<MenuItemProps> = forwardRef<HTMLButtonElement, MenuIte
       <Component
         ref={ref}
         data-highlighted={active ? "" : undefined}
+        disabled={disabled}
         {...props}
         className={cx(
           css({

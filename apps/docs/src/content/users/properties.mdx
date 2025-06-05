@@ -17,6 +17,7 @@ Flows automatically collects the following default user properties:
 - **`createdAt`** - timestamp when the user was created in Flows
 - **`id`** - unique identifier of the user provided by you
 - **`environment`** - environment (e.g., staging, production) associated with the user
+- **Language group** - the language group of the user, which is determined by the language sent by the SDK. Falls back to the default language group when no language is sent or when the language does not match any of your language groups. Used for [localization](/localization) of workflows.
 
 ## Custom user properties
 
