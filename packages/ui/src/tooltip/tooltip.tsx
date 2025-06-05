@@ -4,11 +4,29 @@ import { css, cx } from "@flows/styled-system/css";
 import { token } from "@flows/styled-system/tokens";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import type { JSX } from "react";
-import * as React from "react";
+import { forwardRef, useCallback, useEffect, useMemo, useState } from "react";
 
 const TooltipProvider = TooltipPrimitive.Provider;
 
 const TooltipRoot = TooltipPrimitive.Root;
+
+function useHasHover(): boolean {
+  const [firstRender, setFirstRender] = useState(true);
+  useEffect(() => {
+    setFirstRender(false);
+  }, []);
+
+  return useMemo(() => {
+    if (firstRender) return true;
+
+    try {
+      return matchMedia("(hover: hover)").matches;
+    } catch {
+      // Assume that if browser too old to support matchMedia it's likely not a touch device
+      return true;
+    }
+  }, [firstRender]);
+}
 
 const TooltipTrigger = TooltipPrimitive.Trigger;
 
@@ -80,9 +98,10 @@ type TooltipProps = {
   className?: string;
   delayDuration?: number;
   hasUnderline?: boolean;
+  supportMobileTap?: boolean;
 };
 
-export const Tooltip = React.forwardRef<HTMLButtonElement, TooltipProps>(function Tooltip(
+export const Tooltip = forwardRef<HTMLButtonElement, TooltipProps>(function Tooltip(
   {
     content,
     trigger,
@@ -92,15 +111,30 @@ export const Tooltip = React.forwardRef<HTMLButtonElement, TooltipProps>(functio
     sideOffset,
     delayDuration = 320,
     hasUnderline,
+    supportMobileTap,
     ...props
   },
   ref,
 ): JSX.Element {
+  const hasHover = useHasHover();
+  const [open, setOpen] = useState(false);
+
+  const onClick = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      if (!hasHover && supportMobileTap) {
+        e.preventDefault();
+        setOpen(true);
+      }
+    },
+    [hasHover, supportMobileTap],
+  );
+
   return (
     <TooltipProvider>
-      <TooltipRoot delayDuration={delayDuration}>
+      <TooltipRoot open={open} onOpenChange={setOpen} delayDuration={delayDuration}>
         <TooltipTrigger
           asChild
+          onClick={onClick}
           className={css({
             borderBottom: hasUnderline ? "2px dotted" : undefined,
             borderColor: hasUnderline ? "newBorder.neutral.strong" : undefined,

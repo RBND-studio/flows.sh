@@ -15,8 +15,6 @@ export const WorkflowsExample = (): JSX.Element => {
           <Block name="Onboarding tour" type="tour" icon="tour" />
           <LineArrowDown />
           <Block name="Has paid plan?" type="filter" icon="filter" />
-          <LineArrowDown />
-          <Block name="End" type="end" icon="end" />
         </Flex>
         <Flex mt={187} ml={-5}>
           <Box my={13}>
@@ -24,8 +22,6 @@ export const WorkflowsExample = (): JSX.Element => {
           </Box>
           <Flex flexDirection="column" alignItems="center">
             <Block name="Upsell banner" type="component" icon="banner" />
-            <LineArrowDown />
-            <Block name="End" type="end" icon="end" />
           </Flex>
         </Flex>
       </Flex>
