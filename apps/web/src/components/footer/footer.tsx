@@ -86,6 +86,15 @@ const footerGroups: FooterGroup[] = [
     ],
   },
   {
+    title: "Compare",
+    links: [
+      {
+        title: "Appcues",
+        href: routes.alternatives.appcues,
+      },
+    ],
+  },
+  {
     title: "Other",
     links: [
       { title: "About", href: routes.about },

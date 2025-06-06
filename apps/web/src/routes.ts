@@ -16,6 +16,10 @@ export const routes = {
     productLedGrowth: "/solutions/product-led-growth",
   },
 
+  alternatives: {
+    appcues: "/alternatives/appcues",
+  },
+
   examples: "/examples",
   exampleDetail: (slug: string) => `/examples/${slug}`,
 
