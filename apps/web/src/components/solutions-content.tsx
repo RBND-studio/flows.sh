@@ -2,6 +2,7 @@ import { routes } from "routes";
 
 import { FeatureAdoptionViz } from "./homepage/all-purpose-platform-section/feature-adoption-viz";
 import { PLGViz } from "./homepage/all-purpose-platform-section/plg-viz";
+import { ProductMarketingViz } from "./homepage/all-purpose-platform-section/product-marketing-viz";
 import { UserOnboardingViz } from "./homepage/all-purpose-platform-section/user-onboarding-viz";
 
 export const solutionsContent = [
@@ -23,5 +24,12 @@ export const solutionsContent = [
       "Build growth loops to drive KPIs and increase the effect of sales, support and marketing efforts.",
     viz: <PLGViz />,
     linkUrl: routes.solutions.productLedGrowth,
+  },
+  {
+    title: "Product marketing",
+    description:
+      "Launch in-app campaigns like announcements and product tours without engineering help.",
+    viz: <ProductMarketingViz />,
+    linkUrl: routes.solutions.productMarketing,
   },
 ];

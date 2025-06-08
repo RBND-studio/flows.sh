@@ -13,9 +13,9 @@ import { SharedFeatures } from "../shared-features";
 import { questions, riverFeatures } from "./content";
 
 export const metadata: Metadata = {
-  title: "Product Led Growth – Flows",
+  title: "Product Marketing – Flows",
   description:
-    "Build engaging growth loops to drive company KPIs and increase the effectiveness of your sales, support and marketing efforts.",
+    "Launch targeted in-app campaigns like announcements and product tours without engineering help.",
 };
 
 const Page = (): ReactElement => {
@@ -24,12 +24,14 @@ const Page = (): ReactElement => {
       <Hero
         title={
           <>
-            Create growth loops
+            Create powerful in-app
             <br />
-            that drive revenue
+            messaging with impact
           </>
         }
-        description="Build engaging growth loops to drive company KPIs and increase the effectiveness of your sales, support and marketing efforts."
+        description="
+Launch targeted in-app campaigns like announcements and product tours without engineering help.
+        "
         actions={
           <SignupClick>
             <Button
@@ -45,12 +47,12 @@ const Page = (): ReactElement => {
         }
       />
 
-      <HeroIllustration defaultTab="Growth experiments" />
+      <HeroIllustration defaultTab="Product adoption" />
 
       <SectionIntro
-        title="How Flows works for product-led growth"
+        title="How Flows works for product marketing"
         description="
-        Leverage the power of Flows to build personalized growth campaigns that drive user engagement and retention."
+        Leverage the power of Flows to create engaging in-app campaigns that drive user awareness and adoption of your features."
         className={css({
           mb: "space80",
           md: { mb: "0" },
@@ -78,7 +80,7 @@ const Page = (): ReactElement => {
           </FaqAccordion>
         ))}
       </Section>
-      <CtaBanner />
+      <CtaBanner description="Build the product marketing experiences you've always wanted" />
     </>
   );
 };
