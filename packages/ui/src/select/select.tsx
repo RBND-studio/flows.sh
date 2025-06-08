@@ -99,9 +99,7 @@ function SelectInner<T extends string>({
           size={size}
           variant="field"
         >
-          <RadixSelect.Value placeholder={placeholder}>
-            {currentOption?.label ?? currentOption?.value}
-          </RadixSelect.Value>
+          {currentOption?.label ?? currentOption?.value ?? placeholder}
         </Button>
       </RadixSelect.Trigger>
 
