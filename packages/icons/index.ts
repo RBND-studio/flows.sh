@@ -63,6 +63,7 @@ export * from "./src/question-mark16";
 export * from "./src/question16";
 export * from "./src/react16";
 export * from "./src/react32";
+export * from "./src/search16";
 export * from "./src/select16";
 export * from "./src/sidebar16";
 export * from "./src/slack16";

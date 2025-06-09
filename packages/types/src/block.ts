@@ -5,4 +5,5 @@ export type BlockType =
   | "start"
   | "end"
   | "tour-component"
-  | "manual-start";
+  | "manual-start"
+  | "wait";

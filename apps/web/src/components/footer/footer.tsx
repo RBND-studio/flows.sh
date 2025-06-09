@@ -51,6 +51,10 @@ const footerGroups: FooterGroup[] = [
         title: "Product-led growth",
         href: routes.solutions.productLedGrowth,
       },
+      {
+        title: "Product marketing",
+        href: routes.solutions.productMarketing,
+      },
     ],
   },
   {

@@ -14,6 +14,7 @@ export const routes = {
     userOnboarding: "/solutions/user-onboarding",
     featureAdoption: "/solutions/feature-adoption",
     productLedGrowth: "/solutions/product-led-growth",
+    productMarketing: "/solutions/product-marketing",
   },
 
   alternatives: {
