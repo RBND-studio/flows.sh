@@ -1,0 +1,77 @@
+---
+title: Introducing Localization
+description: Translate your workflows and make them accessible to a global audience.
+date: "2025-06-09"
+author: "Ondrej Pesicka"
+image: /images/blog/introducing-localization/cover.png
+imageAlt: Localization in Flows
+---
+
+Does your product support multiple languages? Then there's one more reason to use Flows.
+
+Today we are launching localization support in Flows! You can now translate all user-facing content, whether it's a string, boolean, number, or select. Here's how it works:
+
+## 1. Send language in Flows SDK
+
+Both React and Javascript SDKs now support sending the language as a parameter when initializing Flows in your application. This lets Flows know which language to serve to your users.
+
+For example, if you want to serve the French version of your workflow, you can initialize Flows like this:
+
+```tsx
+import { FlowsProvider } from "@flows/react";
+
+const App = () => {
+  return (
+    <FlowsProvider
+      organizationId="your-organization-id"
+      environment="production"
+      userId="your-user-id"
+      components={{}}
+      tourComponents={{}}
+      language="fr" // Specify the language code
+    >
+      {/* Your app code here */}
+    </FlowsProvider>
+  );
+};
+```
+
+In JavaScript SDK, you can do it as follows:
+
+```js
+import { init } from "@flows/js";
+
+init({
+  organizationId: "your-organization-id",
+  environment: "production",
+  userId: "your-user-id"
+  language: "fr", // Specify the language code
+})
+```
+
+The SDKs also support automatic language detection based on the user's browser settings. Learn more about the SDK configuration in the [React](/docs/react/reference) or [JavaScript](/docs/javascript/reference) documentation.
+
+## 2. Create language groups
+
+In your organization settings, you then need to create language groups. Language groups allow you to manage translations for similar languages, such as `en-US` and `en-GB`, or `fr-FR` and `fr-CA`.
+
+This lets you manage one shared translation across similar locales, reducing duplicate translations and making it easier to maintain your workflows.
+
+## 3. Translate your workflows
+
+Once language groups are set up, head over to the workflow editor. Each block now includes a language switcher that lets you toggle between languages and edit the content for each one.
+
+<Image
+  src="/images/blog/introducing-localization/language-switch.png"
+  alt="Language switch in Flows editor"
+  width={1800}
+  height={900}
+/>
+
+Simply switch the language, update the content, and repeat for other language groups or blocks as needed.
+
+## Try it out today
+
+Localization is available now for all Flows organizations, no payment or upgrade is required. Start translating your workflows today and let us know what you think!
+
+For more details, check out our [localization documentation](/docs/localization).
