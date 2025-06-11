@@ -1,6 +1,6 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
-import { Banner16, Checklist16, Graph16, Upgrade16 } from "icons";
+import { Addon16, Banner16, Checklist16, Graph16, Upgrade16 } from "icons";
 import Link from "next/link";
 import { type ReactNode } from "react";
 import { routes } from "routes";
@@ -29,6 +29,12 @@ export const SolutionsSubItems = ({ close }: Props): ReactNode => {
       href: routes.solutions.productLedGrowth,
       icon: Upgrade16,
       description: "Build growth loops to drive company KPIs",
+    },
+    {
+      title: "Revenue expansion",
+      href: routes.solutions.revenueExpansion,
+      icon: Addon16,
+      description: "Convert free trials to paying customers",
     },
     {
       title: "Product marketing",

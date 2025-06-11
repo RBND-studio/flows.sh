@@ -15,6 +15,7 @@ export const routes = {
     featureAdoption: "/solutions/feature-adoption",
     productLedGrowth: "/solutions/product-led-growth",
     productMarketing: "/solutions/product-marketing",
+    revenueExpansion: "/solutions/revenue-expansion",
   },
 
   alternatives: {
