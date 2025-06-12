@@ -1,8 +1,9 @@
 import { css } from "@flows/styled-system/css";
+import { Box } from "@flows/styled-system/jsx";
+import { ZoomableImage } from "components/ui";
 import type { Post } from "contentlayer/generated";
 import { allPosts } from "contentlayer/generated";
 import type { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { ReactElement } from "react";
 import { Text } from "ui";
@@ -82,11 +83,7 @@ export default async function PostPage(props: PostProps): Promise<ReactElement> 
         },
       })}
     >
-      <div
-        className={css({
-          mb: "space48",
-        })}
-      >
+      <Box mb="space48">
         <Text
           as="h1"
           className={css({
@@ -101,23 +98,20 @@ export default async function PostPage(props: PostProps): Promise<ReactElement> 
         </Text>
 
         {post.image ? (
-          <div className="">
-            <Image
-              alt={post.title}
-              className={css({
-                borderRadius: "radius12",
-                mt: "space32",
-                borderWidth: "1px",
-                borderStyle: "solid",
-                borderColor: "newBorder.neutral",
-              })}
-              height={600}
-              priority
-              src={post.image}
-              width={1200}
-              sizes="(max-width: 768px) 100vw, 896px"
-            />
-          </div>
+          <ZoomableImage
+            alt={post.imageAlt ?? "Blog post cover image"}
+            height={600}
+            src={post.image}
+            width={1200}
+            priority
+            className={css({
+              borderRadius: "radius8",
+              borderWidth: 1,
+              borderStyle: "solid",
+              borderColor: "newBorder.neutral",
+              mt: "space32",
+            })}
+          />
         ) : null}
         <Text className={css({ mt: "space16" })} color="newFg.neutral.subtle" variant="bodyM">
           <span>{post.author}</span>
@@ -128,7 +122,7 @@ export default async function PostPage(props: PostProps): Promise<ReactElement> 
           <span>{` • `}</span>
           <span>{post.readingTimeText}</span>
         </Text>
-      </div>
+      </Box>
       <Mdx code={post.body.code} />
     </article>
   );

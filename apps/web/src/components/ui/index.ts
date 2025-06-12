@@ -11,3 +11,4 @@ export * from "./small-feature-card";
 export * from "./smart-link";
 export * from "./tabs";
 export * from "./typography-css";
+export * from "./zoomable-image";

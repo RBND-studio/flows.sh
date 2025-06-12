@@ -1,28 +1,28 @@
 import { css } from "@flows/styled-system/css";
 import { HeadingLink } from "components/mdx-heading-link";
 import { isValidUrl } from "lib/is-valid-url";
-import Image from "next/image";
 import Link from "next/link";
 import { useMDXComponent } from "next-contentlayer2/hooks";
 import type { HTMLProps, ReactElement } from "react";
 import { Text, type TextProps } from "ui";
 import { CodeHighlight } from "ui/server";
 
+import { ZoomableImage } from "./ui";
+
 const mdxComponents = {
   Image: (props: HTMLProps<HTMLImageElement>) => (
-    <Image
+    <ZoomableImage
       alt={props.alt ?? "Blog post cover image"}
+      src={props.src ?? ""}
+      height={Number(props.height)}
+      width={Number(props.width)}
       className={css({
         borderRadius: "radius8",
         borderWidth: 1,
         borderStyle: "solid",
         borderColor: "newBorder.neutral",
-        mb: "space24",
+        mb: "space32",
       })}
-      height={Number(props.height)}
-      src={props.src ?? ""}
-      width={Number(props.width)}
-      sizes="(max-width: 768px) 100vw, 896px"
     />
   ),
   h1: (props: TextProps) => {
@@ -229,7 +229,8 @@ const mdxComponents = {
         my: "space48",
         border: "none",
         borderTopWidth: "1px",
-        borderTopColor: "newBorder.neutral.strong",
+        borderTopStyle: "solid",
+        borderTopColor: "newBorder.neutral",
       })}
       {...props}
     />
