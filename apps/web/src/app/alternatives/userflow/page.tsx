@@ -9,19 +9,19 @@ import { Button } from "ui";
 
 import { ComparisonTable } from "../comparison-table";
 import { FeaturesSection } from "../features-section";
-import { appcuesContent } from "./content";
+import { userflowContent } from "./content";
 
 export const metadata: Metadata = {
-  title: appcuesContent.pageTitle,
-  description: appcuesContent.description,
+  title: userflowContent.pageTitle,
+  description: userflowContent.description,
 };
 
 const Page = (): ReactElement => {
   return (
     <>
       <Hero
-        title={appcuesContent.heroTitle}
-        description={appcuesContent.description}
+        title={userflowContent.heroTitle}
+        description={userflowContent.description}
         actions={
           <SignupClick>
             <Button
@@ -39,18 +39,18 @@ const Page = (): ReactElement => {
       <HeroIllustration />
 
       <ComparisonTable
-        comparisons={appcuesContent.comparisons}
-        sectionTitle={appcuesContent.comparisonTitle}
-        competitorName={appcuesContent.competitorName}
-        competitorLogo={appcuesContent.competitorLogo}
+        comparisons={userflowContent.comparisons}
+        sectionTitle={userflowContent.comparisonTitle}
+        competitorName={userflowContent.competitorName}
+        competitorLogo={userflowContent.competitorLogo}
       />
-      <FeaturesSection features={appcuesContent.features} />
+      <FeaturesSection features={userflowContent.features} />
       <MoreSection />
       <CutTheCostsSection />
 
       <CtaBanner
         title="Make the switch today!"
-        description="Build better product adoption experiences at a fraction of the price. Start migrating your flows from Appcues to Flows."
+        description="Build better product adoption experiences at a fraction of the price. Start migrating your flows from Userflow to Flows."
       />
     </>
   );

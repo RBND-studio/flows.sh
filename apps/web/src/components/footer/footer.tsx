@@ -100,6 +100,10 @@ const footerGroups: FooterGroup[] = [
         title: "Appcues",
         href: routes.alternatives.appcues,
       },
+      {
+        title: "Userflow",
+        href: routes.alternatives.userflow,
+      },
     ],
   },
   {

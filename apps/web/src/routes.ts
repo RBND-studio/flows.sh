@@ -20,6 +20,7 @@ export const routes = {
 
   alternatives: {
     appcues: "/alternatives/appcues",
+    userflow: "/alternatives/userflow",
   },
 
   examples: "/examples",
