@@ -1,0 +1,46 @@
+# flows.sh
+
+> Flows is a fully customizable product adoption platform for modern companies building onboarding and user engagement experiences.
+
+## Features
+
+- Workflows: Combine experiences into multi-step campaigns that guide users through your ideal product journey.
+- Floating components: Create floating components that follow users as they navigate your app, ensuring they always have the right guidance at the right time.
+- Embeddable components: Render inline components directly within your app’s UI. Don’t just put tooltips over your product.
+- Custom UI components: Leverage our APIs and your design system for full control. Build your own components and create a native experience.
+- Localization: Support any language or locale to reach a global audience.
+- Segmentation: Target specific users or companies based on properties or behavior.
+- Versioning: Deploy, audit, and restore your changes across environments.
+- Analytics: Understand how users interact with your workflows.
+- Environments: Test workflows on staging before deploying them to production.
+- Actions: Trigger actions based on user behavior.
+- Workflow logic: Branch, filter, and control the path of your workflows.
+- Privacy first: Built with privacy in mind. Minimizing data collection.
+
+## Use cases
+
+- [User onboarding](https://flows.sh/solutions/user-onboarding): Build engaging onboarding flows that guide users to value and drive activation.
+- [Feature adoption](https://flows.sh/solutions/feature-adoption): Support releases with engaging announcements, embeddable banners, and guides.
+- [Product-led growth](https://flows.sh/solutions/product-led-growth): Build growth loops to drive KPIs and increase the effect of sales, support and marketing efforts.
+- [Revenue expansion](https://flows.sh/solutions/revenue-expansion): Convert free trials into paying customers with in-app promotions and upsells.
+- [Product marketing](https://flows.sh/solutions/product-marketing): Launch in-app campaigns like announcements and product tours without engineering help.
+
+## Documentation
+
+- [Documentation](https://flows.sh/docs): Documentation on how to integrate and use Flows
+
+## Resources
+
+- [Blog](https://flows.sh/blog): Content on best practices for product adoption and Flows product updates
+- [Examples](https://flows.sh/examples): Examples of what experiences you can build with Flows.
+
+## How to Get Started
+
+- [Pricing](https://flows.sh/pricing): Flows offer a pay-as-you-go pricing that starts at $0/month with a generous free forever tier
+- [Contact](https://flows.sh/docs/contact-us): Contact the team for a demo
+- [Signup](https://app.flows.sh/signup): Sign up to try out the product today
+
+## Flows SDK
+
+- [React SDK](https://flows.sh/docs/react/overview): Flows SDK purpose-built for applications built with React.
+- [JavaScript SDK](https://flows.sh/docs/javascript/overview): Flows SDK for integrating with any JavaScript framework.
