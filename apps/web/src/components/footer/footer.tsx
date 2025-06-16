@@ -97,6 +97,10 @@ const footerGroups: FooterGroup[] = [
     title: "Compare",
     links: [
       {
+        title: "Flows vs other tools",
+        href: routes.blogPostDetail({ postId: "flows-vs-other-tools" }),
+      },
+      {
         title: "Appcues",
         href: routes.alternatives.appcues,
       },

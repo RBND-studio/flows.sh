@@ -1,0 +1,120 @@
+---
+title: Flows vs all the other product adoption tools
+description: Why existing product adoption tools don't cut it anymore.
+date: "2025-06-18"
+author: "Ondrej Pesicka"
+image: /images/blog/flows-vs-other-tools/cover.png
+imageAlt: Flows logo with competitors logos floating around it
+---
+
+## TLDR
+
+We're Flows – the better way to build product adoption. Flows is a visual workflow builder paired with SDKs and APIs that help developers and PMs work together to build relevant, contextual onboarding and education experiences natively into their SaaS products. Flows helps you reduce UX friction, make your product easier to adopt, and activate more of your users.
+
+---
+
+Looking to improve your product's onboarding and user engagement? Evaluating product onboarding tools that will help you do it faster? The goal of this article is to help you understand the major pitfalls you'll face with the existing tools and how Flows makes it easier to build better product adoption.
+
+This post explains why today’s popular tools fall short, why many teams end up with subpar experiences or spend months building their own solutions from scratch – and why we believe Flows is the better way.
+
+## The problem with existing tools
+
+You’ve probably heard of tools like Appcues, Chameleon, Userflow, Pendo, Intercom, or WalkMe. Most likely, you have even seen the experiences they power.
+
+While each of these take a slightly different angle, they all follow the same basic model: remove developer from the equation and let product, marketing, and customer success teams build in-product experiences themselves.
+
+{/*TODO: Image - screenshot of a ugly tooltip in some product*/}
+
+These tools load third-party code at runtime and inject their UI into your app via overlays – modals, tooltips and banners to explain stuff and show users where to click. This creates a disconnected layer on top of your product’s real logic, state, and UI. Here’s some of why this approach breaks down:
+
+### 1. It’s not really part of your product
+
+You are forced to use their UI, limiting the experiences you can build and making it obvious that they are not part of your product. They come with a pre-canned set of components, primarily overlaid, that you are forced to use. The components are not the same as the ones used in your product, they don't fully match your brand, and they just feel off.
+
+Every time your UI or design system changes, you need to spend time fiddling with updating styles in their limited UI and theme builders. And worst of all, users can spot these out of place experiences a mile away. Trained by years of bad tours and walkthroughs, they quickly dismiss them knowing that they’re safe to ignore.
+
+### 2. You can’t guide users through real tasks
+
+With the limited modalities available, you are not able to let users do anything. You are forced to tell them where they should go and what they should do.
+
+Instead of embedding a key setup action in an empty state at exactly the right time in your user's journey, you’re forced to interrupt them with a modal, navigate them to a completely different place in your product, and take them on a tooltip hunt to find the action among a sea of others. The result? Extra steps, a poor experience, and many users lost along the way.
+
+{/*TODO: Image - User journey diagram. One path with the user "using the app" –> "interruption by a modal" -> "following tootlips", second path is the good one: "using the app" -> "empty state with inline action" -> "completing the task".*/}
+
+### 3. Ad blockers silently suppress the experiences
+
+Because the existing tools load third-party JavaScript code directly into your user's clients, ad blockers often block the experiences they power. This suppression happens silently. making it hard to analyze the effectiveness of your experiences. Worse, your users are left in a product with none of the help, education, or guidance you intended them to have.
+
+{/*TODO: Image - Somehow show an ad blocker blocking onboarding, or we can do a infographic with how many percent of users have ad blockers, and how many of them are affected by this. 31.5% of users use ad blockers at least sometimes when online according to Backlinko https://backlinko.com/ad-blockers-users*/}
+
+---
+
+In short: the current generation of product adoption tools might be fast to install and easy to use at a glance, but they are fundamentally flawed. Their approach of creating a layer over your product leads to low-quality, brittle, and poorly integrated experiences. That’s why so many teams either settle for broken UX or sink months into building their own systems from scratch. Neither should be necessary.
+
+We started building Flows to give teams a better way to build product adoption experiences. With Flows a single developer with a product partner can build better experiences with their own UI and components in a fraction of the time it currently takes.
+
+## Your onboarding and education can't be an afterthought
+
+In today's SaaS landscape, great product adoption isn't just a nice-to-have – it's a competitive advantage. More and more, your ability to activate users and guide them to value *within the product itself* determines whether they stick around or churn.
+
+That means onboarding, education, and user guidance need to be treated as core product work, not as something you tack on later. They should be designed with the same care, craft, and technical depth as your primary features.
+
+When onboarding is bolted on (using disconnected overlays and cookie-cutter modals) it shows. Users feel the disconnect. They get frustrated. They churn. And your product never gets the chance to prove its value.
+
+But don’t just take our word for it. Even the existing tools themselves have galleries of [examples](https://www.chameleon.io/inspiration/folk-onboarding-walkthrough) of [great onboarding experiences](https://goodux.appcues.com/blog/airtable-user-onboarding-update) that often point to products that built their onboarding **in-house**. Why? Because those teams needed flexibility, quality, and control the existing tools simply can't provide.
+
+Our favorite example? Intercom. Their onboarding is outstanding, best in class even. But you can’t build it with Intercom!
+
+<Image
+  src="/images/blog/flows-vs-other-tools/intercom-onboarding.png"
+  alt="Screenshot of Intercom's onboarding page"
+  width={3600}
+  height={2080}
+/>
+
+## Why Flows is better
+
+Flows was built from the ground up to offer a better way to build onboarding, education, and product adoption experiences — one that doesn’t compromise on quality, flexibility, or team collaboration.
+
+<Image
+  src="/images/blog/flows-vs-other-tools/flows-workflow.png"
+  alt="Screenshot of Flows workflow editor"
+  width={1800}
+  height={720}
+/>
+
+### 1. Use your own components
+
+Instead of forcing you to waste time trying to make the limited set of available components look passable, Flows meets you where you are. You can use your own UI components and technologies, giving you the full flexibility of code to build relevant, contextual workflows that fit your product, meet your quality bar, and don't get in the way.
+
+{/*TODO: Image - custom components illustration, can be similar to the one on the homepage*/}
+
+PS: for quicker setup, Flows comes with a set of pre-built components that you can use to get started quickly. But you can always fork them or build your own.
+
+### 2. Embed components directly into your product
+
+With Flows, onboarding doesn’t have to float awkwardly above your product. It can be an integral part of it. You can embed interactive components like checklists, banners, or setup steps directly into your existing UI, exactly where they make the most sense.
+
+That means no more jarring modals or pointing users away from the page they’re on. Instead, you can guide them with contextual components placed inline — in empty states, sidebars, settings screens, or anywhere else inside your product. The result is a smoother experience that feels fully native and keeps users focused on the task at hand.
+
+{/*TODO: Image - embedded components illustration*/}
+
+### 3. Built for developers too
+
+Developers aren't an afterthought in Flows, they are first-class users. We focus on the details that make building with Flows a joy: versioning, environments, APIs, and great documentation, to name a few.
+
+### 4. Empowers non-developers to self-serve
+
+Once Flows is integrated into your product, product managers, marketers, and customer success teams can build, update content, and publish workflows without needing to ask for help. Developers set the foundation, and other teams build with it.
+
+---
+
+With Flows, you are no longer limited to clunky tooltip tours or brittle overlays. You can build interactive onboarding checklists embedded directly into your product, contextual guidance in empty states, or in-line setup steps that help users learn by doing.
+
+And yes – you can still build tours. Sometimes they’re the right tool. But with Flows, they’ll be your components, in your style, fully integrated into your product experience.
+
+## We'd love to help you build better product adoption experiences
+
+If you're happy with the existing tools, great! But if you’re settling for clunky overlays, or dreading the thought of building everything yourself, we'd love to show you how Flows can give you a third, better option.
+
+Try Flows, [sign up for a free account](https://app.flows.sh/signup), explore our [live examples](https://flows.sh/examples), or dive into the [docs](https://flows.sh/docs). We are excited to help you build onboarding that actually works.
