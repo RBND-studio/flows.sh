@@ -52,6 +52,10 @@ const footerGroups: FooterGroup[] = [
         href: routes.solutions.productLedGrowth,
       },
       {
+        title: "Revenue expansion",
+        href: routes.solutions.revenueExpansion,
+      },
+      {
         title: "Product marketing",
         href: routes.solutions.productMarketing,
       },
@@ -93,8 +97,16 @@ const footerGroups: FooterGroup[] = [
     title: "Compare",
     links: [
       {
+        title: "Flows vs other tools",
+        href: routes.blogPostDetail({ postId: "flows-vs-other-tools" }),
+      },
+      {
         title: "Appcues",
         href: routes.alternatives.appcues,
+      },
+      {
+        title: "Userflow",
+        href: routes.alternatives.userflow,
       },
     ],
   },

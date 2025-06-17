@@ -1,0 +1,31 @@
+---
+title: Localization
+date: "2025-06-16"
+description: Flows now supports localization, allowing you to translate all user-facing content.
+---
+
+<Image
+  src="/images/changelog/2025-06-16-language-switch.png"
+  alt="Localization language switch UI"
+  width={1800}
+  height={900}
+/>
+
+Does your product support multiple languages? With localization, you can now translate all user-facing content, whether it's a string, boolean, number, or select.
+
+Read the [announcement post](https://flows.sh/blog/introducing-localization) for more details.
+
+## Other improvements
+
+- Added search by ID and filtering by environment and MTU status to the users table
+- Added pagination to the users event log for faster loading when there are many events
+- User log event timestamp now shows the timezone
+- Added thousands separator to numbers in a few places for better readability
+
+## SDK improvements
+
+- Added localization support to the SDK (1.10.0)
+
+## Bug fixes
+
+- Fixed a bug where blocks sometimes didn't show up during initialization (1.10.2)

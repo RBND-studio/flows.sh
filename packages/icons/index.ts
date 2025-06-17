@@ -1,3 +1,4 @@
+export * from "./src/addon16";
 export * from "./src/alert16";
 export * from "./src/angular32";
 export * from "./src/appcues20";

@@ -1,7 +1,7 @@
 "use client";
 
 import { css } from "@flows/styled-system/css";
-import { Flex } from "@flows/styled-system/jsx";
+import { Box, Flex } from "@flows/styled-system/jsx";
 import { solutionsContent } from "components/solutions-content";
 import { EndLine, LinesWrapper, NewLine, NewLineDecorator, Section } from "components/ui";
 import useEmblaCarousel from "embla-carousel-react";
@@ -54,9 +54,8 @@ export const AllPurposePlatformSection = (): ReactNode => {
           gap="space16"
           alignItems="center"
         >
-          {/* TODO: uncomment when there are more than 3 solutions */}
-          {/* <CarouselControls emblaApi={emblaApi} /> */}
-          {/* <Box h={20} w={1} bg="newBorder.neutral" /> */}
+          <CarouselControls emblaApi={emblaApi} />
+          <Box h={20} w={1} bg="newBorder.neutral" />
           <Button variant="secondary" size="large" asChild>
             <Link href={routes.solutions.index}>View all solutions</Link>
           </Button>
