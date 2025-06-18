@@ -16,6 +16,8 @@
     "ui": "pnpm --filter ui",
     "icons": "pnpm --filter icons",
     "be": "pnpm --filter backend",
+    "be:dev": "pnpm --filter backend --filter worker dev",
+    "worker": "pnpm --filter worker",
     "db": "pnpm --filter db",
     "e2e": "pnpm --filter e2e",
     "prepare": "husky || true",
@@ -44,9 +46,10 @@
       "contentlayer2",
       "cypress",
       "esbuild",
+      "nestjs-pino",
       "protobufjs",
       "sharp"
     ]
   },
-  "packageManager": "pnpm@10.10.0"
+  "packageManager": "pnpm@10.12.1"
 }
