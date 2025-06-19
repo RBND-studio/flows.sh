@@ -6,9 +6,15 @@ import { type HTMLAttributes, type JSX, type ReactNode } from "react";
 type Props = HTMLAttributes<HTMLDivElement> &
   HTMLStyledProps<"div"> & {
     wavesElement?: ReactNode;
+    outerClassName?: string;
   };
 
-export const Section = ({ children, wavesElement, ...props }: Props): JSX.Element => {
+export const Section = ({
+  children,
+  wavesElement,
+  outerClassName,
+  ...props
+}: Props): JSX.Element => {
   return (
     <div
       className={cx(
@@ -17,6 +23,7 @@ export const Section = ({ children, wavesElement, ...props }: Props): JSX.Elemen
           paddingX: "space24",
           position: "relative",
         }),
+        outerClassName,
       )}
     >
       <Box
