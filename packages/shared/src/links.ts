@@ -22,6 +22,8 @@ export const links = (domain = "flows.sh") => ({
   changelog: `https://${domain}/changelog`,
   examplesList: `https://${domain}/examples`,
   affiliate: `https://flows-sh.lemonsqueezy.com/affiliates`,
+  scheduleCall: "https://cal.com/flows-ondra/session",
+  contact: `https://${domain}/contact`,
   sdk: {
     overview: `https://github.com/RBND-studio/flows-sdk/tree/main/examples`,
     reactTemplate: `https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/vite`,
@@ -124,6 +126,5 @@ export const links = (domain = "flows.sh") => ({
     localization: {
       main: `https://${domain}/docs/localization`,
     },
-    contact: `https://${domain}/docs/contact-us`,
   },
 });

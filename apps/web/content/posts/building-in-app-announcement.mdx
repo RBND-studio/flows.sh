@@ -1,0 +1,216 @@
+---
+title: How to build in-app announcements with Flows
+description: Learn how to build and launch your very own Flows powered announcements to engage users, highlight features, and achieve 100% open rate.
+date: "2025-06-19"
+author: "Ondrej Pesicka"
+image: /images/blog/building-in-app-announcement/cover.png
+imageAlt: In-app announcement banner example
+---
+
+Have you ever wanted to notify your users about a new feature launch or highlight a recent changelog? One of the most effective ways to do this is by delivering messages directly inside your app, right where your users already are.
+
+In-app announcements offer a 100% open rate (unlike emails or social posts) and can be highly contextual to what users are doing. You can use them to promote new features, share changelogs, announce scheduled maintenance, or promote blog posts and events. They’re also flexible in format: they can appear as modals on login or as persistent banners in the sidebar or header.
+
+## How to build in-app announcements with Flows
+
+Let’s walk through how to build an in-app announcement using Flows. Imagine you've just launched a new Dark Mode feature. You want to display a persistent banner in your app’s sidebar so users can learn more at any time. And you’d also like to reuse this banner for future announcements.
+
+### Step 1: Create the UI component
+
+Start by building a reusable `AnnouncementBanner` component in React. This component will render the announcement using properties passed from Flows.
+
+```tsx
+import { ComponentProps } from "@flows/react";
+import Link from "next/link";
+
+type Props = ComponentProps<{
+  title: string;
+  description: string;
+  href: string;
+  continue: () => void;
+}>;
+
+export const AnnouncementBanner = (props: Props) => {
+  return (
+    <div className="background-gradient rounded-[9px] p-[1px] transition-all hover:scale-[1.02]">
+      <Link
+        href={props.href}
+        className="flex flex-row-reverse gap-0.5 rounded-lg border bg-white shadow-md transition-all hover:shadow-lg dark:bg-neutral-900 md:flex-col"
+        onClick={() => props.continue()}
+      >
+        {/* Decorative illustration – replace with your own if needed */}
+        <Illustration />
+        <div className="flex w-full flex-col justify-center gap-1 p-2">
+          <p className="text-sm font-semibold">{props.title}</p>
+          <p className="text-xs">{props.description}</p>
+        </div>
+      </Link>
+    </div>
+  );
+};
+```
+
+The `Props` type defines the data Flows will pass to the component: a `title`, `description`, `href`, and a `continue` function that dismisses the banner when clicked. We will fill these properties when we create the workflow in Flows.
+
+<Image
+  src="/images/blog/building-in-app-announcement/component.png"
+  alt="Announcement banner component UI example"
+  width={1800}
+  height={1040}
+/>
+
+This is how our component looks like when rendered in the app. For now we hardcoded it into the layout to test it, but now it’s time to integrate it with Flows so we can use it in workflows.
+
+### Step 2: Register the component in the FlowsProvider
+
+Next, we need to tell Flows about our `AnnouncementBanner` component so that it can be used in workflows. We do this by adding it to the `components` prop in the `FlowsProvider`.
+
+```tsx
+import { FlowsProvider } from "@flows/react";
+import { AnnouncementBanner } from "./AnnouncementBanner"; // Adjust path as needed
+
+const App = () => {
+  return (
+    <FlowsProvider
+      organizationId="your-organization-id"
+      environment="development"
+      userId="your-user-id"
+      components={{
+        AnnouncementBanner, // Pass the component to the FlowsProvider
+      }}
+      tourComponents={{}}
+    >
+      {/* Your app code here */}
+    </FlowsProvider>
+  );
+};
+```
+
+### Step 3: Create a block template
+
+Now that we have our `AnnouncementBanner` component, we can create a block template for it in Flows. This makes it easy for your team to reuse the component in workflows.
+
+<Image
+  src="/images/blog/building-in-app-announcement/block-template.png"
+  alt="Screenshot of the announcement banner block template configuration in Flows"
+  width={1800}
+  height={1542}
+/>
+
+Configure the block template like this:
+
+- **UI component**: `AnnouncementBanner`
+- **Slottable**: Enabled (so it can be rendered in slots that we will add to your app layout)
+- **Custom Properties**:
+  - **Title**: The headline for the announcement.
+  - **Description**: Supporting text.
+  - **Href**: Link to more info
+- **Exit nodes**:
+  - **Continue**: Used to dismiss the banner when clicked
+
+Once published, this block template can be used in any workflow.
+
+### Step 4: Add a slot in your app layout
+
+To display the banner, we need to add a `FlowsSlot` component to your app's layout. This will tell Flows where to render the component in the app structure. For this example, we’ll place it in the sidebar.
+
+```tsx
+import { FlowsSlot } from "@flows/react";
+
+export const Sidebar = () => {
+  return (
+    <div>
+      {/* Your sidebar content */}
+      <FlowsSlot id="sidebar" />
+    </div>
+  );
+};
+```
+
+This `FlowsSlot` acts as an anchor point for where Flows will render the component. The `id` is used to reference the slot in the workflow configuration.
+
+### Step 5: Create the announcement workflow
+
+Now we are ready to create a workflow that will show the announcement banner to users when they log in to the app.
+
+<Image
+  src="/images/blog/building-in-app-announcement/workflow-configuration.png"
+  alt="Screenshot of the workflow configuration in Flows"
+  width={1800}
+  height={1040}
+/>
+
+1. Start by adding a **Start** block without any conditions (for now).
+2. Add the **Announcement banner** block and fill in the title, description, and link.
+3. Set the **Slot ID** to `sidebar` to match the slot in your app.
+4. Connect the **Start** block to the **Announcement banner** block.
+
+When ready, publish the workflow to your `development` environment (or any other environment you are using) for testing.
+
+<Image
+  src="/images/blog/building-in-app-announcement/development-publish-dialog.png"
+  alt="Screenshot of the publish dialog in Flows"
+  width={1800}
+  height={1040}
+/>
+
+Log in to the app, and you should see the banner rendered in the sidebar. Clicking it should redirect you and dismiss the banner.
+
+### Step 6: Publish to production
+
+When you’re happy with the workflow, publish it to your production environment.
+
+We recommend adding conditions to the **Start** block to target only relevant users. For example targeting only users who registered before the feature was launched, or users with a specific role.
+
+<Image
+  src="/images/blog/building-in-app-announcement/start-block-conditions.png"
+  alt="Screenshot of the start block conditions configuration in Flows"
+  width={1800}
+  height={1040}
+/>
+
+## Publishing new announcements without code changes
+
+Now let’s say a few days later, you launch another new feature: two-factor authentication. You can reuse the same workflow setup without writing any additional code.
+
+First let’s update the content that we have in the current announcement banner workflow. Note that we are making changes in the **draft** version of the workflow.
+
+<Image
+  src="/images/blog/building-in-app-announcement/different-announcement.png"
+  alt="Screenshot of the updated announcement banner content in Flows"
+  width={1800}
+  height={1040}
+/>
+
+Since we are not editing the content of the old announcement, but rather, create a new announcement to replace the old one, we will publish the new version with the **Restart all users** migration option. This will creating a new version of the workflow that restarts all users and shows them the new announcement. The end result is that any users who meets the workflow start block conditions will see the new announcement banner with the updated content.
+
+<Image
+  src="/images/blog/building-in-app-announcement/restart-all.png"
+  alt="Screenshot of the restart all users migration option in Flows"
+  width={1800}
+  height={1040}
+/>
+
+Note that we did this entirely through Flows without having to update any code. For any future announcements, we can just repeat this part of the process.
+
+## Wrapping up
+
+In this post, we walked through how to:
+
+- Create a reusable in-app announcement banner with Flows
+- Integrate it into your app layout with slots
+- Manage future announcements entirely through Flows, with no code changes required
+
+This approach gives your product and marketing teams full control over user communication while allowing you to build components that match your product's design and functionality.
+
+If you’d like to see the full working example, check out the [live demo](https://flows.sh/examples/new-feature-card) and the accompanying [GitHub repo](https://github.com/RBND-studio/flows.sh/tree/main/examples/new-feature-card) for this post.
+
+## Next steps
+
+We can’t wait to see what kinds of announcements you’ll build with Flows! In the meantime, check out:
+
+- Live [examples](https://flows.sh/examples) to see what’s possible to build with Flows.
+- Our [documentation](https://docs.flows.sh) for more details on building workflows and components.
+- [Sign up](https://app.flows.sh/signup) for a free account to start building your own in-app announcements.
+
+✨ By the way, we also use the same approach to announce features and updates in Flows itself. Meta, right?

@@ -2,12 +2,12 @@ import { Flex } from "@flows/styled-system/jsx";
 import { bulletCss, headingCss, paragraphCss, Section, ulCss } from "components/ui";
 import { type Metadata } from "next";
 import type { ReactElement } from "react";
+import { emails } from "shared";
 import { Text } from "ui";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description:
-    "Exploring Flows’s legal documents? Let us know if we can help. Get in touch at hello@flows.sh",
+  description: `Exploring Flows’s legal documents? Let us know if we can help. Get in touch at ${emails.general}`,
 };
 
 const Page = (): ReactElement => {
@@ -144,7 +144,7 @@ const Page = (): ReactElement => {
         some other means.
       </Text>
       <Text className={paragraphCss} variant="bodyM">
-        Contact us at <strong>hello@flows.sh</strong> if you have any questions, comments, or
+        Contact us at <strong>{emails.general}</strong> if you have any questions, comments, or
         concerns about this privacy policy, your data, or your rights with respect to your
         information.
       </Text>

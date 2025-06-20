@@ -34,6 +34,8 @@ export const CodeHighlight: FC<Props> = ({ lineNumbers = true, ...props }) => {
           "& pre": {
             py: "space12!",
             flex: 1,
+            scrollbarWidth: "thin",
+            scrollbarColor: "var(--colors-pane-fg-scroll) transparent",
           },
           "&:hover .copy-button": {
             opacity: 1,

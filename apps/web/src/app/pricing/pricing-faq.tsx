@@ -3,7 +3,7 @@ import { Box } from "@flows/styled-system/jsx";
 import { FaqAccordion, Section, SmartLink } from "components/ui";
 import { links } from "lib/links";
 import { type ReactElement } from "react";
-import { formatNumberWithThousandSeparator, FREE_LIMIT, pricingTiers } from "shared";
+import { emails, formatNumberWithThousandSeparator, FREE_LIMIT, pricingTiers } from "shared";
 import { Text } from "ui";
 
 const questions = [
@@ -57,9 +57,9 @@ const questions = [
             color: "newFg.primary",
             textDecoration: "underline",
           })}
-          href="mailto:hello@flows.sh"
+          href={`mailto:${emails.general}`}
         >
-          hello@flows.sh
+          {emails.general}
         </a>
       </>
     ),

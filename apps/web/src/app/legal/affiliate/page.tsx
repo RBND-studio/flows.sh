@@ -2,12 +2,12 @@ import { Flex } from "@flows/styled-system/jsx";
 import { bulletCss, headingCss, paragraphCss, Section, ulCss } from "components/ui";
 import { type Metadata } from "next";
 import type { ReactElement } from "react";
+import { emails } from "shared";
 import { Text } from "ui";
 
 export const metadata: Metadata = {
   title: "Affiliate Program Policy",
-  description:
-    "Exploring Flows’s legal documents? Let us know if we can help. Get in touch at hello@flows.sh",
+  description: `Exploring Flows’s legal documents? Let us know if we can help. Get in touch at ${emails.general}`,
 };
 
 const Page = (): ReactElement => {
@@ -221,7 +221,7 @@ const Page = (): ReactElement => {
         the amendments. Otherwise, you will be deemed to agree with the announced amendments.
       </Text>
       <Text className={paragraphCss} variant="bodyM">
-        Contact us at <strong>hello@flows.sh</strong> if you have any questions, comments, or
+        Contact us at <strong>{emails.general}</strong> if you have any questions, comments, or
         concerns about these terms.
       </Text>
       <Text className={paragraphCss} variant="bodyM">
