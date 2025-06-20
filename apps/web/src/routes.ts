@@ -8,6 +8,7 @@ export const routes = {
   about: "/about",
   pricing: "/pricing",
   affiliate: "/affiliate",
+  contact: "/contact",
 
   solutions: {
     index: "/solutions",

@@ -43,6 +43,7 @@
       "@scarf/scarf",
       "@swc/core",
       "bcrypt",
+      "bufferutil",
       "contentlayer2",
       "cypress",
       "esbuild",

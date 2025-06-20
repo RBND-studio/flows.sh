@@ -2,14 +2,14 @@ import { Flex } from "@flows/styled-system/jsx";
 import { bulletCss, headingCss, paragraphCss, Section, ulCss } from "components/ui";
 import { type Metadata } from "next";
 import type { ReactElement } from "react";
+import { emails } from "shared";
 import { Text } from "ui";
 
 import { type Subprocessor, SubprocessorsTable } from "./table";
 
 export const metadata: Metadata = {
   title: "Data Processing Agreement",
-  description:
-    "Exploring Flows’s legal documents? Let us know if we can help. Get in touch at hello@flows.sh",
+  description: `Exploring Flows’s legal documents? Let us know if we can help. Get in touch at ${emails.general}`,
 };
 
 const Page = (): ReactElement => {
@@ -540,7 +540,7 @@ const Page = (): ReactElement => {
         <li className={bulletCss}>Name: RBND studio s.r.o.</li>
         <li className={bulletCss}>Address: č.p. 182, 29476 Hlavenec</li>
         <li className={bulletCss}>
-          Contact person’s name, position and contact details: RBND Privacy Team, hello@flows.sh
+          Contact person’s name, position and contact details: RBND Privacy Team, {emails.general}
         </li>
         <li className={bulletCss}>
           Activities relevant to the data transferred under these Clauses: Processing necessary to

@@ -54,6 +54,11 @@ const nextConfig = {
         destination: "/quickstart",
         permanent: true,
       },
+      {
+        source: "/contact-us",
+        destination: "https://flows.sh/contact",
+        permanent: true,
+      },
     ];
   },
 };

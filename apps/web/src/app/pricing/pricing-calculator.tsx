@@ -127,7 +127,7 @@ const CalculatorCard = ({
         </Text>
         <Text variant="bodyM" asChild>
           <a
-            href={links.docs.contact}
+            href={links.contact}
             className={css({
               display: "flex",
               alignItems: "center",

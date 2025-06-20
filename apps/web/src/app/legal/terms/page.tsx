@@ -3,12 +3,12 @@ import { headingCss, paragraphCss, Section, SmartLink } from "components/ui";
 import { type Metadata } from "next";
 import type { ReactElement } from "react";
 import { routes } from "routes";
+import { emails } from "shared";
 import { Text } from "ui";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description:
-    "Exploring Flows’s legal documents? Let us know if we can help. Get in touch at hello@flows.sh",
+  description: `Exploring Flows’s legal documents? Let us know if we can help. Get in touch at ${emails.general}`,
 };
 
 const Page = (): ReactElement => {
@@ -202,7 +202,7 @@ const Page = (): ReactElement => {
         You hereby grant the Company a nonexclusive, royalty-free, worldwide, fully-paid, and
         sub-licensable license to use your name and any of your trade names, trademarks, logos and
         other proprietary marks or words pursuant to this Section. You can opt-out of this use by
-        requesting opt-out by sending an email to hello@flows.sh.
+        requesting opt-out by sending an email to {emails.general}.
       </Text>
 
       <Text as="h2" className={headingCss} variant="titleXl">
@@ -288,7 +288,7 @@ const Page = (): ReactElement => {
       </Text>
       <Text className={paragraphCss} variant="bodyM">
         If you have a question about any of the Terms of Service, please contact us by e-mail at{" "}
-        <strong>hello@flows.sh</strong>.
+        <strong>{emails.general}</strong>.
       </Text>
       <Text className={paragraphCss} variant="bodyM">
         Last updated: August 5, 2024
