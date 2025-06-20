@@ -36,7 +36,7 @@ const mdxComponents = {
             ...props,
           }}
           wrapperProps={css({
-            mt: "space48",
+            mt: "space64",
             mb: "space24",
           })}
         >
@@ -48,7 +48,7 @@ const mdxComponents = {
       <Text
         as="h1"
         className={css({
-          mt: "space48",
+          mt: "space64",
           mb: "space24",
         })}
         variant="title2xl"
@@ -67,7 +67,7 @@ const mdxComponents = {
             ...props,
           }}
           wrapperProps={css({
-            mt: "space48",
+            mt: "space64",
             mb: "space24",
           })}
         >
@@ -79,7 +79,7 @@ const mdxComponents = {
       <Text
         as="h2"
         className={css({
-          mt: "space48",
+          mt: "space64",
           mb: "space24",
         })}
         variant="titleXl"
@@ -98,7 +98,7 @@ const mdxComponents = {
             ...props,
           }}
           wrapperProps={css({
-            mt: "space32",
+            mt: "space48",
             mb: "space16",
           })}
         >
@@ -110,7 +110,7 @@ const mdxComponents = {
       <Text
         as="h3"
         className={css({
-          mt: "space32",
+          mt: "space48",
           mb: "space16",
         })}
         variant="titleL"
@@ -159,9 +159,13 @@ const mdxComponents = {
           color: "newFg.neutral",
           paddingX: "space4",
           paddingY: "2px",
-          borderRadius: "radius4",
-          textStyle: "bodyM",
-          fontFamily: "monospace",
+          borderRadius: "radius6",
+          fontSize: "15px",
+          lineHeight: "20px",
+          fontFamily: "var(--global-font-mono)",
+          borderWidth: "1px",
+          borderStyle: "solid",
+          borderColor: "newBorder.neutral",
         },
       })}
       variant="bodyL"
@@ -204,7 +208,23 @@ const mdxComponents = {
       as="li"
       variant="bodyL"
       {...props}
-      className={css({ listStylePosition: "outside", marginBottom: "space8" })}
+      className={css({
+        listStylePosition: "outside",
+        marginBottom: "space8",
+        "& code": {
+          backgroundColor: "newBg.neutral.subtle",
+          color: "newFg.neutral",
+          paddingX: "space4",
+          paddingY: "2px",
+          borderRadius: "radius6",
+          fontSize: "15px",
+          lineHeight: "20px",
+          fontFamily: "var(--global-font-mono)",
+          borderWidth: "1px",
+          borderStyle: "solid",
+          borderColor: "newBorder.neutral",
+        },
+      })}
     />
   ),
 
@@ -278,6 +298,9 @@ const mdxComponents = {
   },
   pre: (props) => (
     <CodeHighlight
+      className={css({
+        my: "space32!",
+      })}
       codeClassName={css({
         fontSize: "13px",
       })}

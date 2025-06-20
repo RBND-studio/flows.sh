@@ -23,4 +23,12 @@ export default defineConfig({
   minify: true,
 
   conditions,
+
+  // TODO: create a const out of this and apply it to all apps
+  globalCss: {
+    html: {
+      // cspell:disable-next-line
+      "--global-font-mono": `ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`,
+    },
+  },
 });
