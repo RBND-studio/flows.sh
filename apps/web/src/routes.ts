@@ -21,6 +21,7 @@ export const routes = {
 
   alternatives: {
     appcues: "/alternatives/appcues",
+    chameleon: "/alternatives/chameleon",
     userflow: "/alternatives/userflow",
   },
 
