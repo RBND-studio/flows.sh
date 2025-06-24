@@ -12,13 +12,8 @@ import {
 import { CtaBanner } from "components/cta-banner";
 import { SignupClick } from "components/utils/signup-click";
 import { links } from "lib/links";
-import type { Metadata } from "next";
 import type { ReactElement } from "react";
 import { Button } from "ui";
-
-export const metadata: Metadata = {
-  alternates: { canonical: "https://flows.sh" },
-};
 
 const Page = (): ReactElement => {
   return (

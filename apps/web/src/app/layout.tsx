@@ -42,6 +42,9 @@ export const metadata: Metadata = {
     images: "/og.png",
     creator: "@flows_sh",
   },
+  alternates: {
+    canonical: "./",
+  },
   keywords: ["flows", "onboarding", "product adoption", "user onboarding", "user adoption"],
   robots: PRODUCTION ? undefined : "noindex,nofollow",
 };

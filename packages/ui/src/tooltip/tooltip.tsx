@@ -4,29 +4,11 @@ import { css, cx } from "@flows/styled-system/css";
 import { token } from "@flows/styled-system/tokens";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import type { JSX } from "react";
-import { forwardRef, useCallback, useEffect, useMemo, useState } from "react";
+import { forwardRef, useCallback, useState } from "react";
 
 const TooltipProvider = TooltipPrimitive.Provider;
 
 const TooltipRoot = TooltipPrimitive.Root;
-
-function useHasHover(): boolean {
-  const [firstRender, setFirstRender] = useState(true);
-  useEffect(() => {
-    setFirstRender(false);
-  }, []);
-
-  return useMemo(() => {
-    if (firstRender) return true;
-
-    try {
-      return matchMedia("(hover: hover)").matches;
-    } catch {
-      // Assume that if browser too old to support matchMedia it's likely not a touch device
-      return true;
-    }
-  }, [firstRender]);
-}
 
 const TooltipTrigger = TooltipPrimitive.Trigger;
 
@@ -116,17 +98,17 @@ export const Tooltip = forwardRef<HTMLButtonElement, TooltipProps>(function Tool
   },
   ref,
 ): JSX.Element {
-  const hasHover = useHasHover();
   const [open, setOpen] = useState(false);
 
   const onClick = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
-      if (!hasHover && supportMobileTap) {
+      // When supportMobileTap is true, the only purpose of the trigger element is to open the tooltip. So we open the tooltip on click or tap everytime.
+      if (supportMobileTap) {
         e.preventDefault();
         setOpen(true);
       }
     },
-    [hasHover, supportMobileTap],
+    [supportMobileTap],
   );
 
   return (
