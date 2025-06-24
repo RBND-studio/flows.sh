@@ -1,3 +1,5 @@
-export type StateMemoryValue = {
-  trigger?: string;
-} | null;
+export type StateMemoryTrigger = "manual" | "transition";
+export type StateMemoryJsonValue = {
+  trigger?: StateMemoryTrigger;
+};
+export type StateMemoryValue = StateMemoryJsonValue | null;

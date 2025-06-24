@@ -8,6 +8,7 @@
     "array",
     "state-memory",
     "block-trigger",
+    "block-state",
     "slot",
     "page-targeting",
     "user-properties",

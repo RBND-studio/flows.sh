@@ -110,6 +110,7 @@ export const links = (domain = "flows.sh") => ({
       array: `https://${domain}/docs/block-properties/array`,
       stateMemory: `https://${domain}/docs/block-properties/state-memory`,
       blockTrigger: `https://${domain}/docs/block-properties/block-trigger`,
+      blockState: `https://${domain}/docs/block-properties/block-state`,
       blockKey: `https://${domain}/docs/block-properties/block-key`,
     },
     configureBlocks: {

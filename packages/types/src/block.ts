@@ -7,3 +7,13 @@ export type BlockType =
   | "tour-component"
   | "manual-start"
   | "wait";
+
+export type PropertyType =
+  | "string"
+  | "number"
+  | "boolean"
+  | "select"
+  | "array"
+  | "state-memory"
+  | "block-trigger"
+  | "block-state";
