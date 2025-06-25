@@ -7,7 +7,6 @@ import { SignupClick } from "components/utils/signup-click";
 import { links } from "lib/links";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
-import { routes } from "routes";
 import { Button, Text } from "ui";
 
 import { SharedFeatures } from "../shared-features";
@@ -17,10 +16,6 @@ export const metadata: Metadata = {
   title: "Feature Adoption – Flows",
   description:
     "Support releases with engaging announcements, embeddable banners, and guides. Nudge users to try new features and get the most out of your product.",
-  alternates: {
-    // Canonical to avoid indexing issue with url change
-    canonical: routes.solutions.featureAdoption,
-  },
 };
 
 const Page = (): ReactElement => {

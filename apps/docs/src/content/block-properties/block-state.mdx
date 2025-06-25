@@ -1,0 +1,60 @@
+---
+title: "Block state"
+description: "Read a state from another block in the workflow."
+---
+
+![Block state](/block-properties/block-state.png)
+
+## Overview
+
+The block state property allows you to read a state from another block in the workflow. This is useful when you want to show a progress of an onboarding checklist in a widget for example.
+
+<Callout type="info">
+  Block state is only available for workflow blocks, not for tour blocks.
+</Callout>
+
+## Usage in a workflow
+
+In a workflow, you can configure the block state to read a state from another component block in the workflow. To configure the block state, click on the field and select the block you want to read the state from. Now the block state will be available in your component as a prop.
+
+## Usage in a block template
+
+In a block template, you can define the block state like any other property. The properties to fill out are:
+
+- **Title**: The title of the block state shown in the block editor.
+- **Description**: The description of the block state shown in the block editor (optional).
+- **Type**: Select block state from the dropdown.
+- **Key**: The key under which the block state will be available in your component.
+
+Below is an example usage of block state in a component:
+
+```tsx title="Block state component example"
+import { BlockState } from "@flows/react";
+
+type Props = {
+  // The connected block’s state will be available under the key you defined in the block template
+  anotherBlockState?: BlockState;
+};
+
+export const SidebarChecklistWidget = ({ anotherBlockState }: Props) => {
+  // You can access the properties of the other block
+  const totalItems = anotherBlockState?.items.length || 0;
+  const finishedItems =
+    anotherBlockState?.items.filter((item) => item.state === "true").length || 0;
+
+  return (
+    <div>
+      <p>
+        Checklist progress: {finishedItems} of {totalItems} items completed.
+      </p>
+    </div>
+  );
+};
+```
+
+In this example, the `SidebarChecklistWidget` component reads the state of another block and displays the progress of a checklist. The `anotherBlockState` prop is automatically populated with the state of the connected block, allowing you to access its properties directly.
+
+<Callout type="info">
+  Block state doesn't support nested block state properties. If you need to access multiple blocks'
+  states, you will need to create separate block state properties for each block.
+</Callout>

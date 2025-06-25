@@ -202,10 +202,11 @@ Represents a block visible to the user.
 
 Represents the props passed to a component. In addition to your custom props, it includes the `__flows` object with Flows properties.
 
-| Name                 | Type     | Required | Notes                                                                                         |
-| -------------------- | -------- | -------- | --------------------------------------------------------------------------------------------- |
-| `__flows.key`        | `string` | No       | Unique key for the block. Set by you in a workflow. [Learn more](/block-properties/block-key) |
-| `__flows.workflowId` | `string` | Yes      | The ID of the workflow. Set by Flows.                                                         |
+| Name                 | Type     | Required | Notes                                                                                                                                               |
+| -------------------- | -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `__flows.id`         | `string` | Yes      | Unique identifier of the block, useful for stable key during rendering. Keep in mind each workflow version will have a different id for each block. |
+| `__flows.key`        | `string` | No       | Unique key for the block. Set by you in a workflow. [Learn more](/block-properties/block-key)                                                       |
+| `__flows.workflowId` | `string` | Yes      | The ID of the workflow. Set by Flows.                                                                                                               |
 
 ---
 
@@ -226,6 +227,19 @@ Represents the [state memory](/block-properties/state-memory) property of a bloc
 | `type`     | `string` | Yes      | The trigger type. Can be `manual` or `transition`.         |
 | `blockId`  | `string` | Yes      | The block ID of the block that triggers the state memory.  |
 | `blockKey` | `string` | No       | The block key of the block that triggers the state memory. |
+
+---
+
+#### BlockState
+
+Represents the [block state](/block-properties/block-state) of the selected block in the workflow.
+
+| Name                    | Type                         | Required | Notes                                                                                                                                               |
+| ----------------------- | ---------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Custom block properties | Depends on the property type | Yes      | The properties of the selected block in the workflow. The properties are defined on in the block.                                                   |
+| `__flows.id`            | `string`                     | Yes      | Unique identifier of the block, useful for stable key during rendering. Keep in mind each workflow version will have a different id for each block. |
+| `__flows.key`           | `string`                     | No       | Unique key for the block. Set by you in a workflow. [Learn more](/block-properties/block-key)                                                       |
+| `__flows.workflowId`    | `string`                     | Yes      | The ID of the workflow. Set by Flows.                                                                                                               |
 
 ---
 

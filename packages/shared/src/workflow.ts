@@ -1,6 +1,6 @@
-import { type BlockType } from "@flows/types";
+import { type BlockType, type PropertyType, type StateMemoryValue } from "@flows/types";
 
-export const propertyTypes = [
+export const propertyTypes: PropertyType[] = [
   "string",
   "number",
   "boolean",
@@ -8,9 +8,9 @@ export const propertyTypes = [
   "array",
   "state-memory",
   "block-trigger",
-] as const;
+  "block-state",
+];
 export const defaultPropertyType = propertyTypes[0];
-export type PropertyType = (typeof propertyTypes)[number];
 export const primitivePropertyTypes: PropertyType[] = ["string", "number", "boolean", "select"];
 
 export const builtInBlockDescriptions: Record<string, string> = {
@@ -54,6 +54,7 @@ export const defaultPropertyValue = {
   number: 0,
   boolean: false,
   array: [],
-  "state-memory": { trigger: "manual" },
+  "state-memory": { trigger: "manual" } satisfies StateMemoryValue,
   "block-trigger": null,
+  "block-state": null,
 } satisfies Record<PropertyType, unknown>;

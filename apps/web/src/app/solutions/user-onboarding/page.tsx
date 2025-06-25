@@ -7,7 +7,6 @@ import { SignupClick } from "components/utils/signup-click";
 import { links } from "lib/links";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
-import { routes } from "routes";
 import { Button, Text } from "ui";
 
 import { SharedFeatures } from "../shared-features";
@@ -17,10 +16,6 @@ export const metadata: Metadata = {
   title: "User Onboarding – Flows",
   description:
     "Build engaging onboarding flows that guide users to value. Improve new user experience and drive activation while being on-brand.",
-  alternates: {
-    // Canonical to avoid indexing issue with url change
-    canonical: routes.solutions.userOnboarding,
-  },
 };
 
 const Page = (): ReactElement => {
