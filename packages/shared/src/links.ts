@@ -65,6 +65,8 @@ export const links = (domain = "flows.sh") => ({
     productHuntLaunchAnnouncement: "https://product-hunt-launch-announcement.examples.flows.sh",
     productHuntLaunchAnnouncementSource:
       "https://github.com/RBND-studio/flows.sh/tree/main/examples/product-hunt-launch-announcement",
+    onboardingHub: "https://onboarding-hub.examples.flows.sh",
+    onboardingHubSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/onboarding-hub",
     // --PLOP_NEW_EXAMPLE_LINK--
   },
   docs: {

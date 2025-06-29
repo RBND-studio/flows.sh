@@ -1,5 +1,5 @@
 {
-  "name": "modal",
+  "name": "onboarding-hub",
   "version": "0.1.0",
   "repository": "https://github.com/RBND-studio/flows.sh/tree/main/examples",
   "license": "MIT",
@@ -13,7 +13,9 @@
   "dependencies": {
     "@flows/react": "latest",
     "@flows/react-components": "latest",
+    "@radix-ui/react-collapsible": "^1.1.3",
     "@radix-ui/react-dropdown-menu": "^2.1.6",
+    "@radix-ui/react-progress": "^1.1.2",
     "@radix-ui/react-slot": "^1.1.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
