@@ -73,7 +73,7 @@ export const Checklist = ({
             <div className="mt-3 flex flex-col items-center rounded-md border bg-muted px-3 py-6">
               <p className="font-semibold text-foreground">You’re all set!</p>
               <p className="mb-3 text-sm text-muted-foreground">
-                Your are now ready to use Acme app.
+                You are now ready to use Acme app.
               </p>
               <Button size="sm" onClick={() => handleExitNode(complete)}>
                 Finish onboarding
