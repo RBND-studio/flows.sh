@@ -34,7 +34,7 @@
     "markdownlint-cli": "^0.44.0",
     "prettier": "^3.4.2",
     "tsconfig": "workspace:*",
-    "turbo": "^2.5.0"
+    "turbo": "^2.5.4"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
@@ -49,8 +49,9 @@
       "esbuild",
       "nestjs-pino",
       "protobufjs",
-      "sharp"
+      "sharp",
+      "unrs-resolver"
     ]
   },
-  "packageManager": "pnpm@10.12.1"
+  "packageManager": "pnpm@10.12.3"
 }
