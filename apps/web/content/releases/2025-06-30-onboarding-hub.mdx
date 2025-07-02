@@ -1,0 +1,25 @@
+---
+title: Onboarding hub powered by block state
+date: "2025-06-30"
+description: Create dynamic onboarding hubs with the new block state property. Read another block's state and use it to build workflows that adapt to the current user's progress.
+---
+
+<Image
+  src="/images/changelog/2025-06-30-onboarding-hub-example.png"
+  alt="Onboarding hub example powered by block state"
+  width={1800}
+  height={1040}
+/>
+
+You can now use the new block state property to read the state of other blocks and create workflows that respond to user progress. This opens up the possibility to build onboarding hubs with sidebar widgets showing each user's tasks, progress, and more.
+
+Check out the [live example](/examples/onboarding-hub) or dive into the [documentation](/docs/block-properties/block-state) to learn more about how to use block state.
+
+## Other improvements
+
+- Added **starts with**, **not starts with**, **ends with**, and **not ends with** operators to page targeting
+- Added **restart all users migration** option to the publish modal. See our [blog post](/blog/building-in-app-announcement) for a real-world example.
+
+## Bug fixes
+
+- Fixed an issue where workflow analytics missed some events if the "started" event wasn't within the selected time range.
