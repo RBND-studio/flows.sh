@@ -50,7 +50,7 @@ pnpm app tsc
 
 ### Docs
 
-- [Production (docs.flows.sh)](https://docs.flows.sh)
+- [Production (flows.sh/docs)](https://flows.sh/docs)
 
 ```bash
 # Run development server
