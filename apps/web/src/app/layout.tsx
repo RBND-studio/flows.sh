@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description:
       "Flows is a fully customizable product adoption platform for modern companies building onboarding and user engagement experiences.",
     images: "/og.png",
-    url: "/",
+    url: "./",
     locale: "en_US",
   },
   twitter: {

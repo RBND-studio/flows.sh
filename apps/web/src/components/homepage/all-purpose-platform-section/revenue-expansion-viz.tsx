@@ -56,7 +56,7 @@ export const RevenueExpansionViz = (): ReactNode => {
             alignItems="center"
           >
             <Icon icon={Upgrade16} />
-            <Text variant="titleXs">Free trial</Text>
+            <Text variant="titleXs">Pro plan</Text>
           </Flex>
         </Flex>
         <Icon icon={ArrowRight16} color="newFg.neutral.muted" />

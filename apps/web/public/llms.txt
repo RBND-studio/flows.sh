@@ -37,7 +37,7 @@
 ## How to Get Started
 
 - [Pricing](https://flows.sh/pricing): Flows offer a pay-as-you-go pricing that starts at $0/month with a generous free forever tier
-- [Contact](https://flows.sh/docs/contact-us): Contact the team for a demo
+- [Contact](https://flows.sh/contact): Contact the team for a demo
 - [Signup](https://app.flows.sh/signup): Sign up to try out the product today
 
 ## Flows SDK
