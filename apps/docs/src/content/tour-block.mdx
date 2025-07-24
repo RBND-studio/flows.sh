@@ -9,6 +9,19 @@ description: Guide users through your application with step-by-step, interactive
 
 Tours consist of tour-specific blocks from your block library. Each tour step functions like a regular block but comes with built-in features that help with creating step-by-step linear guides.
 
+## Tour trigger
+
+The tour trigger property defines when a tour should begin. By default, the tour starts automatically when the user reaches the tour block. However, you can configure custom triggers to start the tour based on specific conditions, like when someone visits a page, clicks a button, or sees something on screen.
+
+Trigger conditions are defined as an array, and all conditions must be met for the tour to start. The following trigger types are supported:
+
+- **User navigates to a page** – The tour starts when the user navigates to a specified URL.
+- **User clicks on an element** – The tour starts when the user clicks a specific element (use CSS selector).
+- **Element is on the page** – The tour starts when a specific element is present in the DOM (use CSS selector).
+- **Element is not on the page** – The tour starts when a specific element is not present in the DOM (use CSS selector).
+
+These triggers give you full control over when and how tours are launched within your application.
+
 ## Tour steps
 
 The steps property in a tour block defines the individual steps. Each step acts as an independent block but is automatically linked to the previous and next steps through the built-in `previous` and `continue` exit nodes. Users can exit the tour at any step using the `cancel` exit node.

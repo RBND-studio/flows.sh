@@ -66,7 +66,8 @@ export const links = (domain = "flows.sh") => ({
     productHuntLaunchAnnouncementSource:
       "https://github.com/RBND-studio/flows.sh/tree/main/examples/product-hunt-launch-announcement",
     onboardingHub: "https://onboarding-hub.examples.flows.sh",
-    onboardingHubSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/onboarding-hub",
+    onboardingHubSource:
+      "https://github.com/RBND-studio/flows.sh/tree/main/examples/onboarding-hub",
     // --PLOP_NEW_EXAMPLE_LINK--
   },
   docs: {
@@ -114,6 +115,7 @@ export const links = (domain = "flows.sh") => ({
       blockTrigger: `https://${domain}/docs/block-properties/block-trigger`,
       blockState: `https://${domain}/docs/block-properties/block-state`,
       blockKey: `https://${domain}/docs/block-properties/block-key`,
+      tourTrigger: `https://${domain}/docs/tour-block#tour-trigger`,
     },
     configureBlocks: {
       exitNodes: `https://${domain}/docs/workflows/configure-blocks#exit-nodes`,
