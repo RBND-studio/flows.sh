@@ -8,9 +8,9 @@
     "tsc": "tsc"
   },
   "devDependencies": {
-    "@types/react": "^19.1.0",
+    "@types/react": "^19.1.9",
     "eslint-config-custom": "workspace:*",
-    "react": "19.1.0",
+    "react": "19.1.1",
     "tsconfig": "workspace:*",
     "typescript": "5.8.3"
   }
