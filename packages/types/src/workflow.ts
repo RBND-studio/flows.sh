@@ -28,3 +28,21 @@ export type TourWait = {
   element?: string;
   ms?: number;
 };
+
+export type TourTriggerExpressionType = "navigation" | "click" | "dom-element" | "not-dom-element";
+
+export type TourTriggerExpression = {
+  type: TourTriggerExpressionType;
+  value?: string;
+  values?: string[];
+  operator?: string;
+};
+
+export type TourTriggerGroupOperator = "AND";
+
+export type TourTriggerGroup = {
+  operator: TourTriggerGroupOperator;
+  expressions: TourTriggerExpression[];
+};
+
+export type TourTrigger = TourTriggerGroup;

@@ -23,7 +23,12 @@ You’ve probably heard of tools like Appcues, Chameleon, Userflow, Pendo, Inter
 
 While each of these take a slightly different angle, they all follow the same basic model: remove developer from the equation and let product, marketing, and customer success teams build in-product experiences themselves.
 
-{/*TODO: Image - screenshot of a ugly tooltip in some product*/}
+<Image
+  src="/images/blog/flows-vs-other-tools/clunky-tooltip.png"
+  alt="Illustration of a clunky tooltip in a product"
+  width={3600}
+  height={1432}
+/>
 
 These tools load third-party code at runtime and inject their UI into your app via overlays – modals, tooltips and banners to explain stuff and show users where to click. This creates a disconnected layer on top of your product’s real logic, state, and UI. Here’s some of why this approach breaks down:
 
@@ -39,13 +44,23 @@ With the limited modalities available, you are not able to let users do anything
 
 Instead of embedding a key setup action in an empty state at exactly the right time in your user's journey, you’re forced to interrupt them with a modal, navigate them to a completely different place in your product, and take them on a tooltip hunt to find the action among a sea of others. The result? Extra steps, a poor experience, and many users lost along the way.
 
-{/*TODO: Image - User journey diagram. One path with the user "using the app" –> "interruption by a modal" -> "following tootlips", second path is the good one: "using the app" -> "empty state with inline action" -> "completing the task".*/}
+<Image
+  src="/images/blog/flows-vs-other-tools/user-journey.jpg"
+  alt="Illustration of a user journey with and without Flows"
+  width={2000}
+  height={1125}
+/>
 
 ### 3. Ad blockers silently suppress the experiences
 
 Because the existing tools load third-party JavaScript code directly into your user's clients, ad blockers often block the experiences they power. This suppression happens silently. making it hard to analyze the effectiveness of your experiences. Worse, your users are left in a product with none of the help, education, or guidance you intended them to have.
 
-{/*TODO: Image - Somehow show an ad blocker blocking onboarding, or we can do a infographic with how many percent of users have ad blockers, and how many of them are affected by this. 31.5% of users use ad blockers at least sometimes when online according to Backlinko https://backlinko.com/ad-blockers-users*/}
+<Image
+  src="/images/blog/flows-vs-other-tools/ad-blockers.jpg"
+  alt="Illustration of the percentage of users with ad blockers"
+  width={2000}
+  height={1125}
+/>
 
 ---
 
@@ -55,7 +70,7 @@ We started building Flows to give teams a better way to build product adoption e
 
 ## Your onboarding and education can't be an afterthought
 
-In today's SaaS landscape, great product adoption isn't just a nice-to-have – it's a competitive advantage. More and more, your ability to activate users and guide them to value *within the product itself* determines whether they stick around or churn.
+In today's SaaS landscape, great product adoption isn't just a nice-to-have – it's a competitive advantage. More and more, your ability to activate users and guide them to value _within the product itself_ determines whether they stick around or churn.
 
 That means onboarding, education, and user guidance need to be treated as core product work, not as something you tack on later. They should be designed with the same care, craft, and technical depth as your primary features.
 
@@ -87,7 +102,12 @@ Flows was built from the ground up to offer a better way to build onboarding, ed
 
 Instead of forcing you to waste time trying to make the limited set of available components look passable, Flows meets you where you are. You can use your own UI components and technologies, giving you the full flexibility of code to build relevant, contextual workflows that fit your product, meet your quality bar, and don't get in the way.
 
-{/*TODO: Image - custom components illustration, can be similar to the one on the homepage*/}
+<Image
+  src="/images/blog/flows-vs-other-tools/custom-components.jpg"
+  alt="Screenshot of Flows custom components"
+  width={2000}
+  height={1125}
+/>
 
 PS: for quicker setup, Flows comes with a set of pre-built components that you can use to get started quickly. But you can always fork them or build your own.
 
@@ -97,7 +117,12 @@ With Flows, onboarding doesn’t have to float awkwardly above your product. It 
 
 That means no more jarring modals or pointing users away from the page they’re on. Instead, you can guide them with contextual components placed inline — in empty states, sidebars, settings screens, or anywhere else inside your product. The result is a smoother experience that feels fully native and keeps users focused on the task at hand.
 
-{/*TODO: Image - embedded components illustration*/}
+<Image
+  src="/images/blog/flows-vs-other-tools/embedded-components.jpg"
+  alt="Screenshot of Flows embedded components"
+  width={2000}
+  height={1125}
+/>
 
 ### 3. Built for developers too
 

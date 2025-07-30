@@ -27,3 +27,32 @@ examples of how to implement Flows in your application.
 ## Other frameworks
 
 Angular, Svelte, Vue, and more SDKs are not on our roadmap yet. However, you can use the [Javascript SDK](/javascript/overview) to integrate Flows with any JavaScript framework. If you need help with a specific framework, please [contact us](https://flows.sh/contact).
+
+## Debug mode
+
+All Flows SDKs support debug mode, which helps you inspect the SDK's behavior directly in your application. It’s designed for developers and product teams to troubleshoot, test, and verify workflow integrations.
+
+![Debug mode](/sdk/debug-mode.png)
+
+When debug mode is enabled, a panel appears in your app showing real-time information about the SDK setup, user context, loaded workflows (blocks), and page state.
+
+### What you can see in debug mode
+
+The debug panel provides the following information:
+
+- **User info**: The current `userId` and `userProperties` sent to Flows.
+- **SDK setup**: The `organizationId` and `environment` used to initialize the SDK, along with validation status (e.g. whether the API responded successfully).
+- **Blocks**: A summary of loaded and active blocks. You can log the full blocks object to the console for detailed inspection.
+- **Pathname**: The current page pathname, helpful for debugging page-based targeting.
+
+### How to enable debug mode
+
+You can enable debug mode in three ways:
+
+1. **SDK prop**: Refer to the SDK documentation for your framework to see how to enable debug mode via a prop or configuration option.
+2. **Automatic in development**: Debug mode is automatically enabled when running on `localhost`. You can disable it by setting the `debug` prop to `false`.
+3. **Keyboard shortcut**: Press `Cmd + Option + Shift + F` on Mac or `Ctrl + Alt + Shift + F` on Windows/Linux to toggle debug mode on and off anytime in your app. This is useful for inspecting the production environment without changing code. Can be customized by passing a function to the `onDebugShortcut` prop.
+
+### Note on safety
+
+The debug mode can be accessed by anyone using your application but it does not expose any sensitive information. If needed you can disable the debug panel in production by setting the `onDebugShortcut` prop to `() => false`, changing the keyboard shortcut, or by adding extra checks in your app to restrict access to the debug panel.

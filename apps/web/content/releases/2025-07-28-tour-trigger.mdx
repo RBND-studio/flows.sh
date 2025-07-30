@@ -1,0 +1,33 @@
+---
+title: Tour trigger
+date: "2025-07-28"
+description: This update adds tour trigger conditions for more precise control, introduces a new debug mode for inspecting SDK behavior, and fixes an issue with location targeting in the JS SDK.
+---
+
+<Image
+  src="/images/changelog/2025-07-28-tour-trigger.png"
+  alt="Screenshot of the new tour trigger feature"
+  width={1800}
+  height={900}
+/>
+
+Define exactly when a tour should start. Like when someone visits a specific page, clicks a button, or sees something on screen. This gives you more control and flexibility when building tours. Learn more about [tour triggers](/docs/tour-block#tour-trigger).
+
+## Debug mode for SDK
+
+<Image
+  src="/images/changelog/2025-07-28-debug-mode.png"
+  alt="Screenshot of the new debug mode feature"
+  width={1800}
+  height={960}
+/>
+
+Have you ever wanted to see what the SDK is doing under the hood? You can now enable debug mode to view which data is sent to Flows, what blocks are loaded, and which are currently active. It's a helpful way to troubleshoot or test your workflows. Learn more about [debug mode](/docs/sdk-overview#debug-mode).
+
+## Other improvements
+
+- Migrated from BetterStack to self hosted Grafana LGTM stack to better control the flow of data and improve our monitoring capabilities.
+
+## Bug fixes
+
+- Fixed an issue where location targeting in the JS SDK didn’t handle search parameters correctly.

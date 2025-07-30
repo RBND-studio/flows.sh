@@ -31,14 +31,16 @@ init({
 
 Parameters:
 
-| Name             | Type                              | Required | Notes                                                                                                                         |
-| ---------------- | --------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `organizationId` | `string`                          | Yes      | Your organization ID, available in **Settings > General**.                                                                    |
-| `environment`    | `string`                          | Yes      | The environment key, available in **Settings > Environments**.                                                                |
-| `userId`         | `string`                          | Yes      | Unique ID for identifying the user.                                                                                           |
-| `userProperties` | `object`                          | No       | Object with custom [user properties](/users/properties) as key-value pairs. Accepts `string`, `number`, `boolean`, or `date`. |
-| `language`       | [LanguageOption](#languageoption) | No       | The user's language used for [localization](/localization). When empty the user will receive the default language group.      |
-| `apiUrl`         | `string`                          | No       | Custom API URL for proxying requests through your domain.                                                                     |
+| Name              | Type                              | Required | Notes                                                                                                                                                                                                                                          |
+| ----------------- | --------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `organizationId`  | `string`                          | Yes      | Your organization ID, available in **Settings > General**.                                                                                                                                                                                     |
+| `environment`     | `string`                          | Yes      | The environment key, available in **Settings > Environments**.                                                                                                                                                                                 |
+| `userId`          | `string`                          | Yes      | Unique ID for identifying the user.                                                                                                                                                                                                            |
+| `userProperties`  | `object`                          | No       | Object with custom [user properties](/users/properties) as key-value pairs. Accepts `string`, `number`, `boolean`, or `date`.                                                                                                                  |
+| `language`        | [LanguageOption](#languageoption) | No       | The user's language used for [localization](/localization). When empty the user will receive the default language group.                                                                                                                       |
+| `apiUrl`          | `string`                          | No       | Custom API URL for proxying requests through your domain.                                                                                                                                                                                      |
+| `debug`           | `boolean`                         | No       | Enable [debug mode](/sdk-overview#debug-mode) to inspect the SDK's behavior.                                                                                                                                                                   |
+| `onDebugShortcut` | `function`                        | No       | Custom keyboard shortcut handler for opening the debug panel. By default, the debug panel opens with `Cmd + Option + Shift + F` on Mac or `Ctrl + Alt + Shift + F` on Windows/Linux. If you set this prop, the default shortcut will not work. |
 
 ---
 
