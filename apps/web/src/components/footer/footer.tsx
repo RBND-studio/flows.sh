@@ -111,6 +111,10 @@ const footerGroups: FooterGroup[] = [
         title: "Userflow",
         href: routes.alternatives.userflow,
       },
+      {
+        title: "WalkMe",
+        href: routes.alternatives.walkme,
+      },
     ],
   },
   {
