@@ -85,4 +85,6 @@ export * from "./src/user16";
 export * from "./src/userflow20";
 export * from "./src/versioning16";
 export * from "./src/wait16";
+export * from "./src/walkme-full20";
+export * from "./src/walkme20";
 export * from "./src/youtube16";
