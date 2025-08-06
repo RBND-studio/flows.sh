@@ -9,6 +9,7 @@
     "state-memory",
     "block-trigger",
     "block-state",
+    "action",
     "slot",
     "page-targeting",
     "user-properties",
