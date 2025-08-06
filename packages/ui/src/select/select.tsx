@@ -1,7 +1,7 @@
 "use client";
 
 import { css, cva, cx } from "@flows/styled-system/css";
-import { Flex } from "@flows/styled-system/jsx";
+import { Box, Flex } from "@flows/styled-system/jsx";
 import { token } from "@flows/styled-system/tokens";
 import * as RadixSelect from "@radix-ui/react-select";
 import { CaretDown16, Check16 } from "icons";
@@ -12,11 +12,17 @@ import { Description } from "../description";
 import { Icon } from "../icon";
 import { Label } from "../label";
 import { Text } from "../text";
+import { Tooltip } from "../tooltip/tooltip";
 
-type Props<T extends string> = {
+export type SelectProps<T extends string = string> = {
   value?: T;
   defaultValue?: T;
-  options: readonly { value: T; label?: ReactNode }[];
+  options: readonly {
+    value: T | null;
+    label?: ReactNode;
+    disabled?: boolean;
+    disabledReason?: string;
+  }[];
   onChange?: (value: T) => void;
   className?: string;
   buttonClassName?: string;
@@ -33,6 +39,7 @@ type Props<T extends string> = {
   readOnly?: boolean;
   autoFocus?: boolean;
   "data-test"?: string;
+  noOptionsEmptyState?: string;
 };
 
 export const Select = memo(SelectInner) as typeof SelectInner;
@@ -53,8 +60,9 @@ function SelectInner<T extends string>({
   "aria-label": ariaLabel,
   autoFocus,
   "data-test": dataTest,
+  noOptionsEmptyState,
   ...props
-}: Props<T>): JSX.Element {
+}: SelectProps<T>): JSX.Element {
   const id = useId();
   const currentOption = useMemo(
     () => options.find((opt) => opt.value === (props.value ?? props.defaultValue)),
@@ -141,39 +149,58 @@ function SelectInner<T extends string>({
             }}
           >
             {options.map((option) => (
-              <RadixSelect.Item
-                className={cx(
-                  css({
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    gap: "space8",
-                    px: "space8",
-                    py: "space4",
-                    borderRadius: "5px", // TODO: fix theme
-                    cursor: "default",
-                    outline: "none",
-                    "&[data-state=checked]": {
-                      backgroundColor: "newControl.bg.selected",
-                      _hover: { backgroundColor: "newControl.bg.selected" },
-                    },
-                    "&[data-highlighted]": { backgroundColor: "newControl.bg.hover" },
-                    "&:hover": { backgroundColor: "newControl.bg.hover" },
-                  }),
-                  "group",
-                )}
+              <ItemWithTooltip
+                disabled={option.disabled}
+                disabledReason={option.disabledReason}
                 key={option.value}
-                value={option.value}
               >
-                <RadixSelect.ItemText asChild>
-                  <Text>{option.label ?? option.value}</Text>
-                </RadixSelect.ItemText>
+                <RadixSelect.Item
+                  className={cx(
+                    css({
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      gap: "space8",
+                      px: "space8",
+                      py: "space4",
+                      borderRadius: "5px", // TODO: fix theme
+                      cursor: "default",
+                      outline: "none",
+                      "&[data-state=checked]": {
+                        backgroundColor: "newControl.bg.selected",
+                        _hover: { backgroundColor: "newControl.bg.selected" },
+                      },
+                      "&[data-highlighted]": { backgroundColor: "newControl.bg.hover" },
+                      "&[data-disabled]": {
+                        color: "newControl.fg.disabled",
+                        _hover: {
+                          backgroundColor: "unset",
+                        },
+                      },
+                      "&:hover": { backgroundColor: "newControl.bg.hover" },
+                    }),
+                    "group",
+                  )}
+                  disabled={option.disabled}
+                  value={option.value as string}
+                >
+                  <RadixSelect.ItemText asChild>
+                    <Text color="inherit">{option.label ?? option.value}</Text>
+                  </RadixSelect.ItemText>
 
-                <RadixSelect.ItemIndicator>
-                  <Icon color="newControl.fg.selected" icon={Check16} />
-                </RadixSelect.ItemIndicator>
-              </RadixSelect.Item>
+                  <RadixSelect.ItemIndicator>
+                    <Icon color="newControl.fg.selected" icon={Check16} />
+                  </RadixSelect.ItemIndicator>
+                </RadixSelect.Item>
+              </ItemWithTooltip>
             ))}
+            {options.length === 0 ? (
+              <Box px="space8" py="space4">
+                <Text color="newControl.fg.disabled">
+                  {noOptionsEmptyState ?? "No options available"}
+                </Text>
+              </Box>
+            ) : null}
           </RadixSelect.Viewport>
         </RadixSelect.Content>
       </RadixSelect.Portal>
@@ -216,3 +243,18 @@ const button = cva({
     },
   },
 });
+
+const ItemWithTooltip = ({
+  children,
+  disabledReason,
+  disabled,
+}: {
+  children: ReactNode;
+  disabledReason?: string;
+  disabled?: boolean;
+}): JSX.Element => {
+  if (disabled && disabledReason) {
+    return <Tooltip side="left" content={disabledReason} trigger={children} />;
+  }
+  return <>{children}</>;
+};

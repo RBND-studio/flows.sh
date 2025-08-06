@@ -16,4 +16,5 @@ export type PropertyType =
   | "array"
   | "state-memory"
   | "block-trigger"
-  | "block-state";
+  | "block-state"
+  | "action";

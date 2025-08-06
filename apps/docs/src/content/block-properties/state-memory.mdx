@@ -69,10 +69,13 @@ export const Checklist = ({ items }: Props) => {
       <p className="text-lg font-semibold">Onboarding checklist</p>
       {items.map((item, index) => (
         <div className="mt-3 flex items-center gap-1" key={index}>
-          {item.completed ? (
+          {item.completed.value ? (
             <CheckCircle className="text-green-600" />
           ) : (
             <Circle className="text-gray-300" />
+          )}
+          {!item.completed.value && (
+            <button onClick={() => item.completed.setValue(true)}>Complete</button>
           )}
           <p className="text-sm">{item.title}</p>
         </div>

@@ -1,6 +1,5 @@
 declare global {
   interface Window {
-    grecaptcha?: { execute: (siteKey: string, action: { action: string }) => Promise<string> };
     plausible: Plausible;
   }
 }

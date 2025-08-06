@@ -5,6 +5,7 @@ export const propertyTypes: PropertyType[] = [
   "number",
   "boolean",
   "select",
+  "action",
   "array",
   "state-memory",
   "block-trigger",
@@ -57,4 +58,21 @@ export const defaultPropertyValue = {
   "state-memory": { trigger: "manual" } satisfies StateMemoryValue,
   "block-trigger": null,
   "block-state": null,
+  action: null,
 } satisfies Record<PropertyType, unknown>;
+
+export const tourBlockExitNodes = [
+  {
+    key: "continue",
+    description: "Proceeds to the next step in the tour.",
+  },
+  {
+    key: "previous",
+    description: "Returns to the previous step in the tour.",
+  },
+  {
+    key: "cancel",
+    description:
+      "Cancels the whole tour. This node is connected to the cancel node of the whole tour block.",
+  },
+];

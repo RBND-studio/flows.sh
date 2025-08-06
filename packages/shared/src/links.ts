@@ -116,6 +116,7 @@ export const links = (domain = "flows.sh") => ({
       blockState: `https://${domain}/docs/block-properties/block-state`,
       blockKey: `https://${domain}/docs/block-properties/block-key`,
       tourTrigger: `https://${domain}/docs/tour-block#tour-trigger`,
+      action: `https://${domain}/docs/block-properties/action`,
     },
     configureBlocks: {
       exitNodes: `https://${domain}/docs/workflows/configure-blocks#exit-nodes`,

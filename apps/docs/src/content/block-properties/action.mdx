@@ -1,0 +1,76 @@
+---
+title: Action
+description: Create a button that performs an action when clicked.
+---
+
+![Action](/block-properties/action.png)
+
+## Overview
+
+The action property allows you to create a button (or any other clickable element) that performs an action when clicked. This can be used to trigger another block in the workflow, go to another step in a tour, or open a link.
+
+## Usage in a workflow
+
+In a workflow, you can configure the action property to perform the desired action. To configure the action, click on the field and fill out the properties.
+
+### In a workflow block
+
+- **Label**: The label of the element used to trigger the action (eg. button text).
+- **Action type** (optional): Select the type of action you want to perform. The available options are:
+  - **Go to exit node**: Trigger one of the block’s exit nodes.
+  - _Looking for more options? [Contact us](https://flows.sh/contact) and let us know what you need._
+- **Link** (optional): By clicking on the **Add link** button, you can add a link to the action. This link will be opened when the action is triggered. You can also select whether to open the link in a new tab or not.
+
+### In a tour block
+
+- **Label**: The label of the element used to trigger the action (eg. button text).
+- **Action type** (optional): Select the type of action you want to perform. The available options are:
+  - **Go to next step**: Trigger the next step in the tour.
+  - **Go to previous step**: Trigger the previous step in the tour.
+  - **Cancel tour**: Exit the tour using the `cancel` exit node.
+- **Link** (optional): By clicking on the **Add link** button, you can add a link to the action. This link will be opened when the action is triggered. You can also select whether to open the link in a new tab or not.
+
+## Usage in a block template
+
+In a block template, you can define the action property like any other property. The properties to fill out are:
+
+- **Title**: The title of the action shown in the block editor.
+- **Description**: The description of the action shown in the block editor (optional).
+- **Type**: Select action from the dropdown.
+- **Key**: The key of the property that will contain the action data in your component.
+
+Below is an example usage of action in a component:
+
+```tsx title="Action component example"
+import { type Action, type ComponentProps } from "@flows/react";
+
+type Props = ComponentProps<{
+  actionProperty?: Action;
+}>;
+
+export const ActionComponent = ({ actionProperty }: Props) => {
+  return (
+    <div>
+      {/* When no actionProperty is passed we don't render the button */}
+      {actionProperty ? <ActionButton actionProperty={actionProperty} /> : null}
+    </div>
+  );
+};
+
+// Helper component to handle the action
+const ActionButton = ({ actionProperty }: { actionProperty: Action }) => {
+  // If the action has a URL, render as a link; otherwise, render as a button
+  // You can replace these components with your own
+  const Component = actionProperty.url ? "a" : "button";
+
+  return (
+    <Component
+      href={actionProperty.url}
+      target={actionProperty.openInNew ? "_blank" : undefined}
+      onClick={actionProperty.callAction}
+    >
+      {actionProperty.label}
+    </Component>
+  );
+};
+```

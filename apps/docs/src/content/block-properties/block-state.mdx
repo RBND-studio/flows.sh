@@ -33,14 +33,16 @@ import { BlockState } from "@flows/react";
 
 type Props = {
   // The connected block’s state will be available under the key you defined in the block template
-  anotherBlockState?: BlockState;
+  anotherBlockState?: BlockState<{
+    items: { state: StateMemory }[];
+  }>;
 };
 
 export const SidebarChecklistWidget = ({ anotherBlockState }: Props) => {
   // You can access the properties of the other block
   const totalItems = anotherBlockState?.items.length || 0;
   const finishedItems =
-    anotherBlockState?.items.filter((item) => item.state === "true").length || 0;
+    anotherBlockState?.items.filter((item) => item.state.value === true).length || 0;
 
   return (
     <div>
