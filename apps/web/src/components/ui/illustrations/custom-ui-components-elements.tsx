@@ -45,9 +45,9 @@ export const NormalTooltip = (): ReactNode => {
 export const GreenTooltip = (): ReactNode => {
   return (
     <Flex
-      backgroundColor="#34989D"
+      backgroundColor="#218287"
       borderRadius="24px"
-      borderColor="#34989D"
+      borderColor="#218287"
       borderWidth="1px"
       width="100%"
       maxWidth={180}
