@@ -1,4 +1,3 @@
-export * from "./decorations";
+export * from "./comparison-logos";
 export * from "./hero";
-export * from "./hero-illustration";
-export * from "./hero-waves";
+export * from "./horizontal-hero";

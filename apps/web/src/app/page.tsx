@@ -1,12 +1,12 @@
 import { css } from "@flows/styled-system/css";
 import {
   AllPurposePlatformSection,
+  BigDemoIllustration,
   CutTheCostsSection,
   EasyToGetStartedSection,
   ExamplesSection,
   Hero,
   MadeToBeCustomizedSection,
-  MainHeroIllustration,
   MoreSection,
 } from "components";
 import { CtaBanner } from "components/cta-banner";
@@ -41,7 +41,7 @@ const Page = (): ReactElement => {
           </SignupClick>
         }
       />
-      <MainHeroIllustration />
+      <BigDemoIllustration />
       <AllPurposePlatformSection />
       <EasyToGetStartedSection />
       <MadeToBeCustomizedSection />

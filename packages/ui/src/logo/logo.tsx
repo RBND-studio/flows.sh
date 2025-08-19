@@ -1,5 +1,5 @@
 import { css, cx } from "@flows/styled-system/css";
-import { type FC } from "react";
+import { type ReactNode } from "react";
 
 import { LogoMarkSvg } from "./logo-mark";
 import { LogoPillSvg } from "./logo-pill";
@@ -16,9 +16,11 @@ type Props = {
   color?: string;
   size?: number;
   className?: string;
-};
+} & React.SVGProps<SVGSVGElement>;
 
-export const Logo: FC<Props> = ({ type, color = "currentColor", size = 40, className }) => {
+export const Logo = (props: Props): ReactNode => {
+  const { type, color = "currentColor", size = 40, className, ...rest } = props;
+
   const LogoComponent = logoByType[type];
 
   return (
@@ -30,6 +32,7 @@ export const Logo: FC<Props> = ({ type, color = "currentColor", size = 40, class
         className,
       )}
       height={size}
+      {...rest}
     />
   );
 };

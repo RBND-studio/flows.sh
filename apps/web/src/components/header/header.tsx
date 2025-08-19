@@ -13,6 +13,7 @@ import { Button, IconButton, Logo } from "ui";
 
 import { DesktopMenu } from "./desktop-menu";
 
+// TODO: refactor this to move as much as possible to a server component
 export const Header = (): ReactElement => {
   const [open, setOpen] = useState(false);
   const toggleOpen = useCallback((): void => setOpen((p) => !p), []);
@@ -40,6 +41,7 @@ export const Header = (): ReactElement => {
     <header
       className={css({
         position: "sticky",
+        // Needed for the intersection observer
         top: "-0.1px",
         zIndex: 1000,
         pt: "space8",

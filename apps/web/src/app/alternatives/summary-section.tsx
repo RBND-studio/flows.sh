@@ -12,7 +12,6 @@ export const SummarySection = ({ competitorContent, flowsContent }: Props): Reac
   return (
     <Section>
       <Box
-        mt={{ base: "space80", md: "space160" }}
         p="space8"
         borderWidth={1}
         borderColor="newBorder.neutral.placeholder"
