@@ -28,7 +28,7 @@ const tools = [
   },
   // Flows has to be the last item in the list to look good
   {
-    logo: <Logo size={20} color="white" type="pill" />,
+    logo: <Logo size={20} color="newFg.neutral.onPrimary" type="pill" />,
     name: "Flows",
     monthlyPrice: 110,
     isCompetitor: false,

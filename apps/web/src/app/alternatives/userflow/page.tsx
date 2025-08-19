@@ -1,7 +1,14 @@
 import { css } from "@flows/styled-system/css";
-import { CutTheCostsSection, Hero, HeroIllustration, MoreSection } from "components";
+import {
+  ComparisonLogos,
+  CutTheCostsSection,
+  HorizontalHero,
+  MoreSection,
+  SmallDemoIllustration,
+} from "components";
 import { CtaBanner } from "components/cta-banner";
 import { SignupClick } from "components/utils/signup-click";
+import { UserFlowFull20 } from "icons";
 import { links } from "lib/links";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
@@ -19,9 +26,23 @@ export const metadata: Metadata = {
 const Page = (): ReactElement => {
   return (
     <>
-      <Hero
+      <HorizontalHero
         title={userflowContent.heroTitle}
         description={userflowContent.description}
+        eyebrow={
+          <ComparisonLogos
+            competitorLogo={
+              <UserFlowFull20
+                role="img"
+                aria-label="Userflow logo"
+                className={css({
+                  height: "24px",
+                  width: "auto",
+                })}
+              />
+            }
+          />
+        }
         actions={
           <SignupClick>
             <Button
@@ -35,8 +56,8 @@ const Page = (): ReactElement => {
             </Button>
           </SignupClick>
         }
+        illustration={<SmallDemoIllustration />}
       />
-      <HeroIllustration />
 
       <ComparisonTable
         comparisons={userflowContent.comparisons}

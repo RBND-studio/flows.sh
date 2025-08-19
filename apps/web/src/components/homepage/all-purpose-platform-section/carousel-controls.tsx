@@ -63,6 +63,7 @@ export const CarouselControls = ({
         variant="secondary"
         onClick={onPrevButtonClick}
         disabled={prevBtnDisabled}
+        aria-label="Previous"
       >
         <ArrowLeft16 />
       </IconButton>
@@ -72,6 +73,7 @@ export const CarouselControls = ({
         variant="secondary"
         onClick={onNextButtonClick}
         disabled={nextBtnDisabled}
+        aria-label="Next"
       >
         <ArrowRight16 />
       </IconButton>

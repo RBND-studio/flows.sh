@@ -1,8 +1,8 @@
-import { css } from "@flows/styled-system/css";
+import { css, cx } from "@flows/styled-system/css";
 import { Box } from "@flows/styled-system/jsx";
 import Link from "next/link";
 import { type ReactNode } from "react";
-import { Button, Text } from "ui";
+import { Text } from "ui";
 
 type Props = {
   title: string;
@@ -13,12 +13,23 @@ type Props = {
 
 export const SolutionCard = ({ title, description, viz, linkUrl }: Props): ReactNode => {
   return (
-    <Box
-      bg="pane.bg.elevated"
-      borderWidth={1}
-      borderColor="newBorder.neutral.placeholder"
-      borderRadius="radius12"
-      shadow="antimetal"
+    <Link
+      href={linkUrl}
+      aria-label={`View solution for ${title}`}
+      className={cx(
+        css({
+          bg: "pane.bg.elevated",
+          borderWidth: "1px",
+          borderColor: "newBorder.neutral.placeholder",
+          borderRadius: "radius12",
+          shadow: "antimetal",
+          fastEaseInOut: "all",
+          _hover: {
+            borderColor: "newBorder.neutral.strong",
+          },
+        }),
+        "group",
+      )}
     >
       {viz}
       <Box
@@ -27,23 +38,20 @@ export const SolutionCard = ({ title, description, viz, linkUrl }: Props): React
           p: "space24",
         }}
       >
-        <Text mb="space12" variant="titleL">
+        <Text
+          mb="space12"
+          variant="titleL"
+          fastEaseInOut="color"
+          _groupHover={{
+            color: "newFg.primary",
+          }}
+        >
           {title}
         </Text>
         <Text mb="space16" variant="bodyM" color="newFg.neutral.muted">
           {description}
         </Text>
-        <Button variant="secondary" asChild size="large">
-          <Link
-            className={css({
-              width: "100%",
-            })}
-            href={linkUrl}
-          >
-            View solution
-          </Link>
-        </Button>
       </Box>
-    </Box>
+    </Link>
   );
 };

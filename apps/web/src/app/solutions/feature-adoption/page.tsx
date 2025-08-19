@@ -1,5 +1,5 @@
 import { css } from "@flows/styled-system/css";
-import { Hero, HeroIllustration } from "components";
+import { BigDemoIllustration, Hero } from "components";
 import { CtaBanner } from "components/cta-banner";
 import { FaqAccordion, Section, SectionIntro } from "components/ui";
 import { RiverItem } from "components/ui/river-item";
@@ -38,7 +38,8 @@ const Page = (): ReactElement => {
           </SignupClick>
         }
       />
-      <HeroIllustration defaultTab="Product adoption" />
+
+      <BigDemoIllustration />
 
       <SectionIntro
         title="How Flows helps with feature adoption"

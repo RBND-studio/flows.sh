@@ -4,7 +4,7 @@ type ExtraProps = {
   useCurrentColor?: boolean;
 };
 
-export function WalkMeF20(props: React.SVGProps<SVGSVGElement> & ExtraProps): JSX.Element {
+export function WalkMe20(props: React.SVGProps<SVGSVGElement> & ExtraProps): JSX.Element {
   const { useCurrentColor = false, ...rest } = props;
 
   // WalkMe's brand color

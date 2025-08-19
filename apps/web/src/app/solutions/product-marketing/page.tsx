@@ -1,5 +1,5 @@
 import { css } from "@flows/styled-system/css";
-import { Hero, HeroIllustration } from "components";
+import { BigDemoIllustration, Hero } from "components";
 import { CtaBanner } from "components/cta-banner";
 import { FaqAccordion, Section, SectionIntro } from "components/ui";
 import { RiverItem } from "components/ui/river-item";
@@ -47,7 +47,7 @@ Launch targeted in-app campaigns like announcements and product tours without en
         }
       />
 
-      <HeroIllustration defaultTab="Product adoption" />
+      <BigDemoIllustration />
 
       <SectionIntro
         title="How Flows works for product marketing"

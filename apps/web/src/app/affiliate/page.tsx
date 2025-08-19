@@ -1,5 +1,5 @@
 import { css } from "@flows/styled-system/css";
-import { Hero, HeroIllustration } from "components";
+import { Hero, MediumDemoIllustration } from "components";
 import { CtaBanner } from "components/cta-banner";
 import { links } from "lib/links";
 import { type Metadata } from "next";
@@ -34,7 +34,7 @@ export default function AffiliatePage(): ReactNode {
           </Button>
         }
       />
-      <HeroIllustration hideTabs />
+      <MediumDemoIllustration />
       <AffiliateStepsSection />
       <AffiliateFaq />
       <CtaBanner

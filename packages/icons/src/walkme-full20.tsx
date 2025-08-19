@@ -7,7 +7,7 @@ type ExtraProps = {
 export function WalkMeFull20(props: React.SVGProps<SVGSVGElement> & ExtraProps): JSX.Element {
   const { useCurrentColor = false, ...rest } = props;
 
-  // WalkMe's brand color
+  // Brand color
   const accentHex = "#0072F5";
 
   const accentColor = useCurrentColor ? "currentColor" : accentHex;

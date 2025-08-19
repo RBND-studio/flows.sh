@@ -1,13 +1,12 @@
 import { css } from "@flows/styled-system/css";
-import { Flex } from "@flows/styled-system/jsx";
-import { Hero, HeroIllustration } from "components";
+import { ComparisonLogos, HorizontalHero, SmallDemoIllustration } from "components";
 import { CtaBanner } from "components/cta-banner";
 import { SignupClick } from "components/utils/signup-click";
-import { Close16, WalkMeF20, WalkMeFull20 } from "icons";
+import { WalkMe20, WalkMeFull20 } from "icons";
 import { links } from "lib/links";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
-import { Button, Icon, Logo } from "ui";
+import { Button } from "ui";
 
 import { ComparisonTableV2 } from "../comparison-table-v2";
 import { OtherDifferencesSection } from "../other-differences-section";
@@ -22,7 +21,7 @@ export const metadata: Metadata = {
 const Page = (): ReactElement => {
   return (
     <>
-      <Hero
+      <HorizontalHero
         title={
           <>
             The free alternative
@@ -32,17 +31,20 @@ const Page = (): ReactElement => {
         }
         description="Flows is the WalkMe alternative for modern companies who want to build better product adoption at a fraction of the price."
         eyebrow={
-          <Flex alignItems="center" gap="space8" color="newFg.neutral">
-            <Logo type="type" size={18} />
-            <Icon icon={Close16} />
-            <WalkMeFull20
-              className={css({
-                height: "28px",
-                width: "auto",
-              })}
-            />
-          </Flex>
+          <ComparisonLogos
+            competitorLogo={
+              <WalkMeFull20
+                role="img"
+                aria-label="WalkMe logo"
+                className={css({
+                  height: "28px",
+                  width: "auto",
+                })}
+              />
+            }
+          />
         }
+        illustration={<SmallDemoIllustration />}
         actions={
           <SignupClick>
             <Button
@@ -57,8 +59,6 @@ const Page = (): ReactElement => {
           </SignupClick>
         }
       />
-
-      <HeroIllustration />
 
       <SummarySection
         competitorContent="WalkMe is a well-known digital adoption platform, primarily focused on large enterprises. While it offers a range of features including in-app guidance, analytics, and user segmentation, this complexity can be overwhelming for many users. WalkMe’s focus on enterprise results in non-transparent pricing and requiring a demo to even get started."
@@ -117,7 +117,7 @@ const Page = (): ReactElement => {
               "Flows offers transparent usage-based pricing with no hidden fees, while WalkMe requires a demo to get started and does not provide public pricing.",
           },
         ]}
-        competitorLogo={<WalkMeF20 />}
+        competitorLogo={<WalkMe20 />}
         competitorName="WalkMe"
         sectionTitle="Flows vs WalkMe"
       />

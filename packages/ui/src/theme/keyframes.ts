@@ -69,7 +69,7 @@ export const keyframes: CssKeyframes = {
       transform: "translate(-50%, 0) scale(0.9)",
     },
     "100%": {
-      opacity: 0.7,
+      opacity: 1,
       transform: "translate(-50%, 0) scale(1)",
     },
   },
@@ -131,5 +131,9 @@ export const keyframes: CssKeyframes = {
   embeddableElementsKeyframes: {
     "0%, 30%, 100%": { opacity: 0 },
     "35%, 95%": { opacity: 1 },
+  },
+  scaleX: {
+    "0%": { transform: "scaleX(0)" },
+    "100%": { transform: "scaleX(1)" },
   },
 };

@@ -8,6 +8,9 @@ type Props = {
   sidebarTooltipSlot?: JSX.Element;
   sidebarBannerSlot?: JSX.Element;
   helpSlot?: JSX.Element;
+  insideSlot?: JSX.Element;
+  cardSlot?: JSX.Element;
+  small?: boolean;
 };
 
 export const PlaceholderApplication = ({
@@ -15,6 +18,9 @@ export const PlaceholderApplication = ({
   sidebarTooltipSlot,
   sidebarBannerSlot,
   helpSlot,
+  insideSlot,
+  cardSlot,
+  small,
 }: Props): JSX.Element => {
   return (
     <Flex
@@ -26,13 +32,15 @@ export const PlaceholderApplication = ({
       height="100%"
       mdDown={{ flexDirection: "column" }}
       role="img"
+      position="relative"
     >
+      {insideSlot}
       <PlaceholderSidebar
         sidebarTooltipSlot={sidebarTooltipSlot}
         sidebarBannerSlot={sidebarBannerSlot}
       />
       <Flex
-        flex={2}
+        flex={3}
         flexDirection="column"
         width="100%"
         height="100%"
@@ -87,7 +95,10 @@ export const PlaceholderApplication = ({
               borderRadius="radius4"
               borderWidth="1px"
               borderColor="newBorder.neutral.muted"
-            />
+              p="space4"
+            >
+              {cardSlot}
+            </Box>
             <Box
               width="100%"
               height="100%"
@@ -96,22 +107,28 @@ export const PlaceholderApplication = ({
               borderWidth="1px"
               borderColor="newBorder.neutral.muted"
             />
-            <Box
-              width="100%"
-              height="100%"
-              backgroundColor="newBg.neutral.muted"
-              borderRadius="radius4"
-              borderWidth="1px"
-              borderColor="newBorder.neutral.muted"
-            />
-            <Box
-              width="100%"
-              height="100%"
-              backgroundColor="newBg.neutral.muted"
-              borderRadius="radius4"
-              borderWidth="1px"
-              borderColor="newBorder.neutral.muted"
-            />
+            {!small ? (
+              <>
+                <Box
+                  width="100%"
+                  height="100%"
+                  backgroundColor="newBg.neutral.muted"
+                  borderRadius="radius4"
+                  borderWidth="1px"
+                  borderColor="newBorder.neutral.muted"
+                  mdDown={{ display: "none" }}
+                />
+                <Box
+                  width="100%"
+                  height="100%"
+                  backgroundColor="newBg.neutral.muted"
+                  borderRadius="radius4"
+                  borderWidth="1px"
+                  borderColor="newBorder.neutral.muted"
+                  mdDown={{ display: "none" }}
+                />
+              </>
+            ) : null}
           </Flex>
         </Flex>
       </Flex>

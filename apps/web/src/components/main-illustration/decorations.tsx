@@ -21,6 +21,7 @@ export const HeroIllustrationLine = (): ReactNode => {
 };
 
 export const HeroIllustrationGlow = (): ReactNode => {
+  // Box in a box to have better control over the opacity when theming
   return (
     <Box
       aria-hidden="true"
@@ -28,16 +29,26 @@ export const HeroIllustrationGlow = (): ReactNode => {
       animationDelay="0.7s"
       animationFillMode="forwards"
       position="absolute"
-      opacity={0}
-      transform="translate(-50%, 0)"
-      background="#067EFD"
       top="-40px"
-      width="50%"
       left="50%"
-      borderRadius="100%"
+      transform="translate(-50%, 0)"
       height={120}
       zIndex={-1}
-      filter="blur(80px)"
-    />
+      width="50%"
+      opacity={0}
+    >
+      <Box
+        aria-hidden="true"
+        background="#067EFD"
+        width="100%"
+        borderRadius="100%"
+        height={120}
+        filter="blur(80px)"
+        opacity={0.4}
+        _dark={{
+          opacity: 0.7,
+        }}
+      />
+    </Box>
   );
 };

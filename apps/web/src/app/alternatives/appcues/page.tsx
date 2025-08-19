@@ -1,7 +1,14 @@
 import { css } from "@flows/styled-system/css";
-import { CutTheCostsSection, Hero, HeroIllustration, MoreSection } from "components";
+import {
+  ComparisonLogos,
+  CutTheCostsSection,
+  HorizontalHero,
+  MoreSection,
+  SmallDemoIllustration,
+} from "components";
 import { CtaBanner } from "components/cta-banner";
 import { SignupClick } from "components/utils/signup-click";
+import { AppcuesFull20 } from "icons";
 import { links } from "lib/links";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
@@ -19,9 +26,24 @@ export const metadata: Metadata = {
 const Page = (): ReactElement => {
   return (
     <>
-      <Hero
+      <HorizontalHero
         title={appcuesContent.heroTitle}
         description={appcuesContent.description}
+        eyebrow={
+          <ComparisonLogos
+            competitorLogo={
+              <AppcuesFull20
+                role="img"
+                aria-label="Appcues logo"
+                className={css({
+                  height: "24px",
+                  width: "auto",
+                })}
+              />
+            }
+          />
+        }
+        illustration={<SmallDemoIllustration />}
         actions={
           <SignupClick>
             <Button
@@ -36,7 +58,6 @@ const Page = (): ReactElement => {
           </SignupClick>
         }
       />
-      <HeroIllustration />
 
       <ComparisonTable
         comparisons={appcuesContent.comparisons}

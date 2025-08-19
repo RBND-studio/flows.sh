@@ -26,7 +26,7 @@ export const ComparisonTable = ({
   comparisons,
 }: Props): ReactNode => {
   return (
-    <Section mt="space120" mb="space80">
+    <Section mt="space80" mb="space80">
       <Box mx={{ base: 0, md: "space16" }}>
         <Text as="h2" variant="title3xl">
           {sectionTitle}

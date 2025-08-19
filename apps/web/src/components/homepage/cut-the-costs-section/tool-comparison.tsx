@@ -97,7 +97,10 @@ const ToolComparisonWrapperCss = cva({
       true: {},
       false: {
         pb: "space20",
-        bg: "newBg.primary",
+        bg: "linear-gradient(120deg, #3685EC, #327CDA)",
+        _dark: {
+          bg: "linear-gradient(120deg, #539EFF, #6AABFF)",
+        },
       },
     },
   },
@@ -111,7 +114,7 @@ const ToolComparisonTextCss = cva({
     competitor: {
       true: {},
       false: {
-        color: "white",
+        color: "newFg.neutral.onPrimary",
       },
     },
   },

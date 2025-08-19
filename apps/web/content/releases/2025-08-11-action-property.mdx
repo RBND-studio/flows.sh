@@ -1,0 +1,34 @@
+---
+title: Action property
+date: "2025-08-11"
+description: The new Action property simplifies button handling in Flows.
+---
+
+<Image
+  src="/images/changelog/2025-08-11-action-property.png"
+  alt="Screenshot of the new action property input in the Flows editor"
+  width={1800}
+  height={1199}
+/>
+
+Creating interactive buttons in Flows just got much simpler. Previously, you had to handle all logic yourself and juggle optional block properties. The new Action property consolidates everything you need for buttons into one property. It includes:
+
+- A label for the element
+- An action to run when clicked
+- An optional URL to open (with the ability to open in a new tab)
+
+Learn more in the [Action property docs](/docs/block-properties/action).
+
+## Array in array
+
+We’ve also added support for arrays inside arrays, enabling more advanced and flexible components in your workflows. For example, you can now create a checklist with multiple items, each containing a dynamic number of buttons or links.
+
+Learn more about [arrays](/docs/block-properties/array).
+
+## Other improvements
+
+- Added disabled state to unsupported block properties in the template editor with explanations
+
+## Bug fixes
+
+- Fixed an issue in React SDK where blocks sometimes didn't load when initializing the SDK

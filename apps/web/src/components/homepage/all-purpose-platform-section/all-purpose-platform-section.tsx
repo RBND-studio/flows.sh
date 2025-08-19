@@ -20,20 +20,8 @@ export const AllPurposePlatformSection = (): ReactNode => {
 
   return (
     <Section>
-      <LinesWrapper justifyContent="space-between">
-        <EndLine side="top" />
-        <EndLine side="top" />
-      </LinesWrapper>
-      <LinesWrapper>
-        <EndLine side="left" />
-        <NewLineDecorator />
-        <NewLine />
-        <NewLineDecorator />
-        <EndLine side="right" />
-      </LinesWrapper>
-
       <Flex
-        mt="space32"
+        mt="space160"
         mx="space16"
         alignItems="center"
         flexDirection="column"

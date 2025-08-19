@@ -62,16 +62,22 @@ const DesktopSidebar = ({ sidebarTooltipSlot, sidebarBannerSlot }: Props): JSX.E
       width="100%"
       flexDirection="column"
       gap="space16"
-      maxWidth={162}
+      maxWidth={160}
       height="100%"
       flex={1}
       aria-hidden="true"
     >
       <Flex alignItems="center" gap="space8">
-        <Box height={24} width={24} backgroundColor="newFg.neutral.muted" borderRadius="radius4" />
+        <Box
+          height={24}
+          width={24}
+          backgroundColor="newFg.neutral.muted"
+          borderRadius="radius4"
+          flexShrink={0}
+        />
         <Box
           height={10}
-          maxWidth={68}
+          maxWidth={62}
           width="100%"
           backgroundColor="newBg.neutral.strong"
           borderRadius="radius4"
@@ -87,6 +93,7 @@ const DesktopSidebar = ({ sidebarTooltipSlot, sidebarBannerSlot }: Props): JSX.E
             borderWidth="1px"
             borderColor="newBorder.neutral"
             borderRadius="radius4"
+            flexShrink={0}
           />
         )}
       </Flex>

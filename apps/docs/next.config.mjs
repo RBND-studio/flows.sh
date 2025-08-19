@@ -46,7 +46,7 @@ const nextConfig = {
     return [
       {
         source: "/getting-started/migrate-to-flows-2",
-        destination: "/migrate-to-flows-2",
+        destination: "/",
         permanent: true,
       },
       {
@@ -57,6 +57,11 @@ const nextConfig = {
       {
         source: "/contact-us",
         destination: "https://flows.sh/contact",
+        permanent: true,
+      },
+      {
+        source: "/migrate-to-flows-2",
+        destination: "/",
         permanent: true,
       },
     ];
