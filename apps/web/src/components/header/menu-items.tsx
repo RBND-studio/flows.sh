@@ -1,15 +1,16 @@
 import { Addon16, Banner16, Checklist16, Graph16, Tour16, Upgrade16 } from "icons";
 import { links } from "lib/links";
+import { type Route } from "next";
 import { type FC, type SVGProps } from "react";
 import { routes } from "routes";
 
 export type MenuItemProps = {
   title: string;
-  href?: string;
+  href?: Route;
   target?: string;
   subItems?: {
     title: string;
-    href: string;
+    href: Route;
     icon: FC<SVGProps<SVGSVGElement>>;
     description: string;
   }[];

@@ -1,5 +1,6 @@
 import { css, cva, cx } from "@flows/styled-system/css";
 import { ExternalLink16 } from "icons";
+import { type Route } from "next";
 import Link from "next/link";
 import type { FC, ReactNode } from "react";
 
@@ -11,8 +12,8 @@ type Props = {
   underline?: boolean;
 };
 
-export const SmartLink: FC<Props> = ({ underline, ...props }) => {
-  if (props.href.startsWith("http"))
+export const SmartLink: FC<Props> = ({ underline, href, ...props }) => {
+  if (href.startsWith("http"))
     return (
       <a
         rel={props.target === "_blank" ? "noopener" : undefined}
@@ -29,7 +30,7 @@ export const SmartLink: FC<Props> = ({ underline, ...props }) => {
       </a>
     );
 
-  return <Link {...props} />;
+  return <Link {...props} href={href as Route} />;
 };
 
 const linkClassname = cva({

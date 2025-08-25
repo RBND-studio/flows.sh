@@ -1,3 +1,5 @@
+import { type Route } from "next";
+
 export const routes = {
   home: "/",
   privacy: "/legal/privacy",
@@ -31,11 +33,12 @@ export const routes = {
   },
 
   examples: "/examples",
-  exampleDetail: (slug: string) => `/examples/${slug}`,
+  exampleDetail: (slug: string) => `/examples/${slug}` as Route,
 
   blog: "/blog",
-  blogPostDetail: ({ postId }: { postId: string }) => `/blog/${postId}`,
+  blogPostDetail: ({ postId }: { postId: string }) => `/blog/${postId}` as const,
 
   changelog: "/changelog",
-  changelogReleaseDetail: ({ releaseId }: { releaseId: string }) => `/changelog/${releaseId}`,
-};
+  changelogReleaseDetail: ({ releaseId }: { releaseId: string }) =>
+    `/changelog/${releaseId}` as const,
+} as const;

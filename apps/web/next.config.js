@@ -41,6 +41,7 @@ const nextConfig = {
       },
     ];
   },
+  typedRoutes: true,
   transpilePackages: ["ui", "icons", "shared"],
   output: "standalone",
   outputFileTracingRoot: path.join(__dirname, "../../"),
