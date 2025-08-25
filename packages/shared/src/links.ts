@@ -1,7 +1,8 @@
+import { createParams } from "./create-params";
+
 /**
  * @deprecated use `links` from `lib/links` to get links with domain support
  */
-
 export const links = (domain = "flows.sh") =>
   ({
     homePage: `https://${domain}`,
@@ -141,7 +142,6 @@ export const links = (domain = "flows.sh") =>
      * See `apps/web/src/app/api/og/route.tsx` for implementation details
      */
     ogImage: (params: { title: string; type?: string }) => {
-      const paramsString = new URLSearchParams(params).toString();
-      return `https://${domain}/api/og${paramsString ? `?${paramsString}` : ""}`;
+      return `https://${domain}/api/og${createParams(params)}`;
     },
   }) as const;
