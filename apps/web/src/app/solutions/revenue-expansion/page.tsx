@@ -4,6 +4,7 @@ import { CtaBanner } from "components/cta-banner";
 import { FaqAccordion, Section, SectionIntro } from "components/ui";
 import { RiverItem } from "components/ui/river-item";
 import { SignupClick } from "components/utils/signup-click";
+import { getWebMetadata } from "lib/get-metadata";
 import { links } from "lib/links";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
@@ -12,11 +13,11 @@ import { Button, Text } from "ui";
 import { SharedFeatures } from "../shared-features";
 import { questions, riverFeatures } from "./content";
 
-export const metadata: Metadata = {
-  title: "Revenue expansion – Flows",
+export const metadata: Metadata = getWebMetadata({
+  title: "Revenue expansion",
   description:
     "Create strategic in-app promotions. With Flows, you can deliver the right message at the right time to drive conversion and account expansion.",
-};
+});
 
 const Page = (): ReactElement => {
   return (

@@ -3,6 +3,7 @@ import { Box } from "@flows/styled-system/jsx";
 import { ZoomableImage } from "components/ui";
 import type { Post } from "contentlayer/generated";
 import { allPosts } from "contentlayer/generated";
+import { getWebMetadata } from "lib/get-metadata";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { ReactElement } from "react";
@@ -37,25 +38,20 @@ export async function generateMetadata(props: PostProps): Promise<Metadata> {
     return {};
   }
 
-  return {
-    title: `${post.title} | Flows Blog`,
+  return getWebMetadata({
+    title: post.title,
     description: post.description,
-    openGraph: {
-      type: "article",
-      title: `${post.title} | Flows Blog`,
-      description: post.description,
-      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- or is better here
-      images: post.image || "/og.png",
-      locale: "en_US",
-      url: `/blog/${params.slug.join("/")}`,
-    },
-    twitter: {
-      title: `${post.title} | Flows Blog`,
-      description: post.description,
-      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- or is better here
-      images: post.image || "/og.png",
-    },
-  };
+    openGraphType: "article",
+    pageCategory: "Blog",
+    images: post.image
+      ? [
+          {
+            url: post.image,
+            alt: post.title,
+          },
+        ]
+      : undefined,
+  });
 }
 
 export function generateStaticParams(): Params[] {

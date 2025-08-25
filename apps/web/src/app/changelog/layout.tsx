@@ -1,6 +1,7 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import { Section } from "components/ui/section";
+import { getWebMetadata } from "lib/get-metadata";
 import { links } from "lib/links";
 import { type Metadata } from "next";
 import type { JSX, ReactNode } from "react";
@@ -10,25 +11,10 @@ type Props = {
   children?: ReactNode;
 };
 
-export const metadata: Metadata = {
-  title: "Changelog – Flows",
+export const metadata: Metadata = getWebMetadata({
+  title: "Changelog",
   description: "New updates and improvements to Flows.",
-  openGraph: {
-    type: "website",
-    title: "Changelog – Flows",
-    description: "New updates and improvements to Flows.",
-    images: "/images/changelog/changelog-og.png",
-    url: "/changelog",
-    locale: "en_US",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Changelog – Flows",
-    description: "New updates and improvements to Flows.",
-    images: "/images/changelog/changelog-og.png",
-    creator: "@flows_sh",
-  },
-};
+});
 
 export default function ChangelogLayout({ children }: Props): JSX.Element {
   return (

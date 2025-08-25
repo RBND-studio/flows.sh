@@ -2,6 +2,7 @@ import { Grid } from "@flows/styled-system/jsx";
 import { Hero } from "components";
 import { CtaBanner } from "components/cta-banner";
 import { Section } from "components/ui";
+import { getWebMetadata } from "lib/get-metadata";
 import { type Metadata } from "next";
 import { type ReactNode } from "react";
 import { routes } from "routes";
@@ -9,11 +10,11 @@ import { routes } from "routes";
 import { examplesContent } from "./content";
 import { ExampleCard } from "./example-card";
 
-export const metadata: Metadata = {
-  title: "Examples – Flows",
+export const metadata: Metadata = getWebMetadata({
+  title: "Examples",
   description:
     "Learn what good product onboarding and education looks like and explore how Flows makes building it simple and easy.",
-};
+});
 
 export default function ExamplePage(): ReactNode {
   return (

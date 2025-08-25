@@ -133,4 +133,13 @@ export const links = (domain = "flows.sh") => ({
       main: `https://${domain}/docs/localization`,
     },
   },
+  /**
+   * Helper function to generate Open Graph image URLs
+   *
+   * See `apps/web/src/app/api/og/route.tsx` for implementation details
+   */
+  ogImage: (params: { title: string; type?: string }) => {
+    const paramsString = new URLSearchParams(params).toString();
+    return `https://${domain}/api/og${paramsString ? `?${paramsString}` : ""}`;
+  },
 });

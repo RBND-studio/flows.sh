@@ -9,6 +9,7 @@ import {
 import { CtaBanner } from "components/cta-banner";
 import { SignupClick } from "components/utils/signup-click";
 import { AppcuesFull20 } from "icons";
+import { getWebMetadata } from "lib/get-metadata";
 import { links } from "lib/links";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
@@ -18,10 +19,10 @@ import { ComparisonTable } from "../comparison-table";
 import { FeaturesSection } from "../features-section";
 import { appcuesContent } from "./content";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = getWebMetadata({
   title: appcuesContent.pageTitle,
   description: appcuesContent.description,
-};
+});
 
 const Page = (): ReactElement => {
   return (

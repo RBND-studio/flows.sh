@@ -1,15 +1,16 @@
 import { Flex } from "@flows/styled-system/jsx";
 import { headingCss, paragraphCss, Section, SmartLink } from "components/ui";
+import { getWebMetadata } from "lib/get-metadata";
 import { type Metadata } from "next";
 import type { ReactElement } from "react";
 import { routes } from "routes";
 import { emails } from "shared";
 import { Text } from "ui";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = getWebMetadata({
   title: "Terms of Service",
   description: `Exploring Flows’s legal documents? Let us know if we can help. Get in touch at ${emails.general}`,
-};
+});
 
 const Page = (): ReactElement => {
   return (

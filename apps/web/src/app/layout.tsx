@@ -2,7 +2,8 @@ import "./globals.css";
 
 import { css, cx } from "@flows/styled-system/css";
 import { Providers } from "components/providers";
-import { DOMAIN, PRODUCTION } from "lib";
+import { PRODUCTION } from "lib";
+import { getWebMetadata } from "lib/get-metadata";
 import type { Metadata } from "next";
 import { Figtree, Inter } from "next/font/google";
 import Script from "next/script";
@@ -20,34 +21,21 @@ const InterFont = Inter({
   variable: "--font-body",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(`https://${DOMAIN}`),
+export const metadata: Metadata = getWebMetadata({
   title: "Flows – The better way to build product adoption",
   description:
     "Flows is a fully customizable product adoption platform for modern companies building onboarding and user engagement experiences.",
-  openGraph: {
-    type: "website",
-    title: "Flows: The better way to build product adoption",
-    description:
-      "Flows is a fully customizable product adoption platform for modern companies building onboarding and user engagement experiences.",
-    images: "/og.png",
-    url: "./",
-    locale: "en_US",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Flows: The better way to build product adoption",
-    description:
-      "Flows is a fully customizable product adoption platform for modern companies building onboarding and user engagement experiences.",
-    images: "/og.png",
-    creator: "@flows_sh",
-  },
-  alternates: {
-    canonical: "./",
-  },
-  keywords: ["flows", "onboarding", "product adoption", "user onboarding", "user adoption"],
-  robots: PRODUCTION ? undefined : "noindex,nofollow",
-};
+  removeTitleSlug: true,
+  images: [
+    {
+      url: "/og.png",
+      width: 1280,
+      height: 640,
+      alt: "Flows: The better way to build product adoption",
+      type: "image/png",
+    },
+  ],
+});
 
 export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
   return (

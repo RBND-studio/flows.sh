@@ -12,7 +12,7 @@ import { FREE_LIMIT } from "shared";
 import { type ComparisonContentType } from "../content-type";
 
 export const appcuesContent: ComparisonContentType = {
-  pageTitle: "Free Appcues alternative | Flows",
+  pageTitle: "Free Appcues alternative",
   heroTitle: (
     <>
       Free Appcues

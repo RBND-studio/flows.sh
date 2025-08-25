@@ -12,7 +12,7 @@ import { FREE_LIMIT } from "shared";
 import { type ComparisonContentType } from "../content-type";
 
 export const userflowContent: ComparisonContentType = {
-  pageTitle: "Free Userflow alternative | Flows",
+  pageTitle: "Free Userflow alternative",
   heroTitle: (
     <>
       Free Userflow

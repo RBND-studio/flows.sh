@@ -1,6 +1,6 @@
 import { Hero } from "components";
 import { CtaBanner } from "components/cta-banner";
-import { DOMAIN } from "lib";
+import { getWebMetadata } from "lib/get-metadata";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
 import { Text } from "ui";
@@ -9,29 +9,11 @@ import { PricingCalculator } from "./pricing-calculator";
 import { PricingFaq } from "./pricing-faq";
 import { VolumeTable } from "./volume-table";
 
-export const metadata: Metadata = {
-  metadataBase: new URL(`https://${DOMAIN}`),
-  title: "Pricing – Flows",
+export const metadata: Metadata = getWebMetadata({
+  title: "Pricing",
   description:
     "The better way to build product adoption. With pay-as-you-go pricing starting at $0/month.",
-  openGraph: {
-    type: "website",
-    title: "Pricing – Flows",
-    description:
-      "The better way to build product adoption. With pay-as-you-go pricing starting at $0/month.",
-    images: "/images/pricing-og.png",
-    url: "/pricing",
-    locale: "en_US",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Pricing – Flows",
-    description:
-      "The better way to build product adoption. With pay-as-you-go pricing starting at $0/month.",
-    images: "/images/pricing-og.png",
-    creator: "@flows_sh",
-  },
-};
+});
 
 const Page = (): ReactElement => {
   return (

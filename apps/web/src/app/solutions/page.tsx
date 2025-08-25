@@ -2,16 +2,17 @@ import { Grid } from "@flows/styled-system/jsx";
 import { Hero } from "components";
 import { CtaBanner } from "components/cta-banner";
 import { Section } from "components/ui";
+import { getWebMetadata } from "lib/get-metadata";
 import { type Metadata } from "next";
 import { type ReactNode } from "react";
 
 import { solutionsContent } from "../../components/solutions-content";
 import { SolutionCard } from "./solution-card";
 
-export const metadata: Metadata = {
-  title: "Solutions – Flows",
-  description: "Flows is the all-in-one solution for product onboarding, education, and adoption.",
-};
+export const metadata: Metadata = getWebMetadata({
+  title: "Solutions",
+  description: `Flows is the all-in-one solution for product onboarding, education, and adoption.`,
+});
 
 export default function SolutionsPage(): ReactNode {
   return (

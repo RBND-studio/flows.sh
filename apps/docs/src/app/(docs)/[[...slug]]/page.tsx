@@ -6,7 +6,8 @@ import { H2, H3, H4 } from "components/docs-typography";
 import { getGithubLastEdit } from "fumadocs-core/server";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
-import { GH_ACCESS_TOKEN, PRODUCTION } from "lib/constants";
+import { DOMAIN, GH_ACCESS_TOKEN, PRODUCTION } from "lib/constants";
+import { links } from "lib/links";
 import { source } from "lib/source";
 import { type Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -73,21 +74,45 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
   if (!page) notFound();
 
   return {
+    metadataBase: new URL(`https://${DOMAIN}/docs`),
     title: `${page.data.title} – Flows Docs`,
     description: page.data.description,
     openGraph: {
       title: `${page.data.title} – Flows Docs`,
       description: page.data.description,
-      type: "website",
-      url: `https://flows.sh/docs/${params.slug?.join("/")}`,
-      images: [{ url: "https://flows.sh/docs/og.png" }],
+      url: "./",
+      type: "article",
+      locale: "en_US",
+      siteName: "Flows",
+      images: [
+        {
+          url: links.ogImage({ title: page.data.title, type: "Docs" }),
+          width: 1200,
+          height: 630,
+          alt: page.data.title,
+          type: "image/png",
+        },
+      ],
     },
     twitter: {
+      card: "summary_large_image",
       title: `${page.data.title} – Flows Docs`,
       description: page.data.description,
-      card: "summary_large_image",
-      images: [{ url: "https://flows.sh/docs/og.png" }],
+      images: [
+        {
+          url: links.ogImage({ title: page.data.title, type: "Docs" }),
+          width: 1200,
+          height: 630,
+          alt: page.data.title,
+          type: "image/png",
+        },
+      ],
+      creator: "@flows_sh",
     },
+    alternates: {
+      canonical: "./",
+    },
+    keywords: ["flows", "onboarding", "product adoption", "user onboarding", "user adoption"],
     robots: PRODUCTION ? undefined : "noindex,nofollow",
   };
 }

@@ -2,13 +2,16 @@ import { css } from "@flows/styled-system/css";
 import { BlogPostPreview } from "components/blog";
 import { Section } from "components/ui";
 import { allPosts } from "contentlayer/generated";
+import { getWebMetadata } from "lib/get-metadata";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
 import { Text } from "ui";
 
-export const metadata: Metadata = {
-  title: "Blog - Flows",
-};
+export const metadata: Metadata = getWebMetadata({
+  title: "Blog",
+  description:
+    "Flows blog with news, guides and development updates. Stay up to date with the latest news from Flows and learn more about product adoption.",
+});
 
 const Page = (): ReactElement => {
   return (
