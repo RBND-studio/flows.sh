@@ -25,11 +25,16 @@ const elements = [
 
 const WIDTH = (180 + 24) * (elements.length * 2);
 
-export const CustomUIComponentsIllustration = (): ReactNode => {
+export const CustomUIComponentsIllustration = ({
+  className,
+}: {
+  className?: string;
+}): ReactNode => {
   return (
     <Box
       h="100%"
       overflow="hidden"
+      className={className}
       py="space24"
       role="img"
       layerStyle="dotBackground"

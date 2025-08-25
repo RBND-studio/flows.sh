@@ -10,6 +10,10 @@ export const routes = {
   affiliate: "/affiliate",
   contact: "/contact",
 
+  features: {
+    productTours: "/product-tours",
+  },
+
   solutions: {
     index: "/solutions",
     userOnboarding: "/solutions/user-onboarding",
