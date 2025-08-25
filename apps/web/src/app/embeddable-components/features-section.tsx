@@ -1,24 +1,26 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { AnalyticsIllustration, FeatureWithIcon } from "components";
-import { CustomUIComponentsIllustration, Section } from "components/ui";
+import {
+  CustomUIComponentsIllustration,
+  EmbeddableComponentsIllustrations,
+  Section,
+} from "components/ui";
 import { Filter16, Language16 } from "icons";
 import { type ReactNode } from "react";
 import { Text } from "ui";
 
-import { ComponentsIllustration } from "./components-illustration";
-import { CoolButtonIllustration } from "./cool-button-illustration";
+import { LayoutIllustration } from "./layout-illustration";
 
 export const FeaturesSection = (): ReactNode => {
   return (
     <>
       <Section mt={{ base: "space80", md: "space160" }} mb={{ base: "space48", md: "space96" }}>
         <Flex flexDirection="column" gap="space20" alignItems="center" maxWidth={580} mx="auto">
-          <Text variant="title2xl">Fully integrated product tours</Text>
+          <Text variant="title2xl">Relevant in-app experiences</Text>
           <Text variant="bodyL" color="newFg.neutral.muted" textAlign="center">
-            Flows is not like other onboarding tools. It is a fully customizable solution that
-            allows you to create interactive tours, modals, and other components that seamlessly
-            integrate with your product.
+            Bring product adoption experiences into your product. Embed tutorials, contextual empty
+            states, and other interactive content to guide users and improve engagement.
           </Text>
         </Flex>
       </Section>
@@ -46,12 +48,14 @@ export const FeaturesSection = (): ReactNode => {
               overflow="hidden"
               bg="pane.bg.elevated"
             >
-              <Text variant="titleL">More than just modals</Text>
+              <Text variant="titleL">Fits in-line</Text>
               <Text variant="bodyM" color="newFg.neutral.muted">
-                Pick from a variety of pre-built customizable components like tooltips, hints,
-                embeddables and more.
+                Instead of pointing to elements with tooltips, embed interactive content directly
+                within the context of the user’s journey.
               </Text>
-              <ComponentsIllustration />
+              <Box mx="-space24">
+                <EmbeddableComponentsIllustrations />
+              </Box>
             </Flex>
             <Flex
               flexDirection="column"
@@ -62,11 +66,12 @@ export const FeaturesSection = (): ReactNode => {
               w="100%"
               bg="pane.bg.elevated"
             >
-              <Text variant="titleL">At the right time and place</Text>
+              <Text variant="titleL">Full layout control</Text>
               <Text variant="bodyM" color="newFg.neutral.muted">
-                Trigger tours with clicks, hovers, page views or if an element is on a page.
+                Components render inside Slots, allowing for precise placement and control over the
+                layout of embedded content.
               </Text>
-              <CoolButtonIllustration />
+              <LayoutIllustration />
             </Flex>
           </Flex>
           <Flex
@@ -80,8 +85,8 @@ export const FeaturesSection = (): ReactNode => {
           >
             <Text variant="titleL">Custom components</Text>
             <Text variant="bodyM" color="newFg.neutral.muted" maxW={440}>
-              Use your own design system and technologies to build custom components that fit your
-              product and meet your quality bar.
+              Use your own design system and technologies to build custom components that fit
+              seamlessly into your product.
             </Text>
             <Box>
               <CustomUIComponentsIllustration
@@ -97,7 +102,7 @@ export const FeaturesSection = (): ReactNode => {
           <Flex gap={1} flexDirection={{ base: "column", md: "row" }}>
             <FeatureWithIcon
               title="Localization"
-              description="Show tours in multiple languages to reach a global audience."
+              description="Adapt embedded content to different languages to reach a global audience."
               icon={Language16}
             />
             <FeatureWithIcon
@@ -117,8 +122,8 @@ export const FeaturesSection = (): ReactNode => {
           >
             <Text variant="titleL">Analytics</Text>
             <Text variant="bodyM" color="newFg.neutral.muted" maxW={440}>
-              Measure the success of your tours with built-in analytics to track user engagement and
-              conversion rates.
+              Measure the impact of your embedded content with built-in analytics to track user
+              engagement and conversion rates.
             </Text>
             <AnalyticsIllustration />
           </Flex>

@@ -38,7 +38,9 @@ export const TrailFork = ({ title, description }: Props): ReactNode => {
     <>
       <Section mt={{ base: "space80", md: "space160" }} mb={{ base: "space48", md: "space96" }}>
         <Flex flexDirection="column" gap="space20" alignItems="center" maxWidth={580} mx="auto">
-          <Text variant="title2xl">{title}</Text>
+          <Text variant="title2xl" textAlign="center">
+            {title}
+          </Text>
           <Text variant="bodyL" color="newFg.neutral.muted" textAlign="center">
             {description}
           </Text>

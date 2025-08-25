@@ -5,6 +5,7 @@ import { ArrowRight16 } from "icons";
 import { links } from "lib/links";
 import Link from "next/link";
 import { type ReactNode } from "react";
+import { routes } from "routes";
 import { Text } from "ui";
 
 const cards = [
@@ -12,8 +13,8 @@ const cards = [
     title: "Embeddable components",
     description:
       "Render inline components directly within your app’s UI. Don’t just put tooltips over your product.",
-    linkUrl: links.examples.cardPage,
-    linkText: "See example",
+    linkUrl: routes.features.embeddableComponents,
+    linkText: "Learn more",
     element: <EmbeddableComponentsIllustrations />,
   },
   {
@@ -77,7 +78,6 @@ export const CustomizeCards = (): ReactNode => {
                 },
               })}
               href={item.linkUrl}
-              target="_blank"
             >
               {item.linkText}
               <ArrowRight16 />
