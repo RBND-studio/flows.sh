@@ -12,7 +12,7 @@ import { FREE_LIMIT } from "shared";
 import { type ComparisonContentType } from "../content-type";
 
 export const chameleonContent: ComparisonContentType = {
-  pageTitle: "Free Chameleon alternative | Flows",
+  pageTitle: "Free Chameleon alternative",
   heroTitle: (
     <>
       Free Chameleon

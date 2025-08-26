@@ -1,6 +1,7 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import { ThemeImage } from "components/theme-image";
+import { type Route } from "next";
 import { type StaticImport } from "next/dist/shared/lib/get-img-props";
 import Link from "next/link";
 import { type ReactNode } from "react";
@@ -9,7 +10,7 @@ import { Text } from "ui";
 type Props = {
   title: string;
   description: string;
-  href: string;
+  href: Route;
   headingLevel?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   lightImage: string | StaticImport;
   darkImage: string | StaticImport;

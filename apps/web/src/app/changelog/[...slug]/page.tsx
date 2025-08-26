@@ -2,6 +2,7 @@ import { Grid } from "@flows/styled-system/jsx";
 import { ChangelogItem } from "components/changelog";
 import type { Release } from "contentlayer/generated";
 import { allReleases } from "contentlayer/generated";
+import { getWebMetadata } from "lib/get-metadata";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { ReactElement } from "react";
@@ -35,10 +36,11 @@ export async function generateMetadata(props: ReleaseProps): Promise<Metadata> {
     return {};
   }
 
-  return {
-    title: `${release.title} | Changelog`,
+  return getWebMetadata({
+    title: release.title,
     description: release.description,
-  };
+    pageCategory: "Changelog",
+  });
 }
 
 export function generateStaticParams(): Params[] {

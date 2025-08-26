@@ -2,6 +2,7 @@
 
 import { css, cx } from "@flows/styled-system/css";
 import { styled } from "@flows/styled-system/jsx";
+import { type Route } from "next";
 import Link, { type LinkProps } from "next/link";
 import { usePathname } from "next/navigation";
 import { type ReactNode } from "react";
@@ -10,7 +11,7 @@ import { Text, type TextProps } from "ui";
 import { HeadingCopyButton } from "./ui";
 
 type HeadingLinkProps = {
-  linkProps: LinkProps;
+  linkProps: LinkProps<Route>;
   textProps: TextProps;
   children: ReactNode;
   wrapperProps?: string;

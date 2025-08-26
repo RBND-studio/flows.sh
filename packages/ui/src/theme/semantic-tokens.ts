@@ -178,6 +178,7 @@ export const semanticTokens = defineSemanticTokens({
         strong: { value: { base: "{colors.neutral.200}", _dark: "{colors.neutral.600}" } },
         onBlack: { value: { base: "{colors.neutral.700}", _dark: "{colors.neutral.750}" } },
         white: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
+        dark: { value: { base: "{colors.neutral.650}", _dark: "{colors.neutral.200}" } },
       },
       primary: {
         DEFAULT: { value: { base: "{colors.primary.500}", _dark: "{colors.primary-dark.400}" } },

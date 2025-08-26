@@ -23,6 +23,14 @@ const footerGroups: FooterGroup[] = [
     title: "Product",
     links: [
       {
+        title: "Product tours",
+        href: routes.features.productTours,
+      },
+      {
+        title: "Embeddable components",
+        href: routes.features.embeddableComponents,
+      },
+      {
         title: "Pricing",
         href: routes.pricing,
       },

@@ -1,12 +1,13 @@
 import { css } from "@flows/styled-system/css";
 import { ArrowRight16 } from "icons";
+import { type Route } from "next";
 import Link from "next/link";
 import { type FC } from "react";
 import { Icon, Text } from "ui";
 
 type Props = {
   children: string;
-  link: string;
+  link: Route;
   delay?: number;
 };
 

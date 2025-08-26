@@ -4,6 +4,7 @@ import { css, cva } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { SmartLink } from "components/ui";
 import { ChevronDown16 } from "icons";
+import Link from "next/link";
 import { type FC, type ReactNode, useState } from "react";
 import { Icon, Text } from "ui";
 
@@ -80,7 +81,42 @@ const MobileMainMenuItem = ({ item, handleClose }: MainMenuItemProps): ReactNode
       <Flex flexDirection="column">
         {MenuItemComp}
         <Box mb="space16" display={isOpen ? "block" : "none"}>
-          {item.subItems(handleSubItemClick)}
+          <Flex gap="space4" direction="column">
+            {item.subItems.map((subItem) => (
+              <Link
+                href={subItem.href}
+                className={css({
+                  display: "flex",
+                  gap: "space8",
+                  borderRadius: "radius8",
+                  alignItems: "center",
+                  pl: "space8",
+                  pr: "space12",
+                  py: "space8",
+                  fastEaseInOut: "all",
+                  _hover: { backgroundColor: "newBg.neutral.subtle" },
+                })}
+                key={subItem.title}
+                onClick={handleSubItemClick}
+              >
+                <Flex
+                  p="space12"
+                  borderRadius="radius6"
+                  borderWidth="1px"
+                  borderColor="newBorder.neutral"
+                  backgroundColor="newBg.neutral"
+                >
+                  <Icon icon={subItem.icon} />
+                </Flex>
+                <Flex flexDirection="column" gap="space2">
+                  <Text variant="bodyS" weight="700">
+                    {subItem.title}
+                  </Text>
+                  <Text color="newFg.neutral.muted">{subItem.description}</Text>
+                </Flex>
+              </Link>
+            ))}
+          </Flex>
         </Box>
       </Flex>
     );

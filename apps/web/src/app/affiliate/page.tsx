@@ -1,6 +1,7 @@
 import { css } from "@flows/styled-system/css";
 import { Hero, MediumDemoIllustration } from "components";
 import { CtaBanner } from "components/cta-banner";
+import { getWebMetadata } from "lib/get-metadata";
 import { links } from "lib/links";
 import { type Metadata } from "next";
 import { type ReactNode } from "react";
@@ -9,11 +10,11 @@ import { Button, Text } from "ui";
 import { AffiliateFaq } from "./affiliate-faq";
 import { AffiliateStepsSection } from "./affiliate-steps-section";
 
-export const metadata: Metadata = {
-  title: "Affiliate – Flows",
+export const metadata: Metadata = getWebMetadata({
+  title: "Affiliate",
   description:
     "Join the Flows Affiliate Program and earn 25% recurring commissions forever. Promote the best product adoption platform for modern companies building onboarding and user engagement experiences.",
-};
+});
 
 export default function AffiliatePage(): ReactNode {
   return (

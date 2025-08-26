@@ -1,4 +1,5 @@
 import { CtaBanner } from "components/cta-banner";
+import { getWebMetadata } from "lib/get-metadata";
 import { type Metadata } from "next";
 import { notFound } from "next/navigation";
 import { type ReactNode } from "react";
@@ -23,10 +24,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!content) return notFound();
 
-  return {
+  return getWebMetadata({
     title: content.title,
     description: content.description,
-  };
+    pageCategory: "Example",
+  });
 }
 
 export default async function ExampleDetailPage({ params }: Props): Promise<ReactNode> {

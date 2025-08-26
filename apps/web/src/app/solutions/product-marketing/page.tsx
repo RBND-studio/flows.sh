@@ -4,6 +4,7 @@ import { CtaBanner } from "components/cta-banner";
 import { FaqAccordion, Section, SectionIntro } from "components/ui";
 import { RiverItem } from "components/ui/river-item";
 import { SignupClick } from "components/utils/signup-click";
+import { getWebMetadata } from "lib/get-metadata";
 import { links } from "lib/links";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
@@ -12,11 +13,11 @@ import { Button, Text } from "ui";
 import { SharedFeatures } from "../shared-features";
 import { questions, riverFeatures } from "./content";
 
-export const metadata: Metadata = {
-  title: "Product Marketing – Flows",
+export const metadata: Metadata = getWebMetadata({
+  title: "Product Marketing",
   description:
     "Launch targeted in-app campaigns like announcements and product tours without engineering help.",
-};
+});
 
 const Page = (): ReactElement => {
   return (

@@ -1,5 +1,6 @@
 import { css, cx } from "@flows/styled-system/css";
 import { Box } from "@flows/styled-system/jsx";
+import { type Route } from "next";
 import Link from "next/link";
 import { type ReactNode } from "react";
 import { Text } from "ui";
@@ -8,7 +9,7 @@ type Props = {
   title: string;
   description: string;
   viz: ReactNode;
-  linkUrl: string;
+  linkUrl: Route;
 };
 
 export const SolutionCard = ({ title, description, viz, linkUrl }: Props): ReactNode => {

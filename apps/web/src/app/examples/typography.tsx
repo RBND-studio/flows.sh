@@ -1,4 +1,5 @@
 import { css } from "@flows/styled-system/css";
+import { type Route } from "next";
 import Link from "next/link";
 import { type ReactElement } from "react";
 import { Text } from "ui";
@@ -89,7 +90,7 @@ export const InlineCode = ({ children }): ReactElement => {
 
 type ParagraphLinkProps = {
   children: React.ReactNode;
-  href: string;
+  href: Route;
   target?: string;
 };
 

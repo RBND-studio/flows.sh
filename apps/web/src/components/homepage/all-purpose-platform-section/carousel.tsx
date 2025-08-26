@@ -1,6 +1,7 @@
 import { css, cx } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { type EmblaViewportRefType } from "embla-carousel-react";
+import { type Route } from "next";
 import Link from "next/link";
 import { type ReactNode } from "react";
 import { Text } from "ui";
@@ -11,7 +12,7 @@ type Props = {
     title: string;
     description: string;
     viz: ReactNode;
-    linkUrl: string;
+    linkUrl: Route;
   }[];
 };
 

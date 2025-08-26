@@ -3,6 +3,7 @@ import { ComparisonLogos, HorizontalHero, SmallDemoIllustration } from "componen
 import { CtaBanner } from "components/cta-banner";
 import { SignupClick } from "components/utils/signup-click";
 import { WalkMe20, WalkMeFull20 } from "icons";
+import { getWebMetadata } from "lib/get-metadata";
 import { links } from "lib/links";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
@@ -12,11 +13,11 @@ import { ComparisonTableV2 } from "../comparison-table-v2";
 import { OtherDifferencesSection } from "../other-differences-section";
 import { SummarySection } from "../summary-section";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = getWebMetadata({
   title: "Flows vs WalkMe",
   description:
     "Flows is the WalkMe alternative for modern companies who want to build better product adoption at a fraction of the price.",
-};
+});
 
 const Page = (): ReactElement => {
   return (

@@ -1,5 +1,6 @@
 import { Flex } from "@flows/styled-system/jsx";
 import { bulletCss, headingCss, paragraphCss, Section, ulCss } from "components/ui";
+import { getWebMetadata } from "lib/get-metadata";
 import { type Metadata } from "next";
 import type { ReactElement } from "react";
 import { emails } from "shared";
@@ -7,10 +8,10 @@ import { Text } from "ui";
 
 import { type Subprocessor, SubprocessorsTable } from "./table";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = getWebMetadata({
   title: "Data Processing Agreement",
   description: `Exploring Flows’s legal documents? Let us know if we can help. Get in touch at ${emails.general}`,
-};
+});
 
 const Page = (): ReactElement => {
   return (
