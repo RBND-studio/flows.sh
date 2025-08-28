@@ -1,4 +1,13 @@
-import { Addon16, Banner16, Checklist16, Graph16, Slot16, Tour16, Upgrade16 } from "icons";
+import {
+  Addon16,
+  Banner16,
+  BlockTemplate16,
+  Checklist16,
+  Graph16,
+  Slot16,
+  Tour16,
+  Upgrade16,
+} from "icons";
 import { links } from "lib/links";
 import { type Route } from "next";
 import { type FC, type SVGProps } from "react";
@@ -31,6 +40,12 @@ export const menuItems: MenuItemProps[] = [
         href: routes.features.embeddableComponents,
         icon: Slot16,
         description: "Insert interactive elements inside your app",
+      },
+      {
+        title: "Custom UI components",
+        href: routes.features.customComponents,
+        icon: BlockTemplate16,
+        description: "Build custom components to create a native experience.",
       },
     ],
   },
