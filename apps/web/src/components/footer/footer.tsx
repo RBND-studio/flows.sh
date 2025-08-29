@@ -31,6 +31,10 @@ const footerGroups: FooterGroup[] = [
         href: routes.features.embeddableComponents,
       },
       {
+        title: "Custom UI components",
+        href: routes.features.customComponents,
+      },
+      {
         title: "Pricing",
         href: routes.pricing,
       },
