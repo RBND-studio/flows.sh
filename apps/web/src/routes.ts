@@ -15,6 +15,7 @@ export const routes = {
   features: {
     productTours: "/product-tours",
     embeddableComponents: "/embeddable-components",
+    customComponents: "/custom-components",
   },
 
   solutions: {
