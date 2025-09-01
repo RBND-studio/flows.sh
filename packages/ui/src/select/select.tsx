@@ -163,7 +163,7 @@ function SelectInner<T extends string>({
                       gap: "space8",
                       px: "space8",
                       py: "space4",
-                      borderRadius: "5px", // TODO: fix theme
+                      borderRadius: "5px",
                       cursor: "default",
                       outline: "none",
                       "&[data-state=checked]": {

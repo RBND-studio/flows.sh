@@ -43,3 +43,5 @@ export const utilities: Config["utilities"] = {
     superFastEaseInOut,
   },
 };
+
+export { monoFontFamily } from "./src/theme/typography";

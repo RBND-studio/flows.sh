@@ -20,7 +20,7 @@ const TooltipContent = ({
   <TooltipPrimitive.Content
     className={cx(
       css({
-        zIndex: "1000", //TODO: fix theme
+        zIndex: "1000",
         overflow: "hidden",
         borderRadius: "radius8",
         py: "6px", // This is intentional
@@ -36,7 +36,7 @@ const TooltipContent = ({
         boxShadow: "l2",
         "&[data-state=delayed-open]": {
           animationDuration: "120ms",
-          animationName: "fadein",
+          animationName: "fadeIn",
         },
       }),
       className,

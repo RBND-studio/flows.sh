@@ -60,7 +60,7 @@ export const riverFeatures = [
             mt="space8"
             alignItems="start"
             opacity={0}
-            animation="fadein 0.6s ease-in-out"
+            animation="fadeIn 0.6s ease-in-out"
             animationFillMode="forwards"
           >
             <Text mb="space2" variant="titleS">

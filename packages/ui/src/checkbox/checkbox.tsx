@@ -79,7 +79,7 @@ const checkbox = cva({
   base: {
     width: "18px",
     height: "18px",
-    borderRadius: "5px", // TODO: fix theme
+    borderRadius: "5px",
     backgroundColor: "newControl.bg",
     borderWidth: 1,
     borderStyle: "solid",

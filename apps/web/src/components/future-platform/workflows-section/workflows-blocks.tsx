@@ -51,7 +51,7 @@ const tabs = [
         borderColor="newBorder.neutral"
         alignItems="center"
         opacity={0}
-        animation="fadein 0.4s ease-in-out"
+        animation="fadeIn 0.4s ease-in-out"
         animationFillMode="forwards"
       >
         <Flex borderRadius="radius4" p="2px" backgroundColor="newBg.neutral.strong">
@@ -135,7 +135,7 @@ export const WorkflowsBlocks = (): JSX.Element => {
                 borderColor="newBorder.neutral"
                 alignItems="center"
                 opacity={0}
-                animation="fadein 0.4s ease-in-out"
+                animation="fadeIn 0.4s ease-in-out"
                 animationFillMode="forwards"
               >
                 <BlockIcon blockType={block.type} blockIcon={block.icon} />

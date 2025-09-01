@@ -35,11 +35,11 @@ export const Dialog: FC<Props> = ({ open, onOpenChange, trigger, children, maxWi
             right: 0,
             bottom: 0,
             "&[data-state=open]": {
-              animationName: "fadein",
+              animationName: "fadeIn",
               animationDuration: "120ms",
             },
             "&[data-state=closed]": {
-              animationName: "fadeout",
+              animationName: "fadeOut",
               animationDuration: "120ms",
             },
           })}

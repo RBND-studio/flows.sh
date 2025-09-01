@@ -56,7 +56,7 @@ export const SmallDemoIllustration = (): ReactNode => {
       </Flex>
       <Box
         aria-hidden="true"
-        animation="fadein 0.6s ease-in-out"
+        animation="fadeIn 0.6s ease-in-out"
         animationDelay="0.7s"
         animationFillMode="forwards"
         position="absolute"
