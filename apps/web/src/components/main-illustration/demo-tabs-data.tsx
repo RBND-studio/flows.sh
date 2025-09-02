@@ -105,7 +105,7 @@ export const demoTabsData = [
         />
         <Box
           opacity={0}
-          animation="fadein 0.6s ease-in-out"
+          animation="fadeIn 0.6s ease-in-out"
           animationDelay="0.3s"
           animationFillMode="forwards"
           width={176}
@@ -221,7 +221,7 @@ export const demoTabsData = [
         backgroundColor="pane.bg.elevated"
         mb="space8"
         opacity={0}
-        animation="fadein 0.6s ease-in-out"
+        animation="fadeIn 0.6s ease-in-out"
         animationFillMode="forwards"
         aria-hidden="true"
       >
@@ -258,7 +258,7 @@ export const demoTabsData = [
         borderColor="newBorder.neutral"
         shadow="newL1"
         opacity={0}
-        animation="fadein 0.6s ease-in-out"
+        animation="fadeIn 0.6s ease-in-out"
         animationFillMode="forwards"
         aria-hidden="true"
       >

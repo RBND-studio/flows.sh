@@ -18,6 +18,6 @@ docker compose up -d
 # Don't forget to stop the containers when you're done by running:
 # docker compose down
 
-pnpm be dev
+pnpm be:dev
 pnpm app dev
 ```

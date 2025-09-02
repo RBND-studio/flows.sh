@@ -2,121 +2,6 @@ import { defineSemanticTokens } from "@pandacss/dev";
 
 export const semanticTokens = defineSemanticTokens({
   colors: {
-    bg: {
-      // Whole bg is deprecated
-      DEFAULT: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
-      main: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.900}" } },
-      muted: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.875}" } },
-      subtle: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.750}" } },
-      strong: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.650}" } },
-      primary: { value: { base: "{colors.primary.500}", _dark: "{colors.primary-dark.400}" } },
-      primaryHover: { value: { base: "{colors.primary.400}", _dark: "{colors.primary-dark.500}" } },
-      primaryActive: {
-        value: { base: "{colors.primary.600}", _dark: "{colors.primary-dark.600}" },
-      },
-      hover: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.850}" } },
-      active: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.750}" } },
-      subtleHover: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.850}" } },
-      strongHover: { value: { base: "{colors.neutral.150}", _dark: "{colors.neutral.500}" } },
-      card: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.875}" } },
-      black: { value: { base: "{colors.neutral.850}", _dark: "{colors.neutral.50}" } },
-      blackHover: { value: { base: "{colors.neutral.750}", _dark: "{colors.neutral.0}" } },
-      blackActive: { value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.100}" } },
-      chip: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.900}" } },
-      success: { value: { base: "{colors.success.400}", _dark: "{colors.success-dark.400}" } },
-      successHover: { value: { base: "{colors.success.500}", _dark: "{colors.success-dark.500}" } },
-      successSubtle: { value: { base: "{colors.success.25}", _dark: "{colors.success-dark.900}" } },
-      warningSubtle: { value: { base: "{colors.warning.25}", _dark: "{colors.warning-dark.900}" } },
-      dangerHover: { value: { base: "{colors.danger.500}", _dark: "{colors.danger-dark.500}" } },
-      dangerActive: { value: { base: "{colors.danger.600}", _dark: "{colors.danger-dark.600}" } },
-      dangerSubtle: { value: { base: "{colors.danger.25}", _dark: "{colors.danger-dark.900}" } },
-      infoSubtle: { value: { base: "{colors.info.25}", _dark: "{colors.info-dark.900}" } },
-      section: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.900}" } },
-    },
-    text: {
-      // Whole text is deprecated
-      DEFAULT: { value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.25}" } },
-      muted: { value: { base: "{colors.neutral.650}", _dark: "{colors.neutral.300}" } },
-      subtle: { value: { base: "{colors.neutral.500}", _dark: "{colors.neutral.400}" } },
-      onBlack: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
-      white: { value: "{colors.neutral.0}" },
-      onPrimary: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
-      disabled: { value: { base: "{colors.neutral.400}", _dark: "{colors.neutral.500}" } },
-      primary: { value: { base: "{colors.primary.600}", _dark: "{colors.primary-dark.400}" } },
-      info: { value: { base: "{colors.info.500}", _dark: "{colors.info-dark.400}" } },
-      success: { value: { base: "{colors.success.500}", _dark: "{colors.success-dark.400}" } },
-      warning: { value: { base: "{colors.warning.500}", _dark: "{colors.warning-dark.400}" } },
-      danger: { value: { base: "{colors.danger.500}", _dark: "{colors.danger-dark.400}" } },
-    },
-    border: {
-      // Whole border is deprecated
-      DEFAULT: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.750}" } },
-      subtle: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.850}" } },
-      strong: { value: { base: "{colors.neutral.150}", _dark: "{colors.neutral.650}" } },
-      primary: { value: { base: "{colors.primary.400}", _dark: "{colors.primary-dark.400}" } },
-      info: { value: { base: "{colors.info.400}", _dark: "{colors.info-dark.400}" } },
-      infoSubtle: { value: { base: "{colors.info.300}", _dark: "{colors.info-dark.700}" } },
-      success: { value: { base: "{colors.success.400}", _dark: "{colors.success-dark.400}" } },
-      successSubtle: {
-        value: { base: "{colors.success.300}", _dark: "{colors.success-dark.700}" },
-      },
-      warning: { value: { base: "{colors.warning.400}", _dark: "{colors.warning-dark.400}" } },
-      warningSubtle: {
-        value: { base: "{colors.warning.300}", _dark: "{colors.warning-dark.700}" },
-      },
-      danger: { value: { base: "{colors.danger.400}", _dark: "{colors.danger-dark.400}" } },
-      dangerSubtle: { value: { base: "{colors.danger.300}", _dark: "{colors.danger-dark.700}" } },
-      white: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
-    },
-    icon: {
-      // Whole icon is deprecated
-      DEFAULT: {
-        value: { base: "{colors.neutral.650}", _dark: "{colors.neutral.300}" },
-        deprecated: true,
-      },
-      strong: {
-        value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.25}" },
-        deprecated: true,
-      },
-      primary: {
-        value: { base: "{colors.primary.500}", _dark: "{colors.primary-dark.400}" },
-        deprecated: true,
-      },
-      info: {
-        value: { base: "{colors.info.500}", _dark: "{colors.info-dark.500}" },
-        deprecated: true,
-      },
-      success: {
-        value: { base: "{colors.success.500}", _dark: "{colors.success-dark.500}" },
-        deprecated: true,
-      },
-      warning: {
-        value: { base: "{colors.warning.300}", _dark: "{colors.warning-dark.400}" },
-        deprecated: true,
-      },
-      danger: {
-        value: { base: "{colors.danger.500}", _dark: "{colors.danger-dark.500}" },
-        deprecated: true,
-      },
-    },
-    special: {
-      dotBg: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.800}" } },
-      glassMorph: {
-        value: {
-          base: "hsla(214.3, 7%, 58%, 10%)",
-          _dark: "hsla(214.3, 7%, 58%, 10%)",
-        },
-      },
-      translucentHover: {
-        value: {
-          base: "hsla(214.3, 14.3%, 9.6%, 6%)",
-          _dark: "hsla(217.5, 25%, 93.7%, 8%)",
-        },
-      },
-    },
-
-    // --------------------------------------------
-    // new color tokens
     newBg: {
       DEFAULT: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
       neutral: {
@@ -395,7 +280,23 @@ export const semanticTokens = defineSemanticTokens({
         },
       },
     },
+    special: {
+      dotBg: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.800}" } },
+      glassMorph: {
+        value: {
+          base: "hsla(214.3, 7%, 58%, 10%)",
+          _dark: "hsla(214.3, 7%, 58%, 10%)",
+        },
+      },
+      translucentHover: {
+        value: {
+          base: "hsla(214.3, 14.3%, 9.6%, 6%)",
+          _dark: "hsla(217.5, 25%, 93.7%, 8%)",
+        },
+      },
+    },
   },
+
   shadows: {
     l1: { value: { base: "{shadows.light1}", _dark: "{shadows.dark1}" } },
     newL1: { value: { base: "{shadows.newLight1}", _dark: "{shadows.newDark1}" } },
@@ -404,15 +305,11 @@ export const semanticTokens = defineSemanticTokens({
     l3: { value: { base: "{shadows.light3}", _dark: "{shadows.dark3}" } },
     l4: { value: { base: "{shadows.light4}", _dark: "{shadows.dark4}" } },
     l5: { value: { base: "{shadows.light5}", _dark: "{shadows.dark5}" } },
+
     focus: { value: { base: "{shadows.lightFocus}", _dark: "{shadows.darkFocus}" } },
     inset: { value: { base: "inset 0px 1px 0px 0px rgba(0, 0, 0, 0.3)", _dark: "none" } },
     neutralFocus: { value: { base: "{shadows.blackFocus}", _dark: "{shadows.whiteFocus}" } },
-    textHighlight: {
-      value: {
-        base: "0 0 2px rgba(6, 126, 253, 0.25)",
-        _dark: "0  0 2px rgba(6, 126, 253, 0.3)",
-      },
-    },
+
     solid: {
       value: {
         base: "{shadows.lightSolid}",

@@ -134,7 +134,7 @@ export const MediumDemoIllustration = (): ReactNode => {
               height="100%"
               overflow="hidden"
               opacity={0}
-              animation="fadein 0.6s ease-out"
+              animation="fadeIn 0.6s ease-out"
               animationDelay="0.6s"
               animationFillMode="forwards"
               onMouseEnter={() => setMouseInside(true)}

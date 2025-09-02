@@ -1,5 +1,5 @@
 import { defineConfig } from "@pandacss/dev";
-import { theme, conditions, utilities } from "ui/theme";
+import { theme, conditions, utilities, monoFontFamily } from "ui/theme";
 
 export default defineConfig({
   // Whether to use css reset
@@ -24,11 +24,9 @@ export default defineConfig({
 
   conditions,
 
-  // TODO: create a const out of this and apply it to all apps
   globalCss: {
-    html: {
-      // cspell:disable-next-line
-      "--global-font-mono": `ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`,
+    ":root": {
+      "--global-font-mono": monoFontFamily,
     },
   },
 });

@@ -9,11 +9,11 @@ export const keyframes: CssKeyframes = {
     "0%": { transform: "scale(1)", opacity: 1 },
     "100%": { transform: "scale(.95)", opacity: 0 },
   },
-  fadein: {
+  fadeIn: {
     "0%": { opacity: "0" },
     "100%": { opacity: "1" },
   },
-  fadeout: {
+  fadeOut: {
     "0%": { opacity: "1" },
     "100%": { opacity: "0" },
   },

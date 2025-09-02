@@ -1,5 +1,8 @@
 import { defineTextStyles } from "@pandacss/dev";
 
+// cspell:disable-next-line
+export const monoFontFamily = `ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`;
+
 // Font definition excluding font-family, family is defined in global styles for each app separately because we want to use fancier font on the web but UI focused one in the app
 
 export const textStyles = defineTextStyles({

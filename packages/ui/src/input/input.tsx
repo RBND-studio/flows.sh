@@ -235,7 +235,7 @@ const input = cva({
         px: "space4",
         py: "space2",
         textStyle: "bodyS",
-        borderRadius: "5px", //TODO: fix theme
+        borderRadius: "5px",
         mt: "space2",
         mb: "space2",
       },
