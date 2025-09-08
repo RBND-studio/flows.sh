@@ -22,8 +22,14 @@ export interface UserPropertyMatch {
   value: UserPropertyMatchValue | UserPropertyMatchValue[];
 }
 
+export type TourWaitInteraction =
+  | "navigation"
+  | "click"
+  | "delay"
+  | "dom-element"
+  | "not-dom-element";
 export type TourWait = {
-  interaction?: string;
+  interaction?: TourWaitInteraction;
   page?: { operator: string; value: string[] };
   element?: string;
   ms?: number;
