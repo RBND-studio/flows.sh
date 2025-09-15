@@ -2,6 +2,7 @@
 import "./globals.css";
 import "fumadocs-ui/style.css";
 
+import { Providers } from "components/providers";
 import { RootProvider } from "fumadocs-ui/provider";
 import { Inter } from "next/font/google";
 import Script from "next/script";
@@ -16,7 +17,7 @@ export default function Layout({ children }: { children: ReactNode }): ReactNode
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">
         <RootProvider search={{ options: { api: "/docs/api/search" } }}>
-          {children}
+          <Providers>{children}</Providers>
           <Script data-api="/box/event" data-domain="flows.sh" defer src="/box/script.js" />
         </RootProvider>
       </body>
