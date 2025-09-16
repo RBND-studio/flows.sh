@@ -64,6 +64,11 @@ const nextConfig = {
         destination: "/",
         permanent: true,
       },
+      {
+        source: "/:path*.mdx",
+        destination: "/llms.mdx/:path*",
+        permanent: true,
+      },
     ];
   },
 };
