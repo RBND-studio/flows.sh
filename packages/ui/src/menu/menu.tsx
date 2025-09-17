@@ -13,13 +13,14 @@ type Props = {
   children?: ReactNode;
   align?: ComponentProps<typeof PopoverContent>["align"];
   open?: boolean;
+  onOpenAutoFocus?: (event: Event) => void;
 };
 
-export const Menu: FC<Props> = ({ trigger, children, align, open }) => {
+export const Menu: FC<Props> = ({ trigger, children, align, open, onOpenAutoFocus }) => {
   return (
     <Popover open={open}>
       <PopoverTrigger asChild>{trigger}</PopoverTrigger>
-      <PopoverContent align={align ?? "start"}>
+      <PopoverContent align={align ?? "start"} onOpenAutoFocus={onOpenAutoFocus}>
         <Flex
           flexDir="column"
           minW="240px"
