@@ -1,19 +1,23 @@
 import { css, cva } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
-import { Mdx } from "components";
-import type { Release } from "contentlayer/generated";
 import { ArrowLeft16 } from "icons";
 import Link from "next/link";
-import type { ReactElement } from "react";
+import type { ReactElement, ReactNode } from "react";
 import { routes } from "routes";
 import { Icon, Text } from "ui";
 
 type Props = {
-  release: Release;
+  title: string;
+  description: string;
+  slug: string;
+  slugAsParams: string;
+  date: string;
+  mdx: ReactNode;
+
   detail?: boolean;
 };
 
-export const ChangelogItem = ({ release, detail }: Props): ReactElement => {
+export const ChangelogItem = ({ detail, mdx, ...release }: Props): ReactElement => {
   const href = routes.changelogReleaseDetail({ releaseId: release.slugAsParams });
   const date = new Date(release.date).toLocaleString("en-US", {
     day: "numeric",
@@ -65,7 +69,8 @@ export const ChangelogItem = ({ release, detail }: Props): ReactElement => {
       </Box>
       <Box maxWidth={580}>
         {titleComponent}
-        <Mdx key={release.slug} code={release.body.code} />
+
+        {mdx}
       </Box>
     </Flex>
   );

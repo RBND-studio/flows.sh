@@ -1,4 +1,5 @@
 import { Grid } from "@flows/styled-system/jsx";
+import { Mdx } from "components";
 import { ChangelogItem } from "components/changelog";
 import type { Release } from "contentlayer/generated";
 import { allReleases } from "contentlayer/generated";
@@ -61,7 +62,15 @@ export default async function ReleasePage(props: ReleaseProps): Promise<ReactEle
 
   return (
     <>
-      <ChangelogItem detail release={release} />
+      <ChangelogItem
+        detail
+        title={release.title}
+        description={release.description}
+        slug={release.slug}
+        slugAsParams={release.slugAsParams}
+        date={release.date}
+        mdx={<Mdx code={release.body.code} />}
+      />
       <Grid gap="space24" gridTemplateColumns="repeat(2, 1fr)" mt="space32">
         <div>{nextRelease ? <ReleasePreview variant="next" release={nextRelease} /> : null}</div>
         <div>{prevRelease ? <ReleasePreview variant="prev" release={prevRelease} /> : null}</div>
