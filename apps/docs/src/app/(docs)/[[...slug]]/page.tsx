@@ -38,7 +38,10 @@ export default async function Page(props: { params: Promise<Params> }): Promise<
     sha: "main",
     path: `apps/docs/src/content/${page.path}`,
   };
-  const markdownUrl = `/docs${page.url}.mdx`;
+  const markdownUrl = (() => {
+    const url = page.url === "/" ? "/index" : page.url;
+    return `/docs${url}.mdx`;
+  })();
   const githubUrl = `https://github.com/${githubOptions.owner}/${githubOptions.repo}/blob/${githubOptions.sha}/${githubOptions.path}`;
 
   const time = await getGithubLastEdit({

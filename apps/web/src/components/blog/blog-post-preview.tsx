@@ -1,6 +1,5 @@
 import { css } from "@flows/styled-system/css";
 import { Box } from "@flows/styled-system/jsx";
-import type { Post } from "contentlayer/generated";
 import { ArrowRight16 } from "icons";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,10 +8,15 @@ import { routes } from "routes";
 import { Text } from "ui";
 
 type Props = {
-  post: Post;
+  title: string;
+  description: string;
+  imageAlt?: string;
+  image?: string;
+  slug: string;
+  slugAsParams: string;
 };
 
-export const BlogPostPreview = ({ post }: Props): ReactElement => {
+export const BlogPostPreview = (post: Props): ReactElement => {
   const href = routes.blogPostDetail({ postId: post.slugAsParams });
 
   return (
@@ -22,7 +26,6 @@ export const BlogPostPreview = ({ post }: Props): ReactElement => {
         pb: "space40",
         px: "space24",
       })}
-      key={post.slug}
     >
       <Box maxWidth={720} mx="auto">
         {post.image ? (

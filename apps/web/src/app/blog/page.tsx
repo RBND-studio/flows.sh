@@ -32,7 +32,15 @@ const Page = (): ReactElement => {
         {[...allPosts]
           .sort((a, b) => b.date.localeCompare(a.date))
           .map((post) => (
-            <BlogPostPreview key={post.slug} post={post} />
+            <BlogPostPreview
+              key={post.slug}
+              title={post.title}
+              description={post.description}
+              imageAlt={post.imageAlt}
+              image={post.image}
+              slug={post.slug}
+              slugAsParams={post.slugAsParams}
+            />
           ))}
       </ul>
     </>
