@@ -45,13 +45,14 @@ type ItemProps = {
 
 const Item = ({ item }: ItemProps): ReactNode => {
   if (item.href) {
+    const Cmp = item.href.startsWith("http") ? "a" : Link;
     return (
       <NavigationMenuLink asChild>
-        <Link className={MainItemCss} href={item.href}>
+        <Cmp className={MainItemCss} href={item.href}>
           <Text variant="bodyS" color="inherit" weight="700" as="span">
             {item.title}
           </Text>
-        </Link>
+        </Cmp>
       </NavigationMenuLink>
     );
   }
