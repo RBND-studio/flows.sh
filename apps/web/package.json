@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@fingerprintjs/fingerprintjs": "^4.6.2",
-    "@next/bundle-analyzer": "15.5.0",
+    "@next/bundle-analyzer": "15.5.3",
     "@radix-ui/react-navigation-menu": "^1.2.14",
     "@radix-ui/react-slot": "^1.2.0",
     "@visx/group": "^3.12.0",
@@ -31,7 +31,7 @@
     "next-contentlayer2": "^0.5.8",
     "next-sitemap": "^4.2.3",
     "next-themes": "^0.4.6",
-    "next": "15.5.0",
+    "next": "15.5.3",
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "react-medium-image-zoom": "^5.2.14",
@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@flows/types": "workspace:*",
-    "@next/eslint-plugin-next": "15.5.0",
+    "@next/eslint-plugin-next": "15.5.3",
     "@pandacss/dev": "0.53.0",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^22.15.18",
