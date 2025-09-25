@@ -54,3 +54,14 @@
 div.prose > p:nth-child(1) > span > span:nth-child(1) > img {
   margin-top: 0 !important;
 }
+
+/* Custom navbar height https://fumadocs.dev/docs/ui/layouts/docs#replace-navbar */
+:root {
+  --fd-nav-height: 56px;
+}
+
+@media (width >= 48rem) {
+  :root {
+    --fd-nav-height: 0px;
+  }
+}
