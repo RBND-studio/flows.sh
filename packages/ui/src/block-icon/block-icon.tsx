@@ -3,7 +3,7 @@ import { Box } from "@flows/styled-system/jsx";
 import {
   Banner16,
   Checklist16,
-  Exit16,
+  End16,
   Filter16,
   Hint16,
   Modal16,
@@ -23,7 +23,7 @@ export const builtInBlockIcons: Record<string, IconCmp> = {
   start: Start16,
   "manual-start": Start16,
   tour: Tour16,
-  end: Exit16,
+  end: End16,
   filter: Filter16,
   wait: Wait16,
 };

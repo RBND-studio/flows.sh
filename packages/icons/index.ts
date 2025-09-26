@@ -30,6 +30,8 @@ export * from "./src/drag16";
 export * from "./src/earth16";
 export * from "./src/edit16";
 export * from "./src/email16";
+export * from "./src/end16";
+export * from "./src/enter16";
 export * from "./src/environment16";
 export * from "./src/exit16";
 export * from "./src/external-link16";

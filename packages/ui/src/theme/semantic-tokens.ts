@@ -184,6 +184,11 @@ export const semanticTokens = defineSemanticTokens({
           muted: { value: { base: "{colors.neutral.600}", _dark: "{colors.neutral.600}" } },
         },
       },
+      purple: {
+        fg: {
+          DEFAULT: { value: "#855af2" },
+        },
+      },
     },
     // TODO: separate button into separate pattern
     button: {

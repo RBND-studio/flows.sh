@@ -85,6 +85,7 @@ export const links = (domain = "flows.sh") =>
         publish: `https://${domain}/docs/workflows/publishing`,
         environments: `https://${domain}/docs/workflows/publishing#managing-active-versions`,
         frequency: `https://${domain}/docs/workflows/overview#workflow-frequency`,
+        versionHistory: `https://${domain}/docs/workflows/overview#workflow-versions`,
       },
       blockTemplates: {
         main: `https://${domain}/docs/block-templates`,
