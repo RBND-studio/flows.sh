@@ -3,19 +3,42 @@ title: Overview
 description: Welcome to Flows documentation! We're here to answer your questions.
 ---
 
+import { Card, Cards } from "fumadocs-ui/components/card";
+import { Start16, Code16, BlockTemplate16, Question16 } from "icons";
+
 ![Workflows](/workflows/main.png)
 
-## Get started with Flows
-
-- [Quickstart](/quickstart)
-- [Flows SDK](/sdk-overview)
-- [Create custom components](/create-custom-components)
-- [Publish workflows](/workflows/publishing)
-- [Testing workflows](/workflows/testing)
-
-## Welcome to the Flows documentation
-
 This is the documentation for Flows, a fully customizable product adoption platform that enables you to take control of your product experience. With Flows, you can create anything from user onboarding and feature adoption to in-app messaging and product-led growth loops.
+
+## Getting started with Flows
+
+<Cards>
+  <Card title="Quickstart guide" icon={<Start16 />} href="/quickstart">
+    Publish your first workflow in minutes.
+  </Card>
+  <Card title="Flows SDK" icon={<Code16 />} href="/sdk-overview">
+    Documentation for the Flows SDKs.
+  </Card>
+  <Card title="Custom components" icon={<BlockTemplate16 />} href="/create-custom-components">
+    Create your own custom components to use in workflows.
+  </Card>
+  <Card title="Contact us" icon={<Question16 />} href="https://flows.sh/contact">
+    Have questions? We're here to help!
+  </Card>
+
+</Cards>
+
+## Overview
+
+### Workflows
+
+[Workflows](/workflows/overview) are the foundation of Flows, enabling you to create product tours, in-app announcements, guides, and more. They come with built-in state management, versioning, and analytics, removing the complexity of driving product adoption.
+
+### Blocks
+
+[Blocks](/blocks-overview) define the behavior of a workflow. They can represent UI elements, logical steps, or actions. Each block has customizable properties that define its behavior and can be connected to other blocks to form a workflow.
+
+The connections between blocks (paths) determine how users navigate through the process.
 
 ## Have any questions?
 
