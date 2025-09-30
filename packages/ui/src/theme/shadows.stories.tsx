@@ -1,5 +1,5 @@
 import { css, cx } from "@flows/styled-system/css";
-import type { Meta } from "@storybook/react";
+import type { Meta } from "@storybook/react-vite";
 
 const meta: Meta = {
   title: "Tokens/Shadows",
