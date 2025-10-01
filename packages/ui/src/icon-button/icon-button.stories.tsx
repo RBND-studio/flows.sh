@@ -1,5 +1,5 @@
 import { Flex } from "@flows/styled-system/jsx";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Plus16 } from "icons";
 
 import { Text } from "../text";
