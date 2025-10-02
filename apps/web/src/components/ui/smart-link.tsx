@@ -12,8 +12,8 @@ type Props = {
   underline?: boolean;
 };
 
-export const SmartLink: FC<Props> = ({ underline, href, ...props }) => {
-  if (href.startsWith("http"))
+export const SmartLink: FC<Props> = ({ underline, ...props }) => {
+  if (props.href.startsWith("http"))
     return (
       <a
         rel={props.target === "_blank" ? "noopener" : undefined}
@@ -30,7 +30,7 @@ export const SmartLink: FC<Props> = ({ underline, href, ...props }) => {
       </a>
     );
 
-  return <Link {...props} href={href as Route} />;
+  return <Link {...props} href={props.href as Route} />;
 };
 
 const linkClassname = cva({
