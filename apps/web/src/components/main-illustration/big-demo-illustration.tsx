@@ -17,24 +17,45 @@ export const BigDemoIllustration = (): ReactNode => {
   const [mouseInside, setMouseInside] = useState(false);
 
   // Handle intersection to tilt the illustration when it is not in the viewport
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    if (!ref.current) return;
+  const intersectionRef = useRef<HTMLDivElement>(null);
+  const illustrationRef = useRef<HTMLDivElement>(null);
+  const tilterRef = useRef<HTMLDivElement>(null);
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        // When the element is fully visible in the viewport, it should not be tilted
-        const isIntersecting = entry.isIntersecting;
-        ref.current?.toggleAttribute("data-is-in-viewport", isIntersecting);
+  useEffect(() => {
+    if (!illustrationRef.current) return;
+    if (!intersectionRef.current) return;
+    if (!tilterRef.current) return;
+
+    let tilterVisible = false;
+    let mainVisible = false;
+
+    const mainObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === tilterRef.current) tilterVisible = entry.intersectionRatio === 1;
+          if (entry.target === intersectionRef.current) mainVisible = entry.intersectionRatio === 1;
+        });
+
+        // Apply tilt logic after processing all entries
+        if (tilterVisible && mainVisible) {
+          // When both are 100% visible, never apply tilt
+          illustrationRef.current?.setAttribute("data-is-in-viewport", "true");
+        } else if (mainVisible) {
+          // Main element fully visible - remove tilt
+          illustrationRef.current?.setAttribute("data-is-in-viewport", "true");
+        } else if (tilterVisible) {
+          // Only tilter visible - apply tilt
+          illustrationRef.current?.removeAttribute("data-is-in-viewport");
+        }
       },
-      {
-        threshold: 0.9, // Consider element visible when 90% of it is in viewport
-      },
+      { threshold: 1 },
     );
 
-    observer.observe(ref.current);
+    mainObserver.observe(tilterRef.current);
+    mainObserver.observe(intersectionRef.current);
+
     return () => {
-      observer.disconnect();
+      mainObserver.disconnect();
     };
   }, []);
 
@@ -55,14 +76,35 @@ export const BigDemoIllustration = (): ReactNode => {
   return (
     <Section maxWidth="1200px!" role="img">
       <Box
+        ref={tilterRef}
+        position="absolute"
+        top="-400px"
+        height="400px"
+        left={0}
+        right={0}
+        pointerEvents="none"
+        zIndex={-1}
+      />
+      <Box
+        ref={intersectionRef}
+        position="absolute"
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
+        pointerEvents="none"
+        zIndex={-1}
+      />
+      <Box
         transform="perspective(800px) rotateX(15deg) translateY(-64px)"
         transition="all 420ms ease-in-out"
-        ref={ref}
+        ref={illustrationRef}
         className={css({
           "&[data-is-in-viewport]": {
             transform: "unset",
           },
         })}
+        position="relative"
       >
         <Box
           aria-hidden="true"
