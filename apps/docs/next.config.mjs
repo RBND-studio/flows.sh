@@ -69,6 +69,11 @@ const nextConfig = {
         destination: "/llms.mdx/:path*",
         permanent: true,
       },
+      {
+        source: "/create-custom-components",
+        destination: "/guides/create-custom-components",
+        permanent: true,
+      },
     ];
   },
 };
