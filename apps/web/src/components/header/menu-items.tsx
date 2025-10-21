@@ -1,8 +1,8 @@
 import {
   Addon16,
   Banner16,
-  BlockTemplate16,
   Checklist16,
+  Component16,
   Graph16,
   Slot16,
   Tour16,
@@ -44,7 +44,7 @@ export const menuItems: MenuItemProps[] = [
       {
         title: "Custom UI components",
         href: routes.features.customComponents,
-        icon: BlockTemplate16,
+        icon: Component16,
         description: "Build custom components to create a native experience.",
       },
     ],

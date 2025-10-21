@@ -19,7 +19,7 @@ This example showcases multiple components that can be used to announce your Pro
 1. Sign up for Flows if you haven’t already. You can [create a free account here](https://app.flows.sh/signup).
 2. Clone the repository from GitHub and install the required dependencies in the project directory.
 3. Add your organization ID in the [`providers.tsx`](./src/app/providers.tsx) file.
-4. Create a new block template for Sidebar Banner in your organization with the following configuration:
+4. Create a new component for Sidebar Banner in your organization with the following configuration:
    - **UI component:** SidebarBanner
    - **Slottable:** true
    - **Custom properties:**
@@ -28,7 +28,7 @@ This example showcases multiple components that can be used to announce your Pro
      - Href
    - **Exit nodes:**
      - continue
-5. Create a new block template for Floating Banner in your organization with the following configuration:
+5. Create a new component for Floating Banner in your organization with the following configuration:
    - **UI component:** FloatingBanner
    - **Slottable:** false
    - **Custom properties:**
@@ -38,7 +38,7 @@ This example showcases multiple components that can be used to announce your Pro
      - Href
    - **Exit nodes:**
      - continue
-6. Create a new block template for Top Banner in your organization with the following configuration:
+6. Create a new component for Top Banner in your organization with the following configuration:
    - **UI component:** TopBanner
    - **Slottable:** true
    - **Custom properties:**

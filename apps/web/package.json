@@ -11,7 +11,8 @@
     "start": "next start",
     "lint": "eslint",
     "tsc": "next typegen && tsc",
-    "prepare": "panda codegen && contentlayer2 build"
+    "prepare": "panda codegen && contentlayer2 build",
+    "check-links": "docker run --network host -v ./linkcheck-skip-urls.txt:/linkcheck-skip-urls.txt --rm tennox/linkcheck $URL --skip-file linkcheck-skip-urls.txt"
   },
   "dependencies": {
     "@fingerprintjs/fingerprintjs": "^4.6.2",

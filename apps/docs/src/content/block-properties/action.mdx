@@ -30,16 +30,16 @@ In a workflow, you can configure the action property to perform the desired acti
   - **Cancel tour**: Exit the tour using the `cancel` exit node.
 - **Link** (optional): By clicking on the **Add link** button, you can add a link to the action. This link will be opened when the action is triggered. You can also select whether to open the link in a new tab or not.
 
-## Usage in a block template
+## Usage in a component
 
-In a block template, you can define the action property like any other property. The properties to fill out are:
+In a component, you can define the action property like any other property. The properties to fill out are:
 
 - **Title**: The title of the action shown in the block editor.
 - **Description**: The description of the action shown in the block editor (optional).
 - **Type**: Select action from the dropdown.
 - **Key**: The key of the property that will contain the action data in your component.
 
-Below is an example usage of action in a component:
+Below is an example implementation of action:
 
 ```tsx title="Action component example"
 import { type Action, type ComponentProps } from "@flows/react";

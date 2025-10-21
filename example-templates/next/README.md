@@ -17,7 +17,7 @@ TODO: replace the screenshot with a screenshot of your workflow.
 
 ## Getting started
 
-TODO: if applicable add block template instructions below step 3
+TODO: if applicable add component instructions below step 3
 
 1. Sign up for Flows if you haven’t already. You can [create a free account here](https://app.flows.sh/signup).
 2. Clone the repository from GitHub and install the required dependencies in the project directory.

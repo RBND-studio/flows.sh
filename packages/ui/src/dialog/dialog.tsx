@@ -11,6 +11,7 @@ import { Text } from "../text";
 type Props = {
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
+  onOpenAutoFocus?: (event: Event) => void;
   trigger?: ReactNode;
   children?: ReactNode;
   /**
@@ -19,7 +20,14 @@ type Props = {
   maxWidth?: (typeof contentCss.variantMap.maxWidth)[number];
 };
 
-export const Dialog: FC<Props> = ({ open, onOpenChange, trigger, children, maxWidth = 400 }) => {
+export const Dialog: FC<Props> = ({
+  open,
+  onOpenChange,
+  onOpenAutoFocus,
+  trigger,
+  children,
+  maxWidth = 400,
+}) => {
   return (
     <RadixDialog.Root onOpenChange={onOpenChange} open={open}>
       {trigger ? <RadixDialog.Trigger asChild>{trigger}</RadixDialog.Trigger> : null}
@@ -48,6 +56,7 @@ export const Dialog: FC<Props> = ({ open, onOpenChange, trigger, children, maxWi
           onSubmit={(e) => e.stopPropagation()}
           className={contentCss({ maxWidth })}
           aria-describedby={undefined}
+          onOpenAutoFocus={onOpenAutoFocus}
         >
           {children}
           <RadixDialog.Close

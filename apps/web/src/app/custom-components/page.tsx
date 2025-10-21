@@ -1,7 +1,7 @@
 import { Flex } from "@flows/styled-system/jsx";
 import { Hero, TrailFork } from "components";
 import { CtaBanner } from "components/cta-banner";
-import { BlockTemplate16 } from "icons";
+import { Component16 } from "icons";
 import { getWebMetadata } from "lib/get-metadata";
 import { type Metadata } from "next";
 import type { JSX } from "react";
@@ -22,7 +22,7 @@ export default function ProductTour(): JSX.Element {
       <Hero
         eyebrow={
           <Flex gap="space8" alignItems="center">
-            <Icon icon={BlockTemplate16} />
+            <Icon icon={Component16} />
             <Text variant="titleM">Custom UI components</Text>
           </Flex>
         }

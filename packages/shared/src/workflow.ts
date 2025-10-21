@@ -31,8 +31,8 @@ export const workflowFrequencyOptions = [
 ] as const;
 
 export const blockTranslation = {
-  component: "Workflow block",
-  "tour-component": "Tour block",
+  component: "Workflow component",
+  "tour-component": "Tour component",
   start: "Start",
   "manual-start": "Manual start",
   end: "End",

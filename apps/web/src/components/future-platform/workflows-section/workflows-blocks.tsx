@@ -2,7 +2,7 @@
 
 import { Box, Flex, Wrap } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
-import { BlockTemplate16 } from "icons";
+import { Component16 } from "icons";
 import { type JSX, useState } from "react";
 import { BlockIcon, Icon, Text } from "ui";
 
@@ -55,7 +55,7 @@ const tabs = [
         animationFillMode="forwards"
       >
         <Flex borderRadius="radius4" p="2px" backgroundColor="newBg.neutral.strong">
-          <Icon icon={BlockTemplate16} />
+          <Icon icon={Component16} />
         </Flex>
         <Text weight="600">Custom component</Text>
       </Flex>

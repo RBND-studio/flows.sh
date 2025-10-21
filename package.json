@@ -24,8 +24,7 @@
     "pre-push": "turbo lint tsc test spellcheck pre-commit lint:md",
     "spellcheck": "pnpm cspell . --quiet",
     "new-example": "pnpm dlx plop example",
-    "lint:md": "pnpm markdownlint '**/*.mdx' '**/*.md'",
-    "check-links": "pnpm dlx hyperlink http://localhost:3000/docs --recursive --internal --concurency 1"
+    "lint:md": "pnpm markdownlint '**/*.mdx' '**/*.md'"
   },
   "devDependencies": {
     "cspell": "^8.17.3",

@@ -19,16 +19,16 @@ In a workflow, you can configure the block trigger to launch another block in th
 
 When block trigger is connected to another block a dashed line will appear between the two blocks to indicate the connection.
 
-## Usage in a block template
+## Usage in a component
 
-In a block template, you can define the block trigger like any other property. The properties to fill out are:
+In a component, you can define the block trigger like any other property. The properties to fill out are:
 
 - **Title**: The title of the block trigger shown in the block editor.
 - **Description**: The description of the block trigger shown in the block editor (optional).
 - **Type**: Select block trigger from the dropdown.
 - **Key**: The key of the function you need to call in your component for the block trigger to activate.
 
-Below is an example usage of block trigger in a component:
+Below is an example implementation of block trigger:
 
 ```tsx title="Block trigger component example"
 type Props = {

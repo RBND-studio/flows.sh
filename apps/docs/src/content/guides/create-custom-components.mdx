@@ -1,13 +1,13 @@
 ---
 title: Create custom components
-description: Create custom block templates to add your own UI elements into workflows.
+description: Create custom components to add your own UI elements into workflows.
 ---
 
 import { Step, Steps } from "fumadocs-ui/components/steps";
 
-![Block templates](/blocks/template.png)
+![Component](/blocks/template.png)
 
-Custom components can be created in Flows using block templates. Block templates store the properties and exit nodes for your custom component so Flows knows how your components work. Each block template requires a corresponding component in your application.
+Custom components can be created in Flows. Components definitions store the properties and exit nodes for your custom component so Flows knows how your components work. Each component requires a corresponding UI component in your application.
 
 <Steps>
 
@@ -15,7 +15,7 @@ Custom components can be created in Flows using block templates. Block templates
 
 ## Create a UI component
 
-Block templates rely on your custom UI components. First, create or reuse a component within your application. This component will be rendered when users enter the block in a workflow.
+First, create or reuse a component within your application. This component will be rendered when users enter the block in a workflow.
 
 In this guide, we’ll build a marketing banner with the following customizable properties:
 
@@ -149,11 +149,11 @@ const App = () => {
 
 <Step>
 
-## Create a block template
+## Create a component in Flows
 
-Now that we have our component, we can create a block template in Flows. Navigate to **Block templates** and click **Create new template**.
+Now that we have our UI component, we can create a component in Flows. Navigate to **Components** and click **New component**.
 
-A dialog will appear where you need to enter a name for the block template and select if the component is going to be used in a workflow or a tour.
+A dialog will appear where you need to enter a name for the component and select if the component is going to be used in a workflow or a tour.
 
 </Step>
 
@@ -173,7 +173,7 @@ To tell the Flows SDK which component to use, you need to enter the key you used
 
 If your component is intended to be rendered inside the application, you need to select the **Slottable** option. This will allow you to specify a slot id when adding the block to a workflow. In our case, the banner component is /[slottable](/block-properties/slot) because we want to embed it into our application UI.
 
-![Template slot](/blocks/template-slot.png)
+![Component slot](/blocks/template-slot.png)
 
 </Step>
 
@@ -198,7 +198,7 @@ Each property has:
 - **Key** - the key that will be used to pass the value to the component
 - **Type** - the type of the property
 
-![Template properties](/blocks/template-properties.png)
+![Component properties](/blocks/template-properties.png)
 
 </Step>
 
@@ -213,7 +213,7 @@ Exit nodes are the transitions that can be triggered when the user interacts wit
 
 The exit node has only a `key` field that needs to match the prop name in your component.
 
-![Template exit nodes](/blocks/template-exit-nodes.png)
+![Component exit nodes](/blocks/template-exit-nodes.png)
 
 </Step>
 
@@ -221,7 +221,7 @@ The exit node has only a `key` field that needs to match the prop name in your c
 
 ## Optional: More customization
 
-You can also change the icon of your block template by clicking on the icon above the block template name.
+You can also change the icon of your component by clicking on the icon above the component name.
 
 </Step>
 
@@ -229,9 +229,9 @@ You can also change the icon of your block template by clicking on the icon abov
 
 ## Save and publish
 
-Once you've defined your properties and exit nodes, click **Publish changes** to make the latest version of the block template available to use in your workflows.
+Once you've defined your properties and exit nodes, click **Publish changes** to make the latest version of the component available to use in your workflows.
 
-![Template publish](/blocks/template-publish.png)
+![Component publish](/blocks/template-publish.png)
 
 </Step>
 
@@ -239,9 +239,9 @@ Once you've defined your properties and exit nodes, click **Publish changes** to
 
 ## Add block to workflow
 
-Now that we have our block template, we can add it to a workflow. Navigate to a workflow and click **Add block**. Select the block template you created and configure the properties.
+Now that we have our component, we can add it to a workflow. Navigate to a workflow and click **Add block**. Select the component you created and configure the properties.
 
-![Template add to workflow](/blocks/template-add-to-workflow.png)
+![Component add to workflow](/blocks/template-add-to-workflow.png)
 
 </Step>
 

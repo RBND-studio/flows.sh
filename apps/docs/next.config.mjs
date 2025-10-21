@@ -74,6 +74,26 @@ const nextConfig = {
         destination: "/guides/create-custom-components",
         permanent: true,
       },
+      {
+        source: "/block-templates",
+        destination: "/components/overview",
+        permanent: true,
+      },
+      {
+        source: "/components/modal",
+        destination: "/component-libraries/basics-v1/modal",
+        permanent: true,
+      },
+      {
+        source: "/components/tooltip",
+        destination: "/component-libraries/basics-v1/tooltip",
+        permanent: true,
+      },
+      {
+        source: "/components/hint",
+        destination: "/component-libraries/basics-v1/hint",
+        permanent: true,
+      },
     ];
   },
 };

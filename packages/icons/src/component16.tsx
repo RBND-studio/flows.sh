@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 
-export function BlockTemplate16(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+export function Component16(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg fill="currentColor" height={16} width={16} xmlns="http://www.w3.org/2000/svg" {...props}>
       <path d="M1.5 4.25C1.5 3.52065 1.78973 2.82118 2.30546 2.30546C2.82118 1.78973 3.52065 1.5 4.25 1.5C4.44891 1.5 4.63968 1.57902 4.78033 1.71967C4.92098 1.86032 5 2.05109 5 2.25C5 2.44891 4.92098 2.63968 4.78033 2.78033C4.63968 2.92098 4.44891 3 4.25 3C3.56 3 3 3.56 3 4.25C3 4.44891 2.92098 4.63968 2.78033 4.78033C2.63968 4.92098 2.44891 5 2.25 5C2.05109 5 1.86032 4.92098 1.71967 4.78033C1.57902 4.63968 1.5 4.44891 1.5 4.25Z" />

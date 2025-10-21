@@ -92,7 +92,7 @@ export const featureHintContent: ContentType = {
           Add your organization ID in the <InlineCode>providers.tsx</InlineCode> file.
         </li>
         <li>
-          Create a new block template in your organization with the following configuration:
+          Create a new component in your organization with the following configuration:
           <UnorderedList>
             <li>
               <strong>UI component:</strong> FeatureHint

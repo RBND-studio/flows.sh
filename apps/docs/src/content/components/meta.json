@@ -1,3 +1,3 @@
 {
-  "pages": ["overview", "modal", "tooltip", "hint", "custom", "create-custom-components"]
+  "pages": ["overview", "managing", "custom"]
 }

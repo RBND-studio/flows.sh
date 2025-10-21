@@ -15,9 +15,9 @@ The Array property is used to create multiple items with the same structure but 
 
 In a workflow, adding items to an array is as simple as clicking the + button next to the array title. Each added item conforms to the defined structure, and the order in which you add them determines their display order.
 
-## Usage in a block template
+## Usage in a component
 
-In a block template, you can define the array property like any other property. The properties to fill out are:
+In a component, you can define the array property like any other property. The properties to fill out are:
 
 - **Title**: The title of the array shown in the block editor.
 - **Description**: The description of the array shown in the block editor (optional).
@@ -33,11 +33,11 @@ In this example, we’ll create a list where each link has a title and a URL.
 
 <Step>
 
-### Create a block template
+### Create a component
 
-Create a block template with an array named links. Each item in the array includes a title and a url.
+Create a component with an array named links. Each item in the array includes a title and a url.
 
-![Block template](/block-properties/array-template.png)
+![Component editor](/block-properties/array-template.png)
 
 </Step>
 
@@ -79,7 +79,7 @@ Here, Tailwind CSS classes style the list. You can customize the component to ma
 
 Now we can use the **Links List** component in a workflow. When the user enters the block, the LinksList component will render the list of links.
 
-![Block template](/block-properties/array-workflow.png)
+![Array workflow](/block-properties/array-workflow.png)
 
 </Step>
 
