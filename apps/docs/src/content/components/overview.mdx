@@ -1,27 +1,25 @@
 ---
 title: Overview
-description: UI components for onboarding.
+description: Display information and interact with users using reusable UI components in Flows.
 ---
 
 import { Card, Cards } from "fumadocs-ui/components/card";
-import { Modal16, Tooltip16, Hint16 } from "icons";
+import { Modal16, Tooltip16, Hint16, Component16, Edit16, Book16 } from "icons";
 
-Flows has a library of UI components to help get started quickly with building your onboarding. These components are flexible, customizable, and can easily be adapted to match your brand’s identity. Need something unique? You can also build custom components tailored to your requirements.
+![Cover](/components/cover.png)
 
-## Built-in components
+## Overview
+
+Components are reusable UI elements that can be integrated into [workflows](/workflows/overview) within Flows to display information or interact with users. They contain properties and instructions, giving editors the power to create custom workflows. Each component must correspond to a matching component in your application.
 
 <Cards>
-  <Card title="Modal" icon={<Modal16 />} href="/components/modal">
-    Display a modal to guide users through a process.
+  <Card title="Managing components" icon={<Edit16 />} href="/components/managing">
+    Manage UI components that can be used within Flows workflows.
   </Card>
-  <Card title="Tooltip" icon={<Tooltip16 />} href="/components/tooltip">
-    Guide users with helpful tooltips.
+  <Card title="Component libraries" icon={<Book16 />} href="/component-libraries/overview">
+    Pixel-perfect component libraries for building product adoption experiences.
   </Card>
-  <Card title="Hint" icon={<Hint16 />} href="/components/hint">
-    Provide subtle hints to users.
+  <Card title="Custom component" icon={<Component16 />} href="/components/custom">
+    Create your own custom components to use in workflows.
   </Card>
 </Cards>
-
-## Custom components
-
-If the built-in options don’t meet your needs, you can create custom components. Visit the [custom components](/components/custom) page to learn more and get started.

@@ -20,7 +20,11 @@ export const Menu: FC<Props> = ({ trigger, children, align, open, onOpenAutoFocu
   return (
     <Popover open={open}>
       <PopoverTrigger asChild>{trigger}</PopoverTrigger>
-      <PopoverContent align={align ?? "start"} onOpenAutoFocus={onOpenAutoFocus}>
+      <PopoverContent
+        align={align ?? "start"}
+        onOpenAutoFocus={onOpenAutoFocus}
+        className={css({ zIndex: 20 })}
+      >
         <Flex
           flexDir="column"
           minW="240px"

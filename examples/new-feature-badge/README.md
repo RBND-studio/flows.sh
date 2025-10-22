@@ -23,7 +23,7 @@ Below is a screenshot of how the workflow is set up:
 1. Sign up for Flows if you haven’t already. You can [create a free account here](https://app.flows.sh/signup).
 2. Clone the repository from GitHub and install the required dependencies in the project directory.
 3. Add your organization ID in the [`providers.tsx`](./src/app/providers.tsx) file.
-4. Create a new block template in your organization with the following configuration:
+4. Create a new component in your organization with the following configuration:
    - **UI component:** NewFeatureBadge
    - **Slottable:** false
    - **Custom properties:**

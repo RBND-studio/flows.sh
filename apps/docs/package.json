@@ -10,7 +10,8 @@
     "lint": "eslint",
     "tsc": "next typegen && tsc",
     "prepare": "panda codegen",
-    "postinstall": "fumadocs-mdx"
+    "postinstall": "fumadocs-mdx",
+    "check-links": "docker run --network host -v ./linkcheck-skip-urls.txt:/linkcheck-skip-urls.txt --rm tennox/linkcheck $URL --skip-file linkcheck-skip-urls.txt"
   },
   "dependencies": {
     "fumadocs-core": "15.7.13",

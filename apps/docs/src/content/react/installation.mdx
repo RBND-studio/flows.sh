@@ -16,12 +16,12 @@ The [Flows React SDK](https://www.npmjs.com/package/@flows/react) is a library t
 
 <Step>
 
-## Install the React SDK
+## Install the React SDK and components package
 
 You can install the Flows React SDK [from npm](https://www.npmjs.com/package/@flows/react):
 
 ```package-install
-npm i @flows/react
+npm i @flows/react @flows/react-components
 ```
 
 </Step>
@@ -34,6 +34,10 @@ The SDK provides a `FlowsProvider` component that you can use to wrap your app. 
 
 ```tsx title="layout.tsx"
 import { FlowsProvider } from "@flows/react";
+// Import the Basics V1 components and styles
+import * as components from "@flows/react-components";
+import * as tourComponents from "@flows/react-components/tour";
+import "@flows/react-components/index.css";
 
 const App = () => {
   return (
@@ -41,8 +45,13 @@ const App = () => {
       organizationId="your-organization-id" // Find this in Settings > General
       environment="production" // Default environment
       userId="your-user-id" // Identify the user
-      components={{}}
-      tourComponents={{}}
+      // Add the Basics V1 components
+      tourComponents={{
+        ...tourComponents,
+      }}
+      components={{
+        ...components,
+      }}
     >
       {/* Your app code here */}
     </FlowsProvider>
@@ -51,47 +60,6 @@ const App = () => {
 ```
 
 For a full list of supported properties, see the [FlowsProvider documentation](/react/reference#flowsprovider).
-
-</Step>
-
-<Step>
-
-## Optional: Use built-in components
-
-To simplify implementation, you can use the `@flows/react-components` package, which provides pre-built components and utilities for block rendering.
-
-You can install the Flows React Components SDK [from npm](https://www.npmjs.com/package/@flows/react-components):
-
-```package-install
-npm i @flows/react-components
-```
-
-Then, import and use the components in your app:
-
-```tsx title="layout.tsx"
-import { FlowsProvider } from "@flows/react";
-import * as components from "@flows/react-components"; // [!code highlight]
-import * as tourComponents from "@flows/react-components/tour"; // [!code highlight]
-import "@flows/react-components/index.css"; // [!code highlight]
-
-const App = () => {
-  return (
-    <FlowsProvider
-      organizationId="your-organization-id" // Find this in Settings > General
-      environment="production" // Default environment
-      userId="your-user-id" // Identify the user
-      tourComponents={{
-        ...tourComponents, // [!code highlight]
-      }}
-      components={{
-        ...components, // [!code highlight]
-      }}
-    >
-      {/* Your app code here */}
-    </FlowsProvider>
-  );
-};
-```
 
 </Step>
 

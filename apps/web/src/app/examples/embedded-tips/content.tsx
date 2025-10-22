@@ -127,7 +127,7 @@ export const embeddedTipsContent: ContentType = {
           Add your organization ID in the <InlineCode>providers.tsx</InlineCode> file.
         </li>
         <li>
-          Create three block templates based on the components found in{" "}
+          Create three components based on the components found in{" "}
           <InlineCode>src/components/flows</InlineCode>
         </li>
         <li>Recreate the workflow in your organization and publish it.</li>

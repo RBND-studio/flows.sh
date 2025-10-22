@@ -21,3 +21,19 @@ docker compose up -d
 pnpm be:dev
 pnpm app dev
 ```
+
+## Lint URLS
+
+Docs:
+
+```sh
+URL="http://host.docker.internal:3000/docs" pnpm run docs check-links
+```
+
+Web:
+
+```sh
+URL="http://host.docker.internal:6002/" pnpm web check-links
+```
+
+For local linting uncomment (remove #) /docs in `apps/web/linkcheck-skip-urls.txt` to exclude docs links.

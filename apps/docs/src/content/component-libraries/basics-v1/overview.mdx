@@ -1,0 +1,149 @@
+---
+title: Overview
+description: A set of essential UI components to kickstart your product adoption journey.
+---
+
+import { Modal16, Tooltip16, Hint16 } from "icons";
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+![Basics V1](/component-libraries/basics-v1/cover.png)
+
+## Overview
+
+**Basics V1** provides a set of ready-to-use components (**Modal**, **Tooltip**, and **Hint**) for building onboarding and education flows in your product. Each component integrates seamlessly with Flows, handling rendering, state, and lifecycle so you can focus on your app’s logic and UI.
+
+## Components
+
+<Cards>
+  <Card title="Modal" icon={<Modal16 />} href="/component-libraries/basics-v1/modal">
+    Display a modal to guide users through a process.
+  </Card>
+  <Card title="Tooltip" icon={<Tooltip16 />} href="/component-libraries/basics-v1/tooltip">
+    Guide users with helpful tooltips.
+  </Card>
+  <Card title="Hint" icon={<Hint16 />} href="/component-libraries/basics-v1/hint">
+    Provide subtle hints to users.
+  </Card>
+</Cards>
+
+## Installation
+
+You can install and integrate the Basics V1 library using either **React** or **JavaScript**, depending on your application stack.
+
+### React
+
+<Steps>
+
+<Step>
+
+#### Install the React package
+
+```package-install
+@flows/react-components
+```
+
+</Step>
+
+<Step>
+
+#### Import and use components
+
+Import the Basics V1 components and register them in the `FlowsProvider`.
+
+```tsx title="layout.tsx"
+import { FlowsProvider } from "@flows/react";
+import * as components from "@flows/react-components"; // [!code highlight]
+import * as tourComponents from "@flows/react-components/tour"; // [!code highlight]
+import "@flows/react-components/index.css"; // [!code highlight]
+
+const App = () => {
+  return (
+    <FlowsProvider
+      organizationId="your-organization-id" // Find this in Settings > General
+      environment="production" // Default environment
+      userId="your-user-id" // Identify the user
+      tourComponents={{
+        ...tourComponents, // [!code highlight]
+      }}
+      components={{
+        ...components, // [!code highlight]
+      }}
+    >
+      {/* Your app code here */}
+    </FlowsProvider>
+  );
+};
+```
+
+</Step>
+
+<Step>
+
+#### Enable library in Flows
+
+In the Flows dashboard, go to **Components** and click the **Libraries** button. In the dialog that appears, find the Basics V1 library and click **Enable library**.
+
+![Library picker](/component-libraries/library-picker.png)
+
+Once enabled, you’ll see the Basics V1 components available when adding new blocks to a workflow.
+
+</Step>
+
+</Steps>
+
+### JavaScript
+
+<Steps>
+
+<Step>
+
+#### Install the JavaScript package
+
+```package-install
+@flows/js-components
+```
+
+</Step>
+
+<Step>
+
+#### Setup components and rendering
+
+For Flows to be able to render the components from the Basics V1 library, you need to setup the slot components and render function for the floating blocks. Rendering of slot blocks will be handled by the [flows-slot](/javascript/reference#flows-slot) element.
+
+```js title="main.js"
+import { init, addFloatingBlocksChangeListener } from "@flows/js";
+import { render, updateSlotComponents } from "@flows/js-components";
+import * as components from "@flows/js-components/components";
+import * as tourComponents from "@flows/js-components/tour-components";
+
+// Import the styles or copy them to your project and <link> them in your HTML
+import "@flows/js-components/index.css";
+
+init({ ... })
+
+updateSlotComponents({ components, tourComponents })
+
+const dispose = addFloatingBlocksChangeListener((blocks) => {
+  render({ blocks, components,tourComponents });
+});
+
+// Call `dispose` when you want to stop listening to the changes to avoid memory leaks
+dispose()
+```
+
+</Step>
+
+<Step>
+
+#### Enable the library in Flows
+
+In the Flows dashboard, go to **Components** and click the **Libraries** button. In the dialog that appears, find the Basics V1 library and click **Enable library**.
+
+![Library picker](/component-libraries/library-picker.png)
+
+Once enabled, you’ll see the Basics V1 components available when adding new blocks to a workflow.
+
+</Step>
+
+</Steps>

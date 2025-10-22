@@ -136,48 +136,7 @@ const FlowsSlotRender = () => {
 
 ## Optional: Use built-in components
 
-To simplify implementation, you can use the `@flows/js-components` package, which provides pre-built components and utilities for block rendering.
-
-You can install the Flows JavaScript Components SDK [from npm](https://www.npmjs.com/package/@flows/js-components):
-
-```package-install
-npm i @flows/js-components
-```
-
-Then setup the slot components and render function for the floating blocks. Rendering of slot blocks will be handled by the [flows-slot](/javascript/reference#flows-slot) element.
-
-```js title="main.js"
-import { init, addFloatingBlocksChangeListener } from "@flows/js";
-import { render, updateSlotComponents } from "@flows/js-components";
-import * as components from "@flows/js-components/components";
-import * as tourComponents from "@flows/js-components/tour-components";
-
-// Import the styles or copy them to your project and <link> them in your HTML
-import "@flows/js-components/index.css";
-
-init({ ... })
-updateSlotComponents({ components, tourComponents })
-const dispose = addFloatingBlocksChangeListener((blocks) => {
-  render({ blocks, components,tourComponents });
-});
-// Call `dispose` when you want to stop listening to the changes to avoid memory leaks
-dispose()
-```
-
-You can then use custom `<flows-slot>` HTML element with optional placeholder content anywhere in your HTML document to render slottable blocks.
-
-```html title="page.html"
-<body>
-  <!-- ... -->
-  <flows-slot data-slot-id="my-slot">
-    <!-- Optionally you can pass one child element with `data-placeholder` attribute -->
-    <div data-placeholder>
-      <p>Optionally pass placeholder content here</p>
-    </div>
-  </flows-slot>
-  <!-- ... -->
-</body>
-```
+To simplify implementation, you can use one of our pixel-perfect component libraries. The [Basics V1](/component-libraries/basics-v1/overview) library provides essential UI components like modals, tooltips, and hints that are fully compatible with Flows.
 
 </Step>
 

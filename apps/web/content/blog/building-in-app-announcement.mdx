@@ -86,18 +86,18 @@ const App = () => {
 };
 ```
 
-### Step 3: Create a block template
+### Step 3: Create a custom component
 
-Now that we have our `AnnouncementBanner` component, we can create a block template for it in Flows. This makes it easy for your team to reuse the component in workflows.
+Now that we have our `AnnouncementBanner` component, we can create a custom component for it in Flows. This makes it easy for your team to reuse the component in workflows.
 
 <Image
   src="/images/blog/building-in-app-announcement/block-template.png"
-  alt="Screenshot of the announcement banner block template configuration in Flows"
+  alt="Screenshot of the announcement banner custom component configuration in Flows"
   width={1800}
   height={1542}
 />
 
-Configure the block template like this:
+Configure the component like this:
 
 - **UI component**: `AnnouncementBanner`
 - **Slottable**: Enabled (so it can be rendered in slots that we will add to your app layout)
@@ -108,7 +108,7 @@ Configure the block template like this:
 - **Exit nodes**:
   - **Continue**: Used to dismiss the banner when clicked
 
-Once published, this block template can be used in any workflow.
+Once published, this component can be used in any workflow.
 
 ### Step 4: Add a slot in your app layout
 

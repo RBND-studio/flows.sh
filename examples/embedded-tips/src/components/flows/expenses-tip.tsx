@@ -2,7 +2,7 @@ import { Info, X } from "lucide-react";
 import { Button } from "../ui/button";
 import { ComponentProps } from "@flows/react";
 
-// These props are passed to the component via the Flows SDK. The passed in props need to be set up in the block template.
+// These props are passed to the component via the Flows SDK. The passed in props need to be set up in the component in Flows dashboard.
 type Props = ComponentProps<{
   title: string;
 

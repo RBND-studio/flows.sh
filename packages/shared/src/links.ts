@@ -87,9 +87,10 @@ export const links = (domain = "flows.sh") =>
         frequency: `https://${domain}/docs/workflows/overview#workflow-frequency`,
         versionHistory: `https://${domain}/docs/workflows/overview#workflow-versions`,
       },
-      blockTemplates: {
-        main: `https://${domain}/docs/block-templates`,
-        updateInstances: `https://${domain}/docs/block-templates#updating-block-template-instances`,
+      components: {
+        main: `https://${domain}/docs/components/overview`,
+        updateInstances: `https://${domain}/docs/components/managing#updating-component-instances`,
+        manageLibraries: `https://${domain}/docs/components/managing#libraries`,
       },
       organization: {
         main: `https://${domain}/docs/organization-setup/organizations`,

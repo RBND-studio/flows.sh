@@ -45,8 +45,7 @@ const root = cva({
     height: 20,
     borderRadius: 9999,
     position: "relative",
-    transitionDuration: "fast",
-    transitionTimingFunction: "easeInOut",
+    fastEaseInOut: "background",
     bg: "newControl.bg.strong",
     _hover: {
       bg: "newControl.bg.strongHover",
@@ -56,6 +55,10 @@ const root = cva({
       _hover: {
         bg: "newControl.bg.successHover",
       },
+    },
+    _disabled: {
+      bg: "newControl.bg.disabled",
+      pointerEvents: "none",
     },
   },
 });

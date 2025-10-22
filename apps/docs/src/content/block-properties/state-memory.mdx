@@ -22,9 +22,9 @@ In a workflow, you can configure the state memory to track whether a user has ex
 - **Manual**: The state memory can be set from your application using the SDK. For example by clicking a button and calling `setValue`.
 - **Block exit**: The state memory will be set to `true` when the user exits the selected block.
 
-## Usage in a block template
+## Usage in a component
 
-In a block template, you can define the state memory like any other property. The properties to fill out are:
+In a component, you can define the state memory like any other property. The properties to fill out are:
 
 - **Title**: The title of the state memory shown in the block editor.
 - **Description**: The description of the state memory shown in the block editor (optional).
@@ -39,11 +39,11 @@ In this example, we'll create a simple checklist where each task is marked as co
 
 <Step>
 
-### Create a block template
+### Create a component
 
-Create a block template with an [array](/block-properties/array) named tasks. Each item in the array includes a title and a completed property that is a State memory.
+Create a component with an [array](/block-properties/array) named tasks. Each item in the array includes a title and a completed property that is a State memory.
 
-![Block template](/block-properties/state-memory-template.png)
+![Component editor](/block-properties/state-memory-template.png)
 
 </Step>
 
@@ -95,7 +95,7 @@ Here, Tailwind CSS classes style the list and Lucide provide icons. You can cust
 
 Now we can use the **Checklist** component in a workflow. When the user enters the block, the Checklist component will render the list of tasks. Then when the user completes either the tour or the card task, the corresponding task will be marked as completed in the checklist.
 
-![Block template](/block-properties/state-memory-workflow.png)
+![State memory workflow](/block-properties/state-memory-workflow.png)
 
 </Step>
 

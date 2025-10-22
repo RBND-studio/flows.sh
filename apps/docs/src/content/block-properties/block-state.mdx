@@ -17,22 +17,22 @@ The block state property allows you to read a state from another block in the wo
 
 In a workflow, you can configure the block state to read a state from another component block in the workflow. To configure the block state, click on the field and select the block you want to read the state from. Now the block state will be available in your component as a prop.
 
-## Usage in a block template
+## Usage in a component
 
-In a block template, you can define the block state like any other property. The properties to fill out are:
+In a component, you can define the block state like any other property. The properties to fill out are:
 
 - **Title**: The title of the block state shown in the block editor.
 - **Description**: The description of the block state shown in the block editor (optional).
 - **Type**: Select block state from the dropdown.
 - **Key**: The key under which the block state will be available in your component.
 
-Below is an example usage of block state in a component:
+Below is an example implementation of block state:
 
 ```tsx title="Block state component example"
 import { BlockState } from "@flows/react";
 
 type Props = {
-  // The connected block’s state will be available under the key you defined in the block template
+  // The connected block’s state will be available under the key you defined in the component in Flows dashboard
   anotherBlockState?: BlockState<{
     items: { state: StateMemory }[];
   }>;

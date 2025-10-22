@@ -1,7 +1,7 @@
 import { css, cx } from "@flows/styled-system/css";
 import { Box, Flex, Grid } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
-import { ArrowRight16, Block16, BlockTemplate16, Slot16, Tour16 } from "icons";
+import { ArrowRight16, Block16, Component16, Slot16, Tour16 } from "icons";
 import { links } from "lib/links";
 import { type Route } from "next";
 import Link from "next/link";
@@ -36,7 +36,7 @@ const features = [
   {
     title: "Custom components",
     description: "Build your own components and create a native product experience.",
-    icon: BlockTemplate16,
+    icon: Component16,
     href: routes.features.customComponents,
   },
 ];

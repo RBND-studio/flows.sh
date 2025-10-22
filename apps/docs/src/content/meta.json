@@ -7,7 +7,6 @@
     "---Platform---",
     "workflows",
     "tours",
-    "block-templates",
     "localization",
     "users",
     "environments",
@@ -26,6 +25,7 @@
     "sdk-overview",
     "react",
     "javascript",
+    "component-libraries",
 
     "---Other---",
     "guides",
