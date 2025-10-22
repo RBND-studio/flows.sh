@@ -137,6 +137,11 @@ export const links = (domain = "flows.sh") =>
       localization: {
         main: `https://${domain}/docs/localization`,
       },
+      launchpad: {
+        main: `https://${domain}/docs/launchpad`,
+        workflowPriority: `https://${domain}/docs/launchpad#workflow-priority`,
+        concurrency: `https://${domain}/docs/launchpad#concurrency`,
+      },
     },
     /**
      * Helper function to generate Open Graph image URLs

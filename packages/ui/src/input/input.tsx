@@ -18,6 +18,9 @@ type Props = {
   placeholder?: string;
   defaultValue?: string | number;
   type?: React.InputHTMLAttributes<HTMLInputElement>["type"];
+  autoComplete?: React.InputHTMLAttributes<HTMLInputElement>["autoComplete"];
+  min?: React.InputHTMLAttributes<HTMLInputElement>["min"];
+  max?: React.InputHTMLAttributes<HTMLInputElement>["max"];
   required?: boolean;
   inputClassName?: string;
   onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
@@ -41,7 +44,6 @@ type Props = {
   endIcon?: FC<SVGProps<SVGSVGElement>>;
   variant?: (typeof input.variantMap.variant)[number];
   style?: React.CSSProperties;
-  autoComplete?: React.InputHTMLAttributes<HTMLInputElement>["autoComplete"];
   autoFocus?: boolean;
   "data-test"?: string;
   highlightInvalid?: boolean;

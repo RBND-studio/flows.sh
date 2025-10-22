@@ -6,6 +6,7 @@ import {
   durations,
   easings,
   fastEaseInOut,
+  fonts,
   keyframes,
   layerStyles,
   palette,
@@ -24,6 +25,7 @@ const tokens = defineTokens({
   durations,
   easings,
   shadows,
+  fonts,
 });
 
 export const theme: Config["theme"] = {
@@ -43,5 +45,3 @@ export const utilities: Config["utilities"] = {
     superFastEaseInOut,
   },
 };
-
-export { monoFontFamily } from "./src/theme/typography";

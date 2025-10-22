@@ -45,7 +45,7 @@ export const CodeHighlight: FC<Props> = ({ lineNumbers = true, ...props }) => {
       )}
       codeClassName={cx(
         css({
-          fontFamily: `SF Mono,Segoe UI Mono,Roboto Mono,Ubuntu Mono,Menlo,Consolas,Courier,"monospace"`,
+          fontFamily: "mono",
           fontSize: "12px",
           borderRadius: "radius8",
         }),

@@ -4,5 +4,6 @@
   "no-multiple-blanks": {
     "maximum": 1
   },
-  "no-bare-urls": false
+  "no-bare-urls": false,
+  "no-space-in-emphasis": false
 }

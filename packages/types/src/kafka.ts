@@ -4,6 +4,7 @@ export type KafkaUserEventName =
   | "reset-progress"
   | "workflow-start"
   | "enter"
+  | "workflow-exit"
   | "identify"
   | "set-state-memory"
   | "block-activated";

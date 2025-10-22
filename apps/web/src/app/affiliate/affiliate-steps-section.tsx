@@ -34,7 +34,7 @@ const Card = ({
     >
       <Flex flexDirection="column" alignItems="start">
         <Flex mb="space16" py="space4" px="space8" borderRadius="radius6" bg="newBg.neutral.subtle">
-          <Text variant="titleS" fontFamily="monospace">
+          <Text variant="titleS" fontFamily="mono">
             {number}
           </Text>
         </Flex>

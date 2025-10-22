@@ -12,7 +12,7 @@
     "moduleResolution": "Bundler",
     "module": "ESNext",
     "target": "ES2017",
-    "lib": ["es2022"],
+    "lib": ["es2023"],
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "preserveWatchOutput": true,

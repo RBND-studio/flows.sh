@@ -1,5 +1,5 @@
 import { defineConfig } from "@pandacss/dev";
-import { theme, conditions, utilities, monoFontFamily } from "ui/theme";
+import { theme, conditions, utilities } from "ui/theme";
 
 export default defineConfig({
   // Whether to use css reset
@@ -23,10 +23,4 @@ export default defineConfig({
   minify: true,
 
   conditions,
-
-  globalCss: {
-    ":root": {
-      "--global-font-mono": monoFontFamily,
-    },
-  },
 });

@@ -75,7 +75,7 @@ export const InlineCode = ({ children }): ReactElement => {
     <Text
       as="span"
       variant="bodyM"
-      fontFamily="monospace"
+      fontFamily="mono"
       py="space2"
       px="space6"
       bg="newBg.neutral.subtle"

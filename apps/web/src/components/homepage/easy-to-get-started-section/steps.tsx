@@ -105,7 +105,7 @@ export const Steps = (): ReactNode => {
               <Text
                 mb="space20"
                 variant="titleL"
-                fontFamily="monospace"
+                fontFamily="mono"
                 color="newFg.neutral.subtle"
                 textAlign="center"
                 md={{
