@@ -1,6 +1,7 @@
 import { cardContent } from "./card/content";
 import { embeddedTipsContent } from "./embedded-tips/content";
 import { enterpriseUpsellContent } from "./enterprise-upsell/content";
+import { featureAnnouncementContent } from "./feature-announcement/content";
 import { featureHintContent } from "./feature-hint/content";
 import { floatingChecklistContent } from "./floating-checklist/content";
 import { hintContent } from "./hint/content";
@@ -18,6 +19,7 @@ export const examplesContent: ContentType[] = [
   embeddedTipsContent,
   enterpriseUpsellContent,
   floatingChecklistContent,
+  featureAnnouncementContent,
   featureHintContent,
   onboardingHubContent,
   hintContent,
