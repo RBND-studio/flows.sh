@@ -37,11 +37,19 @@ These settings apply whenever the version is activated in an environment.
 
 Choose which environments the new version should be applied to. If you're not ready to activate it in any environment, this can be done later from **Workflow detail > Environments**.
 
+### Add workflow to a Launchpad group
+
+Optionally you can add the workflow to a Launchpad group directly from the publish dialog by selecting the group under **Add the workflow to these Launchpad groups** (visible only if there are existing Launchpad groups in the organization). [Launchpad](/launchpad) is like a air traffic control for your workflows, allowing you to manage workflow priorities, set concurrency limits, and get better control over all your workflows.
+
+![Add to Launchpad group](/launchpad/publish-dialog.png)
+
+Workflows outside of Launchpad groups are started immediately when their Start block criteria are met. They are not subject to Launchpad group priorities or concurrency limits. This is useful for workflows that need to run instantly, such as critical alerts or notifications, or when you don't have many workflows and don't need the extra control provided by Launchpad groups.
+
 ## Managing active versions
 
 To manage active versions in environments:
 
-1. Navigate to **Workflow detail > Environments**.
+1. Navigate to **Workflow detail > Settings**.
 2. View the versions active in each environment, and manage environments as needed.
 
 Each environment includes:
@@ -50,6 +58,6 @@ Each environment includes:
 - **Workflow frequency**: The [frequency setting](/workflows/overview#workflow-frequency) for the active version.
 - **Status**: Indicates if the workflow is active.
 
-To disable a workflow in an environment, toggle the **Status** checkbox.
+To disable a workflow in an environment, choose **Disable** from the environment's status menu. This stops new users from entering the workflow and hides it from any users currently active in it. When you re-enable the workflow, users can enter it again and already active users resume where they left off.
 
 ![Manage environments](/workflows/manage-environments.png)

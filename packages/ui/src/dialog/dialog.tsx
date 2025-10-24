@@ -106,6 +106,7 @@ const contentCss = cva({
       400: { maxWidth: "400px" },
       500: { maxWidth: "500px" },
       600: { maxWidth: "600px" },
+      800: { maxWidth: "800px" },
       1200: { maxWidth: "1200px" },
     },
   },

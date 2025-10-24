@@ -18,10 +18,12 @@ export type SelectProps<T extends string = string> = {
   value?: T;
   defaultValue?: T;
   options: readonly {
+    startIcon?: ReactNode;
     value: T | null;
     label?: ReactNode;
     disabled?: boolean;
     disabledReason?: string;
+    description?: string;
   }[];
   onChange?: (value: T) => void;
   className?: string;
@@ -96,6 +98,7 @@ function SelectInner<T extends string>({
             buttonClassName,
             button({ size }),
           )}
+          startIcon={currentOption?.startIcon}
           endIcon={
             <RadixSelect.Icon asChild>
               <Icon
@@ -184,9 +187,23 @@ function SelectInner<T extends string>({
                   disabled={option.disabled}
                   value={option.value as string}
                 >
-                  <RadixSelect.ItemText asChild>
-                    <Text color="inherit">{option.label ?? option.value}</Text>
-                  </RadixSelect.ItemText>
+                  <Flex gap="space4" alignItems="flex-start">
+                    <Box mt="space2" aria-hidden="true">
+                      {option.startIcon}
+                    </Box>
+                    <Flex flexDirection="column">
+                      <RadixSelect.ItemText asChild>
+                        <Text color="inherit">{option.label ?? option.value}</Text>
+                      </RadixSelect.ItemText>
+                      <Text
+                        color={option.disabled ? "newControl.fg.disabled" : "newFg.neutral.muted"}
+                        variant="bodyXs"
+                        maxWidth="240px"
+                      >
+                        {option.description}
+                      </Text>
+                    </Flex>
+                  </Flex>
 
                   <RadixSelect.ItemIndicator>
                     <Icon color="newControl.fg.selected" icon={Check16} />

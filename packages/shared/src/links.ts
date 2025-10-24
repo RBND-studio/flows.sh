@@ -71,7 +71,9 @@ export const links = (domain = "flows.sh") =>
       onboardingHub: "https://onboarding-hub.examples.flows.sh",
       onboardingHubSource:
         "https://github.com/RBND-studio/flows.sh/tree/main/examples/onboarding-hub",
-      // --PLOP_NEW_EXAMPLE_LINK--
+      featureAnnouncement: "https://feature-announcement.examples.flows.sh",
+      featureAnnouncementSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/feature-announcement",
+    // --PLOP_NEW_EXAMPLE_LINK--
     },
     docs: {
       home: `https://${domain}/docs`,
@@ -136,6 +138,11 @@ export const links = (domain = "flows.sh") =>
       },
       localization: {
         main: `https://${domain}/docs/localization`,
+      },
+      launchpad: {
+        main: `https://${domain}/docs/launchpad`,
+        workflowPriority: `https://${domain}/docs/launchpad#workflow-priority`,
+        concurrency: `https://${domain}/docs/launchpad#concurrency`,
       },
     },
     /**
