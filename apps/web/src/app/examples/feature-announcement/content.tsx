@@ -13,7 +13,6 @@ import {
   ParagraphLink,
   UnorderedList,
 } from "../typography";
-
 import darkPng from "./feature-announcement-dark.png";
 import lightPng from "./feature-announcement-light.png";
 import workflowPng from "./workflow.png";
@@ -63,10 +62,10 @@ export const featureAnnouncementContent: ContentType = {
           feature.
         </li>
         <li>
-          <strong>DON'T: </strong> Overwhelm users with too much information at once.
+          <strong>DON’T: </strong> Overwhelm users with too much information at once.
         </li>
         <li>
-          <strong>DON'T: </strong> Interrupt the user’s workflow unnecessarily.
+          <strong>DON’T: </strong> Interrupt the user’s workflow unnecessarily.
         </li>
       </UnorderedList>
 
