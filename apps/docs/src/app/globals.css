@@ -65,3 +65,10 @@ div.prose > p:nth-child(1) > span > span:nth-child(1) > img {
     --fd-nav-height: 0px;
   }
 }
+
+/* Add outline to <Step> circle */
+.fd-step {
+  &:before {
+    outline: 1px solid var(--color-fd-border);
+  }
+}
