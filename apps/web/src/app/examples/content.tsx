@@ -4,6 +4,7 @@ import { enterpriseUpsellContent } from "./enterprise-upsell/content";
 import { featureAnnouncementContent } from "./feature-announcement/content";
 import { featureHintContent } from "./feature-hint/content";
 import { floatingChecklistContent } from "./floating-checklist/content";
+import { gettingStartedDashboardContent } from "./getting-started-dashboard/content";
 import { hintContent } from "./hint/content";
 import { interactiveFeatureAnnouncementContent } from "./interactive-feature-announcement/content";
 import { modalContent } from "./modal/content";
@@ -29,4 +30,5 @@ export const examplesContent: ContentType[] = [
   newFeatureContent,
   tourContent,
   productHuntLaunchAnnouncementContent,
+  gettingStartedDashboardContent,
 ];

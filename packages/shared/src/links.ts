@@ -72,8 +72,12 @@ export const links = (domain = "flows.sh") =>
       onboardingHubSource:
         "https://github.com/RBND-studio/flows.sh/tree/main/examples/onboarding-hub",
       featureAnnouncement: "https://feature-announcement.examples.flows.sh",
-      featureAnnouncementSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/feature-announcement",
-    // --PLOP_NEW_EXAMPLE_LINK--
+      featureAnnouncementSource:
+        "https://github.com/RBND-studio/flows.sh/tree/main/examples/feature-announcement",
+      gettingStartedDashboard: "https://getting-started-dashboard.examples.flows.sh",
+      gettingStartedDashboardSource:
+        "https://github.com/RBND-studio/flows.sh/tree/main/examples/getting-started-dashboard",
+      // --PLOP_NEW_EXAMPLE_LINK--
     },
     docs: {
       home: `https://${domain}/docs`,

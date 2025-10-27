@@ -97,7 +97,7 @@ module.exports = function (plop) {
           type: "modify",
           path: "packages/shared/src/links.ts",
           pattern: /\/\/ --PLOP_NEW_EXAMPLE_LINK--/g,
-          template: `${demoUrlName}: "${demoUrl}",\n    ${exampleSourceUrlName}: "${exampleSourceUrl}",\n    // --PLOP_NEW_EXAMPLE_LINK--`,
+          template: `${demoUrlName}: "${demoUrl}",\n      ${exampleSourceUrlName}: "${exampleSourceUrl}",\n      // --PLOP_NEW_EXAMPLE_LINK--`,
         },
         // content.tsx
         {
@@ -129,6 +129,12 @@ module.exports = function (plop) {
           path: `${contentDestinationPath}/content.tsx`,
           pattern: /(-- PLOP EXAMPLE CAMEL HERE --)/gi,
           template: `${exampleCamel}`,
+        },
+        {
+          type: "modify",
+          path: "apps/e2e/cypress/e2e/website.cy.ts",
+          pattern: /\/\/ --PLOP_NEW_EXAMPLE_TEST--/g,
+          template: "// TODO: Add test here\n  // --PLOP_NEW_EXAMPLE_TEST--",
         },
       ];
     },
