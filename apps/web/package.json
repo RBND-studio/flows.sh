@@ -9,7 +9,7 @@
     "analyze": "ANALYZE=true next build",
     "postbuild": "next-sitemap",
     "start": "next start",
-    "lint": "eslint .",
+    "lint": "eslint src",
     "tsc": "next typegen && tsc",
     "prepare": "panda codegen && contentlayer2 build",
     "check-links": "docker run --network host -v ./linkcheck-skip-urls.txt:/linkcheck-skip-urls.txt --rm tennox/linkcheck $URL --skip-file linkcheck-skip-urls.txt"
