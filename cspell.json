@@ -76,7 +76,8 @@
     "cspell.json",
     "out/**/*",
     "pandacss-generated",
-    "pnpm-lock.yaml"
+    "pnpm-lock.yaml",
+    "infrastructure/kafka/data"
   ],
   "allowCompoundWords": true
 }
