@@ -110,7 +110,11 @@ function SelectInner<T extends string>({
           size={size}
           variant="field"
         >
-          {currentOption?.label ?? currentOption?.value ?? placeholder}
+          <span
+            className={css({ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" })}
+          >
+            {currentOption?.label ?? currentOption?.value ?? placeholder}
+          </span>
         </Button>
       </RadixSelect.Trigger>
 

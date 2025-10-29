@@ -32,6 +32,7 @@ export const routes = {
     chameleon: "/alternatives/chameleon",
     userflow: "/alternatives/userflow",
     walkme: "/alternatives/walkme",
+    usetiful: "/alternatives/usetiful",
   },
 
   examples: "/examples",
