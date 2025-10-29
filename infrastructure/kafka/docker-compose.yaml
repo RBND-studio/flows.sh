@@ -8,8 +8,6 @@ services:
           memory: 2g
     ports:
       - ${KAFKA_PORT}:9094
-    volumes:
-      - ./data:/tmp/kraft-combined-logs
     environment:
       KAFKA_NODE_ID: 1
       KAFKA_PROCESS_ROLES: 'broker,controller'
