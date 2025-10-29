@@ -127,6 +127,10 @@ const footerGroups: FooterGroup[] = [
         title: "WalkMe",
         href: routes.alternatives.walkme,
       },
+      {
+        title: "Usetiful",
+        href: routes.alternatives.usetiful,
+      },
     ],
   },
   {
