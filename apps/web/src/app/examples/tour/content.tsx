@@ -41,28 +41,89 @@ export const tourContent: ContentType = {
       liveDemo: links.examples.tour,
       sourceCode: links.examples.tourSource,
     },
-    tags: ["Adoption", "Education", "Engagement", "Onboarding"],
+    tags: [
+      "Engagement",
+      "Feature Adoption",
+      "Guided Tour",
+      "In-App Education",
+      "Product Tour",
+      "User Onboarding",
+    ],
   },
   readme: (
     <>
+      <Paragraph>Guide users through your product with interactive, in-app tours.</Paragraph>
       <Paragraph>
-        This example showcases a product tour powered by <InlineCode>@flows/react</InlineCode> and
-        the built-in components from <InlineCode>@flows/react-components</InlineCode>.
+        A product tour helps new and returning users discover what’s new, understand your product
+        faster, and reach value sooner. With Flows, you can build fully customizable, multi-step
+        tours that live inside your application (not on top of it). Each step can be rendered inline
+        or as a floating component using pre-built UI elements or your own custom designs, so your
+        guides feel native to your product.
       </Paragraph>
+
+      <Heading>Why product tours matter</Heading>
       <Paragraph>
-        Tours are multi-step flows used to guide users through new, undiscovered, or changed
-        products and features.
+        Product tours are one of the most effective ways to improve user onboarding, feature
+        discovery, and product adoption. They help users:
       </Paragraph>
-      <Paragraph>Good tours:</Paragraph>
       <UnorderedList>
-        <li>Are concise and direct (try to limit them to five steps).</li>
-        <li>
-          Match the user’s context (don’t show a tour for a feature the user has already explored).
-        </li>
-        <li>Use short, meaningful copy.</li>
+        <li>Explore new or updated features confidently.</li>
+        <li>Understand key workflows without leaving your app.</li>
+        <li>Reach activation milestones faster.</li>
+        <li>Stay engaged as your product evolves.</li>
       </UnorderedList>
 
-      <Heading>Features</Heading>
+      <Paragraph>
+        Unlike traditional onboarding tools, Flows gives you complete control over design and logic.
+        You can embed custom UI components, define behavior with Flows, and let the SDK handle user
+        states.
+      </Paragraph>
+
+      <Heading>About this example</Heading>
+      <Paragraph>
+        This example shows a multi-step guided tour built with Flows. It introduces users to key
+        product areas using a combination of modals and tooltips. The tour features:
+      </Paragraph>
+      <UnorderedList>
+        <li>Welcome modal: Greets users and sets the context.</li>
+        <li>Feature highlights: Floating tooltips guide users to important elements.</li>
+        <li>Completion step: Confirms success and encourages next actions.</li>
+      </UnorderedList>
+      <Paragraph>
+        You can customize every part of this experience (copy, visuals, placement, and logic) while
+        Flows manages the flow and state transitions for you.
+      </Paragraph>
+
+      <Heading>When to use a Product Tour</Heading>
+      <Paragraph>
+        Use a tour whenever you want to guide users through a defined journey, such as:
+      </Paragraph>
+      <UnorderedList>
+        <li>Onboarding new users.</li>
+        <li>Announcing new features or UI updates.</li>
+        <li>Educating users on complex workflows.</li>
+        <li>Re-engaging returning users after a redesign.</li>
+      </UnorderedList>
+
+      <Heading>Best practices for effective Tours</Heading>
+      <Paragraph>A good product tour:</Paragraph>
+      <UnorderedList>
+        <li>
+          Is concise and contextual. Keep steps focused on helping the user accomplish one goal.
+        </li>
+        <li>Matches your product’s tone and design. Use your existing UI style for familiarity.</li>
+        <li>
+          Guides, don’t interrupt. Provide helpful direction without taking over the experience.
+        </li>
+        <li>Adapts to user behavior. Don’t show steps users have already completed.</li>
+        <li>Ends with clear next steps. Reinforce learning and encourage continued exploration.</li>
+      </UnorderedList>
+      <Paragraph>
+        With Flows, you can design tours that feel built-in, not bolted-on, ensuring they’re always
+        relevant and delightful.
+      </Paragraph>
+
+      <Heading>Workflow setup</Heading>
       <Paragraph>
         When a user opens the application for the first time, they encounter a welcome modal,
         followed by a series of tooltips, a wait step, and a final modal. All the UI elements are
