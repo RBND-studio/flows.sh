@@ -14,11 +14,19 @@ type Props = {
   align?: ComponentProps<typeof PopoverContent>["align"];
   open?: boolean;
   onOpenAutoFocus?: (event: Event) => void;
+  onOpenChange?: (open: boolean) => void;
 };
 
-export const Menu: FC<Props> = ({ trigger, children, align, open, onOpenAutoFocus }) => {
+export const Menu: FC<Props> = ({
+  trigger,
+  children,
+  align,
+  open,
+  onOpenAutoFocus,
+  onOpenChange,
+}) => {
   return (
-    <Popover open={open}>
+    <Popover open={open} onOpenChange={onOpenChange}>
       <PopoverTrigger asChild>{trigger}</PopoverTrigger>
       <PopoverContent
         align={align ?? "start"}
