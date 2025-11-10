@@ -1,0 +1,30 @@
+---
+title: Launchpad
+date: "2025-11-03"
+description: Launchpad introduces workflow groups for better control and prioritization. Manage concurrency, prevent user fatigue, and coordinate your entire product adoption experience with smarter workflow orchestration.
+---
+
+<Image
+  src="/images/changelog/2025-11-03-launchpad.png"
+  alt="Screenshot of the Launchpad groups showing multiple groups separating workflows by use case."
+  width={1800}
+  height={1041}
+/>
+
+Launchpad brings air traffic control to your workflows. Create groups to manage workflow priorities, set concurrency limits, and gain better control over how and when workflows run.
+
+Launchpad groups make it easier to orchestrate the entire product adoption experience. Combined with workflow targeting, you can ensure that every workflow runs at the right time for the right users. For example, you can create a high-priority Launchpad group for workflows that should run immediately after a user action, while spacing out lower-priority workflows to avoid overwhelming users.
+
+Learn more about [Launchpad](/docs/launchpad).
+
+## Other improvements
+
+- Added a [feature announcement example](/examples/feature-announcement) to the workflow examples library.
+- Improved caching of the SDK workflow endpoint to reduce latency and improve performance.
+- Made the Action property input inline for a smoother experience when configuring actions in the editor.
+- Improved block connection interactions in the workflow canvas, allowing you to draw connections directly in the canvas.
+
+## Bug fixes
+
+- Fixed Action property not working correctly when used inside a tour block.
+- Fixed an issue where the SDK would not immediately hide a block when an Action property with exit node configuration was triggered.
