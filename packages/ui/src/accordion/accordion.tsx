@@ -3,13 +3,14 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { ChevronDown16 } from "icons";
-import { type FC, useState } from "react";
+import { type CSSProperties, type FC, type Ref, useState } from "react";
 
 import { Icon } from "../icon";
 import { Text } from "../text";
 
 type Props = {
   title: React.ReactNode;
+  headerClassName?: string;
   children?: React.ReactNode;
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
@@ -18,6 +19,8 @@ type Props = {
    * @defaultValue `unmount`
    */
   hideMode?: "unmount" | "css";
+  ref?: Ref<HTMLDivElement>;
+  style?: CSSProperties;
 };
 
 export const Accordion: FC<Props> = ({
@@ -26,6 +29,7 @@ export const Accordion: FC<Props> = ({
   onOpenChange,
   open,
   hideMode,
+  headerClassName,
   ...props
 }) => {
   // eslint-disable-next-line react/hook-use-state -- useful for controlled components
@@ -37,6 +41,7 @@ export const Accordion: FC<Props> = ({
   return (
     <Box overflow="hidden" {...props}>
       <Flex
+        className={headerClassName}
         fastEaseInOut="background-color"
         _hover={{
           bg: "newBg.neutral.muted",
