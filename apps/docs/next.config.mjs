@@ -4,11 +4,13 @@ import { createMDX } from "fumadocs-mdx/next";
 
 const withMDX = createMDX();
 
+const dev = process.env.NODE_ENV !== "production";
+
 const cspHeader = `
     default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline';
+    script-src 'self' 'unsafe-inline'${dev ? " 'unsafe-eval'" : ""};
     style-src 'self' 'unsafe-inline';
-    img-src 'self' blob: data: https://img.shields.io;
+    img-src 'self' blob: data:;
     font-src 'self';
     object-src 'none';
     base-uri 'self';
@@ -23,6 +25,7 @@ const nextConfig = {
     return [
       {
         source: "/(.*)",
+        basePath: false,
         headers: [
           {
             key: "Content-Security-Policy",
@@ -32,6 +35,7 @@ const nextConfig = {
       },
     ];
   },
+  poweredByHeader: false,
   transpilePackages: ["ui", "icons", "shared"],
   output: "standalone",
   outputFileTracingRoot: path.join(path.resolve(), "../../"),
