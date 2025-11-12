@@ -1,4 +1,5 @@
 import fs from "node:fs/promises";
+import path from "node:path";
 
 import type { InferPageType } from "fumadocs-core/source";
 import { remarkInclude } from "fumadocs-mdx/config";
@@ -18,7 +19,7 @@ const processor = remark()
 export async function getLLMText(page: InferPageType<typeof source>): Promise<string> {
   const processed = await processor.process({
     path: page.absolutePath,
-    value: await fs.readFile(page.absolutePath),
+    value: await fs.readFile(validatePath(page.absolutePath)),
   });
 
   const pageUrl = `https://${DOMAIN}/docs${page.url}`;
@@ -28,4 +29,24 @@ export async function getLLMText(page: InferPageType<typeof source>): Promise<st
 URL: ${pageUrl}
 
 ${processed.value}`;
+}
+
+function validatePath(p: string): string {
+  // Decode percent-encoded sequences (e.g. %2e%2e -> ..). If decoding fails, fall back to the original.
+  let decoded = p;
+  try {
+    decoded = decodeURIComponent(p);
+  } catch {
+    // ignore malformed encodings
+  }
+
+  // If the relative path begins with '..' then `resolved` is outside `allowedBase`
+  if (decoded.includes("..")) {
+    throw new Error("Invalid file path");
+  }
+
+  // Normalize to an absolute path
+  const resolved = path.resolve(decoded);
+
+  return resolved;
 }
