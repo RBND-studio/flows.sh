@@ -50,12 +50,7 @@ export default async function Page(props: { params: Promise<Params> }): Promise<
   });
 
   return (
-    <DocsPage
-      editOnGithub={githubOptions}
-      toc={page.data.toc}
-      full={page.data.full}
-      lastUpdate={time ? time : undefined}
-    >
+    <DocsPage toc={page.data.toc} full={page.data.full} lastUpdate={time ? time : undefined}>
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription
         className={css({

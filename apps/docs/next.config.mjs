@@ -85,17 +85,17 @@ const nextConfig = {
       },
       {
         source: "/components/modal",
-        destination: "/component-libraries/basics-v1/modal",
+        destination: "/component-libraries/basics-v2/modal",
         permanent: true,
       },
       {
         source: "/components/tooltip",
-        destination: "/component-libraries/basics-v1/tooltip",
+        destination: "/component-libraries/basics-v2/tooltip",
         permanent: true,
       },
       {
         source: "/components/hint",
-        destination: "/component-libraries/basics-v1/hint",
+        destination: "/component-libraries/basics-v2/hint",
         permanent: true,
       },
     ];

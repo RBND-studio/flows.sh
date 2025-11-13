@@ -34,7 +34,7 @@ The SDK provides a `FlowsProvider` component that you can use to wrap your app. 
 
 ```tsx title="layout.tsx"
 import { FlowsProvider } from "@flows/react";
-// Import the Basics V1 components and styles
+// Import the Basics V2 components and styles
 import * as components from "@flows/react-components";
 import * as tourComponents from "@flows/react-components/tour";
 import "@flows/react-components/index.css";
@@ -45,7 +45,7 @@ const App = () => {
       organizationId="your-organization-id" // Find this in Settings > General
       environment="production" // Default environment
       userId="your-user-id" // Identify the user
-      // Add the Basics V1 components
+      // Add the Basics V2 components
       tourComponents={{
         ...tourComponents,
       }}

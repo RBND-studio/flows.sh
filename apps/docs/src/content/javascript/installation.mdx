@@ -21,7 +21,7 @@ The [Flows JS SDK](https://www.npmjs.com/package/@flows/js) is a lightweight lib
 You can install the Flows JavaScript SDK [from npm](https://www.npmjs.com/package/@flows/js):
 
 ```package-install
-npm i @flows/js
+npm i @flows/js @flows/js-components
 ```
 
 </Step>
@@ -35,108 +35,37 @@ Use the `init` function to initialize the SDK with your organization ID and envi
 ```js title="main.js"
 import { init } from "@flows/js";
 
+// Import the Basics V2 components and styles
+import { setupJsComponents } from "@flows/js-components";
+import * as components from "@flows/js-components/components";
+import * as tourComponents from "@flows/js-components/tour-components";
+
+// Import Basics V2 styles or copy them to your project and <link> them in your HTML
+import "@flows/js-components/index.css";
+
 init({
   organizationId: "your-organization-id", // Found in Settings > General
   environment: "production", // Default environment
   userId: "your-user-id", // Identify the user
 });
+
+// Defines custom elements for `flows-floating-blocks`, `flows-slot` and all the passed UI components.
+setupJsComponents({
+  components: { ...components },
+  tourComponents: { ...tourComponents },
+});
+```
+
+Add `<flows-floating-blocks>` custom element at the end of the `<body>` tag.
+
+```html title="index.html"
+<body>
+  <!-- Your app content -->
+  <flows-floating-blocks></flows-floating-blocks>
+</body>
 ```
 
 For a full list of supported properties, see the [init function documentation](/javascript/reference#init).
-
-</Step>
-
-<Step>
-
-## Add a listener for floating blocks
-
-Here’s a high-level example of rendering floating blocks using a pseudo UI library. Since `@flows/js` is designed to work with any JavaScript UI library/framework the example is in a generic code that illustrates how to use it with concepts that are common in most UI frameworks.
-
-```js title="main.js"
-import { addFloatingBlocksChangeListener } from "@flows/js";
-
-// Pseudo UI library reactive state for managing blocks
-const blocksState = uiState();
-
-const dispose = addFloatingBlocksChangeListener((blocks) => {
-  blocksState.set(blocks);
-});
-
-// Call `dispose` when you want to stop listening to the changes and avoid memory leaks
-dispose();
-
-// Define your components and tour components
-const components = { ... }
-const tourComponents = { ... }
-
-// Pseudo UI library code that renders the blocks
-const render = () => {
-  return blocksState.map(block => {
-    if(block.type === "component") {
-      const Component = components[block.component]
-      return <Component {...block.props} />
-    }
-
-    if(block.type === "tour-component") {
-      const TourComponent = tourComponents[block.component]
-      return <TourComponent {...block.props} />
-    }
-  })
-}
-```
-
-</Step>
-
-<Step>
-
-## Add a listener for slot blocks
-
-Rendering slot-specific blocks can be done by creating a reusable `FlowsSlot` component. This component listens for changes to slot blocks in a specific slot ID and renders the blocks accordingly.
-
-```js title="flows-slot.js"
-import { addSlotBlocksChangeListener } from "@flows/js";
-// Import your components that we defined earlier
-import { components, tourComponents } from "@/my-flows-components";
-
-// Pseudo UI library reactive state
-const mySlotBlocksState = uiState();
-
-const dispose = addSlotBlocksChangeListener(
-  // Pass a `slotId` prop to the component
-  props.slotId,
-  (blocks) => {
-    blocksState.set(blocks);
-  },
-);
-// Call `dispose` when you want to stop listening to the changes and avoid memory leaks
-dispose();
-
-// Pseudo UI library code that renders slot
-const FlowsSlotRender = () => {
-  // Without any blocks, render optional placeholder
-  if (mySlotBlocksState.length === 0) return props.placeholder ?? null;
-
-  return mySlotBlocksState.map((block) => {
-    if (block.type === "component") {
-      const Component = components[block.component];
-      return <Component {...block.props} />;
-    }
-
-    if (block.type === "tour-component") {
-      const TourComponent = tourComponents[block.component];
-      return <TourComponent {...block.props} />;
-    }
-  });
-};
-```
-
-</Step>
-
-<Step>
-
-## Optional: Use built-in components
-
-To simplify implementation, you can use one of our pixel-perfect component libraries. The [Basics V1](/component-libraries/basics-v1/overview) library provides essential UI components like modals, tooltips, and hints that are fully compatible with Flows.
 
 </Step>
 
