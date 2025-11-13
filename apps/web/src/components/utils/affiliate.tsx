@@ -1,13 +1,12 @@
+// cspell:words thumbmarkjs
 import Cookies from "js-cookie";
 import { type FC, useEffect } from "react";
 
 const generateVisitorId = async (): Promise<string> => {
-  const load = (await import("@fingerprintjs/fingerprintjs")).load;
-  // Initialize the agent
-  const fp = await load();
-  // Get the visitor identifier
-  const result = await fp.get();
-  return result.visitorId;
+  const getThumbmark = (await import("@thumbmarkjs/thumbmarkjs")).getThumbmark;
+  const result = await getThumbmark();
+
+  return result.thumbmark;
 };
 
 const setAffiliateCookie = async (affiliateCode: string): Promise<void> => {

@@ -14,6 +14,7 @@
     "check-links": "docker run --network host -v ./linkcheck-skip-urls.txt:/linkcheck-skip-urls.txt --rm tennox/linkcheck $URL --skip-file linkcheck-skip-urls.txt"
   },
   "dependencies": {
+    "@flows/react-components": "2.0.0",
     "fumadocs-core": "15.7.13",
     "fumadocs-mdx": "12.0.0",
     "fumadocs-ui": "15.7.13",

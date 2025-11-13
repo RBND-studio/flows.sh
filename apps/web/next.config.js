@@ -13,7 +13,7 @@ const dev = process.env.NODE_ENV !== "production";
 
 const cspHeader = `
     default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline';
+    script-src 'self' 'unsafe-inline'${dev ? " 'unsafe-eval'" : ""};
     connect-src 'self' https://app.lemonsqueezy.com;
     style-src 'self' 'unsafe-inline';
     img-src 'self' blob: data:;
@@ -41,6 +41,7 @@ const nextConfig = {
       },
     ];
   },
+  poweredByHeader: false,
   typedRoutes: true,
   transpilePackages: ["ui", "icons", "shared"],
   output: "standalone",
