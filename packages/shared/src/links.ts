@@ -30,8 +30,7 @@ export const links = (domain = "flows.sh") =>
       overview: `https://github.com/RBND-studio/flows-sdk/tree/main/examples`,
       reactTemplate: `https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/vite`,
       nextTemplate: `https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/next`,
-      nuxtTemplate:
-        "https://github.com/RBND-studio/flows-sdk/tree/main/examples/vue/nuxt-custom-components",
+      nuxtTemplate: "https://github.com/RBND-studio/flows-sdk/tree/main/examples/vue/nuxt",
       angularTemplate: "https://github.com/RBND-studio/flows-sdk/tree/main/examples/angular",
     },
     examples: {
