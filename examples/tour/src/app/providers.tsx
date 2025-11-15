@@ -11,6 +11,7 @@ import { FC, ReactNode } from "react";
 
 import "@flows/react-components/index.css";
 import { ExampleControls } from "@/components/providers/example-controls";
+import { CustomCard } from "@/components/custom-card";
 
 type Props = {
   children: ReactNode;
@@ -35,9 +36,9 @@ export const Providers: FC<Props> = ({ children }) => {
           environment="production"
           userId={userId}
           components={{ ...components }}
-          tourComponents={{ ...tourComponents }}
+          tourComponents={{ ...tourComponents, CustomCard }}
           userProperties={{
-            example: "tour",
+            example: "tour_v2",
           }}
         >
           {content}
