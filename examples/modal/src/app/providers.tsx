@@ -37,7 +37,7 @@ export const Providers: FC<Props> = ({ children }) => {
           components={{ ...components }}
           tourComponents={{ ...tourComponents }}
           userProperties={{
-            example: "modal",
+            example: "modal-v2",
           }}
         >
           {content}
