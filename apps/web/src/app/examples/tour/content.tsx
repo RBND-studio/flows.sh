@@ -2,25 +2,19 @@ import { css } from "@flows/styled-system/css";
 import { SignupClick } from "components/utils/signup-click";
 import { links } from "lib/links";
 import Image from "next/image";
-import { CodeHighlight } from "ui/server";
 
 import { NextJsFramework } from "../frameworks";
 import { type ContentType } from "../types";
 import {
   Heading,
-  Heading2,
   InlineCode,
   OrderedList,
   Paragraph,
   ParagraphLink,
   UnorderedList,
 } from "../typography";
-import introModalPng from "./intro-modal.png";
-import lastModalPng from "./last-modal.png";
-import tooltipsPng from "./tooltips.png";
 import darkPng from "./tour-dark.png";
 import lightPng from "./tour-light.png";
-import waitPng from "./wait.png";
 import workflowPng from "./workflow.png";
 
 export const tourContent: ContentType = {
@@ -126,9 +120,10 @@ export const tourContent: ContentType = {
       <Heading>Workflow setup</Heading>
       <Paragraph>
         When a user opens the application for the first time, they encounter a welcome modal,
-        followed by a series of tooltips, a wait step, and a final modal. All the UI elements are
-        built using the pre-packaged components from{" "}
-        <InlineCode>@flows/react-components</InlineCode>.
+        followed by a series of steps that showcase various features of Flows. Modal, Tooltip, and
+        Hint components are built-in components from{" "}
+        <InlineCode>@flows/react-components</InlineCode>, while the inline card component is
+        custom-built and can be found in the <InlineCode>custom-card.tsx</InlineCode> file.
       </Paragraph>
 
       <Paragraph>
@@ -149,161 +144,6 @@ export const tourContent: ContentType = {
         })}
       />
 
-      <Heading2>Welcome Modal</Heading2>
-
-      <Paragraph>
-        The welcome modal is defined using HTML in its body field. Flows renders HTML in any
-        text-based input. The HTML is written using Tailwind CSS classes to style the content.
-      </Paragraph>
-
-      <Image
-        src={introModalPng}
-        alt="The intro modal setup for the Tour example"
-        width={1800}
-        height={1040}
-        className={css({
-          borderRadius: "radius6",
-          borderWidth: "1px",
-          borderColor: "newBorder.neutral",
-          borderStyle: "solid",
-          mb: "space24",
-        })}
-      />
-
-      <Paragraph>Full HTML for the welcome modal:</Paragraph>
-
-      <CodeHighlight
-        codeClassName={css({
-          fontSize: "15px",
-        })}
-      >
-        <pre>
-          <code className="html">
-            {`<div class="max-w-[400px]">
-  <img
-    alt="Welcome image"
-    class="mb-4 w-full rounded-lg"
-    width="400"
-    height="213"
-    src="/welcome.png"
-  />
-  <p class="text-center text-lg font-semibold text-foreground">
-    Welcome to the tour example!
-  </p>
-  <p class="text-l text-center text-foreground">
-    This example shows how to use built-in components to create
-    a product tour with Flows.
-  </p>
-</div>
-`}
-          </code>
-        </pre>
-      </CodeHighlight>
-
-      <Heading2>Tooltips</Heading2>
-
-      <Paragraph>
-        Subsequent steps use the <InlineCode>TourTooltip</InlineCode> component from{" "}
-        <InlineCode>@flows/react-components</InlineCode> to highlight specific elements and actions.
-      </Paragraph>
-
-      <OrderedList>
-        <li>
-          The first tooltip proceeds when the user navigates to a page containing{" "}
-          <InlineCode>/new-project</InlineCode>.
-        </li>
-        <li>
-          The second tooltip waits for the user to click one of the frameworks, identified by the{" "}
-          <InlineCode>#framework</InlineCode> selector.
-        </li>
-        <li>The third tooltip allows navigation through standard tooltip buttons.</li>
-      </OrderedList>
-
-      <Image
-        src={tooltipsPng}
-        alt="The tooltips setup for the Tour example"
-        width={1800}
-        height={1077}
-        className={css({
-          borderRadius: "radius6",
-          borderWidth: "1px",
-          borderColor: "newBorder.neutral",
-          borderStyle: "solid",
-          mb: "space24",
-        })}
-      />
-
-      <Heading2>Wait step</Heading2>
-
-      <Paragraph>
-        After the tooltips, the flow pauses until the user returns to the home page. The location
-        filter uses a regex pattern (<InlineCode>^/$</InlineCode>) to detect the home page URL.
-      </Paragraph>
-
-      <Image
-        src={waitPng}
-        alt="The wait setup for the Tour example"
-        width={1800}
-        height={680}
-        className={css({
-          borderRadius: "radius6",
-          borderWidth: "1px",
-          borderColor: "newBorder.neutral",
-          borderStyle: "solid",
-          mb: "space24",
-        })}
-      />
-
-      <Heading2>Final modal</Heading2>
-
-      <Paragraph>
-        The final step presents another modal using the same approach as the welcome modal—HTML
-        content styled with Tailwind classes.
-      </Paragraph>
-
-      <Image
-        src={lastModalPng}
-        alt="The last modal setup for the Tour example"
-        width={1800}
-        height={1040}
-        className={css({
-          borderRadius: "radius6",
-          borderWidth: "1px",
-          borderColor: "newBorder.neutral",
-          borderStyle: "solid",
-          mb: "space24",
-        })}
-      />
-
-      <Paragraph>Full HTML for the last modal:</Paragraph>
-
-      <CodeHighlight
-        codeClassName={css({
-          fontSize: "15px",
-        })}
-      >
-        <pre>
-          <code className="html">
-            {`<div class="max-w-[480px]">
-  <p class="mb-4 text-center text-6xl">🎉</p>
-  <p class="mb-1 text-center text-lg font-semibold text-foreground">
-    That's it!
-  </p>
-  <p class="text-l mb-3 text-center text-foreground">
-    This was a simple example of how you can use Flows to create 
-    a user onboarding.
-  </p>
-  <p class="text-center text-sm text-foreground">
-    Looking for more customization? Flows is built to be a "Headless
-    product adoption platform," meaning you can build your own UI
-    components with custom styling and logic for a native experience.
-  </p>
-</div>
-`}
-          </code>
-        </pre>
-      </CodeHighlight>
-
       <Heading>Getting started</Heading>
       <OrderedList>
         <li>
@@ -322,6 +162,27 @@ export const tourContent: ContentType = {
         </li>
         <li>
           Add your organization ID in the <InlineCode>providers.tsx</InlineCode> file.
+        </li>
+        <li>
+          Create a new component in your organization with the following configuration:
+          <UnorderedList>
+            <li>
+              <strong>Component type:</strong> Tour component
+            </li>
+            <li>
+              <strong>UI component:</strong> CustomCard
+            </li>
+            <li>
+              <strong>Slottable:</strong> true
+            </li>
+            <li>
+              <strong>Custom properties:</strong>
+              <UnorderedList>
+                <li>Title</li>
+                <li>Description</li>
+              </UnorderedList>
+            </li>
+          </UnorderedList>
         </li>
         <li>Recreate the workflow in your organization and publish it.</li>
         <li>
