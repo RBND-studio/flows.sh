@@ -10,7 +10,6 @@ type Props = {
   title: string;
   description: string;
   slug: string;
-  slugAsParams: string;
   date: string;
   mdx: ReactNode;
 
@@ -18,7 +17,7 @@ type Props = {
 };
 
 export const ChangelogItem = ({ detail, mdx, ...release }: Props): ReactElement => {
-  const href = routes.changelogReleaseDetail({ releaseId: release.slugAsParams });
+  const href = routes.changelogReleaseDetail({ releaseId: release.slug });
   const date = new Date(release.date).toLocaleString("en-US", {
     day: "numeric",
     month: "long",

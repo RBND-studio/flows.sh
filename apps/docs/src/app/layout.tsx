@@ -3,7 +3,7 @@ import "./globals.css";
 import "fumadocs-ui/style.css";
 
 import { Providers } from "components/providers";
-import { RootProvider } from "fumadocs-ui/provider";
+import { RootProvider } from "fumadocs-ui/provider/next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import type { ReactNode } from "react";

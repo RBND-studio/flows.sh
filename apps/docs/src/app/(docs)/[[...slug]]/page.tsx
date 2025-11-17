@@ -7,7 +7,7 @@ import { DocsLink } from "components/docs-link";
 import { DocsTable } from "components/docs-table";
 import { DocsTab, DocsTabs } from "components/docs-tabs";
 import { H2, H3, H4 } from "components/docs-typography";
-import { getGithubLastEdit } from "fumadocs-core/server";
+import { getGithubLastEdit } from "fumadocs-core/content/github";
 import defaultMdxComponents from "fumadocs-ui/mdx";
 import {
   DocsBody,
