@@ -12,7 +12,10 @@ export const CutTheCostsSection = (): ReactNode => {
         md: "flex",
       }}
       alignItems="stretch"
-      mt="space64"
+      mt={{
+        base: "space80",
+        md: "space160",
+      }}
     >
       <CostDescription />
       <PriceComparison />

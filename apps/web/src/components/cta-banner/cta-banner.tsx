@@ -1,6 +1,5 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
-import { EndLine, LinesWrapper, NewLine, NewLineDecorator } from "components/ui";
 import { Section } from "components/ui/section";
 import { SignupClick } from "components/utils/signup-click";
 import { links } from "lib/links";
@@ -33,83 +32,46 @@ export const CtaBanner = ({
   return (
     <Section
       mt={{
-        base: "space40",
-        md: "space80",
+        base: "space64",
+        md: "space120",
+      }}
+      mb={{
+        base: "space24",
+        md: "space48",
       }}
     >
-      <LinesWrapper justifyContent="space-between">
-        <EndLine side="top" />
-        <EndLine side="top" />
-      </LinesWrapper>
-      <LinesWrapper>
-        <EndLine side="left" />
-        <NewLineDecorator />
-        <NewLine />
-        <NewLineDecorator />
-        <EndLine side="right" />
-      </LinesWrapper>
-
-      <Flex>
-        <EndLine
-          side="bottom"
-          gradient={false}
-          className={css({
-            height: "unset!",
-          })}
-        />
-        <Flex
-          flexDirection="column"
-          gap="space24"
-          md={{
-            flexDirection: "row",
-            px: "space64",
-          }}
-          alignItems="center"
-          justifyContent="space-between"
-          w="100%"
-          px="space24"
-          py="space40"
-        >
-          <Flex
-            flexDirection="column"
-            gap="space8"
-            md={{ alignItems: "flex-start" }}
-            alignItems="center"
-          >
-            <Text as="h2" variant="title3xl" md={{ textAlign: "left" }} textAlign="center">
-              {title}
-            </Text>
-            <Text
-              variant="bodyL"
-              color="newFg.neutral.muted"
-              md={{ textAlign: "left" }}
-              textAlign="center"
-            >
-              {description}
-            </Text>
-          </Flex>
-          {actions}
+      <Flex
+        flexDirection="column"
+        gap="space24"
+        md={{
+          px: "space64",
+          py: "space80",
+        }}
+        alignItems="center"
+        justifyContent="space-between"
+        w="100%"
+        px="space24"
+        py="space40"
+        layerStyle="dotBackground"
+        borderWidth={1}
+        borderColor="newBorder.neutral.placeholder"
+        borderRadius="radius12"
+        maxWidth={1024}
+        mx="auto"
+      >
+        <Flex flexDirection="column" gap="space8" alignItems="center">
+          <Text as="h2" variant="title3xl" textAlign="center">
+            {title}
+          </Text>
+          <Text variant="bodyL" color="newFg.neutral.muted" textAlign="center">
+            {description}
+          </Text>
         </Flex>
-        <EndLine
-          side="bottom"
-          gradient={false}
-          className={css({
-            height: "unset!",
-          })}
-        />
+        {actions}
+        <Text variant="bodyS" color="newFg.neutral.muted" textAlign="center">
+          No credit card required. Free forever.
+        </Text>
       </Flex>
-
-      <LinesWrapper>
-        <EndLine side="left" />
-        <NewLineDecorator />
-        <NewLine />
-        <NewLineDecorator />
-        <EndLine side="right" />
-      </LinesWrapper>
-      <LinesWrapper justifyContent="space-between">
-        <EndLine side="bottom" />
-        <EndLine side="bottom" />
-      </LinesWrapper>
     </Section>
   );
 };

@@ -1,6 +1,5 @@
 import { css } from "@flows/styled-system/css";
-import { Box, Flex } from "@flows/styled-system/jsx";
-import { EndLine, NewLine, NewLineDecorator } from "components/ui";
+import { Flex } from "@flows/styled-system/jsx";
 import { ArrowRight16 } from "icons";
 import Link from "next/link";
 import { type ReactNode } from "react";
@@ -17,19 +16,7 @@ export const CostDescription = (): ReactNode => {
         md: 0,
       }}
     >
-      <TopDecoration />
       <Flex w="100%" flex={1}>
-        <EndLine
-          className={css({
-            height: "unset!",
-            display: {
-              base: "none",
-              md: "block",
-            },
-          })}
-          side="bottom"
-          gradient={false}
-        />
         <Flex
           flexDirection="column"
           justifyContent="center"
@@ -41,7 +28,7 @@ export const CostDescription = (): ReactNode => {
           h="100%"
           maxWidth={{
             base: "100%",
-            md: 368,
+            md: 400,
           }}
         >
           <Text as="h2" variant="title3xl">
@@ -89,59 +76,6 @@ export const CostDescription = (): ReactNode => {
           </Link>
         </Flex>
       </Flex>
-      <BottomDecoration />
     </Flex>
-  );
-};
-
-const TopDecoration = (): ReactNode => {
-  return (
-    <>
-      <EndLine
-        className={css({
-          height: "62px!",
-          display: {
-            base: "none",
-            md: "block",
-          },
-        })}
-        side="top"
-      />
-      <Box
-        display={{
-          base: "none",
-          md: "flex",
-        }}
-      >
-        <NewLineDecorator />
-        <NewLine />
-      </Box>
-    </>
-  );
-};
-
-const BottomDecoration = (): ReactNode => {
-  return (
-    <>
-      <Box
-        display={{
-          base: "none",
-          md: "flex",
-        }}
-      >
-        <NewLineDecorator />
-        <NewLine />
-      </Box>
-      <EndLine
-        className={css({
-          height: "68px!",
-          display: {
-            base: "none",
-            md: "block",
-          },
-        })}
-        side="bottom"
-      />
-    </>
   );
 };

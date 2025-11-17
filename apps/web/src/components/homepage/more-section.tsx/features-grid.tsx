@@ -1,5 +1,5 @@
 import { Grid } from "@flows/styled-system/jsx";
-import { EndLine, LinesWrapper, NewLine, NewLineDecorator, SmallFeatureCard } from "components/ui";
+import { SmallFeatureCard } from "components/ui";
 import {
   Environment16,
   Filter16,
@@ -57,52 +57,27 @@ const features = [
 
 export const FeaturesGrid = (): ReactNode => {
   return (
-    <>
-      <LinesWrapper justifyContent="space-between">
-        <EndLine side="top" />
-        <EndLine side="top" />
-      </LinesWrapper>
-      <LinesWrapper>
-        <EndLine side="left" />
-        <NewLineDecorator />
-        <NewLine />
-        <NewLineDecorator />
-        <EndLine side="right" />
-      </LinesWrapper>
-
-      <Grid
-        gridTemplateColumns={{
-          base: "repeat(2, 1fr)",
-          md: "repeat(4, auto)",
-        }}
-        gap="0"
-        mx="auto"
-        justifyContent="center"
-        alignItems="center"
-      >
-        {features.map((feature) => {
-          return (
-            <SmallFeatureCard
-              key={feature.title}
-              title={feature.title}
-              description={feature.description}
-              icon={feature.icon}
-            />
-          );
-        })}
-      </Grid>
-
-      <LinesWrapper>
-        <EndLine side="left" />
-        <NewLineDecorator />
-        <NewLine />
-        <NewLineDecorator />
-        <EndLine side="right" />
-      </LinesWrapper>
-      <LinesWrapper justifyContent="space-between">
-        <EndLine side="bottom" />
-        <EndLine side="bottom" />
-      </LinesWrapper>
-    </>
+    <Grid
+      gridTemplateColumns={{
+        base: "repeat(2, 1fr)",
+        md: "repeat(4, auto)",
+      }}
+      gap="0"
+      mx="auto"
+      justifyContent="center"
+      alignItems="center"
+      mt={{ base: "space40", md: "space64" }}
+    >
+      {features.map((feature) => {
+        return (
+          <SmallFeatureCard
+            key={feature.title}
+            title={feature.title}
+            description={feature.description}
+            icon={feature.icon}
+          />
+        );
+      })}
+    </Grid>
   );
 };

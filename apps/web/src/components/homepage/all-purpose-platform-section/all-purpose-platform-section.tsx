@@ -1,9 +1,8 @@
 "use client";
 
-import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { solutionsContent } from "components/solutions-content";
-import { EndLine, LinesWrapper, NewLine, NewLineDecorator, Section } from "components/ui";
+import { Section } from "components/ui";
 import useEmblaCarousel from "embla-carousel-react";
 import Link from "next/link";
 import { type ReactNode } from "react";
@@ -69,36 +68,6 @@ export const AllPurposePlatformSection = (): ReactNode => {
           <Link href={routes.solutions.index}>View all solutions</Link>
         </Button>
       </Flex>
-
-      <LinesWrapper>
-        <EndLine side="left" />
-        <NewLineDecorator />
-        <NewLine />
-        <NewLineDecorator />
-        <EndLine side="right" />
-      </LinesWrapper>
-      <LinesWrapper
-        justifyContent="space-between"
-        mb={{
-          base: "space32",
-          sm: 0,
-        }}
-      >
-        <EndLine
-          side="bottom"
-          gradient={false}
-          className={css({
-            display: { base: "none", sm: "block" },
-          })}
-        />
-        <EndLine
-          side="bottom"
-          gradient={false}
-          className={css({
-            display: { base: "none", sm: "block" },
-          })}
-        />
-      </LinesWrapper>
     </Section>
   );
 };
