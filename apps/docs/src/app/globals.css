@@ -29,6 +29,9 @@
   --fd-diff-remove-symbol-color: rgb(230, 10, 100);
   --fd-diff-add-color: rgba(14, 180, 100, 0.12);
   --fd-diff-add-symbol-color: rgb(10, 200, 100);
+
+  /* Set width for right side table of contents, for some reason it's 0px by default */
+  --fd-toc-width: 286px;
 }
 
 :root.dark {

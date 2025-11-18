@@ -1,15 +1,15 @@
 import { css } from "@flows/styled-system/css";
 import { HeadingLink } from "components/mdx-heading-link";
 import { isValidUrl } from "lib/is-valid-url";
+import { type MDXComponents } from "mdx/types";
 import Link from "next/link";
-import { useMDXComponent } from "next-contentlayer2/hooks";
-import type { HTMLProps, ReactElement } from "react";
+import type { HTMLProps } from "react";
 import { Text, type TextProps } from "ui";
 import { CodeHighlight } from "ui/server";
 
-import { ZoomableImage } from "./ui";
+import { ZoomableImage } from "./components/ui";
 
-const mdxComponents = {
+const components: MDXComponents = {
   Image: (props: HTMLProps<HTMLImageElement>) => (
     <ZoomableImage
       alt={props.alt ?? "Blog post cover image"}
@@ -310,12 +310,6 @@ const mdxComponents = {
   CodeHighlight,
 };
 
-interface MdxProps {
-  code: string;
-}
-
-export function Mdx({ code }: MdxProps): ReactElement {
-  const MDXContent = useMDXComponent(code);
-
-  return <MDXContent components={mdxComponents} />;
+export function useMDXComponents(): MDXComponents {
+  return components;
 }

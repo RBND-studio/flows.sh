@@ -39,7 +39,6 @@ yarn-error.log*
 
 storybook-static
 
-.contentlayer
 dist
 
 pandacss-generated

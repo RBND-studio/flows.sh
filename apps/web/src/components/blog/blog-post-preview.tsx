@@ -13,11 +13,10 @@ type Props = {
   imageAlt?: string;
   image?: string;
   slug: string;
-  slugAsParams: string;
 };
 
 export const BlogPostPreview = (post: Props): ReactElement => {
-  const href = routes.blogPostDetail({ postId: post.slugAsParams });
+  const href = routes.blogPostDetail({ postId: post.slug });
 
   return (
     <li

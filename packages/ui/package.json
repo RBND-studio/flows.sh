@@ -28,8 +28,8 @@
     "cmdk": "^1.1.1",
     "icons": "workspace:*",
     "merge-refs": "^2.0.0",
-    "react": "19.1.1",
-    "react-dom": "19.1.1",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
     "sonner": "^2.0.5"
   },
   "devDependencies": {
@@ -38,14 +38,14 @@
     "@storybook/addon-links": "^9.1.8",
     "@storybook/cli": "^9.1.8",
     "@storybook/react-vite": "^9.1.8",
-    "@types/react": "^19.1.9",
-    "@types/react-dom": "^19.1.7",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.0.4",
     "@vueless/storybook-dark-mode": "^9.0.8",
     "eslint-config-custom": "workspace:*",
     "storybook": "^9.1.8",
     "tsconfig": "workspace:*",
-    "typescript": "5.9.2",
+    "typescript": "5.9.3",
     "vite": "^7.1.11",
     "vite-tsconfig-paths": "^5.1.4"
   }

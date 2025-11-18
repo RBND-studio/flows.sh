@@ -1,8 +1,5 @@
-const { createContentlayerPlugin } = require("next-contentlayer2");
-
 const path = require("node:path");
-
-const withContentlayer = createContentlayerPlugin();
+const createMdx = require("@next/mdx");
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   // eslint-disable-next-line turbo/no-undeclared-env-vars -- ignore
@@ -82,4 +79,11 @@ const nextConfig = {
   },
 };
 
-module.exports = withBundleAnalyzer(withContentlayer(nextConfig));
+const withMDX = createMdx({
+  options: {
+    remarkPlugins: ["remark-frontmatter", "remark-mdx-frontmatter", "remark-gfm"],
+    rehypePlugins: ["rehype-slug"],
+  },
+});
+
+module.exports = withBundleAnalyzer(withMDX(nextConfig));

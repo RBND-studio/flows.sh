@@ -2,7 +2,6 @@ import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import { CustomUIComponentsIllustration, EmbeddableComponentsIllustrations } from "components/ui";
 import { ArrowRight16 } from "icons";
-import { links } from "lib/links";
 import Link from "next/link";
 import { type ReactNode } from "react";
 import { routes } from "routes";
@@ -21,8 +20,8 @@ const cards = [
     title: "Custom UI components",
     description:
       "Leverage our APIs and your design system for full control. Build your own components and create a native experience.",
-    linkUrl: links.examples.floatinChecklistPage,
-    linkText: "See example",
+    linkUrl: routes.features.customComponents,
+    linkText: "Learn more",
     element: <CustomUIComponentsIllustration />,
   },
 ];

@@ -33,7 +33,7 @@
     "markdownlint-cli": "^0.44.0",
     "prettier": "^3.4.2",
     "tsconfig": "workspace:*",
-    "turbo": "^2.5.8"
+    "turbo": "^2.6.1"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
@@ -43,7 +43,6 @@
       "@swc/core",
       "bcrypt",
       "bufferutil",
-      "contentlayer2",
       "cypress",
       "esbuild",
       "nestjs-pino",
@@ -52,5 +51,5 @@
       "unrs-resolver"
     ]
   },
-  "packageManager": "pnpm@10.17.1"
+  "packageManager": "pnpm@10.22.0"
 }

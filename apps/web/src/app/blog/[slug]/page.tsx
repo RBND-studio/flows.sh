@@ -1,42 +1,27 @@
 import { css } from "@flows/styled-system/css";
 import { Box } from "@flows/styled-system/jsx";
 import { ZoomableImage } from "components/ui";
-import type { Post } from "contentlayer/generated";
-import { allPosts } from "contentlayer/generated";
 import { getWebMetadata } from "lib/get-metadata";
+import { importBlogPost, scanBlogFiles } from "lib/mdx";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { ReactElement } from "react";
 import { Text } from "ui";
 
-import { Mdx } from "../../../components";
-
 type Params = {
-  slug: string[];
+  slug: string;
 };
 
 interface PostProps {
   params: Promise<Params>;
 }
 
-const getPostFromParams = (params: Params): Post | undefined => {
-  const slug = params.slug.join("/");
-  const postFromParams = allPosts.find((post) => post.slugAsParams === slug);
-
-  if (!postFromParams) {
-    null;
-  }
-
-  return postFromParams;
-};
-
 export async function generateMetadata(props: PostProps): Promise<Metadata> {
   const params = await props.params;
-  const post = getPostFromParams(params);
+  const slug = params.slug;
+  const post = await importBlogPost(`blog/${slug}.mdx`);
 
-  if (!post) {
-    return {};
-  }
+  if (!post) return notFound();
 
   return getWebMetadata({
     title: post.title,
@@ -54,18 +39,23 @@ export async function generateMetadata(props: PostProps): Promise<Metadata> {
   });
 }
 
-export function generateStaticParams(): Params[] {
-  return allPosts.map((post) => ({
-    slug: post.slugAsParams.split("/"),
-  }));
+export async function generateStaticParams(): Promise<Params[]> {
+  const blogFiles = await scanBlogFiles();
+
+  return blogFiles.map((filename) => {
+    const slug = filename.split(".")[0];
+    return { slug };
+  });
 }
 
-export default async function PostPage(props: PostProps): Promise<ReactElement> {
+export default async function BlogDetailPage(props: PostProps): Promise<ReactElement> {
   const params = await props.params;
-  const post = getPostFromParams(params);
-  const date = post ? new Date(post.date) : new Date();
+  const slug = params.slug;
+  const post = await importBlogPost(`blog/${slug}.mdx`);
 
   if (!post) return notFound();
+
+  const date = new Date(post.date);
 
   return (
     <article
@@ -115,11 +105,9 @@ export default async function PostPage(props: PostProps): Promise<ReactElement> 
           <span>
             {date.toLocaleString("en-US", { day: "numeric", month: "long", year: "numeric" })}
           </span>
-          <span>{` • `}</span>
-          <span>{post.readingTimeText}</span>
         </Text>
       </Box>
-      <Mdx code={post.body.code} />
+      <post.Mdx />
     </article>
   );
 }

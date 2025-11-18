@@ -4,7 +4,8 @@
     "plugins": [{ "name": "next" }],
     "baseUrl": "src",
     "paths": {
-      "@flows/styled-system/*": ["../pandacss-generated/*"]
+      "@flows/styled-system/*": ["../pandacss-generated/*"],
+      "@/.source": ["../.source"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

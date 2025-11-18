@@ -1,21 +1,22 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
-import { type Release } from "contentlayer/generated";
 import { ArrowLeft16, ArrowRight16 } from "icons";
+import { type ChangelogPost } from "lib/mdx";
+import Link from "next/link";
 import { type FC } from "react";
 import { routes } from "routes";
 import { Icon, Text } from "ui";
 
 type Props = {
-  release: Release;
+  release: ChangelogPost;
   variant: "prev" | "next";
 };
 
 export const ReleasePreview: FC<Props> = ({ release, variant }) => {
-  const href = routes.changelogReleaseDetail({ releaseId: release.slugAsParams });
+  const href = routes.changelogReleaseDetail({ releaseId: release.slug });
 
   return (
-    <a
+    <Link
       href={href}
       className={css({
         borderWidth: 1,
@@ -49,6 +50,6 @@ export const ReleasePreview: FC<Props> = ({ release, variant }) => {
           </Text>
         </Flex>
       </Flex>
-    </a>
+    </Link>
   );
 };
