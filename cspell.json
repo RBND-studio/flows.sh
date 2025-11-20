@@ -75,7 +75,8 @@
     "out/**/*",
     "pandacss-generated",
     "pnpm-lock.yaml",
-    "infrastructure/kafka/data"
+    "infrastructure/kafka/data",
+    "infrastructure/nginx"
   ],
   "allowCompoundWords": true
 }
