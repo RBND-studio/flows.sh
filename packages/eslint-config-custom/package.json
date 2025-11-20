@@ -4,6 +4,7 @@
   "private": true,
   "sideEffects": false,
   "devDependencies": {
+    "@next/eslint-plugin-next": "15.5.6",
     "@vercel/style-guide": "^6.0.0",
     "eslint-config-turbo": "^2.5.6",
     "eslint-plugin-cypress": "^4.1.0",
