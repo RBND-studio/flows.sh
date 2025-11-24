@@ -34,6 +34,8 @@ export const customIconOptions: Record<string, IconCmp> = {
   tooltip: Tooltip16,
   checklist: Checklist16,
   hint: Hint16,
+  // TODO: update the icon when redesigning component icons
+  card: Banner16,
 };
 
 export const fallbackBlockIcon = Tooltip16;
