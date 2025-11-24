@@ -1,5 +1,5 @@
 import { Flex } from "@flows/styled-system/jsx";
-import { headingCss, paragraphCss, Section, SmartLink } from "components/ui";
+import { bulletCss, headingCss, olCss, paragraphCss, Section, SmartLink } from "components/ui";
 import { getWebMetadata } from "lib/get-metadata";
 import { type Metadata } from "next";
 import type { ReactElement } from "react";
@@ -20,6 +20,19 @@ const Page = (): ReactElement => {
           Flows terms of service
         </Text>
       </Flex>
+
+      <Text className={paragraphCss} variant="bodyM" fontWeight="600">
+        We’re updating our Terms of Service, effective January 1, 2026. You can see the old version{" "}
+        <a
+          href="https://github.com/RBND-studio/flows.sh/blob/28c239dc379b0a1147b19e8be8479fdeb0d5b499/apps/web/src/app/legal/terms/page.tsx"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          here
+        </a>
+        .
+      </Text>
+
       <Text className={paragraphCss} variant="bodyM">
         Thank you for using Flows!
       </Text>
@@ -210,20 +223,12 @@ const Page = (): ReactElement => {
         General conditions
       </Text>
       <Text className={paragraphCss} variant="bodyM">
-        Your use of Flows is at your sole risk. The service is provided on an “as is” and “as
-        available” basis. We do take uptime of our application seriously.
-      </Text>
-      <Text className={paragraphCss} variant="bodyM">
-        We design our services with care, based on our own experience and the experiences of
-        customers who share their time and feedback. However, there is no such thing as a service
-        that pleases everybody. We make no guarantees that our services will meet your specific
-        requirements or expectations.
+        Your use of Flows is at your sole risk. We do take uptime of our application seriously.
       </Text>
       <Text className={paragraphCss} variant="bodyM">
         We also test all of our features extensively before shipping them. As with any software, our
         services inevitably have some bugs. We track the bugs reported to us and work through
-        priority ones, especially any related to security or privacy. Not all reported bugs will get
-        fixed and we don’t guarantee completely error-free services.
+        priority ones, especially any related to security or privacy.
       </Text>
       <Text className={paragraphCss} variant="bodyM">
         Technical support is provided by email. Email responses are provided on the reasonable
@@ -243,37 +248,106 @@ const Page = (): ReactElement => {
         Liability
       </Text>
       <Text className={paragraphCss} variant="bodyM">
-        We mention liability throughout these Terms but to put it all in one section:
+        We build and operate Flows with care to provide a reliable, secure, and high-quality
+        service. However, as with any software or integration, interruptions or errors may occur,
+        and we cannot guarantee flawless operation under all circumstances.
       </Text>
       <Text className={paragraphCss} variant="bodyM">
-        You expressly understand and agree that Flows shall not be liable, in law or in equity, to
-        you or to any third party for any direct, indirect, incidental, lost profits, special,
-        consequential, punitive or exemplary damages, including, but not limited to, damages for
-        loss of profits, goodwill, use, data or other intangible losses (even if the company has
-        been advised of the possibility of such damages), resulting from: (i) the use or the
-        inability to use the services; (ii) the cost of procurement of substitute goods and services
-        resulting from any goods, data, information or services purchased or obtained or messages
-        received or transactions entered into through or from the services; (iii) unauthorized
-        access to or alteration of your transmissions or data; (iv) statements or conduct of any
-        third party on the service; (v) or any other matter relating to this Terms of Service or the
-        services, whether as a breach of contract, tort (including negligence whether active or
-        passive), or any other theory of liability.
+        You are responsible for how you use the Flows platform and SDK, including any content,
+        logic, or configurations you create or display within your own application. We are not
+        responsible for how you or others choose to implement Flows or for how it behaves inside
+        your product as a result.
       </Text>
       <Text className={paragraphCss} variant="bodyM">
-        In other words: choosing to use our services does mean you are making a bet on us. If the
-        bet does not work out, that’s on you, not us. We do our darnedest to be as safe a bet as
-        possible through careful management of the business; investments in security,
-        infrastructure, and talent; and in general giving a damn. If you choose to use our services,
-        thank you for betting on us.
+        Flows may depend on or interact with third-party services, libraries, or environments. We
+        are not responsible for any unavailability, malfunction, or interruption caused by
+        third-party systems or code, including those that you integrate Flows with.
+      </Text>
+
+      <Text as="h2" className={headingCss} variant="titleXl">
+        Warranty
       </Text>
       <Text className={paragraphCss} variant="bodyM">
-        This agreement shall be governed by the laws of Czech Republic, and the courts of Czech
-        Republic shall have exclusive jurisdiction to hear and determine all issues that may arise
-        under or in relation to this agreement.
+        The Flows platform and SDK are provided on an “as is” and “as available” basis. We make no
+        representation or warranty as to the reliability, timeliness, quality, suitability,
+        availability, accuracy, or completeness of the platform, its functionalities, services, or
+        any content.
       </Text>
       <Text className={paragraphCss} variant="bodyM">
-        Any ambiguities in the interpretation of these Terms of Service shall not be construed
-        against the drafting party.
+        We do not represent or warrant that:
+      </Text>
+      <ol className={olCss}>
+        <li className={bulletCss}>
+          Flows will be completely secure, timely, uninterrupted, or error-free;
+        </li>
+        <li className={bulletCss}>
+          The Platform, its functionalities, or SDK will meet your specific requirements or
+          expectations;
+        </li>
+        <li className={bulletCss}>
+          Any stored or transmitted data will be accurate, reliable, or permanently preserved;
+        </li>
+        <li className={bulletCss}>Defects or errors will be corrected; or</li>
+        <li className={bulletCss}>
+          It will function in all environments or in combination with any other systems.
+        </li>
+      </ol>
+      <Text className={paragraphCss} variant="bodyM">
+        All warranties, whether express, implied, statutory, or otherwise — including any implied
+        warranties of merchantability, fitness for a particular purpose — are disclaimed to the
+        fullest extent permitted by law.
+      </Text>
+      <Text className={paragraphCss} variant="bodyM">
+        We are not liable for issues caused by unauthorized use, misuse, or changes in your
+        application or third-party systems that affect Flows’ operation.
+      </Text>
+
+      <Text as="h2" className={headingCss} variant="titleXl">
+        Limitation of liability
+      </Text>
+      <Text className={paragraphCss} variant="bodyM">
+        Except as prohibited by law:
+      </Text>
+      <ol className={olCss}>
+        <li className={bulletCss}>
+          Neither party shall be liable for any consequential, special, indirect, exemplary, or
+          punitive damages, whether in contract, tort, or any other legal theory, even if such party
+          has been advised of the possibility of such damages; and
+        </li>
+        <li className={bulletCss}>
+          Our total aggregate liability for any claim is limited to the amount you paid to us for
+          the services during the twelve (12) months immediately preceding the occurrence of the
+          event giving rise to such claim.
+        </li>
+      </ol>
+      <Text className={paragraphCss} variant="bodyM">
+        Nothing in these Terms limits or excludes liability for gross negligence, wilful misconduct,
+        breach of any privacy or data security obligations, death or personal injury caused by
+        negligence, fraud, or any other liability that cannot be excluded under applicable law.
+      </Text>
+      <Text className={paragraphCss} variant="bodyM">
+        Each party acknowledges that these limitations are an essential basis of this agreement.
+      </Text>
+
+      <Text as="h2" className={headingCss} variant="titleXl">
+        Force Majeure
+      </Text>
+      <Text className={paragraphCss} variant="bodyM">
+        Except for payment obligations, neither party shall be liable for any failure or delay in
+        performance caused by circumstances beyond their reasonable control, including but not
+        limited to government actions, natural disasters, labor disputes, internet or power
+        failures, or other force majeure events.
+      </Text>
+
+      <Text as="h2" className={headingCss} variant="titleXl">
+        Governing Law and Jurisdiction
+      </Text>
+
+      <Text className={paragraphCss} variant="bodyM">
+        These Terms and any other contracts and legal relationships concluded by and between us
+        (unless otherwise explicitly provided) shall be governed by the laws of the Czech Republic.
+        Any disputes arising here from between us shall be resolved by the courts of general
+        jurisdiction in the Czech Republic.
       </Text>
 
       <Text as="h2" className={headingCss} variant="titleXl">
@@ -291,8 +365,9 @@ const Page = (): ReactElement => {
         If you have a question about any of the Terms of Service, please contact us by e-mail at{" "}
         <strong>{emails.general}</strong>.
       </Text>
+
       <Text className={paragraphCss} variant="bodyM">
-        Last updated: August 5, 2024
+        Effective date: January 1, 2026
       </Text>
     </Section>
   );

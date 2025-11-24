@@ -21,6 +21,11 @@ export const ulCss = css({
   listStyle: "disc",
 });
 
+export const olCss = css({
+  listStylePosition: "outside",
+  listStyle: "decimal",
+});
+
 export const headingCss = css({
   mt: "space40",
   mb: "space24",
