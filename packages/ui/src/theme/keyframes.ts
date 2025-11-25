@@ -136,4 +136,22 @@ export const keyframes: CssKeyframes = {
     "0%": { transform: "scaleX(0)" },
     "100%": { transform: "scaleX(1)" },
   },
+
+  // Fancy logo
+  logoScaleIn: {
+    "0%": { transform: "scale(32)" },
+    "100%": { transform: "scale(1)" },
+  },
+  logoOpacity: {
+    "0%": { opacity: 0 },
+    "100%": { opacity: 1 },
+  },
+  logoEnter: {
+    "0%": { transform: "translateY(1000px)" },
+    "100%": { transform: "translateY(0)" },
+  },
+  logoBlurIn: {
+    "0%": { filter: "blur(16px)" },
+    "100%": { filter: "blur(0px)" },
+  },
 };

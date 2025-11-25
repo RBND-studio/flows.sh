@@ -45,3 +45,13 @@ export const utilities: Config["utilities"] = {
     superFastEaseInOut,
   },
 };
+
+export const globalCss: Config["globalCss"] = {
+  // Bright tabs extensions styling
+  '[data-bright-tab][data-state="inactive"]': {
+    "--tab-background": "var(--inactive-tab-background)",
+    "--tab-color": "var(--inactive-tab-color)",
+    "--tab-bottom-border": "transparent",
+    "--tab-top-border": "transparent",
+  },
+};
