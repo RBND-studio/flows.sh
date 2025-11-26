@@ -5,12 +5,21 @@ import "@flows/react-components/index.css";
 import { Flex } from "@flows/styled-system/jsx";
 import { type ReactNode } from "react";
 
+import { CardDemo } from "./card-demo";
 import { HintDemo } from "./hint-demo";
 import { ModalDemo } from "./modal-demo";
 import { TooltipDemo } from "./tooltip-demo";
 
 type Props = {
-  component?: "tooltip" | "modal" | "hint" | "tourTooltip" | "tourModal" | "tourHint";
+  component?:
+    | "tooltip"
+    | "modal"
+    | "hint"
+    | "tourTooltip"
+    | "tourModal"
+    | "tourHint"
+    | "card"
+    | "tourCard";
 };
 
 const components = {
@@ -20,6 +29,8 @@ const components = {
   tourTooltip: <TooltipDemo tour />,
   tourModal: <ModalDemo tour />,
   tourHint: <HintDemo tour />,
+  card: <CardDemo />,
+  tourCard: <CardDemo tour />,
 };
 
 export const ComponentPreview = ({ component = "tooltip" }: Props): ReactNode => {

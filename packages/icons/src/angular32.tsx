@@ -1,8 +1,17 @@
 import type { JSX } from "react";
 
-export function Angular32(props: React.SVGProps<SVGSVGElement>): JSX.Element {
+type ExtraProps = {
+  useCurrentColor?: boolean;
+};
+
+export function Angular32(props: React.SVGProps<SVGSVGElement> & ExtraProps): JSX.Element {
+  const { useCurrentColor = true, ...rest } = props;
+
+  const gradientColor1 = useCurrentColor ? "currentColor" : "url(#paint0_linear_3940_5085)";
+  const gradientColor2 = useCurrentColor ? "currentColor" : "url(#paint1_linear_3940_5085)";
+
   return (
-    <svg fill="currentColor" height={32} width={32} xmlns="http://www.w3.org/2000/svg" {...props}>
+    <svg fill="currentColor" height={32} width={32} xmlns="http://www.w3.org/2000/svg" {...rest}>
       <mask
         id="mask0_3940_5085"
         style={{ maskType: "luminance" }}
@@ -29,11 +38,11 @@ export function Angular32(props: React.SVGProps<SVGSVGElement>): JSX.Element {
         <g mask="url(#mask1_3940_5085)">
           <path
             d="M30.9955 5.31418L29.9138 22.3885L19.5718 0L30.9955 5.31418ZM23.8323 27.3922L16.0178 31.8742L8.20321 27.3922L9.7926 23.5202H22.2429L23.8323 27.3922ZM16.0178 8.4983L20.1126 18.5054H11.9229L16.0178 8.4983ZM2.1106 22.3885L1.03999 5.31418L12.4637 0L2.1106 22.3885Z"
-            fill="url(#paint0_linear_3940_5085)"
+            fill={gradientColor1}
           />
           <path
             d="M30.9955 5.31418L29.9138 22.3885L19.5718 0L30.9955 5.31418ZM23.8323 27.3922L16.0178 31.8742L8.20321 27.3922L9.7926 23.5202H22.2429L23.8323 27.3922ZM16.0178 8.4983L20.1126 18.5054H11.9229L16.0178 8.4983ZM2.1106 22.3885L1.03999 5.31418L12.4637 0L2.1106 22.3885Z"
-            fill="url(#paint1_linear_3940_5085)"
+            fill={gradientColor2}
           />
         </g>
       </g>

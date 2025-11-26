@@ -28,6 +28,8 @@ export const fileIcons: Extension = {
           return "json";
         case "html":
           return "html";
+        case "vue":
+          return "vue";
         default:
       }
     })();
