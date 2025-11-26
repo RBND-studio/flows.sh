@@ -19,7 +19,10 @@ Apart from the blocks and their properties, workflows have additional settings.
 
 ### Workflow frequency
 
-The **Frequency** setting allows you to define how often the workflow should be triggered. When editing a workflow you can choose the frequency from the dropdown menu in the main right panel. This setting is applied **only** to the `draft` version of the workflow. When [publishing](/workflows/publishing) a workflow version, you can choose the frequency of that version in the publishing dialog.
+The **Frequency** setting allows you to define how often the workflow should be triggered. The workflow frequency can be configured in two places:
+
+1. When [publishing](/workflows/publishing) a workflow version, you can choose the frequency that will be applied to the environments where the version is published.
+2. In the [workflow settings](/workflows/publishing#managing-active-versions), you can change the frequency setting for each environment.
 
 **Frequency options:**
 
@@ -49,6 +52,6 @@ Workflows are version-controlled. When you make changes to a workflow, they are 
 
 You can view published versions and their block configurations in a read-only mode. To edit a workflow switch back to the `draft` version and make changes.
 
-Each version has its own `frequency` and `user migration` settings. The [user migration settings](/workflows/publishing#how-to-migrate-active-users) are applied to the users of an the environment every time the specific version is activated in the environment.
+Each version has its own `user migration` settings. The [user migration settings](/workflows/publishing#how-to-migrate-active-users) are applied to the users of an the environment every time the specific version is activated in the environment.
 
 Looking to revert to a previous version? [Contact us](https://flows.sh/contact) and we'll be happy to help!

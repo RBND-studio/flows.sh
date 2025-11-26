@@ -7,9 +7,11 @@ export const links = (domain = "flows.sh") =>
   ({
     homePage: `https://${domain}`,
     twitter: `https://x.com/flows_sh`,
+    linkedin: `https://www.linkedin.com/company/flows-sh`,
     rbnd: `https://rbnd.studio`,
     rbndGithub: `https://github.com/RBND-studio`,
     publicRepo: `https://github.com/RBND-studio/flows.sh`,
+    sdkRepo: `https://github.com/RBND-studio/flows-sdk`,
     status: `https://status.flows.sh`,
     youtube: `https://www.youtube.com/@flows-sh`,
     slack: `https://flows.sh/join-slack`,
