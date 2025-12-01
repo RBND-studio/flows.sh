@@ -149,6 +149,12 @@ export const links = (domain = "flows.sh") =>
         workflowPriority: `https://${domain}/docs/launchpad#workflow-priority`,
         concurrency: `https://${domain}/docs/launchpad#concurrency`,
       },
+      guide: {
+        tour: {
+          main: `https://${domain}/docs/guides/create-product-tour`,
+          addSteps: `https://${domain}/docs/guides/create-product-tour#add-and-customize-tour-steps`,
+        },
+      },
     },
     /**
      * Helper function to generate Open Graph image URLs

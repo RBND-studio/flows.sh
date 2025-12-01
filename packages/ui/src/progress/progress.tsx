@@ -27,6 +27,7 @@ export const Progress: FC<Props> = ({ max, value, className }) => {
         height="100%"
         maxW="100%"
         bg="dataViz.blue.fg"
+        fastEaseInOut="width"
       />
     </Box>
   );
