@@ -1,4 +1,6 @@
+import { FlowsSlot } from "@flows/react";
 import { css } from "@flows/styled-system/css";
+import { Box } from "@flows/styled-system/jsx";
 import {
   AllPurposePlatformSection,
   BigDemoIllustration,
@@ -19,6 +21,7 @@ const Page = (): ReactElement => {
   return (
     <>
       <Hero
+        eyebrow={<FlowsSlot id="homepage-hero-eyebrow" placeholder={<Box height={32} />} />}
         title={
           <>
             The better way to build{" "}

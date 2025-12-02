@@ -13,6 +13,7 @@ export * from "./logo";
 export * from "./menu";
 export * from "./multiselect";
 export * from "./popover";
+export * from "./producthunt";
 export * from "./progress";
 export * from "./select";
 export * from "./separator";

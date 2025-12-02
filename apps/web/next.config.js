@@ -11,9 +11,9 @@ const dev = process.env.NODE_ENV !== "production";
 const cspHeader = `
     default-src 'self';
     script-src 'self' 'unsafe-inline'${dev ? " 'unsafe-eval'" : ""};
-    connect-src 'self' https://app.lemonsqueezy.com;
+    connect-src 'self' https://app.lemonsqueezy.com https://*.flows-cloud.com wss://*.flows-cloud.com;
     style-src 'self' 'unsafe-inline';
-    img-src 'self' blob: data:;
+    img-src 'self' https://api.producthunt.com blob: data:;
     font-src 'self';
     object-src 'none';
     base-uri 'self';
@@ -40,7 +40,7 @@ const nextConfig = {
   },
   poweredByHeader: false,
   typedRoutes: true,
-  transpilePackages: ["ui", "icons", "shared"],
+  transpilePackages: ["ui", "icons", "shared", "shared-private"],
   output: "standalone",
   outputFileTracingRoot: path.join(__dirname, "../../"),
   experimental: {
