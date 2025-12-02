@@ -1,6 +1,8 @@
 import "./globals.css";
 
+import { FlowsSlot } from "@flows/react";
 import { css, cx } from "@flows/styled-system/css";
+import { Box } from "@flows/styled-system/jsx";
 import { Providers } from "components/providers";
 import { PRODUCTION } from "lib";
 import { getWebMetadata } from "lib/get-metadata";
@@ -55,6 +57,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
             {children}
           </main>
           <Footer />
+          <Box position="fixed" bottom="space24" left="space24">
+            <FlowsSlot id="corner-banner" />
+          </Box>
         </Providers>
       </body>
       {PRODUCTION ? (

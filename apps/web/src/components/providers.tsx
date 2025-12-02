@@ -5,6 +5,8 @@ import { ThemeProvider } from "next-themes";
 import type { FC, ReactNode } from "react";
 import { Toaster } from "ui";
 
+import { FlowsProvider } from "./utils/flows-provider";
+
 type Props = {
   children: ReactNode;
 };
@@ -12,9 +14,11 @@ type Props = {
 export const Providers: FC<Props> = ({ children }) => {
   return (
     <ThemeProvider attribute="class">
-      <Toaster />
-      {children}
-      <Affiliate />
+      <FlowsProvider>
+        <Toaster />
+        {children}
+        <Affiliate />
+      </FlowsProvider>
     </ThemeProvider>
   );
 };
