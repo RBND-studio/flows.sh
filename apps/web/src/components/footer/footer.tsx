@@ -1,7 +1,7 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { SmartLink } from "components/ui";
-import { GitHub16, Slack16, Twitter16, YouTube16 } from "icons";
+import { GitHub16, LinkedIn16, Slack16, Twitter16, YouTube16 } from "icons";
 import { links } from "lib/links";
 import type { ReactElement } from "react";
 import { routes } from "routes";
@@ -146,6 +146,11 @@ const footerGroups: FooterGroup[] = [
 ];
 
 const socialLinks = [
+  {
+    icon: LinkedIn16,
+    href: links.linkedin,
+    label: "LinkedIn",
+  },
   {
     icon: Twitter16,
     href: links.twitter,
