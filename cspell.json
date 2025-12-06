@@ -76,7 +76,8 @@
     "pandacss-generated",
     "pnpm-lock.yaml",
     "infrastructure/kafka/data",
-    "infrastructure/nginx"
+    "infrastructure/nginx",
+    "infrastructure/redis/redis.conf"
   ],
   "allowCompoundWords": true
 }
