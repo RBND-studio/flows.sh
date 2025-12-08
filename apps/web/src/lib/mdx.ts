@@ -20,6 +20,13 @@ export type BlogPost = {
   Mdx: React.FC;
 };
 
+export type GlossaryPost = {
+  slug: string;
+  title: string;
+  description: string;
+  Mdx: React.FC;
+};
+
 /**
  * @param path - `changelog/my-post.mdx` or `blog/my-post.mdx`
  */
@@ -32,6 +39,7 @@ export const importMdxFile = async <T>(filePath: string): Promise<T> => {
 
 export const importChangelogPost = importMdxFile<ChangelogPost | undefined>;
 export const importBlogPost = importMdxFile<BlogPost | undefined>;
+export const importGlossaryPost = importMdxFile<GlossaryPost | undefined>;
 
 export const scanChangelogFiles = (): Promise<string[]> => {
   return fs.readdir(path.resolve(process.cwd(), "src/markdown/changelog"));
@@ -61,4 +69,19 @@ export const importAllBlogPosts = async (): Promise<BlogPost[]> => {
   }
 
   return allPosts.sort((a, b) => b.date.localeCompare(a.date));
+};
+
+export const scanGlossaryFiles = (): Promise<string[]> => {
+  return fs.readdir(path.resolve(process.cwd(), "src/markdown/glossary"));
+};
+export const importAllGlossaryPosts = async (): Promise<GlossaryPost[]> => {
+  const glossaryFiles = await scanGlossaryFiles();
+
+  const allPosts: GlossaryPost[] = [];
+  for (const file of glossaryFiles) {
+    const post = await importGlossaryPost(`glossary/${file}`);
+    if (post) allPosts.push(post);
+  }
+
+  return allPosts.sort((a, b) => a.title.localeCompare(b.title));
 };
