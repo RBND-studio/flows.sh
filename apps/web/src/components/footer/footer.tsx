@@ -93,7 +93,11 @@ const footerGroups: FooterGroup[] = [
         href: routes.affiliate,
       },
       {
-        title: "Github",
+        title: "Glossary",
+        href: routes.glossary,
+      },
+      {
+        title: "GitHub",
         href: links.rbndGithub,
         target: "_blank",
       },

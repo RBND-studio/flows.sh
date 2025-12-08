@@ -44,4 +44,7 @@ export const routes = {
   changelog: "/changelog",
   changelogReleaseDetail: ({ releaseId }: { releaseId: string }) =>
     `/changelog/${releaseId}` as const,
+
+  glossary: "/glossary",
+  glossaryPostDetail: ({ slug }: { slug: string }) => `/glossary/${slug}` as const,
 } as const;
