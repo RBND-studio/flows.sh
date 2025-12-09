@@ -1,0 +1,204 @@
+---
+title: How to build a product tour in React
+description: A complete guide to building a product tour in React. Learn how to create tooltips, modals, onboarding flows, track user progress, and ship tours faster using Flows.
+date: "2025-12-09"
+author: "Vojtech Vidra"
+image: /images/blog/react-product-tour-guide/cover.png
+imageAlt: Tooltip example for a product tour in a React application
+---
+
+import { VideoPlayer } from "components/blog";
+
+In this guide, you’ll learn how to build a product tour (also known as user onboarding flow or a product adoption guide) in your React application. Whether you’re using Next.js, Vite, Create React App, or another React framework, this tutorial will walk you through everything you need to know.
+
+## What are product tours?
+
+A product tour is a guided in-app experience that helps users understand your product when they first sign up or when new features are introduced. Product tours commonly include:
+
+- **Tooltips** or pop-ups pointing to UI elements
+- **Modals** or dialogs that introduce important information
+- **Hints** or hotspots that draw attention to specific areas
+- **Checklists** that show onboarding progress
+
+These onboarding patterns help users learn how to use your product without needing direct human support.
+
+<Image
+  src="/images/blog/react-product-tour-guide/tour-example.png"
+  alt="An example of a product tour modal in an application"
+  width={1800}
+  height={1040}
+/>
+
+## Why do teams use product tours?
+
+Product tours are used to:
+
+- Help new users understand your product and discover the main features
+- Explain or announce new features
+- Reduce the load on support teams
+
+As your product grows, well designed tours can significantly improve activation and engagement.
+
+## What goes into building a product tour?
+
+Before you start building, it’s helpful to understand all the moving parts behind even a simple tour. You’ll need:
+
+- **UI elements** like tooltip, modal, hotspot, checklist…
+- **Content management** stored either directly in code or in some database
+- **User state tracking** to track who saw what and when
+
+Depending on your product, you might also need:
+
+- **Localization** for multilingual apps
+- **Analytics** to track completion and drop-off
+- **Segmentation** to show tours only to the right users
+- **Custom UI elements** to match your design system
+
+Once you add all these requirements, building a complete solution in-house becomes surprisingly complex.
+
+### UI elements
+
+In React, you have several options to create the UI for product tours. You can use dedicated packages like `react-joyride`, `shepherd.js`, `intro.js`, `driver.js`, or `reactour`, or use the components already in your design system (e.g. Dialog or Popover from `shadcn/ui`).
+
+These options can help you build the tour UI quickly, but keep in mind that they don't solve the other critical parts of real onboarding flows, like content management, user targeting, analytics, or state tracking.
+
+### Content management
+
+Tour content includes text, labels, images, and links. If your product changes frequently, your tour will need updates too. To manage the content, you have two choices:
+
+- Store content in your codebase - simple, but requires developer time for every small change.
+- Store content in a database or CMS - better (and quicker) for teams where product, design, or marketing also contribute.
+
+Many teams prefer letting non-engineering roles manage this content to avoid unnecessary interruptions and deployments.
+
+<Image
+  src="/images/blog/react-product-tour-guide/content-management.png"
+  alt="Screenshot of the content management settings in Flows"
+  width={1800}
+  height={1040}
+/>
+
+### User state tracking
+
+For tours to work properly, you need at least to track if a user has seen (or completed) a tour to prevent showing it to them every time they log in. When tours span multiple screens and take more than a few steps, it’s also good to remember the user’s progress so the tour can resume if they come back or reload the page.
+
+You might be tempted to store user state in the browser’s local storage, but for any React app where users sign in (especially if they may use multiple devices) the state should be stored in your database instead.
+
+To achieve all of this in-house, you will need to create API endpoints, a new database table (or column) to store the user state, and logic to decide when each tour should appear.
+
+Without proper state management, users may see the same tour repeatedly, lose their progress, or never see the tour at all.
+
+<Image
+  src="/images/blog/react-product-tour-guide/user-state.png"
+  alt="Screenshot of the user state tracking in Flows"
+  width={1800}
+  height={1040}
+/>
+
+### Additional requirements
+
+Depending on your product’s complexity, you may also need:
+
+#### Localization
+
+If you support multiple languages, your onboarding needs to be multilingual, increasing the complexity of the content management you need to build.
+
+#### Analytics
+
+Your product team will likely want to track the performance of each tour. For example:
+
+- How many users started a tour
+- How many completed it
+- Where users drop off
+
+To achieve this, you will need to create an integration into your existing analytics stack or build something from scratch.
+
+<Image
+  src="/images/blog/react-product-tour-guide/analytics.png"
+  alt="Screenshot of tour analytics in Flows"
+  width={1800}
+  height={1187}
+/>
+
+#### Segmentation
+
+As you introduce more tours, targeting the right users becomes essential. For example, you might want to show tours only to users who:
+
+- Just signed up
+- Signed up before a specific date
+- Are not paying customers
+- Are active during a time-limited promotion (e.g. Black Friday)
+
+And again, most of these filters will be defined by non-engineering teammates who manage the product experience, and they’ll want to control them without needing developer involvement or deployments.
+
+<Image
+  src="/images/blog/react-product-tour-guide/user-properties.png"
+  alt="Screenshot of the user properties settings in Flows"
+  width={1800}
+  height={1040}
+/>
+
+## Build your product tour faster with Flows
+
+Everything described above (UI, targeting, user state, analytics, environments, content, segmentation, and even extras) can be solved with Flows in a fraction of the time.
+
+Plus, for UI elements, you don't need to use our built-in components (even though we think they are really good). You can bring your own React components directly from your design system. This gives you complete control to implement tours that meet your UI and UX requirements.
+
+We built a fully customizable product adoption platform so you don't need to. Here’s how to use it to build your tour.
+
+### Step 1: Installation
+
+Sign up for [Flows](https://app.flows.sh/signup) and create an organization. Then install the NPM package and follow our [quick installation guide](/docs/react/installation) to get set up. When you have the `<FlowsProvider>` integrated into your app, come back here.
+
+### Step 2: Create your tour workflow
+
+In the Flows dashboard, start building your tour by creating a workflow that will contain your tour content and logic. After creating the workflow:
+
+1. Add a **Start** block - these define how and which users enter the tour (you can customize the targeting later).
+2. Add a **Tour** block - this is where you define individual steps.
+3. Inside the Tour block, add two steps:
+   1. Modal
+   2. Tooltip
+
+To edit each step, click them in the Steps section and fill out their properties. You can update the title, body text, buttons, and other options that control how the components look and behave. If you are a visual learner, follow the video below:
+
+<VideoPlayer
+  src="/videos/react-product-tour-guide/create-workflow.mp4"
+  ariaLabel="Product tour guide video"
+/>
+
+### Step 3: Preview and test your tour
+
+After adding all your steps, the tour is ready for a preview. To preview the tour, create a testing environment called `stage` by going to **Settings > Environments**. Then change the `environment` prop in `<FlowsProvider>` to match the newly created environment.
+
+<Image
+  src="/images/blog/react-product-tour-guide/environments.png"
+  alt="Screenshot of the environments settings in Flows"
+  width={1800}
+  height={1040}
+/>
+
+Back in Flows, publish the workflow by clicking **Publish** in the top right corner and selecting stage in the environments list.
+
+<Image
+  src="/images/blog/react-product-tour-guide/publish.png"
+  alt="Screenshot of the publish dialog in Flows"
+  width={1800}
+  height={1040}
+/>
+
+Now, when you start your React app, you should see the first step of the tour (it is possible that you will need to reload the page if you already had the app running before changing the environments). If you have any issues, you can debug by looking into the browser console or by using our SDK’s [debug mode](/docs/sdk-overview#debug-mode).
+
+### Step 4: Publish to production
+
+Once you are happy with how your product tour looks and feels, you can publish it to your users. To do that, you first need to deploy the updated React app with `<FlowsProvider>` (don't forget to change the environment prop back to `production`).
+
+When that is live, you can again hit Publish in the workflow and choose the production environment this time. Since this is going into production, make sure to select the right frequency in the publish dialog (you can leave the migration option as is, this option is useful when republishing a workflow to let Flows know how to migrate the active users into the new version).
+
+---
+
+That’s it, you’ve successfully built a complete tour in React using Flows.
+
+Instead of building UI, state management, targeting, analytics, environments, and content tools yourself, Flows handles all of it. So you can focus on building your product, not maintaining onboarding infrastructure.
+
+If you’re ready to ship better onboarding, faster, try Flows.
