@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { HeadingLink } from "components/mdx-heading-link";
 import { isValidUrl } from "lib/is-valid-url";
 import { type MDXComponents } from "mdx/types";
+import { type Route } from "next";
 import Link from "next/link";
 import type { HTMLProps } from "react";
 import { Text, type TextProps } from "ui";
@@ -256,43 +257,27 @@ const components: MDXComponents = {
     />
   ),
 
-  a: ({ href, children, ...rest }) => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call -- because fuck vercel eslint
-    const source: string = href.toString();
+  a: (props: HTMLProps<HTMLAnchorElement>) => {
+    const href = props.href ?? "";
 
-    if (isValidUrl(source)) {
+    if (href.startsWith("/docs")) {
       return (
-        <a
-          className={css({
-            fontWeight: "600",
-            borderBottomWidth: "2px",
-            borderBottomColor: "newBorder.primary",
-            _hover: {
-              borderBottomWidth: "3px",
-            },
-          })}
-          href={source}
-          rel="noreferrer"
-          target="_blank"
-        >
-          {children}
+        <a {...props} className={linkClassName}>
+          {props.children}
+        </a>
+      );
+    }
+
+    if (isValidUrl(href)) {
+      return (
+        <a className={linkClassName} rel="noreferrer" target="_blank" {...props}>
+          {props.children}
         </a>
       );
     }
     return (
-      <Link
-        href={href}
-        {...rest}
-        className={css({
-          fontWeight: "600",
-          borderBottomWidth: "2px",
-          borderBottomColor: "newBorder.primary",
-          _hover: {
-            borderBottomWidth: "3px",
-          },
-        })}
-      >
-        {children}
+      <Link className={linkClassName} {...props} href={href as Route}>
+        {props.children}
       </Link>
     );
   },
@@ -309,6 +294,15 @@ const components: MDXComponents = {
   ),
   CodeHighlight,
 };
+
+const linkClassName = css({
+  fontWeight: "600",
+  borderBottomWidth: "2px",
+  borderBottomColor: "newBorder.primary",
+  _hover: {
+    borderBottomWidth: "3px",
+  },
+});
 
 export function useMDXComponents(): MDXComponents {
   return components;
