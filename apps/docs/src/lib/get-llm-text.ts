@@ -45,8 +45,17 @@ function validatePath(p: string): string {
     throw new Error("Invalid file path");
   }
 
-  // Normalize to an absolute path
+  // Reject absolute paths
+  if (decoded.startsWith("/")) {
+    throw new Error("Invalid file path");
+  }
+
   const resolved = path.resolve(decoded);
+
+  // Allow only .mdx files
+  if (!resolved.endsWith(".mdx")) {
+    throw new Error("Invalid file type");
+  }
 
   return resolved;
 }
