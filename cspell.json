@@ -76,6 +76,7 @@
     "out/**/*",
     "pandacss-generated",
     "pnpm-lock.yaml",
+    "pnpm-workspace.yaml",
     "infrastructure/kafka/data",
     "infrastructure/nginx",
     "infrastructure/redis/redis.conf"

@@ -35,21 +35,8 @@
     "tsconfig": "workspace:*",
     "turbo": "^2.6.1"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@confluentinc/kafka-javascript",
-      "@nestjs/core",
-      "@scarf/scarf",
-      "@swc/core",
-      "bcrypt",
-      "bufferutil",
-      "cypress",
-      "esbuild",
-      "nestjs-pino",
-      "protobufjs",
-      "sharp",
-      "unrs-resolver"
-    ]
-  },
-  "packageManager": "pnpm@10.24.0"
+  "packageManager": "pnpm@10.25.0",
+  "engines": {
+    "node": "^24"
+  }
 }

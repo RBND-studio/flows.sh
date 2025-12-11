@@ -1,4 +1,4 @@
-FROM node:22-alpine AS base
+FROM node:24-alpine AS base
 
 FROM base AS builder
 RUN apk add --no-cache libc6-compat
@@ -48,7 +48,9 @@ COPY --chown=node:node --from=prod-installer /app/apps/${APP}/node_modules ./app
 COPY --chown=node:node --from=prod-installer /app/node_modules ./node_modules
 COPY --chown=node:node --from=prod-installer /app/package.json ./package.json
 COPY --chown=node:node --from=installer /app/apps/${APP}/dist ./apps/${APP}/dist
-COPY ./apps/${APP}/.env ./apps/${APP}/.env
+COPY --chown=node:node ./apps/${APP}/.env ./apps/${APP}/.env
+
+USER node
 
 WORKDIR /app/apps/${APP}
 CMD ["node", "dist/main.js"]
