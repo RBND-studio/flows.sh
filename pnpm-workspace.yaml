@@ -1,3 +1,22 @@
 packages:
   - "apps/*"
   - "packages/*"
+
+onlyBuiltDependencies:
+  - "@confluentinc/kafka-javascript"
+  - "@nestjs/core"
+  - "@scarf/scarf"
+  - "@swc/core"
+  - "bcrypt"
+  - "bufferutil"
+  - "cypress"
+  - "esbuild"
+  - "nestjs-pino"
+  - "protobufjs"
+  - "sharp"
+  - "unrs-resolver"
+
+engineStrict: true
+
+overrides:
+  "@auth/core@0.41.0": "@auth/core@0.41.1"

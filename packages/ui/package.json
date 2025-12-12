@@ -28,8 +28,8 @@
     "cmdk": "^1.1.1",
     "icons": "workspace:*",
     "merge-refs": "^2.0.0",
-    "react": "19.2.1",
-    "react-dom": "19.2.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
     "sonner": "^2.0.5"
   },
   "devDependencies": {

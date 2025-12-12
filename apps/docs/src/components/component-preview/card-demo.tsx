@@ -1,17 +1,20 @@
 import { BasicsV2Card as Card } from "@flows/react-components";
 import { BasicsV2Card as TourCard } from "@flows/react-components/tour";
-import { type JSX } from "react";
+import { useFirstRender } from "hooks/use-first-render";
+import { type FC } from "react";
 
 type Props = {
   tour?: boolean;
 };
 
-export const CardDemo = ({ tour = false }: Props): JSX.Element => {
+export const CardDemo: FC<Props> = ({ tour = false }) => {
   const CardComponent = tour ? TourCard : Card;
 
   const handleAction = async (): Promise<void> => {
     return Promise.resolve();
   };
+
+  if (useFirstRender()) return null;
 
   return (
     <CardComponent
