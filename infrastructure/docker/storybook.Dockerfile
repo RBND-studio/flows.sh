@@ -1,4 +1,4 @@
-FROM node:22-alpine AS base
+FROM node:24-alpine AS base
 
 FROM base AS builder
 WORKDIR /app
@@ -25,6 +25,6 @@ RUN pnpm install --frozen-lockfile
 
 RUN pnpm turbo run build --filter=ui
 
-FROM nginx:alpine AS runner
+FROM bitnami/nginx:latest AS runner
 
-COPY --from=installer /app/packages/ui/storybook-static /usr/share/nginx/html
+COPY --chown=1001:1001 --from=installer /app/packages/ui/storybook-static /usr/share/nginx/html
