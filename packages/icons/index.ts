@@ -1,6 +1,7 @@
 export * from "./src/action16";
 export * from "./src/addon16";
 export * from "./src/alert16";
+export * from "./src/angular16";
 export * from "./src/angular32";
 export * from "./src/appcues-full20";
 export * from "./src/appcues20";
