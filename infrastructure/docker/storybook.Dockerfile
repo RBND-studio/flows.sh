@@ -25,6 +25,6 @@ RUN pnpm install --frozen-lockfile
 
 RUN pnpm turbo run build --filter=ui
 
-FROM bitnami/nginx:latest AS runner
+FROM nginx:alpine AS runner
 
-COPY --chown=1001:1001 --from=installer /app/packages/ui/storybook-static /usr/share/nginx/html
+COPY --from=installer /app/packages/ui/storybook-static /usr/share/nginx/html
