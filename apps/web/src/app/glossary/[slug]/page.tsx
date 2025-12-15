@@ -2,7 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { ArrowLeft16 } from "icons";
 import { getWebMetadata } from "lib/get-metadata";
-import { importGlossaryPost } from "lib/mdx";
+import { importGlossaryPost, scanGlossaryFiles } from "lib/mdx";
 import { type Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -30,6 +30,15 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
     description: post.description,
     openGraphType: "article",
     pageCategory: "Product Adoption Glossary",
+  });
+}
+
+export async function generateStaticParams(): Promise<Params[]> {
+  const glossaryFiles = await scanGlossaryFiles();
+
+  return glossaryFiles.map((filename) => {
+    const slug = filename.split(".")[0];
+    return { slug };
   });
 }
 
