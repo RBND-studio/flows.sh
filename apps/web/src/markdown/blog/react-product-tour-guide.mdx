@@ -3,7 +3,7 @@ title: How to build a product tour in React
 description: A complete guide to building a product tour in React. Learn how to create tooltips, modals, onboarding flows, track user progress, and ship tours faster using Flows.
 date: "2025-12-09"
 author: "Vojtech Vidra"
-image: /images/blog/react-product-tour-guide/cover.png
+image: /images/blog/product-tour-guide/cover.png
 imageAlt: Tooltip example for a product tour in a React application
 ---
 
@@ -23,7 +23,7 @@ A product tour is a guided in-app experience that helps users understand your pr
 These onboarding patterns help users learn how to use your product without needing direct human support.
 
 <Image
-  src="/images/blog/react-product-tour-guide/tour-example.png"
+  src="/images/blog/product-tour-guide/tour-example.png"
   alt="An example of a product tour modal in an application"
   width={1800}
   height={1040}
@@ -72,7 +72,7 @@ Tour content includes text, labels, images, and links. If your product changes f
 Many teams prefer letting non-engineering roles manage this content to avoid unnecessary interruptions and deployments.
 
 <Image
-  src="/images/blog/react-product-tour-guide/content-management.png"
+  src="/images/blog/product-tour-guide/content-management.png"
   alt="Screenshot of the content management settings in Flows"
   width={1800}
   height={1040}
@@ -89,7 +89,7 @@ To achieve all of this in-house, you will need to create API endpoints, a new da
 Without proper state management, users may see the same tour repeatedly, lose their progress, or never see the tour at all.
 
 <Image
-  src="/images/blog/react-product-tour-guide/user-state.png"
+  src="/images/blog/product-tour-guide/user-state.png"
   alt="Screenshot of the user state tracking in Flows"
   width={1800}
   height={1040}
@@ -114,7 +114,7 @@ Your product team will likely want to track the performance of each tour. For ex
 To achieve this, you will need to create an integration into your existing analytics stack or build something from scratch.
 
 <Image
-  src="/images/blog/react-product-tour-guide/analytics.png"
+  src="/images/blog/product-tour-guide/analytics.png"
   alt="Screenshot of tour analytics in Flows"
   width={1800}
   height={1187}
@@ -132,7 +132,7 @@ As you introduce more tours, targeting the right users becomes essential. For ex
 And again, most of these filters will be defined by non-engineering teammates who manage the product experience, and they’ll want to control them without needing developer involvement or deployments.
 
 <Image
-  src="/images/blog/react-product-tour-guide/user-properties.png"
+  src="/images/blog/product-tour-guide/user-properties.png"
   alt="Screenshot of the user properties settings in Flows"
   width={1800}
   height={1040}
@@ -163,8 +163,8 @@ In the Flows dashboard, start building your tour by creating a workflow that wil
 To edit each step, click them in the Steps section and fill out their properties. You can update the title, body text, buttons, and other options that control how the components look and behave. If you are a visual learner, follow the video below:
 
 <VideoPlayer
-  src="/videos/react-product-tour-guide/create-workflow.mp4"
-  ariaLabel="Product tour guide video"
+  src="/videos/product-tour-guide/create-workflow.mp4"
+  ariaLabel="Creating a product tour workflow in Flows"
 />
 
 ### Step 3: Preview and test your tour
@@ -172,7 +172,7 @@ To edit each step, click them in the Steps section and fill out their properties
 After adding all your steps, the tour is ready for a preview. To preview the tour, create a testing environment called `stage` by going to **Settings > Environments**. Then change the `environment` prop in `<FlowsProvider>` to match the newly created environment.
 
 <Image
-  src="/images/blog/react-product-tour-guide/environments.png"
+  src="/images/blog/product-tour-guide/environments.png"
   alt="Screenshot of the environments settings in Flows"
   width={1800}
   height={1040}
@@ -181,7 +181,7 @@ After adding all your steps, the tour is ready for a preview. To preview the tou
 Back in Flows, publish the workflow by clicking **Publish** in the top right corner and selecting stage in the environments list.
 
 <Image
-  src="/images/blog/react-product-tour-guide/publish.png"
+  src="/images/blog/product-tour-guide/publish.png"
   alt="Screenshot of the publish dialog in Flows"
   width={1800}
   height={1040}
@@ -194,6 +194,11 @@ Now, when you start your React app, you should see the first step of the tour (i
 Once you are happy with how your product tour looks and feels, you can publish it to your users. To do that, you first need to deploy the updated React app with `<FlowsProvider>` (don't forget to change the environment prop back to `production`).
 
 When that is live, you can again hit Publish in the workflow and choose the production environment this time. Since this is going into production, make sure to select the right frequency in the publish dialog (you can leave the migration option as is, this option is useful when republishing a workflow to let Flows know how to migrate the active users into the new version).
+
+<VideoPlayer
+  src="/videos/product-tour-guide/tour-preview.mp4"
+  ariaLabel="Preview of the product tour in a React application"
+/>
 
 ---
 
