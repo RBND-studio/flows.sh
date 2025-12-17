@@ -4,7 +4,7 @@ import { ModeToggle } from "./theme-toggle";
 
 export const ExampleControls = () => {
   return (
-    <div className="fixed bottom-3 left-3 flex justify-between gap-2">
+    <div className="absolute bottom-3 left-3 flex justify-between gap-2">
       <ModeToggle />
       <Button
         className="shadow-sm"

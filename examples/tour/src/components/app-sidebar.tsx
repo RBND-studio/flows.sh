@@ -105,7 +105,7 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar className="h-svh" {...props}>
+    <Sidebar className="h-full" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>

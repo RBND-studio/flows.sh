@@ -19,8 +19,8 @@ export const AnnouncementModal = ({ apply }: Props) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-neutral-900/50 dark:bg-neutral-950/80">
-      <div className="fixed inset-0 z-10 grid place-items-center overflow-auto p-4">
+    <div className="absolute inset-0 bg-neutral-900/50 dark:bg-neutral-950/80">
+      <div className="absolute inset-0 z-10 grid place-items-center overflow-auto p-4">
         <div className="max-w-[480px] rounded-md border bg-card p-4 shadow-lg">
           <SkeletonIllustration />
           <ToggleGroup

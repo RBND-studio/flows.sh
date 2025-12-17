@@ -6,6 +6,7 @@ import { ModeToggle } from "./theme-toggle";
 import { ToggleGroup, ToggleGroupItem } from "../ui/toggle-group";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEmbedParam } from "./example-info";
 
 const options = [
   { value: "sidebar", label: "Sidebar", href: "/" },
@@ -14,10 +15,12 @@ const options = [
 ];
 
 export const ExampleControls = () => {
+  const embed = useEmbedParam();
+
   const pathName = usePathname();
 
   return (
-    <div className="fixed bottom-3 left-0 right-0 flex gap-2 px-2 md:left-1/2 md:right-auto md:translate-x-[-50%]">
+    <div className="absolute bottom-3 left-0 right-0 flex gap-2 px-2 md:left-1/2 md:right-auto md:translate-x-[-50%]">
       <ToggleGroup
         value={options.find((option) => option.href === pathName)?.value}
         type="single"
@@ -26,7 +29,7 @@ export const ExampleControls = () => {
       >
         {options.map((option) => (
           <ToggleGroupItem key={option.value} value={option.value} asChild>
-            <Link href={option.href}>{option.label}</Link>
+            <Link href={embed ? `${option.href}?embed=true` : option.href}>{option.label}</Link>
           </ToggleGroupItem>
         ))}
       </ToggleGroup>

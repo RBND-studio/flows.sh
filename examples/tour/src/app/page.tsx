@@ -5,8 +5,8 @@ import { FlowsSlot } from "@flows/react";
 
 export default function Page() {
   return (
-    <div className="[--header-height:calc(theme(spacing.14))]">
-      <SidebarProvider className="flex flex-col">
+    <div className="h-full [--header-height:calc(theme(spacing.14))]">
+      <SidebarProvider className="flex h-full flex-col">
         <div className="flex flex-1">
           <AppSidebar />
           <SidebarInset>

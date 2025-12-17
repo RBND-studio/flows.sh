@@ -6,6 +6,7 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible";
 import { ChecklistItemProps, ItemActionProps } from "./checklist-types";
+import { useEmbedParam } from "../providers/example-info";
 
 export const ChecklistItem = ({
   title,
@@ -93,6 +94,10 @@ const ItemAction = ({
   buttonVariant,
   completed,
 }: ItemActionProps) => {
+  // Add embed param to buttonUrl if it exists (only needed for the example app)
+  const embed = useEmbedParam();
+  const embedButtonUrl = embed ? `${buttonUrl}?embed=true` : buttonUrl;
+
   // Check if the memory is manual
   const isManualMemory = completed.triggers.some((trigger) => trigger.type === "manual");
 
@@ -108,7 +113,7 @@ const ItemAction = ({
 
   const renderButton = () => (
     <Button size="sm" variant={buttonVariant} onClick={handleButtonClick} asChild={!!buttonUrl}>
-      {buttonUrl ? <Link href={buttonUrl}>{buttonLabel}</Link> : buttonLabel}
+      {buttonUrl && embedButtonUrl ? <Link href={embedButtonUrl}>{buttonLabel}</Link> : buttonLabel}
     </Button>
   );
 

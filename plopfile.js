@@ -67,9 +67,15 @@ module.exports = function (plop) {
         // layout.tsx
         {
           type: "modify",
-          path: `${destinationPath}//src/app/layout.tsx`,
+          path: `${destinationPath}/src/app/layout.tsx`,
           pattern: /(-- PLOP TITLE HERE --)/gi,
           template: `${data.name}`,
+        },
+        {
+          type: "modify",
+          path: `${destinationPath}/src/app/layout.tsx`,
+          pattern: /(-- PLOP EXAMPLE SLUG HERE --)/gi,
+          template: `${exampleSlug}`,
         },
         // providers.tsx
         {

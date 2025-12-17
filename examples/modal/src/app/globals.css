@@ -67,6 +67,11 @@ body {
   }
 }
 
+/* Override to clip the modal overlay */
+.flows_basicsV2_modal_overlay {
+  position: absolute !important;
+}
+
 @layer base {
   * {
     @apply border-border;

@@ -1,5 +1,6 @@
 import { ComponentProps } from "@flows/react";
 import Link from "next/link";
+import { useEmbedParam } from "./providers/example-info";
 
 type Props = ComponentProps<{
   title: string;
@@ -11,10 +12,13 @@ type Props = ComponentProps<{
 }>;
 
 export const NewFeatureCard = (props: Props) => {
+  const embed = useEmbedParam();
+  const updateHref = embed ? `${props.href}?embed=true` : props.href;
+
   return (
     <div className="background-gradient rounded-[9px] p-[1px] transition-all hover:scale-[1.02]">
       <Link
-        href={props.href}
+        href={updateHref}
         className="flex flex-row-reverse gap-0.5 rounded-lg border bg-white shadow-md transition-all hover:shadow-lg dark:bg-neutral-900 md:flex-col"
         onClick={() => props.continue()}
       >

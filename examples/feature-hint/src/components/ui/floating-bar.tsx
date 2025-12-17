@@ -3,7 +3,7 @@ import { Button } from "./button";
 
 export const FloatingBar = () => {
   return (
-    <div className="fixed bottom-4 left-1/2 z-50 flex -translate-x-1/2 items-center gap-2 rounded-lg border bg-white p-2 shadow-md dark:bg-neutral-900">
+    <div className="absolute bottom-4 left-1/2 z-50 flex -translate-x-1/2 items-center gap-2 rounded-lg border bg-white p-2 shadow-md dark:bg-neutral-900">
       <Button size="icon" variant="ghost">
         <MousePointer2 size={16} />
       </Button>
