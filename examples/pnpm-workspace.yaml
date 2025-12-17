@@ -1,4 +1,6 @@
-# Workspace file to ignore the `examples` folder in the root pnpm-lock
-
 packages:
-  - "*"
+  - '*'
+
+onlyBuiltDependencies:
+  - sharp
+  - unrs-resolver

@@ -5,7 +5,7 @@ import Link from "next/link";
 export const Sidebar = () => {
   return (
     <div className="flex-shrink-0 md:w-40">
-      <div className="fixed top-0 flex w-full flex-col gap-2 pt-3 md:h-full md:max-w-40 md:flex-1">
+      <div className="absolute top-0 flex w-full flex-col gap-2 pt-3 md:h-full md:max-w-40 md:flex-1">
         <div
           className="flex h-full flex-col gap-4 overflow-auto"
           style={{ scrollbarWidth: "none" }}

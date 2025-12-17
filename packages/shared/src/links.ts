@@ -38,7 +38,6 @@ export const links = (domain = "flows.sh") =>
     examples: {
       card: "https://card.examples.flows.sh",
       cardSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/card",
-      cardPage: `https://${domain}/examples/card`,
       tour: "https://tour.examples.flows.sh",
       tourSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/tour",
       hint: "https://hint.examples.flows.sh",
@@ -63,7 +62,6 @@ export const links = (domain = "flows.sh") =>
       floatingChecklist: "https://floating-checklist.examples.flows.sh",
       floatingChecklistSource:
         "https://github.com/RBND-studio/flows.sh/tree/main/examples/floating-checklist",
-      floatinChecklistPage: `https://${domain}/examples/floating-checklist`,
       featureHint: "https://feature-hint.examples.flows.sh",
       featureHintSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/feature-hint",
       productHuntLaunchAnnouncement: "https://product-hunt-launch-announcement.examples.flows.sh",

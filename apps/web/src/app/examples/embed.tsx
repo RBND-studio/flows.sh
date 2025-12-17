@@ -9,6 +9,7 @@ export type EmbedProps = {
 };
 
 export const Embed: FC<EmbedProps> = ({ src, title }) => {
+  const srcWithParams = `${src}?embed=true`;
   return (
     <Section maxWidth="1024px!">
       <Flex
@@ -61,7 +62,7 @@ export const Embed: FC<EmbedProps> = ({ src, title }) => {
           </Flex>
           <Box width={44} />
         </Flex>
-        <iframe title={title} src={src} width="100%" height={520} />
+        <iframe title={title} src={srcWithParams} width="100%" height={520} />
       </Flex>
     </Section>
   );

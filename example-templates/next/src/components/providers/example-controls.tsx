@@ -2,8 +2,12 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import { ModeToggle } from "./theme-toggle";
 import { resetAllWorkflowsProgress } from "@flows/react";
+import { useEmbedParam } from "./example-info";
 
 export const ExampleControls = () => {
+  const embed = useEmbedParam();
+  const resetUrl = embed ? "/?embed=true" : "/";
+
   return (
     <>
       <ModeToggle className="fixed left-3 top-3" />
@@ -14,7 +18,7 @@ export const ExampleControls = () => {
         size="sm"
         asChild
       >
-        <Link href="/">Reset demo</Link>
+        <Link href={resetUrl}>Reset demo</Link>
       </Button>
     </>
   );

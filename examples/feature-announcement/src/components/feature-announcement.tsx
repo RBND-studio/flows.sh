@@ -46,7 +46,7 @@ export const FeatureAnnouncement = ({ mainTitle, steps, close }: Props) => {
 
   return (
     // Dialog
-    <div className="fixed inset-0 z-50 flex animate-[fadeIn_160ms_ease-in-out] items-center justify-center bg-black/50 backdrop-blur-sm">
+    <div className="absolute inset-0 z-50 flex animate-[fadeIn_160ms_ease-in-out] items-center justify-center bg-black/50 backdrop-blur-sm">
       <div className="mx-4 max-w-lg animate-[fadeInScale_320ms_ease-in-out] rounded-lg bg-white dark:bg-neutral-900">
         <div className="flex items-center justify-between gap-4 p-5">
           {currentStepIndex !== 0 ? (

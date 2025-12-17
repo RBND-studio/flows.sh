@@ -47,7 +47,7 @@ export const GettingStarted = (props: Props) => {
           </div>
         </button>
         <button
-          className="relative h-full flex-1 rounded-lg bg-gradient-to-r from-fuchsia-600 to-pink-600 text-left transition-transform duration-200 hover:scale-[1.02]"
+          className="relative hidden h-full flex-1 rounded-lg bg-gradient-to-r from-fuchsia-600 to-pink-600 text-left transition-transform duration-200 hover:scale-[1.02] md:block"
           onClick={() => toast.warning("You found our most useless button. Congratulations.")}
         >
           <div className="absolute bottom-0 z-10 w-full p-3">

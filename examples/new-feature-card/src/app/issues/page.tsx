@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { BackLink } from "./back-link";
 
 export default function Issues() {
   return (
@@ -10,9 +10,7 @@ export default function Issues() {
           The announcement card in the sidebar is closed when user clicks on it and is navigated to
           this page.
         </p>
-        <Link className="underline" href="/">
-          Go back to Home
-        </Link>
+        <BackLink />
       </div>
     </>
   );

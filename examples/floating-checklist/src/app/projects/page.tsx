@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { BackLink } from "./back-link";
 
 export default function Projects() {
   return (
@@ -8,9 +8,7 @@ export default function Projects() {
         <p className="mb-4 text-center text-muted-foreground">
           The item is marked as completed when you clicked on the button.
         </p>
-        <Link className="underline" href="/">
-          Go back to Home
-        </Link>
+        <BackLink />
       </div>
     </>
   );

@@ -3,8 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
+import { useEmbedParam } from "./providers/example-info";
 
 export const Navigation = () => {
+  const embed = useEmbedParam();
+  const homeUrl = embed ? "/?embed=true" : "/";
+  const analyticsUrl = embed ? "/analytics?embed=true" : "/analytics";
+  const expensesUrl = embed ? "/expenses?embed=true" : "/expenses";
+
   return (
     <nav className="py-4">
       <div className="flex items-center justify-between">
@@ -12,9 +18,9 @@ export const Navigation = () => {
           <p className="text-xl font-semibold">Fin-app</p>
         </div>
         <div className="flex items-center gap-4">
-          <NavItem href="/">Apps</NavItem>
-          <NavItem href="/analytics">Analytics</NavItem>
-          <NavItem href="/expenses">Expenses</NavItem>
+          <NavItem href={homeUrl}>Apps</NavItem>
+          <NavItem href={analyticsUrl}>Analytics</NavItem>
+          <NavItem href={expensesUrl}>Expenses</NavItem>
         </div>
       </div>
     </nav>
@@ -22,7 +28,8 @@ export const Navigation = () => {
 };
 
 const NavItem = ({ href, children }: { href: string; children: ReactNode }) => {
-  const isActive = usePathname() === href;
+  const filteredHref = href.replace("?embed=true", "");
+  const isActive = usePathname() === filteredHref;
   return (
     <Link
       href={href}

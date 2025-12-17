@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "./providers";
+import { ExampleInfo } from "@/components/providers/example-info";
 
 export const metadata: Metadata = {
   title: "Tour example application – Flows",
   description: "Guide users along their journey through your product.",
+  alternates: {
+    canonical: "https://flows.sh/examples/tour",
+  },
 };
 
 export default function RootLayout({
@@ -15,7 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased">
-        <Providers>{children}</Providers>
+        <ExampleInfo
+          title="Tour example"
+          exampleUrl="https://flows.sh/examples/tour"
+          repoUrl="https://github.com/RBND-studio/flows.sh/tree/main/examples/tour"
+        >
+          <Providers>{children}</Providers>
+        </ExampleInfo>
       </body>
     </html>
   );
