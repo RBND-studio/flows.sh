@@ -91,6 +91,7 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
   const params = await props.params;
   const page = source.getPage(params.slug);
   if (!page) notFound();
+  const isHomePage = page.url === "/";
 
   return {
     metadataBase: new URL(`https://${DOMAIN}/docs`),
@@ -129,7 +130,8 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
       creator: "@flows_sh",
     },
     alternates: {
-      canonical: "./",
+      // For some reason "./" adds a trailing slash to the /docs homepage URL, so we use "." there
+      canonical: isHomePage ? "." : "./",
     },
     keywords: ["flows", "onboarding", "product adoption", "user onboarding", "user adoption"],
     robots: PRODUCTION ? undefined : "noindex,nofollow",

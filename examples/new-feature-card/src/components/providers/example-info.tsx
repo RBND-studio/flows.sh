@@ -30,7 +30,7 @@ export const ExampleInfo = ({ title, exampleUrl, repoUrl, children }: Props) => 
             <Logo className="h-5" />
           </a>
           <div className="hidden h-4 w-[1px] bg-muted-foreground sm:block" />
-          <p className="hidden text-sm sm:block">{title}</p>
+          <h1 className="hidden text-sm sm:block">{title}</h1>
         </div>
         <div className="flex gap-1">
           <Button label="Learn more" link={exampleUrl} />
