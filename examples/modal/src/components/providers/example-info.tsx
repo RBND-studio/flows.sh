@@ -1,7 +1,6 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
-import { JSX, SVGProps } from "react";
+import { createContext, JSX, SVGProps, use } from "react";
 
 type Props = {
   title: string;
@@ -11,19 +10,17 @@ type Props = {
   children?: React.ReactNode;
 };
 
+const ExampleContext = createContext<boolean>(false);
+
 export const useEmbedParam = (): boolean => {
-  const searchParams = useSearchParams();
-  return searchParams.get("embed") === "true";
+  const exampleContext = use(ExampleContext);
+  return !exampleContext;
 };
 
 // Internal component to show example info header and wrapper
 export const ExampleInfo = ({ title, exampleUrl, repoUrl, children }: Props) => {
-  const embed = useEmbedParam();
-
-  if (embed) return <div className="h-screen">{children}</div>;
-
   return (
-    <>
+    <ExampleContext.Provider value={true}>
       <div className="flex items-center justify-between gap-2 px-6 py-4 sm:px-10">
         <div className="flex items-center gap-2">
           <a href="https://flows.sh/" target="_blank" rel="noopener" aria-label="Flows logo">
@@ -40,7 +37,7 @@ export const ExampleInfo = ({ title, exampleUrl, repoUrl, children }: Props) => 
       <div className="h-[calc(100vh-62px)] px-6 pb-6 sm:px-10 sm:pb-10">
         <div className="relative h-full overflow-hidden rounded-md border">{children}</div>
       </div>
-    </>
+    </ExampleContext.Provider>
   );
 };
 

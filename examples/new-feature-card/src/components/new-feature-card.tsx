@@ -13,7 +13,7 @@ type Props = ComponentProps<{
 
 export const NewFeatureCard = (props: Props) => {
   const embed = useEmbedParam();
-  const updateHref = embed ? `${props.href}?embed=true` : props.href;
+  const updateHref = embed ? `/embed${props.href}` : props.href;
 
   return (
     <div className="background-gradient rounded-[9px] p-[1px] transition-all hover:scale-[1.02]">

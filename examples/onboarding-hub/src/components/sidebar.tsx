@@ -1,8 +1,12 @@
+"use client";
+
+import { useEmbedParam } from "@/components/providers/example-info";
 import { routes } from "@/lib/routes";
 import { FlowsSlot } from "@flows/react";
 import Link from "next/link";
 
 export const Sidebar = () => {
+  const embed = useEmbedParam();
   return (
     <div className="flex-shrink-0 md:w-40">
       <div className="absolute top-0 flex w-full flex-col gap-2 pt-3 md:h-full md:max-w-40 md:flex-1">
@@ -10,7 +14,7 @@ export const Sidebar = () => {
           className="flex h-full flex-col gap-4 overflow-auto"
           style={{ scrollbarWidth: "none" }}
         >
-          <Link href={routes.home} className="flex items-center gap-2">
+          <Link href={routes.home(embed)} className="flex items-center gap-2">
             <div className="h-6 w-6 shrink-0 rounded-sm bg-neutral-600 dark:bg-neutral-300" />
             <p className="text-md font-semibold">IssueApp</p>
           </Link>

@@ -19,19 +19,28 @@ export const ExampleControls = () => {
 
   const pathName = usePathname();
 
+  const currentOption = options.find((option) => {
+    if (option.href === "/") return embed ? pathName === "/embed" : pathName === "/";
+
+    const optionHref = embed ? `/embed${option.href}` : option.href;
+    return optionHref === pathName;
+  });
+
   return (
     <div className="absolute bottom-3 left-0 right-0 flex gap-2 px-2 md:left-1/2 md:right-auto md:translate-x-[-50%]">
       <ToggleGroup
-        value={options.find((option) => option.href === pathName)?.value}
+        value={currentOption?.value}
         type="single"
         size="sm"
         className="overflow-hidden rounded-md border bg-card p-0.5"
       >
-        {options.map((option) => (
-          <ToggleGroupItem key={option.value} value={option.value} asChild>
-            <Link href={embed ? `${option.href}?embed=true` : option.href}>{option.label}</Link>
-          </ToggleGroupItem>
-        ))}
+        {options.map((option) => {
+          return (
+            <ToggleGroupItem key={option.value} value={option.value} asChild>
+              <Link href={embed ? `/embed${option.href}` : option.href}>{option.label}</Link>
+            </ToggleGroupItem>
+          );
+        })}
       </ToggleGroup>
       <ModeToggle />
       <Button

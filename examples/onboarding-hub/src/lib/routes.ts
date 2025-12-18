@@ -1,4 +1,4 @@
 export const routes = {
-  home: "/",
-  gettingStarted: (embed = false) => (embed ? "/getting-started?embed=true" : "/getting-started"),
+  home: (embed = false) => (embed ? "/embed" : "/"),
+  gettingStarted: (embed = false) => (embed ? "/embed/getting-started" : "/getting-started"),
 };
