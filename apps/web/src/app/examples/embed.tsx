@@ -9,7 +9,7 @@ export type EmbedProps = {
 };
 
 export const Embed: FC<EmbedProps> = ({ src, title }) => {
-  const srcWithParams = `${src}?embed=true`;
+  const srcWithParams = `${src}/embed`;
   return (
     <Section maxWidth="1024px!">
       <Flex

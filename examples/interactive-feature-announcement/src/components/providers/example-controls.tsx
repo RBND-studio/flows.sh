@@ -5,7 +5,7 @@ import { useEmbedParam } from "./example-info";
 
 export const ExampleControls = () => {
   const embed = useEmbedParam();
-  const resetUrl = embed ? "/?embed=true" : "/";
+  const resetUrl = embed ? "/embed" : "/";
 
   return (
     <Button

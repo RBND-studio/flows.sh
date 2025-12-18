@@ -29,23 +29,19 @@ export const Providers: FC<Props> = ({ children }) => {
 
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-      {userId ? (
-        <FlowsProvider
-          // Replace with your organizationId
-          organizationId="df8c5b97-5c1a-4cba-a1e8-ab9b348c9330"
-          environment="production"
-          userId={userId}
-          components={{ ...components, GettingStarted }}
-          tourComponents={{ ...tourComponents }}
-          userProperties={{
-            example: "getting-started-dashboard",
-          }}
-        >
-          {content}
-        </FlowsProvider>
-      ) : (
-        content
-      )}
+      <FlowsProvider
+        // Replace with your organizationId
+        organizationId="df8c5b97-5c1a-4cba-a1e8-ab9b348c9330"
+        environment="production"
+        userId={userId ?? null}
+        components={{ ...components, GettingStarted }}
+        tourComponents={{ ...tourComponents }}
+        userProperties={{
+          example: "getting-started-dashboard",
+        }}
+      >
+        {content}
+      </FlowsProvider>
     </ThemeProvider>
   );
 };

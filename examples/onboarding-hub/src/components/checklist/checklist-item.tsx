@@ -96,7 +96,7 @@ const ItemAction = ({
 }: ItemActionProps) => {
   // Add embed param to buttonUrl if it exists (only needed for the example app)
   const embed = useEmbedParam();
-  const embedButtonUrl = embed ? `${buttonUrl}?embed=true` : buttonUrl;
+  const embedButtonUrl = embed ? `/embed${buttonUrl}` : buttonUrl;
 
   // Check if the memory is manual
   const isManualMemory = completed.triggers.some((trigger) => trigger.type === "manual");

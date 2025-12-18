@@ -7,9 +7,9 @@ import { useEmbedParam } from "./providers/example-info";
 
 export const Navigation = () => {
   const embed = useEmbedParam();
-  const homeUrl = embed ? "/?embed=true" : "/";
-  const analyticsUrl = embed ? "/analytics?embed=true" : "/analytics";
-  const expensesUrl = embed ? "/expenses?embed=true" : "/expenses";
+  const homeUrl = embed ? "/embed" : "/";
+  const analyticsUrl = embed ? "/embed/analytics" : "/analytics";
+  const expensesUrl = embed ? "/embed/expenses" : "/expenses";
 
   return (
     <nav className="py-4">

@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Providers } from "./providers";
-import { ExampleInfo } from "@/components/providers/example-info";
 
 export const metadata: Metadata = {
   title: "Tour example application – Flows",
@@ -18,15 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="antialiased">
-        <ExampleInfo
-          title="Tour example"
-          exampleUrl="https://flows.sh/examples/tour"
-          repoUrl="https://github.com/RBND-studio/flows.sh/tree/main/examples/tour"
-        >
-          <Providers>{children}</Providers>
-        </ExampleInfo>
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

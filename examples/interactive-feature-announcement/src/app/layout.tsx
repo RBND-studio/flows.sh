@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Providers } from "./providers";
-import { ExampleInfo } from "@/components/providers/example-info";
 
 export const metadata: Metadata = {
   title: "Interactive feature announcement",
@@ -18,17 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="antialiased">
-        <ExampleInfo
-          title="Interactive feature announcement example"
-          exampleUrl="https://flows.sh/examples/interactive-feature-announcement"
-          repoUrl="https://github.com/RBND-studio/flows.sh/tree/main/examples/interactive-feature-announcement"
-        >
-          <div className="mx-auto max-w-3xl px-6 py-8">
-            <Providers>{children}</Providers>
-          </div>
-        </ExampleInfo>
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
