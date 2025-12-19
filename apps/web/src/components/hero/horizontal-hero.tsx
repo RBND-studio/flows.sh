@@ -51,7 +51,7 @@ export const HorizontalHero = ({
         >
           <Text
             as="h1"
-            variant="title4xl"
+            variant="title3xl"
             animation="topSlideIn 0.6s ease-out"
             textAlign={{ base: "center", md: "left" }}
           >
@@ -73,7 +73,6 @@ export const HorizontalHero = ({
 
           {actions ? (
             <Flex
-              gap="space12"
               width="100%"
               opacity={0}
               animation="topSlideIn 0.6s ease-out"

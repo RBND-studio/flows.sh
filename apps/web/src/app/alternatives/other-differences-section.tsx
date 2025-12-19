@@ -3,7 +3,7 @@ import { NewLine, Section, SectionIntro } from "components/ui";
 import { Fragment, type ReactNode } from "react";
 import { Text } from "ui";
 
-type Props = {
+export type OtherDifferencesSectionType = {
   differences: {
     title: string;
     competitorDescription: string;
@@ -11,7 +11,9 @@ type Props = {
   }[];
 };
 
-export const OtherDifferencesSection = ({ differences }: Props): ReactNode => {
+export const OtherDifferencesSection = ({
+  differences,
+}: OtherDifferencesSectionType): ReactNode => {
   return (
     <>
       <SectionIntro title="Other differences" />
