@@ -17,9 +17,13 @@ const processor = remark()
   .use(remarkGfm);
 
 export async function getLLMText(page: InferPageType<typeof source>): Promise<string> {
+  const absolutePath = page.absolutePath;
+  // The absolutePath should always be defined
+  if (!absolutePath) throw new Error("Absolute path not defined");
+
   const processed = await processor.process({
-    path: page.absolutePath,
-    value: await fs.readFile(validatePath(page.absolutePath)),
+    path: absolutePath,
+    value: await fs.readFile(validatePath(absolutePath)),
   });
 
   const pageUrl = `https://${DOMAIN}/docs${page.url}`;

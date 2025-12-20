@@ -5,7 +5,7 @@
     "baseUrl": "src",
     "paths": {
       "@flows/styled-system/*": ["../pandacss-generated/*"],
-      "@/.source": ["../.source"]
+      "fumadocs-mdx:collections/*": ["../.source/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

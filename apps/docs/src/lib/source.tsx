@@ -1,12 +1,12 @@
 import { loader } from "fumadocs-core/source";
+import { toFumadocsSource } from "fumadocs-mdx/runtime/server";
+import { docs } from "fumadocs-mdx:collections/server";
 import * as icons from "icons";
 import { Icon } from "ui";
 
-import { docs } from "@/.source";
-
 export const source = loader({
   baseUrl: "/",
-  source: docs.toFumadocsSource(),
+  source: toFumadocsSource(docs.docs, []),
   icon(icon) {
     if (!icon) return;
     if (icon in icons) return <Icon icon={icons[icon]} />;
