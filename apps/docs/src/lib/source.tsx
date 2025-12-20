@@ -6,7 +6,7 @@ import { Icon } from "ui";
 
 export const source = loader({
   baseUrl: "/",
-  source: toFumadocsSource(docs.docs, []),
+  source: toFumadocsSource(docs.docs, docs.meta),
   icon(icon) {
     if (!icon) return;
     if (icon in icons) return <Icon icon={icons[icon]} />;
