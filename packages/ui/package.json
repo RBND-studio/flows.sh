@@ -34,19 +34,20 @@
   },
   "devDependencies": {
     "@pandacss/dev": "1.7.1",
-    "@storybook/addon-docs": "^9.1.8",
-    "@storybook/addon-links": "^9.1.8",
-    "@storybook/cli": "^9.1.8",
-    "@storybook/react-vite": "^9.1.8",
+    "@storybook/addon-docs": "^10.1.10",
+    "@storybook/addon-links": "^10.1.10",
+    "@storybook/cli": "^10.1.10",
+    "@storybook/react-vite": "^10.1.10",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.1",
-    "@vueless/storybook-dark-mode": "^9.0.8",
+    "@vitejs/plugin-react": "^5.1.2",
+    "@vueless/storybook-dark-mode": "^10.0.4",
     "eslint-config-custom": "workspace:*",
-    "storybook": "^9.1.17",
+    "storybook": "^10.1.10",
     "tsconfig": "workspace:*",
     "typescript": "5.9.3",
-    "vite": "^7.2.6",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite": "^7.3.0",
+    "vite-tsconfig-paths": "^6.0.3",
+    "eslint-plugin-storybook": "^10.1.10"
   }
 }
