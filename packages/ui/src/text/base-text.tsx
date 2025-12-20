@@ -11,10 +11,6 @@ export type TextProps = HTMLAttributes<HTMLParagraphElement> &
      */
     variant?: (typeof textVariants.variantMap.variant)[number];
     /**
-     * @defaultValue "p"
-     */
-    as?: (typeof textVariants.variantMap.as)[number];
-    /**
      * @defaultValue "black"
      */
     color?: SystemStyleObject["color"];
@@ -30,7 +26,6 @@ export type TextProps = HTMLAttributes<HTMLParagraphElement> &
 
 export const BaseText = forwardRef<HTMLParagraphElement, TextProps>(function BaseText(
   {
-    as = "p",
     color,
     variant = "bodyS",
     align = "left",
@@ -42,7 +37,7 @@ export const BaseText = forwardRef<HTMLParagraphElement, TextProps>(function Bas
   },
   ref,
 ) {
-  const Component = asChild ? Slot : styled[as];
+  const Component = asChild ? Slot : styled.p;
 
   return (
     <Component
@@ -63,16 +58,6 @@ export const BaseText = forwardRef<HTMLParagraphElement, TextProps>(function Bas
 
 const textVariants = cva({
   variants: {
-    as: {
-      h1: {},
-      h2: {},
-      h3: {},
-      h4: {},
-      h5: {},
-      h6: {},
-      p: {},
-      span: {},
-    },
     weight: {
       "400": {},
       "500": {

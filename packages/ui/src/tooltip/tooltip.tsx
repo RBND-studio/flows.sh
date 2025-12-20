@@ -118,8 +118,9 @@ export const Tooltip = forwardRef<HTMLButtonElement, TooltipProps>(function Tool
           asChild
           onClick={onClick}
           className={css({
-            borderBottom: hasUnderline ? "2px dotted" : undefined,
-            borderColor: hasUnderline ? "newBorder.neutral.strong" : undefined,
+            borderBottomWidth: hasUnderline ? "2px" : undefined,
+            borderBottomStyle: hasUnderline ? "dotted" : undefined,
+            borderBottomColor: hasUnderline ? "newBorder.neutral.strong" : undefined,
           })}
           ref={ref}
           {...props}

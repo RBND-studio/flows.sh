@@ -15,9 +15,9 @@
   },
   "dependencies": {
     "@flows/react-components": "2.2.0",
-    "fumadocs-core": "16.0.11",
-    "fumadocs-mdx": "13.0.8",
-    "fumadocs-ui": "16.0.11",
+    "fumadocs-core": "16.3.1",
+    "fumadocs-mdx": "14.1.1",
+    "fumadocs-ui": "16.3.1",
     "icons": "workspace:*",
     "next": "16.0.10",
     "react": "19.2.3",
@@ -27,12 +27,12 @@
     "remark-mdx": "^3.1.1",
     "shared": "workspace:*",
     "sharp": "^0.34.5",
-    "shiki": "^3.15.0",
+    "shiki": "^3.20.0",
     "ui": "workspace:*"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "16.0.10",
-    "@pandacss/dev": "0.53.0",
+    "@pandacss/dev": "1.7.1",
     "@types/mdx": "^2.0.13",
     "@types/node": "^22.15.18",
     "@types/react": "^19.2.7",
