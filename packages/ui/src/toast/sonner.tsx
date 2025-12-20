@@ -15,7 +15,9 @@ export const Toaster: FC = () => {
             borderRadius: "radius8",
             py: "space12",
             px: "space16",
-            border: "1px solid",
+            borderWidth: "1px",
+            borderStyle: "solid",
+            borderColor: "newBorder.neutral",
             textStyle: "bodyS",
             display: "flex",
             gap: "space8",
@@ -26,7 +28,6 @@ export const Toaster: FC = () => {
             },
             backgroundColor: "pane.bg.elevated",
             color: "newFg.neutral",
-            borderColor: "newBorder.neutral",
           }),
           title: css({
             textStyle: "bodyS!",

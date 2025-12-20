@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "16.0.10",
-    "@pandacss/dev": "0.53.0",
+    "@pandacss/dev": "1.7.1",
     "@types/mdx": "^2.0.13",
     "@types/node": "^22.15.18",
     "@types/react": "^19.2.7",
