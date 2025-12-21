@@ -33,6 +33,7 @@ export const routes = {
     userflow: "/alternatives/userflow",
     walkme: "/alternatives/walkme",
     usetiful: "/alternatives/usetiful",
+    userpilot: "/alternatives/userpilot",
   },
 
   examples: "/examples",

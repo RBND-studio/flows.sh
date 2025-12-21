@@ -94,6 +94,8 @@ export * from "./src/upgrade16";
 export * from "./src/user16";
 export * from "./src/userflow-full20";
 export * from "./src/userflow20";
+export * from "./src/userpilot-full20";
+export * from "./src/userpilot20";
 export * from "./src/usetiful-full20";
 export * from "./src/usetiful20";
 export * from "./src/versioning16";
