@@ -61,6 +61,7 @@ export * from "./src/moon16";
 export * from "./src/next-js16";
 export * from "./src/next-js32";
 export * from "./src/number16";
+export * from "./src/nuxt16";
 export * from "./src/nuxt32";
 export * from "./src/organization16";
 export * from "./src/paintbrush16";
