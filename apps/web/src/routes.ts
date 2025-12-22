@@ -34,6 +34,7 @@ export const routes = {
     walkme: "/alternatives/walkme",
     usetiful: "/alternatives/usetiful",
     userpilot: "/alternatives/userpilot",
+    introjs: "/alternatives/introjs",
   },
 
   examples: "/examples",

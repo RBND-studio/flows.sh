@@ -139,6 +139,10 @@ const footerGroups: FooterGroup[] = [
         title: "Userpilot",
         href: routes.alternatives.userpilot,
       },
+      {
+        title: "Intro.js",
+        href: routes.alternatives.introjs,
+      },
     ],
   },
   {

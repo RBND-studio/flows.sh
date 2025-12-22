@@ -1,5 +1,6 @@
 import { appcuesContent } from "./content/appcues";
 import { chameleonContent } from "./content/chameleon";
+import { introjsContent } from "./content/introjs";
 import { userflowContent } from "./content/userflow";
 import { userpilotContent } from "./content/userpilot";
 import { usetifulContent } from "./content/usetiful";
@@ -13,4 +14,5 @@ export const alternativesContent: AlternativeContentType[] = [
   usetifulContent,
   walkmeContent,
   userpilotContent,
+  introjsContent,
 ];

@@ -46,6 +46,8 @@ export * from "./src/hat16";
 export * from "./src/hint16";
 export * from "./src/home16";
 export * from "./src/info16";
+export * from "./src/introjs-full20";
+export * from "./src/introjs20";
 export * from "./src/javascript16";
 export * from "./src/kebab-horizontal16";
 export * from "./src/language16";
