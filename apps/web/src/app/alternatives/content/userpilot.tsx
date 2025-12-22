@@ -1,21 +1,21 @@
 import { css } from "@flows/styled-system/css";
-import { WalkMe20, WalkMeFull20 } from "icons";
+import { Userpilot20, UserpilotFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
 
-export const walkmeContent: AlternativeContentType = {
-  slug: "walkme",
-  seoTitle: "WalkMe alternative",
-  title: "The modern and affordable WalkMe alternative",
+export const userpilotContent: AlternativeContentType = {
+  slug: "userpilot",
+  seoTitle: "Userpilot alternative",
+  title: "The modern and affordable Userpilot alternative",
   description:
-    "Flows is the WalkMe alternative for modern companies who want to build better product adoption at a fraction of the price.",
+    "Flows is the Userpilot alternative for modern product teams who want deeper customization, better developer experience, and transparent pricing.",
   competitor: {
-    name: "WalkMe",
-    squareLogo: <WalkMe20 role="img" aria-label="WalkMe logo" />,
+    name: "Userpilot",
+    squareLogo: <Userpilot20 role="img" aria-label="Userpilot logo" />,
     fullLogo: (
-      <WalkMeFull20
+      <UserpilotFull20
         role="img"
-        aria-label="WalkMe logo"
+        aria-label="Userpilot logo"
         className={css({
           height: "28px",
           width: "auto",
@@ -25,11 +25,11 @@ export const walkmeContent: AlternativeContentType = {
   },
   summary: {
     competitorContent:
-      "WalkMe is a well-known digital adoption platform, primarily focused on large enterprises. While it offers a range of features including in-app guidance, analytics, and user segmentation, this complexity can be overwhelming for many users. WalkMe’s focus on enterprise results in non-transparent pricing and requiring a demo to even get started, leaving many teams to start looking for WalkMe alternatives.",
+      "Userpilot is a product adoption platform focused on no-code onboarding patterns such as tooltips, modals, and checklists. It works well for basic onboarding use cases, but teams often run into limitations around customization, developer workflows, and building more complex, product-native experiences. As needs grow, pricing and plan tiers can also become a constraint.",
     flowsContent:
-      "Flows is a modern alternative to WalkMe, crafted with care by a team that prioritizes control and transparency. With Flows you get the power to create product adoption experiences that live within your product and are fully customizable for a fraction of the price. Flows is designed for the modern product team, offering a headless CMS like experience that both developers and non-technical users will love.",
+      "Flows is a modern alternative to Userpilot built for teams who want to own their user experience. With Flows, workflows live inside your product and can be built using your own UI components and logic. It combines the flexibility of code with a headless CMS-like experience that works for product managers, designers, and developers alike.",
   },
-  comparisonTitle: "Flows vs WalkMe: Key differences",
+  comparisonTitle: "Flows vs Userpilot: Key differences",
   comparisons: [
     {
       title: "Onboarding basics",
@@ -50,7 +50,7 @@ export const walkmeContent: AlternativeContentType = {
       competitor: false,
       flows: true,
       description:
-        "Flows offers a free plan with 250 monthly active users no strings attached. WalkMe does not have a free plan or public pricing.",
+        "Flows offers a free plan with 250 monthly active users no strings attached. Userpilot offers only a 14-day free trial.",
     },
     {
       title: "Custom components",
@@ -61,9 +61,10 @@ export const walkmeContent: AlternativeContentType = {
     },
     {
       title: "Localization",
-      competitor: true,
+      competitor: "On higher plans",
       flows: true,
-      description: "Both services support localization, allowing you to serve a global audience.",
+      description:
+        "Flows supports localization out of the box. Userpilot requires higher-tier plans.",
     },
     {
       title: "Resilient against ad blockers",
@@ -77,7 +78,7 @@ export const walkmeContent: AlternativeContentType = {
       competitor: false,
       flows: true,
       description:
-        "Flows offers transparent usage-based pricing with no hidden fees, while WalkMe requires a demo to get started and does not provide public pricing.",
+        "Flows offers transparent usage-based pricing with no hidden fees, while Userpilot lists only their cheapest plan publicly.",
     },
     {
       title: "Developer experience",
@@ -91,35 +92,35 @@ export const walkmeContent: AlternativeContentType = {
     {
       title: "Own the user experience",
       competitorDescription:
-        "With WalkMe you are forced to use their templates, limiting the experience you can build and making it obvious that the components aren’t part of your product. The components are not the same as the ones used in your product, they don’t fully match your brand, and just feel off. Every time your UI or design system changes, you have to manually update WalkMe components to stay in sync.",
+        "Userpilot relies on predefined UI patterns that can feel generic and disconnected from the rest of the product. Customization is mostly limited to styling.",
       flowsDescription:
         "Flows meets you where you are. You can use your own UI components and technologies, giving you the full flexibility of code to build relevant, contextual workflows that fit your product, meet your quality bar, and don’t get in the way.",
     },
     {
       title: "Built for developers",
       competitorDescription:
-        "WalkMe focuses on providing a no-code solution for non-technical users, but this often comes at the cost of developer experience. Their platform can be hard to integrate with modern tech stacks and inflexible when it comes to customization.",
+        "Userpilot is designed mainly as a no-code tool, which can make deeper integrations and advanced customization difficult.",
       flowsDescription:
         "Developers aren’t an afterthought in Flows, they are first-class users. We focus on the details that make building with Flows a joy: versioning, environments, APIs, and great documentation, to name a few.",
     },
     {
       title: "Customer support",
       competitorDescription:
-        "While WalkMe offers a variety of support options you pay for these in their hefty platform fees.",
+        "While Userpilot offers a variety of support options you pay for these in their hefty platform fees.",
       flowsDescription:
         "Flows is a small company built and run by a team that cares deeply about your success. Whether you’re on the free plan or a paid one, you get fast, thoughtful support directly from the people building the product.",
     },
     {
       title: "Pricing",
       competitorDescription:
-        "WalkMe doesn’t list prices publicly and requires you to book a demo just to find out if it fits your budget. Their pricing model is built for large enterprises and can include charges per seat, per flow, or even per feature, making it unpredictable and often expensive.",
+        "Userpilot lists only their cheapest plan publicly and requires you to book a demo just to find out if it fits your budget. Their pricing model is built for large enterprises and can include charges per seat, per flow, or even per feature, making it unpredictable and often expensive.",
       flowsDescription:
         "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
     },
   ],
   ctaBanner: {
-    title: "Switch from WalkMe to Flows today",
+    title: "Switch from Userpilot to Flows today",
     description:
-      "Build better product adoption experiences at a fraction of the price. Start migrating your flows from WalkMe to Flows.",
+      "Build better product adoption experiences at a fraction of the price. Start migrating your flows from Userpilot to Flows.",
   },
 };
