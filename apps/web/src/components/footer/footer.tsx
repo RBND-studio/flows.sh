@@ -143,6 +143,14 @@ const footerGroups: FooterGroup[] = [
         title: "Intro.js",
         href: routes.alternatives.introjs,
       },
+      {
+        title: "Driver.js",
+        href: routes.alternatives.driverjs,
+      },
+      {
+        title: "Shepherd.js",
+        href: routes.alternatives.shepherdjs,
+      },
     ],
   },
   {

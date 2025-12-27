@@ -35,6 +35,8 @@ export const routes = {
     usetiful: "/alternatives/usetiful",
     userpilot: "/alternatives/userpilot",
     introjs: "/alternatives/introjs",
+    driverjs: "/alternatives/driverjs",
+    shepherdjs: "/alternatives/shepherdjs",
   },
 
   examples: "/examples",
