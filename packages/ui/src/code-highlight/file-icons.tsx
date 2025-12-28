@@ -30,6 +30,8 @@ export const fileIcons: Extension = {
           return "html";
         case "vue":
           return "vue";
+        case "svelte":
+          return "svelte";
         default:
       }
     })();

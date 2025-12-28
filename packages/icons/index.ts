@@ -91,6 +91,8 @@ export * from "./src/star16";
 export * from "./src/start16";
 export * from "./src/string16";
 export * from "./src/sun16";
+export * from "./src/svelte16";
+export * from "./src/svelte32";
 export * from "./src/system16";
 export * from "./src/tooltip16";
 export * from "./src/tour16";

@@ -1,15 +1,15 @@
 ---
-title: How to build a product tour in Vue (Nuxt & Vite Guide)
-description: A complete guide to building a product tour in Vue (Nuxt or Vite). Learn how to create tooltips, modals, onboarding flows, track user progress, and ship tours faster with Flows.
-date: "2025-12-22"
+title: How to build a product tour in Svelte (SvelteKit & Vite Guide)
+description: A complete guide to building a product tour in Svelte. Learn how to create tooltips, modals, onboarding flows, track user progress, and ship tours faster using Flows.
+date: "2025-12-29"
 author: "Vojtech Vidra"
 image: /images/blog/product-tour-guide/cover.png
-imageAlt: Tooltip example for a product tour in a Vue application
+imageAlt: Tooltip example for a product tour in a Svelte application
 ---
 
 import { VideoPlayer } from "components/blog";
 
-In this guide, you’ll learn how to build a product tour (also known as user onboarding flow or a product adoption guide) in your Vue application. Whether you’re using Nuxt, Vite, or another Vue setup, this tutorial will walk you through everything you need to know.
+In this guide, you’ll learn how to build a product tour (also known as user onboarding flow or a product adoption guide) in your Svelte application. Whether you’re using SvelteKit, Vite, or another Svelte setup, this tutorial will walk you through everything you need to know.
 
 ## What are product tours?
 
@@ -24,7 +24,7 @@ These onboarding patterns help users learn how to use your product without needi
 
 <Image
   src="/images/blog/product-tour-guide/tour-example.png"
-  alt="An example of a product tour modal in a Vue application"
+  alt="An example of a product tour modal in an application"
   width={1800}
   height={1040}
 />
@@ -58,17 +58,17 @@ Once you add all these requirements, building a complete solution in-house becom
 
 ### UI elements
 
-In Vue, you have several options to create the UI for product tours. You can use dedicated packages like `vue-tour`, `vuejs-tour`, `v-onboarding`, `shepherd.js`, `intro.js`, or `driver.js`, or use the components already in your design system (e.g. Dialog or Popover from `primevue`).
+In Svelte, you have several options to create the UI for product tours. You can use dedicated packages like `flowbite-svelte`, `shepherd.js`, `intro.js`, or `driver.js`, or use the components already in your design system (e.g. Dialog or Popover from `shadcn-svelte`).
 
 These options can help you build the tour UI quickly, but keep in mind that they don't solve the other critical parts of real onboarding flows, like content management, user targeting, analytics, or state tracking.
 
-#### Product tours in Vue vs Nuxt
+#### Product tours in Svelte vs SvelteKit
 
-If you're using Nuxt, product tours introduce a few extra considerations, such as client-only rendering and hydration timing. Tour steps that rely on DOM elements should only run after the page is fully mounted on the client.
+If you’re using SvelteKit, product tours require a bit of extra care around client-side rendering. Tour steps that depend on DOM elements should only run in the browser, after the page has mounted.
 
-With Flows, this complexity is handled for you, tours automatically wait for the relevant elements to exist before rendering, whether you're using Vue with Vite or Nuxt with SSR enabled.
+With Flows, this is handled automatically, tours wait for the relevant elements to exist before rendering, whether you’re using Svelte with Vite or SvelteKit with SSR enabled.
 
-### Managing product tour content
+### Content management
 
 Tour content includes text, labels, images, and links. If your product changes frequently, your tour will need updates too. To manage the content, you have two choices:
 
@@ -88,7 +88,7 @@ Many teams prefer letting non-engineering roles manage this content to avoid unn
 
 For tours to work properly, you need at least to track if a user has seen (or completed) a tour to prevent showing it to them every time they log in. When tours span multiple screens and take more than a few steps, it’s also good to remember the user’s progress so the tour can resume if they come back or reload the page.
 
-You might be tempted to store user state in the browser’s local storage, but for any Vue app where users sign in (especially if they may use multiple devices) the state should be stored in your database instead.
+You might be tempted to store user state in the browser’s local storage, but for any Svelte app where users sign in (especially if they may use multiple devices) the state should be stored in your database instead.
 
 To achieve all of this in-house, you will need to create API endpoints, a new database table (or column) to store the user state, and logic to decide when each tour should appear.
 
@@ -148,13 +148,13 @@ And again, most of these filters will be defined by non-engineering teammates wh
 
 Everything described above (UI, targeting, user state, analytics, environments, content, segmentation, and even extras) can be solved with Flows in a fraction of the time.
 
-Plus, for UI elements, you don't need to use our built-in components (even though we think they are really good). You can bring your own Vue components directly from your design system. This gives you complete control to implement tours that meet your UI and UX requirements.
+Plus, for UI elements, you don't need to use our built-in components (even though we think they are really good). You can bring your own Svelte components directly from your design system. This gives you complete control to implement tours that meet your UI and UX requirements.
 
 We built a fully customizable product adoption platform so you don't need to. Here’s how to use it to build your tour.
 
 ### Step 1: Installation
 
-Sign up for [Flows](https://app.flows.sh/signup) and create an organization. Then install the NPM package and follow our [quick installation guide](/docs/frameworks/nuxt) to integrate `init()` into your Vue app (or view our [Vue template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/vue/nuxt)). Once you have that set up, return here to continue.
+Sign up for [Flows](https://app.flows.sh/signup) and create an organization. Then install the NPM package and follow our [quick installation guide](/docs/frameworks/svelte) to get set up (or view our [Svelte template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/svelte)). When you have the `init()` integrated into your app, come back here.
 
 ### Step 2: Create your tour workflow
 
@@ -170,12 +170,12 @@ To edit each step, click them in the Steps section and fill out their properties
 
 <VideoPlayer
   src="/videos/product-tour-guide/create-workflow.mp4"
-  ariaLabel="Creating a Vue product tour workflow in Flows"
+  ariaLabel="Creating a product tour workflow in Flows"
 />
 
 ### Step 3: Preview and test your tour
 
-Once your steps are added, it’s time to test the tour. Set up a staging environment in **Settings > Environments**, then update the `environment` prop in `init()` to match the staging environment name.
+After adding all your steps, the tour is ready for a preview. To preview the tour, create a testing environment called `stage` by going to **Settings > Environments**. Then change the `environment` prop in `init()` to match the newly created environment.
 
 <Image
   src="/images/blog/product-tour-guide/environments.png"
@@ -193,22 +193,21 @@ Back in Flows, publish the workflow by clicking **Publish** in the top right cor
   height={1040}
 />
 
-Now, when you start your Vue app, you should see the first step of the tour (it is possible that you will need to reload the page if you already had the app running before changing the environments). If you have any issues, you can debug by looking into the browser console or by using our SDK’s [debug mode](/docs/sdk-overview#debug-mode).
+Now, when you start your Svelte app, you should see the first step of the tour (it is possible that you will need to reload the page if you already had the app running before changing the environments). If you have any issues, you can debug by looking into the browser console or by using our SDK’s [debug mode](/docs/sdk-overview#debug-mode).
 
 ### Step 4: Publish to production
 
-When you’re happy with the tour, deploy your Vue app with the `init()` integration and switch the `environment` prop back to `production`.
-
+Once you are happy with how your product tour looks and feels, you can publish it to your users. To do that, you first need to deploy the updated Svelte app with `init()` (don't forget to change the environment prop back to `production`).
 When that is live, you can again hit Publish in the workflow and choose the production environment this time. Since this is going into production, make sure to select the right frequency in the publish dialog (you can leave the migration option as is, this option is useful when republishing a workflow to let Flows know how to migrate the active users into the new version).
 
 <VideoPlayer
   src="/videos/product-tour-guide/tour-preview.mp4"
-  ariaLabel="Preview of the product tour in a Vue application"
+  ariaLabel="Preview of the product tour in a Svelte application"
 />
 
 ---
 
-That’s it, you’ve successfully built a complete tour in Vue using Flows.
+That’s it, you’ve successfully built a complete tour in Svelte using Flows.
 
 Instead of building UI, state management, targeting, analytics, environments, and content tools yourself, Flows handles all of it. So you can focus on building your product, not maintaining onboarding infrastructure.
 
@@ -220,4 +219,4 @@ If you're building product tours in a different framework, check out our other g
 
 - [How to build a product tour in React](/blog/react-product-tour-guide)
 - [How to build a product tour in Angular](/blog/angular-product-tour-guide)
-- [How to build a product tour in Svelte](/blog/svelte-product-tour-guide)
+- [How to build a product tour in Vue](/blog/vue-product-tour-guide)
