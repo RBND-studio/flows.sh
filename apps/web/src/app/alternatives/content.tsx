@@ -1,6 +1,8 @@
 import { appcuesContent } from "./content/appcues";
 import { chameleonContent } from "./content/chameleon";
+import { driverjsContent } from "./content/driverjs";
 import { introjsContent } from "./content/introjs";
+import { shepherdContent } from "./content/shepherdjs";
 import { userflowContent } from "./content/userflow";
 import { userpilotContent } from "./content/userpilot";
 import { usetifulContent } from "./content/usetiful";
@@ -15,4 +17,6 @@ export const alternativesContent: AlternativeContentType[] = [
   walkmeContent,
   userpilotContent,
   introjsContent,
+  driverjsContent,
+  shepherdContent,
 ];

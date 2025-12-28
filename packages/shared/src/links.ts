@@ -34,6 +34,7 @@ export const links = (domain = "flows.sh") =>
       nextTemplate: `https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/next`,
       nuxtTemplate: "https://github.com/RBND-studio/flows-sdk/tree/main/examples/vue/nuxt",
       angularTemplate: "https://github.com/RBND-studio/flows-sdk/tree/main/examples/angular",
+      svelteTemplate: "https://github.com/RBND-studio/flows-sdk/tree/main/examples/svelte",
     },
     examples: {
       card: "https://card.examples.flows.sh",
