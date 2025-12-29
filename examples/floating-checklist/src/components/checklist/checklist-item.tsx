@@ -2,20 +2,24 @@
 
 import { Check, ChevronDown, Circle } from "lucide-react";
 import { useEffect, useState } from "react";
-import { Button } from "../ui/button";
-import Link from "next/link";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible";
-import { ChecklistItemProps, ItemActionProps } from "./checklist-types";
-import { useEmbedParam } from "../providers/example-info";
+import { Action, StateMemory } from "@flows/react";
+import { ActionButton } from "./action-button";
+
+export type ChecklistItemProps = {
+  title: string;
+  description: string;
+  primaryButton: Action;
+  secondaryButton: Action;
+  completed: StateMemory;
+};
 
 export const ChecklistItem = ({
   title,
   description,
+  primaryButton,
+  secondaryButton,
   completed,
-  buttonLabel,
-  buttonOnClick,
-  buttonUrl,
-  buttonVariant,
 }: ChecklistItemProps) => {
   const [expanded, setExpanded] = useState(false);
   const handleSkip = () => {
@@ -51,20 +55,20 @@ export const ChecklistItem = ({
           />
         </button>
       </CollapsibleTrigger>
+
       <CollapsibleContent className="CollapsibleContent">
         <div className="px-3 pb-3">
           <p className="text-sm text-muted-foreground">{description}</p>
-          <div className="mt-2 flex items-center gap-2">
-            <ItemAction
-              buttonLabel={buttonLabel}
-              buttonOnClick={buttonOnClick}
-              buttonUrl={buttonUrl}
-              buttonVariant={buttonVariant}
-              completed={completed}
-            />
+
+          <div className="mt-2 flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <ActionButton variant="primary" completed={completed} {...primaryButton} />
+              <ActionButton variant="secondary" {...secondaryButton} />
+            </div>
+
             {!completed.value && (
               <button
-                className="w-full text-right text-sm text-muted-foreground hover:underline"
+                className="text-right text-sm text-muted-foreground hover:underline"
                 onClick={handleSkip}
               >
                 Skip step
@@ -85,38 +89,4 @@ const StatusIcon = ({ finished }: { finished: boolean }) => {
   ) : (
     <Circle size={16} className="flex-shrink-0 text-muted-foreground group-hover:text-foreground" />
   );
-};
-
-const ItemAction = ({
-  buttonLabel,
-  buttonOnClick,
-  buttonUrl,
-  buttonVariant,
-  completed,
-}: ItemActionProps) => {
-  // Add embed param to buttonUrl if it exists (only needed for the example app)
-  const embed = useEmbedParam();
-  const embedButtonUrl = embed ? `/embed${buttonUrl}` : buttonUrl;
-
-  // Check if the memory is manual
-  const isManualMemory = completed.triggers.some((trigger) => trigger.type === "manual");
-
-  // When the button is clicked, set the memory to true if it's manual otherwise call the onClick handler
-  const handleButtonClick = () => {
-    if (isManualMemory) {
-      completed.setValue(true);
-    }
-    if (buttonOnClick) {
-      buttonOnClick();
-    }
-  };
-
-  const renderButton = () => (
-    <Button size="sm" variant={buttonVariant} onClick={handleButtonClick} asChild={!!buttonUrl}>
-      {buttonUrl && embedButtonUrl ? <Link href={embedButtonUrl}>{buttonLabel}</Link> : buttonLabel}
-    </Button>
-  );
-
-  // Render the button if there's an action URL or onClick handler, otherwise return null
-  return buttonUrl || buttonOnClick ? renderButton() : null;
 };

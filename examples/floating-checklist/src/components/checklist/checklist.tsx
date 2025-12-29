@@ -4,16 +4,29 @@ import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Button } from "../ui/button";
 import { Rocket, X } from "lucide-react";
 import { Progress } from "../ui/progress";
-import { ChecklistItem } from "./checklist-item";
+import { ChecklistItem, ChecklistItemProps } from "./checklist-item";
 import { PopoverClose } from "@radix-ui/react-popover";
 import { useState } from "react";
-import { ChecklistProps } from "./checklist-types";
+import { Action, ComponentProps, StateMemory } from "@flows/react";
+
+type ChecklistProps = ComponentProps<{
+  widgetTitle: string;
+
+  popupTitle: string;
+  popupDescription: string;
+  items: ChecklistItemProps[];
+
+  complete: () => void;
+  close: () => void;
+}>;
 
 export const Checklist = ({
-  items,
   widgetTitle,
+
   popupTitle,
   popupDescription,
+  items,
+
   complete,
   close,
 }: ChecklistProps) => {
@@ -33,6 +46,7 @@ export const Checklist = ({
 
   return (
     <Popover open={open}>
+      {/* Widget used to open the checklist popup */}
       <PopoverTrigger asChild>
         <Button
           onClick={() => setOpen(!open)}
@@ -43,6 +57,7 @@ export const Checklist = ({
           {widgetTitle}
         </Button>
       </PopoverTrigger>
+      {/* Checklist popup */}
       <PopoverContent
         onOpenAutoFocus={(e) => e.preventDefault()}
         className="w-80"
@@ -67,9 +82,11 @@ export const Checklist = ({
               <Progress value={progress} />
             </div>
           </div>
+
           {!allItemsCompleted ? (
             items.map((item, index) => <ChecklistItem key={index} {...item} />)
           ) : (
+            // Finish state when all steps are completed
             <div className="mt-3 flex flex-col items-center rounded-md border bg-muted px-3 py-6">
               <p className="font-semibold text-foreground">You’re all set!</p>
               <p className="mb-3 text-sm text-muted-foreground">
@@ -81,6 +98,7 @@ export const Checklist = ({
             </div>
           )}
         </div>
+
         {!allItemsCompleted && (
           <button
             className="mt-3 text-sm text-muted-foreground hover:underline"
