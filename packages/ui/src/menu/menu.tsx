@@ -14,6 +14,7 @@ type Props = {
   align?: ComponentProps<typeof PopoverContent>["align"];
   open?: boolean;
   onOpenAutoFocus?: (event: Event) => void;
+  onCloseAutoFocus?: (event: Event) => void;
   onOpenChange?: (open: boolean) => void;
 };
 
@@ -23,6 +24,7 @@ export const Menu: FC<Props> = ({
   align,
   open,
   onOpenAutoFocus,
+  onCloseAutoFocus,
   onOpenChange,
 }) => {
   return (
@@ -31,6 +33,7 @@ export const Menu: FC<Props> = ({
       <PopoverContent
         align={align ?? "start"}
         onOpenAutoFocus={onOpenAutoFocus}
+        onCloseAutoFocus={onCloseAutoFocus}
         className={css({ zIndex: 20 })}
       >
         <Flex

@@ -26,13 +26,12 @@ Below is a screenshot of how the workflow is set up:
      - Widget title
      - Popup title
      - Popup description
-     - Items: array
+     - Items (Array)
        - Title
        - Description
-       - Button label
-       - Navigate to page
-       - Start a block when clicked: block trigger
-       - Mark as completed: state memory
+       - Primary button (Action)
+       - Secondary button (Action)
+       - Mark as completed (State memory)
    - Exit nodes:
      - complete
      - close
