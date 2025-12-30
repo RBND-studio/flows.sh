@@ -1,5 +1,5 @@
 {
-  "name": "shared",
+  "name": "shared-backend",
   "version": "1.0.0",
   "main": "index.ts",
   "sideEffects": false,
@@ -8,12 +8,15 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "dayjs": "^1.11.19"
+    "drizzle-orm": "^0.45.0",
+    "es-toolkit": "^1.43.0",
+    "db": "workspace:*",
+    "shared": "workspace:*"
   },
   "devDependencies": {
+    "@flows/types": "workspace:*",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
-    "@flows/types": "workspace:*",
     "typescript": "5.9.3"
   }
 }

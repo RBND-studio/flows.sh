@@ -1,8 +1,5 @@
 {
   "extends": "tsconfig/base.json",
-  "compilerOptions": {
-    "lib": ["es2023", "dom", "DOM.Iterable"]
-  },
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"]
 }
