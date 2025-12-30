@@ -1,3 +1,5 @@
+import { type SDKBlock } from "./sdk";
+
 export type KafkaUserEventName =
   | "transition"
   | "tour-update"
@@ -26,6 +28,6 @@ export type KafkaUserStateUpdateEvent = {
   userId: string;
   environment: string;
   organizationId: string;
-  exitedBlockStateIds: string[];
-  updatedBlockStateIds: string[];
+  exitedBlockIds: string[];
+  updatedBlocks: SDKBlock[];
 };
