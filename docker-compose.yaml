@@ -2,3 +2,4 @@ include:
   - infrastructure/postgres/docker-compose.yaml
   - infrastructure/kafka/docker-compose.yaml
   - infrastructure/redis/docker-compose.yaml
+  - infrastructure/nginx-local/docker-compose.yaml
