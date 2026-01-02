@@ -20,4 +20,5 @@ onlyBuiltDependencies:
 
 overrides:
   "@auth/core@0.41.0": "@auth/core@0.41.1"
+  qs@<6.14.1: ">=6.14.1"
   systeminformation@<5.27.14: ">=5.27.14"
