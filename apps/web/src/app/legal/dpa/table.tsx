@@ -75,7 +75,7 @@ export const SubprocessorsTable = ({
               borderBottomColor: "newBorder.neutral",
             })}
           >
-            Location
+            Location of Processing
           </th>
         </tr>
       </thead>
