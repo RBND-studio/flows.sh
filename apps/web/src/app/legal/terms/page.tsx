@@ -21,18 +21,6 @@ const Page = (): ReactElement => {
         </Text>
       </Flex>
 
-      <Text className={paragraphCss} variant="bodyM" fontWeight="600">
-        We’re updating our Terms of Service, effective January 1, 2026. You can see the old version{" "}
-        <a
-          href="https://github.com/RBND-studio/flows.sh/blob/28c239dc379b0a1147b19e8be8479fdeb0d5b499/apps/web/src/app/legal/terms/page.tsx"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          here
-        </a>
-        .
-      </Text>
-
       <Text className={paragraphCss} variant="bodyM">
         Thank you for using Flows!
       </Text>
