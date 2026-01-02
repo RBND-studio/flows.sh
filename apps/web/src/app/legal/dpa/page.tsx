@@ -257,13 +257,12 @@ const Page = (): ReactElement => {
       </Text>
 
       <Text as="h2" className={headingCss} variant="titleXl">
-        7. International Data Transfers
+        7. International Transfers; Data Location
       </Text>
       <Text className={paragraphCss} variant="bodyM">
-        7.1. Customer appoints RBND to transfer Personal Data to the United States or any other
-        country in which RBND or its Subprocessors operate as specified hereunder, and to store and
-        Process Personal Data for Permitted Purpose, subject to the safeguards below and described
-        elsewhere in this DPA.
+        7.1. RBND primarily hosts Customer Personal Data in the European Economic Area (EEA).
+        Content delivery, DNS, email, support, or other ancillary services may involve limited
+        Processing outside the EEA by authorized Subprocessors.
       </Text>
       <Text className={paragraphCss} variant="bodyM">
         7.2. Where RBND engages in an onward transfer of Personal Data, RBND shall ensure that,
@@ -747,7 +746,7 @@ const Page = (): ReactElement => {
       <SubprocessorsTable subprocessors={subprocessors} />
 
       <Text className={paragraphCss} variant="bodyM">
-        Last updated: December 13, 2024
+        Last updated: January 2, 2026
       </Text>
     </Section>
   );
@@ -757,7 +756,12 @@ const subprocessors: Subprocessor[] = [
   {
     name: "DigitalOcean, LLC",
     purpose: "Infrastructure",
-    location: "US",
+    location: "EU",
+  },
+  {
+    name: "Hetzner Online GmbH",
+    purpose: "Infrastructure without access to Personal Data (e.g., Example Apps)",
+    location: "EU",
   },
   {
     name: "Lemon Squeezy, LLC",
@@ -781,8 +785,8 @@ const subprocessors: Subprocessor[] = [
   },
   {
     name: "Better Stack, Inc.",
-    purpose: "Log management and Service Monitoring",
-    location: "EU",
+    purpose: "Service Uptime Monitoring",
+    location: "US",
   },
 ];
 
