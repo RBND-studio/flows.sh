@@ -7,6 +7,7 @@ import type { ReactElement } from "react";
 import { routes } from "routes";
 import { Icon, Logo, Text } from "ui";
 
+import { StatusBadge } from "./status-badge";
 import { ThemeSwitch } from "./theme-switch";
 
 interface FooterGroup {
@@ -117,39 +118,31 @@ const footerGroups: FooterGroup[] = [
       },
       {
         title: "Appcues",
-        href: routes.alternatives.appcues,
+        href: routes.alternativeDetail("appcues"),
       },
       {
         title: "Chameleon",
-        href: routes.alternatives.chameleon,
+        href: routes.alternativeDetail("chameleon"),
       },
       {
         title: "Userflow",
-        href: routes.alternatives.userflow,
+        href: routes.alternativeDetail("userflow"),
       },
       {
         title: "WalkMe",
-        href: routes.alternatives.walkme,
+        href: routes.alternativeDetail("walkme"),
       },
       {
         title: "Usetiful",
-        href: routes.alternatives.usetiful,
-      },
-      {
-        title: "Userpilot",
-        href: routes.alternatives.userpilot,
-      },
-      {
-        title: "Intro.js",
-        href: routes.alternatives.introjs,
+        href: routes.alternativeDetail("usetiful"),
       },
       {
         title: "Driver.js",
-        href: routes.alternatives.driverjs,
+        href: routes.alternativeDetail("driverjs"),
       },
       {
-        title: "Shepherd.js",
-        href: routes.alternatives.shepherdjs,
+        title: "Others",
+        href: routes.alternatives,
       },
     ],
   },
@@ -216,6 +209,10 @@ export const Footer = (): ReactElement => {
           <Box display="inline-flex" alignItems="center" gap="space8" marginBottom="space24">
             <Logo type="type" size={20} />
           </Box>
+          <Text color="newFg.neutral.muted" mb="space12" maxWidth={260}>
+            The modern product adoption platform. Built in the 🇪🇺.
+          </Text>
+          <StatusBadge />
           <Box marginBottom="space40">
             <Flex gap="space12">
               {socialLinks.map((link) => {
