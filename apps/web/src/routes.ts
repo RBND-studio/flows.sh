@@ -27,17 +27,8 @@ export const routes = {
     revenueExpansion: "/solutions/revenue-expansion",
   },
 
-  alternatives: {
-    appcues: "/alternatives/appcues",
-    chameleon: "/alternatives/chameleon",
-    userflow: "/alternatives/userflow",
-    walkme: "/alternatives/walkme",
-    usetiful: "/alternatives/usetiful",
-    userpilot: "/alternatives/userpilot",
-    introjs: "/alternatives/introjs",
-    driverjs: "/alternatives/driverjs",
-    shepherdjs: "/alternatives/shepherdjs",
-  },
+  alternatives: "/alternatives",
+  alternativeDetail: (slug: string) => `/alternatives/${slug}` as Route,
 
   examples: "/examples",
   exampleDetail: (slug: string) => `/examples/${slug}` as Route,

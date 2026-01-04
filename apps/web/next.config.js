@@ -19,7 +19,7 @@ const cspHeader = `
     object-src 'none';
     base-uri 'self';
     form-action 'self';
-    frame-src https://*.examples.flows.sh${dev ? " http://localhost:3000" : ""};
+    frame-src https://*.examples.flows.sh${dev ? " http://localhost:3000" : ""} https://status.flows.sh/;
     frame-ancestors 'none';
     upgrade-insecure-requests;
 `;
