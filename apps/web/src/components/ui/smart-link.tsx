@@ -1,7 +1,7 @@
 import { css, cva, cx } from "@flows/styled-system/css";
 import { ExternalLink16 } from "icons";
 import { type Route } from "next";
-import Link from "next/link";
+import Link, { type LinkProps } from "next/link";
 import type { FC, ReactNode } from "react";
 
 type Props = {
@@ -10,9 +10,10 @@ type Props = {
   target?: string;
   color?: string;
   underline?: boolean;
+  prefetch?: LinkProps<Route>["prefetch"];
 };
 
-export const SmartLink: FC<Props> = ({ underline, ...props }) => {
+export const SmartLink: FC<Props> = ({ underline, prefetch, ...props }) => {
   if (props.href.startsWith("http"))
     return (
       <a
@@ -30,7 +31,7 @@ export const SmartLink: FC<Props> = ({ underline, ...props }) => {
       </a>
     );
 
-  return <Link {...props} href={props.href as Route} />;
+  return <Link {...props} prefetch={prefetch} href={props.href as Route} />;
 };
 
 const linkClassname = cva({

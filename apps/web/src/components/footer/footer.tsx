@@ -298,7 +298,7 @@ export const Footer = (): ReactElement => {
                   variant="bodyS"
                   color="newFg.neutral.muted"
                 >
-                  <SmartLink href={link.href} target={link.target}>
+                  <SmartLink prefetch={false} href={link.href} target={link.target}>
                     {link.title}
                   </SmartLink>
                 </Text>
