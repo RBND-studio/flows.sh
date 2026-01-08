@@ -2,6 +2,7 @@ import { appcuesContent } from "./content/appcues";
 import { chameleonContent } from "./content/chameleon";
 import { driverjsContent } from "./content/driverjs";
 import { introjsContent } from "./content/introjs";
+import { ngxUiTourContent } from "./content/ngx-ui-tour";
 import { onbordaContent } from "./content/onborda";
 import { reactJoyrideContent } from "./content/react-joyride";
 import { shepherdContent } from "./content/shepherdjs";
@@ -25,4 +26,5 @@ export const alternativesContent: AlternativeContentType[] = [
   reactJoyrideContent,
   vueTourContent,
   onbordaContent,
+  ngxUiTourContent,
 ];
