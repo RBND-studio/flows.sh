@@ -161,7 +161,9 @@ const CompanyEmblem = ({ name, logo }: { name: string; logo: ReactNode }): React
       >
         {logo}
       </Box>
-      <Text variant="titleM">{name}</Text>
+      <Text variant="titleM" whiteSpace="nowrap">
+        {name}
+      </Text>
     </Flex>
   );
 };
