@@ -6,7 +6,7 @@ import { type OtherDifferencesSectionType } from "./other-differences-section";
 export type AlternativeContentType = {
   slug: string;
   seoTitle: string;
-  title: string;
+  title: ReactNode;
   description: string;
   competitor: {
     name: string;
