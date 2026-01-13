@@ -53,7 +53,7 @@ export const floatingChecklistContent: ContentType = {
   readme: (
     <>
       <Paragraph>
-        This example showcases a custom floating checklist component that is displayed in the
+        This example showcases a built-in floating checklist component that is displayed in the
         bottom-right corner of the screen. The checklist provides users with suggested setup actions
         to help them get started with the application.
       </Paragraph>
@@ -141,14 +141,10 @@ export const floatingChecklistContent: ContentType = {
           <strong>Description</strong>
         </li>
         <li>
-          <strong>Button label</strong>
+          <strong>Primary button</strong>
         </li>
         <li>
-          <strong>Optional url to navigate to</strong> - navigates to a URL when the user clicks the
-          button
-        </li>
-        <li>
-          <strong>Optional block trigger</strong> - starts a block when the user clicks the button
+          <strong>Secondary button</strong>
         </li>
         <li>
           <strong>State memory</strong> - condition to mark the item as completed
@@ -225,43 +221,9 @@ export const floatingChecklistContent: ContentType = {
           Add your organization ID in the <InlineCode>providers.tsx</InlineCode> file.
         </li>
         <li>
-          Create a new component in your organization with the following configuration:
-          <UnorderedList>
-            <li>
-              <strong>UI component:</strong> Checklist
-            </li>
-            <li>
-              <strong>Slottable:</strong> false
-            </li>
-            <li>
-              <strong>Custom properties:</strong>
-              <UnorderedList>
-                <li>Widget title</li>
-                <li>Popup title</li>
-                <li>Popup description</li>
-                <li>
-                  <strong>Items: array</strong>
-                </li>
-                <UnorderedList>
-                  <li>Title</li>
-                  <li>Description</li>
-                  <li>Button label</li>
-                  <li>Navigate to page</li>
-                  <li>Start a block when clicked: block trigger</li>
-                  <li>Mark as completed: state memory</li>
-                </UnorderedList>
-              </UnorderedList>
-            </li>
-            <li>
-              <strong>Exit nodes:</strong>
-              <UnorderedList>
-                <li>complete</li>
-                <li>close</li>
-              </UnorderedList>
-            </li>
-          </UnorderedList>
+          Recreate the workflow using the **Floating Checklist** in your organization and publish
+          it.
         </li>
-        <li>Recreate the workflow in your organization and publish it.</li>
         <li>
           Run the development server with <InlineCode>pnpm dev</InlineCode>.
         </li>

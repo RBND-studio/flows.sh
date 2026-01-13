@@ -19,24 +19,8 @@ Below is a screenshot of how the workflow is set up:
 1. Sign up for Flows if you haven’t already. You can [create a free account here](https://app.flows.sh/signup).
 2. Clone the repository from GitHub and install the required dependencies in the project directory.
 3. Add your organization ID in the [`providers.tsx`](./src/app/providers.tsx) file.
-4. Create a new component in your organization with the following configuration:
-   - UI component: [Checklist](./src/components/checklist/checklist.tsx)
-   - Slottable: false
-   - Custom properties:
-     - Widget title
-     - Popup title
-     - Popup description
-     - Items (Array)
-       - Title
-       - Description
-       - Primary button (Action)
-       - Secondary button (Action)
-       - Mark as completed (State memory)
-   - Exit nodes:
-     - complete
-     - close
-5. Recreate the workflow in your organization and publish it.
-6. Run the development server with `pnpm dev`.
+4. Recreate the workflow using the **Floating Checklist** in your organization and publish it.
+5. Run the development server with `pnpm dev`.
 
 ## Learn more
 
