@@ -6,6 +6,7 @@ import { Flex } from "@flows/styled-system/jsx";
 import { type ReactNode } from "react";
 
 import { CardDemo } from "./card-demo";
+import { ChecklistDemo } from "./checklist-demo";
 import { HintDemo } from "./hint-demo";
 import { ModalDemo } from "./modal-demo";
 import { TooltipDemo } from "./tooltip-demo";
@@ -31,6 +32,7 @@ const components = {
   tourHint: <HintDemo tour />,
   card: <CardDemo />,
   tourCard: <CardDemo tour />,
+  checklist: <ChecklistDemo />,
 };
 
 export const ComponentPreview = ({ component = "tooltip" }: Props): ReactNode => {

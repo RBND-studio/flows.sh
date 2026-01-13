@@ -1,4 +1,4 @@
 {
   "title": "Basics V2",
-  "pages": ["overview", "tooltip", "modal", "hint", "card"]
+  "pages": ["overview", "tooltip", "modal", "hint", "card", "floating-checklist"]
 }
