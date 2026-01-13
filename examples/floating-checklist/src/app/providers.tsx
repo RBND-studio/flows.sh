@@ -11,7 +11,6 @@ import { FC, ReactNode } from "react";
 
 import "@flows/react-components/index.css";
 import { ExampleControls } from "@/components/providers/example-controls";
-import { Checklist } from "@/components/checklist/checklist";
 
 type Props = {
   children: ReactNode;
@@ -34,7 +33,7 @@ export const Providers: FC<Props> = ({ children }) => {
         organizationId="df8c5b97-5c1a-4cba-a1e8-ab9b348c9330"
         environment="production"
         userId={userId ?? null}
-        components={{ ...components, Checklist }}
+        components={{ ...components }}
         tourComponents={{ ...tourComponents }}
         userProperties={{
           example: "floating-checklist",
