@@ -15,7 +15,7 @@
     "check-links": "docker run --network host -v ./linkcheck-skip-urls.txt:/linkcheck-skip-urls.txt --rm tennox/linkcheck $URL --skip-file linkcheck-skip-urls.txt"
   },
   "dependencies": {
-    "@flows/react": "1.19.0",
+    "@flows/react": "1.19.3",
     "@mdx-js/loader": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
     "@next/bundle-analyzer": "16.1.1",
