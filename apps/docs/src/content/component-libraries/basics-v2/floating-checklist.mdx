@@ -21,7 +21,7 @@ To integrate the Checklist component into your application, follow the steps des
 
 ### Start a Tour with Checklist
 
-Checklist items can trigger actions that open other blocks or navigate users to specific pages in your application. To start a tour from a checklist item, assign a Tour block to the primary or secondary button action of the item. When user clicks the button, the Tour will start.
+Checklist items can trigger actions that open other blocks or navigate users to specific pages in your application. To start a tour from a checklist item, assign a Tour block to the primary or secondary button action of the item. When the user clicks the button, the Tour will start.
 
 ![Checklist starting a Tour](/components/floating-checklist/tour-trigger.png)
 
@@ -31,7 +31,7 @@ If you want the checklist item to be marked as completed only after the Tour fin
 
 ### Marking Items as completed
 
-By default, checklist items are marked as completed when the user clicks the primary button. For more advanced use cases, you can configure the `Mark as completed` property of each checklist item to be marked as completed when user exits a specific block in your workflow. This property uses the [State memory](/block-properties/state-memory) feature to determine when an item should be marked as completed.
+By default, checklist items are marked as completed when the user clicks the primary button. For more advanced use cases, you can configure the `Mark as completed` property of each checklist item to be marked as completed when the user exits a specific block in your workflow. This property uses the [State memory](/block-properties/state-memory) feature to determine when an item should be marked as completed.
 
 ![Checklist marking item as completed after Tour](/components/floating-checklist/tour-complete.png)
 
@@ -52,18 +52,19 @@ To see a full working example, check out the [Checklist example workflow](https:
 
 When using the Checklist component in a workflow, you can define the following properties:
 
-| Name                  | Type   | Notes                                                                                                                                                                                                                    |
-| --------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Widget title          | string | The title of the button that opens the checklist.                                                                                                                                                                        |
-| Popup title           | string | The title inside the checklist popup.                                                                                                                                                                                    |
-| Popup description     | string | The description inside the checklist popup.                                                                                                                                                                              |
-| Items                 | array  | The individual tasks in the checklist.                                                                                                                                                                                   |
-| Position              | string | In which corner should the widget button be placed. Default is bottom-right.                                                                                                                                             |
-| Skip button           | action | The skip button, see [Action](/block-properties/action) for all options. When empty the button is not rendered.                                                                                                          |
-| Completed title       | string | The title shown when all checklist items are completed.                                                                                                                                                                  |
-| Completed description | string | The description shown when all checklist items are completed.                                                                                                                                                            |
-| Completed button      | action | The button shown when all checklist items are completed, see [Action](/block-properties/action) for all options. Use this to give the user a way to close the finished checklist. When empty the button is not rendered. |
-| Page targeting        | ---    | What page the card should be shown on. [Learn more](/block-properties/page-targeting)                                                                                                                                    |
+| Name                  | Type    | Notes                                                                                                                                                                                                                    |
+| --------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Widget title          | string  | The title of the button that opens the checklist.                                                                                                                                                                        |
+| Popup title           | string  | The title inside the checklist popup.                                                                                                                                                                                    |
+| Popup description     | string  | The description inside the checklist popup.                                                                                                                                                                              |
+| Items                 | array   | The individual tasks in the checklist.                                                                                                                                                                                   |
+| Position              | string  | In which corner should the widget button be placed. Default is bottom-right.                                                                                                                                             |
+| Open by default       | boolean | Whether the checklist popup should be open by default when the session starts.                                                                                                                                           |
+| Skip button           | action  | The skip button, see [Action](/block-properties/action) for all options. When empty the button is not rendered.                                                                                                          |
+| Completed title       | string  | The title shown when all checklist items are completed.                                                                                                                                                                  |
+| Completed description | string  | The description shown when all checklist items are completed.                                                                                                                                                            |
+| Completed button      | action  | The button shown when all checklist items are completed, see [Action](/block-properties/action) for all options. Use this to give the user a way to close the finished checklist. When empty the button is not rendered. |
+| Page targeting        | ---     | What page the card should be shown on. [Learn more](/block-properties/page-targeting)                                                                                                                                    |
 
 ### Checklist item properties
 
