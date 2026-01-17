@@ -1,0 +1,14 @@
+{
+  "title": "SDK",
+  "description": "Flows Cloud SDK Documentation",
+  "root": true,
+  "pages": [
+    "index",
+    "react",
+    "javascript",
+    "---Frameworks---",
+    "...frameworks",
+    "---Other---",
+    "debug"
+  ]
+}

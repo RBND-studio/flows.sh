@@ -13,17 +13,17 @@ An [organization](/organization-setup/organizations) is the container for all wo
 
 ## Workflows
 
-A workflow is a series of steps executed in a specific sequence, defined by the connections between [blocks](/blocks-overview) and their conditions. In the workflow editor, you can add blocks, connect them, and configure their properties.
+A workflow is a series of steps executed in a specific sequence, defined by the connections between [blocks](/blocks) and their conditions. In the workflow editor, you can add blocks, connect them, and configure their properties.
 
 Workflows are version-controlled and can be published to individual environments.
 
 ### Blocks
 
-[Blocks](/blocks-overview) are the individual steps of a workflow. They can represent UI elements, logical steps, or actions. Each block has customizable properties that define its behavior and can be connected to other blocks to form a workflow.
+[Blocks](/blocks) are the individual steps of a workflow. They can represent UI elements, logical steps, or actions. Each block has customizable properties that define its behavior and can be connected to other blocks to form a workflow.
 
 ### Block properties
 
-[Block properties](/block-properties/overview) are the configurable fields available to editors when a block is added to a workflow. They map directly to the props defined in your components. For instance, a "banner block" might include properties like `title`, `description`, `button label`, `button link`, and `hide close button`.
+[Block properties](/blocks/block-properties/overview) are the configurable fields available to editors when a block is added to a workflow. They map directly to the props defined in your components. For instance, a "banner block" might include properties like `title`, `description`, `button label`, `button link`, and `hide close button`.
 
 ### Components
 
@@ -43,4 +43,4 @@ Paths connect blocks in a workflow, starting from an exit node of one block and 
 
 ## Slot
 
-[Slots](/block-properties/slot) are places in your application where Flows can render components. They need to be defined manually in your codebase and then they can be referenced in the workflow editor to render Slottable components.
+[Slots](/blocks/block-properties/slot) are places in your application where Flows can render components. They need to be defined manually in your codebase and then they can be referenced in the workflow editor to render Slottable components.

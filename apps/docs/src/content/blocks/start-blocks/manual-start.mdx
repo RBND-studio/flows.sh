@@ -1,0 +1,41 @@
+---
+title: Manual start
+description: Start a workflow manually from your application.
+---
+
+![Start block](/blocks/start.png)
+
+## Overview
+
+Manual start blocks allow you to start a workflow manually from your application. You can use this block to trigger a workflow when a user performs a specific action, such as clicking a button or submitting a form. Multiple start blocks can be used within a single workflow to accommodate different entry conditions. Once a user enters a workflow, they will not be allowed to re-enter until they have exited.
+
+To start a workflow using the manual start block, you need to call the `startWorkflow()` method from your application. This method requires the following parameters:
+
+- **blockKey**: The key of the manual start block you want to trigger. Copy this [key](/blocks/block-properties/block-key) from the block editor in the workflow builder.
+
+See [React](/sdk/react/reference#startworkflow) or [JavaScript](/sdk/javascript/reference#startworkflow) SDK documentation for more information on how to use the `startWorkflow()` method.
+
+<Callout type="warn">
+Note that for the `startWorkflow()` method will work only if:
+
+- Workflow is published in the current environment
+- Workflow has a manual start block with a matching block key
+- The current user can access the workflow based on the frequency setting
+- The current user matches the start block's user property conditions
+
+</Callout>
+
+## Input
+
+A start block uses [user property](/users/properties) conditions to control how users enter the workflow. These conditions allow you to evaluate users properties to determine whether user should qualify to enter the workflow. For example, you might filter users who signed up before a certain date.
+
+User property conditions are specified as an array where all conditions must be met for a user to enter. Each condition includes the following attributes:
+
+- **Property name**: The key of the user property to evaluate (eg. `createdAt`).
+- **Data type**: The type of the user property. Options include `string`, `number`, `boolean`, or `date`.
+- **Operator**: The operator used for the comparison. The available operators depend on the data type.
+- **Values**: The comparison values. When multiple values are specified, they are evaluated using the `OR` operator.
+
+## Multiple start blocks
+
+You can use multiple start blocks within a single workflow to establish different entry conditions. Remember, once a user enters a workflow through any start block, they cannot re-enter until they exit.
