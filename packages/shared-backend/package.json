@@ -8,7 +8,7 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "drizzle-orm": "^0.45.0",
+    "drizzle-orm": "^0.45.1",
     "es-toolkit": "^1.43.0",
     "db": "workspace:*",
     "shared": "workspace:*"
