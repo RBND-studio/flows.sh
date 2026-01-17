@@ -1,6 +1,7 @@
 declare global {
   interface Window {
-    plausible: Plausible;
+    // Can be undefined if the Plausible script hasn't loaded or is blocked
+    plausible?: Plausible;
   }
 }
 
