@@ -37,7 +37,7 @@
     "next-video": "^2.6.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "react-medium-image-zoom": "^5.2.14",
+    "react-medium-image-zoom": "^5.4.0",
     "rehype-slug": "^6.0.0",
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.1",
@@ -45,7 +45,7 @@
     "shared": "workspace:*",
     "shared-private": "workspace:*",
     "sharp": "^0.34.5",
-    "three": "^0.176.0",
+    "three": "^0.182.0",
     "ui": "workspace:*"
   },
   "devDependencies": {
@@ -57,7 +57,7 @@
     "@types/node": "^24",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "@types/three": "^0.175.0",
+    "@types/three": "^0.182.0",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "5.9.3"
