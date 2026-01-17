@@ -1,0 +1,285 @@
+---
+title: Overview
+description: A set of essential UI components to kickstart your product adoption journey.
+---
+
+import { Modal16, Tooltip16, Hint16, Banner16, Checklist16 } from "icons";
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+![Basics V2](/component-libraries/basics-v2/cover.png)
+
+## Overview
+
+**Basics V2** provides a set of ready-to-use and pixel-perfect components (**Modal**, **Tooltip**, and **Hint**) for building onboarding and education flows in your product. Each component integrates seamlessly with Flows, handling rendering, state, and lifecycle so you can focus on your app’s logic and UI.
+
+## Components
+
+<Cards>
+  <Card title="Tooltip" icon={<Tooltip16 />} href="/blocks/basics-v2/tooltip">
+    Guide users with helpful tooltips.
+  </Card>
+  <Card title="Modal" icon={<Modal16 />} href="/blocks/basics-v2/modal">
+    Display a modal to guide users through a process.
+  </Card>
+  <Card title="Hint" icon={<Hint16 />} href="/blocks/basics-v2/hint">
+    Provide subtle hints to users.
+  </Card>
+  <Card title="Card" icon={<Banner16 />} href="/blocks/basics-v2/card">
+    Show information or drive action with inline cards.
+  </Card>
+  <Card
+    title="Floating Checklist"
+    icon={<Checklist16 />}
+    href="/blocks/basics-v2/floating-checklist"
+  >
+    Drive setup and activation with a list of instructions and tasks.
+  </Card>
+</Cards>
+
+Looking for more components? [Contact us](https://flows.sh/contact) and let us know what you'd like to see in future releases!
+
+## Installation
+
+You can install and integrate the Basics V2 library using either [React](#react) or [JavaScript](#javascript), depending on your application stack.
+
+### React
+
+<Steps>
+
+<Step>
+
+#### Install the React package
+
+```package-install
+@flows/react-components
+```
+
+</Step>
+
+<Step>
+
+#### Import and use components
+
+Import the Basics V2 components and register them in the `FlowsProvider`.
+
+```tsx title="layout.tsx"
+import { FlowsProvider } from "@flows/react";
+import * as components from "@flows/react-components"; // [!code highlight]
+import * as tourComponents from "@flows/react-components/tour"; // [!code highlight]
+import "@flows/react-components/index.css"; // [!code highlight]
+
+const App = () => {
+  return (
+    <FlowsProvider
+      organizationId="your-organization-id" // Find this in Settings > General
+      environment="production" // Default environment
+      userId="your-user-id" // Identify the user
+      tourComponents={{
+        ...tourComponents, // [!code highlight]
+      }}
+      components={{
+        ...components, // [!code highlight]
+      }}
+    >
+      {/* Your app code here */}
+    </FlowsProvider>
+  );
+};
+```
+
+</Step>
+
+<Step>
+
+#### Enable library in Flows
+
+In the Flows dashboard, go to **Components** and click the **Libraries** button. In the dialog that appears, find the Basics V2 library and click **Enable library**.
+
+![Library picker](/component-libraries/library-picker.png)
+
+Once enabled, you’ll see the Basics V2 components available when adding new blocks to a workflow.
+
+</Step>
+
+</Steps>
+
+### JavaScript
+
+<Steps>
+
+<Step>
+
+#### Install the JavaScript package
+
+```package-install
+@flows/js-components
+```
+
+</Step>
+
+<Step>
+
+#### Setup components and rendering
+
+For Flows to be able to render the components from the Basics V2 library, you need to setup the slot components and render function for the floating blocks. Rendering of slot blocks will be handled by the [flows-slot](/sdk/javascript/reference#flows-slot) element.
+
+```js title="main.js"
+import { init } from "@flows/js";
+import { setupJsComponents } from "@flows/js-components"; // [!code highlight]
+import * as components from "@flows/js-components/components"; // [!code highlight]
+import * as tourComponents from "@flows/js-components/tour-components"; // [!code highlight]
+
+// Import the styles or copy them to your project and <link> them in your HTML
+import "@flows/js-components/index.css"; // [!code highlight]
+
+// See the JavaScript installation guide for more details about `init` function
+init({ ... })
+
+// Defines custom elements for `flows-floating-blocks`, `flows-slot` and all the passed UI components.
+setupJsComponents({ // [!code highlight]
+  components: { ...components }, // [!code highlight]
+  tourComponents: { ...tourComponents }, // [!code highlight]
+}); // [!code highlight]
+```
+
+Add `<flows-floating-blocks>` custom element at the end of the `<body>` tag.
+
+```html title="index.html"
+<body>
+  <!-- Your app content -->
+  <!-- [!code highlight] -->
+  <flows-floating-blocks></flows-floating-blocks>
+</body>
+```
+
+</Step>
+
+<Step>
+
+#### Enable the library in Flows
+
+In the Flows dashboard, go to **Components** and click the **Libraries** button. In the dialog that appears, find the Basics V2 library and click **Enable library**.
+
+![Library picker](/component-libraries/library-picker.png)
+
+Once enabled, you’ll see the Basics V2 components available when adding new blocks to a workflow.
+
+</Step>
+
+</Steps>
+
+## Migration from Basics V1 to Basics V2
+
+If you're currently using the **Basics V1** library, upgrading to **Basics V2** is simple. The new version introduces improved design, better functionality, and a familiar API. However, there are a few **breaking changes** requiring you to manually update in your workflows.
+
+Both libraries can run **side-by-side**, allowing you to gradually migrate without disrupting your existing setup.
+
+### React migration
+
+<Steps>
+<Step>
+
+#### Update the react SDK
+
+Make sure you're using the latest version of the main `@flows/react` SDK to ensure compatibility with Basics V2.
+
+</Step>
+
+<Step>
+
+#### Install the package
+
+To use both versions simultaneously, alias the V1 package in your `package.json`:
+
+```json
+{
+  "dependencies": {
+    "@flows/react-components-v1": "npm:@flows/react-components@^1.0.0",
+    "@flows/react-components": "^2.0.0"
+  }
+}
+```
+
+This setup prevents conflicts and lets you import both versions in parallel.
+
+</Step>
+
+<Step>
+
+#### Update imports
+
+You can now import both versions and register them with the `FlowsProvider`.
+
+```tsx title="layout.tsx"
+import { FlowsProvider } from "@flows/react";
+import * as components from "@flows/react-components"; // [!code highlight]
+import * as tourComponents from "@flows/react-components/tour"; // [!code highlight]
+import "@flows/react-components/index.css"; // [!code highlight]
+
+import * as V1components from "@flows/react-components-v1"; // [!code highlight]
+import * as V1tourComponents from "@flows/react-components-v1/tour"; // [!code highlight]
+import "@flows/react-components-v1/index.css"; // [!code highlight]
+
+const App = () => {
+  return (
+    <FlowsProvider
+      organizationId="your-organization-id" // Find this in Settings > General
+      environment="production" // Default environment
+      userId="your-user-id" // Identify the user
+      tourComponents={{
+        ...tourComponents, // [!code highlight]
+        ...V1tourComponents, // [!code highlight]
+      }}
+      components={{
+        ...components, // [!code highlight]
+        ...V1components, // [!code highlight]
+      }}
+    >
+      {/* Your app code here */}
+    </FlowsProvider>
+  );
+};
+```
+
+Alias your V1 imports to avoid naming conflicts. Because V1 and V2 components have distinct names, you can safely use both in parallel until migration is complete.
+
+</Step>
+
+<Step>
+
+#### Toggle libraries in Flows
+
+In the Flows dashboard, go to **Components** and click the **Libraries** button. In the dialog that appears:
+
+1. Disable the Basics V1 library.
+2. Enable the Basics V2 library.
+
+![Library picker](/component-libraries/library-picker.png)
+
+This makes the new V2 components available when adding new blocks, without affecting existing workflows. The V1 components just won't be available when adding new blocks.
+
+</Step>
+
+<Step>
+
+#### Update your workflows
+
+Unfortunately, due to the breaking changes between the two versions, there is no way for us to automatically migrate your existing workflows. You’ll need to manually replace V1 components with their V2 equivalents:
+
+1. Open a workflow using V1 components.
+2. Remove the V1 blocks and add the corresponding V2 blocks.
+3. Republish the workflow.
+
+For short-lived or temporary workflows, you might simply leave them as-is and use V2 for all new workflows going forward.
+
+</Step>
+</Steps>
+
+### JavaScript migration
+
+The JavaScript package in Basics V2 is a complete rewrite, featuring a new rendering approach. Because of that, we recommend completely replacing the V1 package with the V2 package instead of trying to run both side-by-side. To migrate:
+
+1. Update the main `@flows/js` SDK to the latest version to ensure compatibility with Basics V2.
+2. Follow the [JavaScript installation guide](#javascript) above to set up the V2 package.
+3. Update your workflows to use the V2 components.
+4. Once verified, release the update to production.

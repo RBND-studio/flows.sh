@@ -1,0 +1,104 @@
+---
+title: Vue Nuxt
+description: How to set up Flows in your Nuxt application.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+![Nuxt](/sdk/frameworks/nuxt.png)
+
+Flows makes it easy to add product adoption experiences into your Vue app built with [Nuxt](https://nuxt.com). Integrating Flows into your app enables you to create interactive workflows, user onboarding, guided tours, in-app messaging, and more.
+
+This guide walks you through integrating Flows into your Vue app using the [JavaScript SDK](https://www.npmjs.com/package/@flows/js) and [components package](https://www.npmjs.com/package/@flows/js-components) to get you started.
+
+<Callout>
+  Check out our [template projects](https://github.com/RBND-studio/flows-sdk/tree/main/examples) for
+  examples of how to implement Flows in your application.
+</Callout>
+
+<Steps>
+
+<Step>
+
+## Install the JavaScript SDK and components package
+
+You can install the Flows JavaScript SDK [from npm](https://www.npmjs.com/package/@flows/js):
+
+```package-install
+npm i @flows/js @flows/js-components
+```
+
+</Step>
+
+<Step>
+
+## Initialize the SDK
+
+Use the `init` function to initialize the SDK with your organization ID and environment key, which you can find in the **Settings > General** and **Settings > Environments** sections of the Flows dashboard.
+
+Create a Flows Nuxt plugin to handle the initialization logic. Add `<flows-floating-blocks>` custom element to your root component to render floating blocks. Finally, tell Vue about Flows custom elements to avoid rendering them as Vue components in `nuxt.config.ts`.
+
+```ts lineNumbers tab="plugins/flows.ts"
+import { defineNuxtPlugin } from "nuxt/app";
+
+import { init } from "@flows/js";
+import { setupJsComponents } from "@flows/js-components";
+import * as components from "@flows/js-components/components";
+import * as tourComponents from "@flows/js-components/tour-components";
+
+import "@flows/js-components/index.css";
+
+export default defineNuxtPlugin({
+  name: "flows",
+  parallel: true,
+  hooks: {
+    "app:mounted"() {
+      init({
+        organizationId: "YOUR_ORGANIZATION_ID", // Find this in Settings > General
+        userId: "YOUR_USER_ID", // Identify the user
+        environment: "production", // Default environment
+      });
+      setupJsComponents({
+        components: { ...components },
+        tourComponents: { ...tourComponents },
+      });
+    },
+  },
+});
+```
+
+```html lineNumbers tab="app.vue"
+<template>
+  <!-- Your app code here -->
+
+  <!-- Custom element for rendering floating blocks -->
+  <flows-floating-blocks></flows-floating-blocks>
+</template>
+```
+
+```ts lineNumbers tab="nuxt.config.ts"
+export default defineNuxtConfig({
+  // Your options here
+
+  vue: {
+    compilerOptions: {
+      // Tell Vue about Flows custom elements to avoid rendering it as Vue components
+      isCustomElement: (tag) => ["flows-floating-blocks", "flows-slot"].includes(tag),
+    },
+  },
+});
+```
+
+For a full list of supported properties, see the [init function documentation](/sdk/javascript/reference#init). For an example of how to create a custom component, see the [Vue Nuxt template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/vue/nuxt).
+
+</Step>
+
+<Step>
+
+## Create your first workflow
+
+That's it! You're now ready to create your first workflow. See our [quickstart guide](/quickstart) for more information.
+
+</Step>
+
+</Steps>
