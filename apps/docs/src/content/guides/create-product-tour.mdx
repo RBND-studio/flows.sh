@@ -37,7 +37,7 @@ To create a new workflow:
 
 ![Create workflows](/guides/create-product-tours/create-workflow.png)
 
-You’ll start with an empty canvas. From the add block sidebar on the right, select **Start** and add it to the workflow. Start blocks define when and where users enter your workflow, so every workflow needs one. They can be [automatic](/start-blocks/automatic-start) (when users match certain criteria) or [manual](/start-blocks/manual-start) (triggered by code). For now just add the **Start** block without configuring any user property filters to allow any user to enter the workflow.
+You’ll start with an empty canvas. From the add block sidebar on the right, select **Start** and add it to the workflow. Start blocks define when and where users enter your workflow, so every workflow needs one. They can be [automatic](/blocks/start-blocks/automatic-start) (when users match certain criteria) or [manual](/blocks/start-blocks/manual-start) (triggered by code). For now just add the **Start** block without configuring any user property filters to allow any user to enter the workflow.
 
 ![Add start block](/guides/create-product-tours/add-start.png)
 
@@ -68,7 +68,7 @@ You can also combine multiple conditions, for example:
 
 If you want the tour to start automatically when a user logs in, simply leave the trigger empty.
 
-[Learn more about tour trigger](/tour-block#tour-trigger).
+[Learn more about tour trigger](/blocks/tour-block#tour-trigger).
 
 </Step>
 
@@ -82,13 +82,13 @@ Now it’s time to build the actual tour steps. Tours are made up of interactive
 
 Let’s start with a **Modal** that greets the user.
 
-First click **Add steps** and select **Modal** (this element is part of the built-in components that Flows comes with, make sure you have installed the [Basics V1](/component-libraries/basics-v1/overview) package for the component to work in your app).
+First click **Add steps** and select **Modal** (this element is part of the built-in components that Flows comes with, make sure you have installed the [Basics V2](/blocks/basics-v2/overview) package for the component to work in your app).
 
 ![Add steps](/guides/create-product-tours/add-steps.png)
 
 Click the newly added step to edit its properties. You can update the title, body text, button label, and other options that control how the modal looks and behaves.
 
-See the [Modal documentation](/component-libraries/basics-v1/modal) for details.
+See the [Modal documentation](/blocks/basics-v2/modal) for details.
 
 ![Modal properties](/guides/create-product-tours/modal.png)
 
@@ -98,7 +98,7 @@ Next, let’s add a **Tooltip** to point users toward an important element in yo
 
 Tooltips have similar properties to modals but require a **Target element** — a CSS selector that points to an element in your UI (e.g., `#my-button`). If the element doesn’t exist on the page, or you leave it empty, the tooltip won’t appear.
 
-Learn more about [Tooltip properties](/component-libraries/basics-v1/tooltip).
+Learn more about [Tooltip properties](/blocks/basics-v2/tooltip).
 
 ![Tooltip properties](/guides/create-product-tours/tooltip.png)
 
@@ -118,7 +118,7 @@ To test your workflow:
    - What to do with users who’ve already entered (you can ignore this for now)
    - The environment to make the workflow live in
 
-We recommend publishing to a **staging environment** if you can (see [environments docs](/environments) to learn how to add a new environment). If you’re testing in production, limit access using user property filters in the **Start** block (eg. `admin = true` or `email = your@email.com`), learn more about how to [filter users using the Start block](/start-blocks/automatic-start).
+We recommend publishing to a **staging environment** if you can (see [environments docs](/environments) to learn how to add a new environment). If you’re testing in production, limit access using user property filters in the **Start** block (eg. `admin = true` or `email = your@email.com`), learn more about how to [filter users using the Start block](/blocks/start-blocks/automatic-start).
 
 ![Publish workflow](/guides/create-product-tours/publish.png)
 

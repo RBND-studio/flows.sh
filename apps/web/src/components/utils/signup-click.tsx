@@ -9,5 +9,9 @@ type Props = {
 export const SignupClick: FC<Props> = ({ ...props }) => {
   const Component = Slot;
 
-  return <Component {...props} onClick={() => window.plausible("Sign up")} />;
+  const handleClick = (): void => {
+    window.plausible?.("Sign up");
+  };
+
+  return <Component {...props} onClick={handleClick} />;
 };

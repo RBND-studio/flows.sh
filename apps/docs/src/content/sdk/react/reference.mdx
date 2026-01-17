@@ -1,0 +1,308 @@
+---
+title: Reference
+description: Discover methods and types available in the @flows/react and @flows/react-components packages.
+---
+
+## @flows/react
+
+Flows React SDK is a library that allows you to integrate Flows into React applications.
+
+Install the package [from npm](https://www.npmjs.com/package/@flows/react):
+
+```package-install
+npm i @flows/react
+```
+
+### Components
+
+#### FlowsProvider
+
+The `<FlowsProvider />` component is the main component of the Flows SDK. It initializes the SDK and keeps track of the user's state.
+
+```tsx title="layout.tsx"
+import { FlowsProvider } from "@flows/react";
+
+const App = () => {
+  return (
+    <FlowsProvider
+      organizationId="your-organization-id" // Find this in Settings > General
+      environment="production" // Default environment
+      userId="your-user-id" // Identify the user
+      components={{}}
+      tourComponents={{}}
+    >
+      {/* Your app code here */}
+    </FlowsProvider>
+  );
+};
+```
+
+The `<FlowsProvider />` accepts the following props:
+
+| Name              | Type                              | Required | Notes                                                                                                                                                                                                                                          |
+| ----------------- | --------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `organizationId`  | `string`                          | Yes      | Your organization ID. Find this in **Settings > General**.                                                                                                                                                                                     |
+| `environment`     | `string`                          | Yes      | The environment key. Find this in **Settings > Environments**.                                                                                                                                                                                 |
+| `userId`          | `string`                          | No       | Unique ID used to identify the user. If set to `null`, the SDK will be disabled and `children` will render while waiting for the `userId`. This is useful when loading the ID asynchronously.                                                  |
+| `components`      | `object`                          | Yes      | Custom components to use in your workflows.                                                                                                                                                                                                    |
+| `tourComponents`  | `object`                          | Yes      | Custom tour components to use in tour blocks.                                                                                                                                                                                                  |
+| `userProperties`  | `object`                          | No       | Object with custom [user properties](/users/properties). Values can be `string`, `number`, `boolean`, or `date`.                                                                                                                               |
+| `language`        | [LanguageOption](#languageoption) | No       | The user's language used for [localization](/localization). When empty the user will receive the default language group.                                                                                                                       |
+| `apiUrl`          | `string`                          | No       | Custom API URL useful when using proxy to send Flows requests through your own domain.                                                                                                                                                         |
+| `debug`           | `boolean`                         | No       | Enable [debug mode](/sdk/debug) to inspect the SDK's behavior.                                                                                                                                                                                 |
+| `onDebugShortcut` | `function`                        | No       | Custom keyboard shortcut handler for opening the debug panel. By default, the debug panel opens with `Cmd + Option + Shift + F` on Mac or `Ctrl + Alt + Shift + F` on Windows/Linux. If you set this prop, the default shortcut will not work. |
+
+---
+
+#### FlowsSlot
+
+The `<FlowsSlot />` is a component used to create Slots in your app where you can insert components using Workflows. [Learn more about using Slots](/blocks/block-properties/slot) in the Flows editor.
+
+```tsx title="sidebar.tsx"
+import { FlowsSlot } from "@flows/react";
+
+const Sidebar = () => {
+  return (
+    <div>
+      <h1>My app</h1>
+      <FlowsSlot id="my-slot" placeholder={<BannerPlaceholder />} />
+    </div>
+  );
+};
+```
+
+| Name          | Type        | Required | Notes                                                              |
+| ------------- | ----------- | -------- | ------------------------------------------------------------------ |
+| `id`          | `string`    | Yes      | The Slot ID used to refer to the slot when creating workflows.     |
+| `placeholder` | `ReactNode` | No       | The component to render when no component is inserted in the slot. |
+
+---
+
+### Functions
+
+#### useCurrentFloatingBlocks()
+
+The `useCurrentFloatingBlocks()` hook returns the active floating blocks for the user in the current environment.
+
+```tsx
+import { useCurrentFloatingBlocks } from "@flows/react";
+
+// Get the floating blocks for the current user
+const blocks = useCurrentFloatingBlocks();
+
+// Find a specific block by key
+const specificBlock = blocks.find((block) => block.props.__flows.key === "your-block-key");
+```
+
+Parameters: None
+
+Returns:
+
+An array of [ActiveBlock](#activeblock) objects representing the current floating blocks.
+
+---
+
+#### useCurrentSlotBlocks()
+
+The `useCurrentSlotBlocks()` hook returns the active slottable blocks for the user in the current environment.
+
+```tsx
+import { useCurrentSlotBlocks } from "@flows/react";
+
+// Get the slottable blocks for the current user in the specified slot
+const blocks = useCurrentSlotBlocks("your-slot-id");
+
+// Find a specific block by key
+const specificBlock = blocks.find((block) => block.props.__flows.key === "your-block-key");
+```
+
+Parameters:
+
+| Name     | Type     | Required | Notes                                                                             |
+| -------- | -------- | -------- | --------------------------------------------------------------------------------- |
+| `slotId` | `string` | Yes      | The ID of the slot to query. You can find it in the Flows app in the slot detail. |
+
+Returns:
+
+An array of [ActiveBlock](#activeblock) objects representing the current slottable blocks for the specified slot.
+
+---
+
+#### startWorkflow()
+
+Starts a workflow for the current user in the current environment using a the block key of a manual start block. The workflow will start only if:
+
+- Workflow is published in the current environment
+- Workflow has a manual start block with a matching block key
+- The current user can access the workflow based on the frequency setting
+- The current user matches the start block's user property conditions
+
+```tsx
+import { startWorkflow } from "@flows/react";
+
+startWorkflow("your-manual-start-block-key");
+```
+
+Parameters:
+
+| Name       | Type     | Required | Notes                                                                                                        |
+| ---------- | -------- | -------- | ------------------------------------------------------------------------------------------------------------ |
+| `blockKey` | `string` | Yes      | The block key of the manual start block you want to trigger. [Learn more](/blocks/start-blocks/manual-start) |
+
+Returns: `Promise<void>`
+
+---
+
+#### resetWorkflowProgress()
+
+The `resetWorkflowProgress()` function resets the progress of a specific workflow for the current user in the current environment.
+
+```tsx
+import { resetWorkflowProgress } from "@flows/react";
+
+<Button onClick={() => resetWorkflowProgress("workflow-id")}>Reset progress</Button>;
+```
+
+Parameters:
+
+| Name         | Type     | Required | Notes                                                                                     |
+| ------------ | -------- | -------- | ----------------------------------------------------------------------------------------- |
+| `workflowId` | `string` | Yes      | The ID of the workflow to reset. You can find it in the Flows app in the workflow detail. |
+
+---
+
+#### resetAllWorkflowsProgress()
+
+The `resetAllWorkflowsProgress()` function resets the progress of all workflows for the current user in the current environment.
+
+```tsx
+import { resetAllWorkflowsProgress } from "@flows/react";
+
+<Button onClick={() => resetAllWorkflowsProgress()}>Reset all progress</Button>;
+```
+
+Parameters: None
+
+---
+
+### Types
+
+#### ActiveBlock
+
+Represents a block visible to the user.
+
+| Name        | Type                                                                           | Notes                                                                                                                      |
+| ----------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
+| `id`        | `string`                                                                       | Internal identifier for the block. Changes with every workflow version, for persistent identifier use `props.__flows.key`. |
+| `type`      | `"component" \| "tour-component"`                                              | The block type.                                                                                                            |
+| `component` | `string`                                                                       | The UI component that should be used to render the block.                                                                  |
+| `props`     | [ComponentProps](#componentprops) \| [TourComponentProps](#tourcomponentprops) | Props passed to the component, including data and exit node callbacks.                                                     |
+
+---
+
+#### ComponentProps
+
+Represents the props passed to a component. In addition to your custom props, it includes the `__flows` object with Flows properties.
+
+| Name                 | Type     | Required | Notes                                                                                                                                               |
+| -------------------- | -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `__flows.id`         | `string` | Yes      | Unique identifier of the block, useful for stable key during rendering. Keep in mind each workflow version will have a different id for each block. |
+| `__flows.key`        | `string` | No       | Unique key for the block. Set by you in a workflow. [Learn more](/blocks/block-properties/block-key)                                                |
+| `__flows.workflowId` | `string` | Yes      | The ID of the workflow. Set by Flows.                                                                                                               |
+
+---
+
+#### StateMemory
+
+Represents the [state memory](/blocks/block-properties/state-memory) property of a block.
+
+| Name       | Type       | Required | Notes                                                             |
+| ---------- | ---------- | -------- | ----------------------------------------------------------------- |
+| `value`    | `boolean`  | Yes      | The value of the state memory.                                    |
+| `setValue` | `function` | Yes      | Callback to set the value of the state memory.                    |
+| `triggers` | `array`    | Yes      | Object with triggers to update the state memory. See table below. |
+
+`triggers` type:
+
+| Name       | Type     | Required | Notes                                                      |
+| ---------- | -------- | -------- | ---------------------------------------------------------- |
+| `type`     | `string` | Yes      | The trigger type. Can be `manual` or `transition`.         |
+| `blockId`  | `string` | Yes      | The block ID of the block that triggers the state memory.  |
+| `blockKey` | `string` | No       | The block key of the block that triggers the state memory. |
+
+---
+
+#### BlockState
+
+Represents the [block state](/blocks/block-properties/block-state) of the selected block in the workflow.
+
+| Name                    | Type                         | Required | Notes                                                                                                                                               |
+| ----------------------- | ---------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Custom block properties | Depends on the property type | Yes      | The properties of the selected block in the workflow. The properties are defined on in the block.                                                   |
+| `__flows.id`            | `string`                     | Yes      | Unique identifier of the block, useful for stable key during rendering. Keep in mind each workflow version will have a different id for each block. |
+| `__flows.key`           | `string`                     | No       | Unique key for the block. Set by you in a workflow. [Learn more](/blocks/block-properties/block-key)                                                |
+| `__flows.workflowId`    | `string`                     | Yes      | The ID of the workflow. Set by Flows.                                                                                                               |
+
+---
+
+#### TourComponentProps
+
+Represents the props passed to a tour component. In addition to your custom props, it includes tour component exit nodes and the `__flows` object with Flows properties.
+
+| Name          | Type       | Required | Notes                                                                                                |
+| ------------- | ---------- | -------- | ---------------------------------------------------------------------------------------------------- |
+| `continue`    | `function` | Yes      | Callback to go to the next step.                                                                     |
+| `previous`    | `function` | No       | Callback to go back to the previous step.                                                            |
+| `cancel`      | `function` | Yes      | Callback to cancel the tour.                                                                         |
+| `__flows.key` | `string`   | No       | Unique key for the block. Set by you in a workflow. [Learn more](/blocks/block-properties/block-key) |
+
+---
+
+#### LanguageOption
+
+Language type used for setting the user's language in the `<FlowsProvider />` to enable [localization](/localization).
+
+Options:
+
+- `disabled` (default) - The user will be served content in the default language group of your organization.
+- `automatic` - Automatically detect the user's language and use the matching language group. The language is determined by the `Navigator.language` property in the browser.
+- Manual - A specific language string, e.g. `en-US`, `fr-FR`, etc. This will use the matching language group for the specified language. See [https://www.localeplanet.com/icu/](https://www.localeplanet.com/icu/) for a full list of supported languages.
+
+---
+
+## @flows/react-components
+
+To simplify implementation, you can use the `@flows/react-components` package, which provides pre-built UI components.
+
+Install the package [from npm](https://www.npmjs.com/package/@flows/react-components):
+
+```package-install
+npm i @flows/react-components
+```
+
+Then, import and use the components in your app:
+
+```tsx title="layout.tsx"
+import { FlowsProvider } from "@flows/react";
+import * as components from "@flows/react-components"; // [!code highlight]
+import * as tourComponents from "@flows/react-components/tour"; // [!code highlight]
+import "@flows/react-components/index.css"; // [!code highlight]
+
+const App = () => {
+  return (
+    <FlowsProvider
+      organizationId="your-organization-id" // Find this in Settings > General
+      environment="production" // Default environment
+      userId="your-user-id" // Identify the user
+      tourComponents={{
+        ...tourComponents, // [!code highlight]
+      }}
+      components={{
+        ...components, // [!code highlight]
+      }}
+    >
+      {/* Your app code here */}
+    </FlowsProvider>
+  );
+};
+```

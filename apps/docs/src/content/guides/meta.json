@@ -1,4 +1,11 @@
 {
-  "defaultOpen": true,
-  "pages": ["create-product-tour", "how-to-target-only-new-users", "create-custom-components"]
+  "title": "Guides",
+  "description": "Flows Cloud Guides Documentation",
+  "root": true,
+  "pages": [
+    "index",
+    "create-product-tour",
+    "how-to-target-only-new-users",
+    "create-custom-components"
+  ]
 }

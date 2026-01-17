@@ -36,11 +36,7 @@ prevent service disruptions.
 
 Each environment is associated with a unique key that links your application to the correct workflows. Include this key in your SDK setup:
 
-<Tabs items={['React', 'JavaScript']}>
-
-  <Tab>
-
-```tsx title="layout.tsx" {7}
+```tsx title="layout.tsx" tab="React"
 import { FlowsProvider } from "@flows/react";
 
 const App = () => {
@@ -48,7 +44,7 @@ const App = () => {
     <FlowsProvider
       organizationId="your-organization-id"
       environment="your-environment" // [!code highlight]
-      userId="your-user-id",
+      userId="your-user-id"
     >
       {/* Your app code here */}
     </FlowsProvider>
@@ -56,21 +52,12 @@ const App = () => {
 };
 ```
 
-  </Tab>
-
-  <Tab>
-  
-```js title="main.js"
+```js title="main.js" tab="JavaScript"
 import { init } from "@flows/js";
 
 init({
-organizationId: "your-organization-id",
-environment: "your-environment", // [!code highlight]
-userId: "your-user-id",
+  organizationId: "your-organization-id",
+  environment: "your-environment", // [!code highlight]
+  userId: "your-user-id",
 });
-
 ```
-
-  </Tab>
-
-</Tabs>
