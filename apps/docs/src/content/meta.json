@@ -8,35 +8,14 @@
     "workflows",
     "tours",
     "launchpad",
+    "components",
     "personalization",
     "localization",
     "users",
     "environments",
+
+    "---Management---",
     "organization-setup",
-
-    "---Blocks---",
-    "blocks-overview",
-    "start-blocks",
-    "components",
-    "tour-block",
-    "logic-blocks",
-    "end-block",
-    "block-properties",
-
-    "---SDK---",
-    "sdk-overview",
-    "react",
-    "javascript",
-    "frameworks",
-    "component-libraries",
-
-    "---Other---",
-    "guides",
-    "---Links---",
-    "[Contact](https://flows.sh/contact)",
-    "[Log in](https://app.flows.sh/)",
-    "[Flows.sh](https://flows.sh)",
-
-    "..."
+    "billing"
   ]
 }

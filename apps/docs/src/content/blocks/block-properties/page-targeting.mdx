@@ -1,0 +1,29 @@
+---
+title: Page targeting
+description: Block property that allows you to determine when a block appears based on the current page pathname.
+---
+
+![Page targeting](/block-properties/page-targeting-property.png)
+
+<Callout>
+  Page targeting is available on some logic blocks and all components. The Flows SDK handles the
+  page targeting logic, so you don't need to implement it in your components.
+</Callout>
+
+## Overview
+
+Page targeting allows you to determine where a block appears based on the current page [pathname with query parameters](https://developer.mozilla.org/en-US/docs/Web/API/URL/pathname#pathname_with_query_parameters). This is useful for displaying blocks on specific pages or sections of your application. In [wait step](/blocks/tour-block#wait-step) and [wait properties](/blocks/block-properties/wait), page targeting can be used to pause the workflow until the user navigates to a specific page or does a specific action on the desired page.
+
+## Options
+
+- **Page operator**: The operator that defines the pathname matching logic. Options include:
+  - **Contains**: The block appears if the pathname contains the specified value.
+  - **Does not contain**: The block appears if the pathname excludes the specified value.
+  - **Equals**: The block appears only if the pathname matches the specified value exactly.
+  - **Does not equal**: The block appears if the pathname does not match the specified value exactly.
+  - **Start with**: The block appears if the pathname starts with the specified value.
+  - **Does not start with**: The block appears if the pathname does not start with the specified value.
+  - **End with**: The block appears if the pathname ends with the specified value.
+  - **Does not end with**: The block appears if the pathname does not end with the specified value.
+  - **Matches regex**: The block appears if the pathname matches the specified regular expression.
+- **Page values**: The value(s) used to match the pathname. For example, if the operator is set to **Contains**, the block appears when the pathname contains the specified value. You can add multiple values to match against (in that case the values are combined with an OR operator).

@@ -1,0 +1,16 @@
+{
+  "title": "Blocks",
+  "description": "Flows Cloud Blocks Documentation",
+  "root": true,
+  "pages": [
+    "index",
+    "start-blocks",
+    "tour-block",
+    "logic-blocks",
+    "end-block",
+    "block-properties",
+
+    "---Built-in Components---",
+    "...basics-v2"
+  ]
+}

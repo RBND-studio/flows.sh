@@ -1,6 +1,5 @@
 import { DocsLogo } from "components/docs-logo";
 import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
-import { links } from "lib/links";
 
 /**
  * Shared layout configurations
@@ -13,5 +12,4 @@ export const baseOptions: BaseLayoutProps = {
   nav: {
     title: <DocsLogo />,
   },
-  githubUrl: links.publicRepo,
 };
