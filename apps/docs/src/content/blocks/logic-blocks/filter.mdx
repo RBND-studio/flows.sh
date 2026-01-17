@@ -1,0 +1,18 @@
+---
+title: Filter
+description: Lets through only users that meet specific conditions.
+---
+
+![Filter block](/blocks/filter.png)
+
+## Overview
+
+Filters [users](/users/overview) based on specific conditions, allowing only those who match the criteria to proceed. Users that don't match the conditions are stopped and won't continue to next block, however if they have active another block the workflow won't be exited.
+
+## Input
+
+Filter block filters users based on an array of [user properties](/blocks/block-properties/user-properties) conditions. The user must meet all conditions to pass through the block.
+
+## Exit nodes
+
+**`matched`** - when the user meets all conditions they follow this path.

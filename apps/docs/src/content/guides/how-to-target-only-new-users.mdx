@@ -17,12 +17,7 @@ Product onboarding often needs to target specific user segments. For example, sh
 
 To help Flows distinguish between new and existing users, you need to pass the signup date as a **user property** when initializing the SDK. This property is typically stored in your database (for example, as the user’s `createdAt` timestamp).
 
-<Tabs items={['React', 'JavaScript']}>
-
-  <Tab value="React">
-
-```tsx
-
+```tsx tab="React"
 import { FlowsProvider } from "@flows/react";
 
 const App = () => {
@@ -30,7 +25,7 @@ const App = () => {
     <FlowsProvider
       organizationId="your-organization-id"
       environment="your-environment"
-      userId="your-user-id",
+      userId="your-user-id"
       userProperties={{
         createdAt: "2025-10-14T00:00:00.000Z", // Replace with the user's actual signup date from database [!code highlight]
       }}
@@ -39,14 +34,9 @@ const App = () => {
     </FlowsProvider>
   );
 };
-
 ```
 
-  </Tab>
-  <Tab value="JavaScript">
-
-```js
-
+```js tab="JavaScript"
 import { init } from "@flows/js";
 
 init({
@@ -57,12 +47,7 @@ init({
     createdAt: "2025-10-14T00:00:00.000Z", // Replace with the user's actual signup date from database [!code highlight]
   },
 });
-
 ```
-
-</Tab>
-
-</Tabs>
 
 </Step>
 
@@ -85,7 +70,8 @@ You can combine multiple filters to target even more specific groups. For exampl
 Once you’ve configured the filters, publish the workflow to your staging environment and confirm that it behaves as expected. When you are ready, publish the workflow to production, and it will automatically start targeting new users based on the signup date filter.
 
 <Callout type="warning">
- Don't forget to deploy the updated SDK code so that the `createdAt` property is being sent for all users.
+  Don't forget to deploy the updated SDK code so that the `createdAt` property is being sent for all
+  users.
 </Callout>
 
 </Step>

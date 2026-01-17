@@ -49,9 +49,12 @@ export default async function Page(props: { params: Promise<Params> }): Promise<
     token: `Bearer ${GH_ACCESS_TOKEN}`,
   });
 
+  // Use pageTitle if available, otherwise fallback to title
+  const pageTitle = page.data.pageTitle ?? page.data.title;
+
   return (
     <DocsPage toc={page.data.toc} full={page.data.full} lastUpdate={time ? time : undefined}>
-      <DocsTitle>{page.data.title}</DocsTitle>
+      <DocsTitle>{pageTitle}</DocsTitle>
       <DocsDescription
         className={css({
           marginBottom: "space8!",
@@ -93,12 +96,15 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
   if (!page) notFound();
   const isHomePage = page.url === "/";
 
+  // Use pageTitle if available, otherwise fallback to title
+  const pageTitle = page.data.pageTitle ?? page.data.title;
+
   return {
     metadataBase: new URL(`https://${DOMAIN}/docs`),
-    title: `${page.data.title} – Flows Docs`,
+    title: `${pageTitle} – Flows Docs`,
     description: page.data.description,
     openGraph: {
-      title: `${page.data.title} – Flows Docs`,
+      title: `${pageTitle} – Flows Docs`,
       description: page.data.description,
       url: "./",
       type: "article",
@@ -106,10 +112,10 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
       siteName: "Flows",
       images: [
         {
-          url: links.ogImage({ title: page.data.title, type: "Docs" }),
+          url: links.ogImage({ title: pageTitle, type: "Docs" }),
           width: 1200,
           height: 630,
-          alt: page.data.title,
+          alt: pageTitle,
           type: "image/png",
         },
       ],
@@ -120,10 +126,10 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
       description: page.data.description,
       images: [
         {
-          url: links.ogImage({ title: page.data.title, type: "Docs" }),
+          url: links.ogImage({ title: pageTitle, type: "Docs" }),
           width: 1200,
           height: 630,
-          alt: page.data.title,
+          alt: pageTitle,
           type: "image/png",
         },
       ],

@@ -1,0 +1,63 @@
+---
+title: Card
+description: Show information or drive action with inline cards.
+---
+
+import { ComponentPreview } from "components";
+
+<ComponentPreview component="card" />
+
+## Overview
+
+The card component is a versatile UI element that can be used to display information, show promotions, or important messages to users. You can use the card component out of the box as a built-in component.
+
+## Installation
+
+To integrate the card component into your application, follow the steps described in the [library installation guide](/blocks/basics-v2/overview#installation).
+
+## Workflow properties
+
+<ComponentPreview component="card" />
+
+When using the card component in a workflow, you can define the following properties:
+
+| Name             | Type    | Notes                                                                                                                                                                                |
+| ---------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Title            | string  | The title of the card.                                                                                                                                                               |
+| Body             | string  | The body of the card. Supports HTML.                                                                                                                                                 |
+| Primary button   | action  | The primary button, see [Action](/blocks/block-properties/action) for all options. When empty the button is not rendered.                                                            |
+| Secondary button | action  | The secondary button, see [Action](/blocks/block-properties/action) for all options. When empty the button is not rendered.                                                          |
+| Width            | string  | Supports any valid [CSS width value](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width) (number values are treated as pixels). Leave empty for auto width. |
+| Dismissible      | boolean | Shows a close button linked to the `close` exit node. Default is `false`.                                                                                                            |
+| Page targeting   | ---     | What page the card should be shown on. [Learn more](/blocks/block-properties/page-targeting)                                                                                         |
+| Slot             | ---     | Used to render the card inside your application. Without a slot defined, the card will not be rendered. [Learn more](/blocks/block-properties/slot)                                  |
+
+**Exit nodes:**
+
+- Continue
+- Close
+
+## Tour properties
+
+<ComponentPreview component="tourCard" />
+
+When using the card component in a tour, you can define additional properties to control the tour flow.
+
+| Name             | Type    | Notes                                                                                                                                                                                |
+| ---------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Title            | string  | The title of the card.                                                                                                                                                               |
+| Body             | string  | The body of the card. Supports HTML.                                                                                                                                                 |
+| Primary button   | action  | The primary button, see [Action](/blocks/block-properties/action) for all options. When empty the button is not rendered.                                                            |
+| Secondary button | action  | The secondary button, see [Action](/blocks/block-properties/action) for all options. When empty the button is not rendered.                                                          |
+| Width            | string  | Supports any valid [CSS width value](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width) (number values are treated as pixels). Leave empty for auto width. |
+| Hide progress    | boolean | Hides the tour progress indicator from the card. Default is `false`.                                                                                                                 |
+| Dismissible      | boolean | Shows a close button linked to the `cancel` exit node of the Tour block. Default is `false`.                                                                                         |
+| Page targeting   | ---     | What page the card should be shown on. [Learn more](/blocks/block-properties/page-targeting)                                                                                         |
+| Wait             | ---     | Used to define what interaction should trigger the next step. [Learn more](/blocks/block-properties/wait)                                                                            |
+| Slot             | ---     | Used to render the card inside your application. Without a slot defined, the card will not be rendered. [Learn more](/blocks/block-properties/slot)                                  |
+
+**Exit nodes:**
+
+- Continue: Proceeds to the next step in the tour
+- Previous: Goes back to the previous step in the tour
+- Cancel: Cancels the entire tour
