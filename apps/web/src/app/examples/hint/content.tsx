@@ -39,10 +39,7 @@ export const hintContent: ContentType = {
   },
   readme: (
     <>
-      <Paragraph>
-        This example showcases a set of custom hints powered by
-        <InlineCode>@flows/react</InlineCode> and <InlineCode>@floating-ui/react-dom</InlineCode>.
-      </Paragraph>
+      <Paragraph>This example showcases a set of built-in Hint components powered by Flows.</Paragraph>
       <Paragraph>
         Hints provide users with on-demand and contextual guidance. Hints use small beacons that
         encourage users to focus on certain features, then progressively disclose more information
@@ -93,36 +90,6 @@ export const hintContent: ContentType = {
         </li>
         <li>
           Add your organization ID in the <InlineCode>providers.tsx</InlineCode> file.
-        </li>
-        <li>
-          Create a new component in your organization with the following configuration:
-          <UnorderedList>
-            <li>
-              <strong>UI component:</strong> FlowsHint
-            </li>
-            <li>
-              <strong>Slottable:</strong> false
-            </li>
-            <li>
-              <strong>Custom properties:</strong>
-              <UnorderedList>
-                <li>Title</li>
-                <li>Body</li>
-                <li>Button label</li>
-                <li>Target element</li>
-                <li>Side: top, right, bottom, left</li>
-                <li>Offset X: number</li>
-                <li>Offset Y: number</li>
-              </UnorderedList>
-            </li>
-            <li>
-              <strong>Exit nodes:</strong>
-              <UnorderedList>
-                <li>continue</li>
-                <li>close</li>
-              </UnorderedList>
-            </li>
-          </UnorderedList>
         </li>
         <li>Recreate the workflow in your organization and publish it.</li>
         <li>
