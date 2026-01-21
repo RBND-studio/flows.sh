@@ -10,7 +10,6 @@ import * as tourComponents from "@flows/react-components/tour";
 import { FC, ReactNode } from "react";
 
 import "@flows/react-components/index.css";
-import { FlowsHint } from "@/components/flows-hint";
 import { ExampleControls } from "@/components/providers/example-controls";
 
 type Props = {
@@ -34,7 +33,7 @@ export const Providers: FC<Props> = ({ children }) => {
         organizationId="df8c5b97-5c1a-4cba-a1e8-ab9b348c9330"
         environment="production"
         userId={userId ?? null}
-        components={{ ...components, FlowsHint }}
+        components={{ ...components }}
         tourComponents={{ ...tourComponents }}
         userProperties={{
           example: "hint",
