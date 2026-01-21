@@ -1,0 +1,115 @@
+---
+title: Solid
+description: How to set up Flows in your Solid application.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+![Solid](/sdk/frameworks/solid.png)
+
+Flows makes it easy to add product adoption experiences into your [Solid](https://solidjs.com) app built with or without [SolidStart](https://start.solidjs.com). Integrating Flows into your app enables you to create interactive workflows, user onboarding, guided tours, in-app messaging, and more.
+
+This guide walks you through integrating Flows into your Solid app using the [JavaScript SDK](https://www.npmjs.com/package/@flows/js) and [components package](https://www.npmjs.com/package/@flows/js-components) to get you started.
+
+<Callout>
+  Check out our [template projects](https://github.com/RBND-studio/flows-sdk/tree/main/examples) for
+  examples of how to implement Flows in your application.
+</Callout>
+
+<Steps>
+
+<Step>
+
+## Install the JavaScript SDK and components package
+
+You can install the Flows JavaScript SDK [from npm](https://www.npmjs.com/package/@flows/js):
+
+```package-install
+npm i @flows/js @flows/js-components
+```
+
+</Step>
+
+<Step>
+
+## Initialize the SDK
+
+Use the `init` function to initialize the SDK with your organization ID and environment key, which you can find in the **Settings > General** and **Settings > Environments** sections of the Flows dashboard.
+
+Create a `Flows` component to handle the initialization logic and rendering of the floating blocks. Then add the `Flows` component to your root layout. Lastly tell TypeScript about Flows custom elements in a `global.d.ts` file.
+
+```tsx tab="flows.tsx"
+import { onMount } from "solid-js";
+
+import { init } from "@flows/js";
+import { setupJsComponents } from "@flows/js-components";
+import * as components from "@flows/js-components/components";
+import * as tourComponents from "@flows/js-components/tour-components";
+
+// Don't forget to import the CSS styles for Flows components
+import "@flows/js-components/index.css";
+
+export const Flows = () => {
+  onMount(() => {
+    init({
+      organizationId: "YOUR_ORGANIZATION_ID", // Find this in Settings > General
+      userId: "YOUR_USER_ID", // Identify the user
+      environment: "production", // Default environment
+    });
+    setupJsComponents({
+      components: { ...components },
+      tourComponents: { ...tourComponents },
+    });
+  });
+
+  return <flows-floating-blocks />;
+};
+```
+
+```tsx tab="app.tsx"
+import { Flows } from "./flows";
+
+export default function App() {
+  return (
+    <Router
+      root={(props) => (
+        <MetaProvider>
+          {props.children}
+          {/* Add Flows component to the bottom of your layout */}
+          <Flows />
+        </MetaProvider>
+      )}
+    >
+      {/* Your routes here */}
+    </Router>
+  );
+}
+```
+
+```ts tab="global.d.ts"
+import "solid-js";
+
+// Tell TypeScript about Flows custom elements
+declare module "solid-js" {
+  namespace JSX {
+    interface IntrinsicElements {
+      "flows-floating-blocks": JSX.HTMLAttributes<HTMLElement>;
+      "flows-slot": { "data-slot-id": string } & JSX.HTMLAttributes<HTMLElement>;
+    }
+  }
+}
+```
+
+For a full list of supported properties, see the [init function documentation](/sdk/javascript/reference#init). For an example of how to create a custom component, see the [Solid template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/solid).
+
+</Step>
+
+<Step>
+
+## Create your first workflow
+
+That's it! You're now ready to create your first workflow. See our [quickstart guide](/quickstart) for more information.
+
+</Step>
+
+</Steps>

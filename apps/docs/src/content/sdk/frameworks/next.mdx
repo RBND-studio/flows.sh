@@ -1,0 +1,94 @@
+---
+title: Next.js
+description: How to set up Flows in your Next.js application.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+![Next](/sdk/frameworks/next.png)
+
+Flows makes it easy to add product adoption experiences into your React app built with [Next.js](https://nextjs.org). Integrating Flows into your app enables you to create interactive workflows, user onboarding, guided tours, in-app messaging, and more.
+
+This guide walks you through integrating Flows into your Next.js app using the [React SDK](https://www.npmjs.com/package/@flows/react) and [components package](https://www.npmjs.com/package/@flows/react-components) to get you started.
+
+<Callout>
+  Check out our [template projects](https://github.com/RBND-studio/flows-sdk/tree/main/examples) for
+  examples of how to implement Flows in your application.
+</Callout>
+
+<Steps>
+
+<Step>
+
+## Install the React SDK and components package
+
+You can install the Flows React SDK [from npm](https://www.npmjs.com/package/@flows/react):
+
+```package-install
+npm i @flows/react @flows/react-components
+```
+
+</Step>
+
+<Step>
+
+## Integrate FlowsProvider in your application
+
+Create a Flows client component that wraps your application with the `FlowsProvider`. Then add
+the `Flows` component to your root layout.
+
+```tsx tab="app/flows.tsx"
+"use client";
+
+import Link from "next/link";
+
+import { FlowsProvider } from "@flows/react";
+import * as components from "@flows/react-components";
+import * as tourComponents from "@flows/react-components/tour";
+
+import "@flows/react-components/index.css";
+
+export default function Flows({ children }) {
+  return (
+    <FlowsProvider
+      organizationId="YOUR_ORGANIZATION_ID" // Find this in Settings > General
+      userId="YOUR_USER_ID" // Replace this with user id from your app
+      environment="production" // Default environment
+      components={{ ...components }}
+      tourComponents={{ ...tourComponents }}
+      LinkComponent={Link}
+    >
+      {children}
+    </FlowsProvider>
+  );
+}
+```
+
+```tsx tab="app/layout.tsx"
+import { Flows } from "./flows";
+
+// Wrap your application with the Flows component from flows.tsx
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body>
+        <Flows>{children}</Flows>
+      </body>
+    </html>
+  );
+}
+```
+
+For a full list of supported properties, see the [FlowsProvider documentation](/sdk/react/reference#flowsprovider). For an example of how to create a custom component, see the [Next.js template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/next).
+
+</Step>
+
+<Step>
+
+## Create your first workflow
+
+That's it! You're now ready to create your first workflow. See our [quickstart guide](/quickstart) for more information.
+
+</Step>
+
+</Steps>

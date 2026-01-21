@@ -4,6 +4,7 @@
   "root": true,
   "pages": [
     "index",
+    "[Quickstart](/quickstart)",
     "create-product-tour",
     "how-to-target-only-new-users",
     "create-custom-components"
