@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Providers } from "./providers";
-import { Sidebar } from "@/components/sidebar";
-import { ExampleInfo } from "@/components/providers/example-info";
 
 export const metadata: Metadata = {
   title: "New feature card",

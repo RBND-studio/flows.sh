@@ -97,6 +97,8 @@ export * from "./src/shepherd20";
 export * from "./src/sidebar16";
 export * from "./src/slack16";
 export * from "./src/slot16";
+export * from "./src/solid16";
+export * from "./src/solid32";
 export * from "./src/spinner20";
 export * from "./src/stack16";
 export * from "./src/star16";

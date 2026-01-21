@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Providers } from "./providers";
-import { ExampleInfo } from "@/components/providers/example-info";
 
 export const metadata: Metadata = {
   title: "Enterprise upsell",

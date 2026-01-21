@@ -241,7 +241,7 @@ export const Footer = (): ReactElement => {
           </Box>
           <ThemeSwitch />
           <Text color="newFg.neutral.subtle" variant="bodyS">
-            © 2025{" "}
+            © {new Date().getFullYear()}{" "}
             <a
               target="_blank"
               href={links.rbnd}
