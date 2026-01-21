@@ -39,18 +39,19 @@ const App = () => {
 
 The `<FlowsProvider />` accepts the following props:
 
-| Name              | Type                              | Required | Notes                                                                                                                                                                                                                                          |
-| ----------------- | --------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `organizationId`  | `string`                          | Yes      | Your organization ID. Find this in **Settings > General**.                                                                                                                                                                                     |
-| `environment`     | `string`                          | Yes      | The environment key. Find this in **Settings > Environments**.                                                                                                                                                                                 |
-| `userId`          | `string`                          | No       | Unique ID used to identify the user. If set to `null`, the SDK will be disabled and `children` will render while waiting for the `userId`. This is useful when loading the ID asynchronously.                                                  |
-| `components`      | `object`                          | Yes      | Custom components to use in your workflows.                                                                                                                                                                                                    |
-| `tourComponents`  | `object`                          | Yes      | Custom tour components to use in tour blocks.                                                                                                                                                                                                  |
-| `userProperties`  | `object`                          | No       | Object with custom [user properties](/users/properties). Values can be `string`, `number`, `boolean`, or `date`.                                                                                                                               |
-| `language`        | [LanguageOption](#languageoption) | No       | The user's language used for [localization](/localization). When empty the user will receive the default language group.                                                                                                                       |
-| `apiUrl`          | `string`                          | No       | Custom API URL useful when using proxy to send Flows requests through your own domain.                                                                                                                                                         |
-| `debug`           | `boolean`                         | No       | Enable [debug mode](/sdk/debug) to inspect the SDK's behavior.                                                                                                                                                                                 |
-| `onDebugShortcut` | `function`                        | No       | Custom keyboard shortcut handler for opening the debug panel. By default, the debug panel opens with `Cmd + Option + Shift + F` on Mac or `Ctrl + Alt + Shift + F` on Windows/Linux. If you set this prop, the default shortcut will not work. |
+| Name              | Type                                    | Required | Notes                                                                                                                                                                                                                                          |
+| ----------------- | --------------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `organizationId`  | `string`                                | Yes      | Your organization ID. Find this in **Settings > General**.                                                                                                                                                                                     |
+| `environment`     | `string`                                | Yes      | The environment key. Find this in **Settings > Environments**.                                                                                                                                                                                 |
+| `userId`          | `string`                                | No       | Unique ID used to identify the user. If set to `null`, the SDK will be disabled and `children` will render while waiting for the `userId`. This is useful when loading the ID asynchronously.                                                  |
+| `components`      | `object`                                | Yes      | Custom components to use in your workflows.                                                                                                                                                                                                    |
+| `tourComponents`  | `object`                                | Yes      | Custom tour components to use in tour blocks.                                                                                                                                                                                                  |
+| `userProperties`  | `object`                                | No       | Object with custom [user properties](/users/properties). Values can be `string`, `number`, `boolean`, or `date`.                                                                                                                               |
+| `language`        | [LanguageOption](#languageoption)       | No       | The user's language used for [localization](/localization). When empty the user will receive the default language group.                                                                                                                       |
+| `apiUrl`          | `string`                                | No       | Custom API URL useful when using proxy to send Flows requests through your own domain.                                                                                                                                                         |
+| `debug`           | `boolean`                               | No       | Enable [debug mode](/sdk/debug) to inspect the SDK's behavior.                                                                                                                                                                                 |
+| `onDebugShortcut` | `function`                              | No       | Custom keyboard shortcut handler for opening the debug panel. By default, the debug panel opens with `Cmd + Option + Shift + F` on Mac or `Ctrl + Alt + Shift + F` on Windows/Linux. If you set this prop, the default shortcut will not work. |
+| `LinkComponent`   | [LinkComponentType](#linkcomponenttype) | No       | Custom Link component used for client-side navigation when using components from `@flows/react-components`. Otherwise each link click will result in a full page reload.                                                                       |
 
 ---
 
@@ -267,6 +268,47 @@ Options:
 - `disabled` (default) - The user will be served content in the default language group of your organization.
 - `automatic` - Automatically detect the user's language and use the matching language group. The language is determined by the `Navigator.language` property in the browser.
 - Manual - A specific language string, e.g. `en-US`, `fr-FR`, etc. This will use the matching language group for the specified language. See [https://www.localeplanet.com/icu/](https://www.localeplanet.com/icu/) for a full list of supported languages.
+
+---
+
+#### LinkComponentType
+
+The type for the `LinkComponent` prop in the `<FlowsProvider />`. See [LinkComponentProps](#linkcomponentprops) for more details.
+
+`type LinkComponentType = React.FC<LinkComponentProps>`
+
+---
+
+#### LinkComponentProps
+
+Props passed to `LinkComponent` prop in the `<FlowsProvider />`. `LinkComponent` is used for client-side navigation when using components from `@flows/react-components`, preventing full page reloads.
+
+| Name        | Type        | Required | Notes                |
+| ----------- | ----------- | -------- | -------------------- |
+| `href`      | `string`    | Yes      | The destination URL. |
+| `children`  | `ReactNode` | No       | The link content.    |
+| `className` | `string`    | No       | CSS class names.     |
+| `onClick`   | `function`  | No       | Click event handler. |
+
+Example implementation:
+
+```tsx title="layout.tsx"
+import { Link } from "react-router";
+import { LinkComponentType } from "@flows/react";
+
+// Adapt "react-router" Link to Flows LinkComponentType
+const LinkComponent: LinkComponentType = ({ href, children, className, onClick }) => (
+  <Link to={href} className={className} onClick={onClick}>
+    {children}
+  </Link>
+)
+
+// Pass the LinkComponent to FlowsProvider
+<FlowsProvider
+  // Other props...
+  LinkComponent={LinkComponent}
+/>
+```
 
 ---
 
