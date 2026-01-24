@@ -20,6 +20,7 @@ onlyBuiltDependencies:
 
 overrides:
   "@auth/core@0.41.0": "@auth/core@0.41.1"
+  lodash@>=4.0.0 <=4.17.22: ">=4.17.23"
   qs@<6.14.1: ">=6.14.1"
   systeminformation@<5.27.14: ">=5.27.14"
-  tar@<=7.5.2: ">=7.5.3"
+  tar@<=7.5.3: ">=7.5.4"
