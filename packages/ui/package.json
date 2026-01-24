@@ -41,7 +41,7 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.2",
-    "@vueless/storybook-dark-mode": "^10.0.4",
+    "@vueless/storybook-dark-mode": "^10.0.6",
     "eslint-config-custom": "workspace:*",
     "storybook": "^10.1.10",
     "tsconfig": "workspace:*",
