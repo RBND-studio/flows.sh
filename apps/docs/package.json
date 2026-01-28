@@ -14,14 +14,14 @@
     "check-links": "docker run --network host -v ./linkcheck-skip-urls.txt:/linkcheck-skip-urls.txt --rm tennox/linkcheck $URL --skip-file linkcheck-skip-urls.txt"
   },
   "dependencies": {
-    "@flows/react-components": "2.4.0",
+    "@flows/react-components": "2.5.0",
     "fumadocs-core": "16.4.7",
     "fumadocs-mdx": "14.2.5",
     "fumadocs-ui": "16.4.7",
     "icons": "workspace:*",
-    "next": "16.1.3",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
+    "next": "16.1.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.1",
     "remark-mdx": "^3.1.1",
@@ -32,8 +32,8 @@
     "zod": "4.3.5"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "16.1.3",
-    "@pandacss/dev": "1.7.1",
+    "@next/eslint-plugin-next": "16.1.6",
+    "@pandacss/dev": "1.8.1",
     "@types/mdx": "^2.0.13",
     "@types/node": "^24",
     "@types/react": "^19.2.7",
