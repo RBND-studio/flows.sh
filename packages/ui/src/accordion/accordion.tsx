@@ -54,7 +54,7 @@ export const Accordion: FC<Props> = ({
         px="space12"
         py="space8"
       >
-        <Box flex={1}>
+        <Box flex={1} overflow="hidden">
           {typeof title === "string" ? <Text variant="titleM">{title}</Text> : title}
         </Box>
 
