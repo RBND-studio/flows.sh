@@ -1,16 +1,16 @@
 "use client";
 
+import { FC, ReactNode } from "react";
+import Link from "next/link";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { useUserId } from "@/components/providers/user-provider";
+import { ExampleControls } from "@/components/providers/example-controls";
 
 import { FlowsProvider } from "@flows/react";
 import * as components from "@flows/react-components";
 import * as tourComponents from "@flows/react-components/tour";
 
-import { FC, ReactNode } from "react";
-
 import "@flows/react-components/index.css";
-import { ExampleControls } from "@/components/providers/example-controls";
 import { FeatureAnnouncement } from "@/components/feature-announcement";
 
 type Props = {
@@ -39,6 +39,7 @@ export const Providers: FC<Props> = ({ children }) => {
         userProperties={{
           example: "feature-announcement",
         }}
+        LinkComponent={Link}
       >
         {content}
       </FlowsProvider>
