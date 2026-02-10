@@ -3,6 +3,7 @@ import { Box } from "@flows/styled-system/jsx";
 import {
   Banner16,
   Checklist16,
+  Delay16,
   End16,
   Filter16,
   Hint16,
@@ -26,6 +27,7 @@ export const builtInBlockIcons: Record<string, IconCmp> = {
   end: End16,
   filter: Filter16,
   wait: Wait16,
+  delay: Delay16,
 };
 
 export const customIconOptions: Record<string, IconCmp> = {
@@ -59,7 +61,7 @@ export const BlockIcon = forwardRef<HTMLDivElement, Props>(function BlockIcon(
   }, [blockIcon, blockType]);
 
   const type = useMemo(() => {
-    if (["filter", "wait"].includes(blockType)) return "logic";
+    if (["filter", "wait", "delay"].includes(blockType)) return "logic";
     if (blockType === "manual-start") return "start";
     return blockType as (typeof boxStyles.variantMap.type)[number];
   }, [blockType]);
