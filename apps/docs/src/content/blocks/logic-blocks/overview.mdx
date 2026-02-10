@@ -4,7 +4,7 @@ description: Use logic blocks to branch, filter, and apply conditions in workflo
 ---
 
 import { Card, Cards } from "fumadocs-ui/components/card";
-import { Filter16 } from "icons";
+import { Filter16, Delay16 } from "icons";
 
 ![Filter block](/blocks/filter.png)
 
@@ -15,6 +15,9 @@ Logic blocks define branching logic, conditions, and other rules that control th
 ## Logic blocks
 
 <Cards>
+  <Card icon={<Delay16 />} title="Delay" href="/blocks/logic-blocks/delay">
+    Pause a workflow path for a defined time before continuing.
+  </Card>
   <Card icon={<Filter16 />} title="Filter" href="/blocks/logic-blocks/filter">
     Lets through only users that meet specific conditions.
   </Card>
