@@ -6,7 +6,8 @@ export type BlockType =
   | "end"
   | "tour-component"
   | "manual-start"
-  | "wait";
+  | "wait"
+  | "delay";
 
 export type PropertyType =
   | "string"
