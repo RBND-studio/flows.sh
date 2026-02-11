@@ -26,6 +26,7 @@ export * from "./src/code16";
 export * from "./src/component16";
 export * from "./src/copy16";
 export * from "./src/credit-card16";
+export * from "./src/delay16";
 export * from "./src/drag-handle16";
 export * from "./src/drag16";
 export * from "./src/driverjs-full20";

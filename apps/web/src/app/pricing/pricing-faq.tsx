@@ -22,7 +22,7 @@ const questions = [
         <br />
         <br />
         Experiencing a workflow means that at least one component block has been rendered to the
-        user.{" "}
+        user or they have entered a paid block type (e.g. Delay block).{" "}
         <SmartLink underline target="_blank" href={links.docs.organization.howWeCountMTus}>
           Learn more
         </SmartLink>
