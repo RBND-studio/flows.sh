@@ -111,6 +111,7 @@ export const links = (domain = "flows.sh") =>
         "manual-start": `https://${domain}/docs/blocks/start-blocks/manual-start`,
         tour: `https://${domain}/docs/blocks/tour-block`,
         filter: `https://${domain}/docs/blocks/logic-blocks/filter`,
+        delay: `https://${domain}/docs/blocks/logic-blocks/delay`,
         end: `https://${domain}/docs/blocks/end-block`,
         components: {
           custom: `https://${domain}/docs/components/custom`,

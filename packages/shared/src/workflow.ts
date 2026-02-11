@@ -14,12 +14,14 @@ export const propertyTypes: PropertyType[] = [
 export const defaultPropertyType = propertyTypes[0];
 export const primitivePropertyTypes: PropertyType[] = ["string", "number", "boolean", "select"];
 
-export const builtInBlockDescriptions: Record<string, string> = {
+export const builtInBlockDescriptions: Partial<Record<BlockType, string>> = {
   start: "Start block allows users to enter the workflow if they meet the conditions",
   "manual-start": "Start the workflow manually from your application",
   tour: "Tour is a sequence of steps that guide users through a process.",
   end: "When user reaches an end block, the whole workflow ends and is marked as completed.",
   filter: "Filter lets through only the users that meet the conditions",
+  delay:
+    "Delay pauses the workflow for a specified amount of time before proceeding to the next block",
 };
 
 export const getVersionName = (versionNumber: number): string =>
@@ -30,7 +32,7 @@ export const workflowFrequencyOptions = [
   { label: "Every time", value: "every-time" },
 ] as const;
 
-export const blockTranslation = {
+export const blockTranslation: Record<BlockType, string> = {
   component: "Workflow component",
   "tour-component": "Tour component",
   start: "Start",
@@ -39,7 +41,8 @@ export const blockTranslation = {
   tour: "Tour",
   filter: "Filter",
   wait: "Wait",
-} as const;
+  delay: "Delay",
+};
 
 // TODO: consider adding descriptions for more built-in blocks
 export const defaultBuiltInBlockDescription: Record<string, string> = {
@@ -76,3 +79,5 @@ export const tourBlockExitNodes = [
       "Cancels the whole tour. This node is connected to the cancel node of the whole tour block.",
   },
 ];
+
+export const delayMaxTotalDays = 30;
