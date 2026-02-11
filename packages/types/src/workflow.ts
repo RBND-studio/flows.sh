@@ -52,3 +52,9 @@ export type TourTriggerGroup = {
 };
 
 export type TourTrigger = TourTriggerGroup;
+
+export type DelayValues = {
+  days: number;
+  hours: number;
+  minutes: number;
+};
