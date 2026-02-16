@@ -7,12 +7,31 @@ description: Lets through only users that meet specific conditions.
 
 ## Overview
 
-Filters [users](/users/overview) based on specific conditions, allowing only those who match the criteria to proceed. Users that don't match the conditions are stopped and won't continue to next block, however if they have active another block the workflow won't be exited.
+The Filter block lets through only users that meet specific conditions, allowing you to branch workflows based on user properties. Users that don't match the conditions are stopped and won't continue to the next block. However, if they have another active block in the workflow, the workflow won't be exited.
 
 ## Input
 
-Filter block filters users based on an array of [user properties](/blocks/block-properties/user-properties) conditions. The user must meet all conditions to pass through the block.
+The Filter block evaluates an array of [user property](/blocks/block-properties/user-properties) conditions. The user must meet **all** conditions to pass through the block.
 
 ## Exit nodes
 
-**`matched`** - when the user meets all conditions they follow this path.
+| Node      | Description                                              |
+| --------- | -------------------------------------------------------- |
+| `matched` | Triggered when the user meets all conditions.            |
+
+## Examples
+
+### Show a feature announcement only to paid users
+
+Add a Filter block after the Start block with the condition `plan equals paid`. Only users on a paid plan will continue to the announcement block. Free users stop at the filter and remain in the workflow without seeing the announcement.
+
+### Branch an onboarding workflow by role
+
+Use two Filter blocks after a Start block — one with `role equals admin` and another with `role equals member`. Each filter leads to a different set of blocks, giving admins and members a tailored onboarding experience.
+
+## Filter vs. Start block
+
+Both the [Start block](/blocks/start-blocks/automatic-start) and the Filter block use user property conditions. The difference is:
+
+- **Start block**: Controls who can **enter** a workflow.
+- **Filter block**: Controls who can **continue** within a workflow that they've already entered.
