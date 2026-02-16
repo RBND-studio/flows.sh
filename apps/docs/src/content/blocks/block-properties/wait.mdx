@@ -22,3 +22,13 @@ The wait property is automatically added to each step in the [tour block](/block
   - **None**: Disables the wait property, requiring manual progression (e.g., via a button click).
 - **Element**: The CSS selector of the element needed to be clicked to proceed (available when **User clicks on an element** is selected).
 - **Page**: Defines the target page or page for the interaction (available for both **User clicks on an element** and **User navigates to a page**). See the [page targeting](/blocks/block-properties/page-targeting) section for configuration details.
+
+## Examples
+
+| Scenario | Interaction type | Configuration |
+| -------- | ---------------- | ------------- |
+| Wait for user to click a button | User clicks on an element | Element: `#submit-button` |
+| Wait for user to navigate to settings | User navigates to a page | Page: `/settings` |
+| Auto-advance after 3 seconds | Delay | Duration: `3000` ms |
+| Wait for a loading spinner to disappear | Element is not on the page | Element: `.loading-spinner` |
+| Wait for a modal to appear | Element is on the page | Element: `.confirmation-dialog` |

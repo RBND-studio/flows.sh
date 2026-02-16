@@ -7,8 +7,17 @@ description: Basic block property that allows you to input numeric values.
 
 ## Overview
 
-Number property is one of the basic block properties that allows you to customize the block's content, appearance, and behavior. It is used to input numeric values.
+The Number property accepts integer input. Use it for counts, offsets, durations, or any numeric configuration in your blocks.
 
-- Supports positive and negative numbers.
+- Supports positive and negative integers.
 - Decimal numbers are not supported.
-- The default value is 0.
+- The default value is `0`.
+- Supports [localization](/localization) — can be translated per language group.
+
+## Common use cases
+
+| Use case       | Example                                          |
+| -------------- | ------------------------------------------------ |
+| Pixel offset   | Horizontal or vertical offset for a hint hotspot |
+| Count or limit | Maximum number of items to display               |
+| Duration       | Timeout or delay in seconds                      |
