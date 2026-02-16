@@ -17,3 +17,18 @@ User properties fields allows you to target users based on their attributes. You
 - **Data type**: The data type of the user attribute. See [supported types](/users/properties#property-types).
 - **Operator**: The operator to use when comparing the user attribute value.
 - **Values**: The value(s) to compare against the user attribute. You can add multiple values to match against (in that case the values are combined with an OR operator).
+
+## How conditions work
+
+- **Multiple conditions** on the same block use AND logic — the user must match all conditions to pass.
+- **Multiple values** within a single condition use OR logic — the user must match at least one value.
+
+For example, `plan equals pro OR enterprise` AND `createdAt greater than 2025-01-01` matches users who are on either the Pro or Enterprise plan and signed up after January 2025.
+
+## Where user properties are used
+
+User property conditions appear in the following blocks:
+
+- **[Automatic start](/blocks/start-blocks/automatic-start)** — controls who can enter a workflow.
+- **[Manual start](/blocks/start-blocks/manual-start)** — controls who can enter a manually-triggered workflow.
+- **[Filter](/blocks/logic-blocks/filter)** — controls who can continue within a workflow.
