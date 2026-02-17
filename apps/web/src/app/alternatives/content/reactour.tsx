@@ -105,7 +105,7 @@ export const reactourContent: AlternativeContentType = {
       competitor: true,
       flows: true,
       description:
-        "Reactour is free and open source. Flows offers a free plan with 250 monthly active users.",
+        "Reactour is free and open source. Flows offers a free plan with 250 monthly tracked users.",
     },
     {
       title: "Actively maintained",

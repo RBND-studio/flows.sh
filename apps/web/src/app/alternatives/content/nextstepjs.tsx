@@ -112,7 +112,7 @@ export const nextstepjsContent: AlternativeContentType = {
       competitor: true,
       flows: true,
       description:
-        "NextStep is free and open source. Flows offers a free plan with 250 monthly active users.",
+        "NextStep is free and open source. Flows offers a free plan with 250 monthly tracked users.",
     },
   ],
   otherDifferences: [

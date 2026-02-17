@@ -99,7 +99,7 @@ export const driverjsContent: AlternativeContentType = {
       competitor: true,
       flows: true,
       description:
-        "Driver.js is free and open source. Flows offers a free plan with 250 monthly active users.",
+        "Driver.js is free and open source. Flows offers a free plan with 250 monthly tracked users.",
     },
   ],
   otherDifferences: [

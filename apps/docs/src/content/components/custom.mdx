@@ -12,6 +12,13 @@ import { Hat16, Stack16 } from "icons";
 
 To make your product adoption experiences truly native to your product, you can create custom UI components that use your product's design system. Use these components in your workflows and tours to deliver a native onboarding experience.
 
+Custom components consist of two parts:
+
+1. **A UI component in your application** — a React or JavaScript component that renders the block and handles user interactions.
+2. **A component definition in Flows** — defines the properties and exit nodes so the Flows editor knows how to configure the block.
+
+Each component definition must have a matching key in the `components` (or `tourComponents`) object you pass to the SDK. When a user reaches the block in a workflow, the SDK renders your component with the configured properties as props.
+
 ## Resources
 
 <Cards>

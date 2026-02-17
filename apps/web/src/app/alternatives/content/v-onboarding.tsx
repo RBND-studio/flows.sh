@@ -114,7 +114,7 @@ export const vOnboardingContent: AlternativeContentType = {
       competitor: true,
       flows: true,
       description:
-        "v-onboarding is free and open source. Flows offers a free plan with 250 monthly active users.",
+        "v-onboarding is free and open source. Flows offers a free plan with 250 monthly tracked users.",
     },
   ],
   otherDifferences: [

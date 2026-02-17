@@ -23,3 +23,17 @@ User property conditions are specified as an array where all conditions must be 
 ## Multiple start blocks
 
 You can use multiple start blocks within a single workflow to establish different entry conditions. Remember, once a user enters a workflow through any start block, they cannot re-enter until they exit.
+
+## Examples
+
+### Target only new users
+
+Add a condition where `createdAt` is **greater than** your launch date. Only users who signed up after that date will enter the workflow. See the full guide: [How to target only new users](/guides/how-to-target-only-new-users).
+
+### Target users on a specific plan
+
+Add a condition where `plan` **equals** `pro`. Only users on the Pro plan will see the workflow.
+
+### Combine multiple conditions
+
+All conditions use AND logic — the user must match every condition. For example, `plan equals pro` AND `createdAt greater than 2025-01-01` targets Pro users who signed up after January 2025.

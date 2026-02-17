@@ -50,7 +50,7 @@ export const userpilotContent: AlternativeContentType = {
       competitor: false,
       flows: true,
       description:
-        "Flows offers a free plan with 250 monthly active users no strings attached. Userpilot offers only a 14-day free trial.",
+        "Flows offers a free plan with 250 monthly tracked users no strings attached. Userpilot offers only a 14-day free trial.",
     },
     {
       title: "Custom components",

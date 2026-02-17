@@ -7,7 +7,18 @@ description: Basic block property that allows you to input string values.
 
 ## Overview
 
-String property is one of the basic block properties that allows you to customize the block's content, appearance, and behavior. It is used to input string values.
+The String property accepts text input and is the most common block property. Use it for titles, descriptions, body text, labels, CSS selectors, URLs, and any other text-based content.
 
 - Supports any string value.
 - The default value is empty.
+- Supports [personalization](/personalization) — use `{{ property_name }}` to insert user properties dynamically.
+- Supports [localization](/localization) — can be translated into multiple languages.
+
+## Common use cases
+
+| Use case | Example |
+| -------- | ------- |
+| Heading or label | Title of a tooltip, modal, or card |
+| Body text | Description or instructional copy (supports HTML in built-in components) |
+| CSS selector | Target element for a tooltip (e.g., `#my-button`) |
+| URL or link | Redirect URL in an action button |

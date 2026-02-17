@@ -7,7 +7,16 @@ description: Basic block property that allows you to input true/false values.
 
 ## Overview
 
-Boolean property is one of the basic block properties that allows you to customize the block's content, appearance, and behavior. It is used to input true/false values using a checkbox.
+The Boolean property provides a checkbox toggle for true/false values. Use it to let editors enable or disable features in a block without writing code.
 
-- Supports true/false values.
-- The default value is false.
+- Renders as a checkbox in the block editor.
+- The default value is `false`.
+- Supports [localization](/localization) — can be set independently per language group.
+
+## Common use cases
+
+| Use case | Example |
+| -------- | ------- |
+| Toggle visibility | "Dismissible" — show or hide a close button |
+| Toggle behavior | "Hide overlay" — disable the backdrop behind a modal |
+| Feature flag | "Hide progress" — remove the tour step indicator |
