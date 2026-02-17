@@ -7,6 +7,7 @@ export type BlockType =
   | "tour-component"
   | "manual-start"
   | "wait"
+  | "workflow-trigger"
   | "delay";
 
 export type PropertyType =

@@ -20,6 +20,7 @@ export const builtInBlockDescriptions: Partial<Record<BlockType, string>> = {
   tour: "Tour is a sequence of steps that guide users through a process.",
   end: "When user reaches an end block, the whole workflow ends and is marked as completed.",
   filter: "Filter lets through only the users that meet the conditions",
+  "workflow-trigger": "Starts another workflow by entering a specified manual start block.",
   delay:
     "Delay pauses the workflow for a specified amount of time before proceeding to the next block",
 };
@@ -41,6 +42,7 @@ export const blockTranslation: Record<BlockType, string> = {
   tour: "Tour",
   filter: "Filter",
   wait: "Wait",
+  "workflow-trigger": "Workflow trigger",
   delay: "Delay",
 };
 

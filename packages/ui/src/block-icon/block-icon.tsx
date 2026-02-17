@@ -12,6 +12,7 @@ import {
   Tooltip16,
   Tour16,
   Wait16,
+  WorkflowTrigger16,
 } from "icons";
 import { type FC, type SVGProps } from "react";
 import { forwardRef, useMemo } from "react";
@@ -27,6 +28,7 @@ export const builtInBlockIcons: Record<string, IconCmp> = {
   end: End16,
   filter: Filter16,
   wait: Wait16,
+  "workflow-trigger": WorkflowTrigger16,
   delay: Delay16,
 };
 
@@ -63,6 +65,7 @@ export const BlockIcon = forwardRef<HTMLDivElement, Props>(function BlockIcon(
   const type = useMemo(() => {
     if (["filter", "wait", "delay"].includes(blockType)) return "logic";
     if (blockType === "manual-start") return "start";
+    if (["workflow-trigger", "end"].includes(blockType)) return "action";
     return blockType as (typeof boxStyles.variantMap.type)[number];
   }, [blockType]);
 
@@ -98,6 +101,10 @@ const boxStyles = cva({
       logic: {
         backgroundColor: "blockIcon.logic.bg",
         color: "blockIcon.logic.fg",
+      },
+      action: {
+        backgroundColor: "blockIcon.action.bg",
+        color: "blockIcon.action.fg",
       },
       end: {
         backgroundColor: "blockIcon.end.bg",
