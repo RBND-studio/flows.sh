@@ -99,7 +99,7 @@ export const introjsContent: AlternativeContentType = {
       competitor: false,
       flows: true,
       description:
-        "Intro.js requires a paid license for commercial applications. Flows offers a free plan with 250 monthly active users.",
+        "Intro.js requires a paid license for commercial applications. Flows offers a free plan with 250 monthly tracked users.",
     },
   ],
   otherDifferences: [

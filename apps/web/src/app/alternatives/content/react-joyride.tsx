@@ -107,7 +107,7 @@ export const reactJoyrideContent: AlternativeContentType = {
       competitor: true,
       flows: true,
       description:
-        "React Joyride is free and open source. Flows offers a free plan with 250 monthly active users.",
+        "React Joyride is free and open source. Flows offers a free plan with 250 monthly tracked users.",
     },
   ],
   otherDifferences: [

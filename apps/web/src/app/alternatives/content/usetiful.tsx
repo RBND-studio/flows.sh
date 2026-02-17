@@ -50,7 +50,7 @@ export const usetifulContent: AlternativeContentType = {
       competitor: true,
       flows: true,
       description:
-        "Flows offers a free plan with 250 monthly active users and all features included, no strings attached. Usetiful has a 500 MAU free plan with a watermark and locked features.",
+        "Flows offers a free plan with 250 monthly tracked users and all features included, no strings attached. Usetiful has a 500 MAU free plan with a watermark and locked features.",
     },
     {
       title: "Custom components",

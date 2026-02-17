@@ -11,6 +11,7 @@ import { Button } from "../button";
 import { Description } from "../description";
 import { Icon } from "../icon";
 import { Label } from "../label";
+import { Spinner } from "../spinner";
 import { Text } from "../text";
 import { Tooltip } from "../tooltip/tooltip";
 
@@ -25,6 +26,7 @@ export type SelectProps<T extends string = string> = {
     disabledReason?: string;
     description?: string;
   }[];
+  loading?: boolean;
   onChange?: (value: T) => void;
   className?: string;
   buttonClassName?: string;
@@ -58,6 +60,7 @@ function SelectInner<T extends string>({
   onChange,
   optional,
   disabled,
+  loading,
   readOnly,
   "aria-label": ariaLabel,
   autoFocus,
@@ -70,6 +73,17 @@ function SelectInner<T extends string>({
     () => options.find((opt) => opt.value === (props.value ?? props.defaultValue)),
     [options, props.defaultValue, props.value],
   );
+
+  const endIcon = loading ? (
+    <Spinner size={16} />
+  ) : (
+    <RadixSelect.Icon asChild>
+      <Icon color={disabled ? "newControl.fg.disabled" : "newControl.fg"} icon={CaretDown16} />
+    </RadixSelect.Icon>
+  );
+  const buttonText = loading
+    ? "Loading.."
+    : (currentOption?.label ?? currentOption?.value ?? placeholder);
 
   const selectRender = (
     <RadixSelect.Root
@@ -99,21 +113,20 @@ function SelectInner<T extends string>({
             button({ size }),
           )}
           startIcon={currentOption?.startIcon}
-          endIcon={
-            <RadixSelect.Icon asChild>
-              <Icon
-                color={disabled ? "newControl.fg.disabled" : "newControl.fg"}
-                icon={CaretDown16}
-              />
-            </RadixSelect.Icon>
-          }
+          endIcon={endIcon}
           size={size}
           variant="field"
+          // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- nullish coalescing cannot be used here
+          data-placeholder={loading || buttonText === placeholder ? true : undefined}
         >
           <span
-            className={css({ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" })}
+            className={css({
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              whiteSpace: "nowrap",
+            })}
           >
-            {currentOption?.label ?? currentOption?.value ?? placeholder}
+            {buttonText}
           </span>
         </Button>
       </RadixSelect.Trigger>

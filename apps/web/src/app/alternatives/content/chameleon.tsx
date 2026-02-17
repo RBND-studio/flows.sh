@@ -64,7 +64,7 @@ export const chameleonContent: AlternativeContentType = {
       competitor: false,
       flows: true,
       description:
-        "Flows offers a free plan with 250 monthly active users. Chameleon's free plan includes only interactive demos, not live onboarding.",
+        "Flows offers a free plan with 250 monthly tracked users. Chameleon's free plan includes only interactive demos, not live onboarding.",
     },
     {
       title: "Localization",
