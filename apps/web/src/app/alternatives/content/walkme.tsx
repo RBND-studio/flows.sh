@@ -50,7 +50,7 @@ export const walkmeContent: AlternativeContentType = {
       competitor: false,
       flows: true,
       description:
-        "Flows offers a free plan with 250 monthly active users no strings attached. WalkMe does not have a free plan or public pricing.",
+        "Flows offers a free plan with 250 monthly tracked users no strings attached. WalkMe does not have a free plan or public pricing.",
     },
     {
       title: "Custom components",
