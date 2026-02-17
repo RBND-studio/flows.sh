@@ -19,6 +19,7 @@ export type KafkaUserEvent = {
   blockId?: string;
   blockKey?: string;
   workflowId?: string;
+  workflowVersionId?: string;
   propertyKey?: string;
   properties?: Record<string, unknown>;
   locale?: string;

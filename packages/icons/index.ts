@@ -159,4 +159,5 @@ export * from "./src/walkme-full20";
 export * from "./src/walkme20";
 export * from "./src/whatfix-full20";
 export * from "./src/whatfix20";
+export * from "./src/workflow-trigger16";
 export * from "./src/youtube16";

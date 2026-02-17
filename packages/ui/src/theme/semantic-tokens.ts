@@ -159,7 +159,7 @@ export const semanticTokens = defineSemanticTokens({
         bg: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.800}" } },
         fg: { value: { base: "{colors.neutral.600}", _dark: "{colors.neutral.400}" } },
       },
-      end: {
+      action: {
         bg: { value: { base: "{colors.danger.100}", _dark: "{colors.danger-dark.800}" } },
         fg: { value: { base: "{colors.danger.600}", _dark: "{colors.danger-dark.400}" } },
       },
