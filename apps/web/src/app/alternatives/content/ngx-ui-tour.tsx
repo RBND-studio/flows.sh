@@ -105,7 +105,7 @@ export const ngxUiTourContent: AlternativeContentType = {
       competitor: true,
       flows: true,
       description:
-        "Ngx UI Tour is free and open source. Flows offers a free plan with 250 monthly active users.",
+        "Ngx UI Tour is free and open source. Flows offers a free plan with 250 monthly tracked users.",
     },
   ],
   otherDifferences: [

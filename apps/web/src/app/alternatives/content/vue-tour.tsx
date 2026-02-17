@@ -106,7 +106,7 @@ export const vueTourContent: AlternativeContentType = {
       competitor: true,
       flows: true,
       description:
-        "Vue Tour is free and open source. Flows offers a free plan with 250 monthly active users.",
+        "Vue Tour is free and open source. Flows offers a free plan with 250 monthly tracked users.",
     },
   ],
   otherDifferences: [

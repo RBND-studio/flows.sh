@@ -107,7 +107,7 @@ export const onbordaContent: AlternativeContentType = {
       competitor: true,
       flows: true,
       description:
-        "Onborda is free and open source. Flows offers a free plan with 250 monthly active users.",
+        "Onborda is free and open source. Flows offers a free plan with 250 monthly tracked users.",
     },
   ],
   otherDifferences: [

@@ -99,7 +99,7 @@ export const shepherdContent: AlternativeContentType = {
       competitor: false,
       flows: true,
       description:
-        "Shepherd.js requires a paid license for commercial applications. Flows offers a free plan with 250 monthly active users.",
+        "Shepherd.js requires a paid license for commercial applications. Flows offers a free plan with 250 monthly tracked users.",
     },
   ],
   otherDifferences: [
