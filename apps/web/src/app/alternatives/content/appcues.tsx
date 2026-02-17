@@ -64,7 +64,7 @@ export const appcuesContent: AlternativeContentType = {
       competitor: false,
       flows: true,
       description:
-        "Flows offers a free plan with 250 monthly active users. Appcues only offers a time-limited free trial.",
+        "Flows offers a free plan with 250 monthly tracked users. Appcues only offers a time-limited free trial.",
     },
     {
       title: "Localization",

@@ -105,7 +105,7 @@ export const ngxJoyrideContent: AlternativeContentType = {
       competitor: true,
       flows: true,
       description:
-        "Ngx Joyride is free and open source. Flows offers a free plan with 250 monthly active users.",
+        "Ngx Joyride is free and open source. Flows offers a free plan with 250 monthly tracked users.",
     },
   ],
   otherDifferences: [
