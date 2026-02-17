@@ -64,7 +64,7 @@ export const userflowContent: AlternativeContentType = {
       competitor: false,
       flows: true,
       description:
-        "Flows offers a free plan with 250 monthly active users no strings attached. Userflow only offers a time-limited trial.",
+        "Flows offers a free plan with 250 monthly tracked users no strings attached. Userflow only offers a time-limited trial.",
     },
     {
       title: "Localization",

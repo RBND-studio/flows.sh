@@ -24,6 +24,16 @@ End blocks are useful when you want to ensure that a user exits the workflow at 
 
 Multiple end blocks can be used in a single workflow to allow different exit conditions. Regardless of which end block a user reaches, they will exit the whole workflow.
 
+## When to use end blocks
+
+End blocks are most useful when your workflow has multiple branches and you want to guarantee that a user exits at a specific point. Common scenarios:
+
+- **Cancel paths**: Connect a tour's `cancel` exit node to an End block so users who dismiss the tour leave the workflow immediately.
+- **Conditional exits**: Use a [Filter block](/blocks/logic-blocks/filter) followed by an End block to exit users who no longer match certain criteria.
+- **Time-based expiry**: Pair a [Delay block](/blocks/logic-blocks/delay) with an End block to automatically stop a workflow after a set period.
+
+If your workflow is linear (one path from start to finish), you typically don't need an explicit End block — the workflow ends automatically when the last block completes.
+
 ## Reset user progress
 
 You can reset the user's progress manually in their [user profile](/users/overview). Once reset, the user will be able to re-enter the workflow if they meet the start block conditions.

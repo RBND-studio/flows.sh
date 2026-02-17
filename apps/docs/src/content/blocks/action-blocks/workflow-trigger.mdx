@@ -1,0 +1,38 @@
+---
+title: Workflow trigger
+description: Starts another workflow by entering a specified manual start block.
+---
+
+![Workflow trigger block](/blocks/workflow-trigger.png)
+
+## Overview
+
+The **Workflow trigger** block starts another workflow by entering a specified [manual start](/blocks/start-blocks/manual-start) block inside it. Use it to chain workflows together — for example, to start an onboarding checklist after a user completes a welcome tour.
+
+## How it works
+
+1. When a user enters the Workflow trigger block, it calls the target workflow's manual start block using the configured **block key**.
+2. If the target workflow starts successfully, the optional **started** block trigger fires.
+3. The Workflow trigger block then waits for the target workflow to complete.
+4. When the target workflow exits with a `completed` status, the `workflow_completed` exit node fires and the user continues to the next connected block.
+
+If the target workflow is not running when the block is entered (for example, the workflow ID or block key is missing, or the target workflow has already been exited), the block exits immediately without triggering any exit node. If no other blocks are active, the origin workflow exits.
+
+## Configuration
+
+| Property                   | Description                                                                                              |
+| -------------------------- | -------------------------------------------------------------------------------------------------------- |
+| **Workflow to trigger**    | The target workflow to start.                                                                            |
+| **Manual start block key** | The block key of the [manual start](/blocks/start-blocks/manual-start) block inside the target workflow. |
+
+## Block triggers
+
+| Trigger   | Description                                                                                                                                                      |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `started` | Fires when the target workflow is successfully started. You can optionally connect a block to this trigger to perform an action when the target workflow begins. |
+
+## Exit nodes
+
+| Node                 | Description                                                     |
+| -------------------- | --------------------------------------------------------------- |
+| `workflow_completed` | Fires when the target workflow exits with a `completed` status. |

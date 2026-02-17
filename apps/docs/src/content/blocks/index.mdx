@@ -5,7 +5,7 @@ description: Understand the blocks that power your workflows.
 ---
 
 import { Card, Cards } from "fumadocs-ui/components/card";
-import { Start16, Block16, Tour16, Filter16, End16 } from "icons";
+import { Start16, Block16, Tour16, Filter16, End16, WorkflowTrigger16 } from "icons";
 
 ![Workflow](/workflows/main.png)
 
@@ -34,6 +34,9 @@ In Flows there are different types of blocks based on their functionality.
   </Card>
   <Card title="Logic" href="/blocks/logic-blocks/overview" icon={<Filter16 />}>
     Define branching logic, conditions, and other rules.
+  </Card>
+  <Card title="Action" href="/blocks/action-blocks/overview" icon={<WorkflowTrigger16 />}>
+    Perform actions in response to workflow events.
   </Card>
   <Card title="End" href="/blocks/end-block" icon={<End16 />}>
     Exits the workflow.
