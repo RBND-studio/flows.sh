@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common";
-import { db, DBCache, migrate } from "db";
+import { db, DBCache } from "db";
 
 @Injectable()
 export class DatabaseService {
@@ -12,6 +12,5 @@ export class DatabaseService {
       postgresConnection: process.env.BACKEND_DATABASE_CONNECTION,
       cache,
     });
-    void migrate(this.db);
   }
 }
