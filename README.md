@@ -1,39 +1,55 @@
-# Flows private repository
+<p align="center">
+  <a href="https://flows.sh">
+    <img src="./docs/avatar.png" height="96">
+    <h3 align="center">Flows</h3>
+  </a>
+</p>
 
-This a private repository for Flows. Some parts of the repository get mirrored to the public [RBND-studio/flows.sh](https://github.com/RBND-studio/flows.sh) repository with proprietary code removed.
+<p align="center">
+  The better way to build product adoption
+</p>
 
-## Local development
+<p align="center">
+  <a href="https://flows.sh/docs"><strong>Documentation</strong></a> ·
+  <a href="https://flows.sh/changelog"><strong>Changelog</strong></a> ·
+  <a href="https://flows.sh/examples"><strong>Examples</strong></a> ·
+  <a href="https://flows.sh/docs/sdk-overview"><strong>SDKs</strong></a>
+</p>
 
-### First time setup
+## Flows
 
-1. Install Docker and NodeJS
-2. Add .env files for `app`, `backend` and root env for docker containers
-3. Create docker network `docker network create flows_local`
-4. Install NPM packages `pnpm install`
+Flows is a fully customizable product adoption platform for modern companies building onboarding and user engagement experiences.
 
-### Run the Frontend, Backend, DB
+- Build powerful in-app experiences to drive product growth
+- Embed components directly into your app
+- Create onboarding, product adoption, in-app messaging, growth experiments, and more
+- Bring your own UI components or use Flows' built-in components
 
-```sh
-docker compose up -d
-# Don't forget to stop the containers when you're done by running:
-# docker compose down
+Visit our [website](https://flows.sh) to learn more about Flows
 
-pnpm be:dev
-pnpm app dev
-```
+## Get started for free
 
-## Lint URLS
+The fastest and most reliable way to get started with Flows is [signing up for free](https://app.flows.sh/signup). Your first 250 MTUs (monthly tracked users) are free every month, after which you pay based on usage. See our [pricing](https://flows.sh/pricing) for more details.
 
-Docs:
+## Contributing
 
-```sh
-URL="http://host.docker.internal:3000/docs" pnpm run docs check-links
-```
+We ❤️ contributions big and small, more info in [CONTRIBUTING.md](/CONTRIBUTING.md).
 
-Web:
+## Philosophy
 
-```sh
-URL="http://host.docker.internal:6002/" pnpm web check-links
-```
+Our mission is to make software easier to use and learn. To do that, we are building tools that help product teams create better onboarding flows and product tours.
 
-For local linting uncomment (remove #) /docs in `apps/web/linkcheck-skip-urls.txt` to exclude docs links.
+The principles we use to build **Flows** are:
+
+- **Speed:** Flows should be easy to create and deploy. There shouldn't be any dead time before an onboarding flow shows up to the user after a page loads.
+- **Flexibility:** There shouldn't be any limits to what you can do with Flows. You should be able to create any experience you can imagine.
+- **Reliability:** Flows should work every time. They should be robust and resilient to any changes in the underlying product.
+- **Design:** Flows should have superior UX with beautiful UI. They should be a pleasure to create and a joy to experience.
+
+## License
+
+This repo is available under [MIT license](/LICENSE.md). It is a read-only mirror of Flows, automatically synced from the main Flows repo with all proprietary code removed.
+
+---
+
+Created by [rbnd.studio](https://rbnd.studio/).
