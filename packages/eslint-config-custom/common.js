@@ -27,6 +27,9 @@ module.exports = {
         message: "You should add a tooltip to the IconButton unless it's self-explanatory.",
       },
     ],
+
+    // Disabling jsx-a11y because after upgrading minimatch to v10 because of vulnerability, it doesn't work
+    "jsx-a11y/label-has-associated-control": "off",
   },
   plugins: ["simple-import-sort"],
 };
