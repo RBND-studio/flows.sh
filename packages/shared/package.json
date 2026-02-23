@@ -4,14 +4,12 @@
   "main": "index.ts",
   "sideEffects": false,
   "scripts": {
-    "tsc": "tsc",
-    "lint": "eslint src"
+    "tsc": "tsc"
   },
   "dependencies": {
     "dayjs": "^1.11.19"
   },
   "devDependencies": {
-    "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "@flows/types": "workspace:*",
     "typescript": "5.9.3"

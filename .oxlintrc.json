@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "ignorePatterns": [
+    "example-templates",
+    "node_modules",
+    ".turbo",
+    ".next",
+    "dist",
+    "pandacss-generated",
+    "schema.d.ts",
+    "next-env.d.ts",
+    "panda.config.ts"
+  ]
+}

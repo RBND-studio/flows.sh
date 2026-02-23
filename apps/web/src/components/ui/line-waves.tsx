@@ -154,7 +154,7 @@ export const Waves: React.FC<WavesProps> = ({
       waves = new THREE.LineSegments(horizontalLinesGeometry, material);
       waves.rotation.x = -Math.PI / 2;
       scene.add(waves);
-    } catch (e) {
+    } catch {
       // Fallback to default color
       const material = new THREE.LineBasicMaterial({ color: 0x000000 });
 

@@ -9,7 +9,6 @@
     "analyze": "ANALYZE=true next build",
     "postbuild": "next-sitemap",
     "start": "next start",
-    "lint": "eslint src",
     "tsc": "next typegen && tsc",
     "prepare": "panda codegen",
     "check-links": "docker run --network host -v ./linkcheck-skip-urls.txt:/linkcheck-skip-urls.txt --rm tennox/linkcheck $URL --skip-file linkcheck-skip-urls.txt"
@@ -49,7 +48,6 @@
   },
   "devDependencies": {
     "@flows/types": "workspace:*",
-    "@next/eslint-plugin-next": "16.1.6",
     "@pandacss/dev": "1.8.1",
     "@types/js-cookie": "^3.0.6",
     "@types/mdx": "^2.0.13",
@@ -57,7 +55,6 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@types/three": "^0.182.0",
-    "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "5.9.3"
   }

@@ -4,8 +4,7 @@
   "main": "index.ts",
   "sideEffects": false,
   "scripts": {
-    "tsc": "tsc",
-    "lint": "eslint src"
+    "tsc": "tsc"
   },
   "dependencies": {
     "drizzle-orm": "^0.45.1",
@@ -15,7 +14,6 @@
   },
   "devDependencies": {
     "@flows/types": "workspace:*",
-    "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "5.9.3"
   }

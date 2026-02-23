@@ -42,13 +42,11 @@ export async function GET(request: Request): Promise<ImageResponse> {
     const textToFetch = [title, type].filter(Boolean).join(" ");
 
     return new ImageResponse(
-      (
-        <OgComponent
-          title={title ?? "The better way to build product adoption"}
-          backgroundSrc={backgroundSrc}
-          type={type}
-        />
-      ),
+      <OgComponent
+        title={title ?? "The better way to build product adoption"}
+        backgroundSrc={backgroundSrc}
+        type={type}
+      />,
       {
         width: 1200,
         height: 630,
@@ -61,7 +59,7 @@ export async function GET(request: Request): Promise<ImageResponse> {
         ],
       },
     );
-  } catch (e: unknown) {
+  } catch {
     return new Response(`Failed to generate the image`, {
       status: 500,
     });
