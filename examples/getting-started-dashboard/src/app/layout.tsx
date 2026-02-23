@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Providers } from "./providers";
-import { Toaster } from "@/components/ui/sonner";
-import { ExampleInfo } from "@/components/providers/example-info";
 
 export const metadata: Metadata = {
   title: "Getting started dashboard",
