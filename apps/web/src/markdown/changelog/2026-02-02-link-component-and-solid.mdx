@@ -1,0 +1,37 @@
+---
+title: Link component
+date: "2026-02-02"
+description: The React SDK gains a LinkComponent prop for client-side navigation, Solid.js gets an official integration guide, and the floating checklist adds new popup behavior controls.
+---
+
+`<FlowsProvider />` now accepts a `LinkComponent` prop. Pass your app's router Link component to enable client-side navigation in components from `@flows/react-components`. Without it, each link click causes a full page reload. This keeps navigation fast and consistent with the rest of your app.
+
+See the [React SDK reference](/docs/sdk/react/reference#linkcomponenttype) for usage details.
+
+```tsx title="layout.tsx"
+import { Link } from "react-router";
+import { LinkComponentType } from "@flows/react";
+
+// Adapt "react-router" Link to Flows LinkComponentType
+const LinkComponent: LinkComponentType = ({ href, children, className, onClick }) => (
+  <Link to={href} className={className} onClick={onClick}>
+    {children}
+  </Link>
+)
+
+// Pass the LinkComponent to FlowsProvider
+<FlowsProvider
+  // Other props...
+  LinkComponent={LinkComponent}
+/>
+```
+
+## Floating checklist controls
+
+Two new options give you more control over floating checklist popup behavior during user interactions. You can now hide the popup when a checklist item's button is clicked, hiding the list to pull focus towards the task. You can also configure the popup to reopen automatically when an item is completed, so users see their updated progress without having to re-open it manually.
+
+These work well together for flows where each checklist item launches a tour or navigates the user to a specific part of your product.
+
+## Other improvements
+
+- Added a [Solid.js integration guide](/docs/sdk/frameworks/solid) with step-by-step setup instructions for both Solid and SolidStart.
