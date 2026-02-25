@@ -6,7 +6,6 @@
     "tsc": "tsc"
   },
   "devDependencies": {
-    "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "5.9.3"
   }

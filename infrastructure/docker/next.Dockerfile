@@ -36,9 +36,6 @@ RUN pnpm turbo run build --filter=${APP}...
 FROM base AS runner
 WORKDIR /app
 
-RUN npm install -g sharp
-ENV NEXT_SHARP_PATH=/usr/local/lib/node_modules/sharp
-
 # Don't run production as root
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
