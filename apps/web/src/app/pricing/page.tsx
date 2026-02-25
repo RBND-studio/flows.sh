@@ -8,6 +8,7 @@ import { Text } from "ui";
 import { PricingCalculator } from "./pricing-calculator";
 import { PricingFaq } from "./pricing-faq";
 import { VolumeTable } from "./volume-table";
+import { LogoSection } from "components/logos/logo-section";
 
 export const metadata: Metadata = getWebMetadata({
   title: "Pricing",
@@ -26,6 +27,7 @@ const Page = (): ReactElement => {
       />
       <PricingCalculator />
       <VolumeTable />
+      <LogoSection />
       <PricingFaq />
       <CtaBanner />
     </>

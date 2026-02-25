@@ -9,6 +9,7 @@ import { Icon, Text } from "ui";
 
 import { FeaturesSection } from "./features-section";
 import { MainIllustration } from "./main-illustration";
+import { LogoSection } from "components/logos/logo-section";
 
 export const metadata: Metadata = getWebMetadata({
   title: "Embeddable components",
@@ -31,6 +32,8 @@ export default function ProductTour(): JSX.Element {
       />
 
       <MainIllustration />
+
+      <LogoSection />
 
       <FeaturesSection />
 
