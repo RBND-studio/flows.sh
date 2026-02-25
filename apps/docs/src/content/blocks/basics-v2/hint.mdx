@@ -21,18 +21,18 @@ To integrate the hint component into your application, follow the steps describe
 
 When using the hint component in a workflow, you can define the following properties:
 
-| Name                   | Type    | Notes                                                                                                                       |
-| ---------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Title                  | string  | The title of the hint.                                                                                                      |
-| Body                   | string  | The body of the hint. Supports HTML.                                                                                        |
-| Primary button         | action  | The primary button, see [Action](/blocks/block-properties/action) for all options. When empty the button is not rendered.   |
-| Secondary button       | action  | The secondary button, see [Action](/blocks/block-properties/action) for all options. When empty the button is not rendered. |
-| Hotspot target element | string  | The CSS selector of the element the hint hotspot should appear on.                                                          |
-| Hotspot placement      | select  | On which side of the target element the hint hotspot should appear.                                                         |
-| Hotspot X offset       | number  | Horizontal offset of the hotspot relative to the target element.                                                            |
-| Hotspot Y offset       | number  | Vertical offset of the hotspot relative to the target element.                                                              |
-| Dismissible            | boolean | Shows a close button linked to the `close` exit node. Default is `false`.                                                   |
-| Page targeting         | ---     | What page the hint should be shown on. [Learn more](/blocks/block-properties/page-targeting)                                |
+| Name                   | Type    | Notes                                                                                                                                                               |
+| ---------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Title                  | string  | The title of the hint.                                                                                                                                              |
+| Body                   | string  | The body of the hint. Supports HTML.                                                                                                                                |
+| Primary button         | action  | The primary button, see [Action](/blocks/block-properties/action) for all options. When empty the button is not rendered.                                           |
+| Secondary button       | action  | The secondary button, see [Action](/blocks/block-properties/action) for all options. When empty the button is not rendered.                                         |
+| Hotspot target element | string  | The CSS selector of the element the hint hotspot should appear on. Adds `data-flows-hint-target="true"` attribute to the element when the hint hotspot is rendered. |
+| Hotspot placement      | select  | On which side of the target element the hint hotspot should appear.                                                                                                 |
+| Hotspot X offset       | number  | Horizontal offset of the hotspot relative to the target element.                                                                                                    |
+| Hotspot Y offset       | number  | Vertical offset of the hotspot relative to the target element.                                                                                                      |
+| Dismissible            | boolean | Shows a close button linked to the `close` exit node. Default is `false`.                                                                                           |
+| Page targeting         | ---     | What page the hint should be shown on. [Learn more](/blocks/block-properties/page-targeting)                                                                        |
 
 **Exit nodes:**
 
@@ -45,20 +45,20 @@ When using the hint component in a workflow, you can define the following proper
 
 When using the hint component in a tour, you can define additional properties to control the tour flow.
 
-| Name                   | Type    | Notes                                                                                                                       |
-| ---------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Title                  | string  | The title of the hint.                                                                                                      |
-| Body                   | string  | The body of the hint. Supports HTML.                                                                                        |
-| Primary button         | action  | The primary button, see [Action](/blocks/block-properties/action) for all options. When empty the button is not rendered.   |
-| Secondary button       | action  | The secondary button, see [Action](/blocks/block-properties/action) for all options. When empty the button is not rendered. |
-| Hotspot target element | string  | The CSS selector of the element the hint hotspot should appear on.                                                          |
-| Hotspot placement      | select  | On which side of the target element the hint hotspot should appear.                                                         |
-| Hotspot X offset       | number  | Horizontal offset of the hotspot relative to the target element.                                                            |
-| Hotspot Y offset       | number  | Vertical offset of the hotspot relative to the target element.                                                              |
-| Hide progress          | boolean | Hides the tour progress indicator from the hint. Default is `false`.                                                        |
-| Dismissible            | boolean | Shows a close button linked to the `cancel` exit node of the Tour block. Default is `false`.                                |
-| Page targeting         | ---     | What page the hint should be shown on. [Learn more](/blocks/block-properties/page-targeting)                                |
-| Wait                   | ---     | Used to define what interaction should trigger the next step. [Learn more](/blocks/block-properties/wait)                   |
+| Name                   | Type    | Notes                                                                                                                                                               |
+| ---------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Title                  | string  | The title of the hint.                                                                                                                                              |
+| Body                   | string  | The body of the hint. Supports HTML.                                                                                                                                |
+| Primary button         | action  | The primary button, see [Action](/blocks/block-properties/action) for all options. When empty the button is not rendered.                                           |
+| Secondary button       | action  | The secondary button, see [Action](/blocks/block-properties/action) for all options. When empty the button is not rendered.                                         |
+| Hotspot target element | string  | The CSS selector of the element the hint hotspot should appear on. Adds `data-flows-hint-target="true"` attribute to the element when the hint hotspot is rendered. |
+| Hotspot placement      | select  | On which side of the target element the hint hotspot should appear.                                                                                                 |
+| Hotspot X offset       | number  | Horizontal offset of the hotspot relative to the target element.                                                                                                    |
+| Hotspot Y offset       | number  | Vertical offset of the hotspot relative to the target element.                                                                                                      |
+| Hide progress          | boolean | Hides the tour progress indicator from the hint. Default is `false`.                                                                                                |
+| Dismissible            | boolean | Shows a close button linked to the `cancel` exit node of the Tour block. Default is `false`.                                                                        |
+| Page targeting         | ---     | What page the hint should be shown on. [Learn more](/blocks/block-properties/page-targeting)                                                                        |
+| Wait                   | ---     | Used to define what interaction should trigger the next step. [Learn more](/blocks/block-properties/wait)                                                           |
 
 **Exit nodes:**
 

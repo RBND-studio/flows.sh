@@ -1,0 +1,266 @@
+---
+title: Styling
+pageTitle: Styling Basics V2 components
+description: Customize the visual appearance of Basics V2 components using CSS variables.
+---
+
+## Overview
+
+Basics V2 components are styled entirely through [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) (CSS variables). Every color, spacing value, shadow, and typography setting is controlled by a variable prefixed with `--flows-basicsV2-`, making it straightforward to match the components to your product's design system.
+
+There are two ways to customize the styles:
+
+1. **Override CSS variables (recommended)** - import the default stylesheet and override only the variables you want to change.
+2. **Copy and modify the stylesheet** - copy `index.css` from the package into your project and edit it directly.
+
+## Overriding CSS variables (recommended)
+
+The simplest approach is to override individual variables in your own CSS. By importing the override CSS file after the package's stylesheet, your variable values will take precedence while still inheriting any variables you don't override.
+
+```css title="custom-flows.css"
+:root {
+  /* Change the primary (button/accent) color to your brand color */
+  --flows-basicsV2-bg-primary: #7c3aed;
+  --flows-basicsV2-bg-primary-hover: #6d28d9;
+  --flows-basicsV2-border-primary: 1px solid #7c3aed;
+
+  /* Match your app's font */
+  --flows-basicsV2-font-family: "Inter", sans-serif;
+
+  /* Adjust border radius to match your design system */
+  --flows-basicsV2-borderRadius-m: 6px;
+  --flows-basicsV2-borderRadius-l: 10px;
+  --flows-basicsV2-borderRadius-xl: 14px;
+}
+```
+
+Import the overrides after the package stylesheet.
+
+```tsx title="layout.tsx"
+import "@flows/react-components/index.css";
+import "./custom-flows.css"; // [!code highlight]
+```
+
+See [CSS variable reference](#css-variable-reference) below for a full list of available variables.
+
+## Copying and modifying the stylesheet
+
+If you need deeper control, copy the stylesheet directly into your project and edit the values there. You can find `index.css` in the installed package:
+
+- **React**: `node_modules/@flows/react-components/dist/index.css`
+- **JavaScript**: `node_modules/@flows/js-components/dist/index.css`
+
+<Callout type="warning">
+  This approach is less maintainable, as you won't receive updates to the styles when the package is
+  updated. We recommend only using this method if you need to make extensive changes that can't be
+  achieved through variable overrides.
+</Callout>
+
+Copy the file to your project (for example, `src/flows-components.css`), then import your copy instead of the package's file:
+
+```tsx title="layout.tsx"
+// Before
+import "@flows/react-components/index.css";
+
+// After
+import "./flows-components.css";
+```
+
+## Dark mode
+
+The stylesheet ships with a `.dark` class selector that overrides all color variables for dark mode. To activate dark mode styles, add the `dark` class to a parent element, typically `<html>` or `<body>`:
+
+```html
+<html class="dark">
+  ...
+</html>
+```
+
+To customize dark mode colors, override the variables inside your own `.dark` rule:
+
+```css title="custom-flows.css"
+.dark {
+  --flows-basicsV2-bg-primary: #a78bfa;
+  --flows-basicsV2-bg-primary-hover: #8b5cf6;
+  --flows-basicsV2-border-primary: 1px solid #a78bfa;
+  --flows-basicsV2-fg-onPrimary: #1e1e1e;
+}
+```
+
+If your app uses a different method for dark mode (e.g. a `data-theme="dark"` attribute or a different class name), you can change the selector in your own stylesheet to match your approach.
+
+## Example: matching a brand color
+
+The following example changes the accent color from the default black/white to a purple brand color in both light and dark mode:
+
+```css title="flows-theme.css"
+:root {
+  --flows-basicsV2-bg-primary: #7c3aed;
+  --flows-basicsV2-bg-primary-hover: #6d28d9;
+  --flows-basicsV2-border-primary: 1px solid #7c3aed;
+  --flows-basicsV2-fg-onPrimary: #ffffff;
+}
+
+.dark {
+  --flows-basicsV2-bg-primary: #a78bfa;
+  --flows-basicsV2-bg-primary-hover: #8b5cf6;
+  --flows-basicsV2-border-primary: 1px solid #a78bfa;
+  --flows-basicsV2-fg-onPrimary: #0f0f0f;
+}
+```
+
+Import the overrides after the package stylesheet.
+
+```tsx title="layout.tsx"
+import "@flows/react-components/index.css";
+import "./flows-theme.css"; // [!code highlight]
+```
+
+## CSS variable reference
+
+See the [vars.css](https://github.com/RBND-studio/flows-sdk/blob/main/workspaces/styles/src/vars.css) file in the Flows SDK GitHub repository for the full list of CSS variables.
+
+### Colors
+
+These variables control backgrounds, text colors, borders, and overlays.
+
+| Variable                               | Light default       | Dark default        | Description                                  |
+| -------------------------------------- | ------------------- | ------------------- | -------------------------------------------- |
+| `--flows-basicsV2-bg-default`          | `#ffffff`           | `#1e1e1e`           | Main component background                    |
+| `--flows-basicsV2-bg-subtle`           | `#fafafa`           | `#262626`           | Subtle/secondary background                  |
+| `--flows-basicsV2-bg-strong`           | `#eaeaea`           | `#303030`           | Strong background (e.g. progress bar track)  |
+| `--flows-basicsV2-bg-hover`            | `#f0f0f0`           | `#333333`           | Background on hover                          |
+| `--flows-basicsV2-bg-primary`          | `#262626`           | `#f1f1f1`           | Primary accent background (buttons, hotspot) |
+| `--flows-basicsV2-bg-primary-hover`    | `#3b3b3b`           | `#dddddd`           | Primary background on hover                  |
+| `--flows-basicsV2-bg-overlay`          | `rgba(0,0,0,.4)`    | `rgba(0,0,0,.6)`    | Overlay behind modals and tooltips           |
+| `--flows-basicsV2-fg-default`          | `#1a1a1a`           | `#fafafa`           | Default text color                           |
+| `--flows-basicsV2-fg-onPrimary`        | `#ffffff`           | `#1e1e1e`           | Text color on primary backgrounds            |
+| `--flows-basicsV2-fg-muted`            | `#605252`           | `#9d9595`           | Muted/secondary text color                   |
+| `--flows-basicsV2-borderWidth`         | `1px`               | —                   | Border width used in border shorthands       |
+| `--flows-basicsV2-border`              | `1px solid #d6d6d6` | `1px solid #3d3d3d` | Default border                               |
+| `--flows-basicsV2-border-strong`       | `1px solid #ccc`    | `1px solid #4a4a4a` | Strong border                                |
+| `--flows-basicsV2-border-strong-hover` | `1px solid #bababa` | `1px solid #616161` | Strong border on hover                       |
+| `--flows-basicsV2-border-primary`      | `1px solid #262626` | `1px solid #f1f1f1` | Primary/accent border                        |
+
+### Shadows
+
+| Variable                                   | Description                                      |
+| ------------------------------------------ | ------------------------------------------------ |
+| `--flows-basicsV2-shadow`                  | Default drop shadow (used on tooltips, hints)    |
+| `--flows-basicsV2-shadow-large`            | Larger drop shadow (used on modals and popovers) |
+| `--flows-basicsV2-primary-button-gradient` | Gradient overlay on primary buttons              |
+| `--flows-basicsV2-primary-button-shadow`   | Box shadow on primary buttons                    |
+| `--flows-basicsV2-secondary-button-shadow` | Box shadow on secondary buttons                  |
+
+### Border radius
+
+| Variable                           | Default | Description                              |
+| ---------------------------------- | ------- | ---------------------------------------- |
+| `--flows-basicsV2-borderRadius-xs` | `3px`   | Extra small radius (arrow corners)       |
+| `--flows-basicsV2-borderRadius-m`  | `8px`   | Medium radius (buttons, checklist items) |
+| `--flows-basicsV2-borderRadius-l`  | `12px`  | Large radius (tooltips, cards, popovers) |
+| `--flows-basicsV2-borderRadius-xl` | `16px`  | Extra large radius (modals)              |
+
+### Spacing
+
+These variables are used as internal padding and gap values throughout the components.
+
+| Variable                    | Default | Description            |
+| --------------------------- | ------- | ---------------------- |
+| `--flows-basicsV2-size-xs`  | `2px`   | Extra small spacing    |
+| `--flows-basicsV2-size-s`   | `8px`   | Small spacing          |
+| `--flows-basicsV2-size-m`   | `12px`  | Medium spacing         |
+| `--flows-basicsV2-size-l`   | `16px`  | Large spacing          |
+| `--flows-basicsV2-size-xl`  | `20px`  | Extra large spacing    |
+| `--flows-basicsV2-size-xxl` | `24px`  | 2× extra large spacing |
+
+### Typography
+
+| Variable                             | Default           | Description                        |
+| ------------------------------------ | ----------------- | ---------------------------------- |
+| `--flows-basicsV2-font-family`       | System font stack | Font family for all component text |
+| `--flows-basicsV2-base-font-size`    | `14px`            | Body text font size                |
+| `--flows-basicsV2-base-line-height`  | `20px`            | Body text line height              |
+| `--flows-basicsV2-title-font-size`   | `16px`            | Title font size                    |
+| `--flows-basicsV2-title-line-height` | `24px`            | Title line height                  |
+| `--flows-basicsV2-title-font-weight` | `600`             | Title font weight                  |
+
+### Z-index
+
+| Variable                  | Default | Description                         |
+| ------------------------- | ------- | ----------------------------------- |
+| `--flows-basicsV2-zIndex` | `1500`  | Stack order for floating components |
+
+### Buttons
+
+| Variable                                    | Default | Description                |
+| ------------------------------------------- | ------- | -------------------------- |
+| `--flows-basicsV2-button-font-size`         | `15px`  | Default button font size   |
+| `--flows-basicsV2-button-line-height`       | `24px`  | Default button line height |
+| `--flows-basicsV2-button-small-font-size`   | `14px`  | Small button font size     |
+| `--flows-basicsV2-button-small-line-height` | `20px`  | Small button line height   |
+
+### Progress indicators
+
+Tour step indicators used in Tooltip, Hint, and Modal components.
+
+| Variable                              | Default | Description                   |
+| ------------------------------------- | ------- | ----------------------------- |
+| `--flows-basicsV2-progress-dots-size` | `10px`  | Diameter of each progress dot |
+| `--flows-basicsV2-progress-dots-gap`  | `6px`   | Gap between progress dots     |
+
+### Tooltip
+
+[Tooltip](./tooltip) and [Hint](./hint) specific variables.
+
+| Variable                                       | Default                   | Description                                  |
+| ---------------------------------------------- | ------------------------- | -------------------------------------------- |
+| `--flows-basicsV2-tooltip-padding`             | `20px`                    | Inner padding of tooltip content             |
+| `--flows-basicsV2-tooltip-minWidth`            | `200px`                   | Minimum tooltip width                        |
+| `--flows-basicsV2-tooltip-maxWidth`            | `320px`                   | Maximum tooltip width                        |
+| `--flows-basicsV2-tooltip-overlayBackground`   | Inherits `bg-overlay`     | Spotlight overlay color                      |
+| `--flows-basicsV2-tooltip-overlayBorderRadius` | Inherits `borderRadius-m` | Spotlight overlay corner radius              |
+| `--flows-basicsV2-tooltip-overlayPadding`      | `4px`                     | Padding between element and spotlight cutout |
+
+### Modal
+
+[Modal](./modal) specific variables.
+
+| Variable                                   | Default               | Description                       |
+| ------------------------------------------ | --------------------- | --------------------------------- |
+| `--flows-basicsV2-modal-padding`           | `24px`                | Inner padding of modal content    |
+| `--flows-basicsV2-modal-minWidth`          | `320px`               | Minimum modal width (auto sizing) |
+| `--flows-basicsV2-modal-maxWidth`          | `640px`               | Maximum modal width (auto sizing) |
+| `--flows-basicsV2-modal-size-small`        | `420px`               | Width of small-sized modal        |
+| `--flows-basicsV2-modal-size-medium`       | `640px`               | Width of medium-sized modal       |
+| `--flows-basicsV2-modal-button-max-width`  | `600px`               | Maximum width of the button row   |
+| `--flows-basicsV2-modal-overlayBackground` | Inherits `bg-overlay` | Modal backdrop color              |
+
+### Card
+
+[Card](./card) specific variables.
+
+| Variable                        | Default | Description                   |
+| ------------------------------- | ------- | ----------------------------- |
+| `--flows-basicsV2-card-padding` | `20px`  | Inner padding of card content |
+
+### Floating Checklist
+
+[Floating Checklist](./floating-checklist) specific variables.
+
+| Variable                                               | Default               | Description                            |
+| ------------------------------------------------------ | --------------------- | -------------------------------------- |
+| `--flows-basicsV2-floating-checklist-popover-maxWidth` | `340px`               | Maximum width of the checklist popover |
+| `--flows-basicsV2-floating-checklist-scrollbar-color`  | `#d6d6d6 transparent` | Scrollbar thumb and track colors       |
+
+### Individual component styles
+
+Each component also has a set of styles for more granular control. These styles try to use CSS variables where possible but may include some hardcoded values. You can override these styles by targeting the component's class names in your CSS.
+
+To find the relevant class names, inspect the component in your browser's developer tools and look for classes prefixed with `flows-basicsV2-`, or search for them in the `index.css` file. For example, to change the border radius of the Modal component, you could add:
+
+```css title="custom-flows.css"
+.flows_basicsV2_modal_modal {
+  border-radius: 20px;
+}
+```

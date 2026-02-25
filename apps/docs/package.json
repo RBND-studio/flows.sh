@@ -7,7 +7,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint src",
     "tsc": "next typegen && tsc",
     "prepare": "panda codegen",
     "postinstall": "fumadocs-mdx",
@@ -26,19 +25,16 @@
     "remark-gfm": "^4.0.1",
     "remark-mdx": "^3.1.1",
     "shared": "workspace:*",
-    "sharp": "^0.34.5",
     "shiki": "^3.21.0",
     "ui": "workspace:*",
     "zod": "4.3.5"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "16.1.6",
     "@pandacss/dev": "1.8.1",
     "@types/mdx": "^2.0.13",
     "@types/node": "^24",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "5.9.3"
   }

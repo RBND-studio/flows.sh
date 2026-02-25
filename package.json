@@ -7,7 +7,7 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "lint": "turbo run lint",
+    "lint": "oxlint",
     "test": "turbo run test",
     "tsc": "turbo run tsc",
     "app": "pnpm --filter app",
@@ -28,15 +28,15 @@
     "lint:md": "pnpm markdownlint '**/*.mdx' '**/*.md'"
   },
   "devDependencies": {
-    "cspell": "^9.4.0",
-    "eslint": "8.57.1",
+    "cspell": "^9.6.4",
     "husky": "^9.1.7",
     "markdownlint-cli": "^0.47.0",
-    "prettier": "^3.7.2",
+    "oxfmt": "^0.34.0",
+    "oxlint": "^1.49.0",
     "tsconfig": "workspace:*",
-    "turbo": "^2.7.2"
+    "turbo": "^2.8.10"
   },
-  "packageManager": "pnpm@10.30.0",
+  "packageManager": "pnpm@10.30.1",
   "engines": {
     "node": "^24"
   }
