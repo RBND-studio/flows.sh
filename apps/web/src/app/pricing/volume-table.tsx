@@ -39,6 +39,7 @@ export const VolumeTable = (): ReactElement => {
         maxWidth={640}
         mx="auto"
         mt="space32"
+        mb="space40"
       >
         <button
           type="button"

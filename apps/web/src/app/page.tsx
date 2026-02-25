@@ -12,6 +12,7 @@ import {
   MoreSection,
 } from "components";
 import { CtaBanner } from "components/cta-banner";
+import { LogoSection } from "components/logos/logo-section";
 import { SignupClick } from "components/utils/signup-click";
 import { links } from "lib/links";
 import type { ReactElement } from "react";
@@ -45,6 +46,7 @@ const Page = (): ReactElement => {
         }
       />
       <BigDemoIllustration />
+      <LogoSection />
       <AllPurposePlatformSection />
       <EasyToGetStartedSection />
       <MadeToBeCustomizedSection />
