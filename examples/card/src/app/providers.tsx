@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, ReactNode } from "react";
+import type { FC, ReactNode } from "react";
 import Link from "next/link";
 import { FlowsCard } from "@/components/flows-card/flows-card";
 import { ThemeProvider } from "@/components/providers/theme-provider";

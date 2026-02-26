@@ -3,7 +3,7 @@
 import { Button } from "../ui/button";
 import { Progress } from "../ui/progress";
 import { ChecklistItem } from "./checklist-item";
-import { ChecklistProps } from "./checklist-types";
+import type { ChecklistProps } from "./checklist-types";
 
 export const EmbeddedChecklist = ({
   items,

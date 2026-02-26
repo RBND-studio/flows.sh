@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FC, ReactNode } from "react";
+import type { FC, ReactNode } from "react";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { useUserId } from "@/components/providers/user-provider";
 import { ExampleControls } from "@/components/providers/example-controls";

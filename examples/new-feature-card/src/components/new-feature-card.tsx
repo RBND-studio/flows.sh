@@ -1,4 +1,4 @@
-import { ComponentProps } from "@flows/react";
+import type { ComponentProps } from "@flows/react";
 import Link from "next/link";
 import { useEmbedParam } from "./providers/example-info";
 

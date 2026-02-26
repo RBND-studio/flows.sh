@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible";
-import { ChecklistItemProps, ItemActionProps } from "./checklist-types";
+import type { ChecklistItemProps, ItemActionProps } from "./checklist-types";
 import { useEmbedParam } from "../providers/example-info";
 
 export const ChecklistItem = ({

@@ -10,5 +10,8 @@
     "schema.d.ts",
     "next-env.d.ts",
     "panda.config.ts"
-  ]
+  ],
+  "rules": {
+    "typescript/consistent-type-imports": "error"
+  }
 }

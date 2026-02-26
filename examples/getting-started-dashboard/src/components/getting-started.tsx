@@ -1,6 +1,6 @@
 import { ArrowUpRight, Figma, PlayIcon, Presentation, X } from "lucide-react";
 import { Button } from "./ui/button";
-import { ComponentProps } from "@flows/react";
+import type { ComponentProps } from "@flows/react";
 import { toast } from "sonner";
 
 type Props = ComponentProps<{
