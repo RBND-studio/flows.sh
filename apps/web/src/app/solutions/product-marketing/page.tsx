@@ -12,6 +12,7 @@ import { Button, Text } from "ui";
 
 import { SharedFeatures } from "../shared-features";
 import { questions, riverFeatures } from "./content";
+import { LogoSection } from "components/logos/logo-section";
 
 export const metadata: Metadata = getWebMetadata({
   title: "Product Marketing",
@@ -49,6 +50,8 @@ Launch targeted in-app campaigns like announcements and product tours without en
       />
 
       <BigDemoIllustration />
+
+      <LogoSection />
 
       <SectionIntro
         title="How Flows works for product marketing"
