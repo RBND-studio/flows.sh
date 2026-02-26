@@ -1,4 +1,4 @@
-import { ComponentProps, StateMemory } from "@flows/react";
+import type { ComponentProps, StateMemory } from "@flows/react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { useEffect } from "react";

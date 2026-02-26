@@ -1,5 +1,5 @@
-import { BlockState, ComponentProps } from "@flows/react";
-import { ChecklistProps } from "./checklist/checklist-types";
+import type { BlockState, ComponentProps } from "@flows/react";
+import type { ChecklistProps } from "./checklist/checklist-types";
 import { routes } from "@/lib/routes";
 import Link from "next/link";
 import { Progress } from "./ui/progress";

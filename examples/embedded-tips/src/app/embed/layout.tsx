@@ -1,7 +1,7 @@
 import { Providers } from "@/app/providers";
 import { Navigation } from "@/components/navigation";
 
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 type Props = {
   children: ReactNode;

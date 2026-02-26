@@ -1,4 +1,4 @@
-import { ComponentProps, StateMemory } from "@flows/react";
+import type { ComponentProps, StateMemory } from "@flows/react";
 
 export type ChecklistProps = ComponentProps<{
   title: string;

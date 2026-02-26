@@ -1,4 +1,4 @@
-import { ComponentProps } from "@flows/react";
+import type { ComponentProps } from "@flows/react";
 import { BookOpen, Calendar, Code, Slack } from "lucide-react";
 
 type Props = ComponentProps<{
