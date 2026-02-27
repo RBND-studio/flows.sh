@@ -5,7 +5,7 @@ import { ToggleGroup, ToggleGroupItem } from "../ui/toggle-group";
 import { SkeletonIllustration } from "../ui/skeleton-illustration";
 import { Button } from "../ui/button";
 import { Computer, Moon, Sun } from "lucide-react";
-import { ComponentProps } from "@flows/react";
+import type { ComponentProps } from "@flows/react";
 
 type Props = ComponentProps<{
   apply: () => void;

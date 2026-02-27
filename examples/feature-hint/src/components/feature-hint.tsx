@@ -1,17 +1,18 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import type {
+  Placement} from "@floating-ui/react";
 import {
   arrow,
   autoUpdate,
   FloatingArrow,
-  Placement,
   useFloating,
   offset,
 } from "@floating-ui/react";
 import { Button } from "./ui/button";
 import { X } from "lucide-react";
-import { ComponentProps } from "@flows/react";
+import type { ComponentProps } from "@flows/react";
 import Link from "next/link";
 
 type Props = ComponentProps<{

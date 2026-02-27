@@ -1,6 +1,6 @@
 "use client";
 
-import { ComponentProps } from "@flows/react";
+import type { ComponentProps } from "@flows/react";
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { X, ArrowLeft, Lock, Github, Slack, Gitlab } from "lucide-react";

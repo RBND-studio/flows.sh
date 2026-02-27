@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
 type Props = {
   title: string;

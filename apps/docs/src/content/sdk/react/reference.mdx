@@ -188,6 +188,22 @@ Parameters: None
 
 ---
 
+#### fetchWorkflows()
+
+Returns all available workflows for the current user. Before calling this method, the `<FlowsProvider>` component must be rendered. Only enabled workflows are returned.
+
+```tsx
+import { fetchWorkflows } from "@flows/react";
+
+const { workflows } = await fetchWorkflows();
+```
+
+Parameters: None
+
+Returns: `Promise<`[WorkflowsResponse](#workflowsresponse)`>`
+
+---
+
 ### Types
 
 #### ActiveBlock
@@ -258,6 +274,60 @@ Represents the props passed to a tour component. In addition to your custom prop
 | `previous`    | `function` | No       | Callback to go back to the previous step.                                                            |
 | `cancel`      | `function` | Yes      | Callback to cancel the tour.                                                                         |
 | `__flows.key` | `string`   | No       | Unique key for the block. Set by you in a workflow. [Learn more](/blocks/block-properties/block-key) |
+
+---
+
+#### WorkflowsResponse
+
+The response returned by [`fetchWorkflows()`](#fetchworkflows).
+
+| Name        | Type                      | Notes                                    |
+| ----------- | ------------------------- | ---------------------------------------- |
+| `workflows` | [Workflow](#workflow)`[]` | Array of workflows for the current user. |
+
+---
+
+#### Workflow
+
+Represents a workflow and its state for the current user.
+
+| Name              | Type                                    | Required | Notes                                                  |
+| ----------------- | --------------------------------------- | -------- | ------------------------------------------------------ |
+| `id`              | `string`                                | Yes      | The ID of the workflow.                                |
+| `workflow_status` | [WorkflowStatus](#workflowstatus)       | Yes      | The publish status of the workflow.                    |
+| `frequency`       | [WorkflowFrequency](#workflowfrequency) | Yes      | How often the workflow can be entered.                 |
+| `user_state`      | [WorkflowUserState](#workflowuserstate) | Yes      | The current user's state in the workflow.              |
+| `entered_at`      | `string`                                | No       | ISO date string of when the user entered the workflow. |
+| `exited_at`       | `string`                                | No       | ISO date string of when the user exited the workflow.  |
+
+---
+
+#### WorkflowStatus
+
+The publish status of a workflow. Returned in the [Workflow](#workflow) object.
+
+- `"enabled"` - The workflow is published and active.
+- `"launchpad-enabled"` - The workflow is published, active, and inside an active launchpad group.
+
+---
+
+#### WorkflowFrequency
+
+How often a workflow can be entered by a user. Returned in the [Workflow](#workflow) object.
+
+- `"once"` - The workflow can only be entered once.
+- `"every-time"` - The workflow can be entered every time.
+
+---
+
+#### WorkflowUserState
+
+The current user's state in a workflow. Returned in the [Workflow](#workflow) object.
+
+- `"not-started"` - The user has not entered the workflow.
+- `"in-progress"` - The user is currently in the workflow.
+- `"completed"` - The user has completed the workflow.
+- `"stopped"` - The user has been stopped in **the** workflow (e.g., by a workflow migration).
 
 ---
 

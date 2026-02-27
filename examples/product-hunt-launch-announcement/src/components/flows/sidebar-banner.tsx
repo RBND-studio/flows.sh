@@ -1,6 +1,6 @@
 "use client";
 
-import { ComponentProps } from "@flows/react";
+import type { ComponentProps } from "@flows/react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { X } from "lucide-react";
