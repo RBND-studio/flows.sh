@@ -1,7 +1,8 @@
 "use client";
 
-import { autoUpdate, Placement, useFloating } from "@floating-ui/react-dom";
-import { ComponentProps } from "@flows/react";
+import type { Placement} from "@floating-ui/react-dom";
+import { autoUpdate, useFloating } from "@floating-ui/react-dom";
+import type { ComponentProps } from "@flows/react";
 import { Star } from "lucide-react";
 import { useEffect } from "react";
 

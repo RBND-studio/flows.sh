@@ -1,6 +1,7 @@
 "use client";
 
-import { createContext, JSX, SVGProps, use } from "react";
+import type { JSX, SVGProps} from "react";
+import { createContext, use } from "react";
 
 type Props = {
   title: string;

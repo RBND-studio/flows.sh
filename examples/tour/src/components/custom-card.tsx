@@ -1,6 +1,6 @@
 "use client";
 
-import { TourComponentProps } from "@flows/react";
+import type { TourComponentProps } from "@flows/react";
 import { Button } from "./ui/button";
 
 type Props = TourComponentProps<{

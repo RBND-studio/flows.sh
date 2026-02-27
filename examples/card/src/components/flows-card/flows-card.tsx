@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import styles from "./flows-card.module.css";
-import { ComponentProps } from "@flows/react";
+import type { ComponentProps } from "@flows/react";
 
 type Props = ComponentProps<{
   title: string;
