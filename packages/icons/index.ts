@@ -1,5 +1,4 @@
-// cSpell:words Apty produktly jimo gleap stonly
-
+// cSpell:words Apty produktly jimo gleap stonly candu commandai optimonk
 export * from "./src/action16";
 export * from "./src/addon16";
 export * from "./src/alert16";
@@ -20,6 +19,8 @@ export * from "./src/book16";
 export * from "./src/boolean16";
 export * from "./src/bootstraptour-full20";
 export * from "./src/bootstraptour20";
+export * from "./src/candu-full20";
+export * from "./src/candu20";
 export * from "./src/caret-down16";
 export * from "./src/chameleon-full20";
 export * from "./src/chameleon20";
@@ -29,6 +30,8 @@ export * from "./src/chevron-down16";
 export * from "./src/circle-slash16";
 export * from "./src/close16";
 export * from "./src/code16";
+export * from "./src/commandai-full20";
+export * from "./src/commandai20";
 export * from "./src/component16";
 export * from "./src/copy16";
 export * from "./src/credit-card16";
@@ -92,6 +95,8 @@ export * from "./src/nuxt16";
 export * from "./src/nuxt32";
 export * from "./src/onborda-full20";
 export * from "./src/onborda20";
+export * from "./src/optimonk-full20";
+export * from "./src/optimonk20";
 export * from "./src/organization16";
 export * from "./src/paintbrush16";
 export * from "./src/pendo-full20";
