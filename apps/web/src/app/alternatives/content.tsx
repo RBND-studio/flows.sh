@@ -1,9 +1,11 @@
-// cSpell:words Apty produktly jimo gleap stonly
+// cSpell:words Apty produktly jimo gleap stonly optimonk candu lemonlearning
 
 import { appcuesContent } from "./content/appcues";
 import { aptyContent } from "./content/apty";
 import { bootstrapTourContent } from "./content/bootstrap-tour";
+import { canduContent } from "./content/candu";
 import { chameleonContent } from "./content/chameleon";
+import { commandAiContent } from "./content/command-ai";
 import { driverjsContent } from "./content/driverjs";
 import { gleapContent } from "./content/gleap";
 import { helpheroContent } from "./content/helphero";
@@ -11,6 +13,8 @@ import { hopscotchContent } from "./content/hopscotch";
 import { intercomContent } from "./content/intercom";
 import { introjsContent } from "./content/introjs";
 import { jimoContent } from "./content/jimo";
+import { lemonLearningContent } from "./content/lemon-learning";
+import { optimonkContent } from "./content/optimonk";
 import { nextstepjsContent } from "./content/nextstepjs";
 import { ngxJoyrideContent } from "./content/ngx-joyride";
 import { ngxUiTourContent } from "./content/ngx-ui-tour";
@@ -67,4 +71,8 @@ export const alternativesContent: AlternativeContentType[] = [
   vuejsTourContent,
   gleapContent,
   hopscotchContent,
+  canduContent,
+  commandAiContent,
+  lemonLearningContent,
+  optimonkContent,
 ];
