@@ -1,5 +1,7 @@
+import type { LinkComponentType } from "@flows/react";
 import { FlowsProvider as SDKFlowsProvider } from "@flows/react";
 import { HeroCallout } from "components/ui";
+import Link from "next/link";
 import { type ReactNode } from "react";
 import { FLOWS_WEB_ORGANIZATION_ID } from "shared-private";
 import { ProductHuntBadge } from "ui";
@@ -19,6 +21,7 @@ export const FlowsProvider = ({ children }: Props): ReactNode => {
         HeroCallout,
       }}
       tourComponents={{}}
+      LinkComponent={Link as LinkComponentType}
     >
       {children}
     </SDKFlowsProvider>

@@ -80,6 +80,8 @@ const App = () => {
       components={{
         ...components, // [!code highlight]
       }}
+      // Optional: Use your app's Link component for client-side navigation
+      LinkComponent={Link}
     >
       {/* Your app code here */}
     </FlowsProvider>
@@ -250,6 +252,7 @@ const App = () => {
         ...components, // [!code highlight]
         ...V1components, // [!code highlight]
       }}
+      LinkComponent={Link}
     >
       {/* Your app code here */}
     </FlowsProvider>
