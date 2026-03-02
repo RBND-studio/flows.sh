@@ -12,7 +12,7 @@
       "persistent": true
     },
     "test": {},
-    "tsc": {},
+    "tsc": { "cache": false },
     "pre-commit": {},
     "//#lint": {},
     "//#spellcheck": {},
