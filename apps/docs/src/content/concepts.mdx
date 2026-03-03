@@ -9,6 +9,10 @@ description: Get a basic understanding of Flows so you can set up your organizat
 
 An [organization](/organization-setup/organizations) is the container for all workflows, environments, users, and members. As a user, you can belong to multiple organizations and switch between them using the dropdown in the top-left corner of the application. Logging into Flows means accessing your personal account, which can be associated with multiple organizations.
 
+### Environments
+
+[Environments](/environments) are isolated instances within your organization where you can publish and test workflows independently. Each environment has a unique environment key used to configure the Flows SDK. Common environments include development, staging, and production.
+
 ## Workflows
 
 A workflow is a series of steps executed in a specific sequence, defined by the connections between [blocks](/blocks) and their conditions. In the workflow editor, you can add blocks, connect them, and configure their properties.
@@ -34,6 +38,18 @@ Exit nodes are connectors that allow workflows to leave a block. They include lo
 ### Paths
 
 Paths connect blocks in a workflow, starting from an exit node of one block and ending at an entry node of another. They define the sequence of the workflow.
+
+## Users
+
+A user is any person your application identifies to the Flows SDK using a `userId`. Flows uses this identifier to track user progress through workflows and store their state between sessions.
+
+### User properties
+
+[User properties](/users/properties) are key-value pairs that describe a user, such as their plan, role, or account creation date. You can reference user properties in workflow conditions to control which users enter a given workflow.
+
+### MTU
+
+An MTU (Monthly Tracked User) is a unique user who has experienced a Flows workflow within the current billing cycle. A user is counted as an MTU when the Flows SDK renders a component in their browser or when they enter a [Delay block](/blocks/logic-blocks/delay). MTUs are the primary billing metric, see [Billing](/billing) for details.
 
 ## Tours
 
