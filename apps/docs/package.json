@@ -30,7 +30,7 @@
     "zod": "4.3.5"
   },
   "devDependencies": {
-    "@pandacss/dev": "1.8.1",
+    "@pandacss/dev": "1.8.2",
     "@types/mdx": "^2.0.13",
     "@types/node": "^24",
     "@types/react": "^19.2.7",
