@@ -9,18 +9,15 @@ import { Tooltip, type TooltipSide } from "../tooltip/tooltip";
 type Props = ButtonHTMLAttributes<HTMLButtonElement> &
   HTMLStyledProps<"button"> & {
     /**
-     * @defaultValue "medium"
+     * @default "default"
      */
     size?: (typeof button.variantMap.size)[number];
     /**
-     * @defaultValue "primary"
+     * @default "black"
      */
     variant?: (typeof button.variantMap.variant)[number];
     asChild?: boolean;
     loading?: boolean;
-    /**
-     * @defaultValue "default"
-     */
     tooltip?: string;
     tooltipSide?: TooltipSide;
     icon?: FC<React.SVGProps<SVGSVGElement>>;
