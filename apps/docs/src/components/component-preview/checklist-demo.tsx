@@ -105,6 +105,8 @@ export const ChecklistDemo: FC = () => {
         ]}
         position="bottom-right"
         defaultOpen
+        hideOnClick={false}
+        openOnItemCompleted={false}
         skipButton={{ label: "Skip onboarding" }}
         close={() => null}
         complete={() => null}
