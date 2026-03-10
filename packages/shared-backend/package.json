@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "drizzle-orm": "^0.45.1",
-    "es-toolkit": "^1.43.0",
+    "es-toolkit": "^1.45.1",
     "db": "workspace:*",
     "shared": "workspace:*"
   },
