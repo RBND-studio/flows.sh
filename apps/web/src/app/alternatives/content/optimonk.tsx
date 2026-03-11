@@ -10,7 +10,7 @@ export const optimonkContent: AlternativeContentType = {
   seoTitle: "OptiMonk alternative",
   title: "The product adoption alternative to OptiMonk",
   description:
-    "Flows is the OptiMonk alternative for teams who need more than popups — full product adoption workflows built with your own components.",
+    "Flows is the OptiMonk alternative for teams who need more than popups: full product adoption workflows built with your own components.",
   competitor: {
     name: "OptiMonk",
     squareLogo: <Optimonk20 role="img" aria-label="OptiMonk logo" />,
@@ -29,7 +29,7 @@ export const optimonkContent: AlternativeContentType = {
     competitorContent:
       "OptiMonk is a popup and website personalization tool built primarily for e-commerce and marketing conversion. It offers a wide range of popup formats, A/B testing, and targeting, but its core focus is on capturing leads and recovering abandoned carts rather than guiding users through a product. It's a marketing tool first, not a product adoption platform.",
     flowsContent:
-      "Flows is a dedicated product adoption platform for in-app onboarding, feature discovery, and user education. Where OptiMonk targets website visitors with marketing popups, Flows helps you build structured workflows that guide authenticated users through your product — using your own components and design system.",
+      "Flows is a dedicated product adoption platform for in-app onboarding, feature discovery, and user education. Where OptiMonk targets website visitors with marketing popups, Flows helps you build structured workflows that guide authenticated users through your product, using your own components and design system.",
   },
   comparisonTitle: "Flows vs OptiMonk: Key differences",
   comparisons: [
@@ -128,6 +128,6 @@ export const optimonkContent: AlternativeContentType = {
   ctaBanner: {
     title: "Move beyond popups with Flows",
     description:
-      "Build full product adoption workflows — not just marketing overlays. Start for free with Flows.",
+      "Build full product adoption workflows, not just marketing overlays. Start for free with Flows.",
   },
 };

@@ -25,7 +25,7 @@ export const helpheroContent: AlternativeContentType = {
   },
   summary: {
     competitorContent:
-      "HelpHero is a simple, affordable no-code product tour tool. It covers the basics — tours, hotspots, and checklists — and is quick to set up. But teams that need deeper customization, complex workflows, or advanced targeting often outgrow it. The feature set is narrow, and there are limited options for making experiences match your product's design.",
+      "HelpHero is a simple, affordable no-code product tour tool. It covers the basics (tours, hotspots, and checklists) and is quick to set up. But teams that need deeper customization, complex workflows, or advanced targeting often outgrow it. The feature set is narrow, and there are limited options for making experiences match your product's design.",
     flowsContent:
       "Flows is a modern alternative to HelpHero built for teams who want full control over their product adoption experience. With Flows, you build workflows using your own components and design system. It combines the ease of getting started with the power to build sophisticated, product-native experiences as your needs grow.",
   },
@@ -101,7 +101,7 @@ export const helpheroContent: AlternativeContentType = {
       competitorDescription:
         "HelpHero works well for simple use cases, but as your product and team grow, you may need features like branching workflows, advanced targeting, localization, and custom components that HelpHero doesn't support.",
       flowsDescription:
-        "Flows scales with your needs. Start with simple tours and grow into complex, multi-step workflows with branching logic, inline components, and advanced targeting — all without switching tools.",
+        "Flows scales with your needs. Start with simple tours and grow into complex, multi-step workflows with branching logic, inline components, and advanced targeting, all without switching tools.",
     },
     {
       title: "Own the user experience",

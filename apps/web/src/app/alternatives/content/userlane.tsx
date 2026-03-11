@@ -27,7 +27,7 @@ export const userlaneContent: AlternativeContentType = {
     competitorContent:
       "Userlane is a digital adoption platform focused on interactive step-by-step walkthroughs, primarily for employee onboarding onto enterprise software. While it offers interactive guidance, its enterprise focus means opaque pricing, lengthy sales cycles, and a product that can feel like overkill for SaaS product teams who need lighter, more customizable solutions.",
     flowsContent:
-      "Flows is a modern alternative to Userlane built for product teams who want to move fast. With Flows, you build workflows using your own components and design system, giving you full control over the user experience. Start for free, set up in minutes, and scale as you grow — no demo calls or enterprise contracts required.",
+      "Flows is a modern alternative to Userlane built for product teams who want to move fast. With Flows, you build workflows using your own components and design system, giving you full control over the user experience. Start for free, set up in minutes, and scale as you grow. No demo calls or enterprise contracts required.",
   },
   comparisonTitle: "Flows vs Userlane: Key differences",
   comparisons: [

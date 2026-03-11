@@ -27,7 +27,7 @@ export const stonlyContent: AlternativeContentType = {
   },
   summary: {
     competitorContent:
-      'Stonly is a platform focused on interactive guides and knowledge bases for self-service support. It excels at branching, decision-tree-style guides that help users find answers, but its approach is more "pull" than "push" — users need to seek out help rather than being proactively guided. Customization is limited to their templates, and pricing requires contacting sales for higher tiers.',
+      'Stonly is a platform focused on interactive guides and knowledge bases for self-service support. It excels at branching, decision-tree-style guides that help users find answers, but its approach is more "pull" than "push": users need to seek out help rather than being proactively guided. Customization is limited to their templates, and pricing requires contacting sales for higher tiers.',
     flowsContent:
       "Flows is a modern alternative to Stonly built for teams who want proactive product adoption, not just reactive help. With Flows, you build workflows that live inside your product using your own components and design system. Flows handles both proactive guidance and contextual help with full control over the experience.",
   },
@@ -100,7 +100,7 @@ export const stonlyContent: AlternativeContentType = {
     {
       title: "Proactive vs reactive",
       competitorDescription:
-        "Stonly is built around self-service help — users open a widget, browse guides, and find answers themselves. This works well for support but leaves gaps in proactive user onboarding and feature adoption.",
+        "Stonly is built around self-service help: users open a widget, browse guides, and find answers themselves. This works well for support but leaves gaps in proactive user onboarding and feature adoption.",
       flowsDescription:
         "Flows is designed for proactive product adoption. Workflows trigger automatically based on user behavior, segment, and context, guiding users at the right moment without waiting for them to ask for help.",
     },
