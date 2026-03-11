@@ -98,16 +98,16 @@ export const commandAiContent: AlternativeContentType = {
     {
       title: "Workflows vs AI nudges",
       competitorDescription:
-        "Command AI centers on AI-driven, reactive assistance — surfacing help when users seem stuck. This works well for support deflection, but gives you less control over structured onboarding and adoption journeys.",
+        "Command AI centers on AI-driven, reactive assistance, surfacing help when users seem stuck. This works well for support deflection, but gives you less control over structured onboarding and adoption journeys.",
       flowsDescription:
-        "Flows is built around deliberate, structured workflows. You decide when to show experiences, to whom, and in what order — giving you precision over the adoption journey rather than relying on AI inference.",
+        "Flows is built around deliberate, structured workflows. You decide when to show experiences, to whom, and in what order, giving you precision over the adoption journey rather than relying on AI inference.",
     },
     {
       title: "Standalone vs platform dependency",
       competitorDescription:
         "Command AI was acquired by Amplitude. This means its product roadmap and pricing are increasingly tied to Amplitude's ecosystem, which may not align with teams not already using Amplitude.",
       flowsDescription:
-        "Flows is an independent, focused product adoption platform. There's no platform lock-in, no bundled analytics suite you don't need — just a clear tool for building great in-app experiences.",
+        "Flows is an independent, focused product adoption platform. No platform lock-in, no bundled analytics suite you don't need. Just a clear tool for building great in-app experiences.",
     },
     {
       title: "Own the user experience",
