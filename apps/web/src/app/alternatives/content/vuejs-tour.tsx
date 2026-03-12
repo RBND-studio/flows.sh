@@ -25,7 +25,7 @@ export const vuejsTourContent: AlternativeContentType = {
   },
   summary: {
     competitorContent:
-      "vuejs-tour is a lightweight open-source Vue.js library for creating guided product tours as Vue components. It's simple to get started, but it's Vue-only, has a small community, and everything beyond basic tours — state management, logic, targeting, analytics, and maintenance — needs to be built and maintained in-house.",
+      "vuejs-tour is a lightweight open-source Vue.js library for creating guided product tours as Vue components. It's simple to get started, but it's Vue-only, has a small community, and everything beyond basic tours needs to be built and maintained in-house: state management, logic, targeting, analytics, and maintenance.",
     flowsContent:
       "Flows is a modern product adoption platform that replaces hard-coded tours with workflows. You build UI using your own components, while Flows handles orchestration, state, logic, and delivery across your product. Flows supports Vue.js as well as React, Angular, and plain JavaScript.",
   },

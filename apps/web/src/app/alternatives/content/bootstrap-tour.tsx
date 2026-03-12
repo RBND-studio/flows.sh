@@ -25,7 +25,7 @@ export const bootstrapTourContent: AlternativeContentType = {
   },
   summary: {
     competitorContent:
-      "Bootstrap Tour is an open-source JavaScript library for building product tours using Bootstrap popovers. It requires jQuery and Bootstrap as dependencies, which are outdated for modern web applications. The library is largely unmaintained, and everything beyond basic tours — state management, logic, targeting, analytics — needs to be built and maintained in-house.",
+      "Bootstrap Tour is an open-source JavaScript library for building product tours using Bootstrap popovers. It requires jQuery and Bootstrap as dependencies, which are outdated for modern web applications. The library is largely unmaintained, and everything beyond basic tours, including state management, logic, targeting, and analytics, needs to be built and maintained in-house.",
     flowsContent:
       "Flows is a modern alternative to Bootstrap Tour that removes the need to maintain onboarding infrastructure yourself. With Flows, you create workflows that live inside your product, using your own UI components and logic, while Flows handles state, orchestration, and delivery. No jQuery or Bootstrap required.",
   },
@@ -113,7 +113,7 @@ export const bootstrapTourContent: AlternativeContentType = {
     {
       title: "Modern tech stack",
       competitorDescription:
-        "Bootstrap Tour requires jQuery and Bootstrap — dependencies that most modern applications have moved away from. Integrating it with React, Vue, or other frameworks requires significant workarounds.",
+        "Bootstrap Tour requires jQuery and Bootstrap, dependencies that most modern applications have moved away from. Integrating it with React, Vue, or other frameworks requires significant workarounds.",
       flowsDescription:
         "Flows works natively with modern frameworks including React, Vue, Angular, Svelte, and vanilla JavaScript. No legacy dependencies required.",
     },

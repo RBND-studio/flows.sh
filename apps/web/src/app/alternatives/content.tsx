@@ -1,4 +1,4 @@
-// cSpell:words Apty produktly jimo gleap stonly optimonk candu lemonlearning
+// cSpell:words Apty produktly jimo gleap stonly optimonk candu lemonlearning guidecx frigade screeb
 
 import { appcuesContent } from "./content/appcues";
 import { aptyContent } from "./content/apty";
@@ -6,6 +6,10 @@ import { bootstrapTourContent } from "./content/bootstrap-tour";
 import { canduContent } from "./content/candu";
 import { chameleonContent } from "./content/chameleon";
 import { commandAiContent } from "./content/command-ai";
+import { frigadeContent } from "./content/frigade";
+import { guidecxContent } from "./content/guidecx";
+import { inlineHelpContent } from "./content/inline-help";
+import { screebContent } from "./content/screeb";
 import { driverjsContent } from "./content/driverjs";
 import { gleapContent } from "./content/gleap";
 import { helpheroContent } from "./content/helphero";
@@ -75,4 +79,8 @@ export const alternativesContent: AlternativeContentType[] = [
   commandAiContent,
   lemonLearningContent,
   optimonkContent,
+  screebContent,
+  inlineHelpContent,
+  guidecxContent,
+  frigadeContent,
 ];
