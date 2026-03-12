@@ -29,7 +29,7 @@ export const canduContent: AlternativeContentType = {
     competitorContent:
       "Candu is a no-code platform for building in-app experiences like tours, modals, banners, and hotspots. It offers a drag-and-drop editor with AI-assisted design and A/B testing. While the editor is flexible within their component system, you are still building with Candu's UI primitives rather than your own. Pricing starts at $199/month with no free plan.",
     flowsContent:
-      "Flows is a modern alternative to Candu built for teams who want to truly own their user experience. With Flows, you build workflows using your own components and design system — not Candu's drag-and-drop primitives. The result is adoption that feels native to your product, not built in a third-party editor.",
+      "Flows is a modern alternative to Candu built for teams who want to truly own their user experience. With Flows, you build workflows using your own components and design system, not Candu's drag-and-drop primitives. The result is adoption that feels native to your product, not built in a third-party editor.",
   },
   comparisonTitle: "Flows vs Candu: Key differences",
   comparisons: [
@@ -100,7 +100,7 @@ export const canduContent: AlternativeContentType = {
     {
       title: "Your components, not theirs",
       competitorDescription:
-        "Candu's editor lets you assemble experiences from its own drag-and-drop components. Even with full CSS control, you are working within their system — not your design system. The result can still feel like a third-party overlay.",
+        "Candu's editor lets you assemble experiences from its own drag-and-drop components. Even with full CSS control, you are working within their system, not your design system. The result can still feel like a third-party overlay.",
       flowsDescription:
         "Flows meets you where you are. You can use your own UI components and technologies, giving you the full flexibility of code to build relevant, contextual workflows that fit your product, meet your quality bar, and don't get in the way.",
     },
