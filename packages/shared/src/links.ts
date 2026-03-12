@@ -142,6 +142,14 @@ export const links = (domain = "flows.sh") =>
       sdk: {
         overview: `https://${domain}/docs/sdk`,
         javascriptInstallation: `https://${domain}/docs/sdk/javascript/installation`,
+        frameworks: {
+          nextjs: `https://${domain}/docs/sdk/frameworks/next`,
+          react: `https://${domain}/docs/sdk/frameworks/react`,
+          angular: `https://${domain}/docs/sdk/frameworks/angular`,
+          vue: `https://${domain}/docs/sdk/frameworks/vue`,
+          svelte: `https://${domain}/docs/sdk/frameworks/svelte`,
+          solid: `https://${domain}/docs/sdk/frameworks/solid`,
+        },
       },
       localization: {
         main: `https://${domain}/docs/localization`,
@@ -156,6 +164,7 @@ export const links = (domain = "flows.sh") =>
           main: `https://${domain}/docs/guides/create-product-tour`,
           addSteps: `https://${domain}/docs/guides/create-product-tour#add-and-customize-tour-steps`,
         },
+        targetNewUsers: `https://${domain}/docs/guides/how-to-target-only-new-users`,
       },
     },
     /**
