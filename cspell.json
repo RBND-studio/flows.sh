@@ -6,10 +6,7 @@
   "language": "en",
   // words - list of words to be always considered correct
   "words": [
-    "AAAAAL",
-    "Astrodon",
     "authjs",
-    "Backlinko",
     "bitnami",
     "CCPA",
     "clpxmw",
@@ -47,6 +44,7 @@
     "pglite",
     "rbnd",
     "reauthentication",
+    "redeployments",
     "rehype",
     "reimagined",
     "shepherdjs",

@@ -30,6 +30,8 @@ export const routes = {
   alternatives: "/alternatives",
   alternativeDetail: (slug: string) => `/alternatives/${slug}` as Route,
 
+  technologyDetail: (slug: string) => `/technology/${slug}` as Route,
+
   examples: "/examples",
   exampleDetail: (slug: string) => `/examples/${slug}` as Route,
 

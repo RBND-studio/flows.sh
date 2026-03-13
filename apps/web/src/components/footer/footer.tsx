@@ -19,143 +19,163 @@ interface FooterGroup {
   }[];
 }
 
-const footerGroups: FooterGroup[] = [
-  {
-    title: "Product",
-    links: [
-      {
-        title: "Product tours",
-        href: routes.features.productTours,
-      },
-      {
-        title: "Embeddable components",
-        href: routes.features.embeddableComponents,
-      },
-      {
-        title: "Custom UI components",
-        href: routes.features.customComponents,
-      },
-      {
-        title: "Pricing",
-        href: routes.pricing,
-      },
-      {
-        title: "Changelog",
-        href: routes.changelog,
-      },
-      {
-        title: "Examples",
-        href: routes.examples,
-      },
-    ],
-  },
-  {
-    title: "Solutions",
-    links: [
-      {
-        title: "User onboarding",
-        href: routes.solutions.userOnboarding,
-      },
-      {
-        title: "Feature adoption",
-        href: routes.solutions.featureAdoption,
-      },
-      {
-        title: "Product-led growth",
-        href: routes.solutions.productLedGrowth,
-      },
-      {
-        title: "Revenue expansion",
-        href: routes.solutions.revenueExpansion,
-      },
-      {
-        title: "Product marketing",
-        href: routes.solutions.productMarketing,
-      },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      {
-        title: "Blog",
-        href: routes.blog,
-      },
-      {
-        title: "Docs",
-        href: links.docs.home,
-      },
-      {
-        title: "Contact",
-        href: routes.contact,
-      },
-      {
-        title: "Affiliate",
-        href: routes.affiliate,
-      },
-      {
-        title: "Glossary",
-        href: routes.glossary,
-      },
-      {
-        title: "GitHub",
-        href: links.rbndGithub,
-        target: "_blank",
-      },
-      {
-        title: "Status",
-        href: links.status,
-        target: "_blank",
-      },
-    ],
-  },
-  {
-    title: "Compare",
-    links: [
-      {
-        title: "Flows vs other tools",
-        href: routes.blogPostDetail({ postId: "flows-vs-other-tools" }),
-      },
-      {
-        title: "Appcues",
-        href: routes.alternativeDetail("appcues"),
-      },
-      {
-        title: "Chameleon",
-        href: routes.alternativeDetail("chameleon"),
-      },
-      {
-        title: "Userflow",
-        href: routes.alternativeDetail("userflow"),
-      },
-      {
-        title: "WalkMe",
-        href: routes.alternativeDetail("walkme"),
-      },
-      {
-        title: "Usetiful",
-        href: routes.alternativeDetail("usetiful"),
-      },
-      {
-        title: "Driver.js",
-        href: routes.alternativeDetail("driverjs"),
-      },
-      {
-        title: "Others",
-        href: routes.alternatives,
-      },
-    ],
-  },
-  {
-    title: "Other",
-    links: [
-      { title: "About", href: routes.about },
-      { title: "Privacy", href: routes.privacy },
-      { title: "Terms", href: routes.terms },
-      { title: "Cookies", href: routes.cookies },
-      { title: "DPA", href: routes.dpa },
-    ],
-  },
+type FooterGroupColumn = FooterGroup[];
+
+const footerGroups: FooterGroupColumn[] = [
+  [
+    {
+      title: "Product",
+      links: [
+        {
+          title: "Product tours",
+          href: routes.features.productTours,
+        },
+        {
+          title: "Embeddable components",
+          href: routes.features.embeddableComponents,
+        },
+        {
+          title: "Custom UI components",
+          href: routes.features.customComponents,
+        },
+        {
+          title: "Pricing",
+          href: routes.pricing,
+        },
+        {
+          title: "Changelog",
+          href: routes.changelog,
+        },
+        {
+          title: "Examples",
+          href: routes.examples,
+        },
+      ],
+    },
+    {
+      title: "Solutions",
+      links: [
+        {
+          title: "User onboarding",
+          href: routes.solutions.userOnboarding,
+        },
+        {
+          title: "Feature adoption",
+          href: routes.solutions.featureAdoption,
+        },
+        {
+          title: "Product-led growth",
+          href: routes.solutions.productLedGrowth,
+        },
+        {
+          title: "Revenue expansion",
+          href: routes.solutions.revenueExpansion,
+        },
+        {
+          title: "Product marketing",
+          href: routes.solutions.productMarketing,
+        },
+      ],
+    },
+    {
+      title: "Technologies",
+      links: [
+        { title: "Next.js", href: routes.technologyDetail("nextjs-user-onboarding") },
+        { title: "React", href: routes.technologyDetail("react-user-onboarding") },
+        { title: "Angular", href: routes.technologyDetail("angular-user-onboarding") },
+        { title: "Vue", href: routes.technologyDetail("vue-user-onboarding") },
+        { title: "Svelte", href: routes.technologyDetail("svelte-user-onboarding") },
+        { title: "Solid", href: routes.technologyDetail("solid-user-onboarding") },
+        { title: "JavaScript", href: routes.technologyDetail("javascript-user-onboarding") },
+      ],
+    },
+  ],
+  [
+    {
+      title: "Resources",
+      links: [
+        {
+          title: "Blog",
+          href: routes.blog,
+        },
+        {
+          title: "Docs",
+          href: links.docs.home,
+        },
+        {
+          title: "Contact",
+          href: routes.contact,
+        },
+        {
+          title: "Affiliate",
+          href: routes.affiliate,
+        },
+        {
+          title: "Glossary",
+          href: routes.glossary,
+        },
+        {
+          title: "GitHub",
+          href: links.rbndGithub,
+          target: "_blank",
+        },
+        {
+          title: "Status",
+          href: links.status,
+          target: "_blank",
+        },
+      ],
+    },
+    {
+      title: "Compare",
+      links: [
+        {
+          title: "Flows vs other tools",
+          href: routes.blogPostDetail({ postId: "flows-vs-other-tools" }),
+        },
+        {
+          title: "Appcues",
+          href: routes.alternativeDetail("appcues"),
+        },
+        {
+          title: "Chameleon",
+          href: routes.alternativeDetail("chameleon"),
+        },
+        {
+          title: "Userflow",
+          href: routes.alternativeDetail("userflow"),
+        },
+        {
+          title: "WalkMe",
+          href: routes.alternativeDetail("walkme"),
+        },
+        {
+          title: "Usetiful",
+          href: routes.alternativeDetail("usetiful"),
+        },
+        {
+          title: "Driver.js",
+          href: routes.alternativeDetail("driverjs"),
+        },
+        {
+          title: "Others",
+          href: routes.alternatives,
+        },
+      ],
+    },
+  ],
+  [
+    {
+      title: "Company",
+      links: [
+        { title: "About", href: routes.about },
+        { title: "Privacy", href: routes.privacy },
+        { title: "Terms", href: routes.terms },
+        { title: "Cookies", href: routes.cookies },
+        { title: "DPA", href: routes.dpa },
+      ],
+    },
+  ],
 ];
 
 const socialLinks = [
@@ -196,7 +216,7 @@ export const Footer = (): ReactElement => {
     >
       <Flex
         flexDirection="column"
-        gap="space40"
+        gap={{ base: "space40", md: "space80" }}
         maxWidth="1024px"
         mx="auto"
         py="space40"
@@ -257,51 +277,46 @@ export const Footer = (): ReactElement => {
           flexWrap="wrap"
           alignItems="flex-start"
           width="100%"
-          gap="0"
-          rowGap="space48"
+          flex={1}
+          justifyContent="space-between"
+          rowGap="space24"
+          columnGap={{ base: 0, md: "space16" }}
           sm={{
             gap: "space48",
             width: "auto",
             flexDirection: "row",
           }}
         >
-          {footerGroups.map((group) => (
-            <Flex
-              flexDirection="column"
-              alignItems="flex-start"
-              key={group.title}
-              width="50%"
-              sm={{
-                width: "auto",
-              }}
-            >
-              <Text className={css({ mb: "space4" })} weight="700" variant="bodyS">
-                {group.title}
-              </Text>
-              {group.links.map((link) => (
-                <Text
-                  asChild
-                  className={css({
-                    display: "flex",
-                    gap: "space4",
-                    padding: "space8 ",
-                    mx: "-space8 ",
-                    "&:hover": {
-                      textDecoration: "underline",
-                    },
-                    sm: {
-                      padding: "space4",
-                      mx: "-space4",
-                    },
-                  })}
-                  key={link.href}
-                  variant="bodyS"
-                  color="newFg.neutral.muted"
-                >
-                  <SmartLink prefetch={false} href={link.href} target={link.target}>
-                    {link.title}
-                  </SmartLink>
-                </Text>
+          {footerGroups.map((column, index) => (
+            <Flex flexDirection="column" alignItems="flex-start" key={index} gap="space24">
+              {column.map((footerGroup) => (
+                <Flex key={footerGroup.title} flexDirection="column">
+                  <Text className={css({ mb: "space4" })} weight="700" variant="bodyS">
+                    {footerGroup.title}
+                  </Text>
+                  {footerGroup.links.map((link) => (
+                    <Text
+                      asChild
+                      className={css({
+                        display: "flex",
+                        gap: "space4",
+                        padding: "space6",
+                        mx: "-space6",
+                        width: "fit-content",
+                        "&:hover": {
+                          textDecoration: "underline",
+                        },
+                      })}
+                      key={link.href}
+                      variant="bodyS"
+                      color="newFg.neutral.muted"
+                    >
+                      <SmartLink prefetch={false} href={link.href} target={link.target}>
+                        {link.title}
+                      </SmartLink>
+                    </Text>
+                  ))}
+                </Flex>
               ))}
             </Flex>
           ))}

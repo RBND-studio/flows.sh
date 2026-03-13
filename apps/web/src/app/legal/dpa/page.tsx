@@ -1,3 +1,5 @@
+// cspell:words astrodon
+
 import { Flex } from "@flows/styled-system/jsx";
 import { bulletCss, headingCss, paragraphCss, Section, ulCss } from "components/ui";
 import { getWebMetadata } from "lib/get-metadata";
