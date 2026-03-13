@@ -70,7 +70,7 @@ export const reactUserOnboardingContent: TechnologyContentType = {
           designers can create and update onboarding workflows in the Flows dashboard without any
           code changes or redeployments. See the{" "}
           <a
-            href={links.docs.sdk.frameworks.react}
+            href={links.docs.sdk.reactInstallation}
             target="_blank"
             rel="noopener noreferrer"
             className={css({ textDecoration: "underline", display: "inline" })}
