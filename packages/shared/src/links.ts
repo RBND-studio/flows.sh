@@ -141,12 +141,12 @@ export const links = (domain = "flows.sh") =>
       },
       sdk: {
         overview: `https://${domain}/docs/sdk`,
+        reactInstallation: `https://${domain}/docs/sdk/react/installation`,
         javascriptInstallation: `https://${domain}/docs/sdk/javascript/installation`,
         frameworks: {
           nextjs: `https://${domain}/docs/sdk/frameworks/next`,
-          react: `https://${domain}/docs/sdk/frameworks/react`,
           angular: `https://${domain}/docs/sdk/frameworks/angular`,
-          vue: `https://${domain}/docs/sdk/frameworks/vue`,
+          vue: `https://${domain}/docs/sdk/frameworks/nuxt`,
           svelte: `https://${domain}/docs/sdk/frameworks/svelte`,
           solid: `https://${domain}/docs/sdk/frameworks/solid`,
         },
