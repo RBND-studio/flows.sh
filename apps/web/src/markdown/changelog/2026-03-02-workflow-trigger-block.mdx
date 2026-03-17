@@ -1,0 +1,25 @@
+---
+title: Workflow trigger block
+date: "2026-03-02"
+description: Chain workflows together with the new Workflow trigger block, plus a styling guide for Basics V2 components and improved SDK reliability.
+---
+
+<Image
+  src="/images/changelog/2026-03-02-workflow-trigger.png"
+  alt="Workflow trigger block"
+  width={1800}
+  height={636}
+/>
+
+The Workflow trigger block starts another workflow by entering a specified [manual start](/docs/blocks/start-blocks/manual-start) block inside it. Use it to chain workflows together. For example, start an onboarding checklist automatically after a user completes a welcome tour.
+
+See the [Workflow trigger documentation](/docs/blocks/action-blocks/workflow-trigger) to learn more.
+
+## Basics V2 styling guide
+
+A new [styling guide](/docs/blocks/basics-v2/styling) documents how to customize Basics V2 components using CSS variables. Most changes can be achieved by overriding these variables. Dark mode is supported out of the box via the `.dark` class.
+
+## Other improvements
+
+- Tooltip and hint components now add a `data-flows-tooltip-target` or `data-flows-hint-target` attribute to their target elements when rendered. Use these attributes to identify targeted elements and implement custom click-layer behavior in your app.
+- Improved handling of WebSocket messages for more reliable workflow delivery.
