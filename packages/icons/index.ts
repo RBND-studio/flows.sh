@@ -1,4 +1,4 @@
-// cSpell:words Apty produktly jimo gleap stonly candu commandai optimonk frigade guidecx screeb
+// cSpell:words Apty produktly jimo gleap stonly candu commandai optimonk frigade guidecx screeb onboardjs tourguidejs
 export * from "./src/action16";
 export * from "./src/addon16";
 export * from "./src/alert16";
@@ -99,6 +99,7 @@ export * from "./src/ngx-ui-tour20";
 export * from "./src/number16";
 export * from "./src/nuxt16";
 export * from "./src/nuxt32";
+export * from "./src/onboardjs20";
 export * from "./src/onborda-full20";
 export * from "./src/onborda20";
 export * from "./src/optimonk-full20";
@@ -148,6 +149,7 @@ export * from "./src/svelte32";
 export * from "./src/system16";
 export * from "./src/tooltip16";
 export * from "./src/tour16";
+export * from "./src/tourguidejs20";
 export * from "./src/trash16";
 export * from "./src/twitter16";
 export * from "./src/upgrade16";
@@ -160,6 +162,8 @@ export * from "./src/userlane-full20";
 export * from "./src/userlane20";
 export * from "./src/userpilot-full20";
 export * from "./src/userpilot20";
+export * from "./src/usertour-full20";
+export * from "./src/usertour20";
 export * from "./src/usetiful-full20";
 export * from "./src/usetiful20";
 export * from "./src/v-onboarding-full20";
