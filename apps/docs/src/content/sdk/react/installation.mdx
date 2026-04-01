@@ -37,6 +37,7 @@ import { FlowsProvider } from "@flows/react";
 // Import the Basics V2 components and styles
 import * as components from "@flows/react-components";
 import * as tourComponents from "@flows/react-components/tour";
+import * as surveyComponents from "@flows/react-components/survey";
 import "@flows/react-components/index.css";
 
 const App = () => {
@@ -51,6 +52,9 @@ const App = () => {
       }}
       components={{
         ...components,
+      }}
+      surveyComponents={{
+        ...surveyComponents,
       }}
       // Optional: Use your app's Link component for client-side navigation
       LinkComponent={Link}

@@ -2,6 +2,7 @@ import { Box, Flex } from "@flows/styled-system/jsx";
 import { token } from "@flows/styled-system/tokens";
 import type { JSX } from "react";
 import { BlockIcon, Text } from "ui";
+import type { BlockType } from "@flows/types";
 
 export const WorkflowsExample = (): JSX.Element => {
   return (
@@ -35,7 +36,7 @@ export const WorkflowsExample = (): JSX.Element => {
 
 type BlockProps = {
   name: string;
-  type: string;
+  type: BlockType;
   icon: string;
 };
 

@@ -46,6 +46,7 @@ Add the initialization logic to your root layout. Also, add the `<flows-floating
   import { setupJsComponents } from "@flows/js-components";
   import * as components from "@flows/js-components/components";
   import * as tourComponents from "@flows/js-components/tour-components";
+  import * as surveyComponents from "@flows/js-components/survey-components";
 
   import "@flows/js-components/index.css";
 
@@ -58,6 +59,7 @@ Add the initialization logic to your root layout. Also, add the `<flows-floating
     setupJsComponents({
       components: { ...components },
       tourComponents: { ...tourComponents },
+      surveyComponents: { ...surveyComponents },
     });
   });
 </script>

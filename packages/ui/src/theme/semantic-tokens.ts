@@ -189,6 +189,61 @@ export const semanticTokens = defineSemanticTokens({
           DEFAULT: { value: "#855af2" },
         },
       },
+      salmon: {
+        fg: {
+          DEFAULT: { value: "#ff7557" },
+        },
+      },
+      teal: {
+        fg: {
+          DEFAULT: { value: "#80e1d9" },
+        },
+      },
+      yellow: {
+        fg: {
+          DEFAULT: { value: "#f8bc3b" },
+        },
+      },
+      brick: {
+        fg: {
+          DEFAULT: { value: "#b2596e" },
+        },
+      },
+      lightBlue: {
+        fg: {
+          DEFAULT: { value: "#72bef4" },
+        },
+      },
+      skin: {
+        fg: {
+          DEFAULT: { value: "#ffb27a" },
+        },
+      },
+      darkTeal: {
+        fg: {
+          DEFAULT: { value: "#0d7ea0" },
+        },
+      },
+      darkGreen: {
+        fg: {
+          DEFAULT: { value: "#3ba974" },
+        },
+      },
+      pink: {
+        fg: {
+          DEFAULT: { value: "#febbb2" },
+        },
+      },
+      violet: {
+        fg: {
+          DEFAULT: { value: "#ca80dc" },
+        },
+      },
+      pastelTeal: {
+        fg: {
+          DEFAULT: { value: "#5bb7af" },
+        },
+      },
     },
     // TODO: separate button into separate pattern
     button: {

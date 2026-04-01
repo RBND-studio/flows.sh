@@ -1,3 +1,5 @@
+import type { SDKSurvey } from "./survey";
+
 export type ActionValue = {
   label: string;
   url?: string | null;
@@ -80,4 +82,6 @@ export type SDKBlock = {
 
   tourBlocks?: SDKTourBlock[];
   currentTourIndex?: number | null;
+
+  survey?: SDKSurvey | null;
 };

@@ -110,6 +110,7 @@ export const links = (domain = "flows.sh") =>
         start: `https://${domain}/docs/blocks/start-blocks/automatic-start`,
         "manual-start": `https://${domain}/docs/blocks/start-blocks/manual-start`,
         tour: `https://${domain}/docs/blocks/tour-block`,
+        survey: `https://${domain}/docs/surveys/overview`,
         filter: `https://${domain}/docs/blocks/logic-blocks/filter`,
         "workflow-trigger": `https://${domain}/docs/blocks/action-blocks/workflow-trigger`,
         delay: `https://${domain}/docs/blocks/logic-blocks/delay`,
@@ -165,6 +166,20 @@ export const links = (domain = "flows.sh") =>
           addSteps: `https://${domain}/docs/guides/create-product-tour#add-and-customize-tour-steps`,
         },
         targetNewUsers: `https://${domain}/docs/guides/how-to-target-only-new-users`,
+      },
+      survey: {
+        main: `https://${domain}/docs/surveys/overview`,
+        analytics: `https://${domain}/docs/surveys/analytics`,
+        presentation: `https://${domain}/docs/surveys/overview#presentation`,
+        trigger: `https://${domain}/docs/surveys/overview#trigger`,
+        questionTypes: {
+          freeform: `https://${domain}/docs/surveys/overview#freeform`,
+          "single-choice": `https://${domain}/docs/surveys/overview#single-choice`,
+          "multiple-choice": `https://${domain}/docs/surveys/overview#multiple-choice`,
+          rating: `https://${domain}/docs/surveys/overview#rating`,
+          "end-screen": `https://${domain}/docs/surveys/overview#end-screen`,
+          link: `https://${domain}/docs/surveys/overview#link`,
+        },
       },
     },
     /**

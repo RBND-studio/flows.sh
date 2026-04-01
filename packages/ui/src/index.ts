@@ -26,3 +26,4 @@ export * from "./text";
 export * from "./toast";
 export * from "./tooltip/tooltip";
 export * from "./utils";
+export * from "./question-type-icon";

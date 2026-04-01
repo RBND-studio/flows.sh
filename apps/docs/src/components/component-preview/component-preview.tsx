@@ -9,6 +9,7 @@ import { CardDemo } from "./card-demo";
 import { ChecklistDemo } from "./checklist-demo";
 import { HintDemo } from "./hint-demo";
 import { ModalDemo } from "./modal-demo";
+import { SurveyPopoverDemo } from "./survey-popover-demo";
 import { TooltipDemo } from "./tooltip-demo";
 
 type Props = {
@@ -20,7 +21,8 @@ type Props = {
     | "tourModal"
     | "tourHint"
     | "card"
-    | "tourCard";
+    | "tourCard"
+    | "surveyPopover";
 };
 
 const components = {
@@ -33,6 +35,7 @@ const components = {
   card: <CardDemo />,
   tourCard: <CardDemo tour />,
   checklist: <ChecklistDemo />,
+  surveyPopover: <SurveyPopoverDemo />,
 };
 
 export const ComponentPreview = ({ component = "tooltip" }: Props): ReactNode => {
