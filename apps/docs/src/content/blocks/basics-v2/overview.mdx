@@ -3,7 +3,7 @@ title: Overview
 description: A set of essential UI components to kickstart your product adoption journey.
 ---
 
-import { Modal16, Tooltip16, Hint16, Banner16, Checklist16 } from "icons";
+import { Modal16, Tooltip16, Hint16, Banner16, Checklist16, Survey16 } from "icons";
 import { Step, Steps } from "fumadocs-ui/components/steps";
 
 ![Basics V2](/component-libraries/basics-v2/cover.png)
@@ -33,6 +33,9 @@ import { Step, Steps } from "fumadocs-ui/components/steps";
     href="/blocks/basics-v2/floating-checklist"
   >
     Drive setup and activation with a list of instructions and tasks.
+  </Card>
+  <Card title="Survey Popover" icon={<Survey16 />} href="/blocks/basics-v2/survey-popover">
+    Collect feedback and insights inside your product.
   </Card>
 </Cards>
 
@@ -66,6 +69,7 @@ Import the Basics V2 components and register them in the `FlowsProvider`.
 import { FlowsProvider } from "@flows/react";
 import * as components from "@flows/react-components"; // [!code highlight]
 import * as tourComponents from "@flows/react-components/tour"; // [!code highlight]
+import * as surveyComponents from "@flows/react-components/survey"; // [!code highlight]
 import "@flows/react-components/index.css"; // [!code highlight]
 
 const App = () => {
@@ -79,6 +83,9 @@ const App = () => {
       }}
       components={{
         ...components, // [!code highlight]
+      }}
+      surveyComponents={{
+        ...surveyComponents, // [!code highlight]
       }}
       // Optional: Use your app's Link component for client-side navigation
       LinkComponent={Link}
@@ -232,6 +239,7 @@ You can now import both versions and register them with the `FlowsProvider`.
 import { FlowsProvider } from "@flows/react";
 import * as components from "@flows/react-components"; // [!code highlight]
 import * as tourComponents from "@flows/react-components/tour"; // [!code highlight]
+import * as surveyComponents from "@flows/react-components/survey"; // [!code highlight]
 import "@flows/react-components/index.css"; // [!code highlight]
 
 import * as V1components from "@flows/react-components-v1"; // [!code highlight]
@@ -251,6 +259,9 @@ const App = () => {
       components={{
         ...components, // [!code highlight]
         ...V1components, // [!code highlight]
+      }}
+      surveyComponents={{
+        ...surveyComponents, // [!code highlight]
       }}
       LinkComponent={Link}
     >

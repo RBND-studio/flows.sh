@@ -1,3 +1,4 @@
+import type { BlockTemplateType } from "@flows/types";
 import { type BlockType, type PropertyType, type StateMemoryValue } from "@flows/types";
 
 export const propertyTypes: PropertyType[] = [
@@ -18,6 +19,8 @@ export const builtInBlockDescriptions: Partial<Record<BlockType, string>> = {
   start: "Start block allows users to enter the workflow if they meet the conditions",
   "manual-start": "Start the workflow manually from your application",
   tour: "Tour is a sequence of steps that guide users through a process.",
+  survey:
+    "Collect feedback from users by presenting a series of questions through a survey component.",
   end: "When user reaches an end block, the whole workflow ends and is marked as completed.",
   filter: "Filter lets through only the users that meet the conditions",
   "workflow-trigger": "Starts another workflow by entering a specified manual start block.",
@@ -36,6 +39,7 @@ export const workflowFrequencyOptions = [
 export const blockTranslation: Record<BlockType, string> = {
   component: "Workflow component",
   "tour-component": "Tour component",
+  survey: "Survey",
   start: "Start",
   "manual-start": "Manual start",
   end: "End",
@@ -44,6 +48,12 @@ export const blockTranslation: Record<BlockType, string> = {
   wait: "Wait",
   "workflow-trigger": "Workflow trigger",
   delay: "Delay",
+};
+
+export const blockTemplateTranslation: Record<BlockTemplateType, string> = {
+  component: "Workflow component",
+  "tour-component": "Tour component",
+  "survey-component": "Survey component",
 };
 
 // TODO: consider adding descriptions for more built-in blocks
@@ -79,6 +89,18 @@ export const tourBlockExitNodes = [
     key: "cancel",
     description:
       "Cancels the whole tour. This node is connected to the cancel node of the whole tour block.",
+  },
+];
+export const surveyBlockExitNodes = [
+  {
+    key: "complete",
+    description:
+      "Completes the survey, make sure to submit the survey answers before calling this exit node.",
+  },
+  {
+    key: "cancel",
+    description:
+      "Cancels the survey. This node is connected to the cancel node of the whole survey block.",
   },
 ];
 

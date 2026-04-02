@@ -9,6 +9,7 @@ import {
   Hint16,
   Modal16,
   Start16,
+  Survey16,
   Tooltip16,
   Tour16,
   Wait16,
@@ -16,6 +17,7 @@ import {
 } from "icons";
 import { type FC, type SVGProps } from "react";
 import { forwardRef, useMemo } from "react";
+import type { BlockTemplateType, BlockType } from "@flows/types";
 
 import { Icon } from "../icon";
 
@@ -30,6 +32,7 @@ export const builtInBlockIcons: Record<string, IconCmp> = {
   wait: Wait16,
   "workflow-trigger": WorkflowTrigger16,
   delay: Delay16,
+  survey: Survey16,
 };
 
 export const customIconOptions: Record<string, IconCmp> = {
@@ -46,7 +49,7 @@ export const fallbackBlockIcon = Tooltip16;
 export const defaultBlockIconKey = Object.keys(builtInBlockIcons)[0];
 
 type Props = {
-  blockType: string;
+  blockType: BlockType | BlockTemplateType;
   blockIcon?: string | null;
   className?: string;
   onClick?: () => void;
@@ -66,6 +69,8 @@ export const BlockIcon = forwardRef<HTMLDivElement, Props>(function BlockIcon(
     if (["filter", "wait", "delay"].includes(blockType)) return "logic";
     if (blockType === "manual-start") return "start";
     if (["workflow-trigger", "end"].includes(blockType)) return "action";
+    if (["component", "tour-component", "survey", "survey-component"].includes(blockType))
+      return "component";
     return blockType as (typeof boxStyles.variantMap.type)[number];
   }, [blockType]);
 
@@ -91,10 +96,6 @@ const boxStyles = cva({
         color: "blockIcon.start.fg",
       },
       component: {
-        backgroundColor: "blockIcon.component.bg",
-        color: "blockIcon.component.fg",
-      },
-      "tour-component": {
         backgroundColor: "blockIcon.component.bg",
         color: "blockIcon.component.fg",
       },

@@ -9,7 +9,8 @@ export type KafkaUserEventName =
   | "workflow-exit"
   | "identify"
   | "set-state-memory"
-  | "block-activated";
+  | "block-activated"
+  | "survey-submit";
 
 export type KafkaUserEvent = {
   userId: string;
@@ -23,6 +24,7 @@ export type KafkaUserEvent = {
   propertyKey?: string;
   properties?: Record<string, unknown>;
   locale?: string;
+  surveyResponse?: KafkaSurveyResponse;
 };
 
 export type KafkaUserStateUpdateEvent = {
@@ -31,4 +33,19 @@ export type KafkaUserStateUpdateEvent = {
   organizationId: string;
   exitedBlockIds: string[];
   updatedBlocks: SDKBlock[];
+};
+
+export type KafkaSurveyQuestionResponse = {
+  questionId: string;
+  textResponse?: string;
+  optionIds?: string[];
+  otherSelected?: boolean;
+  clickedLink?: boolean;
+};
+
+export type KafkaSurveyResponse = {
+  surveyId: string;
+  blockStateId: string;
+  url: string;
+  questions: KafkaSurveyQuestionResponse[];
 };

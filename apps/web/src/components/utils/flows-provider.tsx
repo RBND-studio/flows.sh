@@ -21,6 +21,7 @@ export const FlowsProvider = ({ children }: Props): ReactNode => {
         HeroCallout,
       }}
       tourComponents={{}}
+      surveyComponents={{}}
       LinkComponent={Link as LinkComponentType}
     >
       {children}

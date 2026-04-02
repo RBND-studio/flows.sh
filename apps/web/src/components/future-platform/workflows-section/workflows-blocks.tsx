@@ -3,12 +3,22 @@
 import { Box, Flex, Wrap } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
 import { Component16 } from "icons";
+import type { ReactNode } from "react";
 import { type JSX, useState } from "react";
 import { BlockIcon, Icon, Text } from "ui";
 
 import { WorkflowsBlocksTabs } from "./workflows-blocks-tabs";
+import type { BlockType } from "@flows/types";
 
-const tabs = [
+const tabs: {
+  title: string;
+  components: {
+    title: string;
+    type: BlockType;
+    icon: string;
+  }[];
+  extraComponent?: ReactNode;
+}[] = [
   {
     title: "UI components",
     components: [

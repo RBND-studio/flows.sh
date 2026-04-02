@@ -339,20 +339,23 @@ Defines custom elements for `flows-floating-blocks`, `flows-slot` and all the pa
 
 Parameters:
 
-| Name             | Type     | Required | Notes                                |
-| ---------------- | -------- | -------- | ------------------------------------ |
-| `components`     | `object` | Yes      | Components to use in your workflows. |
-| `tourComponents` | `object` | Yes      | Components to use in tour blocks.    |
+| Name               | Type     | Required | Notes                                |
+| ------------------ | -------- | -------- | ------------------------------------ |
+| `components`       | `object` | Yes      | Components to use in your workflows. |
+| `tourComponents`   | `object` | Yes      | Components to use in tour blocks.    |
+| `surveyComponents` | `object` | Yes      | Components to use in survey blocks.  |
 
 ```js
 import { setupJsComponents } from "@flows/js-components";
 
 import * as components from "@flows/js-components/components";
 import * as tourComponents from "@flows/js-components/tour-components";
+import * as surveyComponents from "@flows/js-components/survey-components";
 
 setupJsComponents({
   components: { ...components },
   tourComponents: { ...tourComponents },
+  surveyComponents: { ...surveyComponents },
 });
 ```
 

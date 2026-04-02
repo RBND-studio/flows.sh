@@ -45,6 +45,7 @@ import Link from "next/link";
 import { FlowsProvider } from "@flows/react";
 import * as components from "@flows/react-components";
 import * as tourComponents from "@flows/react-components/tour";
+import * as surveyComponents from "@flows/react-components/survey";
 
 import "@flows/react-components/index.css";
 
@@ -56,6 +57,7 @@ export default function Flows({ children }) {
       environment="production" // Default environment
       components={{ ...components }}
       tourComponents={{ ...tourComponents }}
+      surveyComponents={{ ...surveyComponents }}
       LinkComponent={Link}
     >
       {children}

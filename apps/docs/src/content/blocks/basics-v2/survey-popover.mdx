@@ -1,0 +1,34 @@
+---
+title: Survey Popover
+description: Collect feedback and insights with a survey that appears as a popover on the side of the screen.
+---
+
+import { ComponentPreview } from "components";
+
+<ComponentPreview component="surveyPopover" />
+
+## Overview
+
+The Survey Popover is a non-intrusive survey component that appears as a popover anchored to a corner of the screen. It is designed to collect structured feedback without interrupting the user's workflow. You can use the Survey Popover out of the box as a built-in component from the Basics V2 library.
+
+## Installation
+
+To integrate the Survey Popover into your application, follow the steps described in the [library installation guide](/blocks/basics-v2/overview#installation).
+
+## Survey properties
+
+When using the Survey Popover as the presentation component in a [survey block](/surveys/overview), you can define the following properties:
+
+| Name                      | Type    | Notes                                                                                                                                  |
+| ------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Position                  | select  | In which corner the popover should appear. Options: `bottom-left`, `bottom-right`, `top-left`, `top-right`. Default is `bottom-right`. |
+| Dismissible               | boolean | Shows a close button linked to the `close` exit node. Default is `false`.                                                              |
+| Next button label         | string  | Label for the button that advances to the next question. Defaults to `Next` if empty.                                                  |
+| Submit button label       | string  | Label for the final submit button. Defaults to `Submit` if empty. Not shown when **Auto close after submit** is enabled.               |
+| Auto proceed after answer | boolean | Automatically advances to the next question after the user answers a rating or single choice question. Default is `false`.             |
+| Auto close after submit   | boolean | Automatically closes the popover after the user reaches the end screen. Default is `false`.                                            |
+
+**Exit nodes:**
+
+- `complete` - triggered when the user clicks the submit button on the last question or end screen.
+- `cancel` - triggered when the user dismisses the popover. Requires **Dismissible** to be enabled.

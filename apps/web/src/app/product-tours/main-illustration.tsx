@@ -1,6 +1,7 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { token } from "@flows/styled-system/tokens";
+import type { BlockType } from "@flows/types";
 import {
   HeroIllustrationGlow,
   HeroIllustrationLine,
@@ -107,7 +108,7 @@ export const MainIllustration = (): ReactNode => {
 
 type BlockProps = {
   name: string;
-  type: string;
+  type: BlockType;
   icon?: string;
   className?: string;
 };
