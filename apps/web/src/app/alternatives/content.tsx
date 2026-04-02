@@ -1,4 +1,4 @@
-// cSpell:words Apty produktly jimo gleap stonly optimonk candu lemonlearning guidecx frigade screeb onboardjs guidechimp usertour
+// cSpell:words Apty produktly jimo gleap stonly optimonk candu lemonlearning guidecx frigade screeb onboardjs guidechimp usertour gainsight lusift
 
 import { appcuesContent } from "./content/appcues";
 import { aptyContent } from "./content/apty";
@@ -8,10 +8,15 @@ import { chameleonContent } from "./content/chameleon";
 import { commandAiContent } from "./content/command-ai";
 import { frigadeContent } from "./content/frigade";
 import { guidecxContent } from "./content/guidecx";
+import { angularUiTourContent } from "./content/angular-ui-tour";
+import { bytesRouteContent } from "./content/bytes-route";
 import { guidechimpContent } from "./content/guidechimp";
+import { inlineManualContent } from "./content/inline-manual";
+import { lusiftContent } from "./content/lusift";
 import { onboardjsContent } from "./content/onboardjs";
 import { tourguideJsContent } from "./content/tourguide-js";
 import { usertourContent } from "./content/usertour";
+import { vueOnboardingTourContent } from "./content/vue-onboarding-tour";
 import { inlineHelpContent } from "./content/inline-help";
 import { screebContent } from "./content/screeb";
 import { driverjsContent } from "./content/driverjs";
@@ -91,4 +96,9 @@ export const alternativesContent: AlternativeContentType[] = [
   guidechimpContent,
   onboardjsContent,
   usertourContent,
+  inlineManualContent,
+  bytesRouteContent,
+  vueOnboardingTourContent,
+  lusiftContent,
+  angularUiTourContent,
 ];
