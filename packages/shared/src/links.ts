@@ -78,6 +78,9 @@ export const links = (domain = "flows.sh") =>
       gettingStartedDashboard: "https://getting-started-dashboard.examples.flows.sh",
       gettingStartedDashboardSource:
         "https://github.com/RBND-studio/flows.sh/tree/main/examples/getting-started-dashboard",
+      surveyPopover: "https://survey-popover.examples.flows.sh",
+      surveyPopoverSource:
+        "https://github.com/RBND-studio/flows.sh/tree/main/examples/survey-popover",
       // --PLOP_NEW_EXAMPLE_LINK--
     },
     docs: {

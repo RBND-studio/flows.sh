@@ -5,8 +5,8 @@ import { enterpriseUpsellContent } from "app/examples/enterprise-upsell/content"
 import { ExampleCard } from "app/examples/example-card";
 import { floatingChecklistContent } from "app/examples/floating-checklist/content";
 import { hintContent } from "app/examples/hint/content";
-import { interactiveFeatureAnnouncementContent } from "app/examples/interactive-feature-announcement/content";
 import { newFeatureCardContent } from "app/examples/new-feature-card/content";
+import { surveyPopoverContent } from "app/examples/survey-popover/content";
 import { tourContent } from "app/examples/tour/content";
 import { type ReactElement } from "react";
 import { routes } from "routes";
@@ -15,7 +15,7 @@ const examples = {
   firstRow: [enterpriseUpsellContent, tourContent],
   secondRow: [floatingChecklistContent, cardContent],
   thirdRow: [embeddedTipsContent, hintContent],
-  fourthRow: [newFeatureCardContent, interactiveFeatureAnnouncementContent],
+  fourthRow: [newFeatureCardContent, surveyPopoverContent],
 };
 
 export const ExampleCardsGrid = (): ReactElement => {
