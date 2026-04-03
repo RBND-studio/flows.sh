@@ -2,16 +2,24 @@ import { cva, cx } from "@flows/styled-system/css";
 import { Box } from "@flows/styled-system/jsx";
 import {
   Banner16,
+  Book16,
+  Card16,
   Checklist16,
   Delay16,
+  Email16,
+  Emoji16,
   End16,
   Filter16,
   Hint16,
+  Info16,
   Modal16,
+  Pointer16,
+  Sidebar16,
   Start16,
   Survey16,
   Tooltip16,
   Tour16,
+  Upgrade16,
   Wait16,
   WorkflowTrigger16,
 } from "icons";
@@ -41,8 +49,15 @@ export const customIconOptions: Record<string, IconCmp> = {
   tooltip: Tooltip16,
   checklist: Checklist16,
   hint: Hint16,
-  // TODO: update the icon when redesigning component icons
-  card: Banner16,
+  card: Card16,
+  sidebar: Sidebar16,
+  spotlight: Pointer16,
+  info: Info16,
+  survey: Survey16,
+  emoji: Emoji16,
+  email: Email16,
+  book: Book16,
+  upgrade: Upgrade16,
 };
 
 export const fallbackBlockIcon = Tooltip16;
