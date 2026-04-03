@@ -23,6 +23,7 @@ export * from "./src/bytes-route-full20";
 export * from "./src/bytes-route20";
 export * from "./src/candu-full20";
 export * from "./src/candu20";
+export * from "./src/card16";
 export * from "./src/caret-down16";
 export * from "./src/chameleon-full20";
 export * from "./src/chameleon20";

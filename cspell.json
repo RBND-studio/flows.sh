@@ -61,7 +61,7 @@
     "waivable",
     "walkme",
     "xyflow",
-    "zustand"
+    "zustand",
   ],
   // flagWords - list of words to be always considered incorrect
   // This is useful for offensive words and common spelling errors.
@@ -83,7 +83,8 @@
     "pnpm-workspace.yaml",
     "infrastructure/kafka/data",
     "infrastructure/nginx",
-    "infrastructure/redis/redis.conf"
+    "infrastructure/redis/redis.conf",
+    "apps/e2e/cypress/downloads/**/*",
   ],
-  "allowCompoundWords": true
+  "allowCompoundWords": true,
 }
