@@ -9,6 +9,7 @@ import { PricingCalculator } from "./pricing-calculator";
 import { PricingFaq } from "./pricing-faq";
 import { VolumeTable } from "./volume-table";
 import { LogoSection } from "components/logos/logo-section";
+import { css } from "@flows/styled-system/css";
 
 export const metadata: Metadata = getWebMetadata({
   title: "Pricing",
@@ -27,7 +28,11 @@ const Page = (): ReactElement => {
       />
       <PricingCalculator />
       <VolumeTable />
-      <LogoSection />
+      <LogoSection
+        className={css({
+          mt: "space80",
+        })}
+      />
       <PricingFaq />
       <CtaBanner />
     </>

@@ -1,11 +1,13 @@
-// cSpell:words Apify
+// cSpell:words Apify Ideoz
 import { Section } from "components/ui";
 import { ApifyLogo } from "./apify";
 import { AtmosLogo } from "./atmos";
 import { CRMChatLogo } from "./crmchat";
 import { FoxEcomLogo } from "./foxecom";
-import { Flex, Grid } from "@flows/styled-system/jsx";
+import { Flex } from "@flows/styled-system/jsx";
 import { css } from "@flows/styled-system/css";
+import { SagaLogo } from "./saga";
+import { IdeozLogo } from "./ideoz";
 
 const logos = [
   {
@@ -17,34 +19,49 @@ const logos = [
     logo: FoxEcomLogo,
   },
   {
+    name: "CRMChat",
+    logo: CRMChatLogo,
+  },
+  {
     name: "Atmos",
     logo: AtmosLogo,
   },
   {
-    name: "CRMChat",
-    logo: CRMChatLogo,
+    name: "Ideoz",
+    logo: IdeozLogo,
+  },
+  {
+    name: "Saga",
+    logo: SagaLogo,
   },
 ];
 
-export const LogoSection = () => {
+type Props = {
+  className?: string;
+};
+
+export const LogoSection = ({ className }: Props) => {
   return (
     <Section>
-      <Grid gridTemplateColumns={{ base: "repeat(2, 1fr)", md: "repeat(4, 1fr)" }} gap={0}>
+      <Flex
+        gap={{ base: "space32", md: "space12" }}
+        justifyContent={{ base: "center", md: "space-between" }}
+        flexWrap="wrap"
+        h={{ base: "auto", md: "28px" }}
+        overflow={{ base: "unset", md: "hidden" }}
+        as="ul"
+        className={className}
+      >
         {logos.map(({ name, logo: Logo }) => (
-          <Flex className={logoWrapCss} key={name} role="img" title={name}>
+          <Flex as="li" className={logoWrapCss} key={name} role="img" title={name}>
             <Logo />
           </Flex>
         ))}
-      </Grid>
+      </Flex>
     </Section>
   );
 };
 
 const logoWrapCss = css({
-  px: { base: "space12", lg: "space40" },
-  py: { base: "space12", md: "space0" },
   color: "newFg.neutral.subtle",
-  width: "100%",
-  alignItems: "center",
-  justifyContent: "center",
 });
