@@ -1,11 +1,12 @@
 {
   "extends": "tsconfig/nextjs.json",
   "compilerOptions": {
+    "noUncheckedSideEffectImports": false,
     "plugins": [{ "name": "next" }],
-    "baseUrl": "src",
     "paths": {
-      "@flows/styled-system/*": ["../pandacss-generated/*"],
-      "fumadocs-mdx:collections/*": ["../.source/*"]
+      "@flows/styled-system/*": ["./pandacss-generated/*"],
+      "fumadocs-mdx:collections/*": ["./.source/*"],
+      "*": ["./src/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

@@ -44,7 +44,7 @@
     "@vueless/storybook-dark-mode": "^10.0.7",
     "storybook": "^10.3.4",
     "tsconfig": "workspace:*",
-    "typescript": "5.9.3",
+    "typescript": "6.0.2",
     "vite": "^8.0.5"
   }
 }

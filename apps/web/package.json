@@ -57,6 +57,6 @@
     "@types/three": "^0.182.0",
     "schema-dts": "^1.1.5",
     "tsconfig": "workspace:*",
-    "typescript": "5.9.3"
+    "typescript": "6.0.2"
   }
 }
