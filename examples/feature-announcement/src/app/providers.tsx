@@ -9,6 +9,7 @@ import { ExampleControls } from "@/components/providers/example-controls";
 import { FlowsProvider } from "@flows/react";
 import * as components from "@flows/react-components";
 import * as tourComponents from "@flows/react-components/tour";
+import * as surveyComponents from "@flows/react-components/survey";
 
 import "@flows/react-components/index.css";
 import { FeatureAnnouncement } from "@/components/feature-announcement";
@@ -36,6 +37,7 @@ export const Providers: FC<Props> = ({ children }) => {
         userId={userId ?? null}
         components={{ ...components, FeatureAnnouncement }}
         tourComponents={{ ...tourComponents }}
+        surveyComponents={{ ...surveyComponents }}
         userProperties={{
           example: "feature-announcement",
         }}

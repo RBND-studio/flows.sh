@@ -8,6 +8,7 @@ import { useUserId } from "@/components/providers/user-provider";
 import { FlowsProvider } from "@flows/react";
 import * as components from "@flows/react-components";
 import * as tourComponents from "@flows/react-components/tour";
+import * as surveyComponents from "@flows/react-components/survey";
 
 import "@flows/react-components/index.css";
 
@@ -46,6 +47,7 @@ export const Providers: FC<Props> = ({ children }) => {
           TourStartCard,
         }}
         tourComponents={{ ...tourComponents }}
+        surveyComponents={{ ...surveyComponents }}
         userProperties={{
           example: "onboarding-hub",
         }}
