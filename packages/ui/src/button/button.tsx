@@ -84,12 +84,12 @@ const Icon = styled("span", {
   },
   variants: {
     position: {
-      // position removes the opposite margin that is set using size prop
+      // position removes the opposite margin that is set using size prop + adds negative margin to better align the icon
       start: {
-        marginLeft: 0,
+        marginLeft: -3,
       },
       end: {
-        marginRight: 0,
+        marginRight: -3,
       },
     },
     size: {

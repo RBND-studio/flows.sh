@@ -1,5 +1,3 @@
-// cSpell:words Apify
-
 export function ApifyLogo(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg

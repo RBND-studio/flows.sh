@@ -25,7 +25,8 @@ export const links = (domain = "flows.sh") =>
     pricing: `https://${domain}/pricing`,
     changelog: `https://${domain}/changelog`,
     examplesList: `https://${domain}/examples`,
-    affiliate: `https://flows-sh.lemonsqueezy.com/affiliates`,
+    affiliate: `https://${domain}/affiliate`,
+    affiliatePortal: `https://flows-sh.lemonsqueezy.com/affiliates`,
     scheduleCall: "https://cal.com/flows-ondra/session",
     contact: `https://${domain}/contact`,
     sdk: {
