@@ -33,6 +33,7 @@
     "markdownlint-cli": "^0.48.0",
     "oxfmt": "^0.44.0",
     "oxlint": "^1.59.0",
+    "oxlint-tsgolint": "^0.20.0",
     "tsconfig": "workspace:*",
     "turbo": "^2.8.10"
   },

@@ -32,7 +32,7 @@ export async function getLLMText(page: InferPageType<typeof source>): Promise<st
   return `# ${page.data.title}
 URL: ${pageUrl}
 
-${processed.value}`;
+${processed.value as string}`;
 }
 
 function validatePath(p: string): string {
