@@ -31,7 +31,7 @@ export default function AffiliatePage(): ReactNode {
             asChild
             size="large"
           >
-            <a href={links.affiliate}>Join our program</a>
+            <a href={links.affiliatePortal}>Join our program</a>
           </Button>
         }
       />
@@ -49,7 +49,7 @@ export default function AffiliatePage(): ReactNode {
               shadow: "neutralFocus",
             })}
           >
-            <a href={links.affiliate}>Join our program</a>
+            <a href={links.affiliatePortal}>Join our program</a>
           </Button>
         }
       />

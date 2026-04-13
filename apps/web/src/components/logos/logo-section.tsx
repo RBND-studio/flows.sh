@@ -1,4 +1,4 @@
-// cSpell:words Apify Ideoz
+// cSpell:words Ideoz
 import { Section } from "components/ui";
 import { ApifyLogo } from "./apify";
 import { AtmosLogo } from "./atmos";

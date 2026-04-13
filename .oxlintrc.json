@@ -2,6 +2,7 @@
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "ignorePatterns": [
     "example-templates",
+    "examples",
     "node_modules",
     ".turbo",
     ".next",
@@ -13,5 +14,8 @@
   ],
   "rules": {
     "typescript/consistent-type-imports": "error"
+  },
+  "options": {
+    "typeAware": true
   }
 }

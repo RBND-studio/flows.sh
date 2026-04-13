@@ -106,7 +106,7 @@ const questions = [
     content: (
       <Text color="newFg.neutral.muted" variant="bodyL">
         The Lemon Squeezy affiliate hub hosts our affiliate program.{" "}
-        <SmartLink target="_blank" href={links.affiliate} underline>
+        <SmartLink target="_blank" href={links.affiliatePortal} underline>
           Create a Lemon Squeezy account
         </SmartLink>
         and join our program.
