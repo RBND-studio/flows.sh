@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "-- PLOP TITLE HERE -- example - Flows",
-  description: "TODO: Add description",
+  title: "NPS survey example - Flows",
+  description: "Collect Net Promoter Score feedback with a non-intrusive survey popover",
   alternates: {
-    canonical: "https://flows.sh/examples/-- PLOP EXAMPLE SLUG HERE --",
+    canonical: "https://flows.sh/examples/nps-survey",
   },
 };
 

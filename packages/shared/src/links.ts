@@ -82,6 +82,8 @@ export const links = (domain = "flows.sh") =>
       surveyPopover: "https://survey-popover.examples.flows.sh",
       surveyPopoverSource:
         "https://github.com/RBND-studio/flows.sh/tree/main/examples/survey-popover",
+      npsSurvey: "https://nps-survey.examples.flows.sh",
+      npsSurveySource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/nps-survey",
       // --PLOP_NEW_EXAMPLE_LINK--
     },
     docs: {
