@@ -64,7 +64,7 @@ module.exports = function (plop) {
           pattern: /(-- PLOP EXAMPLE SLUG HERE --)/gi,
           template: `${exampleSlug}`,
         },
-        // layout.tsx
+        // src/app/layout.tsx (root — metadata only)
         {
           type: "modify",
           path: `${destinationPath}/src/app/layout.tsx`,
@@ -74,6 +74,19 @@ module.exports = function (plop) {
         {
           type: "modify",
           path: `${destinationPath}/src/app/layout.tsx`,
+          pattern: /(-- PLOP EXAMPLE SLUG HERE --)/gi,
+          template: `${exampleSlug}`,
+        },
+        // src/app/(home)/layout.tsx
+        {
+          type: "modify",
+          path: `${destinationPath}/src/app/(home)/layout.tsx`,
+          pattern: /(-- PLOP TITLE HERE --)/gi,
+          template: `${data.name}`,
+        },
+        {
+          type: "modify",
+          path: `${destinationPath}/src/app/(home)/layout.tsx`,
           pattern: /(-- PLOP EXAMPLE SLUG HERE --)/gi,
           template: `${exampleSlug}`,
         },
@@ -105,7 +118,21 @@ module.exports = function (plop) {
           pattern: /\/\/ --PLOP_NEW_EXAMPLE_LINK--/g,
           template: `${demoUrlName}: "${demoUrl}",\n      ${exampleSourceUrlName}: "${exampleSourceUrl}",\n      // --PLOP_NEW_EXAMPLE_LINK--`,
         },
-        // content.tsx
+        // apps/web/src/app/examples/content.tsx — import
+        {
+          type: "modify",
+          path: "apps/web/src/app/examples/content.tsx",
+          pattern: /\/\/ --PLOP_NEW_EXAMPLE_IMPORT--/g,
+          template: `import { ${exampleCamel}Content } from "./${exampleSlug}/content";\n// --PLOP_NEW_EXAMPLE_IMPORT--`,
+        },
+        // apps/web/src/app/examples/content.tsx — array entry
+        {
+          type: "modify",
+          path: "apps/web/src/app/examples/content.tsx",
+          pattern: /\/\/ --PLOP_NEW_EXAMPLE_CONTENT--/g,
+          template: `${exampleCamel}Content,\n  // --PLOP_NEW_EXAMPLE_CONTENT--`,
+        },
+        // web-content/content.tsx
         {
           type: "modify",
           path: `${contentDestinationPath}/content.tsx`,

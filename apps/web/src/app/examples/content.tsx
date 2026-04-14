@@ -12,8 +12,12 @@ import { newFeatureContent } from "./new-feature-badge/content";
 import { newFeatureCardContent } from "./new-feature-card/content";
 import { onboardingHubContent } from "./onboarding-hub/content";
 import { productHuntLaunchAnnouncementContent } from "./product-hunt-launch-announcement/content";
+import { npsSurveyContent } from "./nps-survey/content";
 import { surveyPopoverContent } from "./survey-popover/content";
 import { tourContent } from "./tour/content";
+import { pmfSurveyContent } from "./pmf-survey/content";
+import { csatSurveyContent } from "./csat-survey/content";
+// --PLOP_NEW_EXAMPLE_IMPORT--
 import { type ContentType } from "./types";
 
 export const examplesContent: ContentType[] = [
@@ -33,4 +37,8 @@ export const examplesContent: ContentType[] = [
   productHuntLaunchAnnouncementContent,
   gettingStartedDashboardContent,
   surveyPopoverContent,
+  pmfSurveyContent,
+  csatSurveyContent,
+  npsSurveyContent,
+  // --PLOP_NEW_EXAMPLE_CONTENT--
 ];

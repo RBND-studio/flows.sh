@@ -1,6 +1,6 @@
-# -- PLOP TITLE HERE -- – Flows example
+# -- PLOP TITLE HERE -- - Flows example
 
-This example shows how TODO: describe the example.
+TODO: one sentence describing what this example demonstrates.
 
 ## Demo
 
@@ -8,18 +8,15 @@ This example shows how TODO: describe the example.
 
 ## Features
 
-TODO: describe the features of the example.
+TODO: describe what the workflow does and how it behaves.
 
 Below is a screenshot of how the workflow is set up:
 
-TODO: replace the screenshot with a screenshot of your workflow.
 ![Workflow](./workflow.png)
 
 ## Getting started
 
-TODO: if applicable add component instructions below step 3
-
-1. Sign up for Flows if you haven’t already. You can [create a free account here](https://app.flows.sh/signup).
+1. Sign up for Flows if you haven't already. You can [create a free account here](https://app.flows.sh/signup).
 2. Clone the repository from GitHub and install the required dependencies in the project directory.
 3. Add your organization ID in the [`providers.tsx`](./src/app/providers.tsx) file.
 4. Recreate the workflow in your organization and publish it.
