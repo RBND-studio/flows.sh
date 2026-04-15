@@ -1,7 +1,7 @@
 import { css, cx } from "@flows/styled-system/css";
 import { Box, Flex, Grid } from "@flows/styled-system/jsx";
 import { Section } from "components/ui";
-import { ArrowRight16, Block16, Component16, Slot16, Tour16 } from "icons";
+import { ArrowRight16, Block16, Component16, Slot16, Survey16, Tour16 } from "icons";
 import { links } from "lib/links";
 import { type Route } from "next";
 import Link from "next/link";
@@ -12,6 +12,7 @@ import { Icon, Text } from "ui";
 type Props = {
   title: string;
   description: string;
+  currentFeatureHref: Route;
 };
 
 const features = [
@@ -39,9 +40,16 @@ const features = [
     icon: Component16,
     href: routes.features.customComponents,
   },
+  {
+    title: "Surveys",
+    description: "Collect NPS, CSAT, and custom feedback from users inside your product.",
+    icon: Survey16,
+    href: routes.features.surveys,
+  },
 ];
 
-export const TrailFork = ({ title, description }: Props): ReactNode => {
+export const TrailFork = ({ title, description, currentFeatureHref }: Props): ReactNode => {
+  const visibleFeatures = features.filter((f) => f.href !== currentFeatureHref);
   return (
     <>
       <Section mt={{ base: "space80", md: "space160" }} mb={{ base: "space48", md: "space96" }}>
@@ -73,7 +81,7 @@ export const TrailFork = ({ title, description }: Props): ReactNode => {
             gap="1px"
             bg="newBorder.neutral.placeholder"
           >
-            {features.map((feature) => (
+            {visibleFeatures.map((feature) => (
               <FeatureCard
                 key={feature.title}
                 title={feature.title}

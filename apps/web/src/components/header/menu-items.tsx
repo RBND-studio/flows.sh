@@ -5,6 +5,7 @@ import {
   Component16,
   Graph16,
   Slot16,
+  Survey16,
   Tour16,
   Upgrade16,
 } from "icons";
@@ -34,6 +35,12 @@ export const menuItems: MenuItemProps[] = [
         href: routes.features.productTours,
         icon: Tour16,
         description: "Guide users to success step-by-step",
+      },
+      {
+        title: "Surveys",
+        href: routes.features.surveys,
+        icon: Survey16,
+        description: "Collect user feedback that drives decisions",
       },
       {
         title: "Embeddable components",
