@@ -98,6 +98,13 @@ export const bytesRouteContent: AlternativeContentType = {
       description:
         "Flows uses transparent, usage-based pricing. Bytes Route pricing is also publicly available.",
     },
+    {
+      title: "Surveys",
+      competitor: false,
+      flows: true,
+      description:
+        "Flows includes built-in surveys for collecting user feedback. Bytes Route does not include native survey capabilities.",
+    },
   ],
   otherDifferences: [
     {

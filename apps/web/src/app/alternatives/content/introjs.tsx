@@ -101,6 +101,13 @@ export const introjsContent: AlternativeContentType = {
       description:
         "Intro.js requires a paid license for commercial applications. Flows offers a free plan with 250 monthly tracked users.",
     },
+    {
+      title: "Surveys",
+      competitor: false,
+      flows: true,
+      description:
+        "Flows includes built-in surveys for collecting user feedback. Intro.js is a tour library and does not include survey capabilities.",
+    },
   ],
   otherDifferences: [
     {

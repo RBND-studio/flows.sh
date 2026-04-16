@@ -47,9 +47,8 @@ export const usertourContent: AlternativeContentType = {
     {
       title: "Surveys",
       competitor: true,
-      flows: false,
-      description:
-        "Usertour includes in-app surveys. Flows focuses on workflow-driven adoption rather than survey collection.",
+      flows: true,
+      description: "Both services support in-app surveys for collecting user feedback.",
     },
     {
       title: "Custom components",

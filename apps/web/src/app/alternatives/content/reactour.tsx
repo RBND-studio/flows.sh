@@ -114,6 +114,13 @@ export const reactourContent: AlternativeContentType = {
       description:
         "Reactour has not seen significant updates since 7th May, 2025. Flows is actively developed with regular releases and new features.",
     },
+    {
+      title: "Surveys",
+      competitor: false,
+      flows: true,
+      description:
+        "Flows includes built-in surveys for collecting user feedback. Reactour is a tour library and does not include survey capabilities.",
+    },
   ],
   otherDifferences: [
     {

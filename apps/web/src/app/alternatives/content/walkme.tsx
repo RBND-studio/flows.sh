@@ -86,6 +86,12 @@ export const walkmeContent: AlternativeContentType = {
       description:
         "Flows offers APIs, versioning, environments, and documentation built for developers.",
     },
+    {
+      title: "Surveys",
+      competitor: true,
+      flows: true,
+      description: "Both services support in-app surveys for collecting user feedback.",
+    },
   ],
   otherDifferences: [
     {

@@ -101,6 +101,13 @@ export const bootstrapTourContent: AlternativeContentType = {
       description:
         "Bootstrap Tour is free and open source. Flows offers a free plan with 250 monthly tracked users.",
     },
+    {
+      title: "Surveys",
+      competitor: false,
+      flows: true,
+      description:
+        "Flows includes built-in surveys for collecting user feedback. Bootstrap Tour is a tour library and does not include survey capabilities.",
+    },
   ],
   otherDifferences: [
     {
