@@ -16,6 +16,7 @@ export const routes = {
     productTours: "/product-tours",
     embeddableComponents: "/embeddable-components",
     customComponents: "/custom-components",
+    surveys: "/surveys",
   },
 
   solutions: {

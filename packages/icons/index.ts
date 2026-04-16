@@ -145,6 +145,7 @@ export * from "./src/solid16";
 export * from "./src/solid32";
 export * from "./src/spinner20";
 export * from "./src/stack16";
+export * from "./src/star-filled16";
 export * from "./src/star16";
 export * from "./src/start16";
 export * from "./src/stonly-full20";

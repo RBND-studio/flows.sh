@@ -94,6 +94,13 @@ export const helpheroContent: AlternativeContentType = {
       description:
         "Flows offers APIs, versioning, environments, and documentation built for developers.",
     },
+    {
+      title: "Surveys",
+      competitor: false,
+      flows: true,
+      description:
+        "Flows includes built-in NPS, CSAT, PMF, and custom surveys for collecting user feedback. HelpHero does not offer native survey capabilities.",
+    },
   ],
   otherDifferences: [
     {

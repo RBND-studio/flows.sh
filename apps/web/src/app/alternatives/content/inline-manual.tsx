@@ -98,6 +98,13 @@ export const inlineManualContent: AlternativeContentType = {
       description:
         "Flows uses transparent, usage-based pricing. Inline Manual pricing page shows limited information.",
     },
+    {
+      title: "Surveys",
+      competitor: false,
+      flows: true,
+      description:
+        "Flows includes built-in NPS, CSAT, PMF, and custom surveys for collecting user feedback. Inline Manual does not offer native survey capabilities.",
+    },
   ],
   otherDifferences: [
     {

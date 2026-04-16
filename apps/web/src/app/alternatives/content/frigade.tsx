@@ -89,6 +89,13 @@ export const frigadeContent: AlternativeContentType = {
       description:
         "Flows uses transparent, usage-based pricing. Frigade does not publish pricing publicly.",
     },
+    {
+      title: "Surveys",
+      competitor: false,
+      flows: true,
+      description:
+        "Flows includes built-in NPS, CSAT, PMF, and custom surveys for collecting user feedback. Frigade does not offer native survey capabilities.",
+    },
   ],
   otherDifferences: [
     {

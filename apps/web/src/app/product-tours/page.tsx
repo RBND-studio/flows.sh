@@ -3,6 +3,7 @@ import { Hero, TrailFork } from "components";
 import { CtaBanner } from "components/cta-banner";
 import { Tour16 } from "icons";
 import { getWebMetadata } from "lib/get-metadata";
+import { routes } from "routes";
 import { type Metadata } from "next";
 import type { JSX } from "react";
 import { Icon, Text } from "ui";
@@ -46,6 +47,7 @@ export default function ProductTour(): JSX.Element {
       <TrailFork
         title="More than just Product tours"
         description="Engage users, drive adoption and increase conversions with just a few lines of code. Ship custom product adoption experiences in days, not months."
+        currentFeatureHref={routes.features.productTours}
       />
 
       <CtaBanner />

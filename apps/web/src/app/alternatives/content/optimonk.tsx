@@ -94,6 +94,13 @@ export const optimonkContent: AlternativeContentType = {
       description:
         "Flows offers APIs, versioning, environments, and documentation built for developers.",
     },
+    {
+      title: "Surveys",
+      competitor: false,
+      flows: true,
+      description:
+        "Flows includes built-in NPS, CSAT, PMF, and custom surveys for collecting in-app user feedback. OptiMonk is a marketing popup tool and does not offer product surveys.",
+    },
   ],
   otherDifferences: [
     {

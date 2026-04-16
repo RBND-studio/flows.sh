@@ -1,7 +1,8 @@
 import { Flex } from "@flows/styled-system/jsx";
 import { Hero, TrailFork } from "components";
 import { CtaBanner } from "components/cta-banner";
-import { Component16 } from "icons";
+import { LogoSection } from "components/logos/logo-section";
+import { Survey16 } from "icons";
 import { getWebMetadata } from "lib/get-metadata";
 import { routes } from "routes";
 import { type Metadata } from "next";
@@ -10,32 +11,31 @@ import { Icon, Text } from "ui";
 
 import { FeaturesSection } from "./features-section";
 import { MainIllustration } from "./main-illustration";
-import { LogoSection } from "components/logos/logo-section";
 
 export const metadata: Metadata = getWebMetadata({
-  title: "Custom UI components",
+  title: "Surveys",
   description:
-    "Leverage our APIs and your design system for full control. Build your own components and create a native experience.",
+    "Build NPS, CSAT, PMF, and custom surveys that run inside your product. Get real feedback from real users at the right moment.",
 });
 
-export default function ProductTour(): JSX.Element {
+export default function Surveys(): JSX.Element {
   return (
     <>
       <Hero
         eyebrow={
           <Flex gap="space8" alignItems="center">
-            <Icon icon={Component16} />
-            <Text variant="titleM">Custom UI components</Text>
+            <Icon icon={Survey16} />
+            <Text variant="titleM">Surveys</Text>
           </Flex>
         }
         title={
           <>
-            Headless product
+            Collect user feedback
             <br />
-            adoption platform
+            that drives decisions
           </>
         }
-        description="Leverage our APIs and your design system for full control. Build your own components and create a native experience."
+        description="Build NPS, CSAT, PMF, and custom surveys that run inside your product. Get real feedback from real users at the right moment."
       />
 
       <MainIllustration />
@@ -45,9 +45,9 @@ export default function ProductTour(): JSX.Element {
       <FeaturesSection />
 
       <TrailFork
-        title="More than just Custom UI components"
+        title="More than just Surveys"
         description="Engage users, drive adoption and increase conversions with just a few lines of code. Ship custom product adoption experiences in days, not months."
-        currentFeatureHref={routes.features.customComponents}
+        currentFeatureHref={routes.features.surveys}
       />
 
       <CtaBanner />
