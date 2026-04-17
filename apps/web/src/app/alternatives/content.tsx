@@ -1,4 +1,4 @@
-// cSpell:words Apty produktly jimo gleap stonly optimonk candu lemonlearning guidecx frigade screeb onboardjs guidechimp usertour gainsight lusift
+// cSpell:words Apty produktly jimo gleap stonly optimonk candu lemonlearning guidecx frigade screeb onboardjs guidechimp usertour gainsight lusift clicklearn
 
 import { appcuesContent } from "./content/appcues";
 import { aptyContent } from "./content/apty";
@@ -26,6 +26,7 @@ import { hopscotchContent } from "./content/hopscotch";
 import { intercomContent } from "./content/intercom";
 import { introjsContent } from "./content/introjs";
 import { jimoContent } from "./content/jimo";
+import { clicklearnContent } from "./content/clicklearn";
 import { lemonLearningContent } from "./content/lemon-learning";
 import { optimonkContent } from "./content/optimonk";
 import { nextstepjsContent } from "./content/nextstepjs";
@@ -86,6 +87,7 @@ export const alternativesContent: AlternativeContentType[] = [
   hopscotchContent,
   canduContent,
   commandAiContent,
+  clicklearnContent,
   lemonLearningContent,
   optimonkContent,
   screebContent,

@@ -31,6 +31,8 @@ export * from "./src/check16";
 export * from "./src/checklist16";
 export * from "./src/chevron-down16";
 export * from "./src/circle-slash16";
+export * from "./src/clicklearn-full20";
+export * from "./src/clicklearn20";
 export * from "./src/close16";
 export * from "./src/code16";
 export * from "./src/commandai-full20";

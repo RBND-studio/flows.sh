@@ -17,6 +17,7 @@ import { surveyPopoverContent } from "./survey-popover/content";
 import { tourContent } from "./tour/content";
 import { pmfSurveyContent } from "./pmf-survey/content";
 import { csatSurveyContent } from "./csat-survey/content";
+import { cesSurveyContent } from "./ces-survey/content";
 // --PLOP_NEW_EXAMPLE_IMPORT--
 import { type ContentType } from "./types";
 
@@ -40,5 +41,6 @@ export const examplesContent: ContentType[] = [
   pmfSurveyContent,
   csatSurveyContent,
   npsSurveyContent,
+  cesSurveyContent,
   // --PLOP_NEW_EXAMPLE_CONTENT--
 ];
