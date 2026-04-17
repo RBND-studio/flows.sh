@@ -31,6 +31,10 @@ const footerGroups: FooterGroupColumn[] = [
           href: routes.features.productTours,
         },
         {
+          title: "Surveys",
+          href: routes.features.surveys,
+        },
+        {
           title: "Embeddable components",
           href: routes.features.embeddableComponents,
         },

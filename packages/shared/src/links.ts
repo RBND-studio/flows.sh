@@ -88,6 +88,8 @@ export const links = (domain = "flows.sh") =>
       csatSurveySource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/csat-survey",
       npsSurvey: "https://nps-survey.examples.flows.sh",
       npsSurveySource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/nps-survey",
+      cesSurvey: "https://ces-survey.examples.flows.sh",
+      cesSurveySource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/ces-survey",
       // --PLOP_NEW_EXAMPLE_LINK--
     },
     docs: {
