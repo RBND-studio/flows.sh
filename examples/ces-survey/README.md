@@ -10,7 +10,7 @@ This example shows how to collect Customer Effort Score feedback in a React app 
 
 When a user enters the workflow, the survey popover appears in the bottom-right corner of the screen. The survey walks users through three steps:
 
-1. **Effort rating**: a 1-5 scale asking how easy it was to complete the task, with "Very difficult" and "Very easy" labels at each end.
+1. **Effort rating**: a 1-7 scale asking how easy it was to complete the task, with "Very difficult" and "Very easy" labels at each end.
 2. **Follow-up question**: an open-ended freeform text field asking what could be made easier. Marked as optional so users can skip it.
 3. **End screen**: a thank-you message acknowledging the response before the popover closes automatically.
 

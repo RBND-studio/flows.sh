@@ -70,7 +70,7 @@ export const cesSurveyContent: ContentType = {
       </Paragraph>
       <UnorderedList>
         <li>
-          <strong>Effort rating</strong>: a 1-5 scale asking how easy it was to complete the task,
+          <strong>Effort rating</strong>: a 1-7 scale asking how easy it was to complete the task,
           with "Very difficult" and "Very easy" labels at each end.
         </li>
         <li>
