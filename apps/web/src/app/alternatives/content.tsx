@@ -1,6 +1,7 @@
-// cSpell:words Apty produktly jimo gleap stonly optimonk candu lemonlearning guidecx frigade screeb onboardjs guidechimp usertour gainsight lusift clicklearn
+// cSpell:words Apty produktly jimo gleap stonly optimonk candu lemonlearning guidecx frigade screeb onboardjs guidechimp usertour gainsight lusift clicklearn survicate surveyjs refiner sprig beamer
 
 import { appcuesContent } from "./content/appcues";
+import { beamerContent } from "./content/beamer";
 import { aptyContent } from "./content/apty";
 import { bootstrapTourContent } from "./content/bootstrap-tour";
 import { canduContent } from "./content/candu";
@@ -27,6 +28,10 @@ import { intercomContent } from "./content/intercom";
 import { introjsContent } from "./content/introjs";
 import { jimoContent } from "./content/jimo";
 import { clicklearnContent } from "./content/clicklearn";
+import { refinerContent } from "./content/refiner";
+import { sprigContent } from "./content/sprig";
+import { survicateContent } from "./content/survicate";
+import { surveyjsContent } from "./content/surveyjs";
 import { lemonLearningContent } from "./content/lemon-learning";
 import { optimonkContent } from "./content/optimonk";
 import { nextstepjsContent } from "./content/nextstepjs";
@@ -91,6 +96,11 @@ export const alternativesContent: AlternativeContentType[] = [
   lemonLearningContent,
   optimonkContent,
   screebContent,
+  beamerContent,
+  survicateContent,
+  refinerContent,
+  sprigContent,
+  surveyjsContent,
   inlineHelpContent,
   guidecxContent,
   frigadeContent,

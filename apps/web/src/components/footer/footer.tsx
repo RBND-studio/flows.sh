@@ -134,10 +134,6 @@ const footerGroups: FooterGroupColumn[] = [
       title: "Compare",
       links: [
         {
-          title: "Flows vs other tools",
-          href: routes.blogPostDetail({ postId: "flows-vs-other-tools" }),
-        },
-        {
           title: "Appcues",
           href: routes.alternativeDetail("appcues"),
         },
@@ -156,6 +152,10 @@ const footerGroups: FooterGroupColumn[] = [
         {
           title: "Usetiful",
           href: routes.alternativeDetail("usetiful"),
+        },
+        {
+          title: "Intro.js",
+          href: routes.alternativeDetail("introjs"),
         },
         {
           title: "Driver.js",

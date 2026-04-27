@@ -212,12 +212,12 @@ Returns: `Promise<`[WorkflowsResponse](#workflowsresponse)`>`
 
 Represents a block visible to the user.
 
-| Name        | Type                                                                           | Notes                                                                                                                      |
-| ----------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
-| `id`        | `string`                                                                       | Internal identifier for the block. Changes with every workflow version, for persistent identifier use `props.__flows.key`. |
-| `type`      | `"component" \| "tour-component"`                                              | The block type.                                                                                                            |
-| `component` | `string`                                                                       | The UI component that should be used to render the block.                                                                  |
-| `props`     | [ComponentProps](#componentprops) \| [TourComponentProps](#tourcomponentprops) | Props passed to the component, including data and exit node callbacks.                                                     |
+| Name        | Type                                                                                                                            | Notes                                                                                                                      |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `id`        | `string`                                                                                                                        | Internal identifier for the block. Changes with every workflow version, for persistent identifier use `props.__flows.key`. |
+| `type`      | `"component" \| "tour-component" \| "survey"`                                                                                   | The block type.                                                                                                            |
+| `component` | `string`                                                                                                                        | The UI component that should be used to render the block.                                                                  |
+| `props`     | [ComponentProps](#componentprops) \| [TourComponentProps](#tourcomponentprops) \| [SurveyComponentProps](#surveycomponentprops) | Props passed to the component, including data and exit node callbacks.                                                     |
 
 ---
 
@@ -225,11 +225,9 @@ Represents a block visible to the user.
 
 Represents the props passed to a component. In addition to your custom props, it includes the `__flows` object with Flows properties.
 
-| Name                 | Type     | Required | Notes                                                                                                                                               |
-| -------------------- | -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `__flows.id`         | `string` | Yes      | Unique identifier of the block, useful for stable key during rendering. Keep in mind each workflow version will have a different id for each block. |
-| `__flows.key`        | `string` | No       | Unique key for the block. Set by you in a workflow. [Learn more](/blocks/block-properties/block-key)                                                |
-| `__flows.workflowId` | `string` | Yes      | The ID of the workflow. Set by Flows.                                                                                                               |
+| Name      | Type                                | Required | Notes                                             |
+| --------- | ----------------------------------- | -------- | ------------------------------------------------- |
+| `__flows` | [FlowsProperties](#flowsproperties) | Yes      | Object containing Flows properties for the block. |
 
 ---
 
@@ -257,12 +255,10 @@ Represents the [state memory](/blocks/block-properties/state-memory) property of
 
 Represents the [block state](/blocks/block-properties/block-state) of the selected block in the workflow.
 
-| Name                    | Type                         | Required | Notes                                                                                                                                               |
-| ----------------------- | ---------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Custom block properties | Depends on the property type | Yes      | The properties of the selected block in the workflow. The properties are defined on in the block.                                                   |
-| `__flows.id`            | `string`                     | Yes      | Unique identifier of the block, useful for stable key during rendering. Keep in mind each workflow version will have a different id for each block. |
-| `__flows.key`           | `string`                     | No       | Unique key for the block. Set by you in a workflow. [Learn more](/blocks/block-properties/block-key)                                                |
-| `__flows.workflowId`    | `string`                     | Yes      | The ID of the workflow. Set by Flows.                                                                                                               |
+| Name                    | Type                                | Required | Notes                                                                                             |
+| ----------------------- | ----------------------------------- | -------- | ------------------------------------------------------------------------------------------------- |
+| Custom block properties | Depends on the property type        | Yes      | The properties of the selected block in the workflow. The properties are defined on in the block. |
+| `__flows`               | [FlowsProperties](#flowsproperties) | Yes      | Object containing Flows properties for the block.                                                 |
 
 ---
 
@@ -270,12 +266,179 @@ Represents the [block state](/blocks/block-properties/block-state) of the select
 
 Represents the props passed to a tour component. In addition to your custom props, it includes tour component exit nodes and the `__flows` object with Flows properties.
 
-| Name          | Type       | Required | Notes                                                                                                |
-| ------------- | ---------- | -------- | ---------------------------------------------------------------------------------------------------- |
-| `continue`    | `function` | Yes      | Callback to go to the next step.                                                                     |
-| `previous`    | `function` | No       | Callback to go back to the previous step.                                                            |
-| `cancel`      | `function` | Yes      | Callback to cancel the tour.                                                                         |
-| `__flows.key` | `string`   | No       | Unique key for the block. Set by you in a workflow. [Learn more](/blocks/block-properties/block-key) |
+| Name       | Type                                | Required | Notes                                             |
+| ---------- | ----------------------------------- | -------- | ------------------------------------------------- |
+| `continue` | `function`                          | Yes      | Callback to go to the next step.                  |
+| `previous` | `function`                          | No       | Callback to go back to the previous step.         |
+| `cancel`   | `function`                          | Yes      | Callback to cancel the tour.                      |
+| `__flows`  | [FlowsProperties](#flowsproperties) | Yes      | Object containing Flows properties for the block. |
+
+---
+
+#### SurveyComponentProps
+
+Represents the props passed to a survey component. In addition to your custom props, it includes the `survey` object, survey exit node callbacks, and the `__flows` object with Flows properties.
+
+| Name                    | Type                                | Required | Notes                                                                                               |
+| ----------------------- | ----------------------------------- | -------- | --------------------------------------------------------------------------------------------------- |
+| `survey`                | [Survey](#survey)                   | Yes      | Survey data and helper methods for reading answers, navigating questions, and submitting responses. |
+| Custom block properties | Depends on the property type        | Yes      | The properties of the selected block in the workflow. The properties are defined on in the block.   |
+| `complete`              | `function`                          | Yes      | Callback to exit the survey block with the `complete` exit node.                                    |
+| `cancel`                | `function`                          | Yes      | Callback to exit the survey block with the `cancel` exit node.                                      |
+| `__flows`               | [FlowsProperties](#flowsproperties) | Yes      | Object containing Flows properties for the block.                                                   |
+
+---
+
+#### Survey
+
+Represents the survey object provided to survey components.
+
+| Name                      | Type                                  | Required | Notes                                                                                                               |
+| ------------------------- | ------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------- |
+| `questions`               | [SurveyQuestion](#surveyquestion)`[]` | Yes      | Ordered list of all survey questions.                                                                               |
+| `getCurrentQuestionIndex` | `function`                            | Yes      | Returns the zero-based index of the currently displayed question. Method for optional built-in question navigation. |
+| `nextQuestion`            | `function`                            | Yes      | Advances to the next question and returns the new index. Method for optional built-in question navigation.          |
+| `previousQuestion`        | `function`                            | Yes      | Moves to the previous question and returns the new index. Method for optional built-in question navigation.         |
+| `submit`                  | `function`                            | Yes      | Submits the survey response. Use `complete()` separately to close the survey block.                                 |
+
+---
+
+#### SurveyQuestion
+
+Union type for all supported survey question types:
+
+`type SurveyQuestion =` [FreeformQuestion](#freeformquestion) | [SingleChoiceQuestion](#singlechoicequestion) | [MultipleChoiceQuestion](#multiplechoicequestion) | [RatingQuestion](#ratingquestion) | [LinkQuestion](#linkquestion) | [EndScreenQuestion](#endscreenquestion)
+
+---
+
+#### FreeformQuestion
+
+Represents a freeform survey question.
+
+| Name          | Type         | Required | Notes                                                   |
+| ------------- | ------------ | -------- | ------------------------------------------------------- |
+| `id`          | `string`     | Yes      | Unique identifier for the question.                     |
+| `type`        | `"freeform"` | Yes      | The question type.                                      |
+| `title`       | `string`     | Yes      | Title of the question. May contain HTML.                |
+| `description` | `string`     | No       | Description of the question. May contain HTML.          |
+| `optional`    | `boolean`    | Yes      | Whether the user may skip the question.                 |
+| `placeholder` | `string`     | No       | Placeholder text shown in the input field.              |
+| `getValue`    | `function`   | Yes      | Returns the current text value or `undefined` if empty. |
+| `setValue`    | `function`   | Yes      | Sets the current text value for the question.           |
+
+---
+
+#### SingleChoiceQuestion
+
+Represents a single-choice survey question.
+
+| Name                   | Type                              | Required | Notes                                                             |
+| ---------------------- | --------------------------------- | -------- | ----------------------------------------------------------------- |
+| `id`                   | `string`                          | Yes      | Unique identifier for the question.                               |
+| `type`                 | `"single-choice"`                 | Yes      | The question type.                                                |
+| `title`                | `string`                          | Yes      | Title of the question. May contain HTML.                          |
+| `description`          | `string`                          | No       | Description of the question. May contain HTML.                    |
+| `optional`             | `boolean`                         | Yes      | Whether the user may skip the question.                           |
+| `options`              | `{ id: string; label: string }[]` | Yes      | Ordered list of available options.                                |
+| `otherOption`          | `boolean`                         | Yes      | Whether an additional "other" option should be rendered.          |
+| `otherLabel`           | `string`                          | No       | Label for the "other" option.                                     |
+| `getSelectedOptionIds` | `function`                        | Yes      | Returns the selected option id as an array with zero or one item. |
+| `setSelectedOptionIds` | `function`                        | Yes      | Sets the selected option id using an array with zero or one item. |
+| `getValue`             | `function`                        | Yes      | Returns the current text value for the "other" option.            |
+| `setValue`             | `function`                        | Yes      | Sets the current text value for the "other" option.               |
+| `getOtherSelected`     | `function`                        | Yes      | Returns whether the "other" option is currently selected.         |
+| `setOtherSelected`     | `function`                        | Yes      | Sets whether the "other" option is selected.                      |
+
+---
+
+#### MultipleChoiceQuestion
+
+Represents a multiple-choice survey question.
+
+| Name                   | Type                              | Required | Notes                                                     |
+| ---------------------- | --------------------------------- | -------- | --------------------------------------------------------- |
+| `id`                   | `string`                          | Yes      | Unique identifier for the question.                       |
+| `type`                 | `"multiple-choice"`               | Yes      | The question type.                                        |
+| `title`                | `string`                          | Yes      | Title of the question. May contain HTML.                  |
+| `description`          | `string`                          | No       | Description of the question. May contain HTML.            |
+| `optional`             | `boolean`                         | Yes      | Whether the user may skip the question.                   |
+| `options`              | `{ id: string; label: string }[]` | Yes      | Ordered list of available options.                        |
+| `otherOption`          | `boolean`                         | Yes      | Whether an additional "other" option should be rendered.  |
+| `otherLabel`           | `string`                          | No       | Label for the "other" option.                             |
+| `getSelectedOptionIds` | `function`                        | Yes      | Returns the ids of all currently selected options.        |
+| `setSelectedOptionIds` | `function`                        | Yes      | Sets the currently selected option ids.                   |
+| `getValue`             | `function`                        | Yes      | Returns the current text value for the "other" option.    |
+| `setValue`             | `function`                        | Yes      | Sets the current text value for the "other" option.       |
+| `getOtherSelected`     | `function`                        | Yes      | Returns whether the "other" option is currently selected. |
+| `setOtherSelected`     | `function`                        | Yes      | Sets whether the "other" option is selected.              |
+
+---
+
+#### RatingQuestion
+
+Represents a rating survey question.
+
+| Name              | Type                               | Required | Notes                                                  |
+| ----------------- | ---------------------------------- | -------- | ------------------------------------------------------ |
+| `id`              | `string`                           | Yes      | Unique identifier for the question.                    |
+| `type`            | `"rating"`                         | Yes      | The question type.                                     |
+| `title`           | `string`                           | Yes      | Title of the question. May contain HTML.               |
+| `description`     | `string`                           | No       | Description of the question. May contain HTML.         |
+| `optional`        | `boolean`                          | Yes      | Whether the user may skip the question.                |
+| `displayType`     | `"numbers" \| "stars" \| "emojis"` | Yes      | Visual style of the rating buttons.                    |
+| `minValue`        | `number`                           | Yes      | Minimum selectable value on the rating scale.          |
+| `maxValue`        | `number`                           | Yes      | Maximum selectable value on the rating scale.          |
+| `lowerBoundLabel` | `string`                           | No       | Label shown at the low end of the rating scale.        |
+| `upperBoundLabel` | `string`                           | No       | Label shown at the high end of the rating scale.       |
+| `getValue`        | `function`                         | Yes      | Returns the selected rating value as a numeric string. |
+| `setValue`        | `function`                         | Yes      | Sets the selected rating value using a numeric string. |
+
+---
+
+#### LinkQuestion
+
+Represents a link survey question.
+
+| Name          | Type       | Required | Notes                                                              |
+| ------------- | ---------- | -------- | ------------------------------------------------------------------ |
+| `id`          | `string`   | Yes      | Unique identifier for the question.                                |
+| `type`        | `"link"`   | Yes      | The question type.                                                 |
+| `title`       | `string`   | Yes      | Title of the question. May contain HTML.                           |
+| `description` | `string`   | No       | Description of the question. May contain HTML.                     |
+| `optional`    | `boolean`  | Yes      | Whether the user may skip the question.                            |
+| `linkLabel`   | `string`   | Yes      | Label for the clickable link shown to the user.                    |
+| `url`         | `string`   | Yes      | URL the user is navigated to when they click the link.             |
+| `openInNew`   | `boolean`  | Yes      | Whether the link opens in a new browser tab.                       |
+| `setClicked`  | `function` | Yes      | Marks the link question as clicked so the interaction is recorded. |
+
+---
+
+#### EndScreenQuestion
+
+Represents the final survey screen.
+
+| Name          | Type           | Required | Notes                                                  |
+| ------------- | -------------- | -------- | ------------------------------------------------------ |
+| `id`          | `string`       | Yes      | Unique identifier for the question.                    |
+| `type`        | `"end-screen"` | Yes      | The question type.                                     |
+| `title`       | `string`       | Yes      | Title of the screen. May contain HTML.                 |
+| `description` | `string`       | No       | Description of the screen. May contain HTML.           |
+| `optional`    | `boolean`      | Yes      | Whether the user may skip the screen.                  |
+| `linkLabel`   | `string`       | No       | Label for the optional link shown on the end screen.   |
+| `url`         | `string`       | No       | URL the user is navigated to from the end screen link. |
+| `openInNew`   | `boolean`      | Yes      | Whether the link opens in a new browser tab.           |
+
+---
+
+#### FlowsProperties
+
+Represents the `__flows` object included in component props.
+
+| Name                 | Type     | Required | Notes                                                                                                                                               |
+| -------------------- | -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `__flows.id`         | `string` | Yes      | Unique identifier of the block, useful for stable key during rendering. Keep in mind each workflow version will have a different id for each block. |
+| `__flows.key`        | `string` | No       | Unique key for the block. Set by you in a workflow. [Learn more](/blocks/block-properties/block-key)                                                |
+| `__flows.workflowId` | `string` | Yes      | The ID of the workflow. Set by Flows.                                                                                                               |
 
 ---
 
