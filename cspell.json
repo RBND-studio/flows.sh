@@ -54,6 +54,7 @@
     "Sonner",
     "spammy",
     "squeezy",
+    "turborepo",
     "Usetiful",
     "vdpl",
     "Vidra",
@@ -63,7 +64,7 @@
     "waivable",
     "walkme",
     "xyflow",
-    "zustand",
+    "zustand"
   ],
   // flagWords - list of words to be always considered incorrect
   // This is useful for offensive words and common spelling errors.
@@ -86,7 +87,7 @@
     "infrastructure/kafka/data",
     "infrastructure/nginx",
     "infrastructure/redis/redis.conf",
-    "apps/e2e/cypress/downloads/**/*",
+    "apps/e2e/cypress/downloads/**/*"
   ],
-  "allowCompoundWords": true,
+  "allowCompoundWords": true
 }

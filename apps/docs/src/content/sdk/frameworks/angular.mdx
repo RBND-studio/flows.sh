@@ -12,8 +12,8 @@ Flows makes it easy to add product adoption experiences into your [Angular](http
 This guide walks you through integrating Flows into your Angular app using the [JavaScript SDK](https://www.npmjs.com/package/@flows/js) and [components package](https://www.npmjs.com/package/@flows/js-components) to get you started.
 
 <Callout>
-  Check out our [template projects](https://github.com/RBND-studio/flows-sdk/tree/main/examples) for
-  examples of how to implement Flows in your application.
+  Using an AI coding assistant? Install the [Flows install skill](/agent-skills) to let your agent
+  set up Flows automatically.
 </Callout>
 
 <Steps>
@@ -35,6 +35,10 @@ npm i @flows/js @flows/js-components
 ## Initialize the SDK
 
 Use the `init` function to initialize the SDK with your organization ID and environment key, which you can find in the **Settings > General** and **Settings > Environments** sections of the Flows dashboard.
+
+<Callout>
+  Check out the [Angular template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/angular) for a complete example.
+</Callout>
 
 Create a `FlowsService` to handle the initialization logic, and call the service in your root component. We'll also need to tell Angular that we'll be using custom elements in our root component by adding `CUSTOM_ELEMENTS_SCHEMA` to the component's `schemas` array. And finally, add the `<flows-floating-blocks>` custom element to your root component's template to render floating blocks.
 

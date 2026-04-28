@@ -12,8 +12,7 @@ Flows makes it easy to add product adoption experiences into your Vue app built 
 This guide walks you through integrating Flows into your Vue app using the [JavaScript SDK](https://www.npmjs.com/package/@flows/js) and [components package](https://www.npmjs.com/package/@flows/js-components) to get you started.
 
 <Callout>
-  Check out our [template projects](https://github.com/RBND-studio/flows-sdk/tree/main/examples) for
-  examples of how to implement Flows in your application.
+  Using an AI coding assistant? Install the [Flows install skill](/agent-skills) to let your agent set up Flows automatically.
 </Callout>
 
 <Steps>
@@ -35,6 +34,10 @@ npm i @flows/js @flows/js-components
 ## Initialize the SDK
 
 Use the `init` function to initialize the SDK with your organization ID and environment key, which you can find in the **Settings > General** and **Settings > Environments** sections of the Flows dashboard.
+
+<Callout>
+  Check out the [Vue Nuxt template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/vue/nuxt) for a complete example.
+</Callout>
 
 Create a Flows Nuxt plugin to handle the initialization logic. Add `<flows-floating-blocks>` custom element to your root component to render floating blocks. Finally, tell Vue about Flows custom elements to avoid rendering them as Vue components in `nuxt.config.ts`.
 

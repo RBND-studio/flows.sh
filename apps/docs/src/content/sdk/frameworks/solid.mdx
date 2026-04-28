@@ -12,8 +12,7 @@ Flows makes it easy to add product adoption experiences into your [Solid](https:
 This guide walks you through integrating Flows into your Solid app using the [JavaScript SDK](https://www.npmjs.com/package/@flows/js) and [components package](https://www.npmjs.com/package/@flows/js-components) to get you started.
 
 <Callout>
-  Check out our [template projects](https://github.com/RBND-studio/flows-sdk/tree/main/examples) for
-  examples of how to implement Flows in your application.
+  Using an AI coding assistant? Install the [Flows install skill](/agent-skills) to let your agent set up Flows automatically.
 </Callout>
 
 <Steps>
@@ -35,6 +34,10 @@ npm i @flows/js @flows/js-components
 ## Initialize the SDK
 
 Use the `init` function to initialize the SDK with your organization ID and environment key, which you can find in the **Settings > General** and **Settings > Environments** sections of the Flows dashboard.
+
+<Callout>
+  Check out the [Solid template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/solid) for a complete example.
+</Callout>
 
 Create a `Flows` component to handle the initialization logic and rendering of the floating blocks. Then add the `Flows` component to your root layout. Lastly tell TypeScript about Flows custom elements in a `global.d.ts` file.
 

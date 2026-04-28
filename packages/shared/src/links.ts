@@ -193,6 +193,7 @@ export const links = (domain = "flows.sh") =>
           link: `https://${domain}/docs/surveys/overview#link`,
         },
       },
+      agentSkills: `https://${domain}/docs/agent-skills`,
     },
     /**
      * Helper function to generate Open Graph image URLs
