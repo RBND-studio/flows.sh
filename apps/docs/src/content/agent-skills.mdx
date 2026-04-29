@@ -1,0 +1,22 @@
+---
+title: Agent skills
+description: Install Flows agent skills to let your AI coding assistant set up and manage Flows in your project.
+---
+
+![Agent skills illustration](/agent-skills.png)
+
+Skills are small modules that teach your agent how to work with Flows. Install them once in your project, and your agent can reference them whenever you ask it to do something Flows-related.
+
+Skills work with any agent that supports the [open agent skills ecosystem](https://skills.sh).
+
+## Flows install skill
+
+This skill lets your agent install Flows in your project. It detects your framework, installs the right packages, and sets up the SDK in the correct location.
+
+Run this command in your project directory:
+
+```bash
+npx skills add RBND-studio/flows.sh --skill flows-install
+```
+
+This installs the skill into your project so your agent can use it automatically. Once installed, ask your agent: "Install Flows in my project" and it will handle the rest.

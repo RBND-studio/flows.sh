@@ -12,8 +12,7 @@ Flows makes it easy to add product adoption experiences into your React app buil
 This guide walks you through integrating Flows into your Next.js app using the [React SDK](https://www.npmjs.com/package/@flows/react) and [components package](https://www.npmjs.com/package/@flows/react-components) to get you started.
 
 <Callout>
-  Check out our [template projects](https://github.com/RBND-studio/flows-sdk/tree/main/examples) for
-  examples of how to implement Flows in your application.
+  Using an AI coding assistant? Install the [Flows install skill](/agent-skills) to let your agent set up Flows automatically.
 </Callout>
 
 <Steps>
@@ -36,6 +35,10 @@ npm i @flows/react @flows/react-components
 
 Create a Flows client component that wraps your application with the `FlowsProvider`. Then add
 the `Flows` component to your root layout.
+
+<Callout>
+  Check out the [Next.js template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/next) for a complete example.
+</Callout>
 
 ```tsx tab="app/flows.tsx"
 "use client";
