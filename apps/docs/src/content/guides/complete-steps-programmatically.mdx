@@ -1,0 +1,130 @@
+---
+title: Complete steps programmatically
+description: Learn how to trigger exit nodes on Flows blocks from your own application code.
+---
+
+![Cover](/guides/complete-steps-programmatically.png)
+
+Sometimes you need to advance a workflow step in response to something happening in your app, not only a click inside a Flows component. For example, completing a tour step when the user finishes a task, or dismissing a block when a condition is met.
+
+You can do this by retrieving the active blocks from the SDK and calling their exit node callbacks directly.
+
+## React SDK
+
+### Tour blocks (floating)
+
+Use the `useCurrentFloatingBlocks()` hook to get the active floating blocks, find the one you want by its [block key](/blocks/block-properties/block-key), then cast its props to `TourComponentProps` and call the appropriate method.
+
+```tsx title="complete-step.tsx"
+import { useCurrentFloatingBlocks, TourComponentProps } from "@flows/react";
+
+export const CompleteStep = () => {
+  // Returns all currently active floating blocks (modals, tooltips, etc.)
+  const blocks = useCurrentFloatingBlocks();
+
+  const handleCompleteStep = () => {
+    // Find the block by the key you set in the Flows editor
+    const block = blocks.find((b) => b.props.__flows.key === "your-block-key");
+
+    // Cast to TourComponentProps to access tour exit node callbacks
+    const blockProps = block?.props as TourComponentProps | undefined;
+
+    // continue() moves to the next step; other options are previous() and cancel()
+    blockProps?.continue();
+  };
+
+  return <button onClick={handleCompleteStep}>Complete step</button>;
+};
+```
+
+`TourComponentProps` exposes three methods:
+
+| Method       | Description                                  |
+| ------------ | -------------------------------------------- |
+| `continue()` | Advance to the next step.                    |
+| `previous()` | Go back to the previous step.                |
+| `cancel()`   | Cancel the entire tour for the current user. |
+
+### Regular component blocks (floating)
+
+For blocks that are not part of a tour, exit nodes are defined by you in the [component definition](/guides/create-custom-components). Cast the block props to `ComponentProps` and include the exit node names in the type parameter.
+
+```tsx title="complete-step.tsx"
+import { useCurrentFloatingBlocks, ComponentProps } from "@flows/react";
+
+export const CompleteStep = () => {
+  const blocks = useCurrentFloatingBlocks();
+
+  const handleComplete = () => {
+    const block = blocks.find((b) => b.props.__flows.key === "your-block-key");
+
+    // List your component's exit nodes in the type parameter
+    const blockProps = block?.props as ComponentProps<{ complete: () => void }> | undefined;
+    blockProps?.complete();
+  };
+
+  return <button onClick={handleComplete}>Complete step</button>;
+};
+```
+
+### Slottable blocks
+
+If the block you want to target is rendered inside a [slot](/blocks/block-properties/slot), use `useCurrentSlotBlocks()` instead and pass the slot ID.
+
+```tsx title="complete-step.tsx"
+import { useCurrentSlotBlocks, TourComponentProps } from "@flows/react";
+
+export const CompleteStep = () => {
+  // Pass the slot ID - find it in the Flows editor in the slot detail
+  const blocks = useCurrentSlotBlocks("your-slot-id");
+
+  const handleCompleteStep = () => {
+    const block = blocks.find((b) => b.props.__flows.key === "your-block-key");
+
+    const blockProps = block?.props as TourComponentProps | undefined;
+    blockProps?.continue();
+  };
+
+  return <button onClick={handleCompleteStep}>Complete step</button>;
+};
+```
+
+## JavaScript SDK
+
+Use `getCurrentFloatingBlocks()` to read the active blocks at a point in time, or `addFloatingBlocksChangeListener()` to react whenever the active blocks change.
+
+```ts title="complete-step.ts"
+import { getCurrentFloatingBlocks, TourComponentProps, ComponentProps } from "@flows/js";
+
+function completeStep() {
+  const blocks = getCurrentFloatingBlocks();
+  const block = blocks.find((b) => b.props.__flows.key === "your-block-key");
+
+  // Cast to TourComponentProps for tour blocks, or ComponentProps for regular blocks
+  const blockProps = block?.props as TourComponentProps | undefined;
+  blockProps?.continue();
+}
+```
+
+To run logic automatically whenever blocks change (for example, to complete a step as soon as it appears), use the listener:
+
+```ts title="complete-step.ts"
+import { addFloatingBlocksChangeListener, TourComponentProps } from "@flows/js";
+
+// The callback fires each time the set of active blocks changes
+addFloatingBlocksChangeListener((blocks) => {
+  const block = blocks.find((b) => b.props.__flows.key === "your-block-key");
+
+  if (block) {
+    const blockProps = block.props as TourComponentProps;
+    blockProps.continue();
+  }
+});
+```
+
+## Related
+
+- [Block key](/blocks/block-properties/block-key) - how to assign and find a block key
+- [useCurrentFloatingBlocks()](/sdk/react/reference#usecurrentfloatingblocks) - React SDK reference
+- [useCurrentSlotBlocks()](/sdk/react/reference#usecurrentslotblocks) - React SDK reference
+- [getCurrentFloatingBlocks()](/sdk/javascript/reference#getcurrentfloatingblocks) - JavaScript SDK reference
