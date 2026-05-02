@@ -1,18 +1,14 @@
-FROM node:24-alpine AS base
+FROM node:24 AS base
 
 FROM base AS builder
-RUN apk add --no-cache libc6-compat
-RUN apk update
 # Set working directory
 WORKDIR /app
 RUN yarn global add turbo
 COPY . .
 ARG APP
-RUN turbo prune --scope=${APP} --docker
+RUN turbo prune ${APP} --docker
 
 FROM base AS installer
-RUN apk add --no-cache libc6-compat alpine-sdk python3
-RUN apk update
 WORKDIR /app
 
 # First install the dependencies (as they change less often)
@@ -21,7 +17,6 @@ COPY --from=builder /app/out/json/ .
 COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
 COPY --from=builder /app/out/pnpm-workspace.yaml ./pnpm-workspace.yaml
 
-RUN npm i -g corepack@latest
 RUN corepack enable pnpm
 RUN pnpm install --frozen-lockfile
 
@@ -33,11 +28,11 @@ FROM base AS prod-installer
 WORKDIR /app
 COPY --from=builder /app/out/full/ .
 COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
-RUN npm i -g corepack@latest
 RUN corepack enable pnpm
 RUN pnpm install --production --frozen-lockfile
 
-FROM base AS runner
+FROM node:24-slim AS runner
+RUN apt-get -y update && apt-get install -y libpq5 --no-install-recommends
 WORKDIR /app
 
 COPY --chown=node:node --from=installer /app/packages/db/drizzle ./packages/db/drizzle

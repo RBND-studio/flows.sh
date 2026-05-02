@@ -1,19 +1,15 @@
-FROM node:24-alpine AS base
+FROM node:24 AS base
 
 FROM base AS builder
-RUN apk add --no-cache libc6-compat
-RUN apk update
 # Set working directory
 WORKDIR /app
 RUN yarn global add turbo
 COPY . .
 ARG APP
-RUN turbo prune --scope=${APP} --docker
+RUN turbo prune ${APP} --docker
 
 # Add lockfile and package.json's of isolated subworkspace
 FROM base AS installer
-RUN apk add --no-cache libc6-compat alpine-sdk python3
-RUN apk update
 WORKDIR /app
 
 # First install the dependencies (as they change less often)
@@ -24,7 +20,6 @@ COPY --from=builder /app/out/pnpm-lock.yaml .
 COPY --from=builder /app/out/full/ .
 
 
-RUN npm i -g corepack@latest
 RUN corepack enable pnpm
 RUN pnpm install --frozen-lockfile
 
@@ -33,7 +28,8 @@ RUN pnpm install --frozen-lockfile
 ARG APP
 RUN pnpm turbo run build --filter=${APP}...
 
-FROM base AS runner
+FROM node:24-slim AS runner
+RUN apt-get -y update && apt-get install -y libpq5 --no-install-recommends
 WORKDIR /app
 
 # Don't run production as root
@@ -54,6 +50,5 @@ COPY --from=installer --chown=nextjs:nodejs /app/apps/${APP}/public ./apps/${APP
 
 ENV SERVER_FILE=apps/${APP}/server.js
 
-# CMD ["node", "$SERVER_FILE"]
 CMD ["sh", "-c", "node $SERVER_FILE"]
 

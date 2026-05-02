@@ -79,15 +79,16 @@
     "**/package.json",
     "**/storybook-static/**/*",
     "**/tsconfig.*",
+    "*Dockerfile",
+    "apps/e2e/cypress/downloads/**/*",
     "cspell.json",
-    "out/**/*",
-    "pandacss-generated",
-    "pnpm-lock.yaml",
-    "pnpm-workspace.yaml",
     "infrastructure/kafka/data",
     "infrastructure/nginx",
     "infrastructure/redis/redis.conf",
-    "apps/e2e/cypress/downloads/**/*"
+    "out/**/*",
+    "pandacss-generated",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml"
   ],
   "allowCompoundWords": true
 }
