@@ -13,6 +13,7 @@ onlyBuiltDependencies:
   - bufferutil
   - cypress
   - esbuild
+  - libpq
   - nestjs-pino
   - protobufjs
   - sharp

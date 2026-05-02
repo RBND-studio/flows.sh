@@ -1,11 +1,11 @@
-FROM node:24-alpine AS base
+FROM node:24-slim AS base
 
 FROM base AS builder
 WORKDIR /app
 
 RUN yarn global add turbo
 COPY . .
-RUN turbo prune --scope=ui --docker
+RUN turbo prune ui --docker
 
 
 FROM base AS installer
@@ -19,7 +19,6 @@ COPY --from=builder /app/out/pnpm-lock.yaml .
 COPY --from=builder /app/out/full/ .
 
 
-RUN npm i -g corepack@latest
 RUN corepack enable pnpm
 RUN pnpm install --frozen-lockfile
 
