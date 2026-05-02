@@ -21,17 +21,18 @@ To integrate the tooltip component into your application, follow the steps descr
 
 When using the tooltip component in a workflow, you can define the following properties:
 
-| Name             | Type    | Notes                                                                                                                                             |
-| ---------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Title            | string  | The title of the tooltip.                                                                                                                         |
-| Body             | string  | The body of the tooltip. Supports HTML.                                                                                                           |
-| Primary button   | action  | The primary button, see [Action](/blocks/block-properties/action) for all options. When empty the button is not rendered.                         |
-| Secondary button | action  | The secondary button, see [Action](/blocks/block-properties/action) for all options. When empty the button is not rendered.                       |
-| Target element   | string  | CSS selector of the element the tooltip points to. Adds `data-flows-tooltip-target="true"` attribute to the element when the tooltip is rendered. |
-| Placement        | select  | On which side of the target element the tooltip should appear.                                                                                    |
-| Dismissible      | boolean | Shows a close button linked to the `close` exit node. Default is `false`.                                                                         |
-| Hide overlay     | boolean | Hides the overlay highlighting the target element. Default is `false`.                                                                            |
-| Page targeting   | ---     | What page the tooltip should be shown on. [Learn more](/blocks/block-properties/page-targeting)                                                   |
+| Name                     | Type    | Notes                                                                                                                                             |
+| ------------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Title                    | string  | The title of the tooltip.                                                                                                                         |
+| Body                     | string  | The body of the tooltip. Supports HTML.                                                                                                           |
+| Primary button           | action  | The primary button, see [Action](/blocks/block-properties/action) for all options. When empty the button is not rendered.                         |
+| Secondary button         | action  | The secondary button, see [Action](/blocks/block-properties/action) for all options. When empty the button is not rendered.                       |
+| Target element           | string  | CSS selector of the element the tooltip points to. Adds `data-flows-tooltip-target="true"` attribute to the element when the tooltip is rendered. |
+| Placement                | select  | On which side of the target element the tooltip should appear.                                                                                    |
+| Scroll element into view | select  | Scrolls the target element into view when the tooltip is rendered. Default is `none`. [Learn more](#scroll-element-into-view)                     |
+| Dismissible              | boolean | Shows a close button linked to the `close` exit node. Default is `false`.                                                                         |
+| Hide overlay             | boolean | Hides the overlay highlighting the target element. Default is `false`.                                                                            |
+| Page targeting           | ---     | What page the tooltip should be shown on. [Learn more](/blocks/block-properties/page-targeting)                                                   |
 
 **Exit nodes:**
 
@@ -44,22 +45,39 @@ When using the tooltip component in a workflow, you can define the following pro
 
 When using the tooltip component in a tour, you can define additional properties to control the tour flow.
 
-| Name             | Type    | Notes                                                                                                                                             |
-| ---------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Title            | string  | The title of the tooltip.                                                                                                                         |
-| Body             | string  | The body of the tooltip. Supports HTML.                                                                                                           |
-| Primary button   | action  | The primary button, see [Action](/blocks/block-properties/action) for all options. When empty the button is not rendered.                         |
-| Secondary button | action  | The secondary button, see [Action](/blocks/block-properties/action) for all options. When empty the button is not rendered.                       |
-| Target element   | string  | CSS selector of the element the tooltip points to. Adds `data-flows-tooltip-target="true"` attribute to the element when the tooltip is rendered. |
-| Placement        | select  | On which side of the target element the tooltip should appear.                                                                                    |
-| Hide progress    | boolean | Hides the tour progress indicator from the tooltip. Default is `false`.                                                                           |
-| Dismissible      | boolean | Shows a close button linked to the `cancel` exit node of the Tour block. Default is `false`.                                                      |
-| Hide overlay     | boolean | Hides the overlay highlighting the target element. Default is `false`.                                                                            |
-| Page targeting   | ---     | What page the tooltip should be shown on. [Learn more](/blocks/block-properties/page-targeting)                                                   |
-| Wait             | ---     | Used to define what interaction should trigger the next step. [Learn more](/blocks/block-properties/wait)                                         |
+| Name                     | Type    | Notes                                                                                                                                             |
+| ------------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Title                    | string  | The title of the tooltip.                                                                                                                         |
+| Body                     | string  | The body of the tooltip. Supports HTML.                                                                                                           |
+| Primary button           | action  | The primary button, see [Action](/blocks/block-properties/action) for all options. When empty the button is not rendered.                         |
+| Secondary button         | action  | The secondary button, see [Action](/blocks/block-properties/action) for all options. When empty the button is not rendered.                       |
+| Target element           | string  | CSS selector of the element the tooltip points to. Adds `data-flows-tooltip-target="true"` attribute to the element when the tooltip is rendered. |
+| Placement                | select  | On which side of the target element the tooltip should appear.                                                                                    |
+| Hide progress            | boolean | Hides the tour progress indicator from the tooltip. Default is `false`.                                                                           |
+| Scroll element into view | select  | Scrolls the target element into view when the tooltip is rendered. Default is `none`. [Learn more](#scroll-element-into-view)                     |
+| Dismissible              | boolean | Shows a close button linked to the `cancel` exit node of the Tour block. Default is `false`.                                                      |
+| Hide overlay             | boolean | Hides the overlay highlighting the target element. Default is `false`.                                                                            |
+| Page targeting           | ---     | What page the tooltip should be shown on. [Learn more](/blocks/block-properties/page-targeting)                                                   |
+| Wait                     | ---     | Used to define what interaction should trigger the next step. [Learn more](/blocks/block-properties/wait)                                         |
 
 **Exit nodes:**
 
 - Continue: Proceeds to the next step in the tour
 - Previous: Goes back to the previous step in the tour
 - Cancel: Cancels the entire tour
+
+## Property details
+
+### Scroll element into view
+
+Controls whether the tooltip scrolls the target element into the viewport when it renders. Useful when the target element may not be visible without scrolling, such as when anchoring a tooltip to an element further down the page.
+
+- `none` - No scrolling. Default.
+- `top` - Scrolls the element to the top of the viewport.
+- `center` - Scrolls the element to the center of the viewport.
+- `bottom` - Scrolls the element to the bottom of the viewport.
+- `nearest` - Scrolls the element to the nearest edge of the viewport.
+
+Uses [Element.scrollIntoView()](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView) with `behavior: 'smooth'`.
+
+The tooltip applies a `flows_basicsV2_tooltip_scroll_target` class to the target element with a `scroll-margin` of 24px to keep it from touching the viewport edge. To adjust the margin, override the `--flows-basicsV2-tooltip-targetScrollMargin` CSS variable. To change other styles, override the class directly.
