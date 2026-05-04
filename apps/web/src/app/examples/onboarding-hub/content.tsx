@@ -23,7 +23,9 @@ import workflowPng from "./workflow.png";
 export const onboardingHubContent: ContentType = {
   slug: "onboarding-hub",
   title: "Onboarding hub",
-  description: "A home in your app for onboarding and help resources",
+  description: "A home in your app for user onboarding and help resources.",
+  metaDescription:
+    "See a live onboarding hub example built with Flows. A centralized home for user onboarding, checklists, product tours, and help resources.",
   images: {
     light: lightPng,
     dark: darkPng,
@@ -47,10 +49,10 @@ export const onboardingHubContent: ContentType = {
         <InlineCode>@flows/react</InlineCode>
       </Paragraph>
       <Paragraph>
-        An onboarding hub is a home in your app for onboarding and help resources. They’re super
-        flexible and could include a getting started checklist, general tips for the best next step,
-        and entry points to interactive tours, documentation, and support. The onboarding hub
-        typically has a permanent place in the navigation until dismissed or completed.
+        An onboarding hub is a centralized home in your app for user onboarding resources, getting
+        started checklists, and support. It can include general tips, entry points to interactive
+        tours, documentation, and help links. The onboarding hub typically has a permanent place in
+        the navigation until dismissed or completed.
       </Paragraph>
 
       <Heading>When to use</Heading>
@@ -124,7 +126,7 @@ export const onboardingHubContent: ContentType = {
       </UnorderedList>
       <Image
         src={itemsPng}
-        alt="Checklist item configuration"
+        alt="Onboarding hub checklist item configuration"
         width={1800}
         height={820}
         className={css({
@@ -145,7 +147,7 @@ export const onboardingHubContent: ContentType = {
 
       <Image
         src={widgetPng}
-        alt="Sidebar widget configuration"
+        alt="Onboarding hub sidebar widget configuration"
         width={1800}
         height={1040}
         className={css({

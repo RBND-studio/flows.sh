@@ -25,6 +25,8 @@ export const tourContent: ContentType = {
     dark: darkPng,
   },
   description: "Guide users along their journey through your product",
+  metaDescription:
+    "See a live product tour example built with Flows. Build customizable in-app guided tours for user onboarding and feature adoption.",
   embed: {
     src: links.examples.tour,
     title: "Tour example application – Flows",
@@ -68,14 +70,14 @@ export const tourContent: ContentType = {
       </UnorderedList>
 
       <Paragraph>
-        Unlike traditional onboarding tools, Flows gives you complete control over design and logic.
+        Unlike a typical product tour library, Flows gives you complete control over design and logic.
         You can embed custom UI components, define behavior with Flows, and let the SDK handle user
         states.
       </Paragraph>
 
       <Heading>About this example</Heading>
       <Paragraph>
-        This example shows a multi-step guided tour built with Flows. It introduces users to key
+        This product tour example shows a multi-step guided tour built with Flows. It introduces users to key
         product areas using a combination of modals and tooltips. The tour features:
       </Paragraph>
       <UnorderedList>
@@ -93,6 +95,7 @@ export const tourContent: ContentType = {
         Use a tour whenever you want to guide users through a defined journey, such as:
       </Paragraph>
       <UnorderedList>
+        <li>Giving new users a guided app tour during their first session.</li>
         <li>Onboarding new users.</li>
         <li>Announcing new features or UI updates.</li>
         <li>Educating users on complex workflows.</li>
@@ -132,7 +135,7 @@ export const tourContent: ContentType = {
 
       <Image
         src={workflowPng}
-        alt="Flows workflow setup for the Tour example"
+        alt="Flows workflow setup for the product tour example"
         width={1800}
         height={1040}
         className={css({

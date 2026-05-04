@@ -12,6 +12,7 @@ export type ContentType = {
     dark: string | StaticImport;
   };
   description: string;
+  metaDescription?: string;
   embed: EmbedProps;
   sidebar: InfoSidebarProps;
   readme: ReactNode;

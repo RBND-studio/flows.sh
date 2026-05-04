@@ -21,6 +21,8 @@ export const featureAnnouncementContent: ContentType = {
   slug: "feature-announcement",
   title: "Feature announcement",
   description: "Let users know about new features with a full page announcement.",
+  metaDescription:
+    "See a live in-app feature announcement example built with Flows. Learn best practices for announcing new features to users with announcement modals.",
   images: {
     light: lightPng,
     dark: darkPng,
@@ -64,7 +66,7 @@ export const featureAnnouncementContent: ContentType = {
         <li>Multi-step feature walkthroughs</li>
       </UnorderedList>
       <Paragraph>
-        In this example, we use a full-page announcement modal to announce a new product feature in
+        In this example, we use a full-page announcement modal to announce a new feature release in
         a clear, focused way.
       </Paragraph>
 
@@ -86,7 +88,7 @@ export const featureAnnouncementContent: ContentType = {
 
       <Heading>Feature announcement UI and UX best practices</Heading>
       <Paragraph>
-        When designing a feature announcement UI, it’s important to balance visibility with user
+        When announcing new product features, it’s important to balance visibility with user
         experience. Poorly timed or overly aggressive announcements can frustrate users and get
         dismissed.
       </Paragraph>
@@ -144,10 +146,10 @@ export const featureAnnouncementContent: ContentType = {
         })}
       />
 
-      <Heading>How to announce new features using announcement modals</Heading>
+      <Heading>How to announce new features in-app</Heading>
       <Paragraph>
-        If you’re wondering how to announce new features effectively, announcement modals are a
-        proven approach, especially for important product updates.
+        When announcing new features, announcement modals are a proven approach, especially for
+        important product updates.
       </Paragraph>
       <Paragraph>They work best when:</Paragraph>
       <UnorderedList>

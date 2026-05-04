@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return getWebMetadata({
     title: content.title,
-    description: content.description,
+    description: content.metaDescription ?? content.description,
     pageCategory: "Example",
   });
 }
