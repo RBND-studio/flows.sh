@@ -11,6 +11,8 @@ export const routes = {
   pricing: "/pricing",
   affiliate: "/affiliate",
   contact: "/contact",
+  security: "/legal/security",
+  responsibleDisclosure: "/legal/security/responsible-disclosure",
 
   features: {
     productTours: "/product-tours",

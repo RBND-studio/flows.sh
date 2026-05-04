@@ -1,0 +1,4 @@
+Contact: mailto:security@flows.sh
+Expires: 2026-12-31T20:00:00.000Z
+Preferred-Languages: en, cs, sk
+Policy: https://flows.sh/legal/security/responsible-disclosure
