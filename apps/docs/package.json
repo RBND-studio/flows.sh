@@ -27,7 +27,7 @@
     "shared": "workspace:*",
     "shiki": "^3.21.0",
     "ui": "workspace:*",
-    "zod": "4.3.5"
+    "zod": "4.4.3"
   },
   "devDependencies": {
     "@pandacss/dev": "^1.9.1",
