@@ -177,6 +177,8 @@ const footerGroups: FooterGroupColumn[] = [
         { title: "Terms", href: routes.terms },
         { title: "Cookies", href: routes.cookies },
         { title: "DPA", href: routes.dpa },
+        { title: "Security", href: routes.security },
+        { title: "Responsible disclosure", href: routes.responsibleDisclosure },
       ],
     },
   ],

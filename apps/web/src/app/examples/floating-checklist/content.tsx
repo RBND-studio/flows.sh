@@ -30,6 +30,8 @@ export const floatingChecklistContent: ContentType = {
   },
   description:
     "Interactive list of suggested setup actions the user can take. Floating in the corner of the screen.",
+  metaDescription:
+    "See a live SaaS onboarding checklist example built with Flows. A floating in-app checklist widget that guides users through key setup steps with progress tracking.",
   embed: {
     src: links.examples.floatingChecklist,
     title: "Floating checklist example application – Flows",
@@ -53,10 +55,34 @@ export const floatingChecklistContent: ContentType = {
   readme: (
     <>
       <Paragraph>
-        This example showcases a built-in floating checklist component that is displayed in the
-        bottom-right corner of the screen. The checklist provides users with suggested setup actions
-        to help them get started with the application.
+        A floating onboarding checklist is one of the most effective ways to guide new users through
+        key setup steps in your SaaS app. This example showcases a built-in in-app checklist widget
+        that sits in the bottom-right corner of the screen, giving users a clear list of suggested
+        setup actions to help them reach value faster.
       </Paragraph>
+
+      <Heading>What is a floating onboarding checklist?</Heading>
+      <Paragraph>
+        A floating onboarding checklist is a persistent in-app widget that guides new users through
+        a series of setup actions. Unlike a static onboarding flow, the checklist lets users work at
+        their own pace - they can complete tasks in any order, skip steps, and return at any time.
+      </Paragraph>
+      <Paragraph>Common use cases for a SaaS onboarding checklist:</Paragraph>
+      <UnorderedList>
+        <li>
+          <strong>New user activation</strong> - guide users to the features that drive their aha
+          moment.
+        </li>
+        <li>
+          <strong>Setup completion</strong> - help users configure key settings before they start
+          working.
+        </li>
+        <li>
+          <strong>Feature discovery</strong> - surface capabilities users haven't tried yet.
+        </li>
+      </UnorderedList>
+
+      <Heading>Onboarding checklist best practices</Heading>
       <Paragraph>A solid user onboarding checklist includes:</Paragraph>
       <UnorderedList>
         <li>
@@ -84,10 +110,10 @@ export const floatingChecklistContent: ContentType = {
         </li>
       </UnorderedList>
 
-      <Heading>Features</Heading>
+      <Heading>How this example works</Heading>
       <Paragraph>
-        When a user signs up, the floating checklist appears in the bottom-right corner. Tasks are
-        marked as completed once the user fulfills the required conditions.
+        When a user signs up, the floating onboarding checklist appears in the bottom-right corner.
+        Tasks are marked as completed once the user fulfills the required conditions.
       </Paragraph>
 
       <Heading2>Progress tracking</Heading2>
@@ -152,7 +178,7 @@ export const floatingChecklistContent: ContentType = {
       </UnorderedList>
       <Image
         src={itemsPng}
-        alt="Checklist item configuration"
+        alt="Floating onboarding checklist item configuration in Flows"
         width={1800}
         height={820}
         className={css({
@@ -171,7 +197,7 @@ export const floatingChecklistContent: ContentType = {
 
       <Image
         src={tourPng}
-        alt="Create issue tour setup"
+        alt="In-app product tour triggered from the onboarding checklist"
         width={1800}
         height={1040}
         className={css({
@@ -190,7 +216,7 @@ export const floatingChecklistContent: ContentType = {
 
       <Image
         src={modalPng}
-        alt="Invite team modal setup"
+        alt="Modal triggered from the onboarding checklist"
         width={1800}
         height={1040}
         className={css({
@@ -221,8 +247,8 @@ export const floatingChecklistContent: ContentType = {
           Add your organization ID in the <InlineCode>providers.tsx</InlineCode> file.
         </li>
         <li>
-          Recreate the workflow using the **Floating Checklist** in your organization and publish
-          it.
+          Recreate the workflow using the <strong>Floating Checklist</strong> in your organization
+          and publish it.
         </li>
         <li>
           Run the development server with <InlineCode>pnpm dev</InlineCode>.

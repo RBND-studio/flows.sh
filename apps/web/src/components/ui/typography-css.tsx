@@ -14,6 +14,11 @@ export const paragraphCss = css({
 export const bulletCss = css({
   marginLeft: "space16",
   mb: "space8",
+
+  "& a": {
+    color: "newFg.primary",
+    textDecoration: "underline",
+  },
 });
 
 export const ulCss = css({
