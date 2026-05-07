@@ -1,0 +1,34 @@
+---
+title: Better home
+date: "2026-05-04"
+description: The home page now shows key metrics with charts for reached users and workflow activity, plus a new AI-assisted install skill and SDK improvements.
+---
+
+<Image
+  src="/images/changelog/2026-05-04-better-home.png"
+  alt="Better home in the Flows editor"
+  width={1800}
+  height={1040}
+/>
+
+The home page now shows two charts: reached users and workflow activity (started vs. finished). You get a quick read on how your workflows are performing without leaving the home view.
+
+The workflows list has also been refreshed with a cleaner layout that makes it easier to scan and manage your active workflows.
+
+## Install Flows with an AI agent
+
+A new `flows-install` skill makes it easier to get started with Flows. Run it with an AI agent that supports the open agent skills ecosystem and an agent will guide you through installing and configuring the Flows SDK in your project. Learn more in the [agent documentation](/docs/agent-skills).
+
+## Other improvements
+
+- The Rating question type now supports a 1-7 scale in addition to existing options.
+- Tooltip steps now support a "Scroll element into view" action, which scrolls the target element into view before the tooltip appears.
+- Event handling has been improved to prevent events from being silently dropped.
+
+## SDK
+
+- Added a `customFetch` option for providing a custom fetch implementation.
+
+## Bug fixes
+
+- Fixed overlay renderer sometimes not correctly repositioning when the target element changes.
