@@ -27,13 +27,13 @@
     "cmdk": "^1.1.1",
     "icons": "workspace:*",
     "merge-refs": "^2.0.0",
-    "react": "19.2.5",
-    "react-dom": "19.2.5",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
     "sonner": "^2.0.5"
   },
   "devDependencies": {
     "@flows/types": "workspace:*",
-    "@pandacss/dev": "^1.9.1",
+    "@pandacss/dev": "^1.11.1",
     "@storybook/addon-docs": "^10.3.4",
     "@storybook/addon-links": "^10.3.4",
     "@storybook/cli": "^10.3.4",

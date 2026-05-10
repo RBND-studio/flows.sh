@@ -18,9 +18,9 @@
     "fumadocs-mdx": "14.2.5",
     "fumadocs-ui": "16.4.7",
     "icons": "workspace:*",
-    "next": "16.2.4",
-    "react": "19.2.5",
-    "react-dom": "19.2.5",
+    "next": "16.2.6",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.1",
     "remark-mdx": "^3.1.1",
@@ -30,7 +30,7 @@
     "zod": "4.4.3"
   },
   "devDependencies": {
-    "@pandacss/dev": "^1.9.1",
+    "@pandacss/dev": "^1.11.1",
     "@types/mdx": "^2.0.13",
     "@types/node": "^24",
     "@types/react": "^19.2.7",
