@@ -1,4 +1,4 @@
-// cSpell:words Apty produktly jimo gleap stonly optimonk candu lemonlearning guidecx frigade screeb onboardjs guidechimp usertour gainsight lusift clicklearn survicate surveyjs refiner sprig beamer
+// cSpell:words Apty produktly jimo gleap stonly optimonk candu lemonlearning guidecx frigade screeb onboardjs guidechimp usertour gainsight lusift clicklearn survicate surveyjs refiner sprig beamer hotjar qualaroo oneflow formbricks satismeter typeform
 
 import { appcuesContent } from "./content/appcues";
 import { beamerContent } from "./content/beamer";
@@ -28,8 +28,13 @@ import { intercomContent } from "./content/intercom";
 import { introjsContent } from "./content/introjs";
 import { jimoContent } from "./content/jimo";
 import { clicklearnContent } from "./content/clicklearn";
+import { formbricksContent } from "./content/formbricks";
+import { oneFlowContent } from "./content/1flow";
+import { qualarooContent } from "./content/qualaroo";
 import { refinerContent } from "./content/refiner";
+import { satismeterContent } from "./content/satismeter";
 import { sprigContent } from "./content/sprig";
+import { typeformContent } from "./content/typeform";
 import { survicateContent } from "./content/survicate";
 import { surveyjsContent } from "./content/surveyjs";
 import { lemonLearningContent } from "./content/lemon-learning";
@@ -98,9 +103,14 @@ export const alternativesContent: AlternativeContentType[] = [
   screebContent,
   beamerContent,
   survicateContent,
+  qualarooContent,
+  satismeterContent,
   refinerContent,
+  oneFlowContent,
   sprigContent,
   surveyjsContent,
+  formbricksContent,
+  typeformContent,
   inlineHelpContent,
   guidecxContent,
   frigadeContent,
