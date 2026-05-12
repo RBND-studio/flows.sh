@@ -7,11 +7,12 @@
     "dev": "next dev -p 6002",
     "build": "next build",
     "analyze": "ANALYZE=true next build",
-    "postbuild": "next-sitemap",
+    "postbuild": "next-sitemap && pnpm copy-skills",
     "start": "next start",
     "tsc": "next typegen && tsc",
     "prepare": "panda codegen",
-    "check-links": "docker run --network host -v ./linkcheck-skip-urls.txt:/linkcheck-skip-urls.txt --rm tennox/linkcheck $URL --skip-file linkcheck-skip-urls.txt"
+    "check-links": "docker run --network host -v ./linkcheck-skip-urls.txt:/linkcheck-skip-urls.txt --rm tennox/linkcheck $URL --skip-file linkcheck-skip-urls.txt",
+    "copy-skills": "cp -R ../../skills/ public/.well-known/agent-skills"
   },
   "dependencies": {
     "@flows/react": "1.22.1",
@@ -44,6 +45,7 @@
     "shared": "workspace:*",
     "shared-private": "workspace:*",
     "three": "^0.182.0",
+    "turndown": "^7.2.4",
     "ui": "workspace:*"
   },
   "devDependencies": {
@@ -55,6 +57,7 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@types/three": "^0.182.0",
+    "@types/turndown": "^5.0.6",
     "schema-dts": "^1.1.5",
     "tsconfig": "workspace:*",
     "typescript": "6.0.2"
