@@ -1,65 +1,20 @@
-import fs from "node:fs/promises";
-import path from "node:path";
-
-import type { InferPageType } from "fumadocs-core/source";
-import { remarkInclude } from "fumadocs-mdx/config";
 import { DOMAIN } from "lib/constants";
-import { remark } from "remark";
-import remarkGfm from "remark-gfm";
-import remarkMdx from "remark-mdx";
+import type { source } from "lib/source";
 
-import { type source } from "./source";
+export async function getLLMText(page: (typeof source)["$inferPage"]) {
+  const processed = await page.data.getText("processed");
 
-const processor = remark()
-  .use(remarkMdx)
-  // needed for Fumadocs MDX
-  .use(remarkInclude)
-  .use(remarkGfm);
-
-export async function getLLMText(page: InferPageType<typeof source>): Promise<string> {
-  const absolutePath = page.absolutePath;
-  // The absolutePath should always be defined
-  if (!absolutePath) throw new Error("Absolute path not defined");
-
-  const processed = await processor.process({
-    path: absolutePath,
-    value: await fs.readFile(validatePath(absolutePath)),
-  });
-
+  const title = page.data.pageTitle ?? page.data.title ?? "";
+  const description = page.data.description ?? "";
   const pageUrl = `https://${DOMAIN}/docs${page.url}`;
 
-  // note: it doesn't escape frontmatter, it's up to you.
-  return `# ${page.data.title}
-URL: ${pageUrl}
+  const frontmatter = [
+    "---",
+    `title: ${title}`,
+    `description: ${description}`,
+    `url: ${pageUrl}`,
+    "---",
+  ].join("\n");
 
-${processed.value as string}`;
-}
-
-function validatePath(p: string): string {
-  // Decode percent-encoded sequences (e.g. %2e%2e -> ..). If decoding fails, fall back to the original.
-  let decoded = p;
-  try {
-    decoded = decodeURIComponent(p);
-  } catch {
-    // ignore malformed encodings
-  }
-
-  // If the relative path begins with '..' then `resolved` is outside `allowedBase`
-  if (decoded.includes("..")) {
-    throw new Error("Invalid file path");
-  }
-
-  // Reject absolute paths
-  if (decoded.startsWith("/")) {
-    throw new Error("Invalid file path");
-  }
-
-  const resolved = path.resolve(decoded);
-
-  // Allow only .mdx files
-  if (!resolved.endsWith(".mdx")) {
-    throw new Error("Invalid file type");
-  }
-
-  return resolved;
+  return [frontmatter, processed].join("\n\n");
 }

@@ -1,12 +1,16 @@
-import { defineConfig, defineDocs, frontmatterSchema } from "fumadocs-mdx/config";
+import { defineConfig, defineDocs } from "fumadocs-mdx/config";
+import { pageSchema } from "fumadocs-core/source/schema";
 import { z } from "zod";
 
 export const docs = defineDocs({
   dir: "src/content",
   docs: {
-    schema: frontmatterSchema.extend({
+    schema: pageSchema.extend({
       pageTitle: z.string().optional(),
     }),
+    postprocess: {
+      includeProcessedMarkdown: true,
+    },
   },
 });
 

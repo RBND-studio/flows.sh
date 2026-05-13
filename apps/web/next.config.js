@@ -51,16 +51,35 @@ const nextConfig = {
     formats: ["image/webp"],
   },
   rewrites: async () => {
-    return [
-      {
-        source: "/box/script.js",
-        destination: "https://plausible.io/js/script.js",
-      },
-      {
-        source: "/box/event",
-        destination: "https://plausible.io/api/event",
-      },
-    ];
+    return {
+      afterFiles: [
+        {
+          source: "/box/script.js",
+          destination: "https://plausible.io/js/script.js",
+        },
+        {
+          source: "/box/event",
+          destination: "https://plausible.io/api/event",
+        },
+        {
+          source: "/:path*.md",
+          destination: "/md/:path*",
+        },
+      ],
+      beforeFiles: [
+        {
+          source: "/:path*",
+          destination: "/md/:path*",
+          has: [
+            {
+              type: "header",
+              key: "accept",
+              value: "(.*)text/markdown(.*)",
+            },
+          ],
+        },
+      ],
+    };
   },
   redirects() {
     return [

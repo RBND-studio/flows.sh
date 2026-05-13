@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "flows-install",
+      "type": "skill-md",
+      "description": "Detects the user's framework and installs the Flows SDK with full configuration in the correct location.",
+      "url": "https://flows.sh/.well-known/agent-skills/flows-install/SKILL.md",
+      "digest": "sha256:b9d9a8943a37d74a23fe01a6d74a0184eabf5d40da43249b12b66eb06a866082"
+    }
+  ]
+}

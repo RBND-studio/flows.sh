@@ -46,6 +46,30 @@ const nextConfig = {
   images: {
     formats: ["image/webp"],
   },
+
+  rewrites: async () => {
+    return {
+      afterFiles: [
+        {
+          source: "/:path*.md",
+          destination: "/llms.mdx/:path*",
+        },
+      ],
+      beforeFiles: [
+        {
+          source: "/:path*",
+          destination: "/llms.mdx/:path*",
+          has: [
+            {
+              type: "header",
+              key: "accept",
+              value: "(.*)text/markdown(.*)",
+            },
+          ],
+        },
+      ],
+    };
+  },
   async redirects() {
     return [
       {

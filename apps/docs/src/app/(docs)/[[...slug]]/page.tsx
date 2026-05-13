@@ -21,6 +21,7 @@ import { links } from "lib/links";
 import { source } from "lib/source";
 import { type Metadata } from "next";
 import { notFound } from "next/navigation";
+import type { FC } from "react";
 import { type ReactNode } from "react";
 
 type Params = { slug?: string[] };
@@ -70,7 +71,7 @@ export default async function Page(props: { params: Promise<Params> }): Promise<
         <Mdx
           components={{
             ...defaultMdxComponents,
-            img: DocsImage,
+            img: DocsImage as FC<any>,
             a: DocsLink,
             Tab: DocsTab,
             Tabs: DocsTabs,

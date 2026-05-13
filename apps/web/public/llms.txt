@@ -2,45 +2,101 @@
 
 > Flows is a fully customizable product adoption platform for modern companies building onboarding and user engagement experiences.
 
+## What is Flows
+
+Flows lets you build in-app experiences - user onboarding, feature announcements, guided tours, surveys, and product-led growth loops - without requiring engineering changes for each update. A no-code editor lets non-technical teams design and manage experiences, while developers retain full control through custom UI components and SDKs.
+
+Flows is not a simple tooltip library. It is a workflow engine: experiences are composed of blocks (UI elements, logic, actions) connected into multi-step sequences that can span sessions, branch based on user properties, trigger other workflows, and track analytics.
+
 ## Features
 
-- Workflows: Combine experiences into multi-step campaigns that guide users through your ideal product journey.
-- Floating components: Create floating components that follow users as they navigate your app, ensuring they always have the right guidance at the right time.
-- Embeddable components: Render inline components directly within your app’s UI. Don’t just put tooltips over your product.
-- Custom UI components: Leverage our APIs and your design system for full control. Build your own components and create a native experience.
-- Localization: Support any language or locale to reach a global audience.
-- Segmentation: Target specific users or companies based on properties or behavior.
-- Versioning: Deploy, audit, and restore your changes across environments.
-- Analytics: Understand how users interact with your workflows.
-- Environments: Test workflows on staging before deploying them to production.
-- Actions: Trigger actions based on user behavior.
-- Workflow logic: Branch, filter, and control the path of your workflows.
-- Privacy first: Built with privacy in mind. Minimizing data collection.
+- **Workflows**: Multi-step campaigns combining UI, logic, and actions that guide users through your product journey.
+- **Floating components**: Components that follow users as they navigate, always visible (e.g. checklists, tooltips, hints).
+- **Embeddable components**: Inline components rendered inside your app's UI via Slots.
+- **Custom UI components**: Full design control via your own components registered with Flows. Build with your design system.
+- **Tours**: Step-by-step guides with instant navigation, back/forward support, and persistent state.
+- **Surveys**: Collect in-app feedback at any point in a workflow.
+- **Localization**: Support any language or locale. Language detection is automatic or manually configured.
+- **Segmentation / Targeting**: Target users based on properties or behavior using Start blocks and Filter blocks.
+- **Personalization**: Insert user properties into workflow content using `{{ property_name }}` syntax with `{{ property_name | fallback }}` support.
+- **Versioning**: Draft, publish, and restore workflow versions per environment.
+- **Analytics**: Track entries, completions, and drop-offs per workflow and per block.
+- **Environments**: Unlimited environments for staging and production isolation.
+- **Launchpad**: Priority-based workflow scheduling with concurrency limits.
+- **Action blocks**: Trigger other workflows from within a workflow.
+- **Logic blocks**: Filter and Delay blocks for conditional branching and timed pauses.
+- **Agent skills**: Install the Flows install skill to let AI coding assistants set up Flows automatically.
+
+## SDKs
+
+### React SDK
+- Package: `@flows/react` (provider + hooks) and `@flows/react-components` (built-in UI components)
+- Install: `npm i @flows/react @flows/react-components`
+- Wrap your app with `FlowsProvider` passing `organizationId`, `environment`, `userId`, and component registrations.
+- Optional `LinkComponent` prop for client-side navigation integration.
+- Docs: https://flows.sh/docs/sdk/react/overview
+
+### JavaScript SDK
+- Package: `@flows/js` and `@flows/js-components`
+- Works with any JavaScript framework (Angular, Vue, Svelte, Solid, etc.)
+- Docs: https://flows.sh/docs/sdk/javascript/overview
+
+### Framework guides
+- Next.js: https://flows.sh/docs/sdk/frameworks/next
+- Angular: https://flows.sh/docs/sdk/frameworks/angular
+- Vue/Nuxt: https://flows.sh/docs/sdk/frameworks/nuxt
+- Svelte: https://flows.sh/docs/sdk/frameworks/svelte
+- Solid: https://flows.sh/docs/sdk/frameworks/solid
+
+## Agent skills (AI coding assistants)
+
+Flows provides an install skill for AI coding assistants that support the [open agent skills ecosystem](https://skills.sh). The skill detects your framework, installs the right packages, and sets up the SDK.
+
+```bash
+npx skills add RBND-studio/flows.sh --skill flows-install
+```
+
+After installation, ask your agent: "Install Flows in my project" and it handles the rest.
+
+Docs: https://flows.sh/docs/agent-skills
 
 ## Use cases
 
-- [User onboarding](https://flows.sh/solutions/user-onboarding): Build engaging onboarding flows that guide users to value and drive activation.
-- [Feature adoption](https://flows.sh/solutions/feature-adoption): Support releases with engaging announcements, embeddable banners, and guides.
-- [Product-led growth](https://flows.sh/solutions/product-led-growth): Build growth loops to drive KPIs and increase the effect of sales, support and marketing efforts.
-- [Revenue expansion](https://flows.sh/solutions/revenue-expansion): Convert free trials into paying customers with in-app promotions and upsells.
-- [Product marketing](https://flows.sh/solutions/product-marketing): Launch in-app campaigns like announcements and product tours without engineering help.
+- [User onboarding](https://flows.sh/solutions/user-onboarding): Guide users to value and drive activation.
+- [Feature adoption](https://flows.sh/solutions/feature-adoption): Announce releases with in-app banners and guides.
+- [Product-led growth](https://flows.sh/solutions/product-led-growth): Build growth loops to drive KPIs.
+- [Revenue expansion](https://flows.sh/solutions/revenue-expansion): Convert free trials with in-app promotions.
+- [Product marketing](https://flows.sh/solutions/product-marketing): Launch in-app campaigns without engineering.
 
-## Documentation
+## Documentation
 
-- [Documentation](https://flows.sh/docs): Documentation on how to integrate and use Flows
+- [Overview](https://flows.sh/docs): Documentation home
+- [Quickstart](https://flows.sh/docs/quickstart): Publish your first workflow in minutes
+- [Concepts](https://flows.sh/docs/concepts): Core concepts explained
+- [Workflows](https://flows.sh/docs/workflows/overview): Workflow creation, versioning, analytics
+- [Blocks](https://flows.sh/docs/blocks): Block reference
+- [Basics V2 components](https://flows.sh/docs/blocks/basics-v2/overview): Built-in UI components
+- [Tours](https://flows.sh/docs/tours): Guided tour documentation
+- [Surveys](https://flows.sh/docs/surveys/overview): Survey block documentation
+- [Components](https://flows.sh/docs/components/overview): Custom component docs
+- [Users](https://flows.sh/docs/users/overview): User management and inspection
+- [Environments](https://flows.sh/docs/environments): Environment setup
+- [Localization](https://flows.sh/docs/localization): Multi-language support
+- [Personalization](https://flows.sh/docs/personalization): Dynamic content with user properties
+- [Launchpad](https://flows.sh/docs/launchpad): Workflow priority and concurrency
+- [Agent skills](https://flows.sh/docs/agent-skills): AI assistant integration
+- [Billing](https://flows.sh/docs/billing): Plans and MTU billing details
+- [React SDK reference](https://flows.sh/docs/sdk/react/reference): Full API reference
+- [JavaScript SDK reference](https://flows.sh/docs/sdk/javascript/reference): Full API reference
 
 ## Resources
 
-- [Blog](https://flows.sh/blog): Content on best practices for product adoption and Flows product updates
-- [Examples](https://flows.sh/examples): Examples of what experiences you can build with Flows.
+- [Blog](https://flows.sh/blog): Product updates and best practices
+- [Examples](https://flows.sh/examples): Live workflow examples with source code
+- [GitHub SDK examples](https://github.com/RBND-studio/flows-sdk/tree/main/examples): Starter projects for React, Next.js, Angular, Nuxt, Svelte, Solid
 
-## How to Get Started
+## Pricing and getting started
 
-- [Pricing](https://flows.sh/pricing): Flows offer a pay-as-you-go pricing that starts at $0/month with a generous free forever tier
-- [Contact](https://flows.sh/contact): Contact the team for a demo
-- [Signup](https://app.flows.sh/signup): Sign up to try out the product today
-
-## Flows SDK
-
-- [React SDK](https://flows.sh/docs/react/overview): Flows SDK purpose-built for applications built with React.
-- [JavaScript SDK](https://flows.sh/docs/javascript/overview): Flows SDK for integrating with any JavaScript framework.
+- [Pricing](https://flows.sh/pricing): Forever Free plan + Pay-As-You-Go based on MTUs
+- [Sign up](https://app.flows.sh/signup): Create an account
+- [Contact](https://flows.sh/contact): Request a demo or get help
