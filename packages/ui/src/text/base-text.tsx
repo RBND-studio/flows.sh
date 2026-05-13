@@ -3,6 +3,7 @@ import { type HTMLStyledProps, styled } from "@flows/styled-system/jsx";
 import { type SystemStyleObject } from "@flows/styled-system/types";
 import { Slot } from "@radix-ui/react-slot";
 import { forwardRef, type HTMLAttributes } from "react";
+import type { TooltipSide } from "../tooltip/tooltip";
 
 export type TextProps = HTMLAttributes<HTMLParagraphElement> &
   HTMLStyledProps<"p"> & {
@@ -22,6 +23,8 @@ export type TextProps = HTMLAttributes<HTMLParagraphElement> &
     align?: "left" | "center" | "right";
 
     hideOverflow?: boolean;
+
+    tooltipSide?: TooltipSide;
   };
 
 export const BaseText = forwardRef<HTMLParagraphElement, TextProps>(function BaseText(
@@ -33,6 +36,8 @@ export const BaseText = forwardRef<HTMLParagraphElement, TextProps>(function Bas
     children,
     asChild,
     hideOverflow,
+    // oxlint-disable-next-line no-unused-vars - has to be specified to avoid being included in ...props and causing an error on the DOM element
+    tooltipSide,
     ...props
   },
   ref,

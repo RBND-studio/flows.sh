@@ -5,6 +5,7 @@ import { forwardRef, useState } from "react";
 
 import { Tooltip } from "../tooltip/tooltip";
 import { BaseText, type TextProps } from "./base-text";
+import { css } from "@flows/styled-system/css";
 
 export const TextWithTooltip = forwardRef<HTMLParagraphElement, TextProps>(
   function TextWithTooltip(props, ref) {
@@ -21,6 +22,13 @@ export const TextWithTooltip = forwardRef<HTMLParagraphElement, TextProps>(
 
     if (!isOverflowing) return textContent;
 
-    return <Tooltip trigger={textContent} content={props.children} />;
+    return (
+      <Tooltip
+        trigger={textContent}
+        content={props.children}
+        side={props.tooltipSide}
+        className={css({ whiteSpace: "pre-line" })}
+      />
+    );
   },
 );
