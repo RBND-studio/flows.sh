@@ -49,11 +49,13 @@ const nextConfig = {
 
   rewrites: async () => {
     return {
-      beforeFiles: [
+      afterFiles: [
         {
           source: "/:path*.md",
           destination: "/llms.mdx/:path*",
         },
+      ],
+      beforeFiles: [
         {
           source: "/:path*",
           destination: "/llms.mdx/:path*",

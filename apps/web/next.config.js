@@ -61,12 +61,12 @@ const nextConfig = {
           source: "/box/event",
           destination: "https://plausible.io/api/event",
         },
-      ],
-      beforeFiles: [
         {
           source: "/:path*.md",
           destination: "/md/:path*",
         },
+      ],
+      beforeFiles: [
         {
           source: "/:path*",
           destination: "/md/:path*",
