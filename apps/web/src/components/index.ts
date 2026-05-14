@@ -4,3 +4,4 @@ export * from "./header";
 export * from "./hero";
 export * from "./homepage";
 export * from "./main-illustration";
+export * from "./status-badge";

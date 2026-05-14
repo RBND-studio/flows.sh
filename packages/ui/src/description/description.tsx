@@ -7,10 +7,16 @@ type Props = {
   className?: string;
   color?: ComponentProps<typeof Text>["color"];
   disabled?: boolean;
+  hideOverflow?: boolean;
 };
 
 export const Description: FC<Props> = ({ color = "newFg.neutral.muted", ...props }) => {
   return (
-    <Text color={props.disabled ? "newFg.neutral.subtle" : color} variant="bodyXxs" {...props} />
+    <Text
+      color={props.disabled ? "newFg.neutral.subtle" : color}
+      tooltipSide="left"
+      variant="bodyXxs"
+      {...props}
+    />
   );
 };

@@ -748,7 +748,7 @@ const Page = (): ReactElement => {
       <SubprocessorsTable subprocessors={subprocessors} />
 
       <Text className={paragraphCss} variant="bodyM">
-        Last updated: January 2, 2026
+        Last updated: May 14, 2026
       </Text>
     </Section>
   );
@@ -783,11 +783,6 @@ const subprocessors: Subprocessor[] = [
   {
     name: "Slack Technologies, LLC",
     purpose: "Community",
-    location: "US",
-  },
-  {
-    name: "Better Stack, Inc.",
-    purpose: "Service Uptime Monitoring",
     location: "US",
   },
 ];

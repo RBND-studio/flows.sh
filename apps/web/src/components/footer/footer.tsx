@@ -7,8 +7,8 @@ import type { ReactElement } from "react";
 import { routes } from "routes";
 import { Icon, Logo, Text } from "ui";
 
-import { StatusBadge } from "./status-badge";
 import { ThemeSwitch } from "./theme-switch";
+import { StatusBadge } from "components/status-badge";
 
 interface FooterGroup {
   title: string;

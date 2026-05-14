@@ -54,6 +54,7 @@ export * from "./src/emoji16";
 export * from "./src/end16";
 export * from "./src/enter16";
 export * from "./src/environment16";
+export * from "./src/exclamation16";
 export * from "./src/exit16";
 export * from "./src/external-link16";
 export * from "./src/eye16";
