@@ -16,4 +16,5 @@ export type ContentType = {
   embed: EmbedProps;
   sidebar: InfoSidebarProps;
   readme: ReactNode;
+  exampleWorkflowId?: string;
 };

@@ -38,6 +38,8 @@ export const links = (domain = "flows.sh") =>
       svelteTemplate: "https://github.com/RBND-studio/flows-sdk/tree/main/examples/svelte",
       solidTemplate: "https://github.com/RBND-studio/flows-sdk/tree/main/examples/solid",
     },
+    duplicateExample: (params: { workflowId: string }) =>
+      `https://app.${domain}/duplicate-example/${params.workflowId}`,
     examples: {
       card: "https://card.examples.flows.sh",
       cardSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/card",

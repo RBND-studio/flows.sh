@@ -13,14 +13,14 @@ export type InfoSidebarProps = {
   tags: string[];
 };
 
-export const InfoSidebar = ({ links, framework, tags }: InfoSidebarProps): ReactNode => {
+export const InfoSidebar = ({ links: linksProp, framework, tags }: InfoSidebarProps): ReactNode => {
   return (
     <Flex flexDirection="column" width="100%" md={{ maxWidth: 220 }}>
       <Flex flexDirection="column" gap="space8">
-        <Link icon={Environment16} href={links.liveDemo}>
+        <Link icon={Environment16} href={linksProp.liveDemo}>
           Open in new tab
         </Link>
-        <Link icon={GitHub16} href={links.sourceCode}>
+        <Link icon={GitHub16} href={linksProp.sourceCode}>
           View source code
         </Link>
       </Flex>
