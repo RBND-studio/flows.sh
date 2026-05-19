@@ -59,6 +59,6 @@
     "@types/turndown": "^5.0.6",
     "schema-dts": "^1.1.5",
     "tsconfig": "workspace:*",
-    "typescript": "6.0.2"
+    "typescript": "6.0.3"
   }
 }
