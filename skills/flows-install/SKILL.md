@@ -61,6 +61,8 @@ Search `package.json` dependencies and devDependencies for these indicators, in 
 | Svelte / SvelteKit | `svelte`                     |
 | Solid              | `solid-js`                   |
 | Vue                | `vue`                        |
+| Astro              | `astro`                      |
+| Ember              | `ember-source`               |
 
 The order matters — check Next.js before React, and Nuxt before Vue, as they are supersets.
 
@@ -84,6 +86,8 @@ If no package match, search for framework-specific files:
 | Vue       | `.vue`                        |
 | Svelte    | `.svelte`                     |
 | Solid     | `.jsx`, `.tsx`                |
+| Astro     | `astro.config.*`              |
+| Ember     | `.gjs`, `.gts`                |
 
 ### TypeScript detection
 
@@ -101,6 +105,8 @@ Ask the user: "I couldn't detect a specific framework. Which one do you use?"
 - Vue (without Nuxt)
 - Solid
 - Svelte / SvelteKit
+- Astro
+- Ember
 - JavaScript (no framework)
 
 ## Step 3: Ask for organization ID
@@ -123,7 +129,7 @@ Run the install command in the target directory using the detected package manag
 npm i @flows/react @flows/react-components
 ```
 
-**All other frameworks (Angular, Vue, Nuxt, Svelte, Solid, JavaScript):**
+**All other frameworks (Angular, Vue, Nuxt, Svelte, Solid, Astro, Ember, JavaScript):**
 
 ```bash
 npm i @flows/js @flows/js-components
@@ -147,6 +153,8 @@ Follow the reference file for the detected framework:
 | Svelte / SvelteKit     | [references/svelte.md](references/svelte.md)                           |
 | Solid                  | [references/solid.md](references/solid.md)                             |
 | Vue (without Nuxt)     | [references/vue.md](references/vue.md)                                 |
+| Astro                  | [references/astro.md](references/astro.md)                             |
+| Ember                  | [references/ember.md](references/ember.md)                             |
 | JavaScript             | [references/javascript.md](references/javascript.md)                   |
 
 ---

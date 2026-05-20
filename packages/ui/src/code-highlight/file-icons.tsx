@@ -17,6 +17,7 @@ export const fileIcons: Extension = {
         case "js":
           return "javascript";
         case "ts":
+        case "gts":
           return "typescript";
         case "tsx":
           return "react_ts";
@@ -32,6 +33,8 @@ export const fileIcons: Extension = {
           return "vue";
         case "svelte":
           return "svelte";
+        case "astro":
+          return "astro";
         default:
       }
     })();

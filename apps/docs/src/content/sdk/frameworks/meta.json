@@ -1,4 +1,4 @@
 {
   "defaultOpen": true,
-  "pages": ["next", "angular", "nuxt", "solid", "svelte"]
+  "pages": ["next", "angular", "nuxt", "solid", "svelte", "astro", "ember"]
 }
