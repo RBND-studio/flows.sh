@@ -13,7 +13,15 @@
     "panda.config.ts"
   ],
   "rules": {
-    "typescript/consistent-type-imports": "error"
+    "typescript/consistent-type-imports": "error",
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_",
+        "fix": { "imports": "off" }
+      }
+    ]
   },
   "options": {
     "typeAware": true

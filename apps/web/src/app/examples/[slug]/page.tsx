@@ -39,7 +39,11 @@ export default async function ExampleDetailPage({ params }: Props): Promise<Reac
 
   return (
     <>
-      <ExampleHeader title={content.title} description={content.description} />
+      <ExampleHeader
+        title={content.title}
+        description={content.description}
+        exampleWorkflowId={content.exampleWorkflowId}
+      />
       <Embed {...content.embed} />
       <Readme readme={content.readme} sidebar={content.sidebar} />
       <Suggestions slug={content.slug} />

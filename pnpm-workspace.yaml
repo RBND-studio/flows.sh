@@ -4,21 +4,6 @@ packages:
 
 engineStrict: true
 
-onlyBuiltDependencies:
-  - "@confluentinc/kafka-javascript"
-  - "@nestjs/core"
-  - "@scarf/scarf"
-  - "@swc/core"
-  - bcrypt
-  - bufferutil
-  - cypress
-  - esbuild
-  - libpq
-  - nestjs-pino
-  - protobufjs
-  - sharp
-  - unrs-resolver
-
 overrides:
   "@auth/core@0.41.0": "@auth/core@0.41.1"
   ajv@>=7.0.0-alpha.0 <8.18.0: ">=8.18.0"
@@ -37,3 +22,19 @@ overrides:
   serialize-javascript@<=7.0.2: ">=7.0.3"
   systeminformation@<=5.31.5: ">=5.31.6"
   undici@<6.24.1: ">=6.24.1"
+autoInstallPeers: true
+enablePrePostScripts: true
+allowBuilds:
+  '@confluentinc/kafka-javascript': true
+  '@nestjs/core': true
+  '@scarf/scarf': true
+  '@swc/core': true
+  bcrypt: true
+  bufferutil: true
+  cypress: true
+  esbuild: true
+  libpq: true
+  nestjs-pino: true
+  protobufjs: true
+  sharp: true
+  unrs-resolver: true

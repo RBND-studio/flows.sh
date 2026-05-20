@@ -1,0 +1,96 @@
+---
+title: Ember
+description: How to set up Flows in your Ember application.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+![Ember](/sdk/frameworks/ember.png)
+
+Flows makes it easy to add product adoption experiences into your [Ember](https://emberjs.com) app. Integrating Flows into your app enables you to create interactive workflows, user onboarding, guided tours, in-app messaging, and more.
+
+This guide walks you through integrating Flows into your Ember app using the [JavaScript SDK](https://www.npmjs.com/package/@flows/js) and [components package](https://www.npmjs.com/package/@flows/js-components) to get you started.
+
+<Callout>
+  Using an AI coding assistant? Install the [Flows install skill](/agent-skills) to let your agent
+  set up Flows automatically.
+</Callout>
+
+<Steps>
+
+<Step>
+
+## Install the JavaScript SDK and components package
+
+You can install the Flows JavaScript SDK [from npm](https://www.npmjs.com/package/@flows/js):
+
+```package-install
+npm i @flows/js @flows/js-components
+```
+
+</Step>
+
+<Step>
+
+## Initialize the SDK
+
+Use the `init` function to initialize the SDK with your organization ID and environment key, which you can find in the **Settings > General** and **Settings > Environments** sections of the Flows dashboard.
+
+<Callout>
+  Check out the [Ember template
+  project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/ember) for a complete
+  example.
+</Callout>
+
+Create a `flows.ts` initializer at `app/initializers/flows.ts` to handle the initialization logic. Also, add the `<flows-floating-blocks>` custom element to your application template to render floating blocks.
+
+```ts lineNumbers tab="app/initializers/flows.ts"
+import { init } from "@flows/js";
+import { setupJsComponents } from "@flows/js-components";
+
+import * as components from "@flows/js-components/components";
+import * as tourComponents from "@flows/js-components/tour-components";
+import * as surveyComponents from "@flows/js-components/survey-components";
+
+import "@flows/js-components/index.css";
+
+export function initialize() {
+  init({
+    organizationId: "YOUR_ORGANIZATION_ID", // Find this in Settings > General
+    userId: "YOUR_USER_ID", // Identify the user
+    environment: "production", // Default environment
+  });
+  setupJsComponents({
+    components: { ...components },
+    tourComponents: { ...tourComponents },
+    surveyComponents: { ...surveyComponents },
+  });
+}
+
+export default {
+  initialize,
+};
+```
+
+```gts lineNumbers tab="application.gts"
+<template>
+  {{outlet}}
+
+  {{! Custom element for rendering floating blocks }}
+  <flows-floating-blocks></flows-floating-blocks>
+</template>
+```
+
+For a full list of supported properties, see the [init function documentation](/sdk/javascript/reference#init). For an example of how to create a custom component, see the [Ember template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/ember).
+
+</Step>
+
+<Step>
+
+## Create your first workflow
+
+That's it! You're now ready to create your first workflow. See our [quickstart guide](/quickstart) for more information.
+
+</Step>
+
+</Steps>
