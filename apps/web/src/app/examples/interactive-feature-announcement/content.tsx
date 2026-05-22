@@ -25,6 +25,8 @@ export const interactiveFeatureAnnouncementContent: ContentType = {
     dark: darkPng,
   },
   description: "Show how your new feature works instead of just telling users about it.",
+  metaDescription:
+    "New feature announcement example built with Flows - show users how your feature works with an interactive modal instead of a static tooltip or email.",
   embed: {
     src: links.examples.interactiveFeatureAnnouncement,
     title: "Interactive feature announcement example application – Flows",
@@ -40,9 +42,9 @@ export const interactiveFeatureAnnouncementContent: ContentType = {
   readme: (
     <>
       <Paragraph>
-        This example showcases an interactive feature announcement powered by{" "}
-        <InlineCode>@flows/react</InlineCode> to announce a new feature and give users a preview of
-        how it works.
+        This example showcases a new feature announcement built with{" "}
+        <InlineCode>@flows/react</InlineCode> that gives users an interactive preview of how the
+        feature works.
       </Paragraph>
       <Paragraph>
         Interactive feature announcements are a great way to introduce new features to users and
@@ -52,9 +54,9 @@ export const interactiveFeatureAnnouncementContent: ContentType = {
 
       <Heading>Features</Heading>
       <Paragraph>
-        When a user enters the Interactive Feature Announcement block in a workflow and, a modal
-        appears. In this example, the modal is a custom UI component announcing the release of a
-        dark mode support to the app. The modal gives users the option to select which theme they
+        When a user enters the Interactive Feature Announcement block in a workflow, an announcement
+        modal appears. In this example, the modal is a custom UI component announcing the release of
+        dark mode support in the app. The modal gives users the option to select which theme they
         want to use (light, dark, or system default).
       </Paragraph>
       <Paragraph>Below is a screenshot of how the workflow is set up in Flows:</Paragraph>
