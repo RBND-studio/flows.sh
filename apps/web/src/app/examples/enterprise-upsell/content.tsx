@@ -25,6 +25,8 @@ export const enterpriseUpsellContent: ContentType = {
     dark: darkPng,
   },
   description: "Nudge users to upgrade with an in-page promotion card",
+  metaDescription:
+    "Enterprise upsell example built with Flows - show a targeted in-page card to users without an enterprise plan at the right moment in their journey.",
   embed: {
     src: links.examples.enterpriseUpsell,
     title: "Enterprise upsell example application – Flows",
@@ -40,19 +42,59 @@ export const enterpriseUpsellContent: ContentType = {
   readme: (
     <>
       <Paragraph>
-        This example showcases enterprise upsell card powered by{" "}
-        <InlineCode>@flows/react</InlineCode>. In-page promotion is one of the most effective
-        channels for product upsell especially compared to email outreach. This upsell card strikes
-        the balance between being informative and non-intrusive. It is designed to meet the user at
-        the right moment when they are most likely to be interested in the product.
+        This example showcases an enterprise upsell card built with{" "}
+        <InlineCode>@flows/react</InlineCode>, designed for SaaS products with free and paid tiers.
+        In-page promotion is one of the most effective channels for driving free-to-paid conversion
+        - especially compared to email outreach. The card strikes the balance between being
+        informative and non-intrusive, meeting users at the right moment when they are most likely
+        to upgrade.
       </Paragraph>
 
-      <Heading>Features</Heading>
+      <Heading>When to use</Heading>
+      <UnorderedList>
+        <li>
+          When users on a free or lower-tier plan hit a feature that requires an enterprise plan -
+          surfacing the upsell at the point of friction.
+        </li>
+        <li>
+          To drive free-to-paid conversion without interrupting the user experience with a modal or
+          redirect.
+        </li>
+        <li>
+          For plan gating - showing relevant upgrade prompts only to users who haven't yet
+          upgraded.
+        </li>
+        <li>
+          As part of a product-led growth (PLG) motion, letting the product sell the upgrade rather
+          than relying on sales outreach.
+        </li>
+      </UnorderedList>
+
+      <Heading>Why it works</Heading>
+      <UnorderedList>
+        <li>
+          Contextual targeting: the card only appears for users who don’t have an enterprise plan,
+          so the message is always relevant.
+        </li>
+        <li>
+          In-page placement: the upsell is embedded in the UI rather than delivered as a modal or
+          email, so it doesn’t interrupt the user’s workflow.
+        </li>
+        <li>
+          Dismissible: users can close the card if they’re not interested, reducing friction and
+          keeping the experience respectful.
+        </li>
+        <li>
+          Workflow-controlled: Flows manages who sees the card and when, so the upsell stays
+          relevant as users’ plan status changes.
+        </li>
+      </UnorderedList>
+
+      <Heading>How the enterprise upsell card works</Heading>
       <Paragraph>
-        When a user that doesn’t have an enterprise plan visits the page, they will see a card that
-        promotes the enterprise plan in a non-intrusive way. The card is designed to be informative
-        and not obstructive to the user experience. The user can use the cards buttons to upgrade,
-        learn more or dismiss the card altogether.
+        When a user without an enterprise plan visits the page, they will see a card promoting the
+        upgrade - embedded in the page so it doesn’t block their workflow. The card’s buttons let
+        the user upgrade, learn more, or dismiss it altogether.
       </Paragraph>
       <Paragraph>Below is a screenshot of how the workflow is set up in Flows:</Paragraph>
 

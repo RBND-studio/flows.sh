@@ -25,6 +25,8 @@ export const embeddedTipsContent: ContentType = {
     dark: darkPng,
   },
   description: "Inline contextual tips to help users learn about product and UI concepts",
+  metaDescription:
+    "Embedded tips example built with Flows - add inline contextual tips to any page to help users learn product concepts during onboarding.",
   embed: {
     src: links.examples.embeddedTips,
     title: "Embedded tips example application – Flows",
@@ -40,7 +42,7 @@ export const embeddedTipsContent: ContentType = {
   readme: (
     <>
       <Paragraph>
-        This example demonstrates how to use Flows to build contextual, embedded tips for onboarding
+        This example demonstrates how to use Flows to build contextual in-app tips for onboarding
         users. Each page includes a simple tip designed to help users learn about important product
         and UI concepts.
       </Paragraph>
@@ -64,6 +66,10 @@ export const embeddedTipsContent: ContentType = {
           To integrate external content like documentation and support at the right time and place,
           driving a product-led growth (PLG) motion.
         </li>
+        <li>
+          For feature discovery - surfacing capabilities users haven't explored yet, reducing the
+          need for outreach or support.
+        </li>
       </UnorderedList>
       <Heading>Why it works</Heading>
       <UnorderedList>
@@ -72,8 +78,8 @@ export const embeddedTipsContent: ContentType = {
           interact with the app
         </li>
         <li>
-          Seamless integration: Embedded tips feel like a natural part of the UI, avoiding
-          distractions or spammy experiences.
+          Seamless integration: Embedded tips feel like a natural part of the UI - unlike floating
+          tooltips, they render inline without interrupting the user.
         </li>
         <li>
           Simplicity: Tips are straightforward and often include an option to explore more
@@ -87,7 +93,7 @@ export const embeddedTipsContent: ContentType = {
         can be combined with checklists and as a part of a multi-step workflow.
       </Paragraph>
 
-      <Heading>Features</Heading>
+      <Heading>How Flows renders embedded tips</Heading>
       <Paragraph>
         When a user enters the workflow and visits one of the pages with{" "}
         <InlineCode>FlowsSlot</InlineCode> components, an inline tip will appear to help them learn
@@ -97,7 +103,7 @@ export const embeddedTipsContent: ContentType = {
 
       <Image
         src={workflowPng}
-        alt="Flows workflow setup for the Card example"
+        alt="Flows workflow setup for the embedded tips example"
         width={1800}
         height={1040}
         className={css({

@@ -24,6 +24,8 @@ export const productHuntLaunchAnnouncementContent: ContentType = {
   slug: "product-hunt-launch-announcement",
   title: "Product Hunt launch announcement",
   description: "Launching your product on Product Hunt? Broadcast the launch inside your app.",
+  metaDescription:
+    "Product Hunt launch announcement example - add a floating banner, sidebar card, or top bar inside your app on launch day, built with Flows.",
   images: {
     light: lightPng,
     dark: darkPng,
@@ -43,11 +45,12 @@ export const productHuntLaunchAnnouncementContent: ContentType = {
   readme: (
     <>
       <Paragraph>
-        This example showcases how to create a Product Hunt launch announcement using Flows. It is
-        powered by <InlineCode>@flows/react</InlineCode> and custom components.
+        This example showcases how to build a Product Hunt launch announcement using Flows, with
+        three ready-to-use in-app components: a sidebar card, a floating banner, and a top bar
+        banner.
       </Paragraph>
 
-      <Heading>Features</Heading>
+      <Heading>In-app Product Hunt launch components</Heading>
       <Paragraph>
         This example showcases multiple components that can be used to announce your Product Hunt
         launch inside your app.
@@ -60,7 +63,7 @@ export const productHuntLaunchAnnouncementContent: ContentType = {
       </Paragraph>
       <Image
         src={sidebarPng}
-        alt="Sidebar card component rendered in the sidebar"
+        alt="Product Hunt launch sidebar card component built with Flows"
         width={1800}
         height={1040}
         className={css({
@@ -73,13 +76,13 @@ export const productHuntLaunchAnnouncementContent: ContentType = {
       />
       <Heading2>Floating banner</Heading2>
       <Paragraph>
-        A classic way to handle in app announcements. The floating banner shows up in the bottom
+        A classic way to handle in-app announcements. The floating banner shows up in the bottom
         right corner of the screen and can be dismissed by the user. It is easier to implement
         because it doesn’t require you to implement a slot in your app.
       </Paragraph>
       <Image
         src={floatingPng}
-        alt="Floating banner component rendered in the bottom right corner of the screen"
+        alt="Product Hunt floating banner for in-app launch day announcements"
         width={1800}
         height={1040}
         className={css({
@@ -99,7 +102,7 @@ export const productHuntLaunchAnnouncementContent: ContentType = {
       </Paragraph>
       <Image
         src={topBarPng}
-        alt="Top bar banner component rendered in the top bar"
+        alt="Product Hunt top bar banner component for launch announcements"
         width={1800}
         height={1040}
         className={css({
