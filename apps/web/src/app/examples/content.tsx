@@ -18,6 +18,7 @@ import { tourContent } from "./tour/content";
 import { pmfSurveyContent } from "./pmf-survey/content";
 import { csatSurveyContent } from "./csat-survey/content";
 import { cesSurveyContent } from "./ces-survey/content";
+import { announcementBannerContent } from "./announcement-banner/content";
 // --PLOP_NEW_EXAMPLE_IMPORT--
 import { type ContentType } from "./types";
 
@@ -42,5 +43,6 @@ export const examplesContent: ContentType[] = [
   csatSurveyContent,
   npsSurveyContent,
   cesSurveyContent,
+  announcementBannerContent,
   // --PLOP_NEW_EXAMPLE_CONTENT--
 ];
