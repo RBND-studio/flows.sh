@@ -3,10 +3,14 @@
 import { css } from "@flows/styled-system/css";
 import type { FC } from "react";
 import { Toaster as SonnerToaster } from "sonner";
+import { Spinner } from "../spinner";
 
 export const Toaster: FC = () => {
   return (
     <SonnerToaster
+      icons={{
+        loading: <Spinner size={16} />,
+      }}
       toastOptions={{
         unstyled: true,
         classNames: {
@@ -63,6 +67,15 @@ export const Toaster: FC = () => {
             borderColor: "newBorder.primary.subtle",
             "& div svg": {
               color: "newFg.primary",
+            },
+          }),
+          loading: css({
+            backgroundColor: "newBg.neutral",
+            borderColor: "newBorder.neutral.subtle",
+            "& [data-icon]": {
+              position: "relative",
+              width: 20,
+              height: 20,
             },
           }),
         },

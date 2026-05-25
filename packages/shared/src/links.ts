@@ -94,6 +94,9 @@ export const links = (domain = "flows.sh") =>
       npsSurveySource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/nps-survey",
       cesSurvey: "https://ces-survey.examples.flows.sh",
       cesSurveySource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/ces-survey",
+      announcementBanner: "https://announcement-banner.examples.flows.sh",
+      announcementBannerSource:
+        "https://github.com/RBND-studio/flows.sh/tree/main/examples/announcement-banner",
       // --PLOP_NEW_EXAMPLE_LINK--
     },
     docs: {
