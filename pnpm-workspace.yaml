@@ -22,13 +22,14 @@ overrides:
   serialize-javascript@<=7.0.2: ">=7.0.3"
   systeminformation@<=5.31.5: ">=5.31.6"
   undici@<6.24.1: ">=6.24.1"
+  uuid@<11.1.1: ^11.1.1
 autoInstallPeers: true
 enablePrePostScripts: true
 allowBuilds:
-  '@confluentinc/kafka-javascript': true
-  '@nestjs/core': true
-  '@scarf/scarf': true
-  '@swc/core': true
+  "@confluentinc/kafka-javascript": true
+  "@nestjs/core": true
+  "@scarf/scarf": true
+  "@swc/core": true
   bcrypt: true
   bufferutil: true
   cypress: true
@@ -38,3 +39,6 @@ allowBuilds:
   protobufjs: true
   sharp: true
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - uuid@11.1.1
+  - qs@6.15.2

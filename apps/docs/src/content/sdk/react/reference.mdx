@@ -76,10 +76,39 @@ const Sidebar = () => {
 };
 ```
 
-| Name          | Type        | Required | Notes                                                              |
-| ------------- | ----------- | -------- | ------------------------------------------------------------------ |
-| `id`          | `string`    | Yes      | The Slot ID used to refer to the slot when creating workflows.     |
-| `placeholder` | `ReactNode` | No       | The component to render when no component is inserted in the slot. |
+| Name          | Type        | Required | Notes                                                                 |
+| ------------- | ----------- | -------- | --------------------------------------------------------------------- |
+| `id`          | `string`    | Yes      | The Slot ID used to refer to the slot when creating workflows.        |
+| `placeholder` | `ReactNode` | No       | The component to render when no component is inserted in the slot.    |
+| `limit`       | `number`    | No       | Limit of how many blocks to render in the slot. Defaults to no limit. |
+
+---
+
+#### Block
+
+The `<Block />` component renders a single [`ActiveBlock`](#activeblock) using the matching component registered in `<FlowsProvider />`. It looks up the right component from `components`, `tourComponents`, or `surveyComponents` based on the block type.
+
+Use `<Block />` when you need custom rendering logic beyond what `<FlowsSlot />` provides — for example, to wrap blocks in a custom container, apply animations, or control rendering order yourself.
+
+```tsx title="custom-slot.tsx"
+import { Block, useCurrentSlotBlocks } from "@flows/react";
+
+const CustomSlot = () => {
+  const blocks = useCurrentSlotBlocks("my-slot");
+
+  return (
+    <div>
+      {blocks.map((block) => (
+        <Block key={block.id} block={block} />
+      ))}
+    </div>
+  );
+};
+```
+
+| Name    | Type                        | Required | Notes                |
+| ------- | --------------------------- | -------- | -------------------- |
+| `block` | [ActiveBlock](#activeblock) | Yes      | The block to render. |
 
 ---
 
