@@ -31,16 +31,17 @@ init({
 
 Parameters:
 
-| Name              | Type                              | Required | Notes                                                                                                                                                                                                                                          |
-| ----------------- | --------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `organizationId`  | `string`                          | Yes      | Your organization ID, available in **Settings > General**.                                                                                                                                                                                     |
-| `environment`     | `string`                          | Yes      | The environment key, available in **Settings > Environments**.                                                                                                                                                                                 |
-| `userId`          | `string`                          | Yes      | Unique ID for identifying the user.                                                                                                                                                                                                            |
-| `userProperties`  | `object`                          | No       | Object with custom [user properties](/users/properties) as key-value pairs. Accepts `string`, `number`, `boolean`, or `date`.                                                                                                                  |
-| `language`        | [LanguageOption](#languageoption) | No       | The user's language used for [localization](/localization). When empty the user will receive the default language group.                                                                                                                       |
-| `apiUrl`          | `string`                          | No       | Custom API URL for proxying requests through your domain.                                                                                                                                                                                      |
-| `debug`           | `boolean`                         | No       | Enable [debug mode](/sdk/debug) to inspect the SDK's behavior.                                                                                                                                                                                 |
-| `onDebugShortcut` | `function`                        | No       | Custom keyboard shortcut handler for opening the debug panel. By default, the debug panel opens with `Cmd + Option + Shift + F` on Mac or `Ctrl + Alt + Shift + F` on Windows/Linux. If you set this prop, the default shortcut will not work. |
+| Name              | Type                                | Required | Notes                                                                                                                                                                                                                                          |
+| ----------------- | ----------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `organizationId`  | `string`                            | Yes      | Your organization ID, available in **Settings > General**.                                                                                                                                                                                     |
+| `environment`     | `string`                            | Yes      | The environment key, available in **Settings > Environments**.                                                                                                                                                                                 |
+| `userId`          | `string`                            | Yes      | Unique ID for identifying the user.                                                                                                                                                                                                            |
+| `userProperties`  | `object`                            | No       | Object with custom [user properties](/users/properties) as key-value pairs. Accepts `string`, `number`, `boolean`, or `date`.                                                                                                                  |
+| `language`        | [`LanguageOption`](#languageoption) | No       | The user's language used for [localization](/localization). When empty the user will receive the default language group.                                                                                                                       |
+| `apiUrl`          | `string`                            | No       | Custom API URL for proxying requests through your domain.                                                                                                                                                                                      |
+| `debug`           | `boolean`                           | No       | Enable [debug mode](/sdk/debug) to inspect the SDK's behavior.                                                                                                                                                                                 |
+| `onDebugShortcut` | `function`                          | No       | Custom keyboard shortcut handler for opening the debug panel. By default, the debug panel opens with `Cmd + Option + Shift + F` on Mac or `Ctrl + Alt + Shift + F` on Windows/Linux. If you set this prop, the default shortcut will not work. |
+| `onNavigate`      | [`OnNavigate`](#onnavigate)         | No       | Handler for intercepting internal link clicks inside Flows components. Use this to route navigation through your client-side router instead of triggering a full page reload.                                                                  |
 
 ---
 
@@ -50,9 +51,9 @@ Registers a listener for updates to floating workflow and tour blocks. Slottable
 
 Parameters:
 
-| Name       | Type       | Required | Notes                                                                |
-| ---------- | ---------- | -------- | -------------------------------------------------------------------- |
-| `listener` | `function` | Yes      | Callback invoked with the updated [ActiveBlock](#activeblock) array. |
+| Name       | Type       | Required | Notes                                                                  |
+| ---------- | ---------- | -------- | ---------------------------------------------------------------------- |
+| `listener` | `function` | Yes      | Callback invoked with the updated [`ActiveBlock`](#activeblock) array. |
 
 Returns:
 
@@ -66,10 +67,10 @@ Registers a listener for updates to blocks in a specific slot.
 
 Parameters:
 
-| Name       | Type       | Required | Notes                                                                          |
-| ---------- | ---------- | -------- | ------------------------------------------------------------------------------ |
-| `slotId`   | `string`   | Yes      | Slot ID of the slot to monitor.                                                |
-| `listener` | `function` | Yes      | Callback function that receives updated array of [ActiveBlock](#activeblock) . |
+| Name       | Type       | Required | Notes                                                                            |
+| ---------- | ---------- | -------- | -------------------------------------------------------------------------------- |
+| `slotId`   | `string`   | Yes      | Slot ID of the slot to monitor.                                                  |
+| `listener` | `function` | Yes      | Callback function that receives updated array of [`ActiveBlock`](#activeblock) . |
 
 Returns:
 
@@ -85,7 +86,7 @@ Parameters: None
 
 Returns:
 
-An array of [ActiveBlock](#activeblock) objects.
+An array of [`ActiveBlock`](#activeblock) objects.
 
 ---
 
@@ -101,7 +102,7 @@ Parameters:
 
 Returns:
 
-An array of [ActiveBlock](#activeblock) objects.
+An array of [`ActiveBlock`](#activeblock) objects.
 
 ---
 
@@ -178,7 +179,7 @@ const { workflows } = await fetchWorkflows();
 
 Parameters: None
 
-Returns: `Promise<`[WorkflowsResponse](#workflowsresponse)`>`
+Returns: `Promise<`[`WorkflowsResponse`](#workflowsresponse)`>`
 
 ---
 
@@ -188,12 +189,12 @@ Returns: `Promise<`[WorkflowsResponse](#workflowsresponse)`>`
 
 Represents a block visible to the user.
 
-| Name        | Type                                                                                                                            | Notes                                                                                                                      |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `id`        | `string`                                                                                                                        | Internal identifier for the block. Changes with every workflow version, for persistent identifier use `props.__flows.key`. |
-| `type`      | `"component" \| "tour-component" \| "survey"`                                                                                   | The block type.                                                                                                            |
-| `component` | `string`                                                                                                                        | The UI component that should be used to render the block.                                                                  |
-| `props`     | [ComponentProps](#componentprops) \| [TourComponentProps](#tourcomponentprops) \| [SurveyComponentProps](#surveycomponentprops) | Props passed to the component, including data and exit node callbacks.                                                     |
+| Name        | Type                                                                                                                                  | Notes                                                                                                                      |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `id`        | `string`                                                                                                                              | Internal identifier for the block. Changes with every workflow version, for persistent identifier use `props.__flows.key`. |
+| `type`      | `"component" \| "tour-component" \| "survey"`                                                                                         | The block type.                                                                                                            |
+| `component` | `string`                                                                                                                              | The UI component that should be used to render the block.                                                                  |
+| `props`     | [`ComponentProps`](#componentprops) \| [`TourComponentProps`](#tourcomponentprops) \| [`SurveyComponentProps`](#surveycomponentprops) | Props passed to the component, including data and exit node callbacks.                                                     |
 
 ---
 
@@ -201,9 +202,9 @@ Represents a block visible to the user.
 
 Represents the props passed to a component. In addition to your custom props, it includes the `__flows` object with Flows properties.
 
-| Name      | Type                                | Required | Notes                                             |
-| --------- | ----------------------------------- | -------- | ------------------------------------------------- |
-| `__flows` | [FlowsProperties](#flowsproperties) | Yes      | Object containing Flows properties for the block. |
+| Name      | Type                                  | Required | Notes                                             |
+| --------- | ------------------------------------- | -------- | ------------------------------------------------- |
+| `__flows` | [`FlowsProperties`](#flowsproperties) | Yes      | Object containing Flows properties for the block. |
 
 ---
 
@@ -231,12 +232,12 @@ Represents the [state memory](/blocks/block-properties/state-memory) property of
 
 Represents the props passed to a tour component. In addition to your custom props, it includes tour component exit nodes and the `__flows` object with Flows properties.
 
-| Name       | Type                                | Required | Notes                                             |
-| ---------- | ----------------------------------- | -------- | ------------------------------------------------- |
-| `continue` | `function`                          | Yes      | Callback to go to the next step.                  |
-| `previous` | `function`                          | No       | Callback to go back to the previous step.         |
-| `cancel`   | `function`                          | Yes      | Callback to cancel the tour.                      |
-| `__flows`  | [FlowsProperties](#flowsproperties) | Yes      | Object containing Flows properties for the block. |
+| Name       | Type                                  | Required | Notes                                             |
+| ---------- | ------------------------------------- | -------- | ------------------------------------------------- |
+| `continue` | `function`                            | Yes      | Callback to go to the next step.                  |
+| `previous` | `function`                            | No       | Callback to go back to the previous step.         |
+| `cancel`   | `function`                            | Yes      | Callback to cancel the tour.                      |
+| `__flows`  | [`FlowsProperties`](#flowsproperties) | Yes      | Object containing Flows properties for the block. |
 
 ---
 
@@ -244,13 +245,13 @@ Represents the props passed to a tour component. In addition to your custom prop
 
 Represents the props passed to a survey component. In addition to your custom props, it includes the `survey` object, survey exit node callbacks, and the `__flows` object with Flows properties.
 
-| Name                    | Type                                | Required | Notes                                                                                               |
-| ----------------------- | ----------------------------------- | -------- | --------------------------------------------------------------------------------------------------- |
-| `survey`                | [Survey](#survey)                   | Yes      | Survey data and helper methods for reading answers, navigating questions, and submitting responses. |
-| Custom block properties | Depends on the property type        | Yes      | The properties of the selected block in the workflow. The properties are defined on in the block.   |
-| `complete`              | `function`                          | Yes      | Callback to exit the survey block with the `complete` exit node.                                    |
-| `cancel`                | `function`                          | Yes      | Callback to exit the survey block with the `cancel` exit node.                                      |
-| `__flows`               | [FlowsProperties](#flowsproperties) | Yes      | Object containing Flows properties for the block.                                                   |
+| Name                    | Type                                  | Required | Notes                                                                                               |
+| ----------------------- | ------------------------------------- | -------- | --------------------------------------------------------------------------------------------------- |
+| `survey`                | [`Survey`](#survey)                   | Yes      | Survey data and helper methods for reading answers, navigating questions, and submitting responses. |
+| Custom block properties | Depends on the property type          | Yes      | The properties of the selected block in the workflow. The properties are defined on in the block.   |
+| `complete`              | `function`                            | Yes      | Callback to exit the survey block with the `complete` exit node.                                    |
+| `cancel`                | `function`                            | Yes      | Callback to exit the survey block with the `cancel` exit node.                                      |
+| `__flows`               | [`FlowsProperties`](#flowsproperties) | Yes      | Object containing Flows properties for the block.                                                   |
 
 ---
 
@@ -260,7 +261,7 @@ Represents the survey object provided to survey components.
 
 | Name                      | Type                                  | Required | Notes                                                                                                               |
 | ------------------------- | ------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------- |
-| `questions`               | [SurveyQuestion](#surveyquestion)`[]` | Yes      | Ordered list of all survey questions.                                                                               |
+| `questions`               | [`SurveyQuestion[]`](#surveyquestion) | Yes      | Ordered list of all survey questions.                                                                               |
 | `getCurrentQuestionIndex` | `function`                            | Yes      | Returns the zero-based index of the currently displayed question. Method for optional built-in question navigation. |
 | `nextQuestion`            | `function`                            | Yes      | Advances to the next question and returns the new index. Method for optional built-in question navigation.          |
 | `previousQuestion`        | `function`                            | Yes      | Moves to the previous question and returns the new index. Method for optional built-in question navigation.         |
@@ -272,7 +273,7 @@ Represents the survey object provided to survey components.
 
 Union type for all supported survey question types:
 
-`type SurveyQuestion =` [FreeformQuestion](#freeformquestion) | [SingleChoiceQuestion](#singlechoicequestion) | [MultipleChoiceQuestion](#multiplechoicequestion) | [RatingQuestion](#ratingquestion) | [LinkQuestion](#linkquestion) | [EndScreenQuestion](#endscreenquestion)
+`type SurveyQuestion =` [`FreeformQuestion`](#freeformquestion) | [`SingleChoiceQuestion`](#singlechoicequestion) | [`MultipleChoiceQuestion`](#multiplechoicequestion) | [`RatingQuestion`](#ratingquestion) | [`LinkQuestion`](#linkquestion) | [`EndScreenQuestion`](#endscreenquestion)
 
 ---
 
@@ -411,10 +412,10 @@ Represents the `__flows` object included in component props.
 
 Represents the [block state](/blocks/block-properties/block-state) of the selected block in the workflow.
 
-| Name                    | Type                                | Required | Notes                                                                                             |
-| ----------------------- | ----------------------------------- | -------- | ------------------------------------------------------------------------------------------------- |
-| Custom block properties | Depends on the property type        | Yes      | The properties of the selected block in the workflow. The properties are defined on in the block. |
-| `__flows`               | [FlowsProperties](#flowsproperties) | Yes      | Object containing Flows properties for the block.                                                 |
+| Name                    | Type                                  | Required | Notes                                                                                             |
+| ----------------------- | ------------------------------------- | -------- | ------------------------------------------------------------------------------------------------- |
+| Custom block properties | Depends on the property type          | Yes      | The properties of the selected block in the workflow. The properties are defined on in the block. |
+| `__flows`               | [`FlowsProperties`](#flowsproperties) | Yes      | Object containing Flows properties for the block.                                                 |
 
 ---
 
@@ -424,7 +425,7 @@ The response returned by [`fetchWorkflows()`](#fetchworkflows).
 
 | Name        | Type                      | Notes                                    |
 | ----------- | ------------------------- | ---------------------------------------- |
-| `workflows` | [Workflow](#workflow)`[]` | Array of workflows for the current user. |
+| `workflows` | [`Workflow[]`](#workflow) | Array of workflows for the current user. |
 
 ---
 
@@ -432,20 +433,20 @@ The response returned by [`fetchWorkflows()`](#fetchworkflows).
 
 Represents a workflow and its state for the current user.
 
-| Name              | Type                                    | Required | Notes                                                  |
-| ----------------- | --------------------------------------- | -------- | ------------------------------------------------------ |
-| `id`              | `string`                                | Yes      | The ID of the workflow.                                |
-| `workflow_status` | [WorkflowStatus](#workflowstatus)       | Yes      | The publish status of the workflow.                    |
-| `frequency`       | [WorkflowFrequency](#workflowfrequency) | Yes      | How often the workflow can be entered.                 |
-| `user_state`      | [WorkflowUserState](#workflowuserstate) | Yes      | The current user's state in the workflow.              |
-| `entered_at`      | `string`                                | No       | ISO date string of when the user entered the workflow. |
-| `exited_at`       | `string`                                | No       | ISO date string of when the user exited the workflow.  |
+| Name              | Type                                      | Required | Notes                                                  |
+| ----------------- | ----------------------------------------- | -------- | ------------------------------------------------------ |
+| `id`              | `string`                                  | Yes      | The ID of the workflow.                                |
+| `workflow_status` | [`WorkflowStatus`](#workflowstatus)       | Yes      | The publish status of the workflow.                    |
+| `frequency`       | [`WorkflowFrequency`](#workflowfrequency) | Yes      | How often the workflow can be entered.                 |
+| `user_state`      | [`WorkflowUserState`](#workflowuserstate) | Yes      | The current user's state in the workflow.              |
+| `entered_at`      | `string`                                  | No       | ISO date string of when the user entered the workflow. |
+| `exited_at`       | `string`                                  | No       | ISO date string of when the user exited the workflow.  |
 
 ---
 
 #### WorkflowStatus
 
-The publish status of a workflow. Returned in the [Workflow](#workflow) object.
+The publish status of a workflow. Returned in the [`Workflow`](#workflow) object.
 
 - `"enabled"` - The workflow is published and active.
 - `"launchpad-enabled"` - The workflow is published, active, and inside an active launchpad group.
@@ -454,7 +455,7 @@ The publish status of a workflow. Returned in the [Workflow](#workflow) object.
 
 #### WorkflowFrequency
 
-How often a workflow can be entered by a user. Returned in the [Workflow](#workflow) object.
+How often a workflow can be entered by a user. Returned in the [`Workflow`](#workflow) object.
 
 - `"once"` - The workflow can only be entered once.
 - `"every-time"` - The workflow can be entered every time.
@@ -463,12 +464,41 @@ How often a workflow can be entered by a user. Returned in the [Workflow](#workf
 
 #### WorkflowUserState
 
-The current user's state in a workflow. Returned in the [Workflow](#workflow) object.
+The current user's state in a workflow. Returned in the [`Workflow`](#workflow) object.
 
 - `"not-started"` - The user has not entered the workflow.
 - `"in-progress"` - The user is currently in the workflow.
 - `"completed"` - The user has completed the workflow.
 - `"stopped"` - The user has been stopped in the workflow (e.g., by a workflow migration).
+
+---
+
+#### OnNavigate
+
+Handler type for intercepting internal link clicks inside Flows components. Passed as the `onNavigate` option to [init()](#init).
+
+```ts
+type OnNavigate = (href: string, event: PointerEvent) => void;
+```
+
+| Name    | Type                                                                            | Notes                                                                                                                                                  |
+| ------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `href`  | `string`                                                                        | The destination URL. Can be an absolute path (e.g. `/about`) or a relative URL (e.g. `?q=1`). Only called for internal links not opening in a new tab. |
+| `event` | [`PointerEvent`](https://developer.mozilla.org/en-US/docs/Web/API/PointerEvent) | The pointer event that triggered the navigation. Call `event.preventDefault()` to prevent a full page reload.                                          |
+
+```js title="main.js"
+import { init } from "@flows/js";
+
+init({
+  organizationId: "your-organization-id",
+  environment: "production",
+  userId: "your-user-id",
+  onNavigate: (href, event) => {
+    event.preventDefault();
+    router.navigate(href); // your client-side router
+  },
+});
+```
 
 ---
 

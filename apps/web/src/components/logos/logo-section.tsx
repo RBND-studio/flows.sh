@@ -1,4 +1,4 @@
-// cSpell:words Ideoz
+// cSpell:words Ideoz Modelve
 import { Section } from "components/ui";
 import { ApifyLogo } from "./apify";
 import { AtmosLogo } from "./atmos";
@@ -8,6 +8,7 @@ import { Flex } from "@flows/styled-system/jsx";
 import { css } from "@flows/styled-system/css";
 import { SagaLogo } from "./saga";
 import { IdeozLogo } from "./ideoz";
+import { ModelveLogo } from "./modelve";
 
 const logos = [
   {
@@ -21,6 +22,10 @@ const logos = [
   {
     name: "CRMChat",
     logo: CRMChatLogo,
+  },
+  {
+    name: "Modelve",
+    logo: ModelveLogo,
   },
   {
     name: "Atmos",
