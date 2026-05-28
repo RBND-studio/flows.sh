@@ -6,13 +6,20 @@ export const DocsLink = (props: LinkProps): JSX.Element => {
   return (
     <Link
       className={css({
-        fontWeight: "600!",
-        borderBottomWidth: "2px!",
-        borderBottomColor: "newBorder.primary!",
-        textDecoration: "none!",
-        _hover: {
-          opacity: "1!",
-          borderBottomWidth: "3px!",
+        "&:not(:has(code))": {
+          fontWeight: "600!",
+          borderBottomWidth: "2px!",
+          borderBottomColor: "newBorder.primary!",
+          textDecoration: "none!",
+          _hover: {
+            borderBottomWidth: "3px!",
+          },
+        },
+        "&:has(code)": {
+          textDecoration: "underline",
+          textDecorationColor: "newBorder.primary",
+          textDecorationThickness: "1.5px",
+          textUnderlineOffset: "3px",
         },
       })}
       {...props}
