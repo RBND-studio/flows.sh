@@ -97,6 +97,8 @@ export const links = (domain = "flows.sh") =>
       announcementBanner: "https://announcement-banner.examples.flows.sh",
       announcementBannerSource:
         "https://github.com/RBND-studio/flows.sh/tree/main/examples/announcement-banner",
+      tooltip: "https://tooltip.examples.flows.sh",
+      tooltipSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/tooltip",
       // --PLOP_NEW_EXAMPLE_LINK--
     },
     docs: {

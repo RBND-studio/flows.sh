@@ -19,6 +19,7 @@ import { pmfSurveyContent } from "./pmf-survey/content";
 import { csatSurveyContent } from "./csat-survey/content";
 import { cesSurveyContent } from "./ces-survey/content";
 import { announcementBannerContent } from "./announcement-banner/content";
+import { tooltipContent } from "./tooltip/content";
 // --PLOP_NEW_EXAMPLE_IMPORT--
 import { type ContentType } from "./types";
 
@@ -27,6 +28,7 @@ export const examplesContent: ContentType[] = [
   embeddedTipsContent,
   enterpriseUpsellContent,
   floatingChecklistContent,
+  tooltipContent,
   featureAnnouncementContent,
   featureHintContent,
   onboardingHubContent,
