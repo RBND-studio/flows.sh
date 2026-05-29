@@ -19,30 +19,36 @@ import { pmfSurveyContent } from "./pmf-survey/content";
 import { csatSurveyContent } from "./csat-survey/content";
 import { cesSurveyContent } from "./ces-survey/content";
 import { announcementBannerContent } from "./announcement-banner/content";
+import { inAppChangelogContent } from "./in-app-changelog/content";
+import { tooltipContent } from "./tooltip/content";
 // --PLOP_NEW_EXAMPLE_IMPORT--
 import { type ContentType } from "./types";
 
 export const examplesContent: ContentType[] = [
-  cardContent,
-  embeddedTipsContent,
-  enterpriseUpsellContent,
+  tourContent,
   floatingChecklistContent,
+  tooltipContent,
   featureAnnouncementContent,
   featureHintContent,
   onboardingHubContent,
-  hintContent,
-  interactiveFeatureAnnouncementContent,
-  modalContent,
-  newFeatureCardContent,
-  newFeatureContent,
-  tourContent,
-  productHuntLaunchAnnouncementContent,
   gettingStartedDashboardContent,
+  modalContent,
+  featureAnnouncementContent,
+  interactiveFeatureAnnouncementContent,
+  inAppChangelogContent,
+  announcementBannerContent,
+  npsSurveyContent,
   surveyPopoverContent,
   pmfSurveyContent,
   csatSurveyContent,
-  npsSurveyContent,
   cesSurveyContent,
-  announcementBannerContent,
+  featureHintContent,
+  hintContent,
+  embeddedTipsContent,
+  newFeatureCardContent,
+  newFeatureContent,
+  enterpriseUpsellContent,
+  cardContent,
+  productHuntLaunchAnnouncementContent,
   // --PLOP_NEW_EXAMPLE_CONTENT--
 ];
