@@ -1,21 +1,25 @@
 import { Flex } from "@flows/styled-system/jsx";
-import { cardContent } from "app/examples/card/content";
-import { embeddedTipsContent } from "app/examples/embedded-tips/content";
-import { enterpriseUpsellContent } from "app/examples/enterprise-upsell/content";
+import { announcementBannerContent } from "app/examples/announcement-banner/content";
 import { ExampleCard } from "app/examples/example-card";
+import { featureAnnouncementContent } from "app/examples/feature-announcement/content";
+import { featureHintContent } from "app/examples/feature-hint/content";
 import { floatingChecklistContent } from "app/examples/floating-checklist/content";
+import { gettingStartedDashboardContent } from "app/examples/getting-started-dashboard/content";
 import { hintContent } from "app/examples/hint/content";
-import { newFeatureCardContent } from "app/examples/new-feature-card/content";
-import { surveyPopoverContent } from "app/examples/survey-popover/content";
+import { inAppChangelogContent } from "app/examples/in-app-changelog/content";
+import { interactiveFeatureAnnouncementContent } from "app/examples/interactive-feature-announcement/content";
+import { modalContent } from "app/examples/modal/content";
+import { npsSurveyContent } from "app/examples/nps-survey/content";
+import { onboardingHubContent } from "app/examples/onboarding-hub/content";
 import { tourContent } from "app/examples/tour/content";
 import { type ReactElement } from "react";
 import { routes } from "routes";
 
 const examples = {
-  firstRow: [enterpriseUpsellContent, tourContent],
-  secondRow: [floatingChecklistContent, cardContent],
-  thirdRow: [embeddedTipsContent, hintContent],
-  fourthRow: [newFeatureCardContent, surveyPopoverContent],
+  firstRow: [tourContent, inAppChangelogContent, npsSurveyContent],
+  secondRow: [floatingChecklistContent, featureAnnouncementContent, featureHintContent],
+  thirdRow: [onboardingHubContent, modalContent, announcementBannerContent],
+  fourthRow: [gettingStartedDashboardContent, interactiveFeatureAnnouncementContent, hintContent],
 };
 
 export const ExampleCardsGrid = (): ReactElement => {
