@@ -20,9 +20,14 @@ export const CopyMarkdown: FC<Props> = ({ markdownUrl }) => {
     setLoading(true);
 
     try {
+      const baseUrl = new URL(window.location.origin);
+      const targetUrl = new URL(markdownUrl, window.location.origin);
+
+      if (targetUrl.origin !== baseUrl.origin) throw new Error("Invalid URL");
+
       await navigator.clipboard.write([
         new ClipboardItem({
-          "text/plain": fetch(markdownUrl).then(async (res) => {
+          "text/plain": fetch(targetUrl).then(async (res) => {
             const content = await res.text();
             cache.set(markdownUrl, content);
 
