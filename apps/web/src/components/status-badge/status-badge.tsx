@@ -1,13 +1,22 @@
+"use client";
+
 import { cva, css } from "@flows/styled-system/css";
 import { links } from "lib/links";
-import { type ReactNode } from "react";
+import type { FC } from "react";
+import { useEffect, useState } from "react";
 import { Text } from "ui";
 
 import type { IncidentStatusResponse } from "./incident-types";
-import { Check16, Close16, Exclamation16 } from "icons";
+import { Check16, Close16, Exclamation16, QuestionMark16 } from "icons";
 import { Flex } from "@flows/styled-system/jsx";
 
-type StatusLevel = "operational" | "degraded" | "partial_outage" | "outage" | "maintenance";
+type StatusLevel =
+  | "operational"
+  | "degraded"
+  | "partial_outage"
+  | "outage"
+  | "maintenance"
+  | "unknown";
 
 function getStatusLevel(data: IncidentStatusResponse | null): StatusLevel {
   if (!data) return "operational";
@@ -25,19 +34,25 @@ const statusLabel: Record<StatusLevel, string> = {
   partial_outage: "Partial outage",
   outage: "Full outage",
   maintenance: "Maintenance in progress",
+  unknown: "Unknown status",
 };
 
-export const StatusBadge = async (): Promise<ReactNode> => {
-  const data = await fetch("https://statuspage.incident.io/flows/api/v1/summary", {
-    next: { revalidate: 60 },
-  })
-    .then((res) => {
-      if (!res.ok) throw new Error();
-      return res.json() as Promise<IncidentStatusResponse>;
-    })
-    .catch(() => null);
+export const StatusBadge: FC = () => {
+  const [data, setData] = useState<IncidentStatusResponse>();
 
-  const level = getStatusLevel(data);
+  useEffect(() => {
+    fetch("https://status.flows.sh/api/v1/summary")
+      .then((res) => {
+        if (!res.ok) throw new Error();
+        return res.json() as Promise<IncidentStatusResponse>;
+      })
+      .then((parsedData) => {
+        setData(parsedData);
+      })
+      .catch(() => null);
+  }, []);
+
+  const level: StatusLevel = data ? getStatusLevel(data) : "unknown";
 
   return (
     <a
@@ -102,5 +117,6 @@ const dotStyle = cva({
 const DotIcon = ({ level }: { level: StatusLevel }) => {
   if (level === "operational") return <Check16 />;
   if (level === "degraded" || level === "maintenance") return <Exclamation16 />;
+  if (level === "unknown") return <QuestionMark16 />;
   return <Close16 />;
 };

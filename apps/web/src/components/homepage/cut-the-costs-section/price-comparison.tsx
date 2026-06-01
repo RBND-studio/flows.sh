@@ -1,3 +1,5 @@
+"use client";
+
 import { Flex } from "@flows/styled-system/jsx";
 import { Appcues20, Chameleon20, Userflow20 } from "icons";
 import { type ReactNode } from "react";
