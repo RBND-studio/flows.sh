@@ -31,9 +31,9 @@ export const riverFeatures = [
             <Box
               height={24}
               width={24}
-              backgroundColor="newBg.neutral"
+              backgroundColor="bg.neutral"
               borderWidth="1px"
-              borderColor="newBorder.primary"
+              borderColor="border.primary"
               borderRadius="radius4"
               shadow="focus"
             />

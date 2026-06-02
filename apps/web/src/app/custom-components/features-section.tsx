@@ -13,7 +13,7 @@ export const FeaturesSection = (): ReactNode => {
       <Section mt={{ base: "space80", md: "space160" }} mb={{ base: "space48", md: "space96" }}>
         <Flex flexDirection="column" gap="space20" alignItems="center" maxWidth={580} mx="auto">
           <Text variant="title2xl">Shape it to your needs</Text>
-          <Text variant="bodyL" color="newFg.neutral.muted" textAlign="center">
+          <Text variant="bodyL" color="fg.neutral.muted" textAlign="center">
             Adapt Flows to any app and use case. Rely on ready-made components or build completely
             custom elements using your own design system and technologies.
           </Text>
@@ -26,8 +26,8 @@ export const FeaturesSection = (): ReactNode => {
           overflow="hidden"
           borderRadius="radius8"
           borderWidth="1px"
-          borderColor="newBorder.neutral.placeholder"
-          backgroundColor="newBorder.neutral.placeholder"
+          borderColor="border.neutral.placeholder"
+          backgroundColor="border.neutral.placeholder"
           shadow="antimetal"
           mx={{ base: 0, md: "space48" }}
           gap={1}
@@ -44,16 +44,16 @@ export const FeaturesSection = (): ReactNode => {
               bg="pane.bg.elevated"
             >
               <Text variant="titleL">Full power of code</Text>
-              <Text variant="bodyM" color="newFg.neutral.muted">
+              <Text variant="bodyM" color="fg.neutral.muted">
                 Use any technology, framework, or design system to build relevant, contextual
                 experiences that fit your product.
               </Text>
               <Box
                 borderRadius="radius6"
                 borderWidth="1px"
-                borderColor="newBorder.neutral"
+                borderColor="border.neutral"
                 mt="space16"
-                bg="newBg.neutral.muted"
+                bg="bg.neutral.muted"
               >
                 <CustomComponentExampleCode />
               </Box>
@@ -69,7 +69,7 @@ export const FeaturesSection = (): ReactNode => {
               overflow="hidden"
             >
               <Text variant="titleL">Quick start</Text>
-              <Text variant="bodyM" color="newFg.neutral.muted">
+              <Text variant="bodyM" color="fg.neutral.muted">
                 Get started quickly with pre-built components like banners, modals, and more.
               </Text>
               <ComponentsIllustration />
@@ -97,7 +97,7 @@ export const FeaturesSection = (): ReactNode => {
             position="relative"
           >
             <Text variant="titleL">Analytics</Text>
-            <Text variant="bodyM" color="newFg.neutral.muted" maxW={440}>
+            <Text variant="bodyM" color="fg.neutral.muted" maxW={440}>
               Measure the impact of your embedded content with built-in analytics to track user
               engagement and conversion rates.
             </Text>

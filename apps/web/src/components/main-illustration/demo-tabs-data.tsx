@@ -38,15 +38,15 @@ export const demoTabsData = [
             <Text mb="space4" variant="titleM">
               Get started with Acme
             </Text>
-            <Text variant="bodyXs" color="newFg.neutral.muted">
+            <Text variant="bodyXs" color="fg.neutral.muted">
               Follow these steps to get started with Acme. You can always come back to this later.
             </Text>
           </Box>
           {/* Progress bar */}
           <Flex gap="space8" alignItems="center" mb="space16">
             <Text>1/4</Text>
-            <Box bg="newBg.neutral.subtle" borderRadius="radius4" w="100%" h={8} overflow="hidden">
-              <Box w="25%" h={8} bg="newBg.primary" borderRadius="radius4" />
+            <Box bg="bg.neutral.subtle" borderRadius="radius4" w="100%" h={8} overflow="hidden">
+              <Box w="25%" h={8} bg="bg.primary" borderRadius="radius4" />
             </Box>
           </Flex>
 
@@ -55,16 +55,16 @@ export const demoTabsData = [
               key={item}
               p="space12"
               borderWidth="1px"
-              borderColor="newBorder.neutral"
+              borderColor="border.neutral"
               borderRadius="radius8"
               mb="space8"
               alignItems="center"
               gap="space6"
-              bg="newBg.neutral.muted"
+              bg="bg.neutral.muted"
             >
               {index === 0 ? (
-                <Flex borderRadius="50%" bg="newBg.primary" p="1px">
-                  <Icon color="newFg.neutral.onPrimary" icon={Check16} />
+                <Flex borderRadius="50%" bg="bg.primary" p="1px">
+                  <Icon color="fg.neutral.onPrimary" icon={Check16} />
                 </Flex>
               ) : (
                 <Box
@@ -72,12 +72,12 @@ export const demoTabsData = [
                   h={18}
                   borderRadius="50%"
                   borderWidth="2px"
-                  borderColor="newBorder.neutral"
+                  borderColor="border.neutral"
                 />
               )}
               <Text
                 textDecoration={index === 0 ? "line-through" : "none"}
-                color={index === 0 ? "newFg.neutral.muted" : "newFg.neutral"}
+                color={index === 0 ? "fg.neutral.muted" : "fg.neutral"}
               >
                 {item}
               </Text>
@@ -95,9 +95,9 @@ export const demoTabsData = [
         <Box
           height={24}
           width={24}
-          backgroundColor="newBg.neutral"
+          backgroundColor="bg.neutral"
           borderWidth="1px"
-          borderColor="newBorder.neutral"
+          borderColor="border.neutral"
           borderRadius="radius4"
           animation="highlightFadeIn 0.6s ease-in-out"
           animationDelay="0.3s"
@@ -159,28 +159,28 @@ export const demoTabsData = [
             justifyContent="center"
             overflow="hidden"
             borderWidth="1px"
-            borderColor="newBorder.neutral"
+            borderColor="border.neutral"
           >
             <Flex
               p="space8"
-              bg="newBg.neutral"
+              bg="bg.neutral"
               borderRadius="radius8"
               borderWidth="1px"
-              borderColor="newBorder.neutral"
+              borderColor="border.neutral"
               flexDirection="column"
               gap="space12"
               mb="-10px"
               shadow="newL2"
             >
               <Flex alignItems="center" gap="space4">
-                <Box w={16} h={16} borderRadius="radius4" bg="newBg.neutral.strong" />
-                <Box w={120} h={10} borderRadius="radius4" bg="newBg.neutral.subtle" />
+                <Box w={16} h={16} borderRadius="radius4" bg="bg.neutral.strong" />
+                <Box w={120} h={10} borderRadius="radius4" bg="bg.neutral.subtle" />
               </Flex>
               <Flex flexDirection="column" gap="space6">
-                <Box w={180} h={10} borderRadius="radius4" bg="newBg.neutral.subtle" />
-                <Box w={160} h={10} borderRadius="radius4" bg="newBg.neutral.subtle" />
-                <Box w={175} h={10} borderRadius="radius4" bg="newBg.neutral.subtle" />
-                <Box w={80} h={10} borderRadius="radius4" bg="newBg.neutral.subtle" />
+                <Box w={180} h={10} borderRadius="radius4" bg="bg.neutral.subtle" />
+                <Box w={160} h={10} borderRadius="radius4" bg="bg.neutral.subtle" />
+                <Box w={175} h={10} borderRadius="radius4" bg="bg.neutral.subtle" />
+                <Box w={80} h={10} borderRadius="radius4" bg="bg.neutral.subtle" />
               </Flex>
             </Flex>
           </Flex>
@@ -214,7 +214,7 @@ export const demoTabsData = [
         p="space12"
         borderWidth="1px"
         alignItems="center"
-        borderColor="newBorder.primary"
+        borderColor="border.primary"
         borderRadius="6px"
         gap="space8"
         shadow="focus"
@@ -252,17 +252,17 @@ export const demoTabsData = [
         px="space8"
         pb="space8"
         pt="space12"
-        bg="newBg.neutral"
+        bg="bg.neutral"
         borderRadius="radius4"
         borderWidth="1px"
-        borderColor="newBorder.neutral"
+        borderColor="border.neutral"
         shadow="newL1"
         opacity={0}
         animation="fadeIn 0.6s ease-in-out"
         animationFillMode="forwards"
         aria-hidden="true"
       >
-        <Box w={120} h={10} borderRadius="radius4" bg="newBg.neutral.strong" mb="space8" />
+        <Box w={120} h={10} borderRadius="radius4" bg="bg.neutral.strong" mb="space8" />
         <Box mb="space12">
           <Box
             mb="space4"
@@ -270,7 +270,7 @@ export const demoTabsData = [
             w="100%"
             h={8}
             borderRadius="radius4"
-            bg="newBg.neutral.subtle"
+            bg="bg.neutral.subtle"
           />
           <Box
             mb="space4"
@@ -278,27 +278,27 @@ export const demoTabsData = [
             w="100%"
             h={8}
             borderRadius="radius4"
-            bg="newBg.neutral.subtle"
+            bg="bg.neutral.subtle"
           />
-          <Box maxW={120} w="100%" h={8} borderRadius="radius4" bg="newBg.neutral.subtle" />
+          <Box maxW={120} w="100%" h={8} borderRadius="radius4" bg="bg.neutral.subtle" />
         </Box>
         <Flex gap="space4" alignItems="center">
           <Flex
             px="space2"
             borderWidth="1px"
-            borderColor="newBorder.neutral"
+            borderColor="border.neutral"
             borderRadius="radius4"
             gap="space4"
           >
-            <Text variant="bodyXs" color="newFg.neutral.muted">
+            <Text variant="bodyXs" color="fg.neutral.muted">
               2 hours
             </Text>
           </Flex>
           <Flex
-            bg="newBg.primary"
+            bg="bg.primary"
             gap="space4"
             alignItems="center"
-            color="newFg.neutral.onPrimary"
+            color="fg.neutral.onPrimary"
             borderRadius="radius4"
             py="1px"
             pl="space2"

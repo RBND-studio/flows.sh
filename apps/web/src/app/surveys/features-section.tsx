@@ -15,7 +15,7 @@ export const FeaturesSection = (): ReactNode => {
       <Section mt={{ base: "space80", md: "space160" }} mb={{ base: "space48", md: "space96" }}>
         <Flex flexDirection="column" gap="space20" alignItems="center" maxWidth={580} mx="auto">
           <Text variant="title2xl">Turn feedback into product decisions</Text>
-          <Text variant="bodyL" color="newFg.neutral.muted" textAlign="center">
+          <Text variant="bodyL" color="fg.neutral.muted" textAlign="center">
             Flows makes it easy to collect, analyze, and act on user feedback. Run surveys that fit
             naturally into your product and surface insights that matter.
           </Text>
@@ -28,8 +28,8 @@ export const FeaturesSection = (): ReactNode => {
           overflow="hidden"
           borderRadius="radius8"
           borderWidth="1px"
-          borderColor="newBorder.neutral.placeholder"
-          backgroundColor="newBorder.neutral.placeholder"
+          borderColor="border.neutral.placeholder"
+          backgroundColor="border.neutral.placeholder"
           shadow="antimetal"
           mx={{ base: 0, md: "space48" }}
           gap={1}
@@ -46,7 +46,7 @@ export const FeaturesSection = (): ReactNode => {
               bg="pane.bg.elevated"
             >
               <Text variant="titleL">Flexible surveys</Text>
-              <Text variant="bodyM" color="newFg.neutral.muted">
+              <Text variant="bodyM" color="fg.neutral.muted">
                 Freeform, multiple choice, number rating, emoji reactions, and link surveys.
               </Text>
               <SurveyFan />
@@ -61,7 +61,7 @@ export const FeaturesSection = (): ReactNode => {
               bg="pane.bg.elevated"
             >
               <Text variant="titleL">Ask at the right moment</Text>
-              <Text variant="bodyM" color="newFg.neutral.muted">
+              <Text variant="bodyM" color="fg.neutral.muted">
                 Trigger surveys based on user actions, page views, or time spent to catch users when
                 feedback is most relevant.
               </Text>
@@ -78,7 +78,7 @@ export const FeaturesSection = (): ReactNode => {
             bg="pane.bg.elevated"
           >
             <Text variant="titleL">Custom components</Text>
-            <Text variant="bodyM" color="newFg.neutral.muted" maxW={440}>
+            <Text variant="bodyM" color="fg.neutral.muted" maxW={440}>
               Build surveys using your own design system and components to match your product's look
               and feel.
             </Text>
@@ -115,7 +115,7 @@ export const FeaturesSection = (): ReactNode => {
             position="relative"
           >
             <Text variant="titleL">Analytics</Text>
-            <Text variant="bodyM" color="newFg.neutral.muted" maxW={440}>
+            <Text variant="bodyM" color="fg.neutral.muted" maxW={440}>
               Track response rates, score distributions, and trends over time with built-in survey
               analytics.
             </Text>

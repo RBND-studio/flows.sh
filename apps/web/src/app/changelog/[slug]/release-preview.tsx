@@ -20,14 +20,14 @@ export const ReleasePreview: FC<Props> = ({ release, variant }) => {
       href={href}
       className={css({
         borderWidth: 1,
-        borderColor: "newBorder.neutral",
+        borderColor: "border.neutral",
         borderRadius: "radius8",
         p: "space12",
         display: "block",
         fastEaseInOut: "background-color",
         cursor: "pointer",
         _hover: {
-          bg: "newBg.neutral",
+          bg: "bg.neutral",
         },
       })}
     >

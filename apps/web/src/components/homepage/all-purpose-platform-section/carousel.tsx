@@ -44,7 +44,7 @@ export const Carousel = ({ slides, emblaRef }: Props): ReactNode => {
                   display: "flex",
                   bg: "pane.bg.elevated",
                   borderWidth: "1px",
-                  borderColor: "newBorder.neutral.placeholder",
+                  borderColor: "border.neutral.placeholder",
                   borderRadius: "radius12",
                   shadow: "antimetal",
                   userSelect: "none",
@@ -53,7 +53,7 @@ export const Carousel = ({ slides, emblaRef }: Props): ReactNode => {
                   justifyContent: "space-between",
                   fastEaseInOut: "all",
                   _hover: {
-                    borderColor: "newBorder.neutral.strong",
+                    borderColor: "border.neutral.strong",
                   },
                 }),
                 "group",
@@ -71,12 +71,12 @@ export const Carousel = ({ slides, emblaRef }: Props): ReactNode => {
                   variant="titleL"
                   fastEaseInOut="color"
                   _groupHover={{
-                    color: "newFg.primary",
+                    color: "fg.primary",
                   }}
                 >
                   {item.title}
                 </Text>
-                <Text mb="space8" variant="bodyM" color="newFg.neutral.muted">
+                <Text mb="space8" variant="bodyM" color="fg.neutral.muted">
                   {item.description}
                 </Text>
               </Box>

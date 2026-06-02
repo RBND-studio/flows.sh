@@ -9,8 +9,8 @@ const items = [
   {
     title: "Sign up",
     icon: (
-      <Flex borderRadius="100%" bg="newFg.success" flexShrink={0}>
-        <Icon icon={Check16} color="newBg.neutral" />
+      <Flex borderRadius="100%" bg="fg.success" flexShrink={0}>
+        <Icon icon={Check16} color="bg.neutral" />
       </Flex>
     ),
   },
@@ -20,7 +20,7 @@ const items = [
       <Box
         borderRadius="100%"
         borderWidth={1}
-        borderColor="newBorder.neutral"
+        borderColor="border.neutral"
         height={16}
         width={16}
         flexShrink={0}
@@ -33,7 +33,7 @@ const items = [
       <Box
         borderRadius="100%"
         borderWidth={1}
-        borderColor="newBorder.neutral"
+        borderColor="border.neutral"
         height={16}
         width={16}
         flexShrink={0}
@@ -46,7 +46,7 @@ const items = [
       <Box
         borderRadius="100%"
         borderWidth={1}
-        borderColor="newBorder.neutral"
+        borderColor="border.neutral"
         height={16}
         width={16}
         flexShrink={0}
@@ -82,7 +82,7 @@ export const UserOnboardingViz = (): ReactNode => {
         p="space16"
         borderRadius="radius12"
         borderWidth={1}
-        borderColor="newBorder.neutral.placeholder"
+        borderColor="border.neutral.placeholder"
         flexDirection="column"
         gap="space8"
         shadow="l2"
@@ -95,7 +95,7 @@ export const UserOnboardingViz = (): ReactNode => {
           <Flex
             borderWidth={1}
             borderRadius="radius8"
-            borderColor="newBorder.neutral.muted"
+            borderColor="border.neutral.muted"
             p={10}
             gap="space6"
             key={item.title}
@@ -104,7 +104,7 @@ export const UserOnboardingViz = (): ReactNode => {
             <Text w="100%" variant="titleXs">
               {item.title}
             </Text>
-            <Icon icon={ChevronDown16} color="newFg.neutral.subtle" />
+            <Icon icon={ChevronDown16} color="fg.neutral.subtle" />
           </Flex>
         ))}
       </Flex>

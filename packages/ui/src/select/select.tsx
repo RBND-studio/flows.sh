@@ -78,7 +78,7 @@ function SelectInner<T extends string>({
     <Spinner size={16} />
   ) : (
     <RadixSelect.Icon asChild>
-      <Icon color={disabled ? "newControl.fg.disabled" : "newControl.fg"} icon={CaretDown16} />
+      <Icon color={disabled ? "control.fg.disabled" : "control.fg"} icon={CaretDown16} />
     </RadixSelect.Icon>
   );
   const buttonText = loading
@@ -102,7 +102,7 @@ function SelectInner<T extends string>({
             css({
               position: "relative",
               "&[data-placeholder]": {
-                color: "newControl.fg.placeholder",
+                color: "control.fg.placeholder",
               },
               "&>:last-child": {
                 flex: 1,
@@ -187,17 +187,17 @@ function SelectInner<T extends string>({
                       cursor: "default",
                       outline: "none",
                       "&[data-state=checked]": {
-                        backgroundColor: "newControl.bg.selected",
-                        _hover: { backgroundColor: "newControl.bg.selected" },
+                        backgroundColor: "control.bg.selected",
+                        _hover: { backgroundColor: "control.bg.selected" },
                       },
-                      "&[data-highlighted]": { backgroundColor: "newControl.bg.hover" },
+                      "&[data-highlighted]": { backgroundColor: "control.bg.hover" },
                       "&[data-disabled]": {
-                        color: "newControl.fg.disabled",
+                        color: "control.fg.disabled",
                         _hover: {
                           backgroundColor: "unset",
                         },
                       },
-                      "&:hover": { backgroundColor: "newControl.bg.hover" },
+                      "&:hover": { backgroundColor: "control.bg.hover" },
                     }),
                     "group",
                   )}
@@ -213,7 +213,7 @@ function SelectInner<T extends string>({
                         <Text color="inherit">{option.label ?? option.value}</Text>
                       </RadixSelect.ItemText>
                       <Text
-                        color={option.disabled ? "newControl.fg.disabled" : "newFg.neutral.muted"}
+                        color={option.disabled ? "control.fg.disabled" : "fg.neutral.muted"}
                         variant="bodyXs"
                         maxWidth="240px"
                       >
@@ -223,14 +223,14 @@ function SelectInner<T extends string>({
                   </Flex>
 
                   <RadixSelect.ItemIndicator>
-                    <Icon color="newControl.fg.selected" icon={Check16} />
+                    <Icon color="control.fg.selected" icon={Check16} />
                   </RadixSelect.ItemIndicator>
                 </RadixSelect.Item>
               </ItemWithTooltip>
             ))}
             {options.length === 0 ? (
               <Box px="space8" py="space4">
-                <Text color="newControl.fg.disabled">
+                <Text color="control.fg.disabled">
                   {noOptionsEmptyState ?? "No options available"}
                 </Text>
               </Box>

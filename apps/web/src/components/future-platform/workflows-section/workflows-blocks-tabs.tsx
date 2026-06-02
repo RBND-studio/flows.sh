@@ -21,7 +21,7 @@ export const WorkflowsBlocksTabs = ({ activeTab, onTabChange, tabs }: Props): Re
             key={tab.title}
             {...(onTabChange && { onClick: () => onTabChange(tab.title) })}
           >
-            <Box borderRadius={2} width={4} h={20} backgroundColor="newBg.neutral.strong" />
+            <Box borderRadius={2} width={4} h={20} backgroundColor="bg.neutral.strong" />
             <Text weight="600" color="inherit">
               {tab.title}
             </Text>
@@ -44,14 +44,14 @@ const button = cva({
     active: {
       true: {
         "& > div": {
-          backgroundColor: "newBg.primary",
+          backgroundColor: "bg.primary",
         },
-        color: "newFg.neutral",
+        color: "fg.neutral",
       },
       false: {
-        color: "newFg.neutral.subtle",
+        color: "fg.neutral.subtle",
         _hover: {
-          color: "newFg.neutral.muted",
+          color: "fg.neutral.muted",
         },
       },
     },

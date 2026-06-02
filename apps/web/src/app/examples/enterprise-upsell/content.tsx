@@ -61,8 +61,7 @@ export const enterpriseUpsellContent: ContentType = {
           redirect.
         </li>
         <li>
-          For plan gating - showing relevant upgrade prompts only to users who haven't yet
-          upgraded.
+          For plan gating - showing relevant upgrade prompts only to users who haven't yet upgraded.
         </li>
         <li>
           As part of a product-led growth (PLG) motion, letting the product sell the upgrade rather
@@ -106,7 +105,7 @@ export const enterpriseUpsellContent: ContentType = {
         className={css({
           borderRadius: "radius6",
           borderWidth: "1px",
-          borderColor: "newBorder.neutral",
+          borderColor: "border.neutral",
           borderStyle: "solid",
         })}
       />

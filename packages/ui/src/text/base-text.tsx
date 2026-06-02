@@ -50,7 +50,7 @@ export const BaseText = forwardRef<HTMLParagraphElement, TextProps>(function Bas
       className={cx(
         textVariants({ variant, align, weight, hideOverflow }),
         css({
-          color: color ?? "newFg.neutral",
+          color: color ?? "fg.neutral",
         }),
         props.className,
       )}

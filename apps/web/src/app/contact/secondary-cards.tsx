@@ -10,11 +10,11 @@ import { Icon, Text } from "ui";
 
 const styles = css({
   textStyle: "bodyM",
-  color: "newFg.neutral",
+  color: "fg.neutral",
   display: "inline-flex",
   gap: "space4",
   _hover: {
-    color: "newFg.neutral.muted",
+    color: "fg.neutral.muted",
   },
 });
 
@@ -42,9 +42,9 @@ const cards = [
           alignItems: "center",
           textDecoration: "none",
           gap: "space8",
-          color: "newFg.neutral",
+          color: "fg.neutral",
           _hover: {
-            color: "newFg.neutral.muted",
+            color: "fg.neutral.muted",
           },
         })}
       >
@@ -82,7 +82,7 @@ export const SecondaryCardsSection = (): ReactNode => {
       mb="space120"
       outerClassName={css({
         borderBottomWidth: "1px",
-        borderBottomColor: "newBorder.neutral.muted",
+        borderBottomColor: "border.neutral.muted",
       })}
     >
       <Grid
@@ -101,7 +101,7 @@ export const SecondaryCardsSection = (): ReactNode => {
             <Text as="h2" variant="titleL" mb="space8">
               {card.title}
             </Text>
-            <Text mb="space12" color="newFg.neutral.muted" variant="bodyM" textWrap="balance">
+            <Text mb="space12" color="fg.neutral.muted" variant="bodyM" textWrap="balance">
               {card.description}
             </Text>
             {card.component}

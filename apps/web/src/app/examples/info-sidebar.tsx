@@ -45,7 +45,7 @@ export const InfoSidebar = ({ links: linksProp, framework, tags }: InfoSidebarPr
 const Link = ({ href, children, icon }): ReactNode => {
   return (
     <Flex textWrap="nowrap" alignItems="center" gap="space8">
-      <Icon color="newFg" icon={icon} />
+      <Icon color="fg" icon={icon} />
       <a target="_blank" className={css({ textStyle: "bodyM" })} href={href} rel="noopener">
         {children}
       </a>

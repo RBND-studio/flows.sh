@@ -28,12 +28,12 @@ const MobileSidebar = ({ sidebarTooltipSlot, sidebarBannerSlot }: Props): JSX.El
   return (
     <Box aria-hidden="true" display="none" mdDown={{ display: "unset" }}>
       <Flex alignItems="center" gap="space8">
-        <Box height={24} width={24} backgroundColor="newFg.neutral.muted" borderRadius="radius4" />
+        <Box height={24} width={24} backgroundColor="fg.neutral.muted" borderRadius="radius4" />
         <Box
           height={10}
           maxWidth={68}
           width="100%"
-          backgroundColor="newBg.neutral.strong"
+          backgroundColor="bg.neutral.strong"
           borderRadius="radius4"
           mr="auto"
         />
@@ -43,9 +43,9 @@ const MobileSidebar = ({ sidebarTooltipSlot, sidebarBannerSlot }: Props): JSX.El
           <Box
             height={24}
             width={24}
-            backgroundColor="newBg.neutral"
+            backgroundColor="bg.neutral"
             borderWidth="1px"
-            borderColor="newBorder.neutral"
+            borderColor="border.neutral"
             borderRadius="radius4"
           />
         )}
@@ -71,7 +71,7 @@ const DesktopSidebar = ({ sidebarTooltipSlot, sidebarBannerSlot }: Props): JSX.E
         <Box
           height={24}
           width={24}
-          backgroundColor="newFg.neutral.muted"
+          backgroundColor="fg.neutral.muted"
           borderRadius="radius4"
           flexShrink={0}
         />
@@ -79,7 +79,7 @@ const DesktopSidebar = ({ sidebarTooltipSlot, sidebarBannerSlot }: Props): JSX.E
           height={10}
           maxWidth={62}
           width="100%"
-          backgroundColor="newBg.neutral.strong"
+          backgroundColor="bg.neutral.strong"
           borderRadius="radius4"
           mr="auto"
         />
@@ -89,9 +89,9 @@ const DesktopSidebar = ({ sidebarTooltipSlot, sidebarBannerSlot }: Props): JSX.E
           <Box
             height={24}
             width={24}
-            backgroundColor="newBg.neutral"
+            backgroundColor="bg.neutral"
             borderWidth="1px"
-            borderColor="newBorder.neutral"
+            borderColor="border.neutral"
             borderRadius="radius4"
             flexShrink={0}
           />
@@ -103,14 +103,14 @@ const DesktopSidebar = ({ sidebarTooltipSlot, sidebarBannerSlot }: Props): JSX.E
             height={10}
             maxWidth={85}
             width="100%"
-            backgroundColor="newBg.neutral.strong"
+            backgroundColor="bg.neutral.strong"
             borderRadius="radius4"
           />
           <Box
             height={10}
             maxWidth={112}
             width="100%"
-            backgroundColor="newBg.neutral.strong"
+            backgroundColor="bg.neutral.strong"
             borderRadius="radius4"
           />
         </Flex>
@@ -120,28 +120,28 @@ const DesktopSidebar = ({ sidebarTooltipSlot, sidebarBannerSlot }: Props): JSX.E
             height={8}
             maxWidth={76}
             width="100%"
-            backgroundColor="newBg.neutral.subtle"
+            backgroundColor="bg.neutral.subtle"
             borderRadius="radius4"
           />
           <Box
             height={10}
             maxWidth={90}
             width="100%"
-            backgroundColor="newBg.neutral.strong"
+            backgroundColor="bg.neutral.strong"
             borderRadius="radius4"
           />
           <Box
             height={10}
             maxWidth={110}
             width="100%"
-            backgroundColor="newBg.neutral.strong"
+            backgroundColor="bg.neutral.strong"
             borderRadius="radius4"
           />
           <Box
             height={10}
             maxWidth={96}
             width="100%"
-            backgroundColor="newBg.neutral.strong"
+            backgroundColor="bg.neutral.strong"
             borderRadius="radius4"
           />
         </Flex>
@@ -150,70 +150,70 @@ const DesktopSidebar = ({ sidebarTooltipSlot, sidebarBannerSlot }: Props): JSX.E
             height={8}
             maxWidth={88}
             width="100%"
-            backgroundColor="newBg.neutral.subtle"
+            backgroundColor="bg.neutral.subtle"
             borderRadius="radius4"
           />
           <Box
             height={10}
             maxWidth={98}
             width="100%"
-            backgroundColor="newBg.neutral.strong"
+            backgroundColor="bg.neutral.strong"
             borderRadius="radius4"
           />
           <Box
             height={10}
             maxWidth={94}
             width="100%"
-            backgroundColor="newBg.neutral.strong"
+            backgroundColor="bg.neutral.strong"
             borderRadius="radius4"
           />
           <Box
             height={10}
             maxWidth={102}
             width="100%"
-            backgroundColor="newBg.neutral.strong"
+            backgroundColor="bg.neutral.strong"
             borderRadius="radius4"
           />
           <Box
             height={10}
             maxWidth={106}
             width="100%"
-            backgroundColor="newBg.neutral.strong"
+            backgroundColor="bg.neutral.strong"
             borderRadius="radius4"
           />
           <Box
             height={10}
             maxWidth={80}
             width="100%"
-            backgroundColor="newBg.neutral.strong"
+            backgroundColor="bg.neutral.strong"
             borderRadius="radius4"
           />
           <Box
             height={10}
             maxWidth={88}
             width="100%"
-            backgroundColor="newBg.neutral.strong"
+            backgroundColor="bg.neutral.strong"
             borderRadius="radius4"
           />
           <Box
             height={10}
             maxWidth={98}
             width="100%"
-            backgroundColor="newBg.neutral.strong"
+            backgroundColor="bg.neutral.strong"
             borderRadius="radius4"
           />
           <Box
             height={10}
             maxWidth={92}
             width="100%"
-            backgroundColor="newBg.neutral.strong"
+            backgroundColor="bg.neutral.strong"
             borderRadius="radius4"
           />
           <Box
             height={10}
             maxWidth={72}
             width="100%"
-            backgroundColor="newBg.neutral.strong"
+            backgroundColor="bg.neutral.strong"
             borderRadius="radius4"
           />
         </Flex>

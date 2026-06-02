@@ -31,7 +31,7 @@ export const SmallDemoIllustration = (): ReactNode => {
       position="relative"
       borderRadius="radius16"
       borderWidth={1}
-      borderColor="newBorder.neutral.placeholder"
+      borderColor="border.neutral.placeholder"
       background="special.glassMorph"
       backdropFilter="blur(4px)"
       mb="space40"
@@ -40,7 +40,7 @@ export const SmallDemoIllustration = (): ReactNode => {
         flexDirection="column"
         borderRadius="radius8"
         borderWidth="1px"
-        borderColor="newBorder.neutral"
+        borderColor="border.neutral"
         overflow="hidden"
         height="100%"
       >

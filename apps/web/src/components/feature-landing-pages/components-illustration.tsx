@@ -29,7 +29,7 @@ export const ComponentsIllustration = (): JSX.Element => {
       >
         <Box
           mt="space4"
-          backgroundColor="newBg.primary"
+          backgroundColor="bg.primary"
           borderRadius="50%"
           aria-hidden="true"
           width={16}
@@ -43,11 +43,11 @@ export const ComponentsIllustration = (): JSX.Element => {
             top: 0,
             left: 0,
             borderRadius: "50%",
-            backgroundColor: "newBg.primary",
+            backgroundColor: "bg.primary",
             animation: "ping 1.5s infinite",
           }}
         >
-          <Box width={14} height={14} backgroundColor="newBg.primary" borderRadius="100%" />
+          <Box width={14} height={14} backgroundColor="bg.primary" borderRadius="100%" />
         </Box>
         <Box width={176} pt="space12" right={0} md={{ right: "unset" }}>
           <PlaceholderTooltip

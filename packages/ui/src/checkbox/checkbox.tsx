@@ -42,7 +42,7 @@ export const Checkbox = forwardRef<React.ElementRef<typeof CheckboxPrimitive.Roo
         <CheckboxPrimitive.Indicator
           className={css({
             display: "grid",
-            color: "newControl.fg",
+            color: "control.fg",
             height: "100%",
             position: "relative",
           })}
@@ -80,30 +80,30 @@ const checkbox = cva({
     width: "18px",
     height: "18px",
     borderRadius: "5px",
-    backgroundColor: "newControl.bg",
+    backgroundColor: "control.bg",
     borderWidth: 1,
     borderStyle: "solid",
-    borderColor: "newControl.border",
+    borderColor: "control.border",
     cursor: "pointer",
     fastEaseInOut: "all",
     flexShrink: 0,
 
     _hover: {
-      borderColor: "newControl.border.hover",
+      borderColor: "control.border.hover",
     },
     _disabled: {
-      backgroundColor: "newControl.bg.disabled",
-      borderColor: "newControl.border.disabled",
+      backgroundColor: "control.bg.disabled",
+      borderColor: "control.border.disabled",
       cursor: "default",
       pointerEvents: "none",
 
       _hover: {
-        borderColor: "newControl.border.disabled",
+        borderColor: "control.border.disabled",
       },
 
       "&>span": {
-        backgroundColor: "newControl.bg.disabled",
-        color: "newControl.fg.disabled",
+        backgroundColor: "control.bg.disabled",
+        color: "control.fg.disabled",
       },
     },
   },

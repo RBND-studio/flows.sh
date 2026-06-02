@@ -31,7 +31,7 @@ export const RiverItem = ({ title, description, visual }: Props): ReactNode => {
         <Text as="h3" mb="space12" variant="title2xl">
           {title}
         </Text>
-        <Text color="newFg.neutral.muted" variant="bodyL">
+        <Text color="fg.neutral.muted" variant="bodyL">
           {description}
         </Text>
       </Box>
@@ -44,7 +44,7 @@ export const RiverItem = ({ title, description, visual }: Props): ReactNode => {
         height={330}
         outlineStyle="solid"
         outlineWidth="1px"
-        outlineColor="newBorder.neutral"
+        outlineColor="border.neutral"
         borderRadius="radius8"
         overflow="hidden"
         shadow="antimetal"

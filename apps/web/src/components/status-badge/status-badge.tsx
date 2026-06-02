@@ -69,13 +69,13 @@ export const StatusBadge: FC = () => {
         pr: "space8",
         borderRadius: "radius6",
         fastEaseInOut: "background",
-        _hover: { bg: "newBg.neutral.subtle" },
+        _hover: { bg: "bg.neutral.subtle" },
       })}
     >
       <Flex className={dotStyle({ level })}>
         <DotIcon level={level} />
       </Flex>
-      <Text variant="bodyS" color="newFg.neutral.muted">
+      <Text variant="bodyS" color="fg.neutral.muted">
         {statusLabel[level]}
       </Text>
     </a>
@@ -86,7 +86,7 @@ const dotStyle = cva({
   base: {
     borderRadius: "50%",
     flexShrink: 0,
-    color: "newFg.neutral.onBlack",
+    color: "fg.neutral.onBlack",
     position: "relative",
     _after: {
       content: '""',
@@ -104,12 +104,12 @@ const dotStyle = cva({
   },
   variants: {
     level: {
-      operational: { bg: "newFg.success", _after: { bg: "newFg.success" } },
-      degraded: { bg: "newFg.warning.light", _after: { bg: "newFg.warning.light" } },
-      partial_outage: { bg: "newFg.danger", _after: { bg: "newFg.danger" } },
-      outage: { bg: "newFg.danger", _after: { bg: "newFg.danger" } },
-      maintenance: { bg: "newFg.primary", _after: { bg: "newFg.primary" } },
-      unknown: { bg: "newFg.neutral.muted", _after: { bg: "newFg.neutral.muted" } },
+      operational: { bg: "fg.success", _after: { bg: "fg.success" } },
+      degraded: { bg: "fg.warning.light", _after: { bg: "fg.warning.light" } },
+      partial_outage: { bg: "fg.danger", _after: { bg: "fg.danger" } },
+      outage: { bg: "fg.danger", _after: { bg: "fg.danger" } },
+      maintenance: { bg: "fg.primary", _after: { bg: "fg.primary" } },
+      unknown: { bg: "fg.neutral.muted", _after: { bg: "fg.neutral.muted" } },
     },
   },
 });

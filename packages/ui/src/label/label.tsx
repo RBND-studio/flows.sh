@@ -22,7 +22,7 @@ export const Label = forwardRef<HTMLLabelElement, Props>(function Label(
       className={cx(
         css({
           textStyle: "bodyXs",
-          color: disabled ? "newControl.fg.disabled" : "newControl.fg",
+          color: disabled ? "control.fg.disabled" : "control.fg",
           fontWeight: "550",
         }),
         className,
@@ -35,7 +35,7 @@ export const Label = forwardRef<HTMLLabelElement, Props>(function Label(
         <Text
           as="span"
           className={css({ ml: "space4" })}
-          color={disabled ? "newControl.fg.disabled" : "newFg.neutral.subtle"}
+          color={disabled ? "control.fg.disabled" : "fg.neutral.subtle"}
           variant="bodyXxs"
         >
           (optional)

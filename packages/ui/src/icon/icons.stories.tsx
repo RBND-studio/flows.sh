@@ -40,7 +40,7 @@ export function Default(): JSX.Element {
                 gap="space16"
                 padding="space16"
               >
-                <Icon color="newFg.neutral.muted" icon={IconComponent} />
+                <Icon color="fg.neutral.muted" icon={IconComponent} />
                 <Text variant="bodyXs">{key}</Text>
               </Box>
             ))}

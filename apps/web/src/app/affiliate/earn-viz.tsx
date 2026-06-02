@@ -31,7 +31,7 @@ export const EarnViz = (): ReactNode => {
         p="space16"
         borderRadius="radius8"
         borderWidth="1px"
-        borderColor="newBorder.neutral"
+        borderColor="border.neutral"
         shadow="l2"
         flexDirection="column"
         gap="space8"
@@ -39,16 +39,16 @@ export const EarnViz = (): ReactNode => {
         bg="pane.bg"
       >
         <Text variant="titleS">Earnings</Text>
-        <Text variant="bodyXs" color="newFg.neutral.muted" mb="space24">
+        <Text variant="bodyXs" color="fg.neutral.muted" mb="space24">
           $2,579.48
         </Text>
 
         <Chart />
         <Flex justifyContent="space-between" alignItems="center">
-          <Text variant="bodyXxs" color="newFg.neutral.subtle">
+          <Text variant="bodyXxs" color="fg.neutral.subtle">
             Jan 2025
           </Text>
-          <Text variant="bodyXxs" color="newFg.neutral.subtle">
+          <Text variant="bodyXxs" color="fg.neutral.subtle">
             Dec 2025
           </Text>
         </Flex>

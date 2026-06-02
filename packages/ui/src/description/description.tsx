@@ -10,10 +10,10 @@ type Props = {
   hideOverflow?: boolean;
 };
 
-export const Description: FC<Props> = ({ color = "newFg.neutral.muted", ...props }) => {
+export const Description: FC<Props> = ({ color = "fg.neutral.muted", ...props }) => {
   return (
     <Text
-      color={props.disabled ? "newFg.neutral.subtle" : color}
+      color={props.disabled ? "fg.neutral.subtle" : color}
       tooltipSide="left"
       variant="bodyXxs"
       {...props}

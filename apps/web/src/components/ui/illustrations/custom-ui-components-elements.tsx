@@ -12,7 +12,7 @@ export const NormalTooltip = (): ReactNode => {
     <Flex
       backgroundColor="pane.bg.elevated"
       borderRadius="6px"
-      borderColor="newBorder.neutral"
+      borderColor="border.neutral"
       borderWidth="1px"
       width="100%"
       maxWidth={180}
@@ -23,7 +23,7 @@ export const NormalTooltip = (): ReactNode => {
       gap="space4"
     >
       <Text variant="titleM">Begin your journey</Text>
-      <Text variant="bodyXs" color="newFg.neutral.muted">
+      <Text variant="bodyXs" color="fg.neutral.muted">
         We’ve put together a few tips to help you get started.
       </Text>
       <Flex width="100%" alignItems="center" justifyContent="space-between">
@@ -152,7 +152,7 @@ export const SaleDialog = (): ReactNode => {
     <Flex
       backgroundColor="pane.bg.elevated"
       borderRadius="6px"
-      borderColor="newBorder.neutral"
+      borderColor="border.neutral"
       borderWidth="1px"
       width="100%"
       maxWidth={180}
@@ -175,7 +175,7 @@ export const SaleDialog = (): ReactNode => {
           borderRadius: "6px",
         })}
       />
-      <Text variant="bodyXs" color="newFg.neutral.muted" textAlign="center">
+      <Text variant="bodyXs" color="fg.neutral.muted" textAlign="center">
         We have a lot of cool discounts and offers.
       </Text>
       <Box

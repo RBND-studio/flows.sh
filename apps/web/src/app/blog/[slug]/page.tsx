@@ -94,12 +94,12 @@ export default async function BlogDetailPage(props: PostProps): Promise<ReactEle
               borderRadius: "radius8",
               borderWidth: 1,
               borderStyle: "solid",
-              borderColor: "newBorder.neutral",
+              borderColor: "border.neutral",
               mt: "space32",
             })}
           />
         ) : null}
-        <Text className={css({ mt: "space16" })} color="newFg.neutral.subtle" variant="bodyM">
+        <Text className={css({ mt: "space16" })} color="fg.neutral.subtle" variant="bodyM">
           <span>{post.author}</span>
           <span>{` • `}</span>
           <span>

@@ -77,7 +77,7 @@ const Item = ({ item }: ItemProps): ReactNode => {
             position="absolute"
             padding="space4"
             borderWidth="1px"
-            borderColor="newBorder.neutral.placeholder"
+            borderColor="border.neutral.placeholder"
             background="special.glassMorph"
             backdropFilter="blur(4px)"
             top="calc(100% + 12px)"
@@ -108,15 +108,15 @@ const Item = ({ item }: ItemProps): ReactNode => {
                           pr: "space12",
                           py: "space8",
                           fastEaseInOut: "all",
-                          _hover: { backgroundColor: "newBg.neutral.subtle" },
+                          _hover: { backgroundColor: "bg.neutral.subtle" },
                         })}
                       >
                         <Flex
                           p="space12"
                           borderRadius="radius6"
                           borderWidth="1px"
-                          borderColor="newBorder.neutral"
-                          backgroundColor="newBg.neutral"
+                          borderColor="border.neutral"
+                          backgroundColor="bg.neutral"
                         >
                           <Icon icon={subItem.icon} />
                         </Flex>
@@ -124,7 +124,7 @@ const Item = ({ item }: ItemProps): ReactNode => {
                           <Text variant="bodyS" weight="700">
                             {subItem.title}
                           </Text>
-                          <Text color="newFg.neutral.muted">{subItem.description}</Text>
+                          <Text color="fg.neutral.muted">{subItem.description}</Text>
                         </Flex>
                       </Link>
                     </NavigationMenuLink>
@@ -145,13 +145,13 @@ const MainItemCss = css({
   px: "space8",
   fastEaseInOut: "all",
   borderRadius: "radius8",
-  color: "newFg.neutral.muted",
+  color: "fg.neutral.muted",
   alignItems: "center",
   gap: "space4",
   zIndex: 1,
   cursor: "pointer",
   _hover: {
-    color: "newFg.neutral",
+    color: "fg.neutral",
     backgroundColor: "special.translucentHover",
   },
   "&[data-state=open] > svg": {

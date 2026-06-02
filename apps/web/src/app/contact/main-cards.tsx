@@ -19,10 +19,10 @@ const mainCards = [
           alignItems: "center",
           textDecoration: "none",
           gap: "space8",
-          color: "newFg.neutral",
+          color: "fg.neutral",
           mt: "space6",
           _hover: {
-            color: "newFg.neutral.muted",
+            color: "fg.neutral.muted",
           },
         })}
         href={links.scheduleCall}
@@ -50,10 +50,10 @@ const mainCards = [
           alignItems: "center",
           textDecoration: "none",
           gap: "space8",
-          color: "newFg.neutral",
+          color: "fg.neutral",
           mt: "space6",
           _hover: {
-            color: "newFg.neutral.muted",
+            color: "fg.neutral.muted",
           },
         })}
       >
@@ -105,19 +105,19 @@ export const MainCardsSection = (): ReactNode => {
             direction="column"
             p="space32"
             borderWidth="1px"
-            borderColor="newBorder.neutral.placeholder"
+            borderColor="border.neutral.placeholder"
             bg="pane.bg.elevated"
             borderRadius="radius12"
             shadow="antimetal"
             alignItems="flex-start"
           >
             <Flex gap="space8" alignItems="center" mb="space12">
-              <Icon icon={card.icon} color="newFg.neutral" />
+              <Icon icon={card.icon} color="fg.neutral" />
               <Text as="h2" variant="titleL">
                 {card.title}
               </Text>
             </Flex>
-            <Text mb="space16" color="newFg.neutral.muted" variant="bodyM">
+            <Text mb="space16" color="fg.neutral.muted" variant="bodyM">
               {card.description}
             </Text>
             {card.component}

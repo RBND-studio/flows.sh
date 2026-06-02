@@ -21,7 +21,7 @@ export const Toaster: FC = () => {
             px: "space16",
             borderWidth: "1px",
             borderStyle: "solid",
-            borderColor: "newBorder.neutral",
+            borderColor: "border.neutral",
             textStyle: "bodyS",
             display: "flex",
             gap: "space8",
@@ -31,47 +31,47 @@ export const Toaster: FC = () => {
               justifyContent: "center",
             },
             backgroundColor: "pane.bg.elevated",
-            color: "newFg.neutral",
+            color: "fg.neutral",
           }),
           title: css({
             textStyle: "bodyS!",
             fontWeight: "600!",
           }),
           description: css({
-            color: "newFg.neutral.muted!",
+            color: "fg.neutral.muted!",
           }),
           success: css({
-            backgroundColor: "newBg.success.muted",
-            borderColor: "newBorder.success.subtle",
+            backgroundColor: "bg.success.muted",
+            borderColor: "border.success.subtle",
 
             "& div svg": {
-              color: "newFg.success",
+              color: "fg.success",
             },
           }),
           warning: css({
-            backgroundColor: "newBg.warning.muted",
-            borderColor: "newBorder.warning.subtle",
+            backgroundColor: "bg.warning.muted",
+            borderColor: "border.warning.subtle",
             "& div svg": {
-              color: "newFg.warning.light",
+              color: "fg.warning.light",
             },
           }),
           error: css({
-            backgroundColor: "newBg.danger.muted",
-            borderColor: "newBorder.danger.subtle",
+            backgroundColor: "bg.danger.muted",
+            borderColor: "border.danger.subtle",
             "& div svg": {
-              color: "newFg.danger",
+              color: "fg.danger",
             },
           }),
           info: css({
-            backgroundColor: "newBg.primary.muted",
-            borderColor: "newBorder.primary.subtle",
+            backgroundColor: "bg.primary.muted",
+            borderColor: "border.primary.subtle",
             "& div svg": {
-              color: "newFg.primary",
+              color: "fg.primary",
             },
           }),
           loading: css({
-            backgroundColor: "newBg.neutral",
-            borderColor: "newBorder.neutral.subtle",
+            backgroundColor: "bg.neutral",
+            borderColor: "border.neutral.subtle",
             "& [data-icon]": {
               position: "relative",
               width: 20,

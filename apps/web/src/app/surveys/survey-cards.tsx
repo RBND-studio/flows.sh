@@ -35,9 +35,9 @@ export const NpsCard = (): ReactNode => {
             borderRightWidth="1px"
             borderTopWidth="1px"
             borderBottomWidth="1px"
-            borderColor="newBorder.neutral"
-            bg="newBg.neutral.muted"
-            color="newFg.neutral"
+            borderColor="border.neutral"
+            bg="bg.neutral.muted"
+            color="fg.neutral"
             fontSize="10px"
             _first={{ borderLeftRadius: "radius4", borderLeftWidth: "1px" }}
             _last={{ borderRightRadius: "radius4" }}
@@ -47,10 +47,10 @@ export const NpsCard = (): ReactNode => {
         ))}
       </Flex>
       <Flex justifyContent="space-between" w="100%">
-        <Text variant="bodyXs" color="newFg.neutral.muted">
+        <Text variant="bodyXs" color="fg.neutral.muted">
           Not likely
         </Text>
-        <Text variant="bodyXs" color="newFg.neutral.muted">
+        <Text variant="bodyXs" color="fg.neutral.muted">
           Very likely
         </Text>
       </Flex>
@@ -63,7 +63,7 @@ export const CsatCard = (): ReactNode => {
     <Flex className={cardStyle} transform="rotate(10deg) translate(130px, 24px)" zIndex={1}>
       <Flex flexDirection="column" gap="space4">
         <Text variant="titleS">How would you rate your experience?</Text>
-        <Text variant="bodyXs" color="newFg.neutral.muted">
+        <Text variant="bodyXs" color="fg.neutral.muted">
           Select the number of stars
         </Text>
       </Flex>
@@ -78,14 +78,14 @@ export const CsatCard = (): ReactNode => {
             borderRightWidth="1px"
             borderTopWidth="1px"
             borderBottomWidth="1px"
-            borderColor="newBorder.neutral"
-            bg="newBg.neutral.muted"
+            borderColor="border.neutral"
+            bg="bg.neutral.muted"
             _first={{ borderLeftRadius: "radius4", borderLeftWidth: "1px" }}
             _last={{ borderRightRadius: "radius4" }}
           >
             <Icon
               icon={star <= 4 ? StarFilled16 : Star16}
-              color={star <= 4 ? "#f4be35" : "newFg.neutral.placeholder"}
+              color={star <= 4 ? "#f4be35" : "fg.neutral.placeholder"}
             />
           </Flex>
         ))}
@@ -108,10 +108,8 @@ export const PmfCard = (): ReactNode => {
             p="space6"
             borderRadius="radius8"
             borderWidth="1px"
-            borderColor={
-              option === "Very disappointed" ? "newBorder.neutral.dark" : "newBorder.neutral"
-            }
-            bg={option === "Very disappointed" ? "newBg.neutral.strong" : "newBg.neutral.muted"}
+            borderColor={option === "Very disappointed" ? "border.neutral.dark" : "border.neutral"}
+            bg={option === "Very disappointed" ? "bg.neutral.strong" : "bg.neutral.muted"}
           >
             <Flex
               w={16}
@@ -122,17 +120,15 @@ export const PmfCard = (): ReactNode => {
               alignItems="center"
               justifyContent="center"
               borderColor={
-                option === "Very disappointed" ? "newBorder.neutral.dark" : "newBorder.neutral"
+                option === "Very disappointed" ? "border.neutral.dark" : "border.neutral"
               }
-              bg={option === "Very disappointed" ? "newBorder.neutral.dark" : "transparent"}
+              bg={option === "Very disappointed" ? "border.neutral.dark" : "transparent"}
             >
-              {option === "Very disappointed" && (
-                <Icon icon={Check16} color="newFg.neutral.onBlack" />
-              )}
+              {option === "Very disappointed" && <Icon icon={Check16} color="fg.neutral.onBlack" />}
             </Flex>
             <Text
               variant="bodyXs"
-              color={option === "Very disappointed" ? "newFg.neutral" : "newFg.neutral.muted"}
+              color={option === "Very disappointed" ? "fg.neutral" : "fg.neutral.muted"}
             >
               {option}
             </Text>

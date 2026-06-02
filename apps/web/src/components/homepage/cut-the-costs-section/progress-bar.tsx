@@ -16,8 +16,8 @@ export const ProgressBar = ({
       borderWidth="1px"
       borderRadius="5px"
       overflow="hidden"
-      bg="newBg.neutral.subtle"
-      borderColor="newBorder.neutral"
+      bg="bg.neutral.subtle"
+      borderColor="border.neutral"
     >
       <Flex style={{ width: `${percentage}%` }} className={ProgressBarIndicatorCss({ primary })} />
     </Flex>
@@ -29,12 +29,12 @@ const ProgressBarIndicatorCss = cva({
     height: "100%",
     transition: "width 0.3s ease-in-out",
     borderRadius: "5px",
-    backgroundColor: "newFg.neutral",
+    backgroundColor: "fg.neutral",
   },
   variants: {
     primary: {
       true: {
-        backgroundColor: "newBg.primary",
+        backgroundColor: "bg.primary",
       },
       false: {},
     },

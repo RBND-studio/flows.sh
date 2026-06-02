@@ -23,7 +23,7 @@ export const SubprocessorsTable = ({
     >
       <thead
         className={css({
-          backgroundColor: "newBg.neutral.muted",
+          backgroundColor: "bg.neutral.muted",
         })}
       >
         <tr>
@@ -36,11 +36,11 @@ export const SubprocessorsTable = ({
               borderTopLeftRadius: "radius6",
               borderBottomLeftRadius: "radius6",
               borderTopWidth: "1px",
-              borderTopColor: "newBorder.neutral",
+              borderTopColor: "border.neutral",
               borderLeftWidth: "1px",
-              borderLeftColor: "newBorder.neutral",
+              borderLeftColor: "border.neutral",
               borderBottomWidth: "1px",
-              borderBottomColor: "newBorder.neutral",
+              borderBottomColor: "border.neutral",
             })}
           >
             Name
@@ -52,9 +52,9 @@ export const SubprocessorsTable = ({
               px: "space12",
               py: "space8",
               borderTopWidth: "1px",
-              borderTopColor: "newBorder.neutral",
+              borderTopColor: "border.neutral",
               borderBottomWidth: "1px",
-              borderBottomColor: "newBorder.neutral",
+              borderBottomColor: "border.neutral",
             })}
           >
             Purpose of Processing
@@ -68,11 +68,11 @@ export const SubprocessorsTable = ({
               borderTopRightRadius: "radius6",
               borderBottomRightRadius: "radius6",
               borderTopWidth: "1px",
-              borderTopColor: "newBorder.neutral",
+              borderTopColor: "border.neutral",
               borderRightWidth: "1px",
-              borderRightColor: "newBorder.neutral",
+              borderRightColor: "border.neutral",
               borderBottomWidth: "1px",
-              borderBottomColor: "newBorder.neutral",
+              borderBottomColor: "border.neutral",
             })}
           >
             Location of Processing
@@ -98,7 +98,7 @@ const TableLine = ({ name, purpose, location }: Subprocessor): ReactElement => {
           p: "space12",
           verticalAlign: "baseline",
           borderBottomWidth: "1px",
-          borderBottomColor: "newBorder.neutral",
+          borderBottomColor: "border.neutral",
         })}
       >
         {name}
@@ -110,7 +110,7 @@ const TableLine = ({ name, purpose, location }: Subprocessor): ReactElement => {
           p: "space12",
           verticalAlign: "baseline",
           borderBottomWidth: "1px",
-          borderBottomColor: "newBorder.neutral",
+          borderBottomColor: "border.neutral",
         })}
       >
         {purpose}
@@ -122,7 +122,7 @@ const TableLine = ({ name, purpose, location }: Subprocessor): ReactElement => {
           p: "space12",
           verticalAlign: "baseline",
           borderBottomWidth: "1px",
-          borderBottomColor: "newBorder.neutral",
+          borderBottomColor: "border.neutral",
         })}
       >
         {location}

@@ -68,5 +68,5 @@ export const LogoSection = ({ className }: Props) => {
 };
 
 const logoWrapCss = css({
-  color: "newFg.neutral.subtle",
+  color: "fg.neutral.subtle",
 });

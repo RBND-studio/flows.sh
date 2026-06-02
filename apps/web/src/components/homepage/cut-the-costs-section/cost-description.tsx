@@ -36,7 +36,7 @@ export const CostDescription = (): ReactNode => {
           </Text>
           <Text
             variant="bodyL"
-            color="newFg.neutral.muted"
+            color="fg.neutral.muted"
             mx="auto"
             mt="space16"
             textWrap="balance"
@@ -54,7 +54,7 @@ export const CostDescription = (): ReactNode => {
           <Link
             className={css({
               textStyle: "titleL",
-              color: "newFg.neutral",
+              color: "fg.neutral",
               display: "flex",
               alignItems: "center",
               gap: "space4",

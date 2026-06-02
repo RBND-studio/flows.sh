@@ -235,7 +235,7 @@ export const Footer = (): ReactElement => {
           <Box display="inline-flex" alignItems="center" gap="space8" marginBottom="space24">
             <Logo type="type" size={20} />
           </Box>
-          <Text color="newFg.neutral.muted" mb="space12" maxWidth={260}>
+          <Text color="fg.neutral.muted" mb="space12" maxWidth={260}>
             The modern product adoption platform. Built in the 🇪🇺.
           </Text>
           <StatusBadge />
@@ -252,10 +252,10 @@ export const Footer = (): ReactElement => {
                     className={css({
                       display: "flex",
                       alignItems: "center",
-                      color: "newFg.neutral.subtle",
+                      color: "fg.neutral.subtle",
                       fastEaseInOut: "color",
                       "&:hover": {
-                        color: "newFg.neutral",
+                        color: "fg.neutral",
                       },
                     })}
                   >
@@ -266,7 +266,7 @@ export const Footer = (): ReactElement => {
             </Flex>
           </Box>
           <ThemeSwitch />
-          <Text color="newFg.neutral.subtle" variant="bodyS">
+          <Text color="fg.neutral.subtle" variant="bodyS">
             © {new Date().getFullYear()}{" "}
             <a
               target="_blank"
@@ -315,7 +315,7 @@ export const Footer = (): ReactElement => {
                       })}
                       key={link.href}
                       variant="bodyS"
-                      color="newFg.neutral.muted"
+                      color="fg.neutral.muted"
                     >
                       <SmartLink prefetch={false} href={link.href} target={link.target}>
                         {link.title}

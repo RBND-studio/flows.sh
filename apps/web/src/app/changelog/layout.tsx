@@ -23,7 +23,7 @@ export default function ChangelogLayout({ children }: Props): JSX.Element {
         flexDirection="column"
         gap="space4"
         borderBottomWidth={1}
-        borderBottomColor="newBorder.neutral"
+        borderBottomColor="border.neutral"
         pb="space64"
         mdDown={{ pb: "space40" }}
         alignItems="flex-start"
@@ -31,13 +31,13 @@ export default function ChangelogLayout({ children }: Props): JSX.Element {
         <Text as="h1" variant="title4xl">
           Changelog
         </Text>
-        <Text color="newFg.neutral.muted" variant="bodyM">
+        <Text color="fg.neutral.muted" variant="bodyM">
           New updates and improvements to Flows.
         </Text>
         <a
           className={css({
             textStyle: "bodyM",
-            color: "newFg.primary",
+            color: "fg.primary",
             mt: "space8",
           })}
           href={links.twitter}

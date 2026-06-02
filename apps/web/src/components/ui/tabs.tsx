@@ -46,21 +46,21 @@ const button = cva({
     borderRadius: "6px",
     textWrap: "nowrap",
     borderWidth: "1px",
-    bg: "newBg.neutral",
+    bg: "bg.neutral",
   },
   variants: {
     variant: {
       resting: {
-        borderColor: "newBorder.neutral",
-        color: "newFg.neutral.muted",
+        borderColor: "border.neutral",
+        color: "fg.neutral.muted",
         _hover: {
-          borderColor: "newBorder.neutral",
-          color: "newFg.neutral",
+          borderColor: "border.neutral",
+          color: "fg.neutral",
         },
       },
       active: {
-        borderColor: "newBorder.neutral.strong",
-        color: "newFg.neutral",
+        borderColor: "border.neutral.strong",
+        color: "fg.neutral",
         bg: "button.secondary.bg.active",
       },
     },

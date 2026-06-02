@@ -36,7 +36,7 @@ const Table = (): ReactNode => {
   return (
     <Flex
       borderWidth="1px"
-      borderColor="newBorder.neutral"
+      borderColor="border.neutral"
       borderRadius="6px"
       flexDirection="column"
       mt="space8"
@@ -59,14 +59,14 @@ const Table = (): ReactNode => {
           p="space8"
           gap="space8"
           borderBottomWidth="1px"
-          borderBottomColor="newBorder.neutral"
+          borderBottomColor="border.neutral"
           _last={{ borderBottomWidth: 0 }}
         >
           <Box flex={2}>
             <Box
               height={10}
               width="100%"
-              backgroundColor="newBg.neutral.strong"
+              backgroundColor="bg.neutral.strong"
               borderRadius="radius4"
               style={{
                 maxWidth: `${row.main}px`,
@@ -77,7 +77,7 @@ const Table = (): ReactNode => {
             <Box
               height={10}
               width="100%"
-              backgroundColor="newBg.neutral.strong"
+              backgroundColor="bg.neutral.strong"
               borderRadius="radius4"
               style={{
                 maxWidth: `${row.secondary}px`,
@@ -88,7 +88,7 @@ const Table = (): ReactNode => {
             <Box
               height={10}
               width="100%"
-              backgroundColor="newBg.neutral.strong"
+              backgroundColor="bg.neutral.strong"
               borderRadius="radius4"
               style={{
                 maxWidth: `${row.tertiary}px`,
@@ -99,7 +99,7 @@ const Table = (): ReactNode => {
             <Box
               height={10}
               width="100%"
-              backgroundColor="newBg.neutral.strong"
+              backgroundColor="bg.neutral.strong"
               borderRadius="radius4"
               style={{
                 maxWidth: `${row.quaternary}px`,
@@ -157,7 +157,7 @@ const Banner = (): ReactNode => {
           position="absolute"
           borderRadius="radius6"
           borderWidth="1px"
-          borderColor="newBorder.neutral.strong"
+          borderColor="border.neutral.strong"
           borderStyle="dashed"
           animationName="embeddableSlotKeyframes"
           animationTimingFunction="ease-in-out"
@@ -182,7 +182,7 @@ const Banner = (): ReactNode => {
               p="space8"
               borderRadius="radius6"
               borderWidth="1px"
-              borderColor="newBorder.neutral"
+              borderColor="border.neutral"
               w="100%"
               alignItems="flex-start"
               overflow="hidden"
@@ -199,7 +199,7 @@ const Banner = (): ReactNode => {
               <Text variant="titleS" mt="space4">
                 {card.title}
               </Text>
-              <Text variant="bodyXxs" color="newFg.neutral.muted" mt="space2">
+              <Text variant="bodyXxs" color="fg.neutral.muted" mt="space2">
                 {card.description}
               </Text>
             </Flex>

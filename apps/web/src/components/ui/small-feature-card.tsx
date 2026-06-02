@@ -28,7 +28,7 @@ export const SmallFeatureCard = ({
         bg="pane.bg.elevated"
         borderRadius="radius12"
         borderWidth={1}
-        borderColor="newBorder.neutral.placeholder"
+        borderColor="border.neutral.placeholder"
         shadow="antimetal"
         overflow="hidden"
         position="relative"
@@ -43,8 +43,8 @@ export const SmallFeatureCard = ({
           px="space16"
           flexDirection="column"
         >
-          <Flex py="space12" px="space24" bg="newBg.neutral.subtle" borderRadius="radius8 ">
-            <Icon icon={icon} color="newFg.neutral" />
+          <Flex py="space12" px="space24" bg="bg.neutral.subtle" borderRadius="radius8 ">
+            <Icon icon={icon} color="fg.neutral" />
           </Flex>
           <Text as="h3" variant="titleS">
             {title}
@@ -71,7 +71,7 @@ export const SmallFeatureCard = ({
           <Text align="center" mb="space4" variant="titleS">
             {title}
           </Text>
-          <Text align="center" textWrap="balance" variant="bodyS" color="newFg.neutral.muted">
+          <Text align="center" textWrap="balance" variant="bodyS" color="fg.neutral.muted">
             {description}
           </Text>
         </Flex>

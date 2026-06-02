@@ -54,7 +54,7 @@ const questions = [
         Yes, we offer discounts for startups. Please reach out to us at{" "}
         <a
           className={css({
-            color: "newFg.primary",
+            color: "fg.primary",
             textDecoration: "underline",
           })}
           href={`mailto:${emails.general}`}
@@ -88,7 +88,7 @@ export const PricingFaq = (): ReactElement => {
       <Box>
         {questions.map((item) => (
           <FaqAccordion headingLevel="h3" key={item.title} title={item.title}>
-            <Text color="newFg.neutral.muted" variant="bodyL">
+            <Text color="fg.neutral.muted" variant="bodyL">
               {item.content}
             </Text>
           </FaqAccordion>

@@ -51,7 +51,7 @@ export const PriceComparison = (): ReactNode => {
           md: 0,
         }}
       >
-        <Text color="newFg.neutral.muted">Example price comparison</Text>
+        <Text color="fg.neutral.muted">Example price comparison</Text>
         <Text align="center" variant="titleM">
           Guiding 2,500 users / month
         </Text>
@@ -60,7 +60,7 @@ export const PriceComparison = (): ReactNode => {
       <Flex
         flexDirection="column"
         borderWidth="1px"
-        borderColor="newBorder.neutral.placeholder"
+        borderColor="border.neutral.placeholder"
         bg="pane.bg.elevated"
         shadow="antimetal"
         p="space12"
@@ -80,7 +80,7 @@ export const PriceComparison = (): ReactNode => {
       </Flex>
 
       <Flex w="100%" alignItems="center" flexDirection="column" mt="space16">
-        <Text align="center" color="newFg.neutral.subtle" maxWidth={480}>
+        <Text align="center" color="fg.neutral.subtle" maxWidth={480}>
           Approximation only based on public data. Others charge for{" "}
           <Tooltip
             hasUnderline

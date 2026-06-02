@@ -14,7 +14,7 @@ export const FeaturesSection = (): ReactNode => {
       <Section mt={{ base: "space80", md: "space160" }} mb={{ base: "space48", md: "space96" }}>
         <Flex flexDirection="column" gap="space20" alignItems="center" maxWidth={580} mx="auto">
           <Text variant="title2xl">Fully integrated product tours</Text>
-          <Text variant="bodyL" color="newFg.neutral.muted" textAlign="center">
+          <Text variant="bodyL" color="fg.neutral.muted" textAlign="center">
             Flows is not like other onboarding tools. It is a fully customizable solution that
             allows you to create interactive tours, modals, and other components that seamlessly
             integrate with your product.
@@ -28,8 +28,8 @@ export const FeaturesSection = (): ReactNode => {
           overflow="hidden"
           borderRadius="radius8"
           borderWidth="1px"
-          borderColor="newBorder.neutral.placeholder"
-          backgroundColor="newBorder.neutral.placeholder"
+          borderColor="border.neutral.placeholder"
+          backgroundColor="border.neutral.placeholder"
           shadow="antimetal"
           mx={{ base: 0, md: "space48" }}
           gap={1}
@@ -46,7 +46,7 @@ export const FeaturesSection = (): ReactNode => {
               bg="pane.bg.elevated"
             >
               <Text variant="titleL">More than just modals</Text>
-              <Text variant="bodyM" color="newFg.neutral.muted">
+              <Text variant="bodyM" color="fg.neutral.muted">
                 Pick from a variety of pre-built customizable components like tooltips, hints,
                 embeddables and more.
               </Text>
@@ -62,7 +62,7 @@ export const FeaturesSection = (): ReactNode => {
               bg="pane.bg.elevated"
             >
               <Text variant="titleL">At the right time and place</Text>
-              <Text variant="bodyM" color="newFg.neutral.muted">
+              <Text variant="bodyM" color="fg.neutral.muted">
                 Trigger tours with clicks, hovers, page views or if an element is on a page.
               </Text>
               <CoolButtonIllustration />
@@ -78,7 +78,7 @@ export const FeaturesSection = (): ReactNode => {
             bg="pane.bg.elevated"
           >
             <Text variant="titleL">Custom components</Text>
-            <Text variant="bodyM" color="newFg.neutral.muted" maxW={440}>
+            <Text variant="bodyM" color="fg.neutral.muted" maxW={440}>
               Use your own design system and technologies to build custom components that fit your
               product and meet your quality bar.
             </Text>
@@ -115,7 +115,7 @@ export const FeaturesSection = (): ReactNode => {
             position="relative"
           >
             <Text variant="titleL">Analytics</Text>
-            <Text variant="bodyM" color="newFg.neutral.muted" maxW={440}>
+            <Text variant="bodyM" color="fg.neutral.muted" maxW={440}>
               Measure the success of your tours with built-in analytics to track user engagement and
               conversion rates.
             </Text>

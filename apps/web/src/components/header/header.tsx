@@ -120,7 +120,7 @@ const headerCss = cva({
       backgroundColor: "pane.bg.translucentBackground",
       borderRadius: "radius12",
       borderWidth: "1px",
-      borderColor: "newBorder.neutral",
+      borderColor: "border.neutral",
       shadow: "newL1",
       backdropFilter: "blur(4px)",
       maxWidth: "1016px",

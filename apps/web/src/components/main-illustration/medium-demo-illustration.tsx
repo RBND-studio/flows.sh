@@ -48,7 +48,7 @@ export const MediumDemoIllustration = (): ReactNode => {
           position="relative"
           borderRadius="radius24"
           borderWidth={1}
-          borderColor="newBorder.neutral.placeholder"
+          borderColor="border.neutral.placeholder"
           background="special.glassMorph"
           backdropFilter="blur(4px)"
           mb="space40"
@@ -58,15 +58,15 @@ export const MediumDemoIllustration = (): ReactNode => {
             flexDirection="column"
             borderRadius="radius12"
             borderWidth="1px"
-            borderColor="newBorder.neutral"
+            borderColor="border.neutral"
             overflow="hidden"
             height="100%"
           >
             <Flex
-              background="newBg.neutral"
+              background="bg.neutral"
               alignItems="stretch"
               borderBottomWidth="1px"
-              borderBottomColor="newBorder.neutral"
+              borderBottomColor="border.neutral"
               md={{ display: "flex" }}
               display="none"
             >
@@ -74,7 +74,7 @@ export const MediumDemoIllustration = (): ReactNode => {
                 gap="space6"
                 px="space12"
                 borderRightWidth="1px"
-                borderRightColor="newBorder.neutral"
+                borderRightColor="border.neutral"
                 alignItems="center"
               >
                 {/* 3 dots */}
@@ -85,7 +85,7 @@ export const MediumDemoIllustration = (): ReactNode => {
                     height={8}
                     width={8}
                     borderRadius="50%"
-                    backgroundColor="newBg.neutral.strong"
+                    backgroundColor="bg.neutral.strong"
                   />
                 ))}
               </Flex>
@@ -98,13 +98,13 @@ export const MediumDemoIllustration = (): ReactNode => {
                     gap: "space6",
                     p: "space12",
                     borderRightWidth: "1px",
-                    borderRightColor: "newBorder.neutral",
+                    borderRightColor: "border.neutral",
                     alignItems: "center",
                     cursor: "pointer",
                     position: "relative",
                     fastEaseInOut: "all",
-                    _hover: { backgroundColor: "newBg.neutral.muted" },
-                    color: tabIndex === tab ? "newFg.neutral" : "newFg.neutral.subtle",
+                    _hover: { backgroundColor: "bg.neutral.muted" },
+                    color: tabIndex === tab ? "fg.neutral" : "fg.neutral.subtle",
                   })}
                   onClick={() => setTab(tabIndex)}
                 >
@@ -115,7 +115,7 @@ export const MediumDemoIllustration = (): ReactNode => {
                       top={0}
                       bottom={0}
                       right={0}
-                      backgroundColor="newBg.neutral.strong"
+                      backgroundColor="bg.neutral.strong"
                       animation={`scaleX ${ANIMATION_DURATION}ms linear`}
                       opacity={0.2}
                       transform="scaleX(0)"

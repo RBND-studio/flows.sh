@@ -32,7 +32,7 @@ export const LinkViz = (): ReactNode => {
         p="space16"
         borderRadius="radius8"
         borderWidth="1px"
-        borderColor="newBorder.neutral"
+        borderColor="border.neutral"
         shadow="l2"
         flexDirection="column"
         gap="space8"
@@ -40,7 +40,7 @@ export const LinkViz = (): ReactNode => {
         bg="pane.bg"
       >
         <Text variant="titleS">Refer and earn</Text>
-        <Text variant="bodyXs" color="newFg.neutral.muted" mb="space24">
+        <Text variant="bodyXs" color="fg.neutral.muted" mb="space24">
           Share your unique link with your audience and earn rewards for every successful referral.
         </Text>
         <Text variant="titleXs">Referral link</Text>
@@ -49,13 +49,13 @@ export const LinkViz = (): ReactNode => {
           py="space8"
           borderRadius="radius6"
           borderWidth={1}
-          borderColor="newBorder.neutral"
+          borderColor="border.neutral"
           flex={1}
           gap="space8"
           justifyContent="space-between"
         >
           <Text variant="bodyXs">flows.sh/QxSLhd</Text>
-          <Icon icon={Copy16} color="newFg.neutral.muted" />
+          <Icon icon={Copy16} color="fg.neutral.muted" />
         </Flex>
       </Flex>
     </Box>

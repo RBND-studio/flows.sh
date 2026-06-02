@@ -62,7 +62,7 @@ export default async function GlossaryPostPage(props: Props): Promise<ReactNode>
         <Link
           className={css({
             textStyle: "bodyXs",
-            color: "newFg.neutral.muted",
+            color: "fg.neutral.muted",
             display: "flex",
             alignItems: "center",
             gap: "space4",
@@ -94,13 +94,7 @@ export default async function GlossaryPostPage(props: Props): Promise<ReactNode>
         >
           {post.title}
         </Text>
-        <Text
-          as="p"
-          variant="bodyL"
-          textAlign="center"
-          textWrap="balance"
-          color="newFg.neutral.muted"
-        >
+        <Text as="p" variant="bodyL" textAlign="center" textWrap="balance" color="fg.neutral.muted">
           {post.description}
         </Text>
         <Line />

@@ -45,7 +45,7 @@ export const PlaceholderApplication = ({
         width="100%"
         height="100%"
         borderWidth="1px"
-        borderColor="newBorder.neutral.muted"
+        borderColor="border.neutral.muted"
         borderRadius="radius8"
         background="pane.bg.main"
         aria-hidden="true"
@@ -55,7 +55,7 @@ export const PlaceholderApplication = ({
           width="100%"
           justifyContent="space-between"
           borderBottomWidth="1px"
-          borderBottomColor="newBorder.neutral.muted"
+          borderBottomColor="border.neutral.muted"
           py="6px"
           pl="10px"
           pr="6px"
@@ -65,7 +65,7 @@ export const PlaceholderApplication = ({
               height={10}
               maxWidth={85}
               width="100%"
-              backgroundColor="newBg.neutral.strong"
+              backgroundColor="bg.neutral.strong"
               borderRadius="radius4"
             />
             {helpSlot}
@@ -74,13 +74,13 @@ export const PlaceholderApplication = ({
             <Box
               height={20}
               width={20}
-              backgroundColor="newBg.neutral.subtle"
+              backgroundColor="bg.neutral.subtle"
               borderRadius="radius4"
             />
             <Box
               height={20}
               width={20}
-              backgroundColor="newBg.neutral.subtle"
+              backgroundColor="bg.neutral.subtle"
               borderRadius="radius4"
             />
           </Flex>
@@ -91,10 +91,10 @@ export const PlaceholderApplication = ({
             <Box
               width="100%"
               height="100%"
-              backgroundColor="newBg.neutral.muted"
+              backgroundColor="bg.neutral.muted"
               borderRadius="radius4"
               borderWidth="1px"
-              borderColor="newBorder.neutral.muted"
+              borderColor="border.neutral.muted"
               p="space4"
             >
               {cardSlot}
@@ -102,29 +102,29 @@ export const PlaceholderApplication = ({
             <Box
               width="100%"
               height="100%"
-              backgroundColor="newBg.neutral.muted"
+              backgroundColor="bg.neutral.muted"
               borderRadius="radius4"
               borderWidth="1px"
-              borderColor="newBorder.neutral.muted"
+              borderColor="border.neutral.muted"
             />
             {!small ? (
               <>
                 <Box
                   width="100%"
                   height="100%"
-                  backgroundColor="newBg.neutral.muted"
+                  backgroundColor="bg.neutral.muted"
                   borderRadius="radius4"
                   borderWidth="1px"
-                  borderColor="newBorder.neutral.muted"
+                  borderColor="border.neutral.muted"
                   mdDown={{ display: "none" }}
                 />
                 <Box
                   width="100%"
                   height="100%"
-                  backgroundColor="newBg.neutral.muted"
+                  backgroundColor="bg.neutral.muted"
                   borderRadius="radius4"
                   borderWidth="1px"
-                  borderColor="newBorder.neutral.muted"
+                  borderColor="border.neutral.muted"
                   mdDown={{ display: "none" }}
                 />
               </>

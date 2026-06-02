@@ -27,13 +27,13 @@ const Card = ({
       pt="space24"
       px="space24"
       borderWidth="1px"
-      borderColor="newBorder.neutral.placeholder"
+      borderColor="border.neutral.placeholder"
       bg="pane.bg.elevated"
       shadow="antimetal"
       justifyContent="space-between"
     >
       <Flex flexDirection="column" alignItems="start">
-        <Flex mb="space16" py="space4" px="space8" borderRadius="radius6" bg="newBg.neutral.subtle">
+        <Flex mb="space16" py="space4" px="space8" borderRadius="radius6" bg="bg.neutral.subtle">
           <Text variant="titleS" fontFamily="mono">
             {number}
           </Text>
@@ -41,7 +41,7 @@ const Card = ({
         <Text mb="space4" variant="titleL">
           {title}
         </Text>
-        <Text variant="bodyM" color="newFg.neutral.muted">
+        <Text variant="bodyM" color="fg.neutral.muted">
           {description}
         </Text>
       </Flex>

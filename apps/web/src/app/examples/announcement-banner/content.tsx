@@ -85,9 +85,9 @@ export const announcementBannerContent: ContentType = {
           changelog entry, or landing page in a new tab.
         </li>
         <li>
-          <strong>Dismiss button</strong>: an X button that calls{" "}
-          <InlineCode>close()</InlineCode> to advance the workflow and remove the banner. Flows
-          remembers the dismissal so the banner does not reappear.
+          <strong>Dismiss button</strong>: an X button that calls <InlineCode>close()</InlineCode>{" "}
+          to advance the workflow and remove the banner. Flows remembers the dismissal so the banner
+          does not reappear.
         </li>
       </UnorderedList>
       <Paragraph>
@@ -105,7 +105,7 @@ export const announcementBannerContent: ContentType = {
         className={css({
           borderRadius: "radius6",
           borderWidth: "1px",
-          borderColor: "newBorder.neutral",
+          borderColor: "border.neutral",
           borderStyle: "solid",
         })}
       />

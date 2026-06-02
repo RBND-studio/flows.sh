@@ -94,7 +94,7 @@ export const PLGViz = (): ReactNode => {
                       key={arc.index}
                       d={path}
                       fill={arc.data.color}
-                      stroke={token("colors.newBg.neutral")}
+                      stroke={token("colors.bg.neutral")}
                       strokeWidth={2}
                     />
                   );

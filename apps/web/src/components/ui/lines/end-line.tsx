@@ -5,7 +5,7 @@ import { Box } from "@flows/styled-system/jsx";
 import { type ReactNode } from "react";
 
 export const NewLine = (): ReactNode => {
-  return <Box h="1px" w="100%" my="auto" bg="newBorder.neutral.placeholder" />;
+  return <Box h="1px" w="100%" my="auto" bg="border.neutral.placeholder" />;
 };
 
 export const EndLine = ({
@@ -37,7 +37,7 @@ const endLineCss = cva({
         },
         top: "50%",
         backgroundImage:
-          "linear-gradient(270deg, token(colors.newBorder.neutral.placeholder), transparent)",
+          "linear-gradient(270deg, token(colors.border.neutral.placeholder), transparent)",
       },
       right: {
         position: "absolute",
@@ -52,7 +52,7 @@ const endLineCss = cva({
         },
         top: "50%",
         backgroundImage:
-          "linear-gradient(90deg, token(colors.newBorder.neutral.placeholder), transparent)",
+          "linear-gradient(90deg, token(colors.border.neutral.placeholder), transparent)",
       },
       top: {
         ml: "16px",
@@ -63,7 +63,7 @@ const endLineCss = cva({
           md: "64px",
         },
         backgroundImage:
-          "linear-gradient(0deg, token(colors.newBorder.neutral.placeholder), transparent)",
+          "linear-gradient(0deg, token(colors.border.neutral.placeholder), transparent)",
       },
       bottom: {
         ml: "16px",
@@ -74,13 +74,13 @@ const endLineCss = cva({
           md: "64px",
         },
         backgroundImage:
-          "linear-gradient(180deg, token(colors.newBorder.neutral.placeholder), transparent)",
+          "linear-gradient(180deg, token(colors.border.neutral.placeholder), transparent)",
       },
     },
     gradient: {
       true: {},
       false: {
-        background: "newBorder.neutral.placeholder!",
+        background: "border.neutral.placeholder!",
       },
     },
   },

@@ -69,7 +69,7 @@ export const cardContent: ContentType = {
         className={css({
           borderRadius: "radius6",
           borderWidth: "1px",
-          borderColor: "newBorder.neutral",
+          borderColor: "border.neutral",
           borderStyle: "solid",
         })}
       />

@@ -33,7 +33,7 @@ export const ProductMarketingViz = (): ReactNode => {
         p="space24"
         borderRadius="radius12"
         borderWidth={1}
-        borderColor="newBorder.neutral.placeholder"
+        borderColor="border.neutral.placeholder"
         flexDirection="column"
         shadow="l2"
         background="pane.bg.elevated"
@@ -44,19 +44,19 @@ export const ProductMarketingViz = (): ReactNode => {
       >
         <Box
           p="space8"
-          bg="newBg.primary.muted"
+          bg="bg.primary.muted"
           borderRadius="radius8"
           borderWidth="1px"
-          borderColor="newBorder.primary"
+          borderColor="border.primary"
           shadow="focus"
           mb="space16"
         >
-          <Icon color="newFg.primary" icon={Upgrade16} />
+          <Icon color="fg.primary" icon={Upgrade16} />
         </Box>
         <Text variant="titleS" align="center" mb="space4">
           Try Pro for 14 days
         </Text>
-        <Text variant="bodyS" color="newFg.neutral.muted" align="center" mb="space16">
+        <Text variant="bodyS" color="fg.neutral.muted" align="center" mb="space16">
           Upgrade to Pro for a limited time and test our advanced features, no commitment required.
         </Text>
         <Button variant="secondary" size="small" asChild>

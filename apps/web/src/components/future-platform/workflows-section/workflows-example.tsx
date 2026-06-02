@@ -43,7 +43,7 @@ type BlockProps = {
 const Block = ({ name, type, icon }: BlockProps): JSX.Element => {
   return (
     <Flex
-      backgroundColor="newBg.neutral"
+      backgroundColor="bg.neutral"
       shadow="newL1"
       borderRadius="radius8"
       py="10px"
@@ -51,7 +51,7 @@ const Block = ({ name, type, icon }: BlockProps): JSX.Element => {
       pl="10px"
       gap="space8"
       borderWidth="1px"
-      borderColor="newBorder.neutral"
+      borderColor="border.neutral"
       alignItems="center"
     >
       <BlockIcon blockType={type} blockIcon={icon} />
@@ -74,7 +74,7 @@ const LineArrowDown = (): JSX.Element => {
           markerHeight="10"
           orient="auto"
         >
-          <path d="M0,0 L0,10 L6,5 z" fill={token.var("colors.newBorder.neutral.strong")} />
+          <path d="M0,0 L0,10 L6,5 z" fill={token.var("colors.border.neutral.strong")} />
         </marker>
         <marker
           id="circle"
@@ -86,11 +86,11 @@ const LineArrowDown = (): JSX.Element => {
           markerHeight="10"
           orient="auto"
         >
-          <circle cx="5" cy="5" r="5" fill={token.var("colors.newBorder.neutral.strong")} />
+          <circle cx="5" cy="5" r="5" fill={token.var("colors.border.neutral.strong")} />
         </marker>
       </defs>
       <line
-        stroke={token.var("colors.newBorder.neutral.strong")}
+        stroke={token.var("colors.border.neutral.strong")}
         x1={8}
         y1={0}
         x2={8}
@@ -116,7 +116,7 @@ const LineArrowRight = (): JSX.Element => {
           markerHeight="6"
           orient="auto"
         >
-          <path d="M0,0 L10,3 L0,6 z" fill={token.var("colors.newBorder.neutral.strong")} />
+          <path d="M0,0 L10,3 L0,6 z" fill={token.var("colors.border.neutral.strong")} />
         </marker>
         <marker
           id="circle"
@@ -128,11 +128,11 @@ const LineArrowRight = (): JSX.Element => {
           markerHeight="10"
           orient="auto"
         >
-          <circle cx="5" cy="5" r="5" fill={token.var("colors.newBorder.neutral.strong")} />
+          <circle cx="5" cy="5" r="5" fill={token.var("colors.border.neutral.strong")} />
         </marker>
       </defs>
       <line
-        stroke={token.var("colors.newBorder.neutral.strong")}
+        stroke={token.var("colors.border.neutral.strong")}
         x1={0}
         y1={8}
         x2={24}

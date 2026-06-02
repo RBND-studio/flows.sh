@@ -32,14 +32,14 @@ const Slider = React.forwardRef<
         borderRadius: "6px",
         position: "relative",
 
-        backgroundColor: "newBg.neutral.subtle",
+        backgroundColor: "bg.neutral.subtle",
       })}
     >
       <SliderPrimitive.Range
         className={css({
           position: "absolute",
           height: "100%",
-          backgroundColor: "newBg.neutral.pureInverted",
+          backgroundColor: "bg.neutral.pureInverted",
         })}
       />
     </SliderPrimitive.Track>
@@ -51,7 +51,7 @@ const Slider = React.forwardRef<
         borderRadius: "100%",
         borderWidth: "3px",
         borderStyle: "solid",
-        borderColor: "newBorder.neutral.white",
+        borderColor: "border.neutral.white",
         backgroundColor: "dataViz.blue.fg",
         shadow: "l1",
         outline: "none",

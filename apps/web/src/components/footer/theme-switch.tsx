@@ -24,7 +24,7 @@ export const ThemeSwitch: FC = () => {
   return (
     <Flex
       borderWidth={1}
-      borderColor="newBorder.neutral"
+      borderColor="border.neutral"
       bg="pane.bg.secondary"
       borderRadius="radius6"
       p="space2"
@@ -65,7 +65,7 @@ const buttonStyles = cva({
       },
       false: {
         _hover: {
-          backgroundColor: "newBg.neutral.strong",
+          backgroundColor: "bg.neutral.strong",
         },
       },
     },

@@ -42,7 +42,7 @@ export const AllPurposePlatformSection = (): ReactNode => {
           alignItems="center"
         >
           <CarouselControls emblaApi={emblaApi} />
-          <Box h={20} w={1} bg="newBorder.neutral" />
+          <Box h={20} w={1} bg="border.neutral" />
           <Button variant="secondary" size="large" asChild>
             <Link href={routes.solutions.index}>View all solutions</Link>
           </Button>

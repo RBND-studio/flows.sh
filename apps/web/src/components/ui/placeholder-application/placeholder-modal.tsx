@@ -24,7 +24,7 @@ export const PlaceholderModal = ({
       flexDirection="column"
       p="space16"
       borderRadius="radius8"
-      borderColor="newBorder.neutral"
+      borderColor="border.neutral"
       borderWidth="1px"
       backgroundColor="pane.bg.elevated"
       shadow="newL2"
@@ -46,7 +46,7 @@ export const PlaceholderModal = ({
       <Text mb="space4" align="center" variant="titleS">
         {title}
       </Text>
-      <Text mb="space12" color="newFg.neutral.muted" align="center" variant="bodyXs">
+      <Text mb="space12" color="fg.neutral.muted" align="center" variant="bodyXs">
         {description}
       </Text>
       {/* Button is rendered as div to prevent taking focus and messing with aria-hidden */}

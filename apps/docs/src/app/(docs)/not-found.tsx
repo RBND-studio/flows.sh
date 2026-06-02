@@ -29,7 +29,7 @@ export default function NotFound(): JSX.Element {
         <Text textAlign="center" marginBottom="space24">
           It looks like this page doesn’t exist.
         </Text>
-        <Text textAlign="center" marginBottom="space24" color="newFg.neutral.muted">
+        <Text textAlign="center" marginBottom="space24" color="fg.neutral.muted">
           We track these errors automatically, but if the problem persists please feel free to{" "}
           <a
             href={links.contact}

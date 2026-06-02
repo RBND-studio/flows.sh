@@ -17,7 +17,7 @@ export const Progress: FC<Props> = ({ max, value, className }) => {
       overflow="hidden"
       className={className}
       borderRadius="100px"
-      bg="newBg.neutral.subtle"
+      bg="bg.neutral.subtle"
     >
       <Box
         position="absolute"

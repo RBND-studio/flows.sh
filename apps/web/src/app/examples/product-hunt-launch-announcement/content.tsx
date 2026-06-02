@@ -69,7 +69,7 @@ export const productHuntLaunchAnnouncementContent: ContentType = {
         className={css({
           borderRadius: "radius6",
           borderWidth: "1px",
-          borderColor: "newBorder.neutral",
+          borderColor: "border.neutral",
           borderStyle: "solid",
           mb: "space40",
         })}
@@ -88,7 +88,7 @@ export const productHuntLaunchAnnouncementContent: ContentType = {
         className={css({
           borderRadius: "radius6",
           borderWidth: "1px",
-          borderColor: "newBorder.neutral",
+          borderColor: "border.neutral",
           borderStyle: "solid",
           mb: "space40",
         })}
@@ -108,7 +108,7 @@ export const productHuntLaunchAnnouncementContent: ContentType = {
         className={css({
           borderRadius: "radius6",
           borderWidth: "1px",
-          borderColor: "newBorder.neutral",
+          borderColor: "border.neutral",
           borderStyle: "solid",
           mb: "space40",
         })}

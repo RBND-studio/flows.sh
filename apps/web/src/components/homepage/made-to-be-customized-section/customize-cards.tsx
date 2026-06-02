@@ -46,7 +46,7 @@ export const CustomizeCards = (): ReactNode => {
           borderRadius="radius12"
           background="pane.bg.elevated"
           borderWidth={1}
-          borderColor="newBorder.neutral.placeholder"
+          borderColor="border.neutral.placeholder"
           shadow="antimetal"
           key={item.title}
           overflow="hidden"
@@ -56,13 +56,13 @@ export const CustomizeCards = (): ReactNode => {
             <Text as="h3" mb="space12" variant="titleL">
               {item.title}
             </Text>
-            <Text mb="space24" variant="bodyM" color="newFg.neutral.muted">
+            <Text mb="space24" variant="bodyM" color="fg.neutral.muted">
               {item.description}
             </Text>
             <Link
               className={css({
                 textStyle: "titleL",
-                color: "newFg.neutral",
+                color: "fg.neutral",
                 display: "flex",
                 alignItems: "center",
                 gap: "space4",

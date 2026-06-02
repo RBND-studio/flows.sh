@@ -88,7 +88,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
       <Flex position="relative">
         {startIcon ? (
           <Icon
-            color="newControl.fg.placeholder"
+            color="control.fg.placeholder"
             className={startIconCva({ size })}
             icon={startIcon}
           />
@@ -111,14 +111,14 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
           disabled={disabled}
         />
         {endIcon ? (
-          <Icon color="newControl.fg.placeholder" className={endIconCva({ size })} icon={endIcon} />
+          <Icon color="control.fg.placeholder" className={endIconCva({ size })} icon={endIcon} />
         ) : null}
       </Flex>
       {description !== undefined && (
         <Description
           disabled={disabled}
           className={descriptionClassName}
-          color={error ? "newFg.danger" : "newFg.neutral.muted"}
+          color={error ? "fg.danger" : "fg.neutral.muted"}
         >
           {description}
         </Description>
@@ -168,27 +168,27 @@ const input = cva({
     borderRadius: "radius8",
     borderWidth: 1,
     borderStyle: "solid",
-    borderColor: "newControl.border",
-    backgroundColor: "newControl.bg",
+    borderColor: "control.border",
+    backgroundColor: "control.bg",
     outline: "none",
     transitionProperty: "border-color, background-color, box-shadow",
     fastEaseInOut: "border-color, background-color, box-shadow",
-    color: "newControl.fg",
+    color: "control.fg",
     width: "100%",
     _hover: {
-      borderColor: "newControl.border.hover",
+      borderColor: "control.border.hover",
     },
     _focus: {
-      borderColor: "newControl.border.selected",
+      borderColor: "control.border.selected",
       _hover: {
-        borderColor: "newControl.border.selected",
+        borderColor: "control.border.selected",
       },
     },
     _disabled: {
       "&&": {
-        backgroundColor: "newControl.bg.disabled",
-        borderColor: "newControl.border.disabled",
-        color: "newControl.fg.disabled",
+        backgroundColor: "control.bg.disabled",
+        borderColor: "control.border.disabled",
+        color: "control.fg.disabled",
       },
     },
   },
@@ -202,11 +202,11 @@ const input = cva({
         mb: 0,
         _hover: {
           borderColor: "transparent",
-          backgroundColor: "newControl.bg.hover", //TODO: hover is too strong in dark - check icon button ghost hover
+          backgroundColor: "control.bg.hover", //TODO: hover is too strong in dark - check icon button ghost hover
         },
         _focus: {
           _hover: {
-            backgroundColor: "newControl.bg",
+            backgroundColor: "control.bg",
           },
         },
       },
@@ -244,16 +244,16 @@ const input = cva({
     },
     error: {
       true: {
-        borderColor: "newControl.border.error",
+        borderColor: "control.border.error",
         _hover: {
-          borderColor: "newControl.border.error",
+          borderColor: "control.border.error",
         },
       },
     },
     highlightInvalid: {
       true: {
         _invalid: {
-          "&&": { borderColor: "newBorder.danger" },
+          "&&": { borderColor: "border.danger" },
         },
       },
     },

@@ -19,10 +19,10 @@ export const GlossaryPostPreview: FC<Props> = ({ post }) => {
         css({
           p: "space24",
           borderBottomWidth: 1,
-          borderBottomColor: "newBorder.neutral.placeholder",
+          borderBottomColor: "border.neutral.placeholder",
           fastEaseInOut: "background-color",
           _last: { borderBottomWidth: 0 },
-          _hover: { backgroundColor: "newBg.neutral.muted" },
+          _hover: { backgroundColor: "bg.neutral.muted" },
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
@@ -35,7 +35,7 @@ export const GlossaryPostPreview: FC<Props> = ({ post }) => {
         <Text variant="titleM" mb="space4">
           {post.title}
         </Text>
-        <Text variant="bodyS" color="newFg.neutral.muted" textWrap="balance">
+        <Text variant="bodyS" color="fg.neutral.muted" textWrap="balance">
           {post.description}
         </Text>
       </Box>
@@ -43,8 +43,8 @@ export const GlossaryPostPreview: FC<Props> = ({ post }) => {
         p="space4"
         borderRadius="radius6"
         borderWidth={1}
-        borderColor="newBorder.neutral"
-        bg="newBg.neutral.subtle"
+        borderColor="border.neutral"
+        bg="bg.neutral.subtle"
       >
         <ArrowRight16 />
       </Flex>

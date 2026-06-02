@@ -78,9 +78,9 @@ export const InlineCode = ({ children }): ReactElement => {
       fontFamily="mono"
       py="space2"
       px="space6"
-      bg="newBg.neutral.subtle"
+      bg="bg.neutral.subtle"
       borderWidth="1px"
-      borderColor="newBorder.neutral"
+      borderColor="border.neutral"
       borderRadius="radius4"
     >
       {children}
@@ -101,7 +101,7 @@ export const ParagraphLink = ({ children, href, target }: ParagraphLinkProps): R
       variant="bodyL"
       fontWeight="600"
       borderBottomWidth="2px"
-      borderBottomColor="newBorder.primary"
+      borderBottomColor="border.primary"
       _hover={{ borderBottomWidth: "3px" }}
     >
       <Link target={target} href={href}>

@@ -32,7 +32,7 @@ export const ApplyViz = (): ReactNode => {
         p="space16"
         borderRadius="radius8"
         borderWidth="1px"
-        borderColor="newBorder.neutral"
+        borderColor="border.neutral"
         shadow="l2"
         flexDirection="column"
         gap="space8"
@@ -48,7 +48,7 @@ export const ApplyViz = (): ReactNode => {
           py="space8"
           borderRadius="radius6"
           borderWidth={1}
-          borderColor="newBorder.neutral"
+          borderColor="border.neutral"
           flex={1}
         >
           <Google16 />
@@ -56,20 +56,20 @@ export const ApplyViz = (): ReactNode => {
         </Flex>
 
         <Flex alignItems="center" gap="space8">
-          <Divider borderColor="newBorder.neutral.muted" />
+          <Divider borderColor="border.neutral.muted" />
 
-          <Text color="newFg.neutral.subtle">Or</Text>
-          <Divider borderColor="newBorder.neutral.muted" />
+          <Text color="fg.neutral.subtle">Or</Text>
+          <Divider borderColor="border.neutral.muted" />
         </Flex>
         <Box
           px="space12"
           py="space8"
           borderRadius="radius6"
           borderWidth={1}
-          borderColor="newBorder.neutral"
+          borderColor="border.neutral"
           flex={1}
         >
-          <Text variant="bodyXs" color="newFg.neutral.muted">
+          <Text variant="bodyXs" color="fg.neutral.muted">
             Email
           </Text>
         </Box>
@@ -78,10 +78,10 @@ export const ApplyViz = (): ReactNode => {
           py="space8"
           borderRadius="radius6"
           borderWidth={1}
-          borderColor="newBorder.neutral"
+          borderColor="border.neutral"
           flex={1}
         >
-          <Text variant="bodyXs" color="newFg.neutral.muted">
+          <Text variant="bodyXs" color="fg.neutral.muted">
             Password
           </Text>
         </Box>
