@@ -44,3 +44,7 @@ storybook-static
 dist
 
 pandacss-generated
+
+sitemap.xml
+sitemap-*.xml
+robots.txt

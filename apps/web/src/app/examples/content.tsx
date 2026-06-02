@@ -21,6 +21,7 @@ import { cesSurveyContent } from "./ces-survey/content";
 import { announcementBannerContent } from "./announcement-banner/content";
 import { inAppChangelogContent } from "./in-app-changelog/content";
 import { tooltipContent } from "./tooltip/content";
+import { microsurveyContent } from "./microsurvey/content";
 // --PLOP_NEW_EXAMPLE_IMPORT--
 import { type ContentType } from "./types";
 
@@ -33,16 +34,15 @@ export const examplesContent: ContentType[] = [
   onboardingHubContent,
   gettingStartedDashboardContent,
   modalContent,
-  featureAnnouncementContent,
   interactiveFeatureAnnouncementContent,
   inAppChangelogContent,
+  microsurveyContent,
   announcementBannerContent,
   npsSurveyContent,
   surveyPopoverContent,
   pmfSurveyContent,
   csatSurveyContent,
   cesSurveyContent,
-  featureHintContent,
   hintContent,
   embeddedTipsContent,
   newFeatureCardContent,
