@@ -1,0 +1,37 @@
+---
+title: Personalization improvements
+date: "2026-06-01"
+description: Tour and survey triggers, wait steps, property conditions, and page targeting now support personalization. Plus duplicate workflow, client-side navigation, and several SDK improvements.
+---
+
+<Image
+  src="/images/changelog/2026-01-05-personalization.png"
+  alt="Personalization cover"
+  width={1800}
+  height={1040}
+/>
+
+Personalization conditions now work in tour and survey triggers, wait steps, property conditions, and page targeting. This means you can show tours and surveys, set wait conditions, and target pages based on user properties, allowing for a more tailored user experience.
+
+## Duplicate workflow
+
+You can now duplicate any workflow directly from the workflow list. Use this to create variations of an existing workflow without starting from scratch.
+
+## Other improvements
+
+- Added a quick link to edit the custom component template directly from the workflow editor.
+- You can now subscribe to status updates from [status.flows.sh](https://status.flows.sh), which has migrated to incident.io.
+
+## SDK
+
+- `FlowsProvider` now refetches blocks automatically when `userProperties` change, so personalized content stays current as user properties update.
+- Added `onNavigate` to the JS SDK for handling client-side navigation in single-page apps.
+- Added a `limit` prop to slot for capping the number of blocks rendered in a given slot.
+- Exported `<Block />` from the React SDK for direct use in custom layouts.
+- Improved the `ActiveBlock` TypeScript type with more precise type definitions.
+
+## Bug fixes
+
+- Fixed `fetchWorkflows()` returning stale user state after resetting a user's progress.
+- Fixed an event listener in the survey JS component not being removed on unmount.
+- Improved survey state persistence to prevent incorrect state after resetting a user's progress.
