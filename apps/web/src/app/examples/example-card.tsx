@@ -33,13 +33,13 @@ export const ExampleCard = ({
         shadow: "antimetal",
         borderRadius: "radius12",
         borderWidth: "1px",
-        borderColor: "newBorder.neutral.placeholder",
+        borderColor: "border.neutral.placeholder",
         backgroundColor: "pane.bg.elevated",
         fastEaseInOut: "all",
         overflow: "hidden",
 
         _hover: {
-          borderColor: "newBorder.neutral.strong",
+          borderColor: "border.neutral.strong",
         },
       })}
     >
@@ -48,7 +48,7 @@ export const ExampleCard = ({
         <Text lineHeight="20px" variant="titleM" as={headingLevel}>
           {title}
         </Text>
-        <Text textWrap="balance" variant="bodyXs" color="newFg.neutral.muted">
+        <Text textWrap="balance" variant="bodyXs" color="fg.neutral.muted">
           {description}
         </Text>
       </Flex>
@@ -56,7 +56,7 @@ export const ExampleCard = ({
         <Flex
           overflow="hidden"
           borderWidth="1px"
-          borderColor="newBorder.neutral"
+          borderColor="border.neutral"
           borderRadius="radius6"
         >
           <ThemeImage

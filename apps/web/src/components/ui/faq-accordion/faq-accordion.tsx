@@ -25,7 +25,7 @@ export const FaqAccordion = ({ title, children, headingLevel }: Props): ReactEle
   return (
     <Box
       borderBottomWidth={1}
-      borderBottomColor="newBorder.neutral.placeholder"
+      borderBottomColor="border.neutral.placeholder"
       overflow="hidden"
       _last={{
         borderBottomWidth: 0,

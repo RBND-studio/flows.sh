@@ -68,7 +68,7 @@ export default async function AlternativeDetailPage({ params }: Props): Promise<
                 <Link href={routes.examples}>View live examples</Link>
               </Button>
             </Flex>
-            <Text variant="bodyXs" color="newFg.neutral.muted">
+            <Text variant="bodyXs" color="fg.neutral.muted">
               No credit card required. No commitment. Quick setup.
             </Text>
           </Flex>

@@ -14,9 +14,9 @@ export const NewLineDecorator = ({ className }: { className?: string }): ReactNo
     <Box
       w={20}
       h={20}
-      bg="newBg.neutral"
+      bg="bg.neutral"
       borderWidth="1px"
-      borderColor="newBorder.neutral.placeholder"
+      borderColor="border.neutral.placeholder"
       borderRadius="radius6"
       flexShrink={0}
       m="space6"

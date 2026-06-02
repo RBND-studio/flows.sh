@@ -61,8 +61,9 @@ export const gettingStartedDashboardContent: ContentType = {
 
       <Heading>Features</Heading>
       <Paragraph>
-        When a user opens the application, they are greeted with an onboarding dashboard, which contains a
-        demo video, a link to a list of tutorials, and a button to launch an interactive tour.
+        When a user opens the application, they are greeted with an onboarding dashboard, which
+        contains a demo video, a link to a list of tutorials, and a button to launch an interactive
+        tour.
       </Paragraph>
 
       <Paragraph>Below is a screenshot of how the workflow is set up in Flows:</Paragraph>
@@ -75,7 +76,7 @@ export const gettingStartedDashboardContent: ContentType = {
         className={css({
           borderRadius: "radius6",
           borderWidth: "1px",
-          borderColor: "newBorder.neutral",
+          borderColor: "border.neutral",
           borderStyle: "solid",
         })}
       />

@@ -16,7 +16,7 @@ export const Skeleton: FC<Props> = (props) => {
         css({
           animation: "pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite",
           borderRadius: "radius4",
-          bg: "newBg.neutral.subtle",
+          bg: "bg.neutral.subtle",
         }),
         props.className,
       )}

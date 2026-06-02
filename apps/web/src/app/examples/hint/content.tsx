@@ -39,7 +39,9 @@ export const hintContent: ContentType = {
   },
   readme: (
     <>
-      <Paragraph>This example showcases a set of built-in Hint components powered by Flows.</Paragraph>
+      <Paragraph>
+        This example showcases a set of built-in Hint components powered by Flows.
+      </Paragraph>
       <Paragraph>
         Hints provide users with on-demand and contextual guidance. Hints use small beacons that
         encourage users to focus on certain features, then progressively disclose more information
@@ -68,7 +70,7 @@ export const hintContent: ContentType = {
         className={css({
           borderRadius: "radius6",
           borderWidth: "1px",
-          borderColor: "newBorder.neutral",
+          borderColor: "border.neutral",
           borderStyle: "solid",
         })}
       />

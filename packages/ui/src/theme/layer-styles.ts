@@ -7,7 +7,7 @@ export const layerStyles = defineLayerStyles({
 
       borderRadius: "6px",
       borderWidth: "1px",
-      borderColor: "newBorder.neutral",
+      borderColor: "border.neutral",
 
       boxShadow: "newL1",
     },

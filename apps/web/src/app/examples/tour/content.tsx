@@ -70,15 +70,15 @@ export const tourContent: ContentType = {
       </UnorderedList>
 
       <Paragraph>
-        Unlike a typical product tour library, Flows gives you complete control over design and logic.
-        You can embed custom UI components, define behavior with Flows, and let the SDK handle user
-        states.
+        Unlike a typical product tour library, Flows gives you complete control over design and
+        logic. You can embed custom UI components, define behavior with Flows, and let the SDK
+        handle user states.
       </Paragraph>
 
       <Heading>About this example</Heading>
       <Paragraph>
-        This product tour example shows a multi-step guided tour built with Flows. It introduces users to key
-        product areas using a combination of modals and tooltips. The tour features:
+        This product tour example shows a multi-step guided tour built with Flows. It introduces
+        users to key product areas using a combination of modals and tooltips. The tour features:
       </Paragraph>
       <UnorderedList>
         <li>Welcome modal: Greets users and sets the context.</li>
@@ -141,7 +141,7 @@ export const tourContent: ContentType = {
         className={css({
           borderRadius: "radius6",
           borderWidth: "1px",
-          borderColor: "newBorder.neutral",
+          borderColor: "border.neutral",
           borderStyle: "solid",
           mb: "space24",
         })}

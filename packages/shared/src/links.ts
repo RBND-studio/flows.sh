@@ -102,6 +102,8 @@ export const links = (domain = "flows.sh") =>
         "https://github.com/RBND-studio/flows.sh/tree/main/examples/in-app-changelog",
       tooltip: "https://tooltip.examples.flows.sh",
       tooltipSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/tooltip",
+      microsurvey: "https://microsurvey.examples.flows.sh",
+      microsurveySource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/microsurvey",
       // --PLOP_NEW_EXAMPLE_LINK--
     },
     docs: {

@@ -71,7 +71,7 @@ export const MainIllustration = (): ReactNode => {
             position="relative"
             borderRadius="radius24"
             borderWidth={1}
-            borderColor="newBorder.neutral.placeholder"
+            borderColor="border.neutral.placeholder"
             background="special.glassMorph"
             backdropFilter="blur(4px)"
             mb="space40"
@@ -81,7 +81,7 @@ export const MainIllustration = (): ReactNode => {
               flexDirection="column"
               borderRadius="radius12"
               borderWidth="1px"
-              borderColor="newBorder.neutral"
+              borderColor="border.neutral"
               overflow="hidden"
               height="100%"
             >
@@ -116,7 +116,7 @@ type BlockProps = {
 const Block = ({ name, type, icon, className }: BlockProps): JSX.Element => {
   return (
     <Flex
-      backgroundColor="newBg.neutral"
+      backgroundColor="bg.neutral"
       shadow="newL1"
       borderRadius="radius8"
       py="10px"
@@ -124,7 +124,7 @@ const Block = ({ name, type, icon, className }: BlockProps): JSX.Element => {
       pl="10px"
       gap="space8"
       borderWidth="1px"
-      borderColor="newBorder.neutral"
+      borderColor="border.neutral"
       alignItems="center"
       className={className}
     >
@@ -156,7 +156,7 @@ const LineArrowRight = (): JSX.Element => {
           markerHeight="6"
           orient="auto"
         >
-          <path d="M0,0 L10,3 L0,6 z" fill={token.var("colors.newBorder.neutral.strong")} />
+          <path d="M0,0 L10,3 L0,6 z" fill={token.var("colors.border.neutral.strong")} />
         </marker>
         <marker
           id="circle"
@@ -168,11 +168,11 @@ const LineArrowRight = (): JSX.Element => {
           markerHeight="10"
           orient="auto"
         >
-          <circle cx="5" cy="5" r="5" fill={token.var("colors.newBorder.neutral.strong")} />
+          <circle cx="5" cy="5" r="5" fill={token.var("colors.border.neutral.strong")} />
         </marker>
       </defs>
       <line
-        stroke={token.var("colors.newBorder.neutral.strong")}
+        stroke={token.var("colors.border.neutral.strong")}
         x1={0}
         y1={8}
         x2={24}
@@ -210,7 +210,7 @@ const LineFork = (): JSX.Element => {
             markerHeight="6"
             orient="auto"
           >
-            <path d="M0,0 L10,3 L0,6 z" fill={token.var("colors.newBorder.neutral.strong")} />
+            <path d="M0,0 L10,3 L0,6 z" fill={token.var("colors.border.neutral.strong")} />
           </marker>
           <marker
             id="circle"
@@ -222,19 +222,19 @@ const LineFork = (): JSX.Element => {
             markerHeight="10"
             orient="auto"
           >
-            <circle cx="5" cy="5" r="5" fill={token.var("colors.newBorder.neutral.strong")} />
+            <circle cx="5" cy="5" r="5" fill={token.var("colors.border.neutral.strong")} />
           </marker>
         </defs>
 
         <path
           d="M0 32H9C10.6569 32 12 33.3431 12 35V55C12 56.6569 13.3431 58 15 58H24"
-          stroke={token.var("colors.newBorder.neutral.strong")}
+          stroke={token.var("colors.border.neutral.strong")}
           markerEnd="url(#arrow)"
           markerStart="url(#circle)"
         />
         <path
           d="M0 32H9C10.6569 32 12 30.6569 12 29V9C12 7.34315 13.3431 6 15 6H24"
-          stroke={token.var("colors.newBorder.neutral.strong")}
+          stroke={token.var("colors.border.neutral.strong")}
           markerEnd="url(#arrow)"
           markerStart="url(#circle)"
         />

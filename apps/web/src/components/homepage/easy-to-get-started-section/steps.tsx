@@ -7,7 +7,7 @@ import { Text } from "ui";
 
 const linkStyles = css({
   fontWeight: "600",
-  color: "newFg.neutral",
+  color: "fg.neutral",
   _hover: {
     textDecoration: "underline",
   },
@@ -106,7 +106,7 @@ export const Steps = (): ReactNode => {
                 mb="space20"
                 variant="titleL"
                 fontFamily="mono"
-                color="newFg.neutral.subtle"
+                color="fg.neutral.subtle"
                 textAlign="center"
                 md={{
                   textAlign: "left",
@@ -126,7 +126,7 @@ export const Steps = (): ReactNode => {
               </Text>
               <Text
                 variant="bodyM"
-                color="newFg.neutral.muted"
+                color="fg.neutral.muted"
                 textAlign="center"
                 md={{
                   textAlign: "left",

@@ -6,9 +6,9 @@ export const LayoutIllustration = (): JSX.Element => {
     <Flex width="100%" gap="space8" height="100%" overflow="hidden" mt="space24" role="img">
       <Box
         flex={1}
-        background="newBg.neutral.muted"
+        background="bg.neutral.muted"
         borderWidth="1px"
-        borderColor="newBorder.neutral.muted"
+        borderColor="border.neutral.muted"
         borderBottom={0}
         borderTopRadius="radius6"
         aria-hidden="true"
@@ -17,16 +17,16 @@ export const LayoutIllustration = (): JSX.Element => {
         <Box
           flex={1}
           borderWidth="1px"
-          borderColor="newBorder.neutral.strong"
+          borderColor="border.neutral.strong"
           borderStyle="dashed"
           borderRadius="radius6"
           aria-hidden="true"
         />
         <Box
           flex={1}
-          background="newBg.neutral.muted"
+          background="bg.neutral.muted"
           borderWidth="1px"
-          borderColor="newBorder.neutral.muted"
+          borderColor="border.neutral.muted"
           borderBottom={0}
           borderTopRadius="radius6"
           aria-hidden="true"
@@ -34,36 +34,36 @@ export const LayoutIllustration = (): JSX.Element => {
       </Flex>
       <Box
         flex={1}
-        background="newBg.neutral.muted"
+        background="bg.neutral.muted"
         borderWidth="1px"
-        borderColor="newBorder.neutral.muted"
+        borderColor="border.neutral.muted"
         borderBottom={0}
         borderTopRadius="radius6"
         aria-hidden="true"
       />
       <Box
         flex={1}
-        background="newBg.neutral.muted"
+        background="bg.neutral.muted"
         borderWidth="1px"
-        borderColor="newBorder.neutral.muted"
+        borderColor="border.neutral.muted"
         borderBottom={0}
         borderTopRadius="radius6"
         aria-hidden="true"
       />
       <Box
         flex={1}
-        background="newBg.neutral.muted"
+        background="bg.neutral.muted"
         borderWidth="1px"
-        borderColor="newBorder.neutral.muted"
+        borderColor="border.neutral.muted"
         borderBottom={0}
         borderTopRadius="radius6"
         aria-hidden="true"
       />
       <Box
         flex={1}
-        background="newBg.neutral.muted"
+        background="bg.neutral.muted"
         borderWidth="1px"
-        borderColor="newBorder.neutral.muted"
+        borderColor="border.neutral.muted"
         borderBottom={0}
         borderTopRadius="radius6"
         aria-hidden="true"

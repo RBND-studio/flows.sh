@@ -18,11 +18,11 @@ export const ImplementationFeatures = (): JSX.Element => {
         <Text mb="space12" variant="titleXl" as="h3">
           Inline components
         </Text>
-        <Text mb="space32" color="newFg.neutral.muted" variant="bodyL">
+        <Text mb="space32" color="fg.neutral.muted" variant="bodyL">
           Render inline components directly within your app’s UI using Slots as anchors.
         </Text>
         <Box
-          borderColor="newBorder.neutral.strong"
+          borderColor="border.neutral.strong"
           borderWidth="1px"
           overflow="hidden"
           width="100%"
@@ -49,13 +49,13 @@ export const ImplementationFeatures = (): JSX.Element => {
         <Text mb="space12" variant="titleXl" as="h3">
           Floating components
         </Text>
-        <Text mb="space32" color="newFg.neutral.muted" variant="bodyL">
+        <Text mb="space32" color="fg.neutral.muted" variant="bodyL">
           Show tooltips, modals, and banners anywhere in your app to guide users.
         </Text>
         <Flex
           alignItems="center"
           justifyContent="center"
-          borderColor="newBorder.neutral.strong"
+          borderColor="border.neutral.strong"
           borderWidth="1px"
           layerStyle="dotBackground"
           width="100%"

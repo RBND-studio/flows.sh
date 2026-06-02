@@ -65,13 +65,13 @@ const TemplateCard = ({ icon, backgroundColor, title, link }: TemplateCardProps)
         shadow: "newL1",
         borderRadius: "radius8",
         borderWidth: "1px",
-        borderColor: "newBorder.neutral",
+        borderColor: "border.neutral",
         background: "pane.bg.elevated",
         overflow: "hidden",
         fastEaseInOut: "all",
         _hover: {
           shadow: "newL2",
-          borderColor: "newBorder.neutral.strong",
+          borderColor: "border.neutral.strong",
         },
       })}
       href={link}
@@ -88,7 +88,7 @@ const TemplateCard = ({ icon, backgroundColor, title, link }: TemplateCardProps)
       </Flex>
       <Flex p="12" gap="space4" flexDirection="column">
         <Text weight="600">{title}</Text>
-        <Flex color="newFg.neutral.subtle" gap={2}>
+        <Flex color="fg.neutral.subtle" gap={2}>
           <Text variant="bodyXs" color="inherit">
             View template
           </Text>

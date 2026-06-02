@@ -14,20 +14,20 @@ export const Embed: FC<EmbedProps> = ({ src, title }) => {
     <Section maxWidth="1024px!">
       <Flex
         borderWidth="1px"
-        borderColor="newBorder.neutral.strong"
+        borderColor="border.neutral.strong"
         borderRadius="radius8"
         overflow="hidden"
         shadow="solid"
         flexDirection="column"
-        backgroundColor="newBg"
+        backgroundColor="bg"
       >
         <Flex
           gap="space12"
           px="space8"
           py="space8"
-          backgroundColor="newBg.neutral.muted"
+          backgroundColor="bg.neutral.muted"
           borderBottomWidth="1px"
-          borderBottomColor="newBorder.neutral"
+          borderBottomColor="border.neutral"
           justifyContent="space-between"
           alignItems="center"
           md={{
@@ -35,15 +35,15 @@ export const Embed: FC<EmbedProps> = ({ src, title }) => {
           }}
         >
           <Flex gap="space4">
-            <Box borderRadius="50%" width={12} height={12} backgroundColor="newBg.neutral.strong" />
-            <Box borderRadius="50%" width={12} height={12} backgroundColor="newBg.neutral.strong" />
-            <Box borderRadius="50%" width={12} height={12} backgroundColor="newBg.neutral.strong" />
+            <Box borderRadius="50%" width={12} height={12} backgroundColor="bg.neutral.strong" />
+            <Box borderRadius="50%" width={12} height={12} backgroundColor="bg.neutral.strong" />
+            <Box borderRadius="50%" width={12} height={12} backgroundColor="bg.neutral.strong" />
           </Flex>
           <Flex
             py="space2"
             px="space16"
             borderWidth="1px"
-            borderColor="newBorder.neutral"
+            borderColor="border.neutral"
             borderRadius="radius6"
             maxWidth={480}
             width="100%"
@@ -52,7 +52,7 @@ export const Embed: FC<EmbedProps> = ({ src, title }) => {
           >
             <Text
               variant="bodyS"
-              color="newFg.neutral.muted"
+              color="fg.neutral.muted"
               overflow="hidden"
               textOverflow="ellipsis"
               whiteSpace="nowrap"

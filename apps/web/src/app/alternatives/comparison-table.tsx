@@ -35,7 +35,7 @@ export const ComparisonTable = ({
           <thead
             className={css({
               borderBottomWidth: "1px",
-              borderBottomColor: "newBorder.neutral.placeholder",
+              borderBottomColor: "border.neutral.placeholder",
               w: "100%",
             })}
           >
@@ -47,7 +47,7 @@ export const ComparisonTable = ({
                   verticalAlign: "bottom",
                 })}
               >
-                <Text variant="titleS" color="newFg.neutral.muted" flex={1}>
+                <Text variant="titleS" color="fg.neutral.muted" flex={1}>
                   Key features
                 </Text>
               </th>
@@ -75,37 +75,37 @@ export const ComparisonTable = ({
                 if (value === true) {
                   return (
                     <Box
-                      bg="newBg.success.muted"
+                      bg="bg.success.muted"
                       p="space2"
                       borderRadius="50%"
                       borderWidth="1px"
-                      borderColor="newBorder.success.subtle"
+                      borderColor="border.success.subtle"
                       w="fit-content"
                       mx="auto"
                       aria-label="Yes"
                     >
-                      <Icon color="newFg.success" icon={Check16} />
+                      <Icon color="fg.success" icon={Check16} />
                     </Box>
                   );
                 }
                 if (value === false) {
                   return (
                     <Box
-                      bg="newBg.danger.muted"
+                      bg="bg.danger.muted"
                       p="space2"
                       borderRadius="50%"
                       borderWidth="1px"
-                      borderColor="newBorder.danger.subtle"
+                      borderColor="border.danger.subtle"
                       w="fit-content"
                       mx="auto"
                       aria-label="No"
                     >
-                      <Icon color="newFg.danger" icon={Close16} />
+                      <Icon color="fg.danger" icon={Close16} />
                     </Box>
                   );
                 }
                 return (
-                  <Text variant="bodyS" align="center" textWrap="balance" color="newFg.neutral">
+                  <Text variant="bodyS" align="center" textWrap="balance" color="fg.neutral">
                     {value}
                   </Text>
                 );
@@ -117,7 +117,7 @@ export const ComparisonTable = ({
                   className={css({
                     w: "100%",
                     borderBottomWidth: "1px",
-                    borderBottomColor: "newBorder.neutral.placeholder",
+                    borderBottomColor: "border.neutral.placeholder",
                   })}
                 >
                   <td className={css({ w: "50%", p: "space16" })}>
@@ -125,7 +125,7 @@ export const ComparisonTable = ({
                       {comparison.title}
                     </Text>
                     {comparison.description ? (
-                      <Text variant="bodyS" color="newFg.neutral.muted" mt="space2">
+                      <Text variant="bodyS" color="fg.neutral.muted" mt="space2">
                         {comparison.description}
                       </Text>
                     ) : null}
@@ -153,11 +153,11 @@ const CompanyEmblem = ({ name, logo }: { name: string; logo: ReactNode }): React
       <Box
         p="space8"
         borderRadius="50%"
-        bg="newBg.neutral"
+        bg="bg.neutral"
         borderWidth="1px"
-        borderColor="newBorder.neutral.placeholder"
+        borderColor="border.neutral.placeholder"
         shadow="antimetal"
-        color="newFg.neutral"
+        color="fg.neutral"
       >
         {logo}
       </Box>

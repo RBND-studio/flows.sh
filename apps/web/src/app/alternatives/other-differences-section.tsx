@@ -26,10 +26,10 @@ export const OtherDifferencesSection = ({
                 <Text as="h3" variant="titleXl" mb="space24">
                   {difference.title}
                 </Text>
-                <Text variant="bodyM" color="newFg.neutral.muted" mb="space24">
+                <Text variant="bodyM" color="fg.neutral.muted" mb="space24">
                   {difference.competitorDescription}
                 </Text>
-                <Text variant="bodyM" color="newFg.neutral.muted">
+                <Text variant="bodyM" color="fg.neutral.muted">
                   {difference.flowsDescription}
                 </Text>
                 {!isLast && (
@@ -37,13 +37,13 @@ export const OtherDifferencesSection = ({
                     <Box
                       h="1px"
                       w={{ base: "16px", md: "40px" }}
-                      backgroundImage="linear-gradient(270deg, token(colors.newBorder.neutral.placeholder), transparent)"
+                      backgroundImage="linear-gradient(270deg, token(colors.border.neutral.placeholder), transparent)"
                     />
                     <NewLine />
                     <Box
                       h="1px"
                       w={{ base: "16px", md: "40px" }}
-                      backgroundImage="linear-gradient(90deg, token(colors.newBorder.neutral.placeholder), transparent)"
+                      backgroundImage="linear-gradient(90deg, token(colors.border.neutral.placeholder), transparent)"
                     />
                   </Flex>
                 )}

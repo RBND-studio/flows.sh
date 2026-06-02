@@ -44,11 +44,11 @@ export const Accordion: FC<Props> = ({
         className={headerClassName}
         fastEaseInOut="background-color"
         _hover={{
-          bg: "newBg.neutral.muted",
+          bg: "bg.neutral.muted",
         }}
         alignItems="center"
         borderBottomWidth={expanded ? "1px" : undefined}
-        borderBottomColor="newBorder.neutral"
+        borderBottomColor="border.neutral"
         cursor="pointer"
         onClick={toggleExpanded}
         px="space12"

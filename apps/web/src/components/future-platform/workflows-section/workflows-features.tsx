@@ -17,11 +17,11 @@ export const WorkflowsFeatures = (): JSX.Element => {
         <Text mb="space12" variant="titleXl" as="h3">
           Product tours
         </Text>
-        <Text mb="space32" color="newFg.neutral.muted" variant="bodyL">
+        <Text mb="space32" color="fg.neutral.muted" variant="bodyL">
           Guide users step-by-step through your application with interactive product tours.
         </Text>
         <Box
-          borderColor="newBorder.neutral.strong"
+          borderColor="border.neutral.strong"
           borderWidth="1px"
           width="100%"
           height="288px"
@@ -35,9 +35,9 @@ export const WorkflowsFeatures = (): JSX.Element => {
                 <Box
                   height={24}
                   width={24}
-                  backgroundColor="newBg.neutral"
+                  backgroundColor="bg.neutral"
                   borderWidth="1px"
-                  borderColor="newBorder.primary"
+                  borderColor="border.primary"
                   borderRadius="radius4"
                   shadow="focus"
                 />
@@ -56,11 +56,11 @@ export const WorkflowsFeatures = (): JSX.Element => {
         <Text mb="space12" variant="titleXl" as="h3">
           Embeddable components
         </Text>
-        <Text mb="space32" color="newFg.neutral.muted" variant="bodyL">
+        <Text mb="space32" color="fg.neutral.muted" variant="bodyL">
           Embed UI elements directly into your application without needing to redeploy.
         </Text>
         <Box
-          borderColor="newBorder.neutral.strong"
+          borderColor="border.neutral.strong"
           borderWidth="1px"
           width="100%"
           height="288px"

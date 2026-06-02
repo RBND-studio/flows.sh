@@ -20,7 +20,7 @@ export const CookiesTable = ({ cookies }: { cookies: Cookie[] }): ReactNode => {
     >
       <thead
         className={css({
-          backgroundColor: "newBg.neutral.muted",
+          backgroundColor: "bg.neutral.muted",
         })}
       >
         <tr>
@@ -33,11 +33,11 @@ export const CookiesTable = ({ cookies }: { cookies: Cookie[] }): ReactNode => {
               borderTopLeftRadius: "radius6",
               borderBottomLeftRadius: "radius6",
               borderTopWidth: "1px",
-              borderTopColor: "newBorder.neutral",
+              borderTopColor: "border.neutral",
               borderLeftWidth: "1px",
-              borderLeftColor: "newBorder.neutral",
+              borderLeftColor: "border.neutral",
               borderBottomWidth: "1px",
-              borderBottomColor: "newBorder.neutral",
+              borderBottomColor: "border.neutral",
             })}
           >
             Name
@@ -49,9 +49,9 @@ export const CookiesTable = ({ cookies }: { cookies: Cookie[] }): ReactNode => {
               px: "space12",
               py: "space8",
               borderTopWidth: "1px",
-              borderTopColor: "newBorder.neutral",
+              borderTopColor: "border.neutral",
               borderBottomWidth: "1px",
-              borderBottomColor: "newBorder.neutral",
+              borderBottomColor: "border.neutral",
             })}
           >
             Description
@@ -63,9 +63,9 @@ export const CookiesTable = ({ cookies }: { cookies: Cookie[] }): ReactNode => {
               px: "space12",
               py: "space8",
               borderTopWidth: "1px",
-              borderTopColor: "newBorder.neutral",
+              borderTopColor: "border.neutral",
               borderBottomWidth: "1px",
-              borderBottomColor: "newBorder.neutral",
+              borderBottomColor: "border.neutral",
             })}
           >
             Type
@@ -79,11 +79,11 @@ export const CookiesTable = ({ cookies }: { cookies: Cookie[] }): ReactNode => {
               borderTopRightRadius: "radius6",
               borderBottomRightRadius: "radius6",
               borderTopWidth: "1px",
-              borderTopColor: "newBorder.neutral",
+              borderTopColor: "border.neutral",
               borderRightWidth: "1px",
-              borderRightColor: "newBorder.neutral",
+              borderRightColor: "border.neutral",
               borderBottomWidth: "1px",
-              borderBottomColor: "newBorder.neutral",
+              borderBottomColor: "border.neutral",
             })}
           >
             Duration
@@ -109,7 +109,7 @@ const TableLine = ({ name, description, type, duration }): ReactElement => {
           p: "space12",
           verticalAlign: "baseline",
           borderBottomWidth: "1px",
-          borderBottomColor: "newBorder.neutral",
+          borderBottomColor: "border.neutral",
         })}
       >
         {name}
@@ -121,7 +121,7 @@ const TableLine = ({ name, description, type, duration }): ReactElement => {
           p: "space12",
           verticalAlign: "baseline",
           borderBottomWidth: "1px",
-          borderBottomColor: "newBorder.neutral",
+          borderBottomColor: "border.neutral",
         })}
       >
         {description}
@@ -133,7 +133,7 @@ const TableLine = ({ name, description, type, duration }): ReactElement => {
           p: "space12",
           verticalAlign: "baseline",
           borderBottomWidth: "1px",
-          borderBottomColor: "newBorder.neutral",
+          borderBottomColor: "border.neutral",
         })}
       >
         {type}
@@ -145,7 +145,7 @@ const TableLine = ({ name, description, type, duration }): ReactElement => {
           p: "space12",
           verticalAlign: "baseline",
           borderBottomWidth: "1px",
-          borderBottomColor: "newBorder.neutral",
+          borderBottomColor: "border.neutral",
         })}
       >
         {duration}

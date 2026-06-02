@@ -99,14 +99,14 @@ export default async function TechnologyDetailPage({ params }: Props): Promise<R
       <SectionIntro
         title={
           <>
-            Questions and <span className={css({ color: "newFg.neutral.subtle" })}>Answers</span>
+            Questions and <span className={css({ color: "fg.neutral.subtle" })}>Answers</span>
           </>
         }
       />
       <Section maxWidth="640px!" mx="auto">
         {content.faqs.map((faq) => (
           <FaqAccordion headingLevel="h3" key={faq.title} title={faq.title}>
-            <Text color="newFg.neutral.muted" variant="bodyL">
+            <Text color="fg.neutral.muted" variant="bodyL">
               {faq.content}
             </Text>
           </FaqAccordion>

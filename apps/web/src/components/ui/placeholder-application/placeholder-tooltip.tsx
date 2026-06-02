@@ -22,7 +22,7 @@ export const PlaceholderTooltip = ({
     <Flex
       backgroundColor="pane.bg.elevated"
       borderRadius="6px"
-      borderColor="newBorder.neutral"
+      borderColor="border.neutral"
       borderWidth="1px"
       width="100%"
       maxWidth={180}
@@ -35,20 +35,20 @@ export const PlaceholderTooltip = ({
       className={className}
     >
       <Text variant="titleM">{title}</Text>
-      <Text variant="bodyXs" color="newFg.neutral.muted">
+      <Text variant="bodyXs" color="fg.neutral.muted">
         {description}
       </Text>
       <Flex width="100%" alignItems="center" justifyContent="space-between">
         {showProgress ? (
           <Flex gap="space4">
-            <Box height={8} width={8} backgroundColor="newBg.primary" borderRadius="4px" />
+            <Box height={8} width={8} backgroundColor="bg.primary" borderRadius="4px" />
             {[...Array(3)].map((_, index) => (
               <Box
                 // eslint-disable-next-line react/no-array-index-key -- no better key
                 key={index}
                 height={8}
                 width={8}
-                backgroundColor="newBg.neutral.strong"
+                backgroundColor="bg.neutral.strong"
                 borderRadius="4px"
               />
             ))}

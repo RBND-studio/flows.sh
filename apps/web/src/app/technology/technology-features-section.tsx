@@ -28,8 +28,8 @@ export const TechnologyFeaturesSection = ({ title, description }: Props): ReactN
           overflow="hidden"
           borderRadius="radius8"
           borderWidth="1px"
-          borderColor="newBorder.neutral.placeholder"
-          backgroundColor="newBorder.neutral.placeholder"
+          borderColor="border.neutral.placeholder"
+          backgroundColor="border.neutral.placeholder"
           shadow="antimetal"
           mx={{ base: 0, md: "space48" }}
           gap={1}
@@ -46,7 +46,7 @@ export const TechnologyFeaturesSection = ({ title, description }: Props): ReactN
               bg="pane.bg.elevated"
             >
               <Text variant="titleL">Product tours</Text>
-              <Text variant="bodyM" color="newFg.neutral.muted">
+              <Text variant="bodyM" color="fg.neutral.muted">
                 Guide users step-by-step through your product with tooltips, modals, and hints that
                 feel native to your app.
               </Text>
@@ -63,9 +63,9 @@ export const TechnologyFeaturesSection = ({ title, description }: Props): ReactN
               bg="pane.bg.elevated"
             >
               <Text variant="titleL">Embeddable components</Text>
-              <Text variant="bodyM" color="newFg.neutral.muted">
-                Embed interactive content directly inside your app layout: checklists, empty
-                states, and contextual guides without floating overlays.
+              <Text variant="bodyM" color="fg.neutral.muted">
+                Embed interactive content directly inside your app layout: checklists, empty states,
+                and contextual guides without floating overlays.
               </Text>
               <Box mx="-space24">
                 <EmbeddableComponentsIllustrations />
@@ -82,7 +82,7 @@ export const TechnologyFeaturesSection = ({ title, description }: Props): ReactN
             bg="pane.bg.elevated"
           >
             <Text variant="titleL">Custom components</Text>
-            <Text variant="bodyM" color="newFg.neutral.muted" maxW={440}>
+            <Text variant="bodyM" color="fg.neutral.muted" maxW={440}>
               Use your own design system and component library to build adoption experiences that
               match your product's look and feel exactly.
             </Text>
@@ -119,7 +119,7 @@ export const TechnologyFeaturesSection = ({ title, description }: Props): ReactN
             position="relative"
           >
             <Text variant="titleL">Analytics</Text>
-            <Text variant="bodyM" color="newFg.neutral.muted" maxW={440}>
+            <Text variant="bodyM" color="fg.neutral.muted" maxW={440}>
               Track workflow performance with built-in analytics. Measure completion rates,
               drop-off, and engagement across all your adoption experiences.
             </Text>

@@ -28,7 +28,7 @@ export const CodeHighlight: FC<Props> = ({ lineNumbers = true, ...props }) => {
           borderRadius: "radius8!",
           borderStyle: "solid",
           borderWidth: "1px",
-          borderColor: "newBorder.neutral",
+          borderColor: "border.neutral",
           display: "flex",
           flexDirection: "column",
           "& pre": {

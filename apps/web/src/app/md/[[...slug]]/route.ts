@@ -5,7 +5,10 @@ export async function GET(_req: Request, { params }: RouteContext<"/md/[[...slug
   const { slug } = await params;
 
   const pathname = slug ? slug.join("/") : "";
-  const pageUrl = `https://${process.env.NEXT_PUBLIC_DOMAIN}/${pathname}`;
+  const baseUrl = new URL(`https://${process.env.NEXT_PUBLIC_DOMAIN}`);
+  const pageUrl = new URL(pathname, baseUrl);
+
+  if (pageUrl.origin !== baseUrl.origin) notFound();
 
   const pageRes = await fetch(pageUrl);
   if (!pageRes.ok) notFound();

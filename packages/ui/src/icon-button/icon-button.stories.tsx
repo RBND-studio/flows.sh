@@ -58,7 +58,7 @@ export const Grid: Story = {
                 >
                   <Plus16 />
                 </IconButton>
-                <Text variant="bodyXs" color="newFg.neutral.muted" align="center">
+                <Text variant="bodyXs" color="fg.neutral.muted" align="center">
                   {[size, shadow, disabled, variant].join(", ")}
                 </Text>
               </Flex>

@@ -82,7 +82,7 @@ export const SectionIntroTextOnly = ({
         <Text
           maxWidth={680}
           variant="bodyL"
-          color="newFg.neutral.muted"
+          color="fg.neutral.muted"
           mx="auto"
           mt="space16"
           textWrap="balance"

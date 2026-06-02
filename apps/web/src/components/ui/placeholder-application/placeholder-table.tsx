@@ -21,7 +21,7 @@ const Banner = (): JSX.Element => {
       p="space8"
       borderWidth="1px"
       alignItems="center"
-      borderColor="newBorder.primary"
+      borderColor="border.primary"
       borderRadius="6px"
       gap="space8"
       shadow="focus"
@@ -47,12 +47,7 @@ const Banner = (): JSX.Element => {
 
 const Table = (): JSX.Element => {
   return (
-    <Flex
-      borderWidth="1px"
-      borderColor="newBorder.neutral"
-      borderRadius="6px"
-      flexDirection="column"
-    >
+    <Flex borderWidth="1px" borderColor="border.neutral" borderRadius="6px" flexDirection="column">
       {[...Array(7)].map((_, index) => (
         <Flex
           // eslint-disable-next-line react/no-array-index-key -- no better key
@@ -60,7 +55,7 @@ const Table = (): JSX.Element => {
           p="space8"
           gap="space8"
           borderBottomWidth="1px"
-          borderBottomColor="newBorder.neutral"
+          borderBottomColor="border.neutral"
           _last={{ borderBottomWidth: 0 }}
         >
           <Box flex={2}>
@@ -68,7 +63,7 @@ const Table = (): JSX.Element => {
               height={10}
               maxWidth={140}
               width="100%"
-              backgroundColor="newBg.neutral.strong"
+              backgroundColor="bg.neutral.strong"
               borderRadius="radius4"
             />
           </Box>
@@ -77,7 +72,7 @@ const Table = (): JSX.Element => {
               height={10}
               maxWidth={46}
               width="100%"
-              backgroundColor="newBg.neutral.strong"
+              backgroundColor="bg.neutral.strong"
               borderRadius="radius4"
             />
           </Box>
@@ -86,7 +81,7 @@ const Table = (): JSX.Element => {
               height={10}
               maxWidth={32}
               width="100%"
-              backgroundColor="newBg.neutral.strong"
+              backgroundColor="bg.neutral.strong"
               borderRadius="radius4"
             />
           </Box>{" "}
@@ -95,7 +90,7 @@ const Table = (): JSX.Element => {
               height={10}
               maxWidth={42}
               width="100%"
-              backgroundColor="newBg.neutral.strong"
+              backgroundColor="bg.neutral.strong"
               borderRadius="radius4"
             />
           </Box>

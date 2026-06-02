@@ -71,14 +71,14 @@ Launch targeted in-app campaigns like announcements and product tours without en
       <SectionIntro
         title={
           <>
-            Questions and <span className={css({ color: "newFg.neutral.subtle" })}>Answers</span>
+            Questions and <span className={css({ color: "fg.neutral.subtle" })}>Answers</span>
           </>
         }
       />
       <Section maxWidth="640px!" mx="auto">
         {questions.map((question) => (
           <FaqAccordion headingLevel="h3" key={question.title} title={question.title}>
-            <Text color="newFg.neutral.muted" variant="bodyL">
+            <Text color="fg.neutral.muted" variant="bodyL">
               {question.content}
             </Text>
           </FaqAccordion>

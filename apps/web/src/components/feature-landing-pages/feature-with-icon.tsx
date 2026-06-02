@@ -21,13 +21,13 @@ export const FeatureWithIcon = ({ title, description, icon }: Props): ReactNode 
         w="fit-content"
         p="space6"
         borderRadius="radius4"
-        backgroundColor="newBg.neutral.strong"
+        backgroundColor="bg.neutral.strong"
         mb="space12"
       >
         <Icon icon={icon} />
       </Box>
       <Text variant="titleL">{title}</Text>
-      <Text variant="bodyM" color="newFg.neutral.muted">
+      <Text variant="bodyM" color="fg.neutral.muted">
         {description}
       </Text>
     </Flex>

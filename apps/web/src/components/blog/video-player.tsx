@@ -12,7 +12,7 @@ export const VideoPlayer = ({ src, ariaLabel }: Props): ReactNode => {
   return (
     <Box
       borderWidth="1px"
-      borderColor="newBorder.neutral"
+      borderColor="border.neutral"
       borderRadius="radius8"
       overflow="hidden"
       mb="space32"

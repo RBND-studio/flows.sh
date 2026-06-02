@@ -17,11 +17,7 @@ export const Spinner = forwardRef<HTMLDivElement, Props>(function Spinner(
 ) {
   return (
     <div {...props} className={cx(spinner(), className)} ref={ref}>
-      <Icon
-        className={css({ w: size, h: size })}
-        color={color ?? "newFg.primary"}
-        icon={Spinner20}
-      />
+      <Icon className={css({ w: size, h: size })} color={color ?? "fg.primary"} icon={Spinner20} />
     </div>
   );
 });

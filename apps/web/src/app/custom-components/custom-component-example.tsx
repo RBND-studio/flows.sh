@@ -36,7 +36,7 @@ export const CustomComponentExample: FC<Props> = ({ codeExample }) => {
         <Box>
           <Flex
             borderBottomWidth="1px"
-            borderBottomColor="newBorder.neutral"
+            borderBottomColor="border.neutral"
             px="space16"
             py="space12"
             gap="space8"
@@ -109,17 +109,17 @@ export const CustomComponentExample: FC<Props> = ({ codeExample }) => {
     <Flex height="100%" flexDirection={{ base: "column", md: "row" }}>
       <Box
         width="100%"
-        backgroundColor="newBg.neutral"
-        borderBottomColor="newBorder.neutral"
+        backgroundColor="bg.neutral"
+        borderBottomColor="border.neutral"
         borderBottomWidth="1px"
         md={{
           maxWidth: "360px",
-          borderRightColor: "newBorder.neutral",
+          borderRightColor: "border.neutral",
           borderRightWidth: "1px",
           borderBottomWidth: 0,
         }}
       >
-        <Box px="space12" py="space8" borderBottomWidth="1px" borderBottomColor="newBorder.neutral">
+        <Box px="space12" py="space8" borderBottomWidth="1px" borderBottomColor="border.neutral">
           <Tabs activeTab={activeTab} onTabChange={setActiveTab} tabs={tabs} />
         </Box>
         {tabs.map((tab) => {
@@ -136,9 +136,9 @@ export const CustomComponentExample: FC<Props> = ({ codeExample }) => {
           gap="space12"
           px="space8"
           py="space8"
-          backgroundColor="newBg.neutral"
+          backgroundColor="bg.neutral"
           borderBottomWidth="1px"
-          borderBottomColor="newBorder.neutral"
+          borderBottomColor="border.neutral"
           justifyContent="space-between"
           alignItems="center"
           flexShrink={0}
@@ -148,15 +148,15 @@ export const CustomComponentExample: FC<Props> = ({ codeExample }) => {
           }}
         >
           <Flex gap="space4">
-            <Box borderRadius="50%" width={12} height={12} backgroundColor="newBg.neutral.strong" />
-            <Box borderRadius="50%" width={12} height={12} backgroundColor="newBg.neutral.strong" />
-            <Box borderRadius="50%" width={12} height={12} backgroundColor="newBg.neutral.strong" />
+            <Box borderRadius="50%" width={12} height={12} backgroundColor="bg.neutral.strong" />
+            <Box borderRadius="50%" width={12} height={12} backgroundColor="bg.neutral.strong" />
+            <Box borderRadius="50%" width={12} height={12} backgroundColor="bg.neutral.strong" />
           </Flex>
           <Flex
             py="space2"
             px="space16"
             borderWidth="1px"
-            borderColor="newBorder.neutral"
+            borderColor="border.neutral"
             borderRadius="radius6"
             maxWidth={480}
             width="100%"
@@ -165,7 +165,7 @@ export const CustomComponentExample: FC<Props> = ({ codeExample }) => {
           >
             <Text
               variant="bodyS"
-              color="newFg.neutral.muted"
+              color="fg.neutral.muted"
               overflow="hidden"
               textOverflow="ellipsis"
               whiteSpace="nowrap"
@@ -196,7 +196,7 @@ export const CustomComponentExample: FC<Props> = ({ codeExample }) => {
                   alt="Banner background"
                 />
                 <Flex
-                  backgroundColor="newBg.neutral"
+                  backgroundColor="bg.neutral"
                   p="space12"
                   flexDirection="column"
                   gap="space4"

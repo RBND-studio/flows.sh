@@ -57,7 +57,7 @@ export const TrailFork = ({ title, description, currentFeatureHref }: Props): Re
           <Text variant="title2xl" textAlign="center">
             {title}
           </Text>
-          <Text variant="bodyL" color="newFg.neutral.muted" textAlign="center">
+          <Text variant="bodyL" color="fg.neutral.muted" textAlign="center">
             {description}
           </Text>
         </Flex>
@@ -68,8 +68,8 @@ export const TrailFork = ({ title, description, currentFeatureHref }: Props): Re
           overflow="hidden"
           borderRadius="radius8"
           borderWidth="1px"
-          borderColor="newBorder.neutral.placeholder"
-          backgroundColor="newBg.neutral"
+          borderColor="border.neutral.placeholder"
+          backgroundColor="bg.neutral"
           shadow="antimetal"
           mx={{ base: 0, md: "space48" }}
         >
@@ -79,7 +79,7 @@ export const TrailFork = ({ title, description, currentFeatureHref }: Props): Re
               sm: "repeat(2, 1fr)",
             }}
             gap="1px"
-            bg="newBorder.neutral.placeholder"
+            bg="border.neutral.placeholder"
           >
             {visibleFeatures.map((feature) => (
               <FeatureCard
@@ -124,7 +124,7 @@ const FeatureCard = ({ title, description, icon, href }: FeatureCardProps): Reac
         w="fit-content"
         p="space6"
         borderRadius="radius4"
-        backgroundColor="newBg.neutral.strong"
+        backgroundColor="bg.neutral.strong"
         mb="space12"
       >
         <Icon icon={icon} />
@@ -142,7 +142,7 @@ const FeatureCard = ({ title, description, icon, href }: FeatureCardProps): Reac
           })}
         />
       </Flex>
-      <Text variant="bodyM" color="newFg.neutral.muted">
+      <Text variant="bodyM" color="fg.neutral.muted">
         {description}
       </Text>
     </Link>

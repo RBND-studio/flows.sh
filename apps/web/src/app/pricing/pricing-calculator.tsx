@@ -96,7 +96,7 @@ const CalculatorCard = ({
       background="pane.bg.elevated"
       borderRadius="radius8"
       borderWidth="1px"
-      borderColor="newBorder.neutral.placeholder"
+      borderColor="border.neutral.placeholder"
       shadow="antimetal"
       flex="1 1 300px"
       justifyContent="space-between"
@@ -107,7 +107,7 @@ const CalculatorCard = ({
         </Text>
         <Flex gap="space8" alignItems="baseline" mb="space32">
           <Text variant="title2xl">{mtuValueText}</Text>
-          <Text variant="bodyL" color="newFg.neutral.muted">
+          <Text variant="bodyL" color="fg.neutral.muted">
             MTUs
           </Text>
         </Flex>
@@ -122,7 +122,7 @@ const CalculatorCard = ({
       </Box>
 
       <Flex justifyContent="space-between" mt="space16" gap="space8">
-        <Text variant="bodyM" color="newFg.neutral.muted">
+        <Text variant="bodyM" color="fg.neutral.muted">
           Need custom pricing?
         </Text>
         <Text variant="bodyM" asChild>
@@ -161,10 +161,10 @@ const EstimateCard = ({
     <Box
       w="100%"
       padding={{ base: "space24", md: "space32" }}
-      background="newBg.neutral.subtle"
+      background="bg.neutral.subtle"
       borderRadius="radius8"
       borderWidth="1px"
-      borderColor="newBorder.neutral"
+      borderColor="border.neutral"
       flex="1 1 300px"
     >
       <Text variant="titleL" mb="space12">
@@ -173,12 +173,12 @@ const EstimateCard = ({
       <Flex alignItems="baseline" gap="space8" mb={{ base: "space16", md: "space32" }}>
         <Text variant="title2xl">{estimatedCostText}</Text>
         {!reachedMax ? (
-          <Text variant="bodyL" color="newFg.neutral.muted">
+          <Text variant="bodyL" color="fg.neutral.muted">
             / month
           </Text>
         ) : null}
       </Flex>
-      <Text variant="bodyM" color="newFg.neutral.muted" mb={{ base: "space24", md: "space32" }}>
+      <Text variant="bodyM" color="fg.neutral.muted" mb={{ base: "space24", md: "space32" }}>
         {description}
       </Text>
       <Button className={css({ shadow: "neutralFocus" })} asChild size="large">

@@ -21,7 +21,7 @@ const components: MDXComponents = {
         borderRadius: "radius8",
         borderWidth: 1,
         borderStyle: "solid",
-        borderColor: "newBorder.neutral",
+        borderColor: "border.neutral",
         mb: "space32",
       })}
     />
@@ -156,8 +156,8 @@ const components: MDXComponents = {
       className={css({
         mb: "space24",
         "& code": {
-          backgroundColor: "newBg.neutral.subtle",
-          color: "newFg.neutral",
+          backgroundColor: "bg.neutral.subtle",
+          color: "fg.neutral",
           paddingX: "space4",
           paddingY: "2px",
           borderRadius: "radius6",
@@ -166,7 +166,7 @@ const components: MDXComponents = {
           fontFamily: "mono",
           borderWidth: "1px",
           borderStyle: "solid",
-          borderColor: "newBorder.neutral",
+          borderColor: "border.neutral",
         },
       })}
       variant="bodyL"
@@ -213,8 +213,8 @@ const components: MDXComponents = {
         listStylePosition: "outside",
         marginBottom: "space8",
         "& code": {
-          backgroundColor: "newBg.neutral.subtle",
-          color: "newFg.neutral",
+          backgroundColor: "bg.neutral.subtle",
+          color: "fg.neutral",
           paddingX: "space4",
           paddingY: "2px",
           borderRadius: "radius6",
@@ -223,7 +223,7 @@ const components: MDXComponents = {
           fontFamily: "mono",
           borderWidth: "1px",
           borderStyle: "solid",
-          borderColor: "newBorder.neutral",
+          borderColor: "border.neutral",
         },
       })}
     />
@@ -237,7 +237,7 @@ const components: MDXComponents = {
         mb: "space16",
         pl: "space24",
         borderLeftWidth: "2px",
-        borderColor: "newBorder.primary",
+        borderColor: "border.primary",
       })}
       variant="bodyL"
       {...props}
@@ -251,7 +251,7 @@ const components: MDXComponents = {
         border: "none",
         borderTopWidth: "1px",
         borderTopStyle: "solid",
-        borderTopColor: "newBorder.neutral",
+        borderTopColor: "border.neutral",
       })}
       {...props}
     />
@@ -298,7 +298,7 @@ const components: MDXComponents = {
 const linkClassName = css({
   fontWeight: "600",
   borderBottomWidth: "2px",
-  borderBottomColor: "newBorder.primary",
+  borderBottomColor: "border.primary",
   _hover: {
     borderBottomWidth: "3px",
   },

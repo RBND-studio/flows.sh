@@ -40,34 +40,22 @@ export const RevenueExpansionViz = (): ReactNode => {
         <Flex
           p="space6"
           borderWidth="1px"
-          borderColor="newBorder.neutral"
+          borderColor="border.neutral"
           borderRadius="radius8"
-          bg="newBg.neutral"
+          bg="bg.neutral"
         >
           <Text variant="titleXs">Free trial</Text>
         </Flex>
-        <Icon icon={ArrowRight16} color="newFg.neutral.muted" />
+        <Icon icon={ArrowRight16} color="fg.neutral.muted" />
         <Flex p="1px" bg="linear-gradient(45deg, #25A8FF, #3FFF95)" borderRadius="9px">
-          <Flex
-            p="space8"
-            borderRadius="radius8"
-            bg="newBg.neutral"
-            gap="space6"
-            alignItems="center"
-          >
+          <Flex p="space8" borderRadius="radius8" bg="bg.neutral" gap="space6" alignItems="center">
             <Icon icon={Upgrade16} />
             <Text variant="titleXs">Pro plan</Text>
           </Flex>
         </Flex>
-        <Icon icon={ArrowRight16} color="newFg.neutral.muted" />
+        <Icon icon={ArrowRight16} color="fg.neutral.muted" />
         <Flex p="1px" bg="linear-gradient(45deg, #FF3FB6, #FF3425)" borderRadius="9px">
-          <Flex
-            p="space8"
-            borderRadius="radius8"
-            bg="newBg.neutral"
-            gap="space6"
-            alignItems="center"
-          >
+          <Flex p="space8" borderRadius="radius8" bg="bg.neutral" gap="space6" alignItems="center">
             <Icon icon={Addon16} />
             <Text variant="titleXs">Add-ons</Text>
           </Flex>

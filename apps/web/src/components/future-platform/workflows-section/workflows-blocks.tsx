@@ -50,7 +50,7 @@ const tabs: {
     ],
     extraComponent: (
       <Flex
-        backgroundColor="newBg.neutral"
+        backgroundColor="bg.neutral"
         shadow="newL1"
         borderRadius="radius8"
         py="10px"
@@ -58,13 +58,13 @@ const tabs: {
         pl="10px"
         gap="space8"
         borderWidth="1px"
-        borderColor="newBorder.neutral"
+        borderColor="border.neutral"
         alignItems="center"
         opacity={0}
         animation="fadeIn 0.4s ease-in-out"
         animationFillMode="forwards"
       >
-        <Flex borderRadius="radius4" p="2px" backgroundColor="newBg.neutral.strong">
+        <Flex borderRadius="radius4" p="2px" backgroundColor="bg.neutral.strong">
           <Icon icon={Component16} />
         </Flex>
         <Text weight="600">Custom component</Text>
@@ -99,9 +99,9 @@ export const WorkflowsBlocks = (): JSX.Element => {
     <Section
       display="flex"
       flexDirection="column"
-      borderLeftColor="newBorder.neutral"
+      borderLeftColor="border.neutral"
       borderLeftWidth="1px"
-      borderRightColor="newBorder.neutral"
+      borderRightColor="border.neutral"
       borderRightWidth="1px"
       alignItems="center"
       md={{ flexDirection: "row" }}
@@ -116,14 +116,14 @@ export const WorkflowsBlocks = (): JSX.Element => {
         layerStyle="dotBackground"
         width="100%"
         height="280px"
-        borderTopColor="newBorder.neutral"
+        borderTopColor="border.neutral"
         borderTopWidth="1px"
         alignItems="center"
         justifyContent="center"
         gap="space8"
         md={{
           borderTopWidth: 0,
-          borderLeftColor: "newBorder.neutral",
+          borderLeftColor: "border.neutral",
           borderLeftWidth: "1px",
         }}
         role="img"
@@ -134,7 +134,7 @@ export const WorkflowsBlocks = (): JSX.Element => {
             ?.components.map((block) => (
               <Flex
                 key={block.title}
-                backgroundColor="newBg.neutral"
+                backgroundColor="bg.neutral"
                 shadow="newL1"
                 borderRadius="radius8"
                 py="10px"
@@ -142,7 +142,7 @@ export const WorkflowsBlocks = (): JSX.Element => {
                 pl="10px"
                 gap="space8"
                 borderWidth="1px"
-                borderColor="newBorder.neutral"
+                borderColor="border.neutral"
                 alignItems="center"
                 opacity={0}
                 animation="fadeIn 0.4s ease-in-out"

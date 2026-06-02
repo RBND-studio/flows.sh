@@ -18,9 +18,9 @@
     "fumadocs-mdx": "15.0.2",
     "fumadocs-ui": "16.8.9",
     "icons": "workspace:*",
-    "next": "16.2.6",
-    "react": "19.2.6",
-    "react-dom": "19.2.6",
+    "next": "16.2.7",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
     "shared": "workspace:*",
     "ui": "workspace:*",
     "zod": "4.4.3"

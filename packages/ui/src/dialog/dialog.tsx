@@ -83,7 +83,7 @@ const contentCss = cva({
   base: {
     backgroundColor: "pane.bg.main",
     borderWidth: "1px",
-    borderColor: "newBorder.neutral",
+    borderColor: "border.neutral",
     width: "100%",
     borderRadius: "radius12",
     position: "fixed",

@@ -29,14 +29,14 @@ export const ChangelogItem = ({ detail, mdx, ...release }: Props): ReactElement 
       <Link href={routes.changelog}>
         <Flex gap="space4" alignItems="center" mb="space8">
           <Icon icon={ArrowLeft16} />
-          <Text color="newFg.neutral.muted">All releases</Text>
+          <Text color="fg.neutral.muted">All releases</Text>
         </Flex>
       </Link>
-      <Text color="newFg.neutral.muted">{date}</Text>
+      <Text color="fg.neutral.muted">{date}</Text>
     </Box>
   ) : (
     <Link href={href}>
-      <Text color="newFg.neutral.muted">{date}</Text>
+      <Text color="fg.neutral.muted">{date}</Text>
     </Link>
   );
 
@@ -57,7 +57,7 @@ export const ChangelogItem = ({ detail, mdx, ...release }: Props): ReactElement 
       gap="space40"
       justifyContent="center"
       borderBottomWidth={1}
-      borderBottomColor="newBorder.neutral"
+      borderBottomColor="border.neutral"
       py="space64"
       mdDown={{ flexDirection: "column", py: "space40" }}
       _last={{ border: "none" }}
@@ -80,7 +80,7 @@ const itemStyles = cva({
     gap: "space40",
     justifyContent: "center",
     borderBottomWidth: 1,
-    borderBottomColor: "newBorder.neutral",
+    borderBottomColor: "border.neutral",
     py: "space64",
     mdDown: {
       flexDirection: "column",

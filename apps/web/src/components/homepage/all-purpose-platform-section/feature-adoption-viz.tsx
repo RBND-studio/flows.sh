@@ -29,7 +29,7 @@ export const FeatureAdoptionViz = (): ReactNode => {
       <Flex
         borderRadius="radius12"
         borderWidth={1}
-        borderColor="newBorder.neutral.placeholder"
+        borderColor="border.neutral.placeholder"
         flexDirection="column"
         shadow="l2"
         background="pane.bg.elevated"
@@ -42,7 +42,7 @@ export const FeatureAdoptionViz = (): ReactNode => {
           flexDirection="column"
           gap="space4"
           borderTopWidth={1}
-          borderColor="newBorder.neutral.placeholder"
+          borderColor="border.neutral.placeholder"
           px="space12"
           pt="space12"
           pb="space24"
@@ -105,10 +105,10 @@ const Chart = (): ReactNode => {
         px="space12"
       >
         <Box width="100%" h={1} bg="transparent" />
-        <Box width="100%" h={1} bg="newBorder.neutral.placeholder" />
-        <Box width="100%" h={1} bg="newBorder.neutral.placeholder" />
-        <Box width="100%" h={1} bg="newBorder.neutral.placeholder" />
-        <Box width="100%" h={1} bg="newBorder.neutral.placeholder" />
+        <Box width="100%" h={1} bg="border.neutral.placeholder" />
+        <Box width="100%" h={1} bg="border.neutral.placeholder" />
+        <Box width="100%" h={1} bg="border.neutral.placeholder" />
+        <Box width="100%" h={1} bg="border.neutral.placeholder" />
         <Box width="100%" h={1} bg="transparent" />
       </Flex>
     </Flex>

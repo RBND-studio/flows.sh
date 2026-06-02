@@ -50,7 +50,7 @@ export const ComponentPreview = ({ component = "tooltip" }: Props): ReactNode =>
       layerStyle="dotBackground"
       borderRadius="radius8"
       borderWidth="1px"
-      borderColor="newBorder.neutral"
+      borderColor="border.neutral"
       mb="space24"
     >
       {components[component]}

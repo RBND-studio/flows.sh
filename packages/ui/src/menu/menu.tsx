@@ -89,19 +89,19 @@ export const MenuItem: FC<MenuItemProps> = forwardRef<HTMLButtonElement, MenuIte
             width: "100%",
             fastEaseInOut: "all",
             textStyle: "bodyS",
-            color: disabled ? "newFg.neutral.subtle" : undefined,
+            color: disabled ? "fg.neutral.subtle" : undefined,
 
             _highlighted: {
-              bg: "newBg.primary.subtle",
+              bg: "bg.primary.subtle",
               _hover: {
-                bg: "newBg.primary.subtle",
+                bg: "bg.primary.subtle",
               },
             },
             _hover: {
-              bg: disabled ? "transparent" : "newBg.neutral.subtle",
+              bg: disabled ? "transparent" : "bg.neutral.subtle",
             },
             "& svg": {
-              color: disabled ? "newFg.neutral.subtle" : undefined,
+              color: disabled ? "fg.neutral.subtle" : undefined,
             },
           }),
 

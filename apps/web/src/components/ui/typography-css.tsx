@@ -6,7 +6,7 @@ export const paragraphCss = css({
   my: "space24",
 
   "& a": {
-    color: "newFg.primary",
+    color: "fg.primary",
     textDecoration: "underline",
   },
 });
@@ -16,7 +16,7 @@ export const bulletCss = css({
   mb: "space8",
 
   "& a": {
-    color: "newFg.primary",
+    color: "fg.primary",
     textDecoration: "underline",
   },
 });

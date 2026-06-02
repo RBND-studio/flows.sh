@@ -21,12 +21,12 @@ export const SolutionCard = ({ title, description, viz, linkUrl }: Props): React
         css({
           bg: "pane.bg.elevated",
           borderWidth: "1px",
-          borderColor: "newBorder.neutral.placeholder",
+          borderColor: "border.neutral.placeholder",
           borderRadius: "radius12",
           shadow: "antimetal",
           fastEaseInOut: "all",
           _hover: {
-            borderColor: "newBorder.neutral.strong",
+            borderColor: "border.neutral.strong",
           },
         }),
         "group",
@@ -44,12 +44,12 @@ export const SolutionCard = ({ title, description, viz, linkUrl }: Props): React
           variant="titleL"
           fastEaseInOut="color"
           _groupHover={{
-            color: "newFg.primary",
+            color: "fg.primary",
           }}
         >
           {title}
         </Text>
-        <Text mb="space16" variant="bodyM" color="newFg.neutral.muted">
+        <Text mb="space16" variant="bodyM" color="fg.neutral.muted">
           {description}
         </Text>
       </Box>

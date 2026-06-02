@@ -54,7 +54,7 @@ export const CtaBanner = ({
         py="space40"
         layerStyle="dotBackground"
         borderWidth={1}
-        borderColor="newBorder.neutral.placeholder"
+        borderColor="border.neutral.placeholder"
         borderRadius="radius12"
         maxWidth={1024}
         mx="auto"
@@ -63,12 +63,12 @@ export const CtaBanner = ({
           <Text as="h2" variant="title3xl" textAlign="center">
             {title}
           </Text>
-          <Text variant="bodyL" color="newFg.neutral.muted" textAlign="center">
+          <Text variant="bodyL" color="fg.neutral.muted" textAlign="center">
             {description}
           </Text>
         </Flex>
         {actions}
-        <Text variant="bodyS" color="newFg.neutral.muted" textAlign="center">
+        <Text variant="bodyS" color="fg.neutral.muted" textAlign="center">
           No credit card required. Free forever.
         </Text>
       </Flex>

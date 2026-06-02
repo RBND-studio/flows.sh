@@ -30,7 +30,7 @@ const Page = (): ReactElement => {
         <Text as="h1" variant="title4xl" textAlign="center" mb="space16" maxWidth={600} mx="auto">
           Compare Flows with all other solutions
         </Text>
-        <Text textAlign="center" variant="bodyL" color="newFg.neutral.muted" textWrap="balance">
+        <Text textAlign="center" variant="bodyL" color="fg.neutral.muted" textWrap="balance">
           We’ve compared Flows with {alternativesCount} other solutions. You can view the direct
           comparison to each of them below.
         </Text>
@@ -38,7 +38,7 @@ const Page = (): ReactElement => {
       <Section
         maxWidth="800px!"
         borderWidth={1}
-        borderColor="newBorder.neutral.placeholder"
+        borderColor="border.neutral.placeholder"
         borderRadius="radius8"
         mt="space40"
         mb="space80"

@@ -2,7 +2,7 @@ import { defineSemanticTokens } from "@pandacss/dev";
 
 export const semanticTokens = defineSemanticTokens({
   colors: {
-    newBg: {
+    bg: {
       DEFAULT: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
       neutral: {
         DEFAULT: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
@@ -30,7 +30,7 @@ export const semanticTokens = defineSemanticTokens({
       },
     },
 
-    newFg: {
+    fg: {
       DEFAULT: { value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.25}" } },
       neutral: {
         DEFAULT: { value: { base: "{colors.neutral.900}", _dark: "{colors.neutral.25}" } },
@@ -54,7 +54,7 @@ export const semanticTokens = defineSemanticTokens({
       },
     },
 
-    newBorder: {
+    border: {
       DEFAULT: { value: { base: "{colors.neutral.125}", _dark: "{colors.neutral.750}" } },
       neutral: {
         DEFAULT: { value: { base: "{colors.neutral.125}", _dark: "{colors.neutral.750}" } },
@@ -87,7 +87,7 @@ export const semanticTokens = defineSemanticTokens({
     },
 
     // control is a generic pattern for control elements like fields
-    newControl: {
+    control: {
       bg: {
         DEFAULT: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.875}" } },
         hover: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.825}" } },

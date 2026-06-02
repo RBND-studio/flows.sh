@@ -36,7 +36,7 @@ export const ImplementationExample: FC<Props> = ({ codeExample }) => {
         <Box>
           <Flex
             borderBottomWidth="1px"
-            borderBottomColor="newBorder.neutral"
+            borderBottomColor="border.neutral"
             px="space16"
             py="space12"
             gap="space8"
@@ -105,7 +105,7 @@ export const ImplementationExample: FC<Props> = ({ codeExample }) => {
         <Text mb="space12" variant="titleXl" as="h3">
           Bring your own UI
         </Text>
-        <Text maxWidth={528} mb="space32" color="newFg.neutral.muted" variant="bodyL">
+        <Text maxWidth={528} mb="space32" color="fg.neutral.muted" variant="bodyL">
           Infinite customization. Just add your own UI components and use them in workflows to
           create a native user experience.
         </Text>
@@ -113,9 +113,9 @@ export const ImplementationExample: FC<Props> = ({ codeExample }) => {
       <Section
         display="flex"
         width="100%"
-        borderLeftColor="newBorder.neutral"
+        borderLeftColor="border.neutral"
         borderLeftWidth="1px"
-        borderRightColor="newBorder.neutral"
+        borderRightColor="border.neutral"
         borderRightWidth="1px"
         flexDirection="column"
         md={{
@@ -126,22 +126,17 @@ export const ImplementationExample: FC<Props> = ({ codeExample }) => {
       >
         <Box
           width="100%"
-          backgroundColor="newBg.neutral"
-          borderBottomColor="newBorder.neutral"
+          backgroundColor="bg.neutral"
+          borderBottomColor="border.neutral"
           borderBottomWidth="1px"
           md={{
             maxWidth: "360px",
-            borderRightColor: "newBorder.neutral",
+            borderRightColor: "border.neutral",
             borderRightWidth: "1px",
             borderBottomWidth: 0,
           }}
         >
-          <Box
-            px="space12"
-            py="space8"
-            borderBottomWidth="1px"
-            borderBottomColor="newBorder.neutral"
-          >
+          <Box px="space12" py="space8" borderBottomWidth="1px" borderBottomColor="border.neutral">
             <Tabs activeTab={activeTab} onTabChange={setActiveTab} tabs={tabs} />
           </Box>
           {tabs.map((tab) => {
@@ -156,7 +151,7 @@ export const ImplementationExample: FC<Props> = ({ codeExample }) => {
         <Flex width="100%" p="space12" layerStyle="dotBackground">
           <Box
             borderWidth="1px"
-            borderColor="newBorder.neutral.strong"
+            borderColor="border.neutral.strong"
             borderRadius="radius12"
             shadow="solid"
             overflow="hidden"
@@ -183,7 +178,7 @@ export const ImplementationExample: FC<Props> = ({ codeExample }) => {
                     alt="Banner background"
                   />
                   <Flex
-                    backgroundColor="newBg.neutral"
+                    backgroundColor="bg.neutral"
                     p="space12"
                     flexDirection="column"
                     gap="space4"

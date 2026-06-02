@@ -268,28 +268,28 @@ const button = cva({
       },
       // Used in select
       field: {
-        backgroundColor: "newControl.bg",
-        borderColor: "newControl.border",
+        backgroundColor: "control.bg",
+        borderColor: "control.border",
         outline: "none",
-        color: "newControl.fg",
+        color: "control.fg",
 
         textStyle: "bodyS",
 
         _hover: {
-          borderColor: "newControl.border.hover",
+          borderColor: "control.border.hover",
         },
         // TODO: think if focus makes sense on select
         _focus: {
-          borderColor: "newControl.border.selected",
+          borderColor: "control.border.selected",
           _hover: {
-            borderColor: "newControl.border.selected",
+            borderColor: "control.border.selected",
           },
         },
 
         _disabled: {
-          backgroundColor: "newControl.bg.disabled",
-          borderColor: "newControl.border.disabled",
-          color: "newControl.fg.disabled",
+          backgroundColor: "control.bg.disabled",
+          borderColor: "control.border.disabled",
+          color: "control.fg.disabled",
           pointerEvents: "none",
         },
       },

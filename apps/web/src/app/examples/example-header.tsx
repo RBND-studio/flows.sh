@@ -23,7 +23,7 @@ export const ExampleHeader = ({ title, description, exampleWorkflowId }: Props):
           display: "flex",
           gap: "space6",
           alignItems: "center",
-          color: "newFg.neutral.muted",
+          color: "fg.neutral.muted",
           width: "fit-content",
           mb: "space8",
           fastEaseInOut: "all",
@@ -31,7 +31,7 @@ export const ExampleHeader = ({ title, description, exampleWorkflowId }: Props):
             fastEaseInOut: "all",
           },
           _hover: {
-            color: "newFg.neutral",
+            color: "fg.neutral",
             "& svg": {
               transform: "translateX(-4px)",
             },
@@ -53,7 +53,7 @@ export const ExampleHeader = ({ title, description, exampleWorkflowId }: Props):
           <Text variant="title3xl" as="h1">
             {title}
           </Text>
-          <Text variant="bodyL" color="newFg.neutral.muted">
+          <Text variant="bodyL" color="fg.neutral.muted">
             {description}
           </Text>
         </Flex>

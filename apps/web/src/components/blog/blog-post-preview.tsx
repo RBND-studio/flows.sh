@@ -37,7 +37,7 @@ export const BlogPostPreview = (post: Props): ReactElement => {
                 mb: "space16",
                 borderWidth: "1px",
                 borderStyle: "solid",
-                borderColor: "newBorder.neutral",
+                borderColor: "border.neutral",
               })}
               height={600}
               src={post.image}
@@ -51,18 +51,18 @@ export const BlogPostPreview = (post: Props): ReactElement => {
           as="h2"
           mb="space8"
           variant="titleXl"
-          _hover={{ color: "newFg.primary" }}
+          _hover={{ color: "fg.primary" }}
           fastEaseInOut="color"
         >
           <Link href={href}>{post.title}</Link>
         </Text>
-        <Text as="p" mb="space12" variant="bodyM" color="newFg.neutral.muted">
+        <Text as="p" mb="space12" variant="bodyM" color="fg.neutral.muted">
           {post.description}
         </Text>
         <Link
           className={css({
             textStyle: "titleL",
-            color: "newFg.neutral",
+            color: "fg.neutral",
             display: "flex",
             alignItems: "center",
             gap: "space4",

@@ -9,7 +9,7 @@ export const DocsLink = (props: LinkProps): JSX.Element => {
         "&:not(:has(code))": {
           fontWeight: "600!",
           borderBottomWidth: "2px!",
-          borderBottomColor: "newBorder.primary!",
+          borderBottomColor: "border.primary!",
           textDecoration: "none!",
           _hover: {
             borderBottomWidth: "3px!",
@@ -17,7 +17,7 @@ export const DocsLink = (props: LinkProps): JSX.Element => {
         },
         "&:has(code)": {
           textDecoration: "underline",
-          textDecorationColor: "newBorder.primary",
+          textDecorationColor: "border.primary",
           textDecorationThickness: "1.5px",
           textUnderlineOffset: "3px",
         },

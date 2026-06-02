@@ -26,7 +26,7 @@ export const riverFeatures = [
             flexDirection="column"
             p="space12"
             borderWidth="1px"
-            borderColor="newBorder.neutral"
+            borderColor="border.neutral"
             borderRadius="6px"
             backgroundColor="pane.bg.elevated"
             mt="space8"
@@ -67,9 +67,9 @@ export const riverFeatures = [
             <Box
               height={24}
               width={24}
-              backgroundColor="newBg.neutral"
+              backgroundColor="bg.neutral"
               borderWidth="1px"
-              borderColor="newBorder.primary"
+              borderColor="border.primary"
               borderRadius="radius4"
               shadow="focus"
             />

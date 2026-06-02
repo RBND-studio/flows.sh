@@ -46,18 +46,18 @@ const root = cva({
     borderRadius: 9999,
     position: "relative",
     fastEaseInOut: "background",
-    bg: "newControl.bg.strong",
+    bg: "control.bg.strong",
     _hover: {
-      bg: "newControl.bg.strongHover",
+      bg: "control.bg.strongHover",
     },
     "&[data-state='checked']": {
-      bg: "newControl.bg.success",
+      bg: "control.bg.success",
       _hover: {
-        bg: "newControl.bg.successHover",
+        bg: "control.bg.successHover",
       },
     },
     _disabled: {
-      bg: "newControl.bg.disabled",
+      bg: "control.bg.disabled",
       pointerEvents: "none",
     },
   },
@@ -69,7 +69,7 @@ const thumb = cva({
     width: 16,
     height: 16,
     borderRadius: 9999,
-    bg: "newBg.neutral",
+    bg: "bg.neutral",
     boxShadow: "l1",
     transitionDuration: "fast",
     transitionTimingFunction: "easeInOut",

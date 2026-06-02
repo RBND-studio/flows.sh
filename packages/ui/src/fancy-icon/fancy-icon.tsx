@@ -47,7 +47,7 @@ const iconColor = cva({
   variants: {
     bg: {
       blue: { backgroundColor: "dataViz.blue.fg" },
-      red: { backgroundColor: "newFg.danger" },
+      red: { backgroundColor: "fg.danger" },
       green: { backgroundColor: "dataViz.green.fg" },
       purple: { backgroundColor: "dataViz.purple.fg" },
     },

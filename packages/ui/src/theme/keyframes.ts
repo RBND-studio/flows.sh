@@ -55,11 +55,11 @@ export const keyframes: CssKeyframes = {
   },
   highlightFadeIn: {
     "0%": {
-      borderColor: "newBorder.neutral",
+      borderColor: "border.neutral",
       boxShadow: "none",
     },
     "100%": {
-      borderColor: "newBorder.primary",
+      borderColor: "border.primary",
       boxShadow: "focus",
     },
   },

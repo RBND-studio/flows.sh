@@ -16,14 +16,14 @@ const cards = [
           justifyContent="center"
           height={20}
           width={20}
-          backgroundColor="newBg.neutral"
+          backgroundColor="bg.neutral"
           borderWidth="1px"
           borderRadius="100%"
-          borderColor="newBorder.primary"
+          borderColor="border.primary"
           shadow="focus"
           aria-hidden="true"
         >
-          <Icon icon={QuestionMark16} color="newFg.primary" />
+          <Icon icon={QuestionMark16} color="fg.primary" />
         </Flex>
         <Box width={176} pt="space8" right={0} md={{ right: "unset" }}>
           <PlaceholderTooltip
@@ -42,7 +42,7 @@ const cards = [
       <Flex flexDirection="column" alignItems="center" role="img">
         <Box
           mt="space4"
-          backgroundColor="newBg.primary"
+          backgroundColor="bg.primary"
           borderRadius="50%"
           aria-hidden="true"
           width={16}
@@ -56,11 +56,11 @@ const cards = [
             top: 0,
             left: 0,
             borderRadius: "50%",
-            backgroundColor: "newBg.primary",
+            backgroundColor: "bg.primary",
             animation: "ping 1.5s infinite",
           }}
         >
-          <Box width={14} height={14} backgroundColor="newBg.primary" borderRadius="100%" />
+          <Box width={14} height={14} backgroundColor="bg.primary" borderRadius="100%" />
         </Box>
         <Box width={176} pt="space12" right={0} md={{ right: "unset" }}>
           <PlaceholderTooltip
@@ -146,16 +146,16 @@ export const BasicsSection = (): ReactNode => {
       }}
       p="space8"
       borderWidth={1}
-      borderColor="newBorder.neutral.placeholder"
+      borderColor="border.neutral.placeholder"
       borderRadius="20px"
       mt="space16"
     >
       <Flex
         flexDirection="column"
         borderWidth={1}
-        borderColor="newBorder.neutral"
+        borderColor="border.neutral"
         borderRadius="radius12"
-        bg="newBg.neutral.subtle"
+        bg="bg.neutral.subtle"
         px="space20"
         pt="space20"
         overflow="hidden"
@@ -167,7 +167,7 @@ export const BasicsSection = (): ReactNode => {
         <Text as="h3" mb="space12" variant="titleL">
           Everything you need out of the box
         </Text>
-        <Text variant="bodyM" color="newFg.neutral.muted">
+        <Text variant="bodyM" color="fg.neutral.muted">
           Industry proven formfactors at your fingertips. <br />
           Ready to be customized to feel native to your product.
         </Text>
@@ -190,9 +190,9 @@ export const BasicsSection = (): ReactNode => {
               key={item.title}
               p="space16"
               borderWidth={1}
-              borderColor="newBorder.neutral.placeholder"
+              borderColor="border.neutral.placeholder"
               borderRadius="radius12"
-              bg="linear-gradient(180deg, token(colors.newBg.neutral) 20%, token(colors.newBg.neutral.muted) 80%)"
+              bg="linear-gradient(180deg, token(colors.bg.neutral) 20%, token(colors.bg.neutral.muted) 80%)"
               h={280}
               w="100%"
               shadow="l2"
@@ -207,7 +207,7 @@ export const BasicsSection = (): ReactNode => {
               <Text mb="space8" as="h4" variant="titleM">
                 {item.title}
               </Text>
-              <Text variant="bodyM" color="newFg.neutral.muted" mb="space16">
+              <Text variant="bodyM" color="fg.neutral.muted" mb="space16">
                 {item.description}
               </Text>
               {item.element}

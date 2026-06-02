@@ -12,7 +12,7 @@ const dev = process.env.NODE_ENV !== "production";
 const cspHeader = `
     default-src 'self';
     script-src 'self' 'unsafe-inline'${dev ? " 'unsafe-eval'" : ""};
-    connect-src 'self' https://app.lemonsqueezy.com https://*.flows-cloud.com wss://*.flows-cloud.com;
+    connect-src 'self' https://app.lemonsqueezy.com https://status.flows.sh https://*.flows-cloud.com wss://*.flows-cloud.com;
     style-src 'self' 'unsafe-inline';
     img-src 'self' https://api.producthunt.com blob: data:;
     font-src 'self';

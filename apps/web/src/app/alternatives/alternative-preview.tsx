@@ -17,7 +17,7 @@ export const AlternativePreview: FC<Props> = ({ alternative }) => {
     <li
       className={css({
         borderBottomWidth: 1,
-        borderBottomColor: "newBorder.neutral.placeholder",
+        borderBottomColor: "border.neutral.placeholder",
         _last: { borderBottomWidth: 0 },
       })}
     >
@@ -27,7 +27,7 @@ export const AlternativePreview: FC<Props> = ({ alternative }) => {
           css({
             p: "space24",
             fastEaseInOut: "background-color",
-            _hover: { backgroundColor: "newBg.neutral.muted" },
+            _hover: { backgroundColor: "bg.neutral.muted" },
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
@@ -39,7 +39,7 @@ export const AlternativePreview: FC<Props> = ({ alternative }) => {
         <Flex alignItems="center" gap="space12">
           {alternative.competitor.squareLogo}
           <Text variant="titleM">
-            <Text as="span" color="newFg.neutral.muted">
+            <Text as="span" color="fg.neutral.muted">
               Compare to
             </Text>{" "}
             {alternative.competitor.name}
@@ -49,8 +49,8 @@ export const AlternativePreview: FC<Props> = ({ alternative }) => {
           p="space4"
           borderRadius="radius6"
           borderWidth={1}
-          borderColor="newBorder.neutral"
-          bg="newBg.neutral.subtle"
+          borderColor="border.neutral"
+          bg="bg.neutral.subtle"
         >
           <ArrowRight16 />
         </Flex>

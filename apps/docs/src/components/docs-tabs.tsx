@@ -12,7 +12,7 @@ export const DocsTabs = (props: TabsProps): JSX.Element => {
       className={cx(
         css({
           "& > div:first-child": {
-            borderBottomColor: "newBorder.neutral",
+            borderBottomColor: "border.neutral",
             borderBottomWidth: "1px!",
           },
         }),

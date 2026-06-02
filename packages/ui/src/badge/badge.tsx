@@ -39,9 +39,9 @@ const badge = cva({
     color: {
       default: {
         borderWidth: "1px",
-        borderColor: "newBorder.neutral.strong",
-        background: "newBg.neutral",
-        color: "newFg.neutral.muted",
+        borderColor: "border.neutral.strong",
+        background: "bg.neutral",
+        color: "fg.neutral.muted",
       },
     },
   },

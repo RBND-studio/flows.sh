@@ -18,7 +18,7 @@ export const FeaturesSection = (): ReactNode => {
       <Section mt={{ base: "space80", md: "space160" }} mb={{ base: "space48", md: "space96" }}>
         <Flex flexDirection="column" gap="space20" alignItems="center" maxWidth={580} mx="auto">
           <Text variant="title2xl">Relevant in-app experiences</Text>
-          <Text variant="bodyL" color="newFg.neutral.muted" textAlign="center">
+          <Text variant="bodyL" color="fg.neutral.muted" textAlign="center">
             Bring product adoption experiences into your product. Embed tutorials, contextual empty
             states, and other interactive content to guide users and improve engagement.
           </Text>
@@ -31,8 +31,8 @@ export const FeaturesSection = (): ReactNode => {
           overflow="hidden"
           borderRadius="radius8"
           borderWidth="1px"
-          borderColor="newBorder.neutral.placeholder"
-          backgroundColor="newBorder.neutral.placeholder"
+          borderColor="border.neutral.placeholder"
+          backgroundColor="border.neutral.placeholder"
           shadow="antimetal"
           mx={{ base: 0, md: "space48" }}
           gap={1}
@@ -49,7 +49,7 @@ export const FeaturesSection = (): ReactNode => {
               bg="pane.bg.elevated"
             >
               <Text variant="titleL">Fits in-line</Text>
-              <Text variant="bodyM" color="newFg.neutral.muted">
+              <Text variant="bodyM" color="fg.neutral.muted">
                 Instead of pointing to elements with tooltips, embed interactive content directly
                 within the context of the user’s journey.
               </Text>
@@ -67,7 +67,7 @@ export const FeaturesSection = (): ReactNode => {
               bg="pane.bg.elevated"
             >
               <Text variant="titleL">Full layout control</Text>
-              <Text variant="bodyM" color="newFg.neutral.muted">
+              <Text variant="bodyM" color="fg.neutral.muted">
                 Components render inside Slots, allowing for precise placement and control over the
                 layout of embedded content.
               </Text>
@@ -84,7 +84,7 @@ export const FeaturesSection = (): ReactNode => {
             bg="pane.bg.elevated"
           >
             <Text variant="titleL">Custom components</Text>
-            <Text variant="bodyM" color="newFg.neutral.muted" maxW={440}>
+            <Text variant="bodyM" color="fg.neutral.muted" maxW={440}>
               Use your own design system and technologies to build custom components that fit
               seamlessly into your product.
             </Text>
@@ -121,7 +121,7 @@ export const FeaturesSection = (): ReactNode => {
             position="relative"
           >
             <Text variant="titleL">Analytics</Text>
-            <Text variant="bodyM" color="newFg.neutral.muted" maxW={440}>
+            <Text variant="bodyM" color="fg.neutral.muted" maxW={440}>
               Measure the impact of your embedded content with built-in analytics to track user
               engagement and conversion rates.
             </Text>

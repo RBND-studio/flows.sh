@@ -29,7 +29,7 @@ export default async function GlossaryPage(): Promise<ReactNode> {
         <Text as="h1" variant="title4xl" textAlign="center" mb="space16" maxWidth={600} mx="auto">
           Product Adoption Glossary
         </Text>
-        <Text textAlign="center" variant="bodyL" color="newFg.neutral.muted">
+        <Text textAlign="center" variant="bodyL" color="fg.neutral.muted">
           Clear and simple definitions of the terms every developer, designer, and product manager
           needs to know about product adoption and user onboarding.
         </Text>
@@ -38,7 +38,7 @@ export default async function GlossaryPage(): Promise<ReactNode> {
       <Section
         maxWidth="800px!"
         borderWidth={1}
-        borderColor="newBorder.neutral.placeholder"
+        borderColor="border.neutral.placeholder"
         borderRadius="radius8"
         mt="space40"
         mb="space80"

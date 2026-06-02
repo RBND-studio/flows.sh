@@ -46,13 +46,13 @@ export const VolumeTable = (): ReactElement => {
           onClick={() => setIsOpen(!isOpen)}
           className={css({
             cursor: "pointer",
-            color: "newFg.neutral.muted",
+            color: "fg.neutral.muted",
             mb: "space16",
             display: "flex",
             gap: "space8",
             alignItems: "center",
             _hover: {
-              color: "newFg.neutral",
+              color: "fg.neutral",
             },
           })}
         >
@@ -77,17 +77,17 @@ export const VolumeTable = (): ReactElement => {
           style={{
             height,
           }}
-          bg="newBg.neutral.subtle"
+          bg="bg.neutral.subtle"
           borderRadius="radius12"
           borderWidth="1px"
-          borderColor="newBorder.neutral"
+          borderColor="border.neutral"
         >
           <Flex
             width="100%"
             paddingX="space24"
             paddingY="space24"
             borderBottomWidth="1px"
-            borderColor="newBorder.neutral"
+            borderColor="border.neutral"
           >
             <Text variant="bodyM" align="center" textWrap="balance">
               Flows uses a tiered pricing model, where the price per MTU decreases as your usage
@@ -101,7 +101,7 @@ export const VolumeTable = (): ReactElement => {
               paddingX="space24"
               paddingY="space16"
               borderBottomWidth="1px"
-              borderColor="newBorder.neutral"
+              borderColor="border.neutral"
               justifyContent="space-between"
               _last={{ borderBottomWidth: "0px" }}
             >

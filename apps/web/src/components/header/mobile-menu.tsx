@@ -18,7 +18,7 @@ type Props = {
 export const MobileMenu: FC<Props> = ({ open, handleClose }): ReactNode => {
   return (
     <Box
-      backgroundColor="newBg.neutral"
+      backgroundColor="bg.neutral"
       display={open ? undefined : "none"}
       position="absolute"
       py="space12"
@@ -28,7 +28,7 @@ export const MobileMenu: FC<Props> = ({ open, handleClose }): ReactNode => {
       width="calc(100% - 48px)"
       borderRadius="radius12"
       borderWidth="1px"
-      borderColor="newBorder.neutral.placeholder"
+      borderColor="border.neutral.placeholder"
       shadow="newL1"
     >
       <ul className={css({ display: "flex", flexDir: "column" })}>
@@ -94,7 +94,7 @@ const MobileMainMenuItem = ({ item, handleClose }: MainMenuItemProps): ReactNode
                   pr: "space12",
                   py: "space8",
                   fastEaseInOut: "all",
-                  _hover: { backgroundColor: "newBg.neutral.subtle" },
+                  _hover: { backgroundColor: "bg.neutral.subtle" },
                 })}
                 key={subItem.title}
                 onClick={handleSubItemClick}
@@ -103,8 +103,8 @@ const MobileMainMenuItem = ({ item, handleClose }: MainMenuItemProps): ReactNode
                   p="space12"
                   borderRadius="radius6"
                   borderWidth="1px"
-                  borderColor="newBorder.neutral"
-                  backgroundColor="newBg.neutral"
+                  borderColor="border.neutral"
+                  backgroundColor="bg.neutral"
                 >
                   <Icon icon={subItem.icon} />
                 </Flex>
@@ -112,7 +112,7 @@ const MobileMainMenuItem = ({ item, handleClose }: MainMenuItemProps): ReactNode
                   <Text variant="bodyS" weight="700">
                     {subItem.title}
                   </Text>
-                  <Text color="newFg.neutral.muted">{subItem.description}</Text>
+                  <Text color="fg.neutral.muted">{subItem.description}</Text>
                 </Flex>
               </Link>
             ))}

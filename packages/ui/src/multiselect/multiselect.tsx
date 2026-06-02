@@ -56,7 +56,7 @@ export const Multiselect = memo<Props>(function Multiselect({
   const buttonText = useMemo(() => {
     if (!valueSet.size)
       return (
-        <Text variant="bodyS" py="1px" color="newFg.neutral.muted">
+        <Text variant="bodyS" py="1px" color="fg.neutral.muted">
           {placeholder}
         </Text>
       );
@@ -81,15 +81,15 @@ export const Multiselect = memo<Props>(function Multiselect({
             px: "space8",
             borderWidth: "1px",
             borderStyle: "solid",
-            borderColor: "newControl.border",
-            bg: "newControl.bg",
+            borderColor: "control.border",
+            bg: "control.bg",
             borderRadius: "radius6",
             display: "flex",
             flexWrap: "wrap",
             gap: "space4",
             cursor: "pointer",
             _hover: {
-              borderColor: "newControl.border.hover",
+              borderColor: "control.border.hover",
             },
           })}
         >
@@ -184,19 +184,19 @@ const Item = memo<ItemProps>(function Item({ checked, onChange, option }) {
         cursor: "default",
         _hover: {
           "& div": {
-            backgroundColor: "newControl.bg.hover",
+            backgroundColor: "control.bg.hover",
           },
         },
         "&[data-selected=true] div": {
-          backgroundColor: "newControl.bg.hover",
+          backgroundColor: "control.bg.hover",
         },
         "&[data-state=checked] div": {
-          backgroundColor: "newControl.bg.selected",
+          backgroundColor: "control.bg.selected",
         },
         "&[data-state=checked]": {
           _hover: {
             "& div": {
-              backgroundColor: "newControl.bg.selected",
+              backgroundColor: "control.bg.selected",
             },
           },
         },
@@ -216,7 +216,7 @@ const Item = memo<ItemProps>(function Item({ checked, onChange, option }) {
       >
         <Icon
           icon={Check16}
-          color="newFg.primary"
+          color="fg.primary"
           className={css({ opacity: !checked ? 0 : undefined })}
         />
         <Text as="span">{option.label}</Text>
