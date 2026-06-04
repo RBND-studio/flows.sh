@@ -12,7 +12,8 @@ Flows makes it easy to add product adoption experiences into your [SvelteKit](ht
 This guide walks you through integrating Flows into your Svelte app using the [JavaScript SDK](https://www.npmjs.com/package/@flows/js) and [components package](https://www.npmjs.com/package/@flows/js-components) to get you started.
 
 <Callout>
-  Using an AI coding assistant? Install the [Flows install skill](/agent-skills) to let your agent set up Flows automatically.
+  Using an AI coding assistant? Install the [Flows install skill](/agent-skills) to let your agent
+  set up Flows automatically.
 </Callout>
 
 <Steps>
@@ -36,7 +37,9 @@ npm i @flows/js @flows/js-components
 Use the `init` function to initialize the SDK with your organization ID and environment key, which you can find in the **Settings > General** and **Settings > Environments** sections of the Flows dashboard.
 
 <Callout>
-  Check out the [SvelteKit template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/svelte) for a complete example.
+  Check out the [SvelteKit template
+  project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/svelte) for a complete
+  example.
 </Callout>
 
 Add the initialization logic to your root layout. Also, add the `<flows-floating-blocks>` custom element to your root layout to render floating blocks.
@@ -44,6 +47,7 @@ Add the initialization logic to your root layout. Also, add the `<flows-floating
 ```svelte lineNumbers title="routes/+layout.svelte"
 <script lang="ts">
   import { onMount } from "svelte";
+  import { goto } from '$app/navigation';
 
   import { init } from "@flows/js";
   import { setupJsComponents } from "@flows/js-components";
@@ -58,6 +62,10 @@ Add the initialization logic to your root layout. Also, add the `<flows-floating
       organizationId: "YOUR_ORGANIZATION_ID", // Find this in Settings > General
       userId: "YOUR_USER_ID", // Identify the user
       environment: "production", // Default environment
+      onNavigate: (href, event) => {
+        event.preventDefault();
+        goto(href);
+      }
     });
     setupJsComponents({
       components: { ...components },

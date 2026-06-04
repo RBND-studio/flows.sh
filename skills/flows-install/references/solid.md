@@ -4,6 +4,8 @@ Create a `Flows` component that initializes the SDK and renders the floating blo
 
 ```tsx title="src/flows.tsx"
 import { onMount } from "solid-js";
+import { useNavigate } from "@solidjs/router";
+
 import { init } from "@flows/js";
 import { setupJsComponents } from "@flows/js-components";
 import * as components from "@flows/js-components/components";
@@ -12,11 +14,17 @@ import * as surveyComponents from "@flows/js-components/survey-components";
 import "@flows/js-components/index.css";
 
 export const Flows = () => {
+  const navigate = useNavigate();
+
   onMount(() => {
     init({
       organizationId: "YOUR_ORGANIZATION_ID",
       environment: "production",
       userId: "YOUR_USER_ID", // TODO: replace with the current user's ID from your auth system
+      onNavigate: (href, event) => {
+        event.preventDefault();
+        navigate(href);
+      },
     });
     setupJsComponents({
       components: { ...components },

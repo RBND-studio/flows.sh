@@ -3,7 +3,9 @@
 Create a `FlowsService` and call it from the root component. Add `<flows-floating-blocks>` to the root template.
 
 ```ts title="flows.service.ts"
-import { Injectable } from "@angular/core";
+import { inject, Injectable } from "@angular/core";
+import { Router } from "@angular/router";
+
 import { init } from "@flows/js";
 import { setupJsComponents } from "@flows/js-components";
 import * as components from "@flows/js-components/components";
@@ -13,11 +15,17 @@ import "@flows/js-components/index.css";
 
 @Injectable({ providedIn: "root" })
 export class FlowsService {
+  private router = inject(Router);
+
   init() {
     init({
       organizationId: "YOUR_ORGANIZATION_ID",
       environment: "production",
       userId: "YOUR_USER_ID", // TODO: replace with the current user's ID from your auth system
+      onNavigate: (href, event) => {
+        event.preventDefault();
+        this.router.navigateByUrl(href);
+      },
     });
     setupJsComponents({
       components: { ...components },
@@ -50,6 +58,5 @@ export class App implements OnInit {
 Add `<flows-floating-blocks>` at the end of the root template:
 
 ```html title="app.html"
-<router-outlet />
-<flows-floating-blocks></flows-floating-blocks>
+<router-outlet /> <flows-floating-blocks></flows-floating-blocks>
 ```

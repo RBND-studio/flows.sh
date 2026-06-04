@@ -42,9 +42,11 @@ Use the `init` function to initialize the SDK with your organization ID and envi
   example.
 </Callout>
 
-Create a `flows.ts` initializer at `app/initializers/flows.ts` to handle the initialization logic. Also, add the `<flows-floating-blocks>` custom element to your application template to render floating blocks.
+Create a `flows.ts` initializer at `app/instance-initializers/flows.ts` to handle the initialization logic. Also, add the `<flows-floating-blocks>` custom element to your application template to render floating blocks.
 
-```ts lineNumbers tab="app/initializers/flows.ts"
+```ts lineNumbers tab="app/instance-initializers/flows.ts"
+import type ApplicationInstance from "@ember/application/instance";
+
 import { init } from "@flows/js";
 import { setupJsComponents } from "@flows/js-components";
 
@@ -54,11 +56,17 @@ import * as surveyComponents from "@flows/js-components/survey-components";
 
 import "@flows/js-components/index.css";
 
-export function initialize() {
+export function initialize(appInstance: ApplicationInstance) {
+  const router = appInstance.lookup("service:router");
+
   init({
     organizationId: "YOUR_ORGANIZATION_ID", // Find this in Settings > General
     userId: "YOUR_USER_ID", // Identify the user
     environment: "production", // Default environment
+    onNavigate: (href, event) => {
+      event.preventDefault();
+      router.transitionTo(href);
+    },
   });
   setupJsComponents({
     components: { ...components },
@@ -67,9 +75,7 @@ export function initialize() {
   });
 }
 
-export default {
-  initialize,
-};
+export default { initialize };
 ```
 
 ```gts lineNumbers tab="application.gts"
