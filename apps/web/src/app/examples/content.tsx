@@ -21,6 +21,7 @@ import { cesSurveyContent } from "./ces-survey/content";
 import { announcementBannerContent } from "./announcement-banner/content";
 import { inAppChangelogContent } from "./in-app-changelog/content";
 import { tooltipContent } from "./tooltip/content";
+import { churnPreventionFlowContent } from "./churn-prevention-flow/content";
 import { microsurveyContent } from "./microsurvey/content";
 // --PLOP_NEW_EXAMPLE_IMPORT--
 import { type ContentType } from "./types";
@@ -50,5 +51,6 @@ export const examplesContent: ContentType[] = [
   enterpriseUpsellContent,
   cardContent,
   productHuntLaunchAnnouncementContent,
+  churnPreventionFlowContent,
   // --PLOP_NEW_EXAMPLE_CONTENT--
 ];
