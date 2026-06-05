@@ -4,6 +4,7 @@ Create a Nuxt plugin, add `<flows-floating-blocks>` to `app.vue`, and register t
 
 ```ts title="plugins/flows.ts"
 import { defineNuxtPlugin } from "nuxt/app";
+
 import { init } from "@flows/js";
 import { setupJsComponents } from "@flows/js-components";
 import * as components from "@flows/js-components/components";
@@ -20,6 +21,10 @@ export default defineNuxtPlugin({
         organizationId: "YOUR_ORGANIZATION_ID",
         environment: "production",
         userId: "YOUR_USER_ID", // TODO: replace with the current user's ID from your auth system
+        onNavigate: (href, event) => {
+          event.preventDefault();
+          navigateTo(href);
+        },
       });
       setupJsComponents({
         components: { ...components },

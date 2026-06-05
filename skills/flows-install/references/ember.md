@@ -1,8 +1,10 @@
 # Ember Installation
 
-Create an initializer at `app/initializers/flows.ts` to handle initialization. Ember auto-registers files in `app/initializers/` by convention.
+Create an initializer at `app/instance-initializers/flows.ts` to handle initialization. Ember auto-registers files in `app/instance-initializers/` by convention.
 
-```ts title="app/initializers/flows.ts"
+```ts title="app/instance-initializers/flows.ts"
+import type ApplicationInstance from "@ember/application/instance";
+
 import { init } from "@flows/js";
 import { setupJsComponents } from "@flows/js-components";
 
@@ -12,11 +14,17 @@ import * as surveyComponents from "@flows/js-components/survey-components";
 
 import "@flows/js-components/index.css";
 
-export function initialize() {
+export function initialize(appInstance: ApplicationInstance) {
+  const router = appInstance.lookup("service:router");
+
   init({
     organizationId: "YOUR_ORGANIZATION_ID",
     environment: "production",
     userId: "YOUR_USER_ID", // TODO: replace with the current user's ID from your auth system
+    onNavigate: (href, event) => {
+      event.preventDefault();
+      router.transitionTo(href);
+    },
   });
   setupJsComponents({
     components: { ...components },

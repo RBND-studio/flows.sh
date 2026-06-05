@@ -37,13 +37,16 @@ npm i @flows/js @flows/js-components
 Use the `init` function to initialize the SDK with your organization ID and environment key, which you can find in the **Settings > General** and **Settings > Environments** sections of the Flows dashboard.
 
 <Callout>
-  Check out the [Angular template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/angular) for a complete example.
+  Check out the [Angular template
+  project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/angular) for a complete
+  example.
 </Callout>
 
 Create a `FlowsService` to handle the initialization logic, and call the service in your root component. We'll also need to tell Angular that we'll be using custom elements in our root component by adding `CUSTOM_ELEMENTS_SCHEMA` to the component's `schemas` array. And finally, add the `<flows-floating-blocks>` custom element to your root component's template to render floating blocks.
 
 ```ts lineNumbers tab="flows.service.ts"
-import { Injectable } from "@angular/core";
+import { inject, Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 
 import { init } from "@flows/js";
 import { setupJsComponents } from "@flows/js-components";
@@ -55,11 +58,17 @@ import "@flows/js-components/index.css";
 
 @Injectable({ providedIn: "root" })
 export class FlowsService {
+  private router = inject(Router);
+
   init() {
     init({
       organizationId: "YOUR_ORGANIZATION_ID", // Find this in Settings > General
       userId: "YOUR_USER_ID", // Identify the user
       environment: "production", // Default environment
+      onNavigate: (href, event) => {
+        event.preventDefault();
+        this.router.navigateByUrl(href);
+      },
     });
     setupJsComponents({
       components: { ...components },

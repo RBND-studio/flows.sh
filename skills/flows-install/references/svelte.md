@@ -7,6 +7,8 @@ Find the root layout (`src/routes/+layout.svelte`) and add the initialization. T
 ```svelte title="src/routes/+layout.svelte"
 <script lang="ts">
   import { onMount } from "svelte";
+  import { goto } from '$app/navigation';
+
   import { init } from "@flows/js";
   import { setupJsComponents } from "@flows/js-components";
   import * as components from "@flows/js-components/components";
@@ -21,6 +23,10 @@ Find the root layout (`src/routes/+layout.svelte`) and add the initialization. T
       organizationId: "YOUR_ORGANIZATION_ID",
       environment: "production",
       userId: "YOUR_USER_ID", // TODO: replace with the current user's ID from your auth system
+      onNavigate: (href, event) => {
+        event.preventDefault();
+        goto(href);
+      }
     });
     setupJsComponents({
       components: { ...components },
@@ -39,6 +45,8 @@ Find the root layout (`src/routes/+layout.svelte`) and add the initialization. T
 ```svelte title="src/routes/+layout.svelte"
 <script lang="ts">
   import { onMount } from "svelte";
+  import { goto } from '$app/navigation';
+
   import { init } from "@flows/js";
   import { setupJsComponents } from "@flows/js-components";
   import * as components from "@flows/js-components/components";
@@ -51,6 +59,10 @@ Find the root layout (`src/routes/+layout.svelte`) and add the initialization. T
       organizationId: "YOUR_ORGANIZATION_ID",
       environment: "production",
       userId: "YOUR_USER_ID", // TODO: replace with the current user's ID from your auth system
+      onNavigate: (href, event) => {
+        event.preventDefault();
+        goto(href);
+      }
     });
     setupJsComponents({
       components: { ...components },
