@@ -4,5 +4,6 @@ export * from "./kafka";
 export * from "./sdk";
 export * from "./state-memory";
 export * from "./survey";
+export * from "./user";
 export * from "./websocket";
 export * from "./workflow";
