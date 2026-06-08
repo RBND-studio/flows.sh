@@ -9,6 +9,8 @@ export const productfruitsContent: AlternativeContentType = {
   title: "The developer-friendly Product Fruits alternative",
   description:
     "Flows is the Product Fruits alternative for teams who want full control over their onboarding UI and a developer-first workflow.",
+  metaDescription:
+    "Looking for a Product Fruits alternative? Flows gives teams full control over onboarding UI with a developer-first workflow. Free plan available.",
   competitor: {
     name: "Product Fruits",
     squareLogo: <ProductFruits20 role="img" aria-label="Product Fruits logo" />,
@@ -25,11 +27,11 @@ export const productfruitsContent: AlternativeContentType = {
   },
   summary: {
     competitorContent:
-      "Product Fruits is a no-code product adoption platform offering tours, checklists, surveys, and an in-app help widget. While it covers a broad range of onboarding features at an affordable price, customization is limited to their predefined templates and styling options. Teams that need deeper control over UI and behavior often find themselves hitting the ceiling.",
+      "Product Fruits is a no-code product adoption platform offering tours, checklists, surveys, and an in-app help widget. While it covers a broad range of onboarding features at an affordable price, customization is limited to their predefined templates and styling options. Teams that need deeper control over UI and behavior often start looking for a Product Fruits competitor.",
     flowsContent:
       "Flows is a modern alternative to Product Fruits built for teams who want to own their user experience. With Flows, you build workflows using your own components and design system, combining the flexibility of code with the ease of a headless CMS. Product managers, designers, and developers share a platform that gives them each what they need.",
   },
-  comparisonTitle: "Flows vs Product Fruits: Key differences",
+  comparisonTitle: "Flows vs Product Fruits: Features, pricing, and key differences",
   comparisons: [
     {
       title: "Onboarding basics",

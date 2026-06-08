@@ -9,6 +9,8 @@ export const userpilotContent: AlternativeContentType = {
   title: "The modern and affordable Userpilot alternative",
   description:
     "Flows is the Userpilot alternative for modern product teams who want deeper customization, better developer experience, and transparent pricing.",
+  metaDescription:
+    "Userpilot alternative with a headless CMS-like workflow engine. Flows gives product teams full customization, transparent pricing, and a free plan.",
   competitor: {
     name: "Userpilot",
     squareLogo: <Userpilot20 role="img" aria-label="Userpilot logo" />,
@@ -29,7 +31,7 @@ export const userpilotContent: AlternativeContentType = {
     flowsContent:
       "Flows is a modern alternative to Userpilot built for teams who want to own their user experience. With Flows, workflows live inside your product and can be built using your own UI components and logic. It combines the flexibility of code with a headless CMS-like experience that works for product managers, designers, and developers alike.",
   },
-  comparisonTitle: "Flows vs Userpilot: Key differences",
+  comparisonTitle: "Flows vs Userpilot: Features, pricing, and key differences",
   comparisons: [
     {
       title: "Onboarding basics",

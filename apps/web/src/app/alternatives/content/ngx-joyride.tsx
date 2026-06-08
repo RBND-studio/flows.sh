@@ -9,6 +9,8 @@ export const ngxJoyrideContent: AlternativeContentType = {
   title: "The fully-featured Ngx Joyride alternative",
   description:
     "Flows is the Ngx Joyride alternative for teams who have outgrown hard-coded product tours and want flexible, scalable workflows inside their product.",
+  metaDescription:
+    "Looking for an Angular Joyride alternative? Flows is free to start, supports Angular and other frameworks, with built-in analytics, targeting, and localization.",
   competitor: {
     name: "Ngx Joyride",
     squareLogo: <NgxJoyride20 role="img" aria-label="Ngx Joyride logo" />,
@@ -29,7 +31,7 @@ export const ngxJoyrideContent: AlternativeContentType = {
     flowsContent:
       "Flows is a product adoption platform designed for teams that need more than tours. You bring your UI components, and Flows handles workflows, targeting, state, and lifecycle management across frameworks.",
   },
-  comparisonTitle: "Flows vs Ngx Joyride: Key differences",
+  comparisonTitle: "Flows vs Ngx Joyride: Features, pricing, and key differences",
   comparisons: [
     {
       title: "Product tours",

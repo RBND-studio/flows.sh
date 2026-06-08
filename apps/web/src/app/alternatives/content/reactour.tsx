@@ -9,6 +9,8 @@ export const reactourContent: AlternativeContentType = {
   title: "The fully-featured Reactour alternative",
   description:
     "Flows is the Reactour alternative for teams who have outgrown hard-coded product tours and want flexible, scalable workflows inside their product.",
+  metaDescription:
+    "Reactour alternative for React teams who need more than a tour library. Flows adds targeting, analytics, and workflow logic. Free to start.",
   competitor: {
     name: "Reactour",
     squareLogo: <Reactour20 role="img" aria-label="Reactour logo" />,
@@ -25,11 +27,11 @@ export const reactourContent: AlternativeContentType = {
   },
   summary: {
     competitorContent:
-      "Reactour is a popular React library for building guided tours using step-based overlays and tooltips. It is lightweight and flexible at the UI level but leaves state persistence, targeting, analytics, and workflow logic entirely to the application code.",
+      "Reactour is a popular React tour library for building guided product tours using step-based overlays and tooltips. It is lightweight and flexible at the UI level but leaves state persistence, targeting, analytics, and workflow logic entirely to the application code.",
     flowsContent:
       "Flows is a product adoption platform designed for teams that need more than tours. You bring your UI components, and Flows handles workflows, targeting, state, and lifecycle management across frameworks.",
   },
-  comparisonTitle: "Flows vs Reactour: Key differences",
+  comparisonTitle: "Flows vs Reactour: Features, pricing, and key differences",
   comparisons: [
     {
       title: "Product tours",

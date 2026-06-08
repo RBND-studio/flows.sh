@@ -9,6 +9,8 @@ export const shepherdContent: AlternativeContentType = {
   title: "The fully-featured Shepherd.js alternative",
   description:
     "Flows is the Shepherd.js alternative for teams who have outgrown DIY product tours and want a scalable way to build product adoption.",
+  metaDescription:
+    "Shepherd.js alternative with no DIY maintenance. Flows replaces your custom tour code with built-in analytics, targeting, and state management. Free plan.",
   competitor: {
     name: "Shepherd.js",
     squareLogo: <Shepherd20 role="img" aria-label="Shepherd.js logo" />,
@@ -29,7 +31,7 @@ export const shepherdContent: AlternativeContentType = {
     flowsContent:
       "Flows is a modern alternative to Shepherd.js that removes the need to build and maintain onboarding infrastructure yourself. With Flows, you create workflows that live inside your product, using your own UI components and logic, while Flows handles state, orchestration, and delivery.",
   },
-  comparisonTitle: "Flows vs Shepherd.js: Key differences",
+  comparisonTitle: "Flows vs Shepherd.js: Features, pricing, and key differences",
   comparisons: [
     {
       title: "Product tours",

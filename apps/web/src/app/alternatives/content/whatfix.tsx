@@ -8,7 +8,9 @@ export const whatfixContent: AlternativeContentType = {
   seoTitle: "Whatfix alternative",
   title: "The modern and affordable Whatfix alternative",
   description:
-    "Flows is the Whatfix alternative for modern product teams who want powerful adoption tools without enterprise-grade complexity or pricing.",
+    "Flows is the free Whatfix alternative for modern product teams who want powerful adoption tools without enterprise-grade complexity or pricing.",
+  metaDescription:
+    "Whatfix alternatives for product teams that want powerful in-app adoption without enterprise pricing. Flows is free to start. No sales call required.",
   competitor: {
     name: "Whatfix",
     squareLogo: <WhatFix20 role="img" aria-label="Whatfix logo" />,
@@ -25,11 +27,11 @@ export const whatfixContent: AlternativeContentType = {
   },
   summary: {
     competitorContent:
-      "Whatfix is an enterprise digital adoption platform used by large organizations to guide employees through complex software. While feature-rich, it's built for Fortune 500 IT departments, with opaque pricing, lengthy implementation cycles, and a level of complexity that's overkill for most product teams. Getting started requires a sales process and often professional services.",
+      "Whatfix is an enterprise digital adoption platform used by large organizations to build product guides and walkthroughs for complex software. While feature-rich, it's built for Fortune 500 IT departments, with opaque pricing, lengthy implementation cycles, and a level of complexity that's overkill for most product teams. Getting started requires a sales process and often professional services.",
     flowsContent:
       "Flows is a modern alternative to Whatfix designed for product teams who need powerful adoption tools without the enterprise overhead. With Flows, you build workflows using your own components and design system, set up in minutes, and pay only for what you use. No sales calls, no implementation consultants, just a focused product adoption platform.",
   },
-  comparisonTitle: "Flows vs Whatfix: Key differences",
+  comparisonTitle: "Flows vs Whatfix: Features, pricing, and key differences",
   comparisons: [
     {
       title: "Onboarding basics",
@@ -111,7 +113,7 @@ export const whatfixContent: AlternativeContentType = {
     {
       title: "Own the user experience",
       competitorDescription:
-        "Whatfix overlays its own UI components on top of your application. The experiences use Whatfix's design language, not yours, and can feel disconnected from your product.",
+        "Whatfix relies on contextual overlays that sit on top of your application using its own design language, not yours, which can feel disconnected from your product.",
       flowsDescription:
         "Flows meets you where you are. You can use your own UI components and technologies, giving you the full flexibility of code to build relevant, contextual workflows that fit your product, meet your quality bar, and don't get in the way.",
     },

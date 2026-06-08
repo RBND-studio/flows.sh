@@ -8,7 +8,9 @@ export const chameleonContent: AlternativeContentType = {
   seoTitle: "Chameleon alternative",
   title: "The modern and affordable Chameleon alternative",
   description:
-    "Flows is the Chameleon alternative for modern product teams who want full control over product adoption at a fraction of the price.",
+    "Flows is the free Chameleon alternative for SaaS product teams who want full control over in-app onboarding and feature adoption at a fraction of the price.",
+  metaDescription:
+    "Chameleon alternatives for SaaS product teams. Flows gives full control over in-app onboarding and feature adoption. Free to start.",
   competitor: {
     name: "Chameleon",
     squareLogo: <Chameleon20 role="img" aria-label="Chameleon logo" />,
@@ -25,11 +27,11 @@ export const chameleonContent: AlternativeContentType = {
   },
   summary: {
     competitorContent:
-      "Chameleon is a product adoption platform focused on no-code onboarding patterns like tooltips, banners, and checklists. While it works well for basic use cases, teams often run into limitations around customization, developer workflows, and pricing. More advanced capabilities such as localization or collaboration are locked behind higher-tier plans.",
+      "Chameleon is a product adoption platform focused on no-code in-app onboarding and feature adoption, using patterns like tooltips, banners, and checklists. While it works well for basic use cases, SaaS teams often run into limitations around customization, developer workflows, and pricing. More advanced capabilities such as localization or collaboration are locked behind higher-tier plans.",
     flowsContent:
       "Flows is a modern alternative to Chameleon built for teams who want to own their user experience. With Flows, workflows live inside your product and can be built using your own UI components and logic. It combines the flexibility of code with the ease of a headless CMS, making it powerful for developers while still accessible to product teams.",
   },
-  comparisonTitle: "Flows vs Chameleon: Key differences",
+  comparisonTitle: "Flows vs Chameleon: Features, pricing, and key differences",
   comparisons: [
     {
       title: "Onboarding basics",

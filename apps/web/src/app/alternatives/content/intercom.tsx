@@ -9,6 +9,8 @@ export const intercomContent: AlternativeContentType = {
   title: "The purpose-built Intercom Product Tours alternative",
   description:
     "Flows is the Intercom Product Tours alternative for teams who want dedicated onboarding tools without paying for an entire messaging platform.",
+  metaDescription:
+    "Intercom Product Tours alternative with purpose-built onboarding. Flows is a dedicated product adoption tool with a free plan. No messaging platform required.",
   competitor: {
     name: "Intercom",
     squareLogo: <Intercom20 role="img" aria-label="Intercom logo" />,
@@ -25,11 +27,11 @@ export const intercomContent: AlternativeContentType = {
   },
   summary: {
     competitorContent:
-      "Intercom Product Tours is an add-on to the Intercom customer messaging platform. While it benefits from tight integration with Intercom's messenger and chatbot, it's not available as a standalone product. The tour builder is relatively basic compared to dedicated onboarding tools, and adding product tours means paying on top of an already costly Intercom subscription.",
+      "Intercom Product Tours is an add-on to the Intercom customer messaging platform. While it benefits from tight integration with Intercom's messenger and chatbot, it's not available as a standalone product. The tour builder is relatively basic compared to dedicated onboarding tools, and Intercom Product Tours pricing adds up quickly since you're paying for the add-on on top of an already costly Intercom subscription.",
     flowsContent:
       "Flows is a modern alternative to Intercom Product Tours built for teams who want a dedicated product adoption tool. With Flows, you build workflows that live inside your product using your own components and design system. You don't need to buy into an entire messaging platform just to guide users through your product.",
   },
-  comparisonTitle: "Flows vs Intercom Product Tours: Key differences",
+  comparisonTitle: "Flows vs Intercom Product Tours: Features, pricing, and key differences",
   comparisons: [
     {
       title: "Onboarding basics",
@@ -91,7 +93,7 @@ export const intercomContent: AlternativeContentType = {
       competitor: false,
       flows: true,
       description:
-        "Flows offers APIs, versioning, environments, and documentation built for developers.",
+        "Flows offers APIs, versioning, environments, integrations, and documentation built for developers.",
     },
     {
       title: "Surveys",
@@ -125,7 +127,7 @@ export const intercomContent: AlternativeContentType = {
     {
       title: "Pricing",
       competitorDescription:
-        "Intercom Product Tours is an add-on that costs extra on top of the base Intercom subscription. Combined costs can be significant, especially as your team and user base grow.",
+        "Intercom Product Tours pricing is not publicly listed. It's an add-on that costs extra on top of the base Intercom subscription, and combined costs can be significant, especially as your team and user base grow.",
       flowsDescription:
         "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
     },

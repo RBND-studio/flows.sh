@@ -9,6 +9,8 @@ export const driverjsContent: AlternativeContentType = {
   title: "The fully-featured Driver.js alternative",
   description:
     "Flows is the Driver.js alternative for teams who have outgrown DIY product tours and want a scalable way to build product adoption.",
+  metaDescription:
+    "Driver.js alternative with React and Angular support. Flows replaces DIY product tours with built-in analytics, targeting, and state management. Free plan.",
   competitor: {
     name: "Driver.js",
     squareLogo: <Driverjs20 role="img" aria-label="Driver.js logo" />,
@@ -25,11 +27,11 @@ export const driverjsContent: AlternativeContentType = {
   },
   summary: {
     competitorContent:
-      "Driver.js is a lightweight open-source JavaScript library for building simple product tours using tooltips and highlights. It’s easy to get started, but everything beyond basic tours like state management, logic, targeting, analytics, and maintenance, needs to be built and maintained in-house.",
+      "Driver.js is a lightweight open-source JavaScript library for building product tours using tooltips and highlights. Like similar libraries such as Intro.js, it works across React, Angular, Vue, and other JavaScript environments, but everything beyond the tour itself, including state management, logic, targeting, analytics, and long-term maintenance, needs to be built in-house.",
     flowsContent:
-      "Flows is a modern alternative to Driver.js that removes the need to build and maintain onboarding infrastructure yourself. With Flows, you create workflows that live inside your product, using your own UI components and logic, while Flows handles state, orchestration, and delivery.",
+      "Flows is a modern alternative to Driver.js that removes the need to build and maintain onboarding infrastructure yourself. Flows integrates with React, Angular, and other JavaScript frameworks so you can create workflows using your own UI components and logic, while Flows handles state, orchestration, and delivery.",
   },
-  comparisonTitle: "Flows vs Driver.js: Key differences",
+  comparisonTitle: "Flows vs Driver.js: Features, pricing, and key differences",
   comparisons: [
     {
       title: "Product tours",

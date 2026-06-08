@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return getWebMetadata({
     title: `The best ${content.seoTitle}`,
-    description: content.description,
+    description: content.metaDescription ?? content.description,
   });
 }
 
