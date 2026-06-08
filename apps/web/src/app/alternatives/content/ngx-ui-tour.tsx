@@ -9,6 +9,8 @@ export const ngxUiTourContent: AlternativeContentType = {
   title: "The fully-featured Ngx UI Tour alternative",
   description:
     "Flows is the Ngx UI Tour alternative for teams who have outgrown hard-coded product tours and want flexible, scalable workflows inside their product.",
+  metaDescription:
+    "Ngx UI Tour alternative for Angular teams who need more than a tour library. Flows adds targeting, analytics, and workflow logic. Free to start.",
   competitor: {
     name: "Ngx UI Tour",
     squareLogo: <NgxUiTour20 role="img" aria-label="Ngx UI Tour logo" />,
@@ -25,11 +27,11 @@ export const ngxUiTourContent: AlternativeContentType = {
   },
   summary: {
     competitorContent:
-      "Ngx UI Tour is an Angular library for building guided tours using tooltips and step-based overlays. It integrates well with Angular apps but leaves workflow logic, targeting, persistence, and analytics entirely to your codebase.",
+      "Ngx UI Tour is an Angular tour library for building guided product tours using tooltips and step-based overlays. It integrates well with Angular apps but leaves workflow logic, targeting, persistence, and analytics entirely to your codebase.",
     flowsContent:
       "Flows is a product adoption platform that works across frameworks. You bring your UI components, and Flows handles orchestration, workflows, targeting, and lifecycle management.",
   },
-  comparisonTitle: "Flows vs Ngx UI Tour: Key differences",
+  comparisonTitle: "Flows vs Ngx UI Tour: Features, pricing, and key differences",
   comparisons: [
     {
       title: "Product tours",

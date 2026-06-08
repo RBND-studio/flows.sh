@@ -9,6 +9,8 @@ export const onbordaContent: AlternativeContentType = {
   title: "The fully-featured Onborda alternative",
   description:
     "Flows is the Onborda alternative for teams who have outgrown hard-coded product tours and want flexible, scalable workflows inside their product.",
+  metaDescription:
+    "Onborda alternative with built-in state management, analytics, and targeting. Flows is a product adoption platform, not just a tour library. Free plan available.",
   competitor: {
     name: "Onborda",
     squareLogo: <Onborda20 role="img" aria-label="Onborda logo" />,
@@ -30,7 +32,7 @@ export const onbordaContent: AlternativeContentType = {
     flowsContent:
       "Flows is a modern product adoption platform that replaces hard-coded tours with workflows. You build UI using your own components, while Flows handles orchestration, state, branching logic, and delivery inside your product.",
   },
-  comparisonTitle: "Flows vs Onborda: Key differences",
+  comparisonTitle: "Flows vs Onborda: Features, pricing, and key differences",
   comparisons: [
     {
       title: "Product tours",

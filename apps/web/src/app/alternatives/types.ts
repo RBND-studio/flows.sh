@@ -8,6 +8,7 @@ export type AlternativeContentType = {
   seoTitle: string;
   title: ReactNode;
   description: string;
+  metaDescription?: string;
   competitor: {
     name: string;
     squareLogo: ReactNode;

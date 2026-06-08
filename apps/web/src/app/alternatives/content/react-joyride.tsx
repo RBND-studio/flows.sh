@@ -9,6 +9,8 @@ export const reactJoyrideContent: AlternativeContentType = {
   title: "The fully-featured React Joyride alternative",
   description:
     "Flows is the React Joyride alternative for teams who have outgrown hard-coded product tours and want flexible, scalable workflows inside their product.",
+  metaDescription:
+    "Looking for React Joyride alternatives? Flows is free to start, with built-in analytics, targeting, and localization. No custom infrastructure required.",
   competitor: {
     name: "React Joyride",
     squareLogo: <ReactJoyride20 color="#ff0044" role="img" aria-label="React Joyride logo" />,
@@ -26,11 +28,11 @@ export const reactJoyrideContent: AlternativeContentType = {
   },
   summary: {
     competitorContent:
-      "React Joyride is a popular open-source React library for building guided product tours. It provides a declarative API and good control over tour steps, but everything beyond basic tours—state, logic, targeting, analytics, localization, and maintenance—must be implemented manually.",
+      "React Joyride is a popular open-source React library for building guided product tours. It provides a declarative API and good control over tour steps, but everything beyond basic tours (state, logic, targeting, analytics, localization, and maintenance) must be implemented manually. Teams often evaluate it alongside libraries like Driver.js, but both require the same custom infrastructure work.",
     flowsContent:
-      "Flows is a modern product adoption platform that replaces hard-coded tours with workflows. You build UI using your own components, while Flows handles orchestration, state, branching logic, and delivery inside your product.",
+      "Flows is a modern product adoption platform and a complete alternative to React Joyride that replaces hard-coded tours with workflows. You build UI using your own components, while Flows handles orchestration, state, branching logic, and delivery inside your product.",
   },
-  comparisonTitle: "Flows vs React Joyride: Key differences",
+  comparisonTitle: "Flows vs React Joyride: Features, pricing, and key differences",
   comparisons: [
     {
       title: "Product tours",

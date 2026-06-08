@@ -9,6 +9,8 @@ export const userflowContent: AlternativeContentType = {
   title: "The modern and affordable Userflow alternative",
   description:
     "Flows is the Userflow alternative for modern companies who want to build better product adoption at a fraction of the price.",
+  metaDescription:
+    "Looking for a Userflow alternative? Flows offers full-control product adoption tools at a fraction of Userflow pricing. Free plan included.",
   competitor: {
     name: "Userflow",
     squareLogo: <Userflow20 role="img" aria-label="Userflow logo" />,
@@ -25,11 +27,11 @@ export const userflowContent: AlternativeContentType = {
   },
   summary: {
     competitorContent:
-      "Userflow is an onboarding tool focused on no-code flows with tooltips, modals, and checklists. It supports basic conditional logic, but teams often hit limitations when building more complex or highly customized user journeys. Pricing and plan tiers can also become a blocker as teams grow.",
+      "Userflow is an onboarding tool focused on no-code flows with tooltips, modals, and checklists. It supports basic conditional logic, but teams often hit limitations when building more complex or highly customized user journeys. Userflow pricing scales quickly with user volume and plan tiers, which is why teams exploring Userflow alternatives often cite cost as the main reason to switch.",
     flowsContent:
       "Flows is a modern alternative to Userflow designed for teams that want full control over product adoption. With Flows, workflows live inside your product and can be built using your own UI components and logic. It combines the power of code with a headless CMS-like experience that works for both developers and non-technical teammates.",
   },
-  comparisonTitle: "Flows vs Userflow: Key differences",
+  comparisonTitle: "Flows vs Userflow: Features, pricing, and key differences",
   comparisons: [
     {
       title: "Onboarding basics",

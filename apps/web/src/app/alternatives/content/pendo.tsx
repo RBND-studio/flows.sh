@@ -8,7 +8,9 @@ export const pendoContent: AlternativeContentType = {
   seoTitle: "Pendo alternative",
   title: "The modern and affordable Pendo alternative",
   description:
-    "Flows is the Pendo alternative for product teams who want full control over in-app experiences without paying enterprise prices.",
+    "Flows is the free Pendo alternative for product teams who want full control over in-app guides without paying enterprise prices.",
+  metaDescription:
+    "Looking for Pendo alternatives? Flows gives you full control over in-app guides and onboarding tours. Free to start, no enterprise pricing or sales calls.",
   competitor: {
     name: "Pendo",
     squareLogo: <Pendo20 role="img" aria-label="Pendo logo" />,
@@ -27,9 +29,9 @@ export const pendoContent: AlternativeContentType = {
     competitorContent:
       "Pendo is a product analytics and in-app guidance platform primarily targeting mid-market and enterprise teams. While it combines analytics with guides, the guidance features are often secondary to analytics. Customization is limited to predefined templates, pricing is opaque for paid plans, and advanced features are locked behind enterprise tiers, leading many teams to look for Pendo alternatives.",
     flowsContent:
-      "Flows is a modern alternative to Pendo's in-app guidance, built for teams who want to own their user experience. With Flows, you build workflows using your own components and design system, giving you full control over how users interact with your product. Flows focuses entirely on product adoption, doing it well rather than spreading across analytics, surveys, and roadmaps.",
+      "Flows is a modern alternative to Pendo's in-app guidance, built for teams who want to own their user experience. With Flows, you build workflows using your own components and design system, giving you full control over how users interact with your product. Flows focuses entirely on product adoption, doing it well rather than spreading across analytics, surveys, and roadmaps. It's a natural fit for product-led growth teams who need scalable, high-quality onboarding without the enterprise overhead.",
   },
-  comparisonTitle: "Flows vs Pendo: Key differences",
+  comparisonTitle: "Flows vs Pendo: Features, pricing, and key differences",
   comparisons: [
     {
       title: "Onboarding basics",

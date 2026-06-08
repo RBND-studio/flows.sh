@@ -8,7 +8,9 @@ export const walkmeContent: AlternativeContentType = {
   seoTitle: "WalkMe alternative",
   title: "The modern and affordable WalkMe alternative",
   description:
-    "Flows is the WalkMe alternative for modern companies who want to build better product adoption at a fraction of the price.",
+    "Flows is the free WalkMe alternative for modern companies who want to build better user onboarding and product adoption at a fraction of the price.",
+  metaDescription:
+    "WalkMe alternative with transparent pricing and a free plan. Flows lets modern teams build user onboarding without enterprise complexity or sales calls.",
   competitor: {
     name: "WalkMe",
     squareLogo: <WalkMe20 role="img" aria-label="WalkMe logo" />,
@@ -25,11 +27,11 @@ export const walkmeContent: AlternativeContentType = {
   },
   summary: {
     competitorContent:
-      "WalkMe is a well-known digital adoption platform, primarily focused on large enterprises. While it offers a range of features including in-app guidance, analytics, and user segmentation, this complexity can be overwhelming for many users. WalkMe’s focus on enterprise results in non-transparent pricing and requiring a demo to even get started, leaving many teams to start looking for WalkMe alternatives.",
+      "WalkMe is a well-known digital adoption platform, primarily focused on large enterprises. While it offers a range of features including in-app guidance, analytics, and user segmentation, this complexity can be overwhelming for many users. WalkMe’s focus on enterprise results in non-transparent pricing and requiring a demo to even get started, leaving many teams to look for WalkMe competitors and alternatives.",
     flowsContent:
-      "Flows is a modern alternative to WalkMe, crafted with care by a team that prioritizes control and transparency. With Flows you get the power to create product adoption experiences that live within your product and are fully customizable for a fraction of the price. Flows is designed for the modern product team, offering a headless CMS like experience that both developers and non-technical users will love.",
+      "Flows is a modern alternative to WalkMe designed for product teams who want real control over their adoption tooling without enterprise overhead. With Flows, workflows live inside your product and are built using your own components and design system. No sales calls, no implementation consultants, no opaque pricing. Just a focused platform that works for both developers and non-technical teammates.",
   },
-  comparisonTitle: "Flows vs WalkMe: Key differences",
+  comparisonTitle: "Flows vs WalkMe: Features, pricing, and key differences",
   comparisons: [
     {
       title: "Onboarding basics",

@@ -8,7 +8,9 @@ export const introjsContent: AlternativeContentType = {
   seoTitle: "Intro.js alternative",
   title: "The fully-featured Intro.js alternative",
   description:
-    "Flows is the Intro.js alternative for teams who have outgrown DIY product tours and want a scalable way to build product adoption.",
+    "Flows is the free Intro.js alternative for teams who have outgrown DIY product tours and want a scalable way to build product adoption.",
+  metaDescription:
+    "Looking for Intro.js alternatives? Flows is free to start with built-in analytics, targeting, and localization. Works with React, Angular, and Vue.",
   competitor: {
     name: "Intro.js",
     squareLogo: <Introjs20 role="img" aria-label="Intro.js logo" />,
@@ -29,7 +31,7 @@ export const introjsContent: AlternativeContentType = {
     flowsContent:
       "Flows is a modern alternative to Intro.js that removes the need to build and maintain onboarding infrastructure yourself. With Flows, you create workflows that live inside your product, using your own UI components and logic, while Flows handles state, orchestration, and delivery.",
   },
-  comparisonTitle: "Flows vs Intro.js: Key differences",
+  comparisonTitle: "Flows vs Intro.js: Features, pricing, and key differences",
   comparisons: [
     {
       title: "Product tours",

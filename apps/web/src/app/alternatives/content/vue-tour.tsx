@@ -8,7 +8,9 @@ export const vueTourContent: AlternativeContentType = {
   seoTitle: "Vue Tour alternative",
   title: "The fully-featured Vue Tour alternative",
   description:
-    "Flows is the Vue Tour alternative for teams who have outgrown hard-coded Vue.js tours and want flexible, maintainable workflows inside their product.",
+    "Flows is the Vue Tour alternative for teams who have outgrown hard-coded Vue.js onboarding tours and want flexible, maintainable workflows inside their product.",
+  metaDescription:
+    "Vue Tour alternative for teams who want more than a library. Flows adds state management, analytics, and targeting to onboarding tours. Free plan.",
   competitor: {
     name: "Vue Tour",
     squareLogo: <VueTour20 role="img" aria-label="Vue Tour logo" />,
@@ -29,7 +31,7 @@ export const vueTourContent: AlternativeContentType = {
     flowsContent:
       "Flows is a modern product adoption platform that replaces hard-coded tours with workflows. You build UI using your own components, while Flows handles orchestration, state, logic, and delivery across your product.",
   },
-  comparisonTitle: "Flows vs Vue Tour: Key differences",
+  comparisonTitle: "Flows vs Vue Tour: Features, pricing, and key differences",
   comparisons: [
     {
       title: "Product tours",

@@ -8,7 +8,9 @@ export const appcuesContent: AlternativeContentType = {
   seoTitle: "Appcues alternative",
   title: "The modern and affordable Appcues alternative",
   description:
-    "Flows is the Appcues alternative for modern product teams who want full control over product adoption at a fraction of the price.",
+    "Flows is the free Appcues alternative for modern product teams who want full control over product adoption at a fraction of the price.",
+  metaDescription:
+    "Looking for Appcues alternatives? Flows is free to start, affordable, and gives product teams full control without Appcues' expensive pricing tiers.",
   competitor: {
     name: "Appcues",
     squareLogo: <Appcues20 role="img" aria-label="Appcues logo" />,
@@ -25,11 +27,11 @@ export const appcuesContent: AlternativeContentType = {
   },
   summary: {
     competitorContent:
-      "Appcues is a popular product adoption tool focused on no-code onboarding experiences like tooltips, modals, and checklists. While it’s easy to get started, teams quickly run into limitations around customization, scalability, and pricing. Advanced functionality is locked behind higher tiers, and experiences often feel bolted on rather than native to the product, leaving many teams to eventually look for Appcues alternatives.",
+      "Appcues is a popular product adoption tool focused on no-code onboarding experiences like tooltips, modals, and checklists. While it’s easy to get started, teams quickly run into limitations around customization, scalability, and pricing. Appcues pricing starts at hundreds of dollars per month and gates key features behind higher tiers. Experiences often feel bolted on rather than native to the product, leaving many teams to look for Appcues alternatives.",
     flowsContent:
       "Flows is a modern alternative to Appcues built for teams who want to own their user experience. With Flows, you build workflows that live inside your product using your own components and design system. It combines the flexibility of code with the ease of a headless CMS, giving product managers, designers, and developers a shared platform to build powerful product adoption experiences.",
   },
-  comparisonTitle: "Flows vs Appcues: Key differences",
+  comparisonTitle: "Flows vs Appcues: Features, pricing, and key differences",
   comparisons: [
     {
       title: "Onboarding basics",
@@ -126,7 +128,7 @@ export const appcuesContent: AlternativeContentType = {
     {
       title: "Pricing",
       competitorDescription:
-        "Appcues pricing starts at a high monthly cost and gates features like branching, environments, and collaboration behind higher tiers.",
+        "Appcues pricing starts at hundreds of dollars per month and gates features like branching, environments, and collaboration behind higher tiers, making it one of the more expensive options teams look to replace.",
       flowsDescription:
         "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
     },
