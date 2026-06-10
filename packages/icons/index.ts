@@ -1,4 +1,4 @@
-// cSpell:words Apty produktly jimo gleap stonly candu commandai optimonk frigade guidecx screeb onboardjs tourguidejs survicate surveyjs refiner sprig beamer qualaroo oneflow formbricks satismeter typeform
+// cSpell:words Apty produktly jimo gleap stonly candu commandai optimonk frigade guidecx screeb onboardjs tourguidejs survicate surveyjs refiner sprig beamer qualaroo oneflow formbricks satismeter typeform wootric delighted usertourkit
 export * from "./src/action16";
 export * from "./src/addon16";
 export * from "./src/alert16";
@@ -47,6 +47,7 @@ export * from "./src/credit-card16";
 export * from "./src/delay16";
 export * from "./src/drag-handle16";
 export * from "./src/drag16";
+export * from "./src/delighted20";
 export * from "./src/driverjs-full20";
 export * from "./src/driverjs20";
 export * from "./src/earth16";
@@ -200,6 +201,7 @@ export * from "./src/userpilot-full20";
 export * from "./src/userpilot20";
 export * from "./src/usertour-full20";
 export * from "./src/usertour20";
+export * from "./src/usertourkit20";
 export * from "./src/usetiful-full20";
 export * from "./src/usetiful20";
 export * from "./src/v-onboarding-full20";
@@ -210,6 +212,7 @@ export * from "./src/vue-tour20";
 export * from "./src/wait16";
 export * from "./src/walkme-full20";
 export * from "./src/walkme20";
+export * from "./src/wootric20";
 export * from "./src/whatfix-full20";
 export * from "./src/whatfix20";
 export * from "./src/workflow-trigger16";
