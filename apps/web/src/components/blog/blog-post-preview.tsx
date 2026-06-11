@@ -19,13 +19,7 @@ export const BlogPostPreview = (post: Props): ReactElement => {
   const href = routes.blogPostDetail({ postId: post.slug });
 
   return (
-    <li
-      className={css({
-        pt: "space40",
-        pb: "space40",
-        px: "space24",
-      })}
-    >
+    <li>
       <Box maxWidth={720} mx="auto">
         {post.image ? (
           <Link href={href}>
@@ -50,13 +44,24 @@ export const BlogPostPreview = (post: Props): ReactElement => {
         <Text
           as="h2"
           mb="space8"
-          variant="titleXl"
+          variant="titleL"
           _hover={{ color: "fg.primary" }}
           fastEaseInOut="color"
         >
           <Link href={href}>{post.title}</Link>
         </Text>
-        <Text as="p" mb="space12" variant="bodyM" color="fg.neutral.muted">
+        <Text
+          as="p"
+          mb="space12"
+          variant="bodyM"
+          color="fg.neutral.muted"
+          WebkitLineClamp={3}
+          display="-webkit-box"
+          overflow="hidden"
+          style={{
+            WebkitBoxOrient: "vertical",
+          }}
+        >
           {post.description}
         </Text>
         <Link
