@@ -64,6 +64,7 @@ export type SDKTourBlock = {
 
 export type SDKBlock = {
   id: string;
+  blockStateId?: string | null;
   workflowId: string;
   key?: string | null;
   type: string;
