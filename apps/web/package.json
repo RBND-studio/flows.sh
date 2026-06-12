@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@flows/types": "workspace:*",
-    "@pandacss/dev": "^1.11.1",
+    "@pandacss/dev": "^1.11.3",
     "@types/js-cookie": "^3.0.6",
     "@types/mdx": "^2.0.13",
     "@types/node": "^24",

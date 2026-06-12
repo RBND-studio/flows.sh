@@ -20,13 +20,16 @@ export enum BlockTypeEnum {
 }
 export type BlockType = `${BlockTypeEnum}`;
 
-export type PropertyType =
-  | "string"
-  | "number"
-  | "boolean"
-  | "select"
-  | "array"
-  | "state-memory"
-  | "block-trigger"
-  | "block-state"
-  | "action";
+export enum PropertyTypeEnum {
+  STRING = "string",
+  NUMBER = "number",
+  BOOLEAN = "boolean",
+  SELECT = "select",
+  ARRAY = "array",
+  STATE_MEMORY = "state-memory",
+  BLOCK_TRIGGER = "block-trigger",
+  BLOCK_STATE = "block-state",
+  ACTION = "action",
+}
+
+export type PropertyType = `${PropertyTypeEnum}`;

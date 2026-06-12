@@ -3,7 +3,7 @@ title: How to build a product tour in Angular
 description: A complete guide to building a product tour in Angular. Learn how to create tooltips, modals, onboarding flows, track user progress, and ship tours faster using Flows.
 date: "2025-12-13"
 author: "Vojtech Vidra"
-image: /images/blog/product-tour-guide/cover.png
+image: /images/blog/product-tour-guide/angular-cover.png
 imageAlt: Tooltip example for a product tour in an Angular application
 ---
 
@@ -148,7 +148,70 @@ We built a fully customizable product adoption platform so you don't need to. He
 
 ### Step 1: Installation
 
-First, [sign up](https://app.flows.sh/signup), create and organization, and install the NPM package. Follow the [quick installation guide](/docs/sdk/frameworks/angular) to integrate `init()` into your Angular app (or view our [Angular template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/angular)). Once you have that set up, return here to continue.
+Sign up for [Flows](https://app.flows.sh/signup) and create an organization. Then install the SDK:
+
+```bash
+npm i @flows/js @flows/js-components
+```
+
+Create a `FlowsService` to handle initialization, call it from your root component, and add `<flows-floating-blocks>` to your root template:
+
+```ts title="flows.service.ts"
+import { inject, Injectable } from "@angular/core";
+import { Router } from "@angular/router";
+import { init } from "@flows/js";
+import { setupJsComponents } from "@flows/js-components";
+import * as components from "@flows/js-components/components";
+import * as tourComponents from "@flows/js-components/tour-components";
+import * as surveyComponents from "@flows/js-components/survey-components";
+import "@flows/js-components/index.css";
+
+@Injectable({ providedIn: "root" })
+export class FlowsService {
+  private router = inject(Router);
+
+  init() {
+    init({
+      organizationId: "YOUR_ORGANIZATION_ID",
+      userId: "YOUR_USER_ID",
+      environment: "production",
+      onNavigate: (href, event) => {
+        event.preventDefault();
+        this.router.navigateByUrl(href);
+      },
+    });
+    setupJsComponents({
+      components: { ...components },
+      tourComponents: { ...tourComponents },
+      surveyComponents: { ...surveyComponents },
+    });
+  }
+}
+```
+
+```ts title="app.ts"
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from "@angular/core";
+import { FlowsService } from "./flows.service";
+
+@Component({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+})
+export class App {
+  flowsService = inject(FlowsService);
+  ngOnInit() {
+    if (typeof window !== "undefined") {
+      this.flowsService.init();
+    }
+  }
+}
+```
+
+```html title="app.html"
+<router-outlet />
+<flows-floating-blocks></flows-floating-blocks>
+```
+
+For the full list of supported options, see the [Angular installation guide](/docs/sdk/frameworks/angular) or the [Angular template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/angular). Once that is set up, return here to continue.
 
 ### Step 2: Build the tour workflow
 
@@ -213,3 +276,6 @@ If you're building product tours in a different framework, check out our other g
 - [How to build a product tour in React](/blog/react-product-tour-guide)
 - [How to build a product tour in Vue](/blog/vue-product-tour-guide)
 - [How to build a product tour in Svelte](/blog/svelte-product-tour-guide)
+- [How to build a product tour in Next.js](/blog/nextjs-product-tour-guide)
+- [How to build a product tour in JavaScript](/blog/javascript-product-tour-guide)
+- [How to build a product tour in SolidJS](/blog/solidjs-product-tour-guide)

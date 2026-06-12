@@ -18,30 +18,35 @@ export default async function BlogPage(): Promise<ReactElement> {
 
   return (
     <>
-      <Section maxWidth="720px!">
-        <Text as="h1" variant="title4xl" mt="space40" md={{ mt: "space80" }}>
+      <Section>
+        <Text as="h1" variant="title4xl" mt="space40" mb="space40" md={{ mt: "space80" }}>
           Blog
         </Text>
       </Section>
-      <ul
-        className={css({
-          mb: "space40",
-          md: {
-            mb: "space80",
-          },
-        })}
-      >
-        {allPosts.map((post) => (
-          <BlogPostPreview
-            key={post.slug}
-            title={post.title}
-            description={post.description}
-            imageAlt={post.imageAlt}
-            image={post.image}
-            slug={post.slug}
-          />
-        ))}
-      </ul>
+      <Section>
+        <ul
+          className={css({
+            display: "grid",
+            gridTemplateColumns: { base: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)" },
+            gap: "space32",
+            mb: "space40",
+            md: {
+              mb: "space80",
+            },
+          })}
+        >
+          {allPosts.map((post) => (
+            <BlogPostPreview
+              key={post.slug}
+              title={post.title}
+              description={post.description}
+              imageAlt={post.imageAlt}
+              image={post.image}
+              slug={post.slug}
+            />
+          ))}
+        </ul>
+      </Section>
     </>
   );
 }

@@ -3,7 +3,7 @@ title: How to build a product tour in Svelte (SvelteKit & Vite Guide)
 description: A complete guide to building a product tour in Svelte. Learn how to create tooltips, modals, onboarding flows, track user progress, and ship tours faster using Flows.
 date: "2025-12-29"
 author: "Vojtech Vidra"
-image: /images/blog/product-tour-guide/cover.png
+image: /images/blog/product-tour-guide/svelte-cover.png
 imageAlt: Tooltip example for a product tour in a Svelte application
 ---
 
@@ -154,7 +154,50 @@ We built a fully customizable product adoption platform so you don't need to. He
 
 ### Step 1: Installation
 
-Sign up for [Flows](https://app.flows.sh/signup) and create an organization. Then install the NPM package and follow our [quick installation guide](/docs/sdk/frameworks/svelte) to get set up (or view our [Svelte template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/svelte)). When you have the `init()` integrated into your app, come back here.
+Sign up for [Flows](https://app.flows.sh/signup) and create an organization. Then install the SDK:
+
+```bash
+npm i @flows/js @flows/js-components
+```
+
+Add the initialization logic to your root layout inside `onMount`, and include `<flows-floating-blocks>` to render floating UI:
+
+```svelte title="routes/+layout.svelte"
+<script lang="ts">
+  import { onMount } from "svelte";
+  import { goto } from "$app/navigation";
+  import { init } from "@flows/js";
+  import { setupJsComponents } from "@flows/js-components";
+  import * as components from "@flows/js-components/components";
+  import * as tourComponents from "@flows/js-components/tour-components";
+  import * as surveyComponents from "@flows/js-components/survey-components";
+  import "@flows/js-components/index.css";
+
+  let { children } = $props();
+
+  onMount(() => {
+    init({
+      organizationId: "YOUR_ORGANIZATION_ID",
+      userId: "YOUR_USER_ID",
+      environment: "production",
+      onNavigate: (href, event) => {
+        event.preventDefault();
+        goto(href);
+      },
+    });
+    setupJsComponents({
+      components: { ...components },
+      tourComponents: { ...tourComponents },
+      surveyComponents: { ...surveyComponents },
+    });
+  });
+</script>
+
+{@render children()}
+<flows-floating-blocks></flows-floating-blocks>
+```
+
+For the full list of supported options, see the [Svelte installation guide](/docs/sdk/frameworks/svelte) or the [Svelte template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/svelte). When you have `init()` integrated into your app, come back here.
 
 ### Step 2: Create your tour workflow
 
@@ -220,3 +263,6 @@ If you're building product tours in a different framework, check out our other g
 - [How to build a product tour in React](/blog/react-product-tour-guide)
 - [How to build a product tour in Angular](/blog/angular-product-tour-guide)
 - [How to build a product tour in Vue](/blog/vue-product-tour-guide)
+- [How to build a product tour in Next.js](/blog/nextjs-product-tour-guide)
+- [How to build a product tour in JavaScript](/blog/javascript-product-tour-guide)
+- [How to build a product tour in SolidJS](/blog/solidjs-product-tour-guide)

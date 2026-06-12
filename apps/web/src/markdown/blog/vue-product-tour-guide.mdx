@@ -3,7 +3,7 @@ title: How to build a product tour in Vue (Nuxt & Vite Guide)
 description: A complete guide to building a product tour in Vue (Nuxt or Vite). Learn how to create tooltips, modals, onboarding flows, track user progress, and ship tours faster with Flows.
 date: "2025-12-22"
 author: "Vojtech Vidra"
-image: /images/blog/product-tour-guide/cover.png
+image: /images/blog/product-tour-guide/vue-cover.png
 imageAlt: Tooltip example for a product tour in a Vue application
 ---
 
@@ -154,7 +154,65 @@ We built a fully customizable product adoption platform so you don't need to. He
 
 ### Step 1: Installation
 
-Sign up for [Flows](https://app.flows.sh/signup) and create an organization. Then install the NPM package and follow our [quick installation guide](/docs/sdk/frameworks/nuxt) to integrate `init()` into your Vue app (or view our [Vue template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/vue/nuxt)). Once you have that set up, return here to continue.
+Sign up for [Flows](https://app.flows.sh/signup) and create an organization. Then install the SDK:
+
+```bash
+npm i @flows/js @flows/js-components
+```
+
+Create a Nuxt plugin to initialize Flows on mount, add `<flows-floating-blocks>` to your root template, and register the custom elements in `nuxt.config.ts`:
+
+```ts title="plugins/flows.ts"
+import { defineNuxtPlugin } from "nuxt/app";
+import { init } from "@flows/js";
+import { setupJsComponents } from "@flows/js-components";
+import * as components from "@flows/js-components/components";
+import * as tourComponents from "@flows/js-components/tour-components";
+import * as surveyComponents from "@flows/js-components/survey-components";
+import "@flows/js-components/index.css";
+
+export default defineNuxtPlugin({
+  name: "flows",
+  parallel: true,
+  hooks: {
+    "app:mounted"() {
+      init({
+        organizationId: "YOUR_ORGANIZATION_ID",
+        userId: "YOUR_USER_ID",
+        environment: "production",
+        onNavigate: (href, event) => {
+          event.preventDefault();
+          navigateTo(href);
+        },
+      });
+      setupJsComponents({
+        components: { ...components },
+        tourComponents: { ...tourComponents },
+        surveyComponents: { ...surveyComponents },
+      });
+    },
+  },
+});
+```
+
+```html title="app.vue"
+<template>
+  <!-- Your app code here -->
+  <flows-floating-blocks></flows-floating-blocks>
+</template>
+```
+
+```ts title="nuxt.config.ts"
+export default defineNuxtConfig({
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) => ["flows-floating-blocks", "flows-slot"].includes(tag),
+    },
+  },
+});
+```
+
+For the full list of supported options, see the [Vue installation guide](/docs/sdk/frameworks/nuxt) or the [Vue template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/vue/nuxt). Once that is set up, return here to continue.
 
 ### Step 2: Create your tour workflow
 
@@ -221,3 +279,6 @@ If you're building product tours in a different framework, check out our other g
 - [How to build a product tour in React](/blog/react-product-tour-guide)
 - [How to build a product tour in Angular](/blog/angular-product-tour-guide)
 - [How to build a product tour in Svelte](/blog/svelte-product-tour-guide)
+- [How to build a product tour in Next.js](/blog/nextjs-product-tour-guide)
+- [How to build a product tour in JavaScript](/blog/javascript-product-tour-guide)
+- [How to build a product tour in SolidJS](/blog/solidjs-product-tour-guide)

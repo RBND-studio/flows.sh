@@ -1,15 +1,15 @@
 ---
-title: How to build a product tour in React
-description: A complete guide to building a product tour in React. Learn how to create tooltips, modals, onboarding flows, track user progress, and ship tours faster using Flows.
-date: "2025-12-09"
+title: How to build a product tour in SolidJS
+description: A complete guide to building a product tour in SolidJS. Learn how to create tooltips, modals, onboarding flows, track user progress, and ship tours faster using Flows.
+date: "2026-01-20"
 author: "Vojtech Vidra"
-image: /images/blog/product-tour-guide/react-cover.png
-imageAlt: Tooltip example for a product tour in a React application
+image: /images/blog/product-tour-guide/solidjs-cover.png
+imageAlt: Tooltip example for a product tour in a SolidJS application
 ---
 
 import { VideoPlayer } from "components/blog";
 
-In this guide, you’ll learn how to build a product tour (also known as user onboarding flow or a product adoption guide) in your React application. Whether you’re using Next.js, Vite, Create React App, or another React framework, this tutorial will walk you through everything you need to know.
+In this guide, you'll learn how to build a product tour (also known as a user onboarding flow or product adoption guide) in your SolidJS application. Whether you're using SolidStart or a plain Vite + Solid setup, this tutorial will walk you through everything you need to know.
 
 ## What are product tours?
 
@@ -41,9 +41,9 @@ As your product grows, well designed tours can significantly improve activation 
 
 ## What goes into building a product tour?
 
-Before you start building, it’s helpful to understand all the moving parts behind even a simple tour. You’ll need:
+Before you start building, it's helpful to understand all the moving parts behind even a simple tour. You'll need:
 
-- **UI elements** like tooltip, modal, hotspot, checklist…
+- **UI elements** like tooltip, modal, hotspot, checklist...
 - **Content management** stored either directly in code or in some database
 - **User state tracking** to track who saw what and when
 
@@ -58,7 +58,7 @@ Once you add all these requirements, building a complete solution in-house becom
 
 ### UI elements
 
-In React, you have several options to create the UI for product tours. You can use dedicated packages like `react-joyride`, `shepherd.js`, `intro.js`, `driver.js`, or `reactour`, or use the components already in your design system (e.g. Dialog or Popover from `shadcn/ui`).
+In SolidJS, general-purpose tour libraries like `shepherd.js`, `intro.js`, and `driver.js` can be wired up manually.
 
 These options can help you build the tour UI quickly, but keep in mind that they don't solve the other critical parts of real onboarding flows, like content management, user targeting, analytics, or state tracking.
 
@@ -80,9 +80,9 @@ Many teams prefer letting non-engineering roles manage this content to avoid unn
 
 ### User state tracking
 
-For tours to work properly, you need at least to track if a user has seen (or completed) a tour to prevent showing it to them every time they log in. When tours span multiple screens and take more than a few steps, it’s also good to remember the user’s progress so the tour can resume if they come back or reload the page.
+For tours to work properly, you need at least to track if a user has seen (or completed) a tour to prevent showing it to them every time they log in. When tours span multiple screens and take more than a few steps, it's also good to remember the user's progress so the tour can resume if they come back or reload the page.
 
-You might be tempted to store user state in the browser’s local storage, but for any React app where users sign in (especially if they may use multiple devices) the state should be stored in your database instead.
+You might be tempted to store user state in the browser's local storage, but for any SolidJS app where users sign in (especially if they may use multiple devices) the state should be stored in your database instead.
 
 To achieve all of this in-house, you will need to create API endpoints, a new database table (or column) to store the user state, and logic to decide when each tour should appear.
 
@@ -97,7 +97,7 @@ Without proper state management, users may see the same tour repeatedly, lose th
 
 ### Additional requirements
 
-Depending on your product’s complexity, you may also need:
+Depending on your product's complexity, you may also need:
 
 #### Localization
 
@@ -129,7 +129,7 @@ As you introduce more tours, targeting the right users becomes essential. For ex
 - Are not paying customers
 - Are active during a time-limited promotion (e.g. Black Friday)
 
-And again, most of these filters will be defined by non-engineering teammates who manage the product experience, and they’ll want to control them without needing developer involvement or deployments.
+And again, most of these filters will be defined by non-engineering teammates who manage the product experience, and they'll want to control them without needing developer involvement or deployments.
 
 <Image
   src="/images/blog/product-tour-guide/user-properties.png"
@@ -138,48 +138,78 @@ And again, most of these filters will be defined by non-engineering teammates wh
   height={1040}
 />
 
-## Build your product tour faster with Flows
+## Build your SolidJS product tour faster with Flows
 
 Everything described above (UI, targeting, user state, analytics, environments, content, segmentation, and even extras) can be solved with Flows in a fraction of the time.
 
-Plus, for UI elements, you don't need to use our built-in components (even though we think they are really good). You can bring your own React components directly from your design system. This gives you complete control to implement tours that meet your UI and UX requirements.
+Flows initializes client-side and works alongside SolidJS's fine-grained reactivity. It manages its own internal state independently from your signal graph, so adding Flows won't introduce reactive primitives you didn't ask for. For UI, you can bring your own SolidJS components directly from your design system. Flows controls when they appear, you control how they look.
 
-We built a fully customizable product adoption platform so you don't need to. Here’s how to use it to build your tour.
+We built a fully customizable product adoption platform so you don't need to. Here's how to use it to build your tour.
 
 ### Step 1: Installation
 
 Sign up for [Flows](https://app.flows.sh/signup) and create an organization. Then install the SDK:
 
 ```bash
-npm i @flows/react @flows/react-components
+npm i @flows/js @flows/js-components
 ```
 
-Wrap your app with `FlowsProvider` and pass your organization ID and user identity:
+Create a `Flows` component that initializes the SDK inside `onMount` and renders the floating blocks, then add it to your root layout:
 
-```tsx title="layout.tsx"
-import { FlowsProvider } from "@flows/react";
-import * as components from "@flows/react-components";
-import * as tourComponents from "@flows/react-components/tour";
-import * as surveyComponents from "@flows/react-components/survey";
-import "@flows/react-components/index.css";
+```tsx title="flows.tsx"
+import { onMount } from "solid-js";
+import { useNavigate } from "@solidjs/router";
+import { init } from "@flows/js";
+import { setupJsComponents } from "@flows/js-components";
+import * as components from "@flows/js-components/components";
+import * as tourComponents from "@flows/js-components/tour-components";
+import * as surveyComponents from "@flows/js-components/survey-components";
+import "@flows/js-components/index.css";
 
-const App = () => {
-  return (
-    <FlowsProvider
-      organizationId="YOUR_ORGANIZATION_ID"
-      userId="YOUR_USER_ID"
-      environment="production"
-      components={{ ...components }}
-      tourComponents={{ ...tourComponents }}
-      surveyComponents={{ ...surveyComponents }}
-    >
-      {/* Your app code here */}
-    </FlowsProvider>
-  );
+export const Flows = () => {
+  const navigate = useNavigate();
+
+  onMount(() => {
+    init({
+      organizationId: "YOUR_ORGANIZATION_ID",
+      userId: "YOUR_USER_ID",
+      environment: "production",
+      onNavigate: (href, event) => {
+        event.preventDefault();
+        navigate(href);
+      },
+    });
+    setupJsComponents({
+      components: { ...components },
+      tourComponents: { ...tourComponents },
+      surveyComponents: { ...surveyComponents },
+    });
+  });
+
+  return <flows-floating-blocks />;
 };
 ```
 
-For the full list of supported props, see the [React installation guide](/docs/sdk/react/installation) or the [React template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/vite). When you have `<FlowsProvider>` integrated into your app, come back here.
+```tsx title="app.tsx"
+import { Flows } from "./flows";
+
+export default function App() {
+  return (
+    <Router
+      root={(props) => (
+        <>
+          {props.children}
+          <Flows />
+        </>
+      )}
+    >
+      {/* Your routes here */}
+    </Router>
+  );
+}
+```
+
+For the full list of supported options and a complete example, see the [SolidJS installation guide](/docs/sdk/frameworks/solid) or the [SolidJS template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/solid). When that is set up, come back here.
 
 ### Step 2: Create your tour workflow
 
@@ -200,7 +230,7 @@ To edit each step, click them in the Steps section and fill out their properties
 
 ### Step 3: Preview and test your tour
 
-After adding all your steps, the tour is ready for a preview. To preview the tour, create a testing environment called `stage` by going to **Settings > Environments**. Then change the `environment` prop in `<FlowsProvider>` to match the newly created environment.
+After adding all your steps, the tour is ready for a preview. To preview the tour, create a testing environment called `stage` by going to **Settings > Environments**. Then change the `environment` option passed to `init()` to match the newly created environment.
 
 <Image
   src="/images/blog/product-tour-guide/environments.png"
@@ -218,34 +248,34 @@ Back in Flows, publish the workflow by clicking **Publish** in the top right cor
   height={1040}
 />
 
-Now, when you start your React app, you should see the first step of the tour (it is possible that you will need to reload the page if you already had the app running before changing the environments). If you have any issues, you can debug by looking into the browser console or by using our SDK’s [debug mode](/docs/sdk/debug).
+Now, when you start your SolidJS app, you should see the first step of the tour (you may need to reload the page if the app was already running before you changed the environment). If you have any issues, you can debug by looking into the browser console or by using our SDK's [debug mode](/docs/sdk/debug).
 
 ### Step 4: Publish to production
 
-Once you are happy with how your product tour looks and feels, you can publish it to your users. To do that, you first need to deploy the updated React app with `<FlowsProvider>` (don't forget to change the environment prop back to `production`).
+Once you are happy with how your product tour looks and feels, you can publish it to your users. First deploy the updated SolidJS app with the `init()` integration (don't forget to change the environment option back to `production`).
 
-When that is live, you can again hit Publish in the workflow and choose the production environment this time. Since this is going into production, make sure to select the right frequency in the publish dialog (you can leave the migration option as is, this option is useful when republishing a workflow to let Flows know how to migrate the active users into the new version).
+When that is live, hit Publish in the workflow and choose the production environment. Since this is going into production, make sure to select the right frequency in the publish dialog (you can leave the migration option as is, this option is useful when republishing a workflow to let Flows know how to migrate the active users into the new version).
 
 <VideoPlayer
   src="/videos/product-tour-guide/tour-preview.mp4"
-  ariaLabel="Preview of the product tour in a React application"
+  ariaLabel="Preview of the product tour in a SolidJS application"
 />
 
 ---
 
-That’s it, you’ve successfully built a complete tour in React using Flows.
+That's it, you've successfully built a complete tour in SolidJS using Flows.
 
 Instead of building UI, state management, targeting, analytics, environments, and content tools yourself, Flows handles all of it. So you can focus on building your product, not maintaining onboarding infrastructure.
 
-If you’re ready to ship better onboarding, faster, try Flows.
+If you're ready to ship better onboarding, faster, [try Flows](/technology/solid-user-onboarding).
 
 ## Looking for other frameworks?
 
 If you're building product tours in a different framework, check out our other guides:
 
+- [How to build a product tour in React](/blog/react-product-tour-guide)
 - [How to build a product tour in Angular](/blog/angular-product-tour-guide)
 - [How to build a product tour in Vue](/blog/vue-product-tour-guide)
 - [How to build a product tour in Svelte](/blog/svelte-product-tour-guide)
 - [How to build a product tour in Next.js](/blog/nextjs-product-tour-guide)
 - [How to build a product tour in JavaScript](/blog/javascript-product-tour-guide)
-- [How to build a product tour in SolidJS](/blog/solidjs-product-tour-guide)

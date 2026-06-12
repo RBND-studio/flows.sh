@@ -21,7 +21,8 @@
         "destructuredArrayIgnorePattern": "^_",
         "fix": { "imports": "off" }
       }
-    ]
+    ],
+    "prefer-tag-over-role": "off"
   },
   "options": {
     "typeAware": true
