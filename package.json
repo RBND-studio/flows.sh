@@ -37,7 +37,7 @@
     "tsconfig": "workspace:*",
     "turbo": "^2.9.16"
   },
-  "packageManager": "pnpm@11.5.1",
+  "packageManager": "pnpm@11.6.0",
   "engines": {
     "node": "^24"
   }

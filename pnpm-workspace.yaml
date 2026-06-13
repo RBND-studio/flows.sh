@@ -9,6 +9,7 @@ overrides:
   ajv@>=7.0.0-alpha.0 <8.18.0: ">=8.18.0"
   diff@>=4.0.0 <4.0.4: ">=4.0.4"
   diff@>=5.0.0 <5.2.2: ">=5.2.2"
+  esbuild@<0.28.1: ^0.28.1
   fast-xml-parser@<5.5.7: ">=5.5.7"
   fastify@<=5.8.4: ">=5.8.5"
   file-type@>=20.0.0 <=21.3.1: ">=21.3.2"
@@ -56,3 +57,4 @@ minimumReleaseAgeExclude:
   - next@16.2.7
   - react-dom@19.2.7
   - react@19.2.7
+  - esbuild@0.28.1
