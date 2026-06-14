@@ -39,6 +39,8 @@ export const links = (domain = "flows.sh") =>
       solidTemplate: "https://github.com/RBND-studio/flows-sdk/tree/main/examples/solid",
       astroTemplate: "https://github.com/RBND-studio/flows-sdk/tree/main/examples/astro",
       emberTemplate: "https://github.com/RBND-studio/flows-sdk/tree/main/examples/ember",
+      tanstackTemplate:
+        "https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/tanstack",
     },
     duplicateExample: (params: { workflowId: string }) =>
       `https://app.${domain}/duplicate-example/${params.workflowId}`,
