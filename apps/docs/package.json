@@ -15,7 +15,7 @@
   "dependencies": {
     "@flows/react-components": "2.9.0",
     "fumadocs-core": "16.8.9",
-    "fumadocs-mdx": "15.0.2",
+    "fumadocs-mdx": "15.0.12",
     "fumadocs-ui": "16.8.9",
     "icons": "workspace:*",
     "next": "16.2.7",

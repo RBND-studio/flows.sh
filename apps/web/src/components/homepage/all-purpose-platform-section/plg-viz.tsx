@@ -1,7 +1,7 @@
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { token } from "@flows/styled-system/tokens";
 import { Group } from "@visx/group";
-import Pie from "@visx/shape/lib/shapes/Pie";
+import { Pie } from "@visx/shape";
 import { type ReactNode } from "react";
 import { Logo } from "ui";
 

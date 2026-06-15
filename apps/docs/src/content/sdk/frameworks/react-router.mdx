@@ -1,15 +1,15 @@
 ---
-title: Next.js
-description: How to set up Flows in your Next.js application.
+title: React Router
+description: How to set up Flows in your React Router application.
 ---
 
 import { Step, Steps } from "fumadocs-ui/components/steps";
 
-![Next](/sdk/frameworks/next.png)
+![React Router](/sdk/frameworks/reactrouter.png)
 
-Flows makes it easy to add product adoption experiences into your React app built with [Next.js](https://nextjs.org). Integrating Flows into your app enables you to create interactive workflows, user onboarding, guided tours, in-app messaging, and more.
+Flows makes it easy to add product adoption experiences into your React app built with [React Router](https://reactrouter.com). Integrating Flows into your app enables you to create interactive workflows, user onboarding, guided tours, in-app messaging, and more.
 
-This guide walks you through integrating Flows into your Next.js app using the [React SDK](https://www.npmjs.com/package/@flows/react) and [components package](https://www.npmjs.com/package/@flows/react-components) to get you started.
+This guide walks you through integrating Flows into your React Router app using the [React SDK](https://www.npmjs.com/package/@flows/react) and [components package](https://www.npmjs.com/package/@flows/react-components) to get you started.
 
 <Callout>
   Using an AI coding assistant? Install the [Flows install skill](/agent-skills) to let your agent
@@ -34,21 +34,19 @@ npm i @flows/react @flows/react-components
 
 ## Integrate FlowsProvider in your application
 
-Create a Flows client component that wraps your application with the `FlowsProvider`. Then add
+Create a Flows component that wraps your application with the `FlowsProvider`. Then add
 the `Flows` component to your root layout.
 
 <Callout>
-  Check out the [Next.js template
-  project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/next) for a complete
+  Check out the [React Router template
+  project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/vite) for a complete
   example.
 </Callout>
 
 ```tsx tab="app/flows.tsx"
-"use client";
+import { Link } from "react-router";
 
-import Link from "next/link";
-
-import { FlowsProvider } from "@flows/react";
+import { FlowsProvider, type LinkComponentType } from "@flows/react";
 import * as components from "@flows/react-components";
 import * as tourComponents from "@flows/react-components/tour";
 import * as surveyComponents from "@flows/react-components/survey";
@@ -64,21 +62,27 @@ export const Flows = ({ children }: { children: React.ReactNode }) => {
       components={{ ...components }}
       tourComponents={{ ...tourComponents }}
       surveyComponents={{ ...surveyComponents }}
-      LinkComponent={Link}
+      LinkComponent={LinkComponent}
     >
       {children}
     </FlowsProvider>
   );
 };
+
+const LinkComponent: LinkComponentType = ({ href, children, className, onClick }) => (
+  <Link to={href} className={className} onClick={onClick}>
+    {children}
+  </Link>
+);
 ```
 
-```tsx tab="app/layout.tsx"
+```tsx tab="app/root.tsx"
 import { Flows } from "./flows";
 
 // Wrap your application with the Flows component from flows.tsx
-export default function RootLayout({ children }) {
+export function Layout({ children }) {
   return (
-    <html lang="en">
+    <html>
       <body>
         <Flows>{children}</Flows>
       </body>
@@ -87,7 +91,7 @@ export default function RootLayout({ children }) {
 }
 ```
 
-For a full list of supported properties, see the [FlowsProvider documentation](/sdk/react/reference#flowsprovider). For an example of how to create a custom component, see the [Next.js template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/next).
+For a full list of supported properties, see the [FlowsProvider documentation](/sdk/react/reference#flowsprovider). For an example of how to create a custom component, see the [React Router template project](https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/vite).
 
 </Step>
 
