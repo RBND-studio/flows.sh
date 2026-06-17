@@ -2,11 +2,6 @@ const path = require("node:path");
 const createMdx = require("@next/mdx");
 const { withNextVideo } = require("next-video/process");
 
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  // eslint-disable-next-line turbo/no-undeclared-env-vars -- ignore
-  enabled: process.env.ANALYZE === "true",
-});
-
 const dev = process.env.NODE_ENV !== "production";
 
 const cspHeader = `
@@ -106,4 +101,4 @@ const withMDX = createMdx({
   },
 });
 
-module.exports = withBundleAnalyzer(withNextVideo(withMDX(nextConfig)));
+module.exports = withNextVideo(withMDX(nextConfig));
