@@ -1,6 +1,6 @@
 services:
   kafka:
-    image: apache/kafka:4.2.0
+    image: apache/kafka:4.3.0
     restart: unless-stopped
     mem_limit: 1g
     ports:
@@ -33,7 +33,7 @@ services:
       KAFKA_LOG_DIRS: "/tmp/kraft-combined-logs"
 
   kafka-init:
-    image: apache/kafka:4.2.0
+    image: apache/kafka:4.3.0
     depends_on:
       - kafka
     restart: "no"
@@ -44,7 +44,7 @@ services:
       until /opt/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server kafka:9092 >/dev/null 2>&1; do
         sleep 2;
       done;
-      /opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:9092 --create --if-not-exists --topic user-events --partitions 1 --replication-factor 1;
+      /opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:9092 --create --if-not-exists --topic user-events --partitions 12 --replication-factor 1;
       /opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:9092 --create --if-not-exists --topic user-events-retry-1 --partitions 1 --replication-factor 1;
       /opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:9092 --create --if-not-exists --topic user-events-retry-2 --partitions 1 --replication-factor 1;
       /opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:9092 --create --if-not-exists --topic user-events-retry-3 --partitions 1 --replication-factor 1;
