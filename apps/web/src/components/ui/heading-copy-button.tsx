@@ -1,9 +1,9 @@
 "use client";
 
 import { css, cx } from "@flows/styled-system/css";
-import { Link16 } from "icons";
-import { type ReactNode } from "react";
-import { clipboard, Icon, toast } from "ui";
+import { Check16, Link16 } from "icons";
+import { useState, type ReactNode } from "react";
+import { clipboard, Icon } from "ui";
 
 export const HeadingCopyButton = ({
   path,
@@ -12,9 +12,12 @@ export const HeadingCopyButton = ({
   path: string;
   className?: string;
 }): ReactNode => {
+  const [hasBeenCopied, setHasBeenCopied] = useState(false);
+
   const handleCopy = (): void => {
+    setHasBeenCopied(true);
     void clipboard.copy(window.location.origin + path);
-    toast.success("URL copied to your clipboard");
+    setTimeout(() => setHasBeenCopied(false), 3000);
   };
 
   return (
@@ -29,13 +32,18 @@ export const HeadingCopyButton = ({
           _hover: {
             color: "fg.neutral",
           },
+          opacity: hasBeenCopied ? 1 : undefined,
         }),
         className,
       )}
       type="button"
       onClick={handleCopy}
     >
-      <Icon color="inherit" icon={Link16} />
+      {hasBeenCopied ? (
+        <Icon color="fg.success" icon={Check16} />
+      ) : (
+        <Icon color="inherit" icon={Link16} />
+      )}
     </button>
   );
 };

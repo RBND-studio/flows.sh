@@ -28,8 +28,8 @@ export const CustomComponentExampleCode = (): JSX.Element => {
   return (
     <CodeHighlight
       lineNumbers
-      extensions={[]}
       lang="jsx"
+      hideCopyButton
       className={css({
         borderRadius: "0!",
         border: "none!",
@@ -37,9 +37,6 @@ export const CustomComponentExampleCode = (): JSX.Element => {
         "& pre": {
           backgroundColor: "transparent!",
         },
-      })}
-      codeClassName={css({
-        fontSize: "12px",
       })}
     >
       {codeExample}

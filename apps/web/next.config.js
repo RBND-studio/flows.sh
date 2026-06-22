@@ -97,7 +97,20 @@ const nextConfig = {
 const withMDX = createMdx({
   options: {
     remarkPlugins: ["remark-frontmatter", "remark-mdx-frontmatter", "remark-gfm"],
-    rehypePlugins: ["rehype-slug"],
+    rehypePlugins: [
+      "rehype-slug",
+      [
+        // cspell:disable-next-line
+        "@shikijs/rehype",
+        {
+          themes: {
+            light: "github-light-default",
+            dark: "github-dark-dimmed",
+          },
+          defaultColor: "light-dark()",
+        },
+      ],
+    ],
   },
 });
 
