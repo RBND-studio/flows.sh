@@ -58,3 +58,10 @@ minimumReleaseAgeExclude:
   - react-dom@19.2.7
   - react@19.2.7
   - esbuild@0.28.1
+  - tar@7.5.16
+  - js-yaml@4.1.2
+  - '@babel/core@7.29.1'
+  - markdown-it@14.1.2
+  - '@opentelemetry/core@2.8.0'
+  - undici@8.5.0
+  - dompurify@3.4.11

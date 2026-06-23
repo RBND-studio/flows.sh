@@ -1,60 +1,75 @@
-import { css, cx } from "@flows/styled-system/css";
-import { Code } from "bright";
-import type { FC, ReactNode } from "react";
-
-import { fileIcons } from "./file-icons";
-import { tabs } from "./tabs";
+import { Fragment, type FC, type ReactElement } from "react";
+import type { BundledLanguage } from "shiki";
+import { codeToHtml } from "shiki";
+import { CodeHighlightDiv, CodeHighlightWrapper } from "./code-highlight-div";
+import { CodeTabs } from "./tabs-client";
+import { CopyButton } from "./copy-button";
+import { css } from "@flows/styled-system/css";
 
 type Props = {
-  children: ReactNode;
+  children: string | { code: string; filename: string; lang: BundledLanguage }[];
   className?: string;
-  codeClassName?: string;
   lineNumbers?: boolean;
-  lang?: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- extensions type is not exported from bright
-  extensions?: any[];
+  lang: BundledLanguage;
+  hideCopyButton?: boolean;
 };
 
-export const CodeHighlight: FC<Props> = ({ lineNumbers = true, ...props }) => {
+const formatCode = ({ code, lang }: { code: string; lang: BundledLanguage }): Promise<string> => {
+  return codeToHtml(code, {
+    lang,
+    defaultColor: "light-dark()",
+    themes: {
+      light: "github-light-default",
+      dark: "github-dark-dimmed",
+    },
+  });
+};
+
+export const CodeHighlight: FC<Props> = async ({
+  lineNumbers = true,
+  children,
+  lang,
+  hideCopyButton,
+  ...props
+}: Props): Promise<ReactElement> => {
+  if (typeof children === "string") {
+    return (
+      <CodeHighlightWrapper className={props.className}>
+        <CodeHighlightDiv
+          lineNumbers={lineNumbers}
+          dangerouslySetInnerHTML={{ __html: await formatCode({ code: children, lang }) }}
+        />
+        {!hideCopyButton && <CopyButton code={children} />}
+      </CodeHighlightWrapper>
+    );
+  }
+
   return (
-    <Code
-      lang={props.lang}
-      extensions={[fileIcons, tabs]}
-      theme={{ dark: "github-dark-dimmed", light: "github-light", lightSelector: ".light" }}
-      {...props}
-      className={cx(
-        css({
-          position: "relative",
-          borderRadius: "radius8!",
-          borderStyle: "solid",
-          borderWidth: "1px",
-          borderColor: "border.neutral",
-          display: "flex",
-          flexDirection: "column",
-          "& pre": {
-            py: "space12!",
-            flex: 1,
-            scrollbarWidth: "thin",
-            scrollbarColor: "var(--colors-pane-fg-scroll) transparent",
-          },
-          "&:hover .copy-button": {
-            opacity: 1,
-          },
-        }),
-        props.className,
-      )}
-      codeClassName={cx(
-        css({
-          fontFamily: "mono",
-          fontSize: "12px",
-          borderRadius: "radius8",
-        }),
-        props.codeClassName,
-      )}
-      lineNumbers={lineNumbers}
-      titleClassName={css({
-        "--tab-top-border": "transparent",
-      })}
-    />
+    <CodeHighlightWrapper className={props.className}>
+      <CodeTabs tabs={children.map((c) => c.filename)}>
+        {await Promise.all(
+          children.map(async (c) => {
+            const out = await formatCode({ code: c.code, lang: c.lang });
+            return (
+              <Fragment key={c.filename}>
+                <CodeHighlightDiv
+                  lineNumbers={lineNumbers}
+                  dangerouslySetInnerHTML={{ __html: out }}
+                />
+                {!hideCopyButton && (
+                  <CopyButton
+                    code={c.code}
+                    className={css({
+                      // 10px + Tab List height 32px
+                      top: "42px!",
+                    })}
+                  />
+                )}
+              </Fragment>
+            );
+          }),
+        )}
+      </CodeTabs>
+    </CodeHighlightWrapper>
   );
 };

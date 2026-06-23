@@ -5,10 +5,10 @@ import { type MDXComponents } from "mdx/types";
 import { type Route } from "next";
 import Link from "next/link";
 import type { HTMLProps } from "react";
-import { Text, type TextProps } from "ui";
-import { CodeHighlight } from "ui/server";
+import { CodeHighlightDiv, CodeHighlightWrapper, Text, type TextProps } from "ui";
 
 import { ZoomableImage } from "./components/ui";
+import { MdxCopyButton } from "components/utils/mdx-copy-button";
 
 const components: MDXComponents = {
   Image: (props: HTMLProps<HTMLImageElement>) => (
@@ -281,18 +281,16 @@ const components: MDXComponents = {
       </Link>
     );
   },
-  pre: (props) => (
-    <CodeHighlight
-      className={css({
-        my: "space32!",
-      })}
-      codeClassName={css({
-        fontSize: "13px",
-      })}
-      {...props}
-    />
-  ),
-  CodeHighlight,
+  pre: (props) => {
+    return (
+      <CodeHighlightWrapper className={css({ my: "space32" })}>
+        <CodeHighlightDiv>
+          <pre {...props} />
+        </CodeHighlightDiv>
+        <MdxCopyButton />
+      </CodeHighlightWrapper>
+    );
+  },
 };
 
 const linkClassName = css({

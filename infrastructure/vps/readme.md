@@ -9,7 +9,7 @@ This checklist lists all the steps needed to follow when setting up new VPS for 
 3. Add ssh key for user
 4. Update packages
 5. Enable Ubuntu Livepatch
-6. Disable root ssh login - https://www.ionos.com/help/server-cloud-infrastructure/getting-started/important-security-information-for-your-server/deactivating-the-ssh-root-login
+6. Disable root ssh login - https://www.digitalocean.com/community/tutorials/how-to-disable-root-login-on-ubuntu-20-04
 
 ## Setup
 
