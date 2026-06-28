@@ -34,6 +34,8 @@ const nextConfig = {
       },
     ];
   },
+  // Compression is handled by Nginx, also it's required to disable compression for Next.js to support streaming
+  compress: false,
   poweredByHeader: false,
   typedRoutes: true,
   transpilePackages: ["ui", "icons", "shared", "shared-private"],
