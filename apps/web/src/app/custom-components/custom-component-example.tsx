@@ -75,6 +75,7 @@ export const CustomComponentExample: FC<Props> = ({ codeExample }) => {
               })}
               asChild
             >
+              {/* oxlint-disable-next-line jsx-a11y/control-has-associated-label */}
               <textarea rows={3} />
             </Input>
             <Input
