@@ -1,6 +1,6 @@
 import { loader } from "fumadocs-core/source";
 import { toFumadocsSource } from "fumadocs-mdx/runtime/server";
-import { docs } from "fumadocs-mdx:collections/server";
+import { docs } from "collections/server";
 import * as icons from "icons";
 import { Icon } from "ui";
 
