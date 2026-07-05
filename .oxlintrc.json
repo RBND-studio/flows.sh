@@ -22,7 +22,8 @@
         "fix": { "imports": "off" }
       }
     ],
-    "prefer-tag-over-role": "off"
+    "prefer-tag-over-role": "off",
+    "typescript/no-deprecated": "error"
   },
   "options": {
     "typeAware": true

@@ -100,6 +100,23 @@ const Page = (): ReactElement => {
         </a>{" "}
         for details.
       </Text>
+
+      <Text className={paragraphCss} variant="bodyM">
+        Our payment process is conducted by our payment processor Stripe. Stripe provides customer
+        service inquiries and handles returns. All fees are inclusive of all taxes, levies, or
+        duties imposed by taxing authorities. Stripe will collect those taxes on behalf of taxing
+        authority and remit those taxes to taxing authorities. See the{" "}
+        <a href="https://stripe.com/legal" rel="noopener noreferrer" target="_blank">
+          Stripe’s legal pages
+        </a>{" "}
+        for details.
+        <br />
+        <br />
+        Note: Stripe is currently used only for organizations that were created after July 5th 2026.
+        We are in the process of migrating all existing organizations to Stripe. Affected
+        organizations will be notified via email.
+      </Text>
+
       <Text className={paragraphCss} variant="bodyM">
         Fees paid hereunder are non-refundable.
       </Text>
@@ -355,7 +372,7 @@ const Page = (): ReactElement => {
       </Text>
 
       <Text className={paragraphCss} variant="bodyM">
-        Effective date: January 1, 2026
+        Effective date: July 5, 2026
       </Text>
     </Section>
   );

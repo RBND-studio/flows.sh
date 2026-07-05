@@ -76,6 +76,13 @@ const cookies: Cookie[] = [
     type: "Strictly necessary",
     duration: "90 days",
   },
+  {
+    name: "Stripe cookies",
+    description:
+      "When creating or managing a subscription through Stripe, Stripe may set cookies to facilitate the process. We do not control these cookies, and they are subject to Stripe's privacy policy.",
+    type: "–",
+    duration: "–",
+  },
 ];
 
 const Page = (): ReactElement => {
@@ -190,7 +197,7 @@ const Page = (): ReactElement => {
       <CookiesTable cookies={cookies} />
 
       <Text className={paragraphCss} variant="bodyM">
-        Last updated: May 6, 2025
+        Last updated: July 5, 2026
       </Text>
     </Section>
   );

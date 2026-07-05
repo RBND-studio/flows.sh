@@ -2,8 +2,7 @@
 
 import { cva, cx } from "@flows/styled-system/css";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
-import type { ReactNode } from "react";
-import { forwardRef } from "react";
+import type { FC, ReactNode, Ref } from "react";
 
 export const PopoverClose = PopoverPrimitive.Close;
 
@@ -14,25 +13,24 @@ export const PopoverTrigger = PopoverPrimitive.Trigger;
 type Props = PopoverPrimitive.PopoverContentProps & {
   children?: ReactNode;
   className?: string;
+  ref?: Ref<HTMLDivElement>;
 };
 
 const COLLISION_PADDING = 16;
 
-export const PopoverContent = forwardRef<React.ElementRef<typeof PopoverPrimitive.Content>, Props>(
-  function PopoverContent({ className, ...props }, ref) {
-    return (
-      <PopoverPrimitive.Portal>
-        <PopoverPrimitive.Content
-          className={cx(content(), className)}
-          ref={ref}
-          collisionPadding={COLLISION_PADDING}
-          sideOffset={4}
-          {...props}
-        />
-      </PopoverPrimitive.Portal>
-    );
-  },
-);
+export const PopoverContent: FC<Props> = ({ className, ref, ...props }) => {
+  return (
+    <PopoverPrimitive.Portal>
+      <PopoverPrimitive.Content
+        className={cx(content(), className)}
+        ref={ref}
+        collisionPadding={COLLISION_PADDING}
+        sideOffset={4}
+        {...props}
+      />
+    </PopoverPrimitive.Portal>
+  );
+};
 
 // TODO: @opesicka I think we should move the visual styles to the components that actually use them
 // and keep only the stuff like animation and overflow, what do you think?

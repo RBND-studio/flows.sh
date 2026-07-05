@@ -2,7 +2,8 @@ import { css, cva, cx } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { Check16 } from "icons";
-import { forwardRef, type ReactNode, useId } from "react";
+import type { FC, Ref } from "react";
+import { type ReactNode, useId } from "react";
 
 import { Icon } from "../icon";
 import { Label } from "../label";
@@ -21,59 +22,64 @@ type Props = {
   inputClassName?: string;
   id?: string;
   readOnly?: boolean;
+  ref?: Ref<HTMLButtonElement>;
 };
 
-export const Checkbox = forwardRef<React.ElementRef<typeof CheckboxPrimitive.Root>, Props>(
-  function Checkbox(
-    { className, label, labelClassName, inputClassName, disabled, readOnly, ...props },
-    ref,
-  ) {
-    const id = useId();
+export const Checkbox: FC<Props> = ({
+  className,
+  label,
+  labelClassName,
+  inputClassName,
+  disabled,
+  readOnly,
+  ref,
+  ...props
+}) => {
+  const id = useId();
 
-    const check = (
-      <CheckboxPrimitive.Root
-        className={cx(checkbox({}), inputClassName)}
-        ref={ref}
-        disabled={disabled}
-        {...props}
-        id={props.id ?? id}
-        onCheckedChange={readOnly ? undefined : props.onCheckedChange}
+  const check = (
+    <CheckboxPrimitive.Root
+      className={cx(checkbox({}), inputClassName)}
+      ref={ref}
+      disabled={disabled}
+      {...props}
+      id={props.id ?? id}
+      onCheckedChange={readOnly ? undefined : props.onCheckedChange}
+    >
+      <CheckboxPrimitive.Indicator
+        className={css({
+          display: "grid",
+          color: "control.fg",
+          height: "100%",
+          position: "relative",
+        })}
       >
-        <CheckboxPrimitive.Indicator
+        <Icon
           className={css({
-            display: "grid",
-            color: "control.fg",
-            height: "100%",
-            position: "relative",
+            height: "16px",
+            width: "16px",
+            position: "absolute",
+            top: 0,
+            left: 0,
           })}
-        >
-          <Icon
-            className={css({
-              height: "16px",
-              width: "16px",
-              position: "absolute",
-              top: 0,
-              left: 0,
-            })}
-            color="inherit"
-            icon={Check16}
-          />
-        </CheckboxPrimitive.Indicator>
-      </CheckboxPrimitive.Root>
-    );
+          color="inherit"
+          icon={Check16}
+        />
+      </CheckboxPrimitive.Indicator>
+    </CheckboxPrimitive.Root>
+  );
 
-    return (
-      <Flex alignItems="center" className={className} gap="space4">
-        {check}
-        {label !== undefined ? (
-          <Label className={labelClassName} disabled={disabled} htmlFor={props.id ?? id}>
-            {label}
-          </Label>
-        ) : null}
-      </Flex>
-    );
-  },
-);
+  return (
+    <Flex alignItems="center" className={className} gap="space4">
+      {check}
+      {label !== undefined ? (
+        <Label className={labelClassName} disabled={disabled} htmlFor={props.id ?? id}>
+          {label}
+        </Label>
+      ) : null}
+    </Flex>
+  );
+};
 
 const checkbox = cva({
   base: {

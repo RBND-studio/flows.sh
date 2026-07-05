@@ -767,7 +767,12 @@ const subprocessors: Subprocessor[] = [
   },
   {
     name: "Lemon Squeezy, LLC",
-    purpose: "Payment and subscription processing",
+    purpose: "Payment and subscription processing (will be fully replaced by Stripe in the future)",
+    location: "US",
+  },
+  {
+    name: "Stripe, LLC",
+    purpose: "Payment and subscription processing (Note: Effective July 15th 2026)",
     location: "US",
   },
   {

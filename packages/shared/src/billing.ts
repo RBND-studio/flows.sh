@@ -1,3 +1,4 @@
+import type { StripeSubscriptionPriceTier, SubscriptionPriceTier } from "@flows/types";
 import dayjs from "dayjs";
 
 export const FREE_LIMIT = 250;
@@ -33,3 +34,65 @@ export const pricingTiers = {
     flowsRange: [50001, Infinity],
   },
 };
+
+export function calculateEstimatedPrice({
+  subscriptionPriceTiers,
+  usage,
+}: {
+  subscriptionPriceTiers: SubscriptionPriceTier[];
+  usage: number;
+}): number {
+  const calculatedPrice = subscriptionPriceTiers.reduce<{
+    estimatedPrice: number;
+    units: number;
+    prevTierLastUnit: number;
+  }>(
+    (acc, tier) => {
+      if (acc.units <= 0) return acc;
+
+      const tierLastUnit = tier.last_unit === "inf" ? Infinity : Number(tier.last_unit);
+      const currentTierUnits = Math.min(tierLastUnit - acc.prevTierLastUnit, acc.units);
+      const currentTierPrice = currentTierUnits * Number(tier.unit_price_decimal ?? "") * 0.01;
+      return {
+        estimatedPrice: acc.estimatedPrice + currentTierPrice,
+        units: acc.units - currentTierUnits,
+        prevTierLastUnit: tierLastUnit,
+      };
+    },
+    { estimatedPrice: 0, units: usage, prevTierLastUnit: 0 },
+  );
+
+  return calculatedPrice.estimatedPrice;
+}
+
+export function calculateStripeEstimatedPrice({
+  subscriptionPriceTiers,
+  usage,
+}: {
+  subscriptionPriceTiers: StripeSubscriptionPriceTier[];
+  usage: number;
+}): number {
+  const calculatedPrice = subscriptionPriceTiers.reduce<{
+    estimatedPrice: number;
+    units: number;
+    prevTierLastUnit: number;
+  }>(
+    (acc, tier) => {
+      if (acc.units <= 0) return acc;
+
+      const tierLastUnit = tier.up_to === null ? Infinity : tier.up_to;
+      const currentTierUnits = Math.min(tierLastUnit - acc.prevTierLastUnit, acc.units);
+      const flatAmount = Number(tier.flat_amount_decimal ?? "") * 0.01;
+      const unitAmount = Number(tier.unit_amount_decimal ?? "") * 0.01;
+      const currentTierPrice = flatAmount + currentTierUnits * unitAmount;
+      return {
+        estimatedPrice: acc.estimatedPrice + currentTierPrice,
+        units: acc.units - currentTierUnits,
+        prevTierLastUnit: tierLastUnit,
+      };
+    },
+    { estimatedPrice: 0, units: usage, prevTierLastUnit: 0 },
+  );
+
+  return calculatedPrice.estimatedPrice;
+}
