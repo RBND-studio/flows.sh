@@ -1,18 +1,21 @@
 import { css } from "@flows/styled-system/css";
-import { BigDemoIllustration, Hero } from "components";
 import { CtaBanner } from "components/cta-banner";
-import { FaqAccordion, Section, SectionIntro } from "components/ui";
 import { RiverItem } from "components/ui/river-item";
 import { SignupClick } from "components/utils/signup-click";
 import { getWebMetadata } from "lib/get-metadata";
 import { links } from "lib/links";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
-import { Button, Text } from "ui";
+import { Button } from "ui";
 
 import { SharedFeatures } from "../shared-features";
 import { questions, riverFeatures } from "./content";
 import { LogoSection } from "components/logos/logo-section";
+import { SectionIntro } from "components/ui/section-intro";
+import { routes } from "routes";
+import { FaqSection } from "components/faq-section";
+import { Hero } from "components/hero/hero";
+import { BigDemoIllustration } from "components/main-illustration/big-demo-illustration";
 
 export const metadata: Metadata = getWebMetadata({
   title: "Revenue expansion",
@@ -43,17 +46,15 @@ const Page = (): ReactElement => {
 
       <BigDemoIllustration />
 
-      <LogoSection />
+      <LogoSection decorator="split" />
 
       <SectionIntro
         title="How Flows works for revenue expansion"
         description="
-        Boost your MRR with contextual upgrade campaigns. Create in-app modals, banners, and other upsell prompts that convert free trial users into paying customers.
-        "
-        className={css({
-          mb: "space80",
-          md: { mb: "0" },
-        })}
+        Boost your MRR with contextual upgrade campaigns. Create in-app modals, banners, and other upsell prompts that convert free trial users into paying customers."
+        sideBorders
+        bottomBorder
+        decorator="vertical"
       />
       {riverFeatures.map((feature) => (
         <RiverItem key={feature.title} {...feature} />
@@ -61,22 +62,12 @@ const Page = (): ReactElement => {
 
       <SharedFeatures />
 
-      <SectionIntro
-        title={
-          <>
-            Questions and <span className={css({ color: "fg.neutral.subtle" })}>Answers</span>
-          </>
-        }
+      <FaqSection
+        title="Frequently asked questions"
+        questions={questions}
+        pageUrl={routes.solutions.revenueExpansion}
       />
-      <Section maxWidth="640px!" mx="auto">
-        {questions.map((question) => (
-          <FaqAccordion headingLevel="h3" key={question.title} title={question.title}>
-            <Text color="fg.neutral.muted" variant="bodyL">
-              {question.content}
-            </Text>
-          </FaqAccordion>
-        ))}
-      </Section>
+
       <CtaBanner />
     </>
   );

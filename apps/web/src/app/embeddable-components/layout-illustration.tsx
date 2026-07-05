@@ -3,7 +3,14 @@ import { type JSX } from "react";
 
 export const LayoutIllustration = (): JSX.Element => {
   return (
-    <Flex width="100%" gap="space8" height="100%" overflow="hidden" mt="space24" role="img">
+    <Flex
+      width="100%"
+      gap="space8"
+      height={200}
+      overflow="hidden"
+      role="img"
+      aria-label="A visual representation of a layout with a Flows slot in the center, surrounded by other components, including a sidebar, header, and content area."
+    >
       <Box
         flex={1}
         background="bg.neutral.muted"

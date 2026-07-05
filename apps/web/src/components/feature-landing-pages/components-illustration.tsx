@@ -1,10 +1,11 @@
 import { Box, Flex } from "@flows/styled-system/jsx";
-import { PlaceholderModal, PlaceholderTooltip } from "components/ui";
+import { PlaceholderModal } from "components/ui/placeholder-application/placeholder-modal";
+import { PlaceholderTooltip } from "components/ui/placeholder-application/placeholder-tooltip";
 import { type JSX } from "react";
 
 export const ComponentsIllustration = (): JSX.Element => {
   return (
-    <Box position="relative" width="100%" height="100%" mt="space32">
+    <Box position="relative" width="100%" height={200}>
       <Box position="absolute" left={0} bottom={0} transform="rotate(-25deg)">
         <PlaceholderTooltip
           title="Learn more here"

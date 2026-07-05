@@ -1,4 +1,4 @@
-import { ChangelogItem } from "components/changelog";
+import { ChangelogItem } from "components/changelog/changelog-item";
 import { importAllChangelogPosts } from "lib/mdx";
 import type { ReactElement } from "react";
 

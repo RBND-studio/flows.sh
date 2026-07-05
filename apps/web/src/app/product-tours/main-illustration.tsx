@@ -7,34 +7,33 @@ import {
   HeroIllustrationLine,
 } from "components/main-illustration/decorations";
 import { demoTabsData } from "components/main-illustration/demo-tabs-data";
-import { HeroWaves } from "components/main-illustration/hero-waves";
-import { PlaceholderApplication, Section } from "components/ui";
+import { PlaceholderApplication } from "components/ui/placeholder-application/placeholder-application";
+import { Section } from "components/ui/section";
 import { type JSX, type ReactNode } from "react";
 import { BlockIcon, Text } from "ui";
 
 export const MainIllustration = (): ReactNode => {
   return (
     <>
-      <Section role="img">
+      <Section
+        role="img"
+        aria-label="A visual representation of a product tour flow, including a sign up process, an in context banner, an onboarding tour, and an upsell banner."
+      >
         <Flex
           alignItems="center"
           justifyContent="center"
           mb={{ base: "space24", md: "space48" }}
           aria-hidden="true"
-          opacity={0}
-          animation="bottomSlideIn 0.6s ease-out"
-          animationDelay="0.3s"
-          animationFillMode="forwards"
           flexDirection={{ base: "column", md: "row" }}
         >
           <Block name="Sign up" type="start" icon="start" />
-          <LineArrowRight />
+          <LineArrowRight id="one" />
           <Block name="In context banner" type="component" icon="banner" />
-          <LineArrowRight />
+          <LineArrowRight id="two" />
           <Block name="Onboarding tour" type="tour" />
-          <LineArrowRight />
+          <LineArrowRight id="three" />
           <Block name="Has paid plan?" type="filter" icon="filter" />
-          <LineFork />
+          <LineFork id="four" />
           <Flex flexDirection={{ base: "row", md: "column" }} gap="space12">
             <Block
               name="Upsell banner"
@@ -54,16 +53,13 @@ export const MainIllustration = (): ReactNode => {
           </Flex>
         </Flex>
       </Section>
-      <Section maxWidth="1100px!" role="img">
-        <Box>
+      <Section
+        role="img"
+        aria-label="An example of an application using Flows tour to display a tooltip on a button, including a live preview of the application with the tooltip displayed."
+      >
+        <Box aria-hidden="true">
           <Box
-            aria-hidden="true"
-            opacity={0}
-            animation="bottomSlideIn 0.6s ease-out"
-            animationDelay="0.6s"
-            animationFillMode="forwards"
             md={{
-              mx: "space16",
               height: 480,
             }}
             height={320}
@@ -85,14 +81,7 @@ export const MainIllustration = (): ReactNode => {
               overflow="hidden"
               height="100%"
             >
-              <Box
-                height="100%"
-                overflow="hidden"
-                opacity={0}
-                animation="fadeIn 0.6s ease-out"
-                animationDelay="0.6s"
-                animationFillMode="forwards"
-              >
+              <Box height="100%" overflow="hidden">
                 <PlaceholderApplication sidebarTooltipSlot={demoTabsData[1].element} />
               </Box>
             </Flex>
@@ -100,7 +89,6 @@ export const MainIllustration = (): ReactNode => {
           </Box>
         </Box>
         <HeroIllustrationGlow />
-        <HeroWaves />
       </Section>
     </>
   );
@@ -134,7 +122,7 @@ const Block = ({ name, type, icon, className }: BlockProps): JSX.Element => {
   );
 };
 
-const LineArrowRight = (): JSX.Element => {
+const LineArrowRight = ({ id }: { id: string }): JSX.Element => {
   return (
     <svg
       viewBox="0 0 24 16"
@@ -147,7 +135,7 @@ const LineArrowRight = (): JSX.Element => {
     >
       <defs>
         <marker
-          id="arrow"
+          id={`${id}-arrow`}
           viewBox="0 0 10 6"
           refX="5"
           refY="3"
@@ -159,7 +147,7 @@ const LineArrowRight = (): JSX.Element => {
           <path d="M0,0 L10,3 L0,6 z" fill={token.var("colors.border.neutral.strong")} />
         </marker>
         <marker
-          id="circle"
+          id={`${id}-circle`}
           viewBox="0 0 10 10"
           refX="5"
           refY="5"
@@ -177,15 +165,15 @@ const LineArrowRight = (): JSX.Element => {
         y1={8}
         x2={24}
         y2={8}
-        markerStart="url(#circle)"
-        markerEnd="url(#arrow)"
+        markerStart={`url(#${id}-circle)`}
+        markerEnd={`url(#${id}-arrow)`}
       />
     </svg>
   );
 };
 
 // line coming from the left to the middle and splitting into two lines
-const LineFork = (): JSX.Element => {
+const LineFork = ({ id }: { id: string }): JSX.Element => {
   return (
     <Flex
       transform={{ base: "rotate(90deg)", md: "none" }}
@@ -201,7 +189,7 @@ const LineFork = (): JSX.Element => {
       >
         <defs>
           <marker
-            id="arrow"
+            id={`${id}-arrow`}
             viewBox="0 0 10 6"
             refX="5"
             refY="3"
@@ -213,7 +201,7 @@ const LineFork = (): JSX.Element => {
             <path d="M0,0 L10,3 L0,6 z" fill={token.var("colors.border.neutral.strong")} />
           </marker>
           <marker
-            id="circle"
+            id={`${id}-circle`}
             viewBox="0 0 10 10"
             refX="5"
             refY="5"
@@ -229,14 +217,14 @@ const LineFork = (): JSX.Element => {
         <path
           d="M0 32H9C10.6569 32 12 33.3431 12 35V55C12 56.6569 13.3431 58 15 58H24"
           stroke={token.var("colors.border.neutral.strong")}
-          markerEnd="url(#arrow)"
-          markerStart="url(#circle)"
+          markerEnd={`url(#${id}-arrow)`}
+          markerStart={`url(#${id}-circle)`}
         />
         <path
           d="M0 32H9C10.6569 32 12 30.6569 12 29V9C12 7.34315 13.3431 6 15 6H24"
           stroke={token.var("colors.border.neutral.strong")}
-          markerEnd="url(#arrow)"
-          markerStart="url(#circle)"
+          markerEnd={`url(#${id}-arrow)`}
+          markerStart={`url(#${id}-circle)`}
         />
       </svg>
     </Flex>

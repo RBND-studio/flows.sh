@@ -1,5 +1,5 @@
 import { Box, Flex } from "@flows/styled-system/jsx";
-import { Section } from "components/ui";
+import { Section } from "components/ui/section";
 import { type FC } from "react";
 import { Text } from "ui";
 
@@ -11,13 +11,13 @@ export type EmbedProps = {
 export const Embed: FC<EmbedProps> = ({ src, title }) => {
   const srcWithParams = `${src}/embed`;
   return (
-    <Section maxWidth="1024px!">
+    <Section sideBorders sideDots p="space8" bottomBorder decorator="vertical">
       <Flex
         borderWidth="1px"
         borderColor="border.neutral.strong"
-        borderRadius="radius8"
+        borderRadius="radius12"
         overflow="hidden"
-        shadow="solid"
+        shadow="antimetal"
         flexDirection="column"
         backgroundColor="bg"
       >

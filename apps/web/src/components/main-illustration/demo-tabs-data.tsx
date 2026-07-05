@@ -1,11 +1,12 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
-import { PlaceholderTooltip } from "components/ui";
-import { Banner16, Check16, Checklist16, Hint16, Modal16, Star16, Tour16 } from "icons";
+import { Banner16, Check16, Checklist16, Hint16, Modal16, Star16, Survey16, Tour16 } from "icons";
 import Image from "next/image";
 import { Button, Icon, Text } from "ui";
 
 import bannerImage from "./banner-image.jpg";
+import { SurveyPopover, SurveyScale } from "components/homepage/surveys-section/survey-popover";
+import { PlaceholderTooltip } from "components/ui/placeholder-application/placeholder-tooltip";
 
 const checklistItems = ["Create your first issue", "Add a comment", "Invite a team member"];
 
@@ -310,6 +311,29 @@ export const demoTabsData = [
             </Text>
           </Flex>
         </Flex>
+      </Box>
+    ),
+  },
+  {
+    icon: Survey16,
+    label: "Surveys",
+    element: (
+      <Box
+        position="absolute"
+        opacity={0}
+        animation="bottomSlideIn 0.4s ease-in-out"
+        animationFillMode="forwards"
+        bottom="32px"
+        right="32px"
+        aria-hidden="true"
+      >
+        <SurveyPopover title="How easy was it to use our product?">
+          <SurveyScale
+            options={["😞", "😐", "😊", "😀", "😍"]}
+            topLabel="Very difficult"
+            bottomLabel="Very easy"
+          />
+        </SurveyPopover>
       </Box>
     ),
   },

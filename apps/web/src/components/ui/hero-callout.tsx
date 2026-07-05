@@ -28,13 +28,13 @@ export const HeroCallout: FC<Props> = ({ title, link, delay }) => {
         css({
           position: "relative",
           display: "flex",
-          paddingX: "space16",
+          paddingX: { base: "space8", md: "space16" },
           paddingY: "space6",
           backgroundColor: "dataViz.blue.fg",
-          borderRadius: "radius24",
+          borderRadius: { base: "radius12", md: "radius24" },
           alignItems: "center",
           gap: "space8",
-          margin: "0 auto",
+          mx: "auto",
           borderWidth: 1,
           borderColor: { base: "rgba(255, 255, 255, 0.25)", _dark: "rgba(255, 255, 255, 0.1)" },
           opacity: 0,
@@ -65,13 +65,19 @@ export const HeroCallout: FC<Props> = ({ title, link, delay }) => {
         }}
       />
       <Flex alignItems="center" gap="space8" position="relative" zIndex={1}>
-        <Text fontWeight={600} color="neutral.0">
+        <Text
+          fontWeight={600}
+          color="neutral.0"
+          textAlign={{ base: "center", md: "left" }}
+          textWrap="balance"
+        >
           {title}
         </Text>
         <Icon
           icon={ArrowRight16}
           color="neutral.0"
           className={css({
+            display: { base: "none", md: "block" },
             fastEaseInOut: "all",
             _groupHover: {
               transform: "translateX(2px)",

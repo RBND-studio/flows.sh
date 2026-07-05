@@ -1,3 +1,4 @@
+import type { Question } from "components/faq-section";
 import { type ReactNode } from "react";
 
 export type TechnologyContentType = {
@@ -12,11 +13,7 @@ export type TechnologyContentType = {
     title: string;
     description: string;
   };
-  faqs: Array<{
-    title: string;
-    content: ReactNode;
-    schemaContent?: string;
-  }>;
+  faqs: Question[];
   ctaBanner: {
     title: string;
     description: string;

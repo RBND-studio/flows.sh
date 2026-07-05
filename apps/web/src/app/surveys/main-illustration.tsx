@@ -3,33 +3,27 @@ import {
   HeroIllustrationGlow,
   HeroIllustrationLine,
 } from "components/main-illustration/decorations";
-import { HeroWaves } from "components/main-illustration/hero-waves";
-import { PlaceholderApplication, Section } from "components/ui";
 import { type ReactNode } from "react";
 
 import { CsatCard, NpsCard, PmfCard } from "./survey-cards";
+import { Section } from "components/ui/section";
+import { PlaceholderApplication } from "components/ui/placeholder-application/placeholder-application";
 
 export const MainIllustration = (): ReactNode => {
   return (
     <Section
-      maxWidth="1100px!"
       role="img"
       aria-label="Illustration showing survey feedback cards over an application interface"
     >
       <Box
+        aria-hidden="true"
         display="none"
         md={{
           display: "block",
         }}
       >
         <Box
-          aria-hidden="true"
-          opacity={0}
-          animation="bottomSlideIn 0.6s ease-out"
-          animationDelay="0.6s"
-          animationFillMode="forwards"
           md={{
-            mx: "space16",
             height: 480,
           }}
           height={320}
@@ -51,24 +45,12 @@ export const MainIllustration = (): ReactNode => {
             overflow="hidden"
             height="100%"
           >
-            <Box
-              height="100%"
-              overflow="hidden"
-              opacity={0}
-              animation="fadeIn 0.6s ease-out"
-              animationDelay="0.6s"
-              animationFillMode="forwards"
-              position="relative"
-            >
+            <Box height="100%" overflow="hidden" position="relative">
               <Flex
                 height="100%"
                 alignItems="center"
                 justifyContent="center"
-                opacity={0}
                 zIndex={2}
-                animation="fadeIn 0.6s ease-out"
-                animationDelay="0.6s"
-                animationFillMode="forwards"
                 position="absolute"
                 left={0}
                 top={0}
@@ -89,10 +71,6 @@ export const MainIllustration = (): ReactNode => {
       <Flex
         alignItems="center"
         justifyContent="center"
-        opacity={0}
-        animation="fadeIn 0.6s ease-out"
-        animationDelay="0.6s"
-        animationFillMode="forwards"
         pb="space80"
         aria-hidden="true"
         md={{
@@ -104,7 +82,6 @@ export const MainIllustration = (): ReactNode => {
         <PmfCard />
       </Flex>
       <HeroIllustrationGlow />
-      <HeroWaves />
     </Section>
   );
 };

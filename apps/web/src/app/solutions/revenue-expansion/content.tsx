@@ -6,13 +6,12 @@ import { routes } from "routes";
 import { FREE_LIMIT, pricingTiers } from "shared";
 import { Button, Text } from "ui";
 
-import {
-  CustomUIComponentsIllustration,
-  EmbeddableComponentsIllustrations,
-  PlaceholderApplication,
-  PlaceholderTooltip,
-} from "../../../components/ui";
 import { WorkflowsExample } from "../workflows-example";
+import type { Question } from "components/faq-section";
+import { CustomUIComponentsIllustration } from "components/ui/illustrations/custom-ui-components-illustration";
+import { EmbeddableComponentsIllustrations } from "components/ui/illustrations/embeddable-components-illustration";
+import { PlaceholderApplication } from "components/ui/placeholder-application/placeholder-application";
+import { PlaceholderTooltip } from "components/ui/placeholder-application/placeholder-tooltip";
 
 export const riverFeatures = [
   {
@@ -113,23 +112,19 @@ export const riverFeatures = [
     title: "Embeddable components",
     description:
       "Embed UI elements directly into your application without needing to update code or re-deploying.",
-    visual: <EmbeddableComponentsIllustrations />,
+    visual: (
+      <Box p="space16">
+        <EmbeddableComponentsIllustrations />
+      </Box>
+    ),
   },
 ];
 
-export const questions = [
+export const questions: Question[] = [
   {
     title: "What is Flows and how can it help with product-led growth?",
-    content: (
-      <>
-        Flows is a product adoption platform that makes it easy to create in-app experiences at
-        every stage of the user lifecycle. In the context of revenue expansion, you can use Flows to
-        launch targeted upgrade modals, paywall banners, and promotional flows that guide users to
-        higher-value plans. The visual editor lets non-developers design these campaigns without
-        code, while developers can still add custom UI components if needed. By streamlining and
-        centralizing in-app promotions, Flows turns your product into a powerful engine for growth.
-      </>
-    ),
+    content:
+      "Flows is a product adoption platform that makes it easy to create in-app experiences at every stage of the user lifecycle. In the context of revenue expansion, you can use Flows to launch targeted upgrade modals, paywall banners, and promotional flows that guide users to higher-value plans. The visual editor lets non-developers design these campaigns without code, while developers can still add custom UI components if needed. By streamlining and centralizing in-app promotions, Flows turns your product into a powerful engine for growth.",
   },
   {
     title: "Do I need to know how to code?",
@@ -145,6 +140,7 @@ export const questions = [
         custom UI components for your workflows.
       </>
     ),
+    schemaText: `You don’t need to know how to code to start creating user onboarding flows with Flows. Once you integrate our SDK, you can use our visual editor to create and manage workflows without writing any code. However, Flows is a “Headless product adoption platform”, so having a front-end developer on your team can be beneficial to fully leverage its customization capabilities by creating custom UI components for your workflows.`,
   },
   {
     title: "How much customization is possible?",
@@ -161,6 +157,7 @@ export const questions = [
         our built-in components to get started quickly.
       </>
     ),
+    schemaText: `Flows are designed to be a “Headless product adoption platform“. This means that you can create your own UI components with custom styling and logic to create a native experience for your users. You can also use our built-in components to get started quickly.`,
   },
   {
     title: "How much does Flows cost?",
@@ -175,5 +172,6 @@ export const questions = [
         .
       </>
     ),
+    schemaText: `Flows is free for up to ${FREE_LIMIT} monthly tracked users (MTUs). After that, the pricing starts at $${pricingTiers.tier1.price} per MTU. Our pricing is volume based, so the more active users you have, the less you pay per user. For more information, check out our pricing page.`,
   },
 ];

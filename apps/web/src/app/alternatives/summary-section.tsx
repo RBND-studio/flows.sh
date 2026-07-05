@@ -1,5 +1,5 @@
 import { Box } from "@flows/styled-system/jsx";
-import { Section } from "components/ui";
+import { Section } from "components/ui/section";
 import { type ReactNode } from "react";
 import { Text } from "ui";
 

@@ -10,16 +10,16 @@ export const WorkflowsExample = (): JSX.Element => {
       <Flex alignItems="flex-start">
         <Flex flexDirection="column" alignItems="center">
           <Block name="Start" type="start" icon="start" />
-          <LineArrowDown />
+          <LineArrowDown id="first" />
           <Block name="Welcome modal" type="component" icon="modal" />
-          <LineArrowDown />
+          <LineArrowDown id="second" />
           <Block name="Onboarding tour" type="tour" icon="tour" />
-          <LineArrowDown />
+          <LineArrowDown id="third" />
           <Block name="Has paid plan?" type="filter" icon="filter" />
         </Flex>
         <Flex mt={187} ml={-5}>
           <Box my={13}>
-            <LineArrowRight />
+            <LineArrowRight id="fourth" />
           </Box>
           <Flex flexDirection="column" alignItems="center">
             <Block name="Upsell banner" type="component" icon="banner" />
@@ -56,12 +56,12 @@ const Block = ({ name, type, icon }: BlockProps): JSX.Element => {
   );
 };
 
-const LineArrowDown = (): JSX.Element => {
+const LineArrowDown = ({ id }: { id: string }): JSX.Element => {
   return (
     <svg viewBox="0 0 16 20" width="16" height="20">
       <defs>
         <marker
-          id="arrow"
+          id={`${id}-arrow`}
           viewBox="0 0 6 10"
           refX="6"
           refY="5"
@@ -73,7 +73,7 @@ const LineArrowDown = (): JSX.Element => {
           <path d="M0,0 L0,10 L6,5 z" fill={token.var("colors.border.neutral.strong")} />
         </marker>
         <marker
-          id="circle"
+          id={`${id}-circle`}
           viewBox="0 0 10 10"
           refX="5"
           refY="5"
@@ -91,19 +91,19 @@ const LineArrowDown = (): JSX.Element => {
         y1={0}
         x2={8}
         y2={20}
-        markerStart="url(#circle)"
-        markerEnd="url(#arrow)"
+        markerStart={`url(#${id}-circle)`}
+        markerEnd={`url(#${id}-arrow)`}
       />
     </svg>
   );
 };
 
-const LineArrowRight = (): JSX.Element => {
+const LineArrowRight = ({ id }: { id: string }): JSX.Element => {
   return (
     <svg viewBox="0 0 24 16" width="24" height="16">
       <defs>
         <marker
-          id="arrow"
+          id={`${id}-arrow`}
           viewBox="0 0 10 6"
           refX="5"
           refY="3"
@@ -115,7 +115,7 @@ const LineArrowRight = (): JSX.Element => {
           <path d="M0,0 L10,3 L0,6 z" fill={token.var("colors.border.neutral.strong")} />
         </marker>
         <marker
-          id="circle"
+          id={`${id}-circle`}
           viewBox="0 0 10 10"
           refX="5"
           refY="5"
@@ -133,8 +133,8 @@ const LineArrowRight = (): JSX.Element => {
         y1={8}
         x2={24}
         y2={8}
-        markerStart="url(#circle)"
-        markerEnd="url(#arrow)"
+        markerStart={`url(#${id}-circle)`}
+        markerEnd={`url(#${id}-arrow)`}
       />
     </svg>
   );

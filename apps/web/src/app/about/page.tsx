@@ -1,6 +1,6 @@
 import { css } from "@flows/styled-system/css";
 import { Box } from "@flows/styled-system/jsx";
-import { Section } from "components/ui";
+import { Section } from "components/ui/section";
 import { links } from "lib/links";
 import Link from "next/link";
 import type { JSX } from "react";
@@ -14,7 +14,7 @@ export default function About(): JSX.Element {
 
   return (
     <>
-      <Section>
+      <Section bottomBorder sideBorders decorator="vertical">
         <Text
           variant="title4xl"
           as="h1"
@@ -26,19 +26,16 @@ export default function About(): JSX.Element {
           Flows is reinventing the way people learn software
         </Text>
       </Section>
-      <Section maxWidth="720px!">
+      <Section bottomBorder sideBorders decorator="split" sideDots>
         <Box
-          py="24"
-          px="space24"
+          maxWidth={720}
+          py={{ base: "space24", md: "space40" }}
+          px={{ base: "space24", md: "space40" }}
+          mx="auto"
           backgroundColor="pane.bg.elevated"
-          borderColor="pane.border.elevated"
-          borderWidth="1px"
-          borderRadius="radius8"
-          shadow="newL1"
-          md={{
-            py: "space32",
-            px: "space40",
-          }}
+          borderLeftWidth={{ base: 0, md: 1 }}
+          borderRightWidth={{ base: 0, md: 1 }}
+          borderColor="border.neutral"
         >
           <Text variant="titleXl" align="center" mb="space24">
             Principles we use to build Flows
@@ -79,8 +76,8 @@ export default function About(): JSX.Element {
           </Text>
         </Box>
       </Section>
-      <Section maxWidth="720px!" py="space80">
-        <Text mb="space24" variant="bodyM" align="center" color="fg.neutral.muted">
+      <Section py="space80" bottomBorder sideBorders>
+        <Text maxWidth={720} mx="auto" variant="bodyM" align="center" color="fg.neutral.muted">
           Flows is made by{" "}
           <a target="_blank" className={textLink} href={links.rbnd} rel="noopener">
             RBND studio

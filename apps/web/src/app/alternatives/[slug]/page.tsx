@@ -1,6 +1,5 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
-import { ComparisonLogos, HorizontalHero, SmallDemoIllustration } from "components";
 import { CtaBanner } from "components/cta-banner";
 import { SignupClick } from "components/utils/signup-click";
 import { getWebMetadata } from "lib/get-metadata";
@@ -16,6 +15,9 @@ import { ComparisonTable } from "../comparison-table";
 import { alternativesContent } from "../content";
 import { OtherDifferencesSection } from "../other-differences-section";
 import { SummarySection } from "../summary-section";
+import { HorizontalHero } from "components/hero/horizontal-hero";
+import { ComparisonLogos } from "components/hero/comparison-logos";
+import { SmallDemoIllustration } from "components/main-illustration/small-demo-illustration";
 
 type Params = {
   slug: string;

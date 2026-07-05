@@ -192,3 +192,28 @@ export const SaleDialog = (): ReactNode => {
     </Flex>
   );
 };
+
+export const YellowTooltip = (): ReactNode => {
+  return (
+    <Flex
+      backgroundColor="#F2C94C"
+      borderRadius="6px"
+      borderColor="#F2C94C"
+      borderWidth="1px"
+      width="100%"
+      maxWidth={180}
+      p="space12"
+      flexDirection="column"
+      shadow="newL2"
+      alignItems="start"
+      gap="space4"
+    >
+      <Text variant="titleM" fontWeight="800" color="black">
+        Quick tip
+      </Text>
+      <Text variant="bodyXs" color="black">
+        Remember to check your settings for the best experience.
+      </Text>
+    </Flex>
+  );
+};

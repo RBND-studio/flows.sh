@@ -1,7 +1,6 @@
 // cspell:words astrodon
 
 import { Flex } from "@flows/styled-system/jsx";
-import { bulletCss, headingCss, paragraphCss, Section, ulCss } from "components/ui";
 import { getWebMetadata } from "lib/get-metadata";
 import { type Metadata } from "next";
 import type { ReactElement } from "react";
@@ -9,6 +8,8 @@ import { emails } from "shared";
 import { Text } from "ui";
 
 import { type Subprocessor, SubprocessorsTable } from "./table";
+import { bulletCss, headingCss, paragraphCss, ulCss } from "components/ui/typography-css";
+import { LegalLayout } from "components/legal-layout";
 
 export const metadata: Metadata = getWebMetadata({
   title: "Data Processing Agreement",
@@ -17,7 +18,7 @@ export const metadata: Metadata = getWebMetadata({
 
 const Page = (): ReactElement => {
   return (
-    <Section maxWidth="580px!" py="space40" md={{ py: "space80" }}>
+    <LegalLayout>
       <Flex mb="space40" flexDirection="column" gap="space12" maxW="800px">
         <Text align="center" as="h1" variant="title4xl">
           Data Processing Agreement
@@ -750,7 +751,7 @@ const Page = (): ReactElement => {
       <Text className={paragraphCss} variant="bodyM">
         Last updated: May 14, 2026
       </Text>
-    </Section>
+    </LegalLayout>
   );
 };
 

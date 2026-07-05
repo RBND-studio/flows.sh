@@ -1,10 +1,10 @@
 import { css } from "@flows/styled-system/css";
-import { Box } from "@flows/styled-system/jsx";
-import { FaqAccordion, Section, SmartLink } from "components/ui";
+import { FaqSection } from "components/faq-section";
+import { SmartLink } from "components/ui/smart-link";
 import { links } from "lib/links";
 import { type ReactElement } from "react";
+import { routes } from "routes";
 import { emails, formatNumberWithThousandSeparator, FREE_LIMIT, pricingTiers } from "shared";
-import { Text } from "ui";
 
 const questions = [
   {
@@ -28,6 +28,8 @@ const questions = [
         </SmartLink>
       </>
     ),
+    schemaText:
+      "We count an MTU as a unique user that has experienced a Flows workflow in the current billing cycle. We don’t count users that have only entered a workflow but haven’t experienced it. If user experiences a workflow multiple times in a month, they are only counted once. And if that user doesn’t experience a workflow in the next month, they are not counted in your usage for that month. Experiencing a workflow means that at least one component block has been rendered to the user or they have entered a paid block type (e.g. Delay block).",
   },
   {
     title: "How does the pricing work?",
@@ -47,6 +49,7 @@ const questions = [
       pricingTiers.tier1.price
     } per MTU.`,
   },
+
   {
     title: "Do you offer discounts for startups?",
     content: (
@@ -63,6 +66,7 @@ const questions = [
         </a>
       </>
     ),
+    schemaText: `Yes, we offer discounts for startups. Please reach out to us at ${emails.general}.`,
   },
   {
     title: "Will you help us switch to Flows?",
@@ -73,27 +77,6 @@ const questions = [
 
 export const PricingFaq = (): ReactElement => {
   return (
-    <Section pt="space80" md={{ pt: "space120" }} maxWidth="640px!">
-      <Text
-        className={css({
-          marginBottom: "space24",
-        })}
-        variant="title2xl"
-        align="center"
-        as="h2"
-      >
-        FAQs
-      </Text>
-
-      <Box>
-        {questions.map((item) => (
-          <FaqAccordion headingLevel="h3" key={item.title} title={item.title}>
-            <Text color="fg.neutral.muted" variant="bodyL">
-              {item.content}
-            </Text>
-          </FaqAccordion>
-        ))}
-      </Box>
-    </Section>
+    <FaqSection questions={questions} title="Frequently asked questions" pageUrl={routes.pricing} />
   );
 };

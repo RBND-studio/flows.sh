@@ -153,16 +153,19 @@ const button = cva({
         textStyle: "titleS",
         padding: "5px 11px",
         height: 32,
+        borderRadius: 8,
       },
       medium: {
         textStyle: "titleS",
         padding: "7px 15px",
         height: 36,
+        borderRadius: 8,
       },
       large: {
-        textStyle: "titleL",
+        textStyle: "titleM",
         padding: "5px 15px",
         height: 40,
+        borderRadius: 10,
       },
     },
     variant: {
@@ -170,6 +173,8 @@ const button = cva({
         backgroundColor: "button.primary.bg.rest",
         borderColor: "button.primary.border.rest",
         color: "button.primary.fg.rest",
+        backgroundImage: "linear-gradient(#ffffff14, #fff0)",
+        shadow: "inset 0 1px #ffffff1f, 0 1px 2px #0a0d120d",
         _hover: {
           backgroundColor: "button.primary.bg.hover",
           borderColor: "button.primary.border.hover",
@@ -190,6 +195,7 @@ const button = cva({
         backgroundColor: "button.secondary.bg.rest",
         borderColor: "button.secondary.border.rest",
         color: "button.secondary.fg.rest",
+        shadow: "inset 0 -2px 0 0 #fafafa37, 0 1px 2px 0 #0d0d0d0d",
         _hover: {
           backgroundColor: "button.secondary.bg.hover",
           borderColor: "button.secondary.border.hover",
@@ -204,11 +210,16 @@ const button = cva({
           backgroundColor: "button.secondary.bg.active",
           borderColor: "button.secondary.border.active",
         },
+        _dark: {
+          shadow: "unset",
+        },
       },
       black: {
         backgroundColor: "button.black.bg.rest",
         borderColor: "button.black.border.rest",
         color: "button.black.fg.rest",
+        backgroundImage: "linear-gradient(#ffffff14, #fff0)",
+        shadow: "inset 0 1px #ffffff1f, 0 1px 2px #0a0d120d",
         _hover: {
           backgroundColor: "button.black.bg.hover",
           borderColor: "button.black.border.hover",
@@ -223,6 +234,9 @@ const button = cva({
           backgroundColor: "button.black.bg.active",
           borderColor: "button.black.border.active",
           shadow: "inset",
+        },
+        _dark: {
+          backgroundImage: "linear-gradient(#fff0, #0000001a)",
         },
       },
       ghost: {

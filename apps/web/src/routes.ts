@@ -15,6 +15,7 @@ export const routes = {
   responsibleDisclosure: "/legal/security/responsible-disclosure",
 
   features: {
+    workflows: "/workflows",
     productTours: "/product-tours",
     embeddableComponents: "/embeddable-components",
     customComponents: "/custom-components",
@@ -22,7 +23,6 @@ export const routes = {
   },
 
   solutions: {
-    index: "/solutions",
     userOnboarding: "/solutions/user-onboarding",
     featureAdoption: "/solutions/feature-adoption",
     productLedGrowth: "/solutions/product-led-growth",

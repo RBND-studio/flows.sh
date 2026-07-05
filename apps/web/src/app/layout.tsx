@@ -3,19 +3,24 @@ import "./globals.css";
 import { FlowsSlot } from "@flows/react";
 import { css, cx } from "@flows/styled-system/css";
 import { Box } from "@flows/styled-system/jsx";
+import { Footer } from "components/footer";
+import { Header } from "components/header";
 import { Providers } from "components/providers";
-import { PRODUCTION } from "lib";
+import { PRODUCTION } from "lib/constants";
 import { getWebMetadata } from "lib/get-metadata";
 import type { Metadata } from "next";
-import { Figtree, Inter } from "next/font/google";
+import { Caveat, Figtree, Inter } from "next/font/google";
 import Script from "next/script";
 import type { JSX } from "react";
-
-import { Footer, Header } from "../components";
 
 const FigTreeFont = Figtree({
   subsets: ["latin"],
   variable: "--font-main",
+});
+
+const CaveatFont = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
 });
 
 const InterFont = Inter({
@@ -24,16 +29,16 @@ const InterFont = Inter({
 });
 
 export const metadata: Metadata = getWebMetadata({
-  title: "Flows – The better way to build product adoption",
+  title: "Flows – Build product adoption your way",
   description:
-    "Flows is a fully customizable product adoption platform for modern companies building onboarding and user engagement experiences.",
+    "Flows is the product adoption platform that lets you build product tours, onboarding checklists, surveys, and more with full design control.",
   removeTitleSlug: true,
   images: [
     {
       url: "/og.png",
       width: 1280,
       height: 640,
-      alt: "Flows: The better way to build product adoption",
+      alt: "Flows: Build product adoption your way",
       type: "image/png",
     },
   ],
@@ -42,11 +47,11 @@ export const metadata: Metadata = getWebMetadata({
 export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
   return (
     <html
-      className={cx(FigTreeFont.variable, InterFont.variable)}
+      className={cx(FigTreeFont.variable, InterFont.variable, CaveatFont.variable)}
       lang="en"
       suppressHydrationWarning
     >
-      <body className={css({ background: "pane.bg.secondary", overflowX: "hidden" })}>
+      <body className={css({ background: "pane.bg.web", overflowX: "hidden" })}>
         <Providers>
           <Header />
           <main

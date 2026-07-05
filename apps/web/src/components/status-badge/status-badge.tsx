@@ -37,6 +37,7 @@ const statusLabel: Record<StatusLevel, string> = {
   unknown: "Unknown status",
 };
 
+// To preview different states use `status-badge-mock.ts`
 export const StatusBadge: FC = () => {
   const [data, setData] = useState<IncidentStatusResponse>();
 
@@ -63,8 +64,6 @@ export const StatusBadge: FC = () => {
         display: "inline-flex",
         alignItems: "center",
         gap: "space8",
-        mb: "space20",
-        ml: "-space6",
         p: "space6",
         pr: "space8",
         borderRadius: "radius6",

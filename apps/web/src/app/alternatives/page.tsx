@@ -1,6 +1,5 @@
 import { Flex } from "@flows/styled-system/jsx";
 import { CtaBanner } from "components/cta-banner";
-import { Section } from "components/ui";
 import { getWebMetadata } from "lib/get-metadata";
 import type { Metadata } from "next";
 import type { ReactElement } from "react";
@@ -8,6 +7,7 @@ import { FancyLogo, Text } from "ui";
 
 import { AlternativePreview } from "./alternative-preview";
 import { alternativesContent } from "./content";
+import { Section } from "components/ui/section";
 
 export const metadata: Metadata = getWebMetadata({
   title: "Compare Flows",
@@ -36,6 +36,7 @@ const Page = (): ReactElement => {
         </Text>
       </Section>
       <Section
+        bottomBorder
         maxWidth="800px!"
         borderWidth={1}
         borderColor="border.neutral.placeholder"

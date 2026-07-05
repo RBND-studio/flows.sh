@@ -1,5 +1,7 @@
 import { Box, Flex } from "@flows/styled-system/jsx";
-import { PlaceholderApplication, PlaceholderTooltip, Section } from "components/ui";
+import { PlaceholderApplication } from "components/ui/placeholder-application/placeholder-application";
+import { PlaceholderTooltip } from "components/ui/placeholder-application/placeholder-tooltip";
+import { Section } from "components/ui/section";
 import type { JSX } from "react";
 import { Text } from "ui";
 

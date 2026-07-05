@@ -8,17 +8,21 @@ type Props = {
   title: string;
   description: string;
   visual: ReactNode;
+  last?: boolean;
 };
 
-export const RiverItem = ({ title, description, visual }: Props): ReactNode => {
+export const RiverItem = ({ title, description, visual, last }: Props): ReactNode => {
   return (
     <Section
       display="flex"
-      gap="space40"
+      gap={{ base: "space40", md: "space64" }}
       alignItems="center"
-      flexDirection="column"
-      mb="space64"
-      md={{ flexDirection: "row", gap: "space64", mb: "0" }}
+      flexDirection={{ base: "column", md: "row" }}
+      sideBorders
+      bottomBorder
+      decorator={last ? "split" : "vertical"}
+      px={{ base: "space8", md: "space40" }}
+      py="space8"
     >
       <Box
         width="100%"
@@ -27,6 +31,8 @@ export const RiverItem = ({ title, description, visual }: Props): ReactNode => {
         }}
         gap="space12"
         flex="1 0 auto"
+        px={{ base: "space16", md: 0 }}
+        pt={{ base: "space24", md: 0 }}
       >
         <Text as="h3" mb="space12" variant="title2xl">
           {title}
@@ -45,7 +51,7 @@ export const RiverItem = ({ title, description, visual }: Props): ReactNode => {
         outlineStyle="solid"
         outlineWidth="1px"
         outlineColor="border.neutral"
-        borderRadius="radius8"
+        borderRadius="radius12"
         overflow="hidden"
         shadow="antimetal"
       >

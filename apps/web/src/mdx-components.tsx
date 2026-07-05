@@ -1,5 +1,6 @@
 import { css } from "@flows/styled-system/css";
 import { HeadingLink } from "components/mdx-heading-link";
+import { ZoomableImage } from "components/ui/zoomable-image";
 import { isValidUrl } from "lib/is-valid-url";
 import { type MDXComponents } from "mdx/types";
 import { type Route } from "next";
@@ -7,7 +8,6 @@ import Link from "next/link";
 import type { HTMLProps } from "react";
 import { CodeHighlightDiv, CodeHighlightWrapper, Text, type TextProps } from "ui";
 
-import { ZoomableImage } from "./components/ui";
 import { MdxCopyButton } from "components/utils/mdx-copy-button";
 
 const components: MDXComponents = {

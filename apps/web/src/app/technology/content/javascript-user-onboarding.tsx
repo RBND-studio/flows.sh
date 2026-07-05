@@ -43,7 +43,7 @@ export const javascriptUserOnboardingContent: TechnologyContentType = {
           for step-by-step setup instructions.
         </>
       ),
-      schemaContent:
+      schemaText:
         "Load the Flows SDK via npm, call init() with your organization ID and user identity, and define your onboarding workflows in the Flows dashboard. No framework, build tool, or bundler required. See the JavaScript installation guide for step-by-step setup instructions.",
     },
 
@@ -66,7 +66,7 @@ export const javascriptUserOnboardingContent: TechnologyContentType = {
           .
         </>
       ),
-      schemaContent:
+      schemaText:
         "Pass user properties as a plain object when calling init(). These can include any attributes your backend exposes, such as plan, signup date, or feature flags. Targeting rules are defined in the Flows dashboard and evaluated client-side, so no additional server logic is needed. See the guide on targeting only new users.",
     },
     {

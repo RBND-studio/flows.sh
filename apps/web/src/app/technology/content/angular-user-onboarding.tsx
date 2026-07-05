@@ -44,7 +44,7 @@ export const angularUserOnboardingContent: TechnologyContentType = {
           for step-by-step instructions and code examples.
         </>
       ),
-      schemaContent:
+      schemaText:
         "Initialize the Flows SDK inside a root-level Angular service and call it after your auth service resolves user identity. From there, Flows evaluates targeting rules and activates the right onboarding workflow automatically, with no logic needed in individual components. See the Angular installation guide for step-by-step instructions and code examples.",
     },
     {
@@ -73,7 +73,7 @@ export const angularUserOnboardingContent: TechnologyContentType = {
           .
         </>
       ),
-      schemaContent:
+      schemaText:
         "Pass user properties when initializing Flows, typically from your auth service after login. Set targeting rules in the Flows dashboard using properties like createdAt or a hasOnboarded flag, and Flows handles the rest without any component-level conditional logic. Check out our guide on targeting only new users.",
     },
     {

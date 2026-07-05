@@ -10,6 +10,7 @@ export const EarnViz = (): ReactNode => {
       mx="auto"
       overflow="hidden"
       role="img"
+      aria-label="A visual representation of the affiliate earnings process, including a chart showing earnings over time."
       w="100%"
       pt="space24"
       bg="pane.bg.elevated"

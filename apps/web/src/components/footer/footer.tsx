@@ -1,245 +1,78 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
-import { SmartLink } from "components/ui";
-import { GitHub16, LinkedIn16, Slack16, Twitter16, YouTube16 } from "icons";
-import { links } from "lib/links";
-import type { ReactElement } from "react";
-import { routes } from "routes";
-import { Icon, Logo, Text } from "ui";
+import type { ReactElement, ReactNode, SVGProps } from "react";
+import type { FancyIconColors } from "ui";
+import { FancyIcon, Icon, Logo, Text } from "ui";
 
-import { ThemeSwitch } from "./theme-switch";
-import { StatusBadge } from "components/status-badge";
-
-interface FooterGroup {
-  title: string;
-  links: {
-    title: string;
-    href: string;
-    target?: string;
-  }[];
-}
-
-type FooterGroupColumn = FooterGroup[];
-
-const footerGroups: FooterGroupColumn[] = [
-  [
-    {
-      title: "Product",
-      links: [
-        {
-          title: "Product tours",
-          href: routes.features.productTours,
-        },
-        {
-          title: "Surveys",
-          href: routes.features.surveys,
-        },
-        {
-          title: "Embeddable components",
-          href: routes.features.embeddableComponents,
-        },
-        {
-          title: "Custom UI components",
-          href: routes.features.customComponents,
-        },
-        {
-          title: "Pricing",
-          href: routes.pricing,
-        },
-        {
-          title: "Changelog",
-          href: routes.changelog,
-        },
-        {
-          title: "Examples",
-          href: routes.examples,
-        },
-      ],
-    },
-    {
-      title: "Solutions",
-      links: [
-        {
-          title: "User onboarding",
-          href: routes.solutions.userOnboarding,
-        },
-        {
-          title: "Feature adoption",
-          href: routes.solutions.featureAdoption,
-        },
-        {
-          title: "Product-led growth",
-          href: routes.solutions.productLedGrowth,
-        },
-        {
-          title: "Revenue expansion",
-          href: routes.solutions.revenueExpansion,
-        },
-        {
-          title: "Product marketing",
-          href: routes.solutions.productMarketing,
-        },
-      ],
-    },
-    {
-      title: "Technologies",
-      links: [
-        { title: "Next.js", href: routes.technologyDetail("nextjs-user-onboarding") },
-        { title: "React", href: routes.technologyDetail("react-user-onboarding") },
-        { title: "Angular", href: routes.technologyDetail("angular-user-onboarding") },
-        { title: "Vue", href: routes.technologyDetail("vue-user-onboarding") },
-        { title: "Svelte", href: routes.technologyDetail("svelte-user-onboarding") },
-        { title: "Solid", href: routes.technologyDetail("solid-user-onboarding") },
-        { title: "JavaScript", href: routes.technologyDetail("javascript-user-onboarding") },
-      ],
-    },
-  ],
-  [
-    {
-      title: "Resources",
-      links: [
-        {
-          title: "Blog",
-          href: routes.blog,
-        },
-        {
-          title: "Docs",
-          href: links.docs.home,
-        },
-        {
-          title: "Contact",
-          href: routes.contact,
-        },
-        {
-          title: "Affiliate",
-          href: routes.affiliate,
-        },
-        {
-          title: "Glossary",
-          href: routes.glossary,
-        },
-        {
-          title: "GitHub",
-          href: links.rbndGithub,
-          target: "_blank",
-        },
-        {
-          title: "Status",
-          href: links.status,
-          target: "_blank",
-        },
-      ],
-    },
-    {
-      title: "Compare",
-      links: [
-        {
-          title: "Appcues",
-          href: routes.alternativeDetail("appcues"),
-        },
-        {
-          title: "Chameleon",
-          href: routes.alternativeDetail("chameleon"),
-        },
-        {
-          title: "Userflow",
-          href: routes.alternativeDetail("userflow"),
-        },
-        {
-          title: "WalkMe",
-          href: routes.alternativeDetail("walkme"),
-        },
-        {
-          title: "Usetiful",
-          href: routes.alternativeDetail("usetiful"),
-        },
-        {
-          title: "Intro.js",
-          href: routes.alternativeDetail("introjs"),
-        },
-        {
-          title: "Driver.js",
-          href: routes.alternativeDetail("driverjs"),
-        },
-        {
-          title: "Others",
-          href: routes.alternatives,
-        },
-      ],
-    },
-  ],
-  [
-    {
-      title: "Company",
-      links: [
-        { title: "About", href: routes.about },
-        { title: "Privacy", href: routes.privacy },
-        { title: "Terms", href: routes.terms },
-        { title: "Cookies", href: routes.cookies },
-        { title: "DPA", href: routes.dpa },
-        { title: "Security", href: routes.security },
-        { title: "Responsible disclosure", href: routes.responsibleDisclosure },
-      ],
-    },
-  ],
-];
-
-const socialLinks = [
-  {
-    icon: LinkedIn16,
-    href: links.linkedin,
-    label: "LinkedIn",
-  },
-  {
-    icon: Twitter16,
-    href: links.twitter,
-    label: "X (Twitter)",
-  },
-  {
-    icon: Slack16,
-    href: links.slack,
-    label: "Slack community",
-  },
-  {
-    icon: GitHub16,
-    href: links.rbndGithub,
-    label: "GitHub",
-  },
-  {
-    icon: YouTube16,
-    href: links.youtube,
-    label: "YouTube",
-  },
-];
+import { Brow } from "./brow";
+import { Section } from "components/ui/section";
+import { token } from "@flows/styled-system/tokens";
+import type { Route } from "next";
+import type { FooterGroup } from "./content";
+import { footerGroups, socialLinks } from "./content";
+import { SmartLink } from "components/ui/smart-link";
+import { Dither } from "./dither";
 
 export const Footer = (): ReactElement => {
   return (
     <footer
       className={css({
-        paddingX: "space24",
+        backgroundImage: `radial-gradient(circle, ${token("colors.special.dotBg")} 1px, transparent 1px)`,
+        backgroundSize: "8px 8px",
+        backgroundRepeat: "repeat",
+        backgroundPosition: "top",
+        pb: "space16",
         position: "relative",
       })}
     >
-      <Flex
-        flexDirection="column"
-        gap={{ base: "space40", md: "space80" }}
-        maxWidth="1024px"
-        mx="auto"
-        py="space40"
-        sm={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-        }}
+      <Section
+        sideBorders
+        backgroundColor="pane.bg.web"
+        borderBottomWidth={1}
+        borderBottomColor="border.neutral"
       >
-        <Flex flexDirection="column" alignItems="flex-start">
-          <Box display="inline-flex" alignItems="center" gap="space8" marginBottom="space24">
-            <Logo type="type" size={20} />
-          </Box>
-          <Text color="fg.neutral.muted" mb="space12" maxWidth={260}>
-            The modern product adoption platform. Built in the 🇪🇺.
-          </Text>
-          <StatusBadge />
-          <Box marginBottom="space40">
+        <Flex
+          flexDirection="column"
+          gap={{ base: "space40", md: "space80" }}
+          p={{ base: "space24", md: "space40" }}
+          sm={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+          }}
+        >
+          {/* 1st column */}
+          <Flex flexDirection="column" gap="space40" flex={1}>
+            <FooterGroupWrap group={footerGroups.product} />
+            <FooterGroupWrap group={footerGroups.resources} />
+            <FooterGroupWrap group={footerGroups.solutions} />
+          </Flex>
+          {/* 2nd column */}
+          <Flex flexDirection="column" gap="space40" flex={1}>
+            <FooterGroupWrap group={footerGroups.compare} />
+            <FooterGroupWrap group={footerGroups.technologies} />
+          </Flex>
+          {/* 3rd column */}
+          <Flex flexDirection="column" gap="space40" flex={1}>
+            <FooterGroupWrap group={footerGroups.company} />
+          </Flex>
+          {/* 4th column */}
+          <Flex
+            flexDirection="column"
+            alignItems={{ base: "flex-start", md: "flex-end" }}
+            flex={1}
+            maxWidth={{ base: "100%", md: "240px" }}
+          >
+            <Box display="inline-flex" alignItems="center" gap="space8" marginBottom="space24">
+              <Logo type="type" size={20} />
+            </Box>
+            <Text
+              color="fg.neutral.muted"
+              mb="space12"
+              maxWidth={{ base: "100%", md: "240px" }}
+              textAlign={{ base: "left", md: "right" }}
+            >
+              The modern product adoption platform. Built in the 🇪🇺
+            </Text>
             <Flex gap="space12">
               {socialLinks.map((link) => {
                 return (
@@ -264,70 +97,106 @@ export const Footer = (): ReactElement => {
                 );
               })}
             </Flex>
-          </Box>
-          <ThemeSwitch />
-          <Text color="fg.neutral.subtle" variant="bodyS">
-            © {new Date().getFullYear()}{" "}
-            <a
-              target="_blank"
-              href={links.rbnd}
-              rel="noopener"
-              className={css({ fontWeight: "600", _hover: { textDecoration: "underline" } })}
-            >
-              RBND studio s.r.o.
-            </a>
-          </Text>
+          </Flex>
         </Flex>
-        <Flex
-          flexDirection="row"
-          flexWrap="wrap"
-          alignItems="flex-start"
-          width="100%"
-          flex={1}
-          justifyContent="space-between"
-          rowGap="space24"
-          columnGap={{ base: 0, md: "space16" }}
-          sm={{
-            gap: "space48",
-            width: "auto",
-            flexDirection: "row",
-          }}
-        >
-          {footerGroups.map((column, index) => (
-            <Flex flexDirection="column" alignItems="flex-start" key={index} gap="space24">
-              {column.map((footerGroup) => (
-                <Flex key={footerGroup.title} flexDirection="column">
-                  <Text className={css({ mb: "space4" })} weight="700" variant="bodyS">
-                    {footerGroup.title}
-                  </Text>
-                  {footerGroup.links.map((link) => (
-                    <Text
-                      asChild
-                      className={css({
-                        display: "flex",
-                        gap: "space4",
-                        padding: "space6",
-                        mx: "-space6",
-                        width: "fit-content",
-                        "&:hover": {
-                          textDecoration: "underline",
-                        },
-                      })}
-                      key={link.href}
-                      variant="bodyS"
-                      color="fg.neutral.muted"
-                    >
-                      <SmartLink prefetch={false} href={link.href} target={link.target}>
-                        {link.title}
-                      </SmartLink>
-                    </Text>
-                  ))}
-                </Flex>
-              ))}
-            </Flex>
-          ))}
-        </Flex>
-      </Flex>
+      </Section>
+      <Brow />
+      <Dither />
     </footer>
+  );
+};
+
+type FooterGroupProps = {
+  group: FooterGroup;
+};
+
+const FooterGroupWrap = ({ group }: FooterGroupProps): ReactNode => {
+  return (
+    <Flex key={group.title} flexDirection="column" gap="space2">
+      <Text className={css({ mb: "space4" })} weight="700" variant="bodyS">
+        {group.title}
+      </Text>
+      {group.mainFeatures?.map((feature) => (
+        <FooterLink
+          key={feature.title}
+          title={feature.title}
+          href={feature.href}
+          icon={feature.icon}
+          color={feature.color as FancyIconColors}
+        />
+      ))}
+      {group.links?.map((link) => (
+        <FooterLink key={link.title} title={link.title} href={link.href} target={link.target} />
+      ))}
+    </Flex>
+  );
+};
+
+type FooterLinkProps = {
+  title: string;
+  href: Route;
+  icon?: React.FC<SVGProps<SVGSVGElement>>;
+  color?: FancyIconColors;
+  target?: string;
+};
+
+const FooterLink = ({ title, href, icon, color, target }: FooterLinkProps): ReactNode => {
+  if (icon && color) {
+    return (
+      <SmartLink
+        href={href}
+        className={css({ display: "flex", alignItems: "center", gap: "space8" })}
+      >
+        <FancyIcon
+          color={color}
+          className={css({
+            width: "22px",
+            height: "22px",
+            flexShrink: 0,
+            borderRadius: "radius6!",
+          })}
+        >
+          <Icon icon={icon} color="inherit" />
+        </FancyIcon>
+        <Text
+          className={css({
+            display: "flex",
+            gap: "space4",
+            padding: "space6",
+            mx: "-space6",
+            width: "fit-content",
+            "&:hover": {
+              textDecoration: "underline",
+            },
+          })}
+          variant="bodyS"
+          color="fg.neutral.muted"
+        >
+          {title}
+        </Text>
+      </SmartLink>
+    );
+  }
+
+  return (
+    <Text
+      asChild
+      className={css({
+        display: "flex",
+        gap: "space4",
+        padding: "space6",
+        mx: "-space6",
+        width: "fit-content",
+        "&:hover": {
+          textDecoration: "underline",
+        },
+      })}
+      variant="bodyS"
+      color="fg.neutral.muted"
+    >
+      <SmartLink prefetch={false} href={href} target={target}>
+        {title}
+      </SmartLink>
+    </Text>
   );
 };

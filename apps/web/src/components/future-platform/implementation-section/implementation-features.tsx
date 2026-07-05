@@ -1,6 +1,9 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
-import { PlaceholderModal, PlaceholderTable, PlaceholderTooltip, Section } from "components/ui";
+import { PlaceholderModal } from "components/ui/placeholder-application/placeholder-modal";
+import { PlaceholderTable } from "components/ui/placeholder-application/placeholder-table";
+import { PlaceholderTooltip } from "components/ui/placeholder-application/placeholder-tooltip";
+import { Section } from "components/ui/section";
 import type { JSX } from "react";
 import { Text } from "ui";
 

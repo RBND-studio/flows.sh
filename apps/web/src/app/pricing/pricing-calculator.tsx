@@ -2,13 +2,15 @@
 
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
-import { Section, SmartLink, Waves } from "components/ui";
+import { Section } from "components/ui/section";
+import { SmartLink } from "components/ui/smart-link";
 import { ArrowRight16 } from "icons";
 import { links } from "lib/links";
 import { sum } from "lib/sum";
 import { type ReactElement, useState } from "react";
 import { formatNumberWithThousandSeparator, FREE_LIMIT, pricingTiers } from "shared";
 import { Button, Icon, Slider, Text } from "ui";
+import { VolumeTable } from "./volume-table";
 
 export const PricingCalculator = (): ReactElement => {
   const [selectedValue, setSelectedValue] = useState(FREE_LIMIT);
@@ -40,31 +42,11 @@ export const PricingCalculator = (): ReactElement => {
   })();
 
   return (
-    <Section
-      wavesElement={
-        <Waves
-          planeWidth={20}
-          lineCountWidth={200}
-          cameraPosition={{
-            x: 0,
-            y: 2,
-            z: 6,
-          }}
-          className={css({
-            position: "absolute",
-            top: "0",
-            left: "0",
-            zIndex: -1,
-            height: "100%",
-            width: "100%",
-          })}
-        />
-      }
-    >
+    <Section sideBorders sideDots decorator="split" bottomBorder>
       <Flex
         gap="space24"
-        mx={{ base: "unset", md: "space32" }}
         flexDirection={{ base: "column", md: "row" }}
+        p={{ base: "space8", md: "space40" }}
       >
         <CalculatorCard
           selectedValue={selectedValue}
@@ -73,6 +55,7 @@ export const PricingCalculator = (): ReactElement => {
         />
         <EstimateCard estimatedCost={estimatedCost} reachedMax={reachedMax} />
       </Flex>
+      <VolumeTable />
     </Section>
   );
 };
@@ -94,7 +77,7 @@ const CalculatorCard = ({
       w="100%"
       padding={{ base: "space24", md: "space32" }}
       background="pane.bg.elevated"
-      borderRadius="radius8"
+      borderRadius="radius12"
       borderWidth="1px"
       borderColor="border.neutral.placeholder"
       shadow="antimetal"
@@ -162,7 +145,7 @@ const EstimateCard = ({
       w="100%"
       padding={{ base: "space24", md: "space32" }}
       background="bg.neutral.subtle"
-      borderRadius="radius8"
+      borderRadius="radius12"
       borderWidth="1px"
       borderColor="border.neutral"
       flex="1 1 300px"

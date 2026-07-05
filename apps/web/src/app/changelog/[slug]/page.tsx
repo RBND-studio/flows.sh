@@ -1,5 +1,4 @@
 import { Grid } from "@flows/styled-system/jsx";
-import { ChangelogItem } from "components/changelog";
 import { getWebMetadata } from "lib/get-metadata";
 import { importAllChangelogPosts, importChangelogPost, scanChangelogFiles } from "lib/mdx";
 import type { Metadata } from "next";
@@ -7,6 +6,7 @@ import { notFound } from "next/navigation";
 import type { ReactElement } from "react";
 
 import { ReleasePreview } from "./release-preview";
+import { ChangelogItem } from "components/changelog/changelog-item";
 
 type Params = {
   slug: string;
@@ -64,7 +64,12 @@ export default async function ChangelogDetailPage(
         slug={slug}
         mdx={<release.Mdx />}
       />
-      <Grid gap="space24" gridTemplateColumns="repeat(2, 1fr)" mt="space32">
+      <Grid
+        gap="space24"
+        gridTemplateColumns="repeat(2, 1fr)"
+        mt="space32"
+        px={{ base: "space16", md: "space40" }}
+      >
         <div>{nextRelease ? <ReleasePreview variant="next" release={nextRelease} /> : null}</div>
         <div>{prevRelease ? <ReleasePreview variant="prev" release={prevRelease} /> : null}</div>
       </Grid>

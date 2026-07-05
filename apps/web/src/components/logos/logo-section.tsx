@@ -1,14 +1,19 @@
-// cSpell:words Ideoz Modelve
-import { Section } from "components/ui";
+// cSpell:words Ideoz Modelve Hoshii Caudena
 import { ApifyLogo } from "./apify";
 import { AtmosLogo } from "./atmos";
-import { CRMChatLogo } from "./crmchat";
 import { FoxEcomLogo } from "./foxecom";
-import { Flex } from "@flows/styled-system/jsx";
+import { Box, Flex } from "@flows/styled-system/jsx";
 import { css } from "@flows/styled-system/css";
 import { SagaLogo } from "./saga";
 import { IdeozLogo } from "./ideoz";
 import { ModelveLogo } from "./modelve";
+import { Section } from "components/ui/section";
+import { Text } from "ui";
+import { SalesKickLogo } from "./saleskick";
+import { HoshiiLogo } from "./hoshii";
+import { CaudenaLogo } from "./caudena";
+import type { DecoratorType } from "components/ui/section/decorator";
+import { CreatorsProLogo } from "./creators-pro";
 
 const logos = [
   {
@@ -20,8 +25,8 @@ const logos = [
     logo: FoxEcomLogo,
   },
   {
-    name: "CRMChat",
-    logo: CRMChatLogo,
+    name: "Creators Pro",
+    logo: CreatorsProLogo,
   },
   {
     name: "Modelve",
@@ -32,8 +37,20 @@ const logos = [
     logo: AtmosLogo,
   },
   {
+    name: "Hoshii",
+    logo: HoshiiLogo,
+  },
+  {
+    name: "SalesKick",
+    logo: SalesKickLogo,
+  },
+  {
     name: "Ideoz",
     logo: IdeozLogo,
+  },
+  {
+    name: "Caudena",
+    logo: CaudenaLogo,
   },
   {
     name: "Saga",
@@ -43,30 +60,60 @@ const logos = [
 
 type Props = {
   className?: string;
+  decorator?: DecoratorType;
+  sideBorders?: boolean | "hide-top";
 };
 
-export const LogoSection = ({ className }: Props) => {
+export const LogoSection = ({
+  className,
+  decorator = "horizontal-no-line",
+  sideBorders = "hide-top",
+}: Props) => {
   return (
-    <Section>
-      <Flex
-        gap={{ base: "space32", md: "space12" }}
-        justifyContent={{ base: "center", md: "space-between" }}
-        flexWrap="wrap"
-        h={{ base: "auto", md: "28px" }}
-        overflow={{ base: "unset", md: "hidden" }}
-        as="ul"
-        className={className}
+    <Section bottomBorder sideBorders={sideBorders} py="space48" decorator={decorator}>
+      <Text
+        color="fg.neutral.muted"
+        textAlign="center"
+        mb="space40"
+        px={{ base: "space24", md: "space40" }}
       >
-        {logos.map(({ name, logo: Logo }) => (
-          <Flex as="li" className={logoWrapCss} key={name} role="img" title={name}>
-            <Logo />
-          </Flex>
-        ))}
-      </Flex>
+        Trusted by leading engineering, product, and design teams
+      </Text>
+      <Box w="100%" overflow="hidden" px={{ base: 0, md: "space40" }}>
+        <Flex
+          gap="space32"
+          pr={{ base: "space32", md: 0 }}
+          justifyContent="center"
+          flexWrap={{ base: "nowrap", md: "wrap" }}
+          animation={{ base: "teleprompter 20s linear infinite", md: "none" }}
+          width="fit-content"
+          as="ul"
+          flexShrink={{ base: 0, md: "unset" }}
+          className={className}
+        >
+          {logos.map(({ name, logo: Logo }) => (
+            <Flex as="li" className={logoWrapCss} key={name} title={name}>
+              <Logo />
+            </Flex>
+          ))}
+          {logos.map(({ name, logo: Logo }) => (
+            <Flex
+              as="li"
+              className={logoWrapCss}
+              key={name}
+              title={name}
+              aria-hidden="true"
+              display={{ base: "flex", md: "none" }}
+            >
+              <Logo />
+            </Flex>
+          ))}
+        </Flex>
+      </Box>
     </Section>
   );
 };
 
 const logoWrapCss = css({
-  color: "fg.neutral.subtle",
+  color: "fg.neutral",
 });

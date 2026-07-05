@@ -1,11 +1,11 @@
 import { Flex } from "@flows/styled-system/jsx";
-import { Section } from "components/ui";
 import type { JSX } from "react";
 import { Text } from "ui";
 
 import { WorkflowsBlocks } from "./workflows-blocks";
 import { WorkflowsExample } from "./workflows-example";
 import { WorkflowsFeatures } from "./workflows-features";
+import { Section } from "components/ui/section";
 
 export const WorkflowsSection = (): JSX.Element => {
   return (

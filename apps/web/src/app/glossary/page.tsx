@@ -1,6 +1,7 @@
 import { css } from "@flows/styled-system/css";
+import { Box } from "@flows/styled-system/jsx";
 import { GlossaryPostPreview } from "app/glossary/glossary-post-preview";
-import { Section } from "components/ui";
+import { Section } from "components/ui/section";
 import { Book16 } from "icons";
 import { getWebMetadata } from "lib/get-metadata";
 import { importAllGlossaryPosts } from "lib/mdx";
@@ -19,7 +20,14 @@ export default async function GlossaryPage(): Promise<ReactNode> {
 
   return (
     <>
-      <Section maxWidth="720px!" mt={{ base: "space40", md: "space80" }}>
+      <Section
+        sideBorders
+        bottomBorder
+        decorator="vertical"
+        pt={{ base: "space40", md: "space80" }}
+        px="space24"
+        pb="space40"
+      >
         <FancyIcon
           className={css({ mx: "auto", mb: "space24", width: "48px", height: "48px" })}
           color="blue"
@@ -29,29 +37,27 @@ export default async function GlossaryPage(): Promise<ReactNode> {
         <Text as="h1" variant="title4xl" textAlign="center" mb="space16" maxWidth={600} mx="auto">
           Product Adoption Glossary
         </Text>
-        <Text textAlign="center" variant="bodyL" color="fg.neutral.muted">
+        <Text textAlign="center" variant="bodyL" color="fg.neutral.muted" maxWidth={720} mx="auto">
           Clear and simple definitions of the terms every developer, designer, and product manager
           needs to know about product adoption and user onboarding.
         </Text>
       </Section>
 
-      <Section
-        maxWidth="800px!"
-        borderWidth={1}
-        borderColor="border.neutral.placeholder"
-        borderRadius="radius8"
-        mt="space40"
-        mb="space80"
-        md={{ mt: "space80", mb: "space120" }}
-        overflow="hidden"
-        bg="pane.bg.elevated"
-        shadow="antimetal"
-      >
-        <ul>
+      <Section sideBorders bottomBorder p={{ base: "space8", md: "space40" }}>
+        <Box
+          as="ul"
+          borderWidth={1}
+          borderColor="border.neutral.placeholder"
+          borderRadius="radius12"
+          overflow="hidden"
+          bg="pane.bg.elevated"
+          shadow="antimetal"
+          mx="auto"
+        >
           {allPosts.map((post) => (
             <GlossaryPostPreview key={post.slug} post={post} />
           ))}
-        </ul>
+        </Box>
       </Section>
     </>
   );

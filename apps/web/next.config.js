@@ -42,10 +42,13 @@ const nextConfig = {
   output: "standalone",
   outputFileTracingRoot: path.join(__dirname, "../../"),
   experimental: {
-    optimizePackageImports: ["ui", "icons", "shared"],
+    // Currently turbopack doesn't support this feature, that's why we're doing production builds with webpack
+    // More info: https://github.com/vercel/next.js/issues/75148
+    optimizePackageImports: ["ui", "icons", "shared", "shared-private"],
   },
   images: {
-    formats: ["image/webp"],
+    formats: ["image/avif", "image/webp"],
+    qualities: [50, 75],
   },
   rewrites: async () => {
     return {
@@ -90,6 +93,12 @@ const nextConfig = {
       {
         source: "/solution/:slug",
         destination: "/solutions/:slug",
+        permanent: true,
+      },
+      // Redirect /solutions to /solutions/user-onboarding since we don't have a solutions landing page anymore
+      {
+        source: "/solutions",
+        destination: "/solutions/user-onboarding",
         permanent: true,
       },
     ];

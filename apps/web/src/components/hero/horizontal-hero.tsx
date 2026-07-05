@@ -1,5 +1,5 @@
 import { Box, Flex } from "@flows/styled-system/jsx";
-import { Section } from "components/ui";
+import { Section } from "components/ui/section";
 import { type ReactNode } from "react";
 import { Text } from "ui";
 
@@ -32,16 +32,7 @@ export const HorizontalHero = ({
         flex={1}
         alignItems={{ base: "center", md: "flex-start" }}
       >
-        {eyebrow ? (
-          <Box
-            animation="topSlideIn 0.6s ease-out"
-            animationDelay="0.1s"
-            opacity={0}
-            animationFillMode="forwards"
-          >
-            {eyebrow}
-          </Box>
-        ) : null}
+        {eyebrow ? <Box>{eyebrow}</Box> : null}
 
         <Flex
           flexDirection="column"
@@ -49,20 +40,11 @@ export const HorizontalHero = ({
           alignItems={{ base: "center", md: "flex-start" }}
           mb={{ base: "space48", md: 0 }}
         >
-          <Text
-            as="h1"
-            variant="title3xl"
-            animation="topSlideIn 0.6s ease-out"
-            textAlign={{ base: "center", md: "left" }}
-          >
+          <Text as="h1" variant="title3xl" textAlign={{ base: "center", md: "left" }}>
             {title}
           </Text>
           <Text
             maxWidth="580px"
-            opacity={0}
-            animation="topSlideIn 0.6s ease-out"
-            animationDelay="0.3s"
-            animationFillMode="forwards"
             color="fg.neutral.muted"
             variant="bodyL"
             textWrap="balance"
@@ -72,14 +54,7 @@ export const HorizontalHero = ({
           </Text>
 
           {actions ? (
-            <Flex
-              width="100%"
-              opacity={0}
-              animation="topSlideIn 0.6s ease-out"
-              animationDelay="0.6s"
-              animationFillMode="forwards"
-              justifyContent={{ base: "center", md: "flex-start" }}
-            >
+            <Flex width="100%" justifyContent={{ base: "center", md: "flex-start" }}>
               {actions}
             </Flex>
           ) : null}

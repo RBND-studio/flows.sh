@@ -122,6 +122,7 @@ export const semanticTokens = defineSemanticTokens({
         DEFAULT: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.925}" } },
         main: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.925}" } },
         secondary: { value: { base: "{colors.neutral.25}", _dark: "{colors.neutral.950}" } },
+        web: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.950}" } },
         elevated: { value: { base: "{colors.neutral.0}", _dark: "{colors.neutral.900}" } },
         tooltip: { value: { base: "{colors.neutral.850}", _dark: "{colors.neutral.1000}" } },
         translucentBackground: {

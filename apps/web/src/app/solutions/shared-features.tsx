@@ -1,5 +1,6 @@
-import { SectionIntro, type SmallFeatureCardProps } from "components/ui";
 import { FeaturesGrid } from "components/ui/features-grid";
+import { SectionIntro } from "components/ui/section-intro";
+import type { SmallFeatureCardProps } from "components/ui/small-feature-card";
 import {
   Environment16,
   Filter16,
@@ -18,6 +19,9 @@ export const SharedFeatures = (): ReactNode => {
       <SectionIntro
         title="Designed for unlimited customizability"
         description="Flows is designed to be a “Headless product adoption platform”. We’ll focus on user state problems, so you can focus on your own product."
+        sideBorders
+        bottomBorder
+        decorator="vertical"
       />
       <FeaturesGrid features={subFeatures} />
     </>

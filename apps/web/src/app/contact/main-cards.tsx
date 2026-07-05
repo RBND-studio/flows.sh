@@ -1,6 +1,6 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
-import { Section, Waves } from "components/ui";
+import { Section } from "components/ui/section";
 import { ArrowRight16, Email16, Question16, System16 } from "icons";
 import { links } from "lib/links";
 import { type ReactNode } from "react";
@@ -69,35 +69,13 @@ const mainCards = [
 export const MainCardsSection = (): ReactNode => {
   return (
     <Section
-      mb="space80"
-      wavesElement={
-        <Waves
-          planeWidth={20}
-          lineCountWidth={200}
-          cameraPosition={{
-            x: 0,
-            y: 2,
-            z: 6,
-          }}
-          className={css({
-            position: "absolute",
-            top: "0",
-            left: "0",
-            zIndex: -1,
-            height: "100%",
-            width: "100%",
-          })}
-        />
-      }
+      sideBorders
+      bottomBorder
+      sideDots
+      decorator="split"
+      p={{ base: "space8", md: "space40" }}
     >
-      <Flex
-        gap="space24"
-        direction={{ base: "column", sm: "row" }}
-        mx={{
-          base: 0,
-          md: "space64",
-        }}
-      >
+      <Flex gap="space24" direction={{ base: "column", sm: "row" }}>
         {mainCards.map((card) => (
           <Flex
             key={card.title}

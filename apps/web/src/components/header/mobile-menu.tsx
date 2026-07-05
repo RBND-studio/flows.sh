@@ -2,42 +2,73 @@
 
 import { css, cva } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
-import { SmartLink } from "components/ui";
-import { ChevronDown16 } from "icons";
+import { ChevronDown16, Menu16 } from "icons";
 import Link from "next/link";
-import { type FC, type ReactNode, useState } from "react";
-import { Icon, Text } from "ui";
+import { type ReactNode, useCallback, useState } from "react";
+import { FancyIcon, Icon, IconButton, Text } from "ui";
 
 import { type MenuItemProps, menuItems } from "./menu-items";
+import { SmartLink } from "components/ui/smart-link";
 
-type Props = {
+export const MobileMenu = (): ReactNode => {
+  const [open, setOpen] = useState(false);
+  const toggleOpen = useCallback((): void => setOpen((p) => !p), []);
+  const handleClose = useCallback((): void => setOpen(false), []);
+
+  return (
+    <>
+      {/* eslint-disable-next-line no-restricted-syntax -- hamburger menu */}
+      <IconButton
+        className={css({ sm: { display: "none" }, px: "8px" })}
+        onClick={toggleOpen}
+        variant="ghost"
+      >
+        <Menu16 />
+        <span className={css({ srOnly: true })}>Open main menu</span>
+      </IconButton>
+      <MobileMenuPanel handleClose={handleClose} open={open} />
+    </>
+  );
+};
+
+type PanelProps = {
   open: boolean;
   handleClose: () => void;
 };
 
-export const MobileMenu: FC<Props> = ({ open, handleClose }): ReactNode => {
+const MobileMenuPanel = ({ open, handleClose }: PanelProps): ReactNode => {
   return (
     <Box
-      backgroundColor="bg.neutral"
       display={open ? undefined : "none"}
-      position="absolute"
-      py="space12"
-      px="space16"
-      sm={{ display: "none" }}
-      top="66px"
-      width="calc(100% - 48px)"
-      borderRadius="radius12"
-      borderWidth="1px"
-      borderColor="border.neutral.placeholder"
-      shadow="newL1"
+      position="fixed"
+      top={66}
+      bottom={24}
+      w="calc(100% - 32px)"
+      left={16}
+      right={16}
+      overflow="hidden"
     >
-      <ul className={css({ display: "flex", flexDir: "column" })}>
-        {menuItems.map((item) => (
-          <li key={item.title}>
-            <MobileMainMenuItem item={item} handleClose={handleClose} />
-          </li>
-        ))}
-      </ul>
+      <Box
+        backgroundColor="bg.neutral"
+        py="space12"
+        px="space16"
+        overflowY="auto"
+        h="100%"
+        sm={{ display: "none" }}
+        width="100%"
+        borderRadius="radius12"
+        borderWidth="1px"
+        borderColor="border.neutral.placeholder"
+        shadow="newL1"
+      >
+        <ul className={css({ display: "flex", flexDir: "column" })}>
+          {menuItems.map((item) => (
+            <li key={item.title}>
+              <MobileMainMenuItem item={item} handleClose={handleClose} />
+            </li>
+          ))}
+        </ul>
+      </Box>
     </Box>
   );
 };
@@ -87,7 +118,7 @@ const MobileMainMenuItem = ({ item, handleClose }: MainMenuItemProps): ReactNode
                 href={subItem.href}
                 className={css({
                   display: "flex",
-                  gap: "space8",
+                  gap: "space12",
                   borderRadius: "radius8",
                   alignItems: "center",
                   pl: "space8",
@@ -99,15 +130,31 @@ const MobileMainMenuItem = ({ item, handleClose }: MainMenuItemProps): ReactNode
                 key={subItem.title}
                 onClick={handleSubItemClick}
               >
-                <Flex
-                  p="space12"
-                  borderRadius="radius6"
-                  borderWidth="1px"
-                  borderColor="border.neutral"
-                  backgroundColor="bg.neutral"
-                >
-                  <Icon icon={subItem.icon} />
-                </Flex>
+                {subItem.fancyIcon && (
+                  <FancyIcon
+                    color={subItem.fancyIcon.color}
+                    className={css({
+                      width: "40px",
+                      height: "40px",
+                      flexShrink: 0,
+                      borderRadius: "radius8!",
+                    })}
+                  >
+                    <Icon icon={subItem.fancyIcon.icon} color="inherit" />
+                  </FancyIcon>
+                )}
+
+                {subItem.icon && (
+                  <Flex
+                    p="space12"
+                    borderRadius="radius8"
+                    borderWidth="1px"
+                    borderColor="border.neutral"
+                    backgroundColor="bg.neutral"
+                  >
+                    <Icon icon={subItem.icon} />
+                  </Flex>
+                )}
                 <Flex flexDirection="column" gap="space2">
                   <Text variant="bodyS" weight="700">
                     {subItem.title}

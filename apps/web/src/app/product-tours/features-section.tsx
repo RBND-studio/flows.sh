@@ -1,19 +1,82 @@
-import { css } from "@flows/styled-system/css";
-import { Box, Flex } from "@flows/styled-system/jsx";
-import { AnalyticsIllustration, ComponentsIllustration, FeatureWithIcon } from "components";
-import { CustomUIComponentsIllustration, Section } from "components/ui";
-import { Filter16, Language16 } from "icons";
+import { Flex } from "@flows/styled-system/jsx";
+import { Component16, Filter16, Graph16, Language16, Start16, Tooltip16 } from "icons";
 import { type ReactNode } from "react";
 import { Text } from "ui";
 
 import { CoolButtonIllustration } from "./cool-button-illustration";
+import type { FeatureBentoProps } from "components/feature-bento/feature-bento";
+import {
+  DoubleFeatureBento,
+  FeatureBento,
+  FeatureBentoWrapper,
+  HorizontalBentoSeparator,
+} from "components/feature-bento/feature-bento";
+import { Section } from "components/ui/section";
+import { ComponentsIllustration } from "components/feature-landing-pages/components-illustration";
+import { AnalyticsIllustration } from "components/feature-landing-pages/analytics-illustration";
+import { CustomUIComponentsIllustration } from "components/ui/illustrations/custom-ui-components-illustration";
+
+const featuresContent: FeatureBentoProps[] = [
+  {
+    icon: Tooltip16,
+    title: "More than just modals",
+    description:
+      " Pick from a variety of pre-built customizable components like tooltips, hints, embeddables and more.",
+    visual: <ComponentsIllustration />,
+  },
+  {
+    icon: Start16,
+    title: "At the right time and place",
+    description: " Trigger tours with clicks, hovers, page views or if an element is on a page.",
+    visual: <CoolButtonIllustration />,
+  },
+  {
+    icon: Component16,
+    title: "Custom components",
+    description:
+      "Use your own design system and technologies to build custom components that fit your product and meet your quality bar.",
+    visual: <CustomUIComponentsIllustration />,
+  },
+  {
+    icon: Language16,
+    title: "Localization",
+    description: "Show tours in multiple languages to reach a global audience.",
+  },
+  {
+    icon: Filter16,
+    title: "User targeting",
+    description:
+      "Target specific users or companies with AND/OR logic to define hyper-targeted segments.",
+  },
+  {
+    icon: Graph16,
+    title: "Built-in analytics",
+    description:
+      "Measure the success of your tours with built-in analytics to track user engagement and conversion rates.",
+    visual: <AnalyticsIllustration />,
+  },
+];
 
 export const FeaturesSection = (): ReactNode => {
   return (
     <>
-      <Section mt={{ base: "space80", md: "space160" }} mb={{ base: "space48", md: "space96" }}>
-        <Flex flexDirection="column" gap="space20" alignItems="center" maxWidth={580} mx="auto">
-          <Text variant="title2xl">Fully integrated product tours</Text>
+      <Section
+        py={{ base: "space64", md: "space120" }}
+        sideBorders
+        bottomBorder
+        decorator="vertical"
+      >
+        <Flex
+          flexDirection="column"
+          gap="space20"
+          alignItems="center"
+          maxWidth={580}
+          mx="auto"
+          px="space24"
+        >
+          <Text variant="title2xl" as="h2" textAlign="center">
+            Fully integrated product tours
+          </Text>
           <Text variant="bodyL" color="fg.neutral.muted" textAlign="center">
             Flows is not like other onboarding tools. It is a fully customizable solution that
             allows you to create interactive tours, modals, and other components that seamlessly
@@ -22,107 +85,15 @@ export const FeaturesSection = (): ReactNode => {
         </Flex>
       </Section>
 
-      <Section>
-        <Flex
-          flexDirection="column"
-          overflow="hidden"
-          borderRadius="radius8"
-          borderWidth="1px"
-          borderColor="border.neutral.placeholder"
-          backgroundColor="border.neutral.placeholder"
-          shadow="antimetal"
-          mx={{ base: 0, md: "space48" }}
-          gap={1}
-        >
-          <Flex gap={1} flexDirection={{ base: "column", md: "row" }}>
-            <Flex
-              flexDirection="column"
-              gap="space8"
-              px={{ base: "space24", md: "space32" }}
-              pt={{ base: "space24", md: "space32" }}
-              h={360}
-              w="100%"
-              overflow="hidden"
-              bg="pane.bg.elevated"
-            >
-              <Text variant="titleL">More than just modals</Text>
-              <Text variant="bodyM" color="fg.neutral.muted">
-                Pick from a variety of pre-built customizable components like tooltips, hints,
-                embeddables and more.
-              </Text>
-              <ComponentsIllustration />
-            </Flex>
-            <Flex
-              flexDirection="column"
-              gap="space8"
-              px={{ base: "space24", md: "space32" }}
-              pt={{ base: "space24", md: "space32" }}
-              h={360}
-              w="100%"
-              bg="pane.bg.elevated"
-            >
-              <Text variant="titleL">At the right time and place</Text>
-              <Text variant="bodyM" color="fg.neutral.muted">
-                Trigger tours with clicks, hovers, page views or if an element is on a page.
-              </Text>
-              <CoolButtonIllustration />
-            </Flex>
-          </Flex>
-          <Flex
-            flexDirection="column"
-            gap="space8"
-            px={{ base: "space24", md: "space32" }}
-            pt={{ base: "space24", md: "space32" }}
-            overflow="hidden"
-            h={360}
-            bg="pane.bg.elevated"
-          >
-            <Text variant="titleL">Custom components</Text>
-            <Text variant="bodyM" color="fg.neutral.muted" maxW={440}>
-              Use your own design system and technologies to build custom components that fit your
-              product and meet your quality bar.
-            </Text>
-            <Box>
-              <CustomUIComponentsIllustration
-                className={css({
-                  bg: "unset!",
-                  py: "0px!",
-                  maskImage: "unset!",
-                  mx: "-space32",
-                })}
-              />
-            </Box>
-          </Flex>
-          <Flex gap={1} flexDirection={{ base: "column", md: "row" }}>
-            <FeatureWithIcon
-              title="Localization"
-              description="Show tours in multiple languages to reach a global audience."
-              icon={Language16}
-            />
-            <FeatureWithIcon
-              title="User targeting"
-              description="Target specific users or companies with AND/OR logic to define hyper-targeted segments."
-              icon={Filter16}
-            />
-          </Flex>
-          <Flex
-            flexDirection="column"
-            gap="space8"
-            px={{ base: "space24", md: "space32" }}
-            pt={{ base: "space24", md: "space32" }}
-            h={360}
-            bg="pane.bg.elevated"
-            position="relative"
-          >
-            <Text variant="titleL">Analytics</Text>
-            <Text variant="bodyM" color="fg.neutral.muted" maxW={440}>
-              Measure the success of your tours with built-in analytics to track user engagement and
-              conversion rates.
-            </Text>
-            <AnalyticsIllustration />
-          </Flex>
-        </Flex>
-      </Section>
+      <FeatureBentoWrapper>
+        <DoubleFeatureBento firstFeature={featuresContent[0]} secondFeature={featuresContent[1]} />
+        <HorizontalBentoSeparator />
+        <FeatureBento {...featuresContent[2]} />
+        <HorizontalBentoSeparator />
+        <DoubleFeatureBento firstFeature={featuresContent[3]} secondFeature={featuresContent[4]} />
+        <HorizontalBentoSeparator />
+        <FeatureBento {...featuresContent[5]} />
+      </FeatureBentoWrapper>
     </>
   );
 };

@@ -2,13 +2,15 @@
 
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
-import { PlaceholderApplication, Section, Tabs } from "components/ui";
 import { Banner16, Close16, Code16 } from "icons";
 import Image from "next/image";
 import { type FC, type ReactNode, useState } from "react";
 import { Button, Checkbox, Icon, Input, Logo, Text } from "ui";
 
 import bannerBg from "./banner-bg.jpg";
+import { Tabs } from "components/ui/tabs";
+import { Section } from "components/ui/section";
+import { PlaceholderApplication } from "components/ui/placeholder-application/placeholder-application";
 
 type Props = {
   codeExample: ReactNode;
