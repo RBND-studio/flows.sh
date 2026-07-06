@@ -129,7 +129,7 @@ const Page = (): ReactElement => {
           Stripe privacy policy
         </a>{" "}
         for full details. (Note: Stripe is currently used only for organizations that were created
-        after July 5th 2026. We are in the process of migrating all existing organizations to
+        after July 6th 2026. We are in the process of migrating all existing organizations to
         Stripe. Affected organizations will be notified via email.)
       </Text>
 
@@ -161,7 +161,7 @@ const Page = (): ReactElement => {
         information.
       </Text>
       <Text className={paragraphCss} variant="bodyM">
-        Last updated: July 5, 2026
+        Last updated: July 6, 2026
       </Text>
     </LegalLayout>
   );

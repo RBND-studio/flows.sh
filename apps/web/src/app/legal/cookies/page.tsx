@@ -198,7 +198,7 @@ const Page = (): ReactElement => {
       <CookiesTable cookies={cookies} />
 
       <Text className={paragraphCss} variant="bodyM">
-        Last updated: July 5, 2026
+        Last updated: July 6, 2026
       </Text>
     </LegalLayout>
   );

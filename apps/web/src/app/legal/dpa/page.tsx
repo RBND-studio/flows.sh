@@ -749,7 +749,7 @@ const Page = (): ReactElement => {
       <SubprocessorsTable subprocessors={subprocessors} />
 
       <Text className={paragraphCss} variant="bodyM">
-        Last updated: May 14, 2026
+        Last updated: July 6, 2026
       </Text>
     </LegalLayout>
   );
@@ -773,7 +773,7 @@ const subprocessors: Subprocessor[] = [
   },
   {
     name: "Stripe, LLC",
-    purpose: "Payment and subscription processing (Note: Effective July 15th 2026)",
+    purpose: "Payment and subscription processing (Note: Effective July 16th 2026)",
     location: "US",
   },
   {

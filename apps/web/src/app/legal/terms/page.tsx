@@ -114,7 +114,7 @@ const Page = (): ReactElement => {
         for details.
         <br />
         <br />
-        Note: Stripe is currently used only for organizations that were created after July 5th 2026.
+        Note: Stripe is currently used only for organizations that were created after July 6th 2026.
         We are in the process of migrating all existing organizations to Stripe. Affected
         organizations will be notified via email.
       </Text>
@@ -374,7 +374,7 @@ const Page = (): ReactElement => {
       </Text>
 
       <Text className={paragraphCss} variant="bodyM">
-        Effective date: July 5, 2026
+        Effective date: July 6, 2026
       </Text>
     </LegalLayout>
   );
