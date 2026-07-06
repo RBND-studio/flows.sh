@@ -1,8 +1,6 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
-import { BigDemoIllustration, Hero } from "components";
 import { CtaBanner } from "components/cta-banner";
-import { FaqAccordion, Section, SectionIntro } from "components/ui";
 import { SignupClick } from "components/utils/signup-click";
 import { getWebMetadata } from "lib/get-metadata";
 import { links } from "lib/links";
@@ -11,14 +9,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { type ReactNode } from "react";
 import { routes } from "routes";
-import { Button, Text } from "ui";
+import { Button } from "ui";
 
 import { LogoSection } from "components/logos/logo-section";
-import { DOMAIN } from "lib";
-import type { FAQPage, WithContext } from "schema-dts";
 import { SharedFeatures } from "../../solutions/shared-features";
 import { technologyContent } from "../content";
 import { TechnologyFeaturesSection } from "../technology-features-section";
+import { FaqSection } from "components/faq-section";
+import { Hero } from "components/hero/hero";
+import { BigDemoIllustration } from "components/main-illustration/big-demo-illustration";
 
 type Params = {
   slug: string;
@@ -45,20 +44,6 @@ export default async function TechnologyDetailPage({ params }: Props): Promise<R
   const content = technologyContent.find((c) => c.slug === slug);
 
   if (!content) return notFound();
-
-  const jsonLd: WithContext<FAQPage> = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: content.faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.title,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.schemaContent ?? (typeof faq.content === "string" ? faq.content : undefined),
-      },
-    })),
-    url: `https://${DOMAIN}/technology/${content.slug}`,
-  };
 
   return (
     <>
@@ -96,28 +81,10 @@ export default async function TechnologyDetailPage({ params }: Props): Promise<R
 
       <SharedFeatures />
 
-      <SectionIntro
-        title={
-          <>
-            Questions and <span className={css({ color: "fg.neutral.subtle" })}>Answers</span>
-          </>
-        }
-      />
-      <Section maxWidth="640px!" mx="auto">
-        {content.faqs.map((faq) => (
-          <FaqAccordion headingLevel="h3" key={faq.title} title={faq.title}>
-            <Text color="fg.neutral.muted" variant="bodyL">
-              {faq.content}
-            </Text>
-          </FaqAccordion>
-        ))}
-      </Section>
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd),
-        }}
+      <FaqSection
+        questions={content.faqs}
+        title="Frequently asked questions"
+        pageUrl={`/technology/${content.slug}`}
       />
 
       <CtaBanner title={content.ctaBanner.title} description={content.ctaBanner.description} />

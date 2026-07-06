@@ -11,6 +11,7 @@ export const ApplyViz = (): ReactNode => {
       mx="auto"
       overflow="hidden"
       role="img"
+      aria-label="A visual representation of the affiliate application process, including a sign up form with Google, email, and password fields."
       w="100%"
       pt="space24"
       bg="pane.bg.elevated"

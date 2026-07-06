@@ -6,6 +6,9 @@ export const fonts = defineTokens.fonts({
       // cspell:disable-next-line
       'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
   },
+  caveat: {
+    value: "var(--font-caveat)",
+  },
 });
 
 // Font definition excluding font-family, family is defined in global styles for each app separately because we want to use fancier font on the web but UI focused one in the app
@@ -27,7 +30,7 @@ export const textStyles = defineTextStyles({
       fontStyle: "normal",
       fontWeight: "750",
       fontSize: { base: "34px", sm: "42px", md: "60px" },
-      lineHeight: { base: "44px", sm: "56px", md: "76px" },
+      lineHeight: { base: "40px", sm: "52px", md: "64px" },
       fontFamily: "var(--font-main)",
     },
   },

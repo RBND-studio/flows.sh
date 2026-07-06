@@ -1,5 +1,6 @@
 import { Flex } from "@flows/styled-system/jsx";
-import { bulletCss, headingCss, paragraphCss, Section, ulCss } from "components/ui";
+import { LegalLayout } from "components/legal-layout";
+import { bulletCss, headingCss, paragraphCss, ulCss } from "components/ui/typography-css";
 import { getWebMetadata } from "lib/get-metadata";
 import { type Metadata } from "next";
 import type { ReactElement } from "react";
@@ -13,7 +14,7 @@ export const metadata: Metadata = getWebMetadata({
 
 const Page = (): ReactElement => {
   return (
-    <Section maxWidth="580px!" py="space40" md={{ py: "space80" }}>
+    <LegalLayout>
       <Flex mb="space40" flexDirection="column" gap="space12" maxW="800px">
         <Text align="center" as="h1" variant="title4xl">
           Flows privacy policy
@@ -122,6 +123,16 @@ const Page = (): ReactElement => {
         for full details.
       </Text>
 
+      <Text className={paragraphCss} variant="bodyM">
+        We use Stripe for payment processing. See the{" "}
+        <a href="https://stripe.com/privacy" rel="noopener noreferrer" target="_blank">
+          Stripe privacy policy
+        </a>{" "}
+        for full details. (Note: Stripe is currently used only for organizations that were created
+        after July 6th 2026. We are in the process of migrating all existing organizations to
+        Stripe. Affected organizations will be notified via email.)
+      </Text>
+
       <Text as="h2" className={headingCss} variant="titleXl">
         Retention of data
       </Text>
@@ -150,9 +161,9 @@ const Page = (): ReactElement => {
         information.
       </Text>
       <Text className={paragraphCss} variant="bodyM">
-        Last updated: April 6, 2024
+        Last updated: July 6, 2026
       </Text>
-    </Section>
+    </LegalLayout>
   );
 };
 

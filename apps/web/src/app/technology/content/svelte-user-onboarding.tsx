@@ -46,7 +46,7 @@ export const svelteUserOnboardingContent: TechnologyContentType = {
           for step-by-step instructions and code examples.
         </>
       ),
-      schemaContent:
+      schemaText:
         "Call the Flows SDK inside an onMount callback in your root layout component and pass user identity and properties. Flows then handles targeting and workflow activation automatically, without adding any onboarding logic to your individual Svelte components. See the Svelte installation guide for step-by-step instructions and code examples.",
     },
     {
@@ -58,7 +58,7 @@ export const svelteUserOnboardingContent: TechnologyContentType = {
           automatically, so onboarding steps trigger correctly across route changes.
         </>
       ),
-      schemaContent:
+      schemaText:
         "Yes. Initialize Flows in your SvelteKit root layout's onMount to ensure it runs only in the browser. SvelteKit client-side navigations are detected automatically, so onboarding steps trigger correctly across route changes.",
     },
     {
@@ -85,7 +85,7 @@ export const svelteUserOnboardingContent: TechnologyContentType = {
           .
         </>
       ),
-      schemaContent:
+      schemaText:
         "Pass user properties when initializing Flows, such as isNewUser or signupDate. Targeting rules are configured in the Flows dashboard and evaluated locally, so returning users are automatically excluded without any conditional logic in your Svelte components. See the guide on targeting only new users.",
     },
     {
@@ -97,7 +97,7 @@ export const svelteUserOnboardingContent: TechnologyContentType = {
           SvelteKit pages render on the server as normal.
         </>
       ),
-      schemaContent:
+      schemaText:
         "No. Flows is a client-side SDK and never runs during SSR. Wrapping initialization in the onMount hook guarantees it only loads in the browser, so your SvelteKit pages render on the server as normal.",
     },
   ],

@@ -9,9 +9,9 @@ export const EmbeddableComponentsIllustrations = (): ReactNode => {
       h="100%"
       overflow="hidden"
       width="100%"
-      p="space24"
       role="img"
-      bg="pane.bg.elevated"
+      aria-label="Illustration of a web application with a banner and table, showcasing embeddable components"
+      bg="pane.bg.web"
       maskImage="linear-gradient(
                 rgb(0, 0, 0) 70%,
                 rgba(0, 0, 0, 0.886) 76.6%,

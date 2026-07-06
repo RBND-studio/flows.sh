@@ -4,22 +4,19 @@ import {
   HeroIllustrationLine,
 } from "components/main-illustration/decorations";
 import { demoTabsData } from "components/main-illustration/demo-tabs-data";
-import { HeroWaves } from "components/main-illustration/hero-waves";
-import { PlaceholderApplication, Section } from "components/ui";
+import { PlaceholderApplication } from "components/ui/placeholder-application/placeholder-application";
+import { Section } from "components/ui/section";
 import { type ReactNode } from "react";
 
 export const MainIllustration = (): ReactNode => {
   return (
-    <Section maxWidth="1100px!" role="img">
-      <Box>
+    <Section
+      role="img"
+      aria-label="An example of an application using a Flows slot to embed an announcement banner."
+    >
+      <Box aria-hidden="true">
         <Box
-          aria-hidden="true"
-          opacity={0}
-          animation="bottomSlideIn 0.6s ease-out"
-          animationDelay="0.6s"
-          animationFillMode="forwards"
           md={{
-            mx: "space16",
             height: 480,
           }}
           height={320}
@@ -41,14 +38,7 @@ export const MainIllustration = (): ReactNode => {
             overflow="hidden"
             height="100%"
           >
-            <Box
-              height="100%"
-              overflow="hidden"
-              opacity={0}
-              animation="fadeIn 0.6s ease-out"
-              animationDelay="0.6s"
-              animationFillMode="forwards"
-            >
+            <Box height="100%" overflow="hidden">
               <PlaceholderApplication bannerSlot={demoTabsData[3].element} />
             </Box>
           </Flex>
@@ -56,7 +46,6 @@ export const MainIllustration = (): ReactNode => {
         </Box>
       </Box>
       <HeroIllustrationGlow />
-      <HeroWaves />
     </Section>
   );
 };

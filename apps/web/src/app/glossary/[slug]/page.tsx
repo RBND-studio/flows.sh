@@ -1,5 +1,6 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
+import { Section } from "components/ui/section";
 import { ArrowLeft16 } from "icons";
 import { getWebMetadata } from "lib/get-metadata";
 import { importGlossaryPost, scanGlossaryFiles } from "lib/mdx";
@@ -50,59 +51,75 @@ export default async function GlossaryPostPage(props: Props): Promise<ReactNode>
   if (!post) return notFound();
 
   return (
-    <Box maxWidth={720} mx="auto" my={{ base: "space40", md: "space80" }}>
-      <Flex
-        alignItems="center"
-        flexDirection="column"
-        mb="space120"
-        pb="space64"
-        position="relative"
-        bg="pane.bg.secondary"
+    <Section sideBorders bottomBorder>
+      <Box
+        borderLeftWidth={{ base: 0, md: 1 }}
+        borderRightWidth={{ base: 0, md: 1 }}
+        borderColor="border.neutral"
+        maxWidth={800}
+        mx="auto"
+        py={{ base: "space40", md: "space80" }}
+        px={{ base: "space24", md: "space40" }}
       >
-        <Link
-          className={css({
-            textStyle: "bodyXs",
-            color: "fg.neutral.muted",
-            display: "flex",
-            alignItems: "center",
-            gap: "space4",
-            width: "fit-content",
-            mb: "space12",
-            textTransform: "uppercase",
-            _hover: {
-              "& svg": {
-                transform: "translateX(-4px)",
+        <Flex
+          alignItems="center"
+          flexDirection="column"
+          mb="space120"
+          pb="space64"
+          position="relative"
+          bg="pane.bg.web"
+        >
+          <Link
+            className={css({
+              textStyle: "bodyXs",
+              color: "fg.neutral.muted",
+              display: "flex",
+              alignItems: "center",
+              gap: "space4",
+              width: "fit-content",
+              mb: "space12",
+              textTransform: "uppercase",
+              _hover: {
+                "& svg": {
+                  transform: "translateX(-4px)",
+                },
               },
-            },
-            "& svg": {
-              fastEaseInOut: "transform",
-            },
-          })}
-          href={routes.glossary}
-        >
-          <ArrowLeft16 />
-          Glossary Index
-        </Link>
+              "& svg": {
+                fastEaseInOut: "transform",
+              },
+            })}
+            href={routes.glossary}
+          >
+            <ArrowLeft16 />
+            Glossary Index
+          </Link>
 
-        <Text
-          as="h1"
-          className={css({
-            mb: "space16",
-          })}
-          variant="title4xl"
-          textAlign="center"
-        >
-          {post.title}
-        </Text>
-        <Text as="p" variant="bodyL" textAlign="center" textWrap="balance" color="fg.neutral.muted">
-          {post.description}
-        </Text>
-        <Line />
-        <Glow />
-      </Flex>
+          <Text
+            as="h1"
+            className={css({
+              mb: "space16",
+            })}
+            variant="title4xl"
+            textAlign="center"
+          >
+            {post.title}
+          </Text>
+          <Text
+            as="p"
+            variant="bodyL"
+            textAlign="center"
+            textWrap="balance"
+            color="fg.neutral.muted"
+          >
+            {post.description}
+          </Text>
+          <Line />
+          <Glow />
+        </Flex>
 
-      <post.Mdx />
-    </Box>
+        <post.Mdx />
+      </Box>
+    </Section>
   );
 }
 

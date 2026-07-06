@@ -1,8 +1,7 @@
 import { css, cx } from "@flows/styled-system/css";
 import { Box, Flex, Grid } from "@flows/styled-system/jsx";
-import { Section } from "components/ui";
+import { Section } from "components/ui/section";
 import { ArrowRight16, Block16, Component16, Slot16, Survey16, Tour16 } from "icons";
-import { links } from "lib/links";
 import { type Route } from "next";
 import Link from "next/link";
 import { type FC, type ReactNode, type SVGProps } from "react";
@@ -20,7 +19,7 @@ const features = [
     title: "Workflows",
     description: "Build sequences that follow a user's journey in your product.",
     icon: Block16,
-    href: links.docs.workflows.main,
+    href: routes.features.workflows,
   },
   {
     title: "Product tours",
@@ -52,9 +51,15 @@ export const TrailFork = ({ title, description, currentFeatureHref }: Props): Re
   const visibleFeatures = features.filter((f) => f.href !== currentFeatureHref);
   return (
     <>
-      <Section mt={{ base: "space80", md: "space160" }} mb={{ base: "space48", md: "space96" }}>
+      <Section
+        py={{ base: "space64", md: "space120" }}
+        px="space24"
+        sideBorders
+        bottomBorder
+        decorator="vertical"
+      >
         <Flex flexDirection="column" gap="space20" alignItems="center" maxWidth={580} mx="auto">
-          <Text variant="title2xl" textAlign="center">
+          <Text variant="title2xl" textAlign="center" as="h2">
             {title}
           </Text>
           <Text variant="bodyL" color="fg.neutral.muted" textAlign="center">
@@ -62,16 +67,15 @@ export const TrailFork = ({ title, description, currentFeatureHref }: Props): Re
           </Text>
         </Flex>
       </Section>
-      <Section mb={{ base: "space80", md: "space120" }}>
+      <Section p={{ base: "space8", md: "space40" }} sideBorders sideDots bottomBorder>
         <Flex
           flexDirection="column"
           overflow="hidden"
-          borderRadius="radius8"
+          borderRadius="radius16"
           borderWidth="1px"
           borderColor="border.neutral.placeholder"
           backgroundColor="bg.neutral"
           shadow="antimetal"
-          mx={{ base: 0, md: "space48" }}
         >
           <Grid
             gridTemplateColumns={{

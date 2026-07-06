@@ -2,8 +2,7 @@ import { css, cx } from "@flows/styled-system/css";
 import { Box } from "@flows/styled-system/jsx";
 import { type HTMLStyledProps } from "@flows/styled-system/types";
 import * as SeparatorPrimitive from "@radix-ui/react-separator";
-import type { ComponentProps, ElementRef, HTMLAttributes } from "react";
-import { forwardRef } from "react";
+import type { ComponentProps, HTMLAttributes } from "react";
 
 type Props = HTMLAttributes<HTMLDivElement> &
   HTMLStyledProps<"div"> & {
@@ -12,9 +11,7 @@ type Props = HTMLAttributes<HTMLDivElement> &
     decorative?: ComponentProps<typeof SeparatorPrimitive.Root>["decorative"];
   };
 
-type Ref = ElementRef<typeof SeparatorPrimitive.Root>;
-
-export const Separator = forwardRef<Ref, Props>(function Separator(props, ref) {
+export const Separator = ({ ref, ...props }: Props) => {
   return (
     <SeparatorPrimitive.Root
       asChild
@@ -32,4 +29,4 @@ export const Separator = forwardRef<Ref, Props>(function Separator(props, ref) {
       <Box />
     </SeparatorPrimitive.Root>
   );
-});
+};

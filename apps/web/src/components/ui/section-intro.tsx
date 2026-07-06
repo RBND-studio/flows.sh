@@ -3,6 +3,7 @@ import { Box, Flex } from "@flows/styled-system/jsx";
 import { type ReactNode } from "react";
 import { Text } from "ui";
 
+import type { SectionProps } from "./section";
 import { Section } from "./section";
 
 type Props = {
@@ -11,7 +12,7 @@ type Props = {
   className?: string;
   compact?: boolean;
   actions?: ReactNode;
-};
+} & SectionProps;
 
 export const SectionIntro = ({
   title,
@@ -19,9 +20,17 @@ export const SectionIntro = ({
   className,
   compact,
   actions,
+  sideBorders,
+  bottomBorder,
+  decorator,
 }: Props): ReactNode => {
   return (
-    <Section className={cx(sectionIntroStyles({ compact }), className)}>
+    <Section
+      className={cx(sectionIntroStyles({ compact }), className)}
+      sideBorders={sideBorders}
+      bottomBorder={bottomBorder}
+      decorator={decorator}
+    >
       <SectionIntroTextOnly title={title} description={description} />
       {actions ? (
         <Flex
@@ -40,22 +49,17 @@ export const SectionIntro = ({
 
 const sectionIntroStyles = cva({
   base: {
-    mt: "space80",
-    mb: "space40",
-    md: {
-      mt: "space160",
-      mb: "space64",
-    },
+    py: { base: "space64", md: "space120" },
   },
   variants: {
     compact: {
       false: {},
       true: {
-        mt: "space64",
-        mb: "space32",
+        pt: "space64",
+        pb: "space32",
         md: {
-          mt: "space80",
-          mb: "56px",
+          pt: "space80",
+          pb: "56px",
         },
       },
     },

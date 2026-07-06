@@ -6,6 +6,7 @@ import {
   GreenTooltip,
   NormalTooltip,
   SaleDialog,
+  YellowTooltip,
 } from "./custom-ui-components-elements";
 
 const elements = [
@@ -21,9 +22,10 @@ const elements = [
   {
     element: <BlueTooltip />,
   },
+  {
+    element: <YellowTooltip />,
+  },
 ];
-
-const WIDTH = (180 + 24) * (elements.length * 2);
 
 export const CustomUIComponentsIllustration = ({
   className,
@@ -33,21 +35,10 @@ export const CustomUIComponentsIllustration = ({
   return (
     <Box
       h="100%"
-      overflow="hidden"
       className={className}
       py="space24"
       role="img"
-      layerStyle="dotBackground"
-      maskImage="linear-gradient(
-                rgb(0, 0, 0) 70%,
-                rgba(0, 0, 0, 0.886) 76.6%,
-                rgba(0, 0, 0, 0.733) 81.4%, 
-                rgba(0, 0, 0, 0.557) 85.3%,
-                rgba(0, 0, 0, 0.376) 88.3%,
-                rgba(0, 0, 0, 0.21) 91%, 
-                rgba(0, 0, 0, 0.082) 94%, 
-                rgba(0, 0, 0, 0.01) 97.6%,
-                rgba(0, 0, 0, 0) 100%)"
+      aria-label="Illustration of multiple custom UI components including tooltips and a sale dialog, arranged in a horizontal carousel"
     >
       <Flex
         alignItems="center"
@@ -56,17 +47,9 @@ export const CustomUIComponentsIllustration = ({
         borderRadius={6}
         p="space12"
         gap="space24"
-        overflow="hidden"
         aria-hidden="true"
       >
-        <Flex
-          style={{
-            width: `${WIDTH}px`,
-          }}
-          flexShrink="0"
-          animation="teleprompter 20s linear infinite"
-          alignItems="center"
-        >
+        <Flex flexShrink="0" animation="teleprompter 20s linear infinite" alignItems="center">
           {elements.map((item, index) => (
             // eslint-disable-next-line react/no-array-index-key -- no better key
             <ElementWrap key={index}>{item.element}</ElementWrap>

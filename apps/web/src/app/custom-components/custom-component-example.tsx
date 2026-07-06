@@ -2,13 +2,12 @@
 
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
-import { PlaceholderApplication, Tabs } from "components/ui";
 import { Banner16, Close16, Code16 } from "icons";
-import Image from "next/image";
 import { type FC, type ReactNode, useState } from "react";
 import { Button, Checkbox, Icon, Input, Logo, Text } from "ui";
 
-import bannerBg from "./banner-bg.jpg";
+import { Tabs } from "components/ui/tabs";
+import { PlaceholderApplication } from "components/ui/placeholder-application/placeholder-application";
 
 type Props = {
   codeExample: ReactNode;
@@ -58,7 +57,7 @@ export const CustomComponentExample: FC<Props> = ({ codeExample }) => {
               label="Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              placeholder="Email"
+              placeholder="Title"
               className={css({
                 width: "100%",
               })}
@@ -75,7 +74,7 @@ export const CustomComponentExample: FC<Props> = ({ codeExample }) => {
               })}
               asChild
             >
-              {/* oxlint-disable-next-line jsx-a11y/control-has-associated-label */}
+              {/* oxlint-disable-next-line jsx-a11y/control-has-associated-label -- just for decoration */}
               <textarea rows={3} />
             </Input>
             <Input
@@ -181,34 +180,27 @@ export const CustomComponentExample: FC<Props> = ({ codeExample }) => {
           <PlaceholderApplication
             bannerSlot={
               <Box borderRadius="radius4" position="relative" mb="space8">
-                <Image
-                  className={css({
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    zIndex: 0,
-                    opacity: 0.4,
-                    borderRadius: "radius4",
-                  })}
-                  src={bannerBg}
-                  alt="Banner background"
-                />
                 <Flex
-                  backgroundColor="bg.neutral"
+                  backgroundColor="neutral.800"
                   p="space12"
                   flexDirection="column"
                   gap="space4"
                   borderRadius="radius4"
                 >
                   <Flex zIndex={1} alignItems="center" justifyContent="space-between">
-                    <Text variant="titleXs">{title}</Text>
-                    {!hideClose && <Icon className={css({ cursor: "pointer" })} icon={Close16} />}
+                    <Text color="white" variant="titleXs">
+                      {title}
+                    </Text>
+                    {!hideClose && (
+                      <Icon
+                        className={css({ cursor: "pointer" })}
+                        icon={Close16}
+                        color="neutral.200"
+                      />
+                    )}
                   </Flex>
                   <Flex zIndex={1} gap="space8" justifyContent="space-between" alignItems="center">
-                    <Text wordBreak="break-word" variant="bodyXs">
+                    <Text color="white" wordBreak="break-word" variant="bodyXs">
                       {description}
                     </Text>
                     {/* Button is rendered as div to prevent taking focus and messing with aria-hidden */}

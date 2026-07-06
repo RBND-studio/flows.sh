@@ -1,5 +1,4 @@
 import { Flex } from "@flows/styled-system/jsx";
-import { headingCss, paragraphCss, Section } from "components/ui";
 import { getWebMetadata } from "lib/get-metadata";
 import { type Metadata } from "next";
 import type { ReactElement } from "react";
@@ -7,6 +6,8 @@ import { emails } from "shared";
 import { Text } from "ui";
 
 import { type Cookie, CookiesTable } from "./table";
+import { headingCss, paragraphCss } from "components/ui/typography-css";
+import { LegalLayout } from "components/legal-layout";
 
 export const metadata: Metadata = getWebMetadata({
   title: "Cookie Policy",
@@ -76,11 +77,18 @@ const cookies: Cookie[] = [
     type: "Strictly necessary",
     duration: "90 days",
   },
+  {
+    name: "Stripe cookies",
+    description:
+      "When creating or managing a subscription through Stripe, Stripe may set cookies to facilitate the process. We do not control these cookies, and they are subject to Stripe's privacy policy.",
+    type: "–",
+    duration: "–",
+  },
 ];
 
 const Page = (): ReactElement => {
   return (
-    <Section maxWidth="580px!" py="space40" md={{ py: "space80" }}>
+    <LegalLayout>
       <Flex mb="space40" flexDirection="column" gap="space12" maxW="800px">
         <Text align="center" as="h1" variant="title4xl">
           Flows Cookie Policy
@@ -190,9 +198,9 @@ const Page = (): ReactElement => {
       <CookiesTable cookies={cookies} />
 
       <Text className={paragraphCss} variant="bodyM">
-        Last updated: May 6, 2025
+        Last updated: July 6, 2026
       </Text>
-    </Section>
+    </LegalLayout>
   );
 };
 

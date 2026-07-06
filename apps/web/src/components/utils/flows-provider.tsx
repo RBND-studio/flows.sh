@@ -1,6 +1,6 @@
 import type { LinkComponentType } from "@flows/react";
 import { FlowsProvider as SDKFlowsProvider } from "@flows/react";
-import { HeroCallout } from "components/ui";
+import { HeroCallout } from "components/ui/hero-callout";
 import Link from "next/link";
 import { type ReactNode } from "react";
 import { FLOWS_WEB_ORGANIZATION_ID } from "shared-private";

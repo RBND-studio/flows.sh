@@ -2,7 +2,6 @@
 
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
-import { Section } from "components/ui";
 import { ChevronDown16 } from "icons";
 import { type ReactElement, useRef, useState } from "react";
 import { formatNumberToK, formatNumberWithThousandSeparator, pricingTiers } from "shared";
@@ -31,86 +30,85 @@ export const VolumeTable = (): ReactElement => {
   });
 
   return (
-    <Section>
-      <Flex
-        flexDirection="column"
-        alignItems="center"
-        width="100%"
-        maxWidth={640}
-        mx="auto"
-        mt="space32"
-        mb="space40"
+    <Flex
+      flexDirection="column"
+      alignItems="center"
+      width="100%"
+      maxWidth={640}
+      mx="auto"
+      pt={{ base: "space16", md: 0 }}
+      pb={{ base: "space8", md: "space40" }}
+      px="space8"
+    >
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className={css({
+          cursor: "pointer",
+          color: "fg.neutral.muted",
+          mb: "space16",
+          display: "flex",
+          gap: "space8",
+          alignItems: "center",
+          _hover: {
+            color: "fg.neutral",
+          },
+        })}
       >
-        <button
-          type="button"
-          onClick={() => setIsOpen(!isOpen)}
+        <Text variant="bodyL" color="inherit">
+          How did we calculate this?
+        </Text>
+        <Icon
+          color="inherit"
+          icon={ChevronDown16}
           className={css({
-            cursor: "pointer",
-            color: "fg.neutral.muted",
-            mb: "space16",
-            display: "flex",
-            gap: "space8",
-            alignItems: "center",
-            _hover: {
-              color: "fg.neutral",
-            },
+            transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+            transition: "transform 0.24s",
           })}
-        >
-          <Text variant="bodyL" color="inherit">
-            How did we calculate this?
-          </Text>
-          <Icon
-            color="inherit"
-            icon={ChevronDown16}
-            className={css({
-              transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
-              transition: "transform 0.24s",
-            })}
-          />
-        </button>
-        <Box
-          ref={contentRef}
-          transition="height 0.24s, opacity 0.24s"
-          overflow="hidden"
+        />
+      </button>
+      <Box
+        ref={contentRef}
+        transition="height 0.24s, opacity 0.24s"
+        overflow="hidden"
+        width="100%"
+        opacity={isOpen ? 1 : 0}
+        style={{
+          height,
+        }}
+        bg="bg.neutral.subtle"
+        borderRadius="radius12"
+        borderWidth="1px"
+        borderColor="border.neutral"
+      >
+        <Flex
           width="100%"
-          opacity={isOpen ? 1 : 0}
-          style={{
-            height,
-          }}
-          bg="bg.neutral.subtle"
-          borderRadius="radius12"
-          borderWidth="1px"
+          paddingX="space24"
+          paddingY="space24"
+          borderBottomWidth="1px"
           borderColor="border.neutral"
         >
+          <Text variant="bodyM" align="center" textWrap="balance">
+            Flows uses a tiered pricing model, where the price per MTU decreases as your usage
+            increases. When you reach each new tier threshold, any additional MTUs are billed at the
+            lower rate.
+          </Text>
+        </Flex>
+        {pricing.map((item) => (
           <Flex
-            width="100%"
+            key={item.price}
             paddingX="space24"
-            paddingY="space24"
+            paddingY="space16"
             borderBottomWidth="1px"
             borderColor="border.neutral"
+            justifyContent="space-between"
+            _last={{ borderBottomWidth: "0px" }}
           >
-            <Text variant="bodyM" align="center" textWrap="balance">
-              Flows uses a tiered pricing model, where the price per MTU decreases as your usage
-              increases. When you reach each new tier threshold, any additional MTUs are billed at
-              the lower rate.
-            </Text>
+            <Text variant="titleM">{item.range}</Text>
+            <Text variant="titleM">{item.price}</Text>
           </Flex>
-          {pricing.map((item) => (
-            <Flex
-              key={item.price}
-              paddingX="space24"
-              paddingY="space16"
-              borderBottomWidth="1px"
-              borderColor="border.neutral"
-              justifyContent="space-between"
-              _last={{ borderBottomWidth: "0px" }}
-            >
-              <Text variant="titleM">{item.range}</Text>
-              <Text variant="titleM">{item.price}</Text>
-            </Flex>
-          ))}
-        </Box>
-      </Flex>
-    </Section>
+        ))}
+      </Box>
+    </Flex>
   );
 };

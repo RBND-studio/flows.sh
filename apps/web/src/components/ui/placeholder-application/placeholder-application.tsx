@@ -32,6 +32,7 @@ export const PlaceholderApplication = ({
       height="100%"
       mdDown={{ flexDirection: "column" }}
       role="img"
+      aria-label="Illustration of a web application with a sidebar, banner, and multiple cards, showcasing a placeholder application layout"
       position="relative"
     >
       {insideSlot}
@@ -47,7 +48,7 @@ export const PlaceholderApplication = ({
         borderWidth="1px"
         borderColor="border.neutral.muted"
         borderRadius="radius8"
-        background="pane.bg.main"
+        background="pane.bg.web"
         aria-hidden="true"
       >
         <Flex

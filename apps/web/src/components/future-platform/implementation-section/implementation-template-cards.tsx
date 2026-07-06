@@ -1,6 +1,6 @@
 import { css, cva } from "@flows/styled-system/css";
 import { Flex, Grid } from "@flows/styled-system/jsx";
-import { Section } from "components/ui";
+import { Section } from "components/ui/section";
 import { Angular32, ExternalLink16, NextJS32, Nuxt32, React32 } from "icons";
 import { links } from "lib/links";
 import { type FC, type JSX, type SVGProps } from "react";

@@ -44,7 +44,7 @@ export const solidUserOnboardingContent: TechnologyContentType = {
           for step-by-step instructions and code examples.
         </>
       ),
-      schemaContent:
+      schemaText:
         "Initialize the Flows SDK inside an onMount callback or a root-level effect and pass user identity and properties. Flows evaluates targeting rules independently and triggers the right onboarding workflow without adding reactive primitives to your own signal graph. See the SolidJS installation guide for step-by-step instructions and code examples.",
     },
     {
@@ -56,7 +56,7 @@ export const solidUserOnboardingContent: TechnologyContentType = {
           steps can trigger on specific page visits without custom router hooks.
         </>
       ),
-      schemaContent:
+      schemaText:
         "Yes. Initialize Flows inside an onMount method to ensure it runs in the browser. SolidStart route transitions are detected automatically, so onboarding steps can trigger on specific page visits without custom router hooks.",
     },
     {
@@ -88,7 +88,7 @@ export const solidUserOnboardingContent: TechnologyContentType = {
           .
         </>
       ),
-      schemaContent:
+      schemaText:
         "Pass user properties (like plan, createdAt, or custom attributes) when initializing Flows. Targeting rules are defined in the Flows dashboard and evaluated locally, so new users get onboarding flows while returning users are automatically skipped. See the guide on targeting only new users.",
     },
   ],

@@ -49,7 +49,7 @@ export const reactUserOnboardingContent: TechnologyContentType = {
           .
         </>
       ),
-      schemaContent:
+      schemaText:
         "Pass user properties (like isNewUser or signupDate) to the Flows SDK and create targeting rules in the dashboard. Flows automatically triggers the right workflow for the right user without conditional rendering boilerplate in your components. Read our guide on targeting only new users.",
     },
     {
@@ -80,7 +80,7 @@ export const reactUserOnboardingContent: TechnologyContentType = {
           for details on how to set Flows up in your app.
         </>
       ),
-      schemaContent:
+      schemaText:
         "Yes. Once developers integrate the Flows SDK and register components, product managers and designers can create and update onboarding workflows in the Flows dashboard without any code changes or redeployments. See the React installation guide for details on how to set Flows up in your app.",
     },
   ],

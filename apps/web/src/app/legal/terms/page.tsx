@@ -1,5 +1,7 @@
 import { Flex } from "@flows/styled-system/jsx";
-import { bulletCss, headingCss, olCss, paragraphCss, Section, SmartLink } from "components/ui";
+import { LegalLayout } from "components/legal-layout";
+import { SmartLink } from "components/ui/smart-link";
+import { bulletCss, headingCss, olCss, paragraphCss } from "components/ui/typography-css";
 import { getWebMetadata } from "lib/get-metadata";
 import { type Metadata } from "next";
 import type { ReactElement } from "react";
@@ -14,7 +16,7 @@ export const metadata: Metadata = getWebMetadata({
 
 const Page = (): ReactElement => {
   return (
-    <Section maxWidth="580px!" py="space40" md={{ py: "space80" }}>
+    <LegalLayout>
       <Flex mb="space40" flexDirection="column" gap="space12" maxW="800px">
         <Text align="center" as="h1" variant="title4xl">
           Flows terms of service
@@ -100,6 +102,23 @@ const Page = (): ReactElement => {
         </a>{" "}
         for details.
       </Text>
+
+      <Text className={paragraphCss} variant="bodyM">
+        Our payment process is conducted by our payment processor Stripe. Stripe provides customer
+        service inquiries and handles returns. All fees are inclusive of all taxes, levies, or
+        duties imposed by taxing authorities. Stripe will collect those taxes on behalf of taxing
+        authority and remit those taxes to taxing authorities. See the{" "}
+        <a href="https://stripe.com/legal" rel="noopener noreferrer" target="_blank">
+          Stripe’s legal pages
+        </a>{" "}
+        for details.
+        <br />
+        <br />
+        Note: Stripe is currently used only for organizations that were created after July 6th 2026.
+        We are in the process of migrating all existing organizations to Stripe. Affected
+        organizations will be notified via email.
+      </Text>
+
       <Text className={paragraphCss} variant="bodyM">
         Fees paid hereunder are non-refundable.
       </Text>
@@ -355,9 +374,9 @@ const Page = (): ReactElement => {
       </Text>
 
       <Text className={paragraphCss} variant="bodyM">
-        Effective date: January 1, 2026
+        Effective date: July 6, 2026
       </Text>
-    </Section>
+    </LegalLayout>
   );
 };
 

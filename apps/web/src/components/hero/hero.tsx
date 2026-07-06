@@ -1,5 +1,6 @@
 import { Box, Flex } from "@flows/styled-system/jsx";
-import { Section } from "components/ui";
+import type { SectionBaseProps } from "components/ui/section";
+import { Section } from "components/ui/section";
 import { type ReactElement, type ReactNode } from "react";
 import { Text } from "ui";
 
@@ -8,36 +9,37 @@ type Props = {
   description: string;
   actions?: ReactNode;
   eyebrow?: ReactNode;
-};
+} & SectionBaseProps;
 
-export const Hero = ({ title, description, actions, eyebrow }: Props): ReactElement => {
+export const Hero = ({
+  title,
+  description,
+  actions,
+  eyebrow,
+  sideBorders,
+  bottomBorder,
+  decorator,
+}: Props): ReactElement => {
   return (
     <Section
       display="flex"
       flexDirection="column"
-      gap="space8"
+      gap="space16"
       py="space40"
       md={{ py: "space80" }}
       alignItems="center"
+      sideBorders={sideBorders}
+      bottomBorder={bottomBorder}
+      decorator={decorator}
+      px="space20"
     >
-      <Box
-        animation="topSlideIn 0.6s ease-out"
-        animationDelay="0.1s"
-        opacity={0}
-        animationFillMode="forwards"
-      >
-        {eyebrow}
-      </Box>
+      <Box>{eyebrow}</Box>
       <Flex flexDirection="column" gap="space24" alignItems="center">
-        <Text as="h1" variant="title5xl" animation="topSlideIn 0.6s ease-out" align="center">
+        <Text as="h1" variant="title5xl" align="center">
           {title}
         </Text>
         <Text
-          maxWidth="580px"
-          opacity={0}
-          animation="topSlideIn 0.6s ease-out"
-          animationDelay="0.3s"
-          animationFillMode="forwards"
+          maxWidth="680px"
           color="fg.neutral.muted"
           variant="bodyL"
           align="center"
@@ -46,15 +48,7 @@ export const Hero = ({ title, description, actions, eyebrow }: Props): ReactElem
           {description}
         </Text>
         {actions ? (
-          <Flex
-            justifyContent="center"
-            gap="space12"
-            width="100%"
-            opacity={0}
-            animation="topSlideIn 0.6s ease-out"
-            animationDelay="0.6s"
-            animationFillMode="forwards"
-          >
+          <Flex justifyContent="center" gap="space12" width="100%" flexWrap="wrap">
             {actions}
           </Flex>
         ) : null}

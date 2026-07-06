@@ -1,7 +1,8 @@
 // cspell:words PITR
 
 import { Flex } from "@flows/styled-system/jsx";
-import { bulletCss, headingCss, paragraphCss, Section, ulCss } from "components/ui";
+import { LegalLayout } from "components/legal-layout";
+import { bulletCss, headingCss, paragraphCss, ulCss } from "components/ui/typography-css";
 import { getWebMetadata } from "lib/get-metadata";
 import { links } from "lib/links";
 import { type Metadata } from "next";
@@ -18,7 +19,7 @@ export const metadata: Metadata = getWebMetadata({
 
 const Page = (): ReactElement => {
   return (
-    <Section maxWidth="580px!" py="space40" md={{ py: "space80" }}>
+    <LegalLayout>
       <Flex mb="space40" flexDirection="column" gap="space12" maxW="800px">
         <Text align="center" as="h1" variant="title4xl">
           Flows security overview
@@ -274,7 +275,7 @@ const Page = (): ReactElement => {
       <Text className={paragraphCss} variant="bodyM">
         Last updated: May 1, 2026
       </Text>
-    </Section>
+    </LegalLayout>
   );
 };
 

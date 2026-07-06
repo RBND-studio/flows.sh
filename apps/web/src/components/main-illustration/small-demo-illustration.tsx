@@ -1,10 +1,10 @@
 "use client";
 
 import { Box, Flex } from "@flows/styled-system/jsx";
-import { PlaceholderApplication } from "components/ui";
 import { type ReactNode, useEffect, useState } from "react";
 
 import { demoTabsData } from "./demo-tabs-data";
+import { PlaceholderApplication } from "components/ui/placeholder-application/placeholder-application";
 
 export const SmallDemoIllustration = (): ReactNode => {
   const [tab, setTab] = useState(0);
@@ -21,10 +21,6 @@ export const SmallDemoIllustration = (): ReactNode => {
   return (
     <Box
       aria-hidden="true"
-      opacity={0}
-      animation="bottomSlideIn 0.6s ease-out"
-      animationDelay="0.3s"
-      animationFillMode="forwards"
       flex={{ base: "unset", md: 1 }}
       height={380}
       p="space8"
@@ -47,7 +43,7 @@ export const SmallDemoIllustration = (): ReactNode => {
         <Box height="100%" overflow="hidden">
           <PlaceholderApplication
             small
-            insideSlot={tab === 0 || tab === 2 ? demoTabsData[tab].element : undefined}
+            insideSlot={tab === 0 || tab === 2 || tab === 5 ? demoTabsData[tab].element : undefined}
             sidebarTooltipSlot={tab === 1 ? demoTabsData[tab].element : undefined}
             bannerSlot={tab === 3 ? demoTabsData[tab].element : undefined}
             cardSlot={tab === 4 ? demoTabsData[tab].element : undefined}
@@ -56,11 +52,7 @@ export const SmallDemoIllustration = (): ReactNode => {
       </Flex>
       <Box
         aria-hidden="true"
-        animation="fadeIn 0.6s ease-in-out"
-        animationDelay="0.7s"
-        animationFillMode="forwards"
         position="absolute"
-        opacity={0}
         background="#067EFD"
         width="70%"
         top="0"

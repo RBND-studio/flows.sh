@@ -1,6 +1,6 @@
 import { css } from "@flows/styled-system/css";
-import { BlogPostPreview } from "components/blog";
-import { Section } from "components/ui";
+import { BlogPostPreview } from "components/blog/blog-post-preview";
+import { Section } from "components/ui/section";
 import { getWebMetadata } from "lib/get-metadata";
 import { importAllBlogPosts } from "lib/mdx";
 import type { Metadata } from "next";
@@ -18,21 +18,24 @@ export default async function BlogPage(): Promise<ReactElement> {
 
   return (
     <>
-      <Section>
-        <Text as="h1" variant="title4xl" mt="space40" mb="space40" md={{ mt: "space80" }}>
+      <Section
+        sideBorders
+        pt={{ base: "space40", md: "space80" }}
+        pb={{ base: "space32", md: "space64" }}
+        px={{ base: "space24", md: "space40" }}
+        bottomBorder
+        decorator="vertical"
+      >
+        <Text as="h1" variant="title4xl">
           Blog
         </Text>
       </Section>
-      <Section>
+      <Section p={{ base: "space8", md: "space40" }} sideBorders bottomBorder>
         <ul
           className={css({
             display: "grid",
             gridTemplateColumns: { base: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)" },
             gap: "space32",
-            mb: "space40",
-            md: {
-              mb: "space80",
-            },
           })}
         >
           {allPosts.map((post) => (

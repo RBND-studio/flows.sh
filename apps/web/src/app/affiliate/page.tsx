@@ -1,5 +1,5 @@
 import { css } from "@flows/styled-system/css";
-import { Hero, MediumDemoIllustration } from "components";
+
 import { CtaBanner } from "components/cta-banner";
 import { getWebMetadata } from "lib/get-metadata";
 import { links } from "lib/links";
@@ -9,6 +9,8 @@ import { Button, Text } from "ui";
 
 import { AffiliateFaq } from "./affiliate-faq";
 import { AffiliateStepsSection } from "./affiliate-steps-section";
+import { Hero } from "components/hero/hero";
+import { BigDemoIllustration } from "components/main-illustration/big-demo-illustration";
 
 export const metadata: Metadata = getWebMetadata({
   title: "Affiliate",
@@ -35,7 +37,7 @@ export default function AffiliatePage(): ReactNode {
           </Button>
         }
       />
-      <MediumDemoIllustration />
+      <BigDemoIllustration />
       <AffiliateStepsSection />
       <AffiliateFaq />
       <CtaBanner
@@ -45,6 +47,7 @@ export default function AffiliatePage(): ReactNode {
           <Button
             asChild
             size="large"
+            variant="secondary"
             className={css({
               shadow: "neutralFocus",
             })}

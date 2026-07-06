@@ -2,8 +2,10 @@ import { cva, cx } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { type ReactNode } from "react";
 
+export type FancyIconColors = "blue" | "red" | "green" | "purple" | "dark-teal" | "gray";
+
 type FancyIconProps = {
-  color?: "blue" | "red" | "green" | "purple";
+  color?: FancyIconColors;
   children: ReactNode;
   className?: string;
 };
@@ -50,6 +52,8 @@ const iconColor = cva({
       red: { backgroundColor: "fg.danger" },
       green: { backgroundColor: "dataViz.green.fg" },
       purple: { backgroundColor: "dataViz.purple.fg" },
+      "dark-teal": { backgroundColor: "dataViz.darkTeal.fg" },
+      gray: { backgroundColor: "fg.neutral.subtle" },
     },
   },
 });

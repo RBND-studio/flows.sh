@@ -15,6 +15,7 @@ export const links = (domain = "flows.sh") =>
     status: `https://status.flows.sh`,
     youtube: `https://www.youtube.com/@flows-sh`,
     slack: `https://flows.sh/join-slack`,
+    app: `https://app.${domain}`,
     signUp: `https://app.${domain}/signup`,
     logIn: `https://app.${domain}/login`,
     nextJsDemo: `https://nextjs.flows.sh`,
@@ -42,6 +43,8 @@ export const links = (domain = "flows.sh") =>
       tanstackTemplate:
         "https://github.com/RBND-studio/flows-sdk/tree/main/examples/react/tanstack",
     },
+    organizationDetail: (params: { organizationId: string }) =>
+      `https://app.${domain}/org/${params.organizationId}`,
     duplicateExample: (params: { workflowId: string }) =>
       `https://app.${domain}/duplicate-example/${params.workflowId}`,
     examples: {

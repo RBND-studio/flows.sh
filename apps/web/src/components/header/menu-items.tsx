@@ -1,9 +1,12 @@
 import {
   Addon16,
   Banner16,
+  Block16,
+  Book16,
   Checklist16,
   Component16,
   Graph16,
+  Log16,
   Slot16,
   Survey16,
   Tour16,
@@ -13,6 +16,7 @@ import { links } from "lib/links";
 import { type Route } from "next";
 import { type FC, type SVGProps } from "react";
 import { routes } from "routes";
+import type { FancyIconColors } from "ui";
 
 export type MenuItemProps = {
   title: string;
@@ -21,7 +25,11 @@ export type MenuItemProps = {
   subItems?: {
     title: string;
     href: Route;
-    icon: FC<SVGProps<SVGSVGElement>>;
+    icon?: FC<SVGProps<SVGSVGElement>>;
+    fancyIcon?: {
+      color: FancyIconColors;
+      icon: React.FC<SVGProps<SVGSVGElement>>;
+    };
     description: string;
   }[];
 };
@@ -31,28 +39,49 @@ export const menuItems: MenuItemProps[] = [
     title: "Product",
     subItems: [
       {
+        title: "Workflows",
+        href: routes.features.workflows,
+        description: "Automate what happens at every step of the journey",
+        fancyIcon: {
+          color: "blue",
+          icon: Block16,
+        },
+      },
+      {
         title: "Product tours",
         href: routes.features.productTours,
-        icon: Tour16,
         description: "Guide users to success step-by-step",
+        fancyIcon: {
+          color: "purple",
+          icon: Tour16,
+        },
       },
       {
         title: "Surveys",
         href: routes.features.surveys,
-        icon: Survey16,
         description: "Collect user feedback that drives decisions",
+        fancyIcon: {
+          color: "dark-teal",
+          icon: Survey16,
+        },
       },
       {
         title: "Embeddable components",
         href: routes.features.embeddableComponents,
-        icon: Slot16,
         description: "Insert interactive elements inside your app",
+        fancyIcon: {
+          color: "gray",
+          icon: Slot16,
+        },
       },
       {
         title: "Custom UI components",
         href: routes.features.customComponents,
-        icon: Component16,
         description: "Build custom components to create a native experience.",
+        fancyIcon: {
+          color: "gray",
+          icon: Component16,
+        },
       },
     ],
   },
@@ -92,21 +121,37 @@ export const menuItems: MenuItemProps[] = [
     ],
   },
   {
-    title: "Examples",
-    href: routes.examples,
+    title: "Resources",
+    subItems: [
+      {
+        title: "Docs",
+        href: links.docs.home,
+        icon: Book16,
+        description: "Find guides, API references, and support",
+      },
+      {
+        title: "Examples",
+        href: routes.examples,
+        icon: Block16,
+        description: "See what you can build with Flows",
+      },
+      {
+        title: "Blog",
+        href: routes.blog,
+        icon: Survey16,
+        description: "Read the latest news and insights from Flows",
+      },
+      {
+        title: "Changelog",
+        href: routes.changelog,
+        icon: Log16,
+        description: "See the latest updates and improvements to Flows",
+      },
+    ],
   },
-  // TODO: bring this back when redesign of header and footer is done
-  // {
-  //   title: "Blog",
-  //   href: routes.blog,
-  // },
   {
-    title: "Docs",
-    href: links.docs.home,
-  },
-  {
-    title: "Changelog",
-    href: routes.changelog,
+    title: "Contact",
+    href: routes.contact,
   },
   {
     title: "Pricing",

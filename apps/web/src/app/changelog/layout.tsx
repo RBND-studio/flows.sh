@@ -1,5 +1,5 @@
 import { css } from "@flows/styled-system/css";
-import { Flex } from "@flows/styled-system/jsx";
+import { Box, Flex } from "@flows/styled-system/jsx";
 import { Section } from "components/ui/section";
 import { getWebMetadata } from "lib/get-metadata";
 import { links } from "lib/links";
@@ -18,36 +18,46 @@ export const metadata: Metadata = getWebMetadata({
 
 export default function ChangelogLayout({ children }: Props): JSX.Element {
   return (
-    <Section maxWidth="820px!" my="space40" md={{ my: "space80" }} marginX="auto">
-      <Flex
-        flexDirection="column"
-        gap="space4"
-        borderBottomWidth={1}
-        borderBottomColor="border.neutral"
-        pb="space64"
-        mdDown={{ pb: "space40" }}
-        alignItems="flex-start"
+    <Section sideBorders bottomBorder>
+      <Box
+        maxWidth={900}
+        py={{ base: "space40", md: "space80" }}
+        mx="auto"
+        borderLeftWidth={{ base: 0, md: 1 }}
+        borderRightWidth={{ base: 0, md: 1 }}
+        borderColor="border.neutral"
       >
-        <Text as="h1" variant="title4xl">
-          Changelog
-        </Text>
-        <Text color="fg.neutral.muted" variant="bodyM">
-          New updates and improvements to Flows.
-        </Text>
-        <a
-          className={css({
-            textStyle: "bodyM",
-            color: "fg.primary",
-            mt: "space8",
-          })}
-          href={links.twitter}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Flex
+          flexDirection="column"
+          gap="space4"
+          borderBottomWidth={1}
+          borderBottomColor="border.neutral"
+          pb="space64"
+          mdDown={{ pb: "space40" }}
+          alignItems="flex-start"
+          px={{ base: "space16", md: "space40" }}
         >
-          Follow us on Twitter
-        </a>
-      </Flex>
-      {children}
+          <Text as="h1" variant="title4xl">
+            Changelog
+          </Text>
+          <Text color="fg.neutral.muted" variant="bodyM">
+            New updates and improvements to Flows.
+          </Text>
+          <a
+            className={css({
+              textStyle: "bodyM",
+              color: "fg.primary",
+              mt: "space8",
+            })}
+            href={links.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Follow us on X (Twitter)
+          </a>
+        </Flex>
+        {children}
+      </Box>
     </Section>
   );
 }

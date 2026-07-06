@@ -44,7 +44,7 @@ export const nextjsUserOnboardingContent: TechnologyContentType = {
           walks you through the setup process with code examples.
         </>
       ),
-      schemaContent:
+      schemaText:
         "Add FlowsProvider to your root layout and pass user identity after authentication. Flows evaluates targeting rules client-side and triggers the right onboarding workflow automatically, with no custom logic needed in your pages or components. The Next.js installation guide walks you through the setup process with code examples.",
     },
     {
@@ -61,7 +61,7 @@ export const nextjsUserOnboardingContent: TechnologyContentType = {
           navigation without full page reloads.
         </>
       ),
-      schemaContent:
+      schemaText:
         "No. You can pass Flows a Next.js Link component to use for any onboarding steps that link to other pages in your app. This ensures smooth client-side navigation without full page reloads.",
     },
     {
@@ -83,7 +83,7 @@ export const nextjsUserOnboardingContent: TechnologyContentType = {
           .
         </>
       ),
-      schemaContent:
+      schemaText:
         "Pass user metadata (like createdAt or a hasCompletedOnboarding flag) to the Flows SDK. Target new users with onboarding workflows and exclude returning users, all configured in the Flows dashboard, not in your codebase. See the guide on targeting only new users.",
     },
     {

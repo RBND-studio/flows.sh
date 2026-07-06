@@ -43,7 +43,7 @@ export const vueUserOnboardingContent: TechnologyContentType = {
           walks you through the setup process with code examples.
         </>
       ),
-      schemaContent:
+      schemaText:
         "Create the Flows plugin and enable it with app.use(flowsPlugin) or defineNuxtPlugin() and pass user identity. Use built-in components or pass your own components without needing to manage user state. The Vue installation guide walks you through the setup process with code examples.",
     },
     {
@@ -70,7 +70,7 @@ export const vueUserOnboardingContent: TechnologyContentType = {
           .
         </>
       ),
-      schemaContent:
+      schemaText:
         "Pass user properties when identifying users, such as isNewUser or signup date. Flows evaluates these properties locally against targeting rules defined in the dashboard, so returning users are automatically excluded from onboarding flows. See the guide on targeting only new users.",
     },
     {

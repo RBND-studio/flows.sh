@@ -1,6 +1,6 @@
 services:
   kafka:
-    image: apache/kafka:4.3.0
+    image: apache/kafka:4.3.1
     restart: unless-stopped
     mem_limit: 1g
     ports:
@@ -33,7 +33,7 @@ services:
       KAFKA_LOG_DIRS: "/tmp/kraft-combined-logs"
 
   kafka-init:
-    image: apache/kafka:4.3.0
+    image: apache/kafka:4.3.1
     depends_on:
       - kafka
     restart: "no"

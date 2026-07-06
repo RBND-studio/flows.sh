@@ -1,6 +1,6 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
-import { Section } from "components/ui";
+import { Section } from "components/ui/section";
 import { Check16, Close16 } from "icons";
 import { type ReactNode } from "react";
 import { Icon, Logo, Text } from "ui";

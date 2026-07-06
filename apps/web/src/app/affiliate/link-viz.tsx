@@ -11,6 +11,7 @@ export const LinkViz = (): ReactNode => {
       mx="auto"
       overflow="hidden"
       role="img"
+      aria-label="A visual representation of the affiliate link sharing process, including a link with a copy button and a share icon."
       w="100%"
       pt="space24"
       bg="pane.bg.elevated"

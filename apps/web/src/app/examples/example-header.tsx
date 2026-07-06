@@ -1,6 +1,6 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
-import { Section } from "components/ui";
+import { Section } from "components/ui/section";
 import { ArrowLeft16 } from "icons";
 import { links } from "lib/links";
 import Link from "next/link";
@@ -16,7 +16,14 @@ type Props = {
 
 export const ExampleHeader = ({ title, description, exampleWorkflowId }: Props): ReactNode => {
   return (
-    <Section pt="space40" pb="space32" md={{ pt: "space80", pb: "space64", maxWidth: "1024px" }}>
+    <Section
+      sideBorders
+      pt={{ base: "space40", md: "space80" }}
+      pb={{ base: "space32", md: "space64" }}
+      px={{ base: "space24", md: "space40" }}
+      bottomBorder
+      decorator="vertical"
+    >
       <Link
         href={routes.examples}
         className={css({

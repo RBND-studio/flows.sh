@@ -2,7 +2,7 @@
 
 import { cva } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
-import { useFirstRender } from "hooks";
+import { useFirstRender } from "hooks/use-first-render";
 import { Moon16, Sun16, System16 } from "icons";
 import { useTheme } from "next-themes";
 import { type FC, type ReactNode } from "react";
@@ -29,7 +29,6 @@ export const ThemeSwitch: FC = () => {
       borderRadius="radius6"
       p="space2"
       gap="space6"
-      mb="space16"
     >
       {options.map((option) => (
         <button

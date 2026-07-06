@@ -1,11 +1,12 @@
 import { Flex } from "@flows/styled-system/jsx";
-import { Section, SectionIntro } from "components/ui";
 import { type ReactNode } from "react";
 import { Text } from "ui";
 
 import { ApplyViz } from "./apply-viz";
 import { EarnViz } from "./earn-viz";
 import { LinkViz } from "./link-viz";
+import { SectionIntro } from "components/ui/section-intro";
+import { Section } from "components/ui/section";
 
 const Card = ({
   number,
@@ -79,9 +80,18 @@ export const AffiliateStepsSection = (): ReactNode => {
       <SectionIntro
         title="Start earning in just 3 easy steps"
         description="Join our affiliate program and start earning money by referring customers to Flows."
+        sideBorders
+        bottomBorder
+        decorator="vertical"
       />
-      <Section>
-        <Flex gap="space24" flexDirection={{ base: "column", md: "row" }}>
+      <Section
+        sideBorders
+        bottomBorder
+        decorator="split"
+        p={{ base: "space8", md: "space40" }}
+        sideDots
+      >
+        <Flex gap="space16" flexDirection={{ base: "column", md: "row" }}>
           {steps.map((step) => (
             <Card
               viz={step.viz}

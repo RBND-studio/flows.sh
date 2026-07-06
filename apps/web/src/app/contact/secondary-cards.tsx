@@ -1,6 +1,6 @@
 import { css } from "@flows/styled-system/css";
 import { Flex, Grid } from "@flows/styled-system/jsx";
-import { Section } from "components/ui";
+import { Section } from "components/ui/section";
 import { Email16, ExternalLink16 } from "icons";
 import { links } from "lib/links";
 import Link from "next/link";
@@ -79,7 +79,10 @@ const cards = [
 export const SecondaryCardsSection = (): ReactNode => {
   return (
     <Section
-      mb="space120"
+      sideBorders
+      bottomBorder
+      decorator="split"
+      p={{ base: "space8", md: "space40" }}
       outerClassName={css({
         borderBottomWidth: "1px",
         borderBottomColor: "border.neutral.muted",
@@ -90,10 +93,6 @@ export const SecondaryCardsSection = (): ReactNode => {
         gridTemplateColumns={{
           base: "1fr",
           sm: "repeat(2, 1fr)",
-        }}
-        mx={{
-          base: 0,
-          md: "space64",
         }}
       >
         {cards.map((card) => (

@@ -5,7 +5,7 @@
     "plugins": [{ "name": "next" }],
     "paths": {
       "@flows/styled-system/*": ["./pandacss-generated/*"],
-      "fumadocs-mdx:collections/*": ["./.source/*"],
+      "collections/*": ["./.source/*"],
       "*": ["./src/*"]
     }
   },

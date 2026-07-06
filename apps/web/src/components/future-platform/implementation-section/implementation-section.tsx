@@ -1,5 +1,4 @@
 import { Box } from "@flows/styled-system/jsx";
-import { Section } from "components/ui";
 import type { JSX } from "react";
 import { Text } from "ui";
 
@@ -7,6 +6,7 @@ import { ImplementationCodeExample } from "./implementation-code-example";
 import { ImplementationExample } from "./implementation-example";
 import { ImplementationFeatures } from "./implementation-features";
 import { ImplementationTemplateCards } from "./implementation-template-cards";
+import { Section } from "components/ui/section";
 
 export const ImplementationSection = (): JSX.Element => {
   return (

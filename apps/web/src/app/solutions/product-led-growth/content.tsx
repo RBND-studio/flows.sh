@@ -6,13 +6,12 @@ import { routes } from "routes";
 import { FREE_LIMIT, pricingTiers } from "shared";
 import { Button, Text } from "ui";
 
-import {
-  CustomUIComponentsIllustration,
-  EmbeddableComponentsIllustrations,
-  PlaceholderApplication,
-  PlaceholderTooltip,
-} from "../../../components/ui";
 import { WorkflowsExample } from "../workflows-example";
+import type { Question } from "components/faq-section";
+import { CustomUIComponentsIllustration } from "components/ui/illustrations/custom-ui-components-illustration";
+import { EmbeddableComponentsIllustrations } from "components/ui/illustrations/embeddable-components-illustration";
+import { PlaceholderApplication } from "components/ui/placeholder-application/placeholder-application";
+import { PlaceholderTooltip } from "components/ui/placeholder-application/placeholder-tooltip";
 
 export const riverFeatures = [
   {
@@ -111,23 +110,19 @@ export const riverFeatures = [
     title: "Embeddable components",
     description:
       "Embed UI elements directly into your application without needing to update code or re-deploying.",
-    visual: <EmbeddableComponentsIllustrations />,
+    visual: (
+      <Box p="space16">
+        <EmbeddableComponentsIllustrations />
+      </Box>
+    ),
   },
 ];
 
-export const questions = [
+export const questions: Question[] = [
   {
     title: "What is Flows and how can it help with product-led growth?",
-    content: (
-      <>
-        Flows is a product adoption platform that makes it easy to create in-app experiences for any
-        stage of the user lifecycle. With Flows, you can launch onboarding tours, announcements, and
-        personalized campaigns to guide users toward value and encourage upgrades. Our visual editor
-        lets marketing and product teams build and update flows without code, while developers can
-        add custom components for a native feel. By streamlining these experiences, Flows helps turn
-        your product into a powerful growth engine.
-      </>
-    ),
+    content:
+      "Flows is a product adoption platform that makes it easy to create in-app experiences for any stage of the user lifecycle. With Flows, you can launch onboarding tours, announcements, and personalized campaigns to guide users toward value and encourage upgrades. Our visual editor lets marketing and product teams build and update flows without code, while developers can add custom components for a native feel. By streamlining these experiences, Flows helps turn your product into a powerful growth engine.",
   },
   {
     title: "Do I need to know how to code?",
@@ -143,6 +138,7 @@ export const questions = [
         custom UI components for your workflows.
       </>
     ),
+    schemaText: `You don’t need to know how to code to start creating user onboarding flows with Flows. Once you integrate our SDK, you can use our visual editor to create and manage workflows without writing any code. However, Flows is a “Headless product adoption platform”, so having a front-end developer on your team can be beneficial to fully leverage its customization capabilities by creating custom UI components for your workflows.`,
   },
   {
     title: "How much customization is possible?",
@@ -159,6 +155,7 @@ export const questions = [
         our built-in components to get started quickly.
       </>
     ),
+    schemaText: `Flows are designed to be a “Headless product adoption platform“. This means that you can create your own UI components with custom styling and logic to create a native experience for your users. You can also use our built-in components to get started quickly.`,
   },
   {
     title: "How much does Flows cost?",
@@ -173,5 +170,6 @@ export const questions = [
         .
       </>
     ),
+    schemaText: `Flows is free for up to ${FREE_LIMIT} monthly tracked users (MTUs). After that, the pricing starts at $${pricingTiers.tier1.price} per MTU. Our pricing is volume based, so the more active users you have, the less you pay per user. For more information, check out our pricing page.`,
   },
 ];

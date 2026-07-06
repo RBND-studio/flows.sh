@@ -1,10 +1,11 @@
-import { Section, SectionIntro } from "components/ui";
 import { type ReactNode } from "react";
 import { routes } from "routes";
 
 import { examplesContent } from "./content";
 import { ExampleCard } from "./example-card";
 import { type ContentType } from "./types";
+import { Section } from "components/ui/section";
+import { SectionIntro } from "components/ui/section-intro";
 
 type Props = {
   slug: string;
@@ -37,13 +38,15 @@ export const Suggestions = ({ slug }: Props): ReactNode => {
 
   return (
     <>
-      <SectionIntro title="Explore more examples" />
+      <SectionIntro title="Explore more examples" sideBorders bottomBorder decorator="vertical" />
       <Section
         display="grid"
         gridTemplateColumns="1fr"
-        md={{ gridTemplateColumns: "1fr 1fr 1fr", maxWidth: "1056px" }}
+        md={{ gridTemplateColumns: "1fr 1fr 1fr" }}
         gap="space12"
-        mb="space40"
+        sideBorders
+        bottomBorder
+        p={{ base: "space8", md: "space40" }}
       >
         {suggestionItems.map((item) => (
           <ExampleCard headingLevel="h3" key={item.title} {...item} />

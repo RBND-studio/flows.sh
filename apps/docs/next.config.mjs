@@ -42,6 +42,8 @@ const nextConfig = {
   output: "standalone",
   outputFileTracingRoot: path.join(path.resolve(), "../../"),
   experimental: {
+    // Currently turbopack doesn't support this feature, that's why we're doing production builds with webpack
+    // More info: https://github.com/vercel/next.js/issues/75148
     optimizePackageImports: ["ui", "icons", "shared"],
   },
   basePath: "/docs",
