@@ -1,0 +1,30 @@
+---
+title: New homepage
+date: "2026-07-07"
+description: A redesigned flows.sh homepage with live interactive demos, plus an MTU chart, a workflow users table, and several SDK and performance improvements.
+---
+
+<Image
+  src="/images/changelog/2026-07-07-homepage.png"
+  alt="Screenshot of the New Flows homepage"
+  width={1800}
+  height={1040}
+/>
+
+flows.sh has a new homepage that shows off tours, surveys, workflows, and the endless possibilities Flows brings. Let us know what you think!
+
+## Other improvements
+
+- The organization analytics dashboard now includes a monthly tracked users (MTU) chart alongside existing charts, and loads faster for organizations with a lot of activity.
+- Workflows now have a users table so you can see exactly which users have gone through a given workflow and their status, with a CSV export.
+- Event processing throughput was increased, cutting the average event queue time in half.
+- Added [TanStack](/docs/sdk/frameworks/tanstack) and [React Router](/docs/sdk/frameworks/react-router) framework guides, a client-side navigation example for JS, and a new [Electron + React example](https://github.com/RBND-studio/flows-sdk/tree/main/examples/electron/electron-forge-react).
+
+## SDK
+
+- Closed blocks now persist in session storage, so a dismissed tour or survey stays dismissed for the rest of the session even if the network connection is lost.
+- Added a retry mechanism for event requests, so events aren't lost when a request fails.
+
+## Bug fixes
+
+- Fixed a bug where the SDK didn't return the most recent block state in responses.
