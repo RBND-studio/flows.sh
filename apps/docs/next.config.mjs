@@ -10,12 +10,13 @@ const cspHeader = `
     default-src 'self';
     script-src 'self' 'unsafe-inline'${dev ? " 'unsafe-eval'" : ""};
     style-src 'self' 'unsafe-inline';
-    img-src 'self' blob: data:;
+    img-src 'self' blob: data: https://img.youtube.com https://i.ytimg.com;
     font-src 'self';
     object-src 'none';
     base-uri 'self';
     form-action 'self';
     frame-ancestors 'none';
+    frame-src https://www.youtube-nocookie.com;
     upgrade-insecure-requests;
 `;
 

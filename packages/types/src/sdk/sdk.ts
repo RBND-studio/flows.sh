@@ -46,6 +46,7 @@ export type SDKBlockTourWait = {
 export type SDKTourBlock = {
   id: string;
   workflowId: string;
+  componentLibraryName?: string | null;
   key?: string | null;
   type: string;
   componentType?: string | null;
@@ -66,6 +67,7 @@ export type SDKBlock = {
   id: string;
   blockStateId?: string | null;
   workflowId: string;
+  componentLibraryName?: string | null;
   key?: string | null;
   type: string;
   componentType?: string | null;

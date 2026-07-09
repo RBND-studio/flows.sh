@@ -21,6 +21,7 @@
     "next": "16.2.7",
     "react": "19.2.7",
     "react-dom": "19.2.7",
+    "react-lite-youtube-embed": "^3.6.0",
     "shared": "workspace:*",
     "ui": "workspace:*",
     "zod": "4.4.3"

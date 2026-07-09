@@ -6,7 +6,7 @@ export const DocsImage = (props: ImageZoomProps): JSX.Element => {
   return (
     <ImageZoom
       className={css({
-        borderRadius: "radius6",
+        borderRadius: "radius8",
         borderWidth: "1px!",
         borderColor: "border.neutral!",
       })}
