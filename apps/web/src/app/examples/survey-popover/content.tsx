@@ -20,6 +20,7 @@ import workflowPng from "./workflow.png";
 export const surveyPopoverContent: ContentType = {
   slug: "survey-popover",
   title: "Survey Popover",
+  exampleWorkflowId: "f2b77e6f-2a56-40dd-9d3b-2e23aaf1ffd4",
   description:
     "Collect user feedback with a non-intrusive survey popover that floats in the corner of the screen.",
   images: {

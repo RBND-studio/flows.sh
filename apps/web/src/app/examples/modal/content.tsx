@@ -20,6 +20,7 @@ import workflowPng from "./workflow.png";
 export const modalContent: ContentType = {
   slug: "modal",
   title: "Modal",
+  exampleWorkflowId: "73e81665-d567-47e9-a519-d3bb0672e74f",
   images: {
     light: lightPng,
     dark: darkPng,

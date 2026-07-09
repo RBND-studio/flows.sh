@@ -18,6 +18,7 @@ type Props = {
    * @defaultValue 400
    */
   maxWidth?: (typeof contentCss.variantMap.maxWidth)[number];
+  zIndex?: number;
 };
 
 export const Dialog: FC<Props> = ({
@@ -27,6 +28,7 @@ export const Dialog: FC<Props> = ({
   trigger,
   children,
   maxWidth = 400,
+  zIndex,
 }) => {
   return (
     <RadixDialog.Root onOpenChange={onOpenChange} open={open}>
@@ -36,7 +38,7 @@ export const Dialog: FC<Props> = ({
           className={css({
             backgroundColor: "pane.bg.translucentOverlay",
             position: "fixed",
-            zIndex: 10,
+            zIndex: zIndex ?? 10,
             backdropFilter: "blur(4px)",
             top: 0,
             left: 0,
@@ -54,7 +56,7 @@ export const Dialog: FC<Props> = ({
         />
         <RadixDialog.Content
           onSubmit={(e) => e.stopPropagation()}
-          className={contentCss({ maxWidth })}
+          className={cx(contentCss({ maxWidth }), css({ zIndex: zIndex ?? undefined }))}
           aria-describedby={undefined}
           onOpenAutoFocus={onOpenAutoFocus}
         >

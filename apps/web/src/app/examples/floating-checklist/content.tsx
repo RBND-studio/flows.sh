@@ -24,6 +24,7 @@ import workflowPng from "./workflow.png";
 export const floatingChecklistContent: ContentType = {
   slug: "floating-checklist",
   title: "Floating checklist",
+  exampleWorkflowId: "201be2b3-f0ff-46e4-ad64-c57f58c22c85",
   images: {
     light: lightPng,
     dark: darkPng,

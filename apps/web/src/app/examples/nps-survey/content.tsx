@@ -22,6 +22,7 @@ import workflowPng from "./workflow.png";
 export const npsSurveyContent: ContentType = {
   slug: "nps-survey",
   title: "Net Promoter Score (NPS) survey",
+  exampleWorkflowId: "1d2a5be9-4c6d-48ad-a123-3808eb152f6d",
   description:
     "Collect Net Promoter Score feedback in your React app with a non-intrusive survey popover.",
   images: {

@@ -20,6 +20,7 @@ import workflowPng from "./workflow.png";
 export const hintContent: ContentType = {
   slug: "hint",
   title: "Hint",
+  exampleWorkflowId: "928e459f-aaf0-4a7a-8bb3-d7400d6ff45f",
   images: {
     light: lightPng,
     dark: darkPng,

@@ -7,6 +7,7 @@ import Link from "next/link";
 import { type ReactNode } from "react";
 import { routes } from "routes";
 import { Button, Icon, Text } from "ui";
+import { UseThisExampleDialog } from "./use-this-example-dialog";
 
 type Props = {
   title: string;
@@ -64,7 +65,7 @@ export const ExampleHeader = ({ title, description, exampleWorkflowId }: Props):
             {description}
           </Text>
         </Flex>
-        {exampleWorkflowId && (
+        {exampleWorkflowId ? (
           <Button asChild size="large">
             <a
               href={links.duplicateExample({ workflowId: exampleWorkflowId })}
@@ -74,6 +75,8 @@ export const ExampleHeader = ({ title, description, exampleWorkflowId }: Props):
               Use this example
             </a>
           </Button>
+        ) : (
+          <UseThisExampleDialog />
         )}
       </Flex>
     </Section>
