@@ -20,6 +20,7 @@ import workflowPng from "./workflow.png";
 export const tourContent: ContentType = {
   slug: "tour",
   title: "Tour",
+  exampleWorkflowId: "5a74c9f2-8f07-4d05-868b-4fa03d75b8c7",
   images: {
     light: lightPng,
     dark: darkPng,

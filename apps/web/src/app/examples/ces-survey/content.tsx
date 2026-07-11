@@ -22,6 +22,7 @@ import workflowPng from "./workflow.png";
 export const cesSurveyContent: ContentType = {
   slug: "ces-survey",
   title: "Customer Effort Score (CES) survey",
+  exampleWorkflowId: "e5814bec-3808-4b18-aadd-b51ed661d3a1",
   description:
     "Collect Customer Effort Score feedback in your React app with a non-intrusive survey popover.",
   images: {

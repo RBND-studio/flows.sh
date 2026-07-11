@@ -22,6 +22,7 @@ import workflowPng from "./workflow.png";
 export const pmfSurveyContent: ContentType = {
   slug: "pmf-survey",
   title: "Product-Market Fit (PMF) survey",
+  exampleWorkflowId: "ebc899d1-a367-4b23-9c65-4b7f83e98f10",
   description:
     "Measure product-market fit in your React app with a non-intrusive survey popover using the Sean Ellis method.",
   images: {

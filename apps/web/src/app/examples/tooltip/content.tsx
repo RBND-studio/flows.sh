@@ -20,6 +20,7 @@ import workflowPng from "./workflow.png";
 export const tooltipContent: ContentType = {
   slug: "tooltip",
   title: "Tooltip",
+  exampleWorkflowId: "a59f5a78-e3ec-4b8b-ba99-5c49f459f656",
   description: "Guide users through your app by anchoring contextual tooltips to UI elements",
   metaDescription:
     "Build a multi-step in-app tooltip tour with Flows. Point users to key features using the built-in Tooltip component - no custom UI required.",

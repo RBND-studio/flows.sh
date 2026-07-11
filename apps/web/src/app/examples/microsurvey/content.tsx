@@ -22,6 +22,7 @@ import workflowPng from "./workflow.png";
 export const microsurveyContent: ContentType = {
   slug: "microsurvey",
   title: "Microsurvey",
+  exampleWorkflowId: "43b6b8c3-6f83-44f0-a544-918e65d2f3af",
   description: "Capture quick in-app feedback with a microsurvey widget.",
   metaDescription:
     "See a live microsurvey example built with Flows. Add a 5-point emoji rating widget to any app and collect quick in-app feedback with a single click.",

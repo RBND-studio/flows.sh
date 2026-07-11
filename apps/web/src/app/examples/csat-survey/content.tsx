@@ -22,6 +22,7 @@ import workflowPng from "./workflow.png";
 export const csatSurveyContent: ContentType = {
   slug: "csat-survey",
   title: "Customer Satisfaction (CSAT) survey",
+  exampleWorkflowId: "fc6df566-62d4-4df7-aa2d-caa12ed42511",
   description:
     "Collect Customer Satisfaction Score feedback in your React app with a non-intrusive survey popover.",
   images: {
