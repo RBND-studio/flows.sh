@@ -33,18 +33,18 @@
   },
   "devDependencies": {
     "@flows/types": "workspace:*",
-    "@pandacss/dev": "^1.11.3",
+    "@pandacss/dev": "^1.11.4",
     "@storybook/addon-docs": "^10.3.4",
     "@storybook/addon-links": "^10.3.4",
     "@storybook/cli": "^10.3.4",
     "@storybook/react-vite": "^10.3.4",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
+    "@vitejs/plugin-react": "^6.0.3",
     "@vueless/storybook-dark-mode": "^10.0.7",
     "storybook": "^10.3.4",
     "tsconfig": "workspace:*",
     "typescript": "6.0.3",
-    "vite": "^8.0.16"
+    "vite": "^8.1.4"
   }
 }

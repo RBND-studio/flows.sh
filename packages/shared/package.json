@@ -7,7 +7,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "dayjs": "^1.11.19"
+    "dayjs": "^1.11.21"
   },
   "devDependencies": {
     "@flows/types": "workspace:*",
