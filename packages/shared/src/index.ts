@@ -1,3 +1,4 @@
+export * from "./basics-v2-components";
 export * from "./billing";
 export * from "./contacts";
 export * from "./create-params";

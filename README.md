@@ -22,6 +22,8 @@ pnpm be:dev
 pnpm app dev
 ```
 
+- Seed realistic local data for query benchmarking: see `packages/db/src/seed/README.md` (`pnpm db seed`).
+
 ## Lint URLS
 
 Docs:

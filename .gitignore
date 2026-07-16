@@ -48,3 +48,6 @@ pandacss-generated
 sitemap.xml
 sitemap-*.xml
 robots.txt
+
+# internal planning docs (top-level docs/ is mirrored to a public repo, see repo-clone.yml)
+docs/superpowers/
