@@ -4,6 +4,7 @@ import { css } from "@flows/styled-system/css";
 import { Beamer20, BeamerFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const beamerContent: AlternativeContentType = {
   slug: "beamer",
@@ -86,8 +87,7 @@ export const beamerContent: AlternativeContentType = {
       title: "Free plan",
       competitor: true,
       flows: true,
-      description:
-        "Both services offer a free plan. Flows includes 250 monthly tracked users with full adoption features.",
+      description: `Both services offer a free plan. Flows includes ${FREE_LIMIT} monthly tracked users with full adoption features.`,
     },
     {
       title: "Developer experience",
@@ -123,8 +123,7 @@ export const beamerContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Beamer's free plan is limited, and paid plans are geared toward the changelog use case. If you want full adoption tooling, you would need a separate product entirely.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

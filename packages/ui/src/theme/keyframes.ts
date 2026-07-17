@@ -162,4 +162,14 @@ export const keyframes: CssKeyframes = {
     "0%": { filter: "blur(16px)" },
     "100%": { filter: "blur(0px)" },
   },
+  textSwap: {
+    "0%": {
+      transform: "translateY(4px)",
+      opacity: 0,
+    },
+    "100%": {
+      transform: "translateY(0)",
+      opacity: 1,
+    },
+  },
 };

@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { OneFlow20, OneFlowFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const oneFlowContent: AlternativeContentType = {
   slug: "1flow",
@@ -77,8 +78,7 @@ export const oneFlowContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. 1Flow offers a 14-day free trial but does not have a free tier.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. 1Flow offers a 14-day free trial but does not have a free tier.`,
     },
     {
       title: "Transparent pricing",

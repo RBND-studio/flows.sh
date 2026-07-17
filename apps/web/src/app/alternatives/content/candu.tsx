@@ -4,6 +4,7 @@ import { css } from "@flows/styled-system/css";
 import { Candu20, CanduFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const canduContent: AlternativeContentType = {
   slug: "candu",
@@ -65,8 +66,7 @@ export const canduContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. Candu's entry plan starts at $199/month with no free tier.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. Candu's entry plan starts at $199/month with no free tier.`,
     },
     {
       title: "Localization",
@@ -99,8 +99,7 @@ export const canduContent: AlternativeContentType = {
       title: "Surveys",
       competitor: true,
       flows: true,
-      description:
-        "Both services support in-app surveys for collecting user feedback.",
+      description: "Both services support in-app surveys for collecting user feedback.",
     },
   ],
   otherDifferences: [
@@ -129,8 +128,7 @@ export const canduContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Candu starts at $199/month with no free plan. Higher tiers are not publicly listed and require contacting sales.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

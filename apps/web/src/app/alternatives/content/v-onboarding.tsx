@@ -3,6 +3,7 @@ import { Box } from "@flows/styled-system/jsx";
 import { VOnboarding20, VOnboardingFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const vOnboardingContent: AlternativeContentType = {
   slug: "v-onboarding",
@@ -113,8 +114,7 @@ export const vOnboardingContent: AlternativeContentType = {
       title: "Free plan",
       competitor: true,
       flows: true,
-      description:
-        "v-onboarding is free and open source. Flows offers a free plan with 250 monthly tracked users.",
+      description: `v-onboarding is free and open source. Flows offers a free plan with ${FREE_LIMIT} monthly tracked users.`,
     },
     {
       title: "Surveys",

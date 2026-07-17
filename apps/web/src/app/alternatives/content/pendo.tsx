@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { Pendo20, PendoFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const pendoContent: AlternativeContentType = {
   slug: "pendo",
@@ -65,8 +66,7 @@ export const pendoContent: AlternativeContentType = {
       title: "Free plan",
       competitor: "Limited (500 MAU)",
       flows: true,
-      description:
-        "Pendo offers a limited free plan capped at 500 MAU with basic features. Flows offers a free plan with 250 monthly tracked users and no feature restrictions.",
+      description: `Pendo offers a limited free plan capped at 500 MAU with basic features. Flows offers a free plan with ${FREE_LIMIT} monthly tracked users and no feature restrictions.`,
     },
     {
       title: "Localization",
@@ -129,8 +129,7 @@ export const pendoContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Pendo's paid plans require contacting sales and can run into tens of thousands of dollars per year. Pricing scales with MAUs and features are gated behind tiers.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { ReactJoyride20, ReactJoyrideFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const reactJoyrideContent: AlternativeContentType = {
   slug: "react-joyride",
@@ -108,8 +109,7 @@ export const reactJoyrideContent: AlternativeContentType = {
       title: "Free plan",
       competitor: true,
       flows: true,
-      description:
-        "React Joyride is free and open source. Flows offers a free plan with 250 monthly tracked users.",
+      description: `React Joyride is free and open source. Flows offers a free plan with ${FREE_LIMIT} monthly tracked users.`,
     },
     {
       title: "Surveys",

@@ -4,6 +4,7 @@ import { css } from "@flows/styled-system/css";
 import { Formbricks20, FormbricksFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const formbricksContent: AlternativeContentType = {
   slug: "formbricks",
@@ -86,8 +87,7 @@ export const formbricksContent: AlternativeContentType = {
       title: "Free plan",
       competitor: true,
       flows: true,
-      description:
-        "Formbricks is free to self-host and offers a cloud free tier. Flows includes a free plan with 250 monthly tracked users and full adoption features.",
+      description: `Formbricks is free to self-host and offers a cloud free tier. Flows includes a free plan with ${FREE_LIMIT} monthly tracked users and full adoption features.`,
     },
     {
       title: "Workflow logic",

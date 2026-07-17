@@ -15,6 +15,7 @@ type Props = {
   label?: ReactNode;
   labelClassName?: string;
   className?: string;
+  onPointerEnter?: () => void;
 };
 
 export const Switch: FC<Props> = ({ onChange, className, label, labelClassName, ...props }) => {

@@ -4,6 +4,7 @@ import { token } from "@flows/styled-system/tokens";
 export type DecoratorType =
   | "horizontal"
   | "corner"
+  | "corner-flipped"
   | "split"
   | "horizontal-flipped"
   | "horizontal-no-line"
@@ -19,6 +20,7 @@ export const Decorator = ({ className, type }: Props) => {
   const decoratorElement = {
     horizontal: Horizontal,
     corner: Corner,
+    "corner-flipped": CornerFlipped,
     split: Split,
     "horizontal-flipped": HorizontalFlipped,
     "horizontal-no-line": HorizontalNoLine,
@@ -65,6 +67,40 @@ const Corner = () => {
         transform="rotate(-90 0 17)"
         fill={token("colors.pane.bg.web")}
       />
+    </svg>
+  );
+};
+
+export const CornerFlipped = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+      <rect x="15" width="3" height="32" fill={token("colors.pane.bg.web")} />
+      <rect
+        x="32"
+        y="14"
+        width="3"
+        height="32"
+        transform="rotate(90 32 14)"
+        fill={token("colors.pane.bg.web")}
+      />
+      <rect
+        x="16.5"
+        y="15.5"
+        width="163"
+        height="82"
+        rx="11.5"
+        stroke={token("colors.border.neutral.dark")}
+      />
+      <rect
+        x="32"
+        y="14"
+        width="3"
+        height="4"
+        transform="rotate(90 32 14)"
+        fill={token("colors.pane.bg.web")}
+      />
+      <rect x="15" y="27" width="3" height="5" fill={token("colors.pane.bg.web")} />
+      <rect x="15" width="3" height="4" fill={token("colors.pane.bg.web")} />
     </svg>
   );
 };

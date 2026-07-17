@@ -1,6 +1,7 @@
 import { type AlternativeContentType } from "../types";
 import { ClickLearn20, ClickLearnFull20 } from "icons";
 import { css } from "@flows/styled-system/css";
+import { FREE_LIMIT } from "shared";
 
 export const clicklearnContent: AlternativeContentType = {
   slug: "clicklearn",
@@ -55,8 +56,7 @@ export const clicklearnContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. ClickLearn requires a demo and enterprise contract.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. ClickLearn requires a demo and enterprise contract.`,
     },
     {
       title: "Self-serve setup",
@@ -119,8 +119,7 @@ export const clicklearnContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "ClickLearn has a steep pricing model charging for users and editors, with multiple tiers and add-ons.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

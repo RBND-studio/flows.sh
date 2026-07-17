@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { Usetiful20, UsetifulFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const usetifulContent: AlternativeContentType = {
   slug: "usetiful",
@@ -49,8 +50,7 @@ export const usetifulContent: AlternativeContentType = {
       title: "Free plan",
       competitor: true,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users and all features included, no strings attached. Usetiful has a 500 MAU free plan with a watermark and locked features.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users and all features included, no strings attached. Usetiful has a 500 MAU free plan with a watermark and locked features.`,
     },
     {
       title: "Custom components",
@@ -84,8 +84,7 @@ export const usetifulContent: AlternativeContentType = {
       title: "Surveys",
       competitor: true,
       flows: true,
-      description:
-        "Both services support in-app surveys for collecting user feedback.",
+      description: "Both services support in-app surveys for collecting user feedback.",
     },
   ],
   otherDifferences: [
@@ -114,8 +113,7 @@ export const usetifulContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Usetiful’s pricing is tied to monthly active users and feature tiers, meaning you pay for every user in your product, even those who never engage with your onboarding flows. As your user base grows, costs can quickly become unpredictable. Their alternative model, based on the number of assists per month, can also discourage experimentation, making you think twice before launching new experiences.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

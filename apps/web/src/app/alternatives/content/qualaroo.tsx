@@ -4,6 +4,7 @@ import { css } from "@flows/styled-system/css";
 import { Qualaroo20, QualarooFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const qualarooContent: AlternativeContentType = {
   slug: "qualaroo",
@@ -79,8 +80,7 @@ export const qualarooContent: AlternativeContentType = {
       title: "Free plan",
       competitor: true,
       flows: true,
-      description:
-        "Qualaroo offers a free trial with 50 monthly responses. Flows includes a free plan with 250 monthly tracked users and full adoption features.",
+      description: `Qualaroo offers a free trial with 50 monthly responses. Flows includes a free plan with ${FREE_LIMIT} monthly tracked users and full adoption features.`,
     },
     {
       title: "Localization",
@@ -122,8 +122,7 @@ export const qualarooContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Qualaroo's pricing scales with survey responses and the features you need. Higher-tier plans unlock advanced targeting, integrations, and sentiment analysis. You are paying for a specialized feedback collection tool, not a platform that also covers onboarding and adoption.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

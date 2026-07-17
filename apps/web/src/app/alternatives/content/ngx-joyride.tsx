@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { NgxJoyride20, NgxJoyrideFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const ngxJoyrideContent: AlternativeContentType = {
   slug: "ngx-joyride",
@@ -106,8 +107,7 @@ export const ngxJoyrideContent: AlternativeContentType = {
       title: "Free plan",
       competitor: true,
       flows: true,
-      description:
-        "Ngx Joyride is free and open source. Flows offers a free plan with 250 monthly tracked users.",
+      description: `Ngx Joyride is free and open source. Flows offers a free plan with ${FREE_LIMIT} monthly tracked users.`,
     },
     {
       title: "Surveys",

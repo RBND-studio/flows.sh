@@ -50,7 +50,7 @@ export const HeroIllustrationGlow = (): ReactNode => {
   );
 };
 
-export const NewHeroIllustrationGlow = (): ReactNode => {
+export const NewHeroIllustrationGlow = ({ className }: { className?: string }): ReactNode => {
   // Box in a box to have better control over the opacity when theming
   return (
     <Box
@@ -76,6 +76,7 @@ export const NewHeroIllustrationGlow = (): ReactNode => {
         height={400}
         filter="blur(70px)"
         opacity={{ base: 0.1, _dark: 0.2 }}
+        className={className}
       />
       <Box
         aria-hidden="true"

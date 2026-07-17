@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { HelpHero20, HelpHeroFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const helpheroContent: AlternativeContentType = {
   slug: "helphero",
@@ -70,8 +71,7 @@ export const helpheroContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. HelpHero offers only a time-limited trial.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. HelpHero offers only a time-limited trial.`,
     },
     {
       title: "Localization",

@@ -2,6 +2,7 @@ import { Box, Flex } from "@flows/styled-system/jsx";
 import { Text } from "ui";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const angularUiTourContent: AlternativeContentType = {
   slug: "angular-ui-tour",
@@ -103,8 +104,7 @@ export const angularUiTourContent: AlternativeContentType = {
       title: "Free plan",
       competitor: true,
       flows: true,
-      description:
-        "Angular UI Tour is free and open source. Flows offers a free plan with 250 monthly tracked users.",
+      description: `Angular UI Tour is free and open source. Flows offers a free plan with ${FREE_LIMIT} monthly tracked users.`,
     },
     {
       title: "Surveys",

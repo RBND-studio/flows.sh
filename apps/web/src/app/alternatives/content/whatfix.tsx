@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { WhatFix20, WhatFixFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const whatfixContent: AlternativeContentType = {
   slug: "whatfix",
@@ -58,8 +59,7 @@ export const whatfixContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. Whatfix has no free plan or public pricing.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. Whatfix has no free plan or public pricing.`,
     },
     {
       title: "Self-serve setup",
@@ -128,8 +128,7 @@ export const whatfixContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Whatfix doesn't publish pricing and requires a demo to get started. Enterprise contracts can involve significant costs, often reaching six figures annually for larger deployments.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

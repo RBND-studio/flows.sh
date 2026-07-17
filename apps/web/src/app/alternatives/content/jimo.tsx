@@ -4,6 +4,7 @@ import { css } from "@flows/styled-system/css";
 import { Jimo20, JimoFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const jimoContent: AlternativeContentType = {
   slug: "jimo",
@@ -65,8 +66,7 @@ export const jimoContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. Jimo offers only a time-limited trial.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. Jimo offers only a time-limited trial.`,
     },
     {
       title: "Localization",

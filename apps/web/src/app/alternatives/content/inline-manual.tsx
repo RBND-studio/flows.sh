@@ -1,6 +1,7 @@
 import { type AlternativeContentType } from "../types";
 import { InlineManual20, InlineManualFull20 } from "icons";
 import { css } from "@flows/styled-system/css";
+import { FREE_LIMIT } from "shared";
 
 export const inlineManualContent: AlternativeContentType = {
   slug: "inline-manual",
@@ -88,8 +89,7 @@ export const inlineManualContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. Inline Manual requires a paid plan.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. Inline Manual requires a paid plan.`,
     },
     {
       title: "Transparent pricing",
@@ -132,8 +132,7 @@ export const inlineManualContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Inline Manual pricing for Standard Pro plan is public, but Enterprise plan pricing requires a conversation with sales. Costs can scale significantly as you grow.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. Start for free with 250 monthly tracked users and upgrade only when you need to.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. Start for free with ${FREE_LIMIT} monthly tracked users and upgrade only when you need to.`,
     },
   ],
   ctaBanner: {

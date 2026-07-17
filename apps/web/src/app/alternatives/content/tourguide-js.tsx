@@ -3,6 +3,7 @@ import { Text } from "ui";
 
 import { type AlternativeContentType } from "../types";
 import { TourGuideJS20 } from "icons";
+import { FREE_LIMIT } from "shared";
 
 export const tourguideJsContent: AlternativeContentType = {
   slug: "tourguide-js",
@@ -95,8 +96,7 @@ export const tourguideJsContent: AlternativeContentType = {
       title: "Free plan",
       competitor: true,
       flows: true,
-      description:
-        "TourGuide is free and open source. Flows offers a free plan with 250 monthly tracked users.",
+      description: `TourGuide is free and open source. Flows offers a free plan with ${FREE_LIMIT} monthly tracked users.`,
     },
     {
       title: "Surveys",

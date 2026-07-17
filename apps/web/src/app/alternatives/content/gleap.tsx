@@ -4,6 +4,7 @@ import { css } from "@flows/styled-system/css";
 import { Gleap20, GleapFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const gleapContent: AlternativeContentType = {
   slug: "gleap",
@@ -72,8 +73,7 @@ export const gleapContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. Gleap offers only a time-limited trial.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. Gleap offers only a time-limited trial.`,
     },
     {
       title: "Localization",
@@ -99,8 +99,7 @@ export const gleapContent: AlternativeContentType = {
       title: "Surveys",
       competitor: true,
       flows: true,
-      description:
-        "Both services support in-app surveys for collecting user feedback.",
+      description: "Both services support in-app surveys for collecting user feedback.",
     },
   ],
   otherDifferences: [

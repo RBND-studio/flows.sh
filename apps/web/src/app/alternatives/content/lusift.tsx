@@ -4,6 +4,7 @@ import { Box, Flex } from "@flows/styled-system/jsx";
 import { Text } from "ui";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const lusiftContent: AlternativeContentType = {
   slug: "lusift",
@@ -98,8 +99,7 @@ export const lusiftContent: AlternativeContentType = {
       title: "Free plan",
       competitor: true,
       flows: true,
-      description:
-        "Lusift is free and open source. Flows offers a free plan with 250 monthly tracked users.",
+      description: `Lusift is free and open source. Flows offers a free plan with ${FREE_LIMIT} monthly tracked users.`,
     },
     {
       title: "Surveys",

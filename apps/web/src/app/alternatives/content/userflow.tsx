@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { Userflow20, UserFlowFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const userflowContent: AlternativeContentType = {
   slug: "userflow",
@@ -65,8 +66,7 @@ export const userflowContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users no strings attached. Userflow only offers a time-limited trial.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users no strings attached. Userflow only offers a time-limited trial.`,
     },
     {
       title: "Localization",
@@ -129,8 +129,7 @@ export const userflowContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Userflow pricing increases quickly as your user base grows, teams add collaborators or need advanced features like localization.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

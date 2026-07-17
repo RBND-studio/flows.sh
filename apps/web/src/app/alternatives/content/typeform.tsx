@@ -4,6 +4,7 @@ import { css } from "@flows/styled-system/css";
 import { Typeform20, TypeformFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const typeformContent: AlternativeContentType = {
   slug: "typeform",
@@ -86,8 +87,7 @@ export const typeformContent: AlternativeContentType = {
       title: "Free plan",
       competitor: true,
       flows: true,
-      description:
-        "Both services offer a free plan. Typeform's free plan has a response limit; Flows includes 250 monthly tracked users with full adoption features.",
+      description: `Both services offer a free plan. Typeform's free plan has a response limit; Flows includes ${FREE_LIMIT} monthly tracked users with full adoption features.`,
     },
     {
       title: "Localization",

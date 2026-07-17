@@ -33,35 +33,35 @@ const Slider = ({
         borderRadius: "6px",
         position: "relative",
 
-        backgroundColor: "bg.neutral.subtle",
+        backgroundColor: "bg.neutral.strong",
       })}
     >
       <SliderPrimitive.Range
         className={css({
           position: "absolute",
           height: "100%",
-          backgroundColor: "bg.neutral.pureInverted",
+          backgroundColor: "fg.neutral",
         })}
       />
     </SliderPrimitive.Track>
     <SliderPrimitive.Thumb
       className={css({
         display: "block",
-        height: "28px",
-        width: "28px",
+        height: "24px",
+        width: "24px",
         borderRadius: "100%",
         borderWidth: "3px",
         borderStyle: "solid",
         borderColor: "border.neutral.white",
-        backgroundColor: "dataViz.blue.fg",
+        backgroundColor: "fg.neutral",
         shadow: "l1",
         outline: "none",
         fastEaseInOut: "background-color, box-shadow",
         _hover: {
-          shadow: "focus",
+          backgroundColor: "fg.neutral.muted",
         },
         _focusVisible: {
-          shadow: "focus",
+          backgroundColor: "fg.neutral.muted",
         },
         _disabled: {
           pointerEvents: "none",

@@ -1,6 +1,7 @@
 import { type AlternativeContentType } from "../types";
 import { UserTour20, UserTourFull20 } from "icons";
 import { css } from "@flows/styled-system/css";
+import { FREE_LIMIT } from "shared";
 
 export const usertourContent: AlternativeContentType = {
   slug: "usertour",
@@ -101,8 +102,7 @@ export const usertourContent: AlternativeContentType = {
       title: "Free plan",
       competitor: true,
       flows: true,
-      description:
-        "Usertour offers a free plan or a self-hosted option. Flows offers a free plan with 250 monthly tracked users.",
+      description: `Usertour offers a free plan or a self-hosted option. Flows offers a free plan with ${FREE_LIMIT} monthly tracked users.`,
     },
   ],
   otherDifferences: [
@@ -138,8 +138,7 @@ export const usertourContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Usertour's open-source edition is free to self-host, but self-hosting carries infrastructure costs and ongoing maintenance. A cloud plan is available with separate pricing.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. Start for free with 250 monthly tracked users and upgrade only when you need to.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. Start for free with ${FREE_LIMIT} monthly tracked users and upgrade only when you need to.`,
     },
   ],
   ctaBanner: {

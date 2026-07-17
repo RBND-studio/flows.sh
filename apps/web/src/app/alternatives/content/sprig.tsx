@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { Sprig20, SprigFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const sprigContent: AlternativeContentType = {
   slug: "sprig",
@@ -120,8 +121,7 @@ export const sprigContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Sprig bundles insights, replays, and surveys into one platform with enterprise pricing that requires a sales conversation. You pay for a full research suite even if you primarily need in-app surveys.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

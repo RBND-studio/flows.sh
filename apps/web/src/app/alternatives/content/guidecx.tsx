@@ -4,6 +4,7 @@ import { css } from "@flows/styled-system/css";
 import { GuideCX20, GuideCXFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const guidecxContent: AlternativeContentType = {
   slug: "guidecx",
@@ -72,8 +73,7 @@ export const guidecxContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. GUIDEcx requires contacting sales for pricing.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. GUIDEcx requires contacting sales for pricing.`,
     },
     {
       title: "Localization",
@@ -99,8 +99,7 @@ export const guidecxContent: AlternativeContentType = {
       title: "Surveys",
       competitor: true,
       flows: true,
-      description:
-        "Both services support in-app surveys for collecting user feedback.",
+      description: "Both services support in-app surveys for collecting user feedback.",
     },
   ],
   otherDifferences: [
@@ -129,8 +128,7 @@ export const guidecxContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "GUIDEcx is an enterprise-oriented platform targeted at B2B companies with complex client implementations. Pricing is not publicly listed and requires sales engagement.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

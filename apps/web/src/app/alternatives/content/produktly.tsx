@@ -4,6 +4,7 @@ import { css } from "@flows/styled-system/css";
 import { Produktly20, ProduktlyFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const produktlyContent: AlternativeContentType = {
   slug: "produktly",
@@ -65,8 +66,7 @@ export const produktlyContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. Produktly offers only a time-limited trial.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. Produktly offers only a time-limited trial.`,
     },
     {
       title: "Localization",
@@ -98,8 +98,7 @@ export const produktlyContent: AlternativeContentType = {
       title: "Surveys",
       competitor: true,
       flows: true,
-      description:
-        "Both services support in-app surveys for collecting user feedback.",
+      description: "Both services support in-app surveys for collecting user feedback.",
     },
   ],
   otherDifferences: [
@@ -126,8 +125,7 @@ export const produktlyContent: AlternativeContentType = {
     {
       title: "Pricing",
       competitorDescription: "Produktly pricing information is not widely published.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

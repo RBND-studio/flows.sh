@@ -1,8 +1,11 @@
 import type { StripeSubscriptionPriceTier, SubscriptionPriceTier } from "@flows/types";
 import dayjs from "dayjs";
 
-export const FREE_LIMIT = 250;
+export const FREE_LIMIT = 100;
 export const FREE_RENEWAL_DATE = dayjs().add(1, "month").set("date", 1).toDate();
+export const PRO_INCLUDED_MTU = 600;
+export const PRO_FLAT_FEE = 30;
+export const PRO_MAX_MTU = 50_000;
 
 export const pricingTiers = {
   free: {
@@ -34,6 +37,39 @@ export const pricingTiers = {
     flowsRange: [50001, Infinity],
   },
 };
+
+export const newPricingTiers = [
+  {
+    flat_amount_decimal: (PRO_FLAT_FEE * 100).toString(),
+    unit_amount_decimal: "0",
+    up_to: PRO_INCLUDED_MTU,
+  },
+  {
+    flat_amount_decimal: "0",
+    unit_amount_decimal: "5",
+    up_to: 1500,
+  },
+  {
+    flat_amount_decimal: "0",
+    unit_amount_decimal: "3.5",
+    up_to: 5000,
+  },
+  {
+    flat_amount_decimal: "0",
+    unit_amount_decimal: "2.5",
+    up_to: 15000,
+  },
+  {
+    flat_amount_decimal: "0",
+    unit_amount_decimal: "1.75",
+    up_to: PRO_MAX_MTU,
+  },
+  {
+    flat_amount_decimal: "0",
+    unit_amount_decimal: "1.25",
+    up_to: Infinity,
+  },
+] satisfies StripeSubscriptionPriceTier[];
 
 export function calculateEstimatedPrice({
   subscriptionPriceTiers,
