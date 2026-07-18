@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { UserGuiding20, UserGuidingFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const userguidingContent: AlternativeContentType = {
   slug: "userguiding",
@@ -63,8 +64,7 @@ export const userguidingContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. UserGuiding offers a free plan that doesn't include product adoption features.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. UserGuiding offers a free plan that doesn't include product adoption features.`,
     },
     {
       title: "Localization",
@@ -126,8 +126,7 @@ export const userguidingContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "UserGuiding pricing increases with MAU count and plan tier. Some features like branding removal require higher plans.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

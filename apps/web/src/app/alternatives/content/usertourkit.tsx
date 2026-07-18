@@ -5,6 +5,7 @@ import { Text } from "ui";
 import { UserTourKit20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const usertourkitContent: AlternativeContentType = {
   slug: "usertourkit",
@@ -90,8 +91,7 @@ export const usertourkitContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows includes a free plan with 250 monthly tracked users and full adoption features. UserTourKit requires a one-time $99 purchase for the Pro license.",
+      description: `Flows includes a free plan with ${FREE_LIMIT} monthly tracked users and full adoption features. UserTourKit requires a one-time $99 purchase for the Pro license.`,
     },
     {
       title: "Resilient against ad blockers",

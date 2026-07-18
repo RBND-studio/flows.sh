@@ -14,6 +14,7 @@ type Props = {
   linkText: string;
   feature: string;
   featureIcon: ReactNode;
+  hideBottom?: boolean;
 };
 
 export const FeatureSectionIntro = ({
@@ -23,11 +24,12 @@ export const FeatureSectionIntro = ({
   linkText,
   feature,
   featureIcon,
+  hideBottom,
 }: Props) => {
   return (
     <Section
-      bottomBorder
-      decorator="vertical"
+      bottomBorder={!hideBottom}
+      decorator={hideBottom ? undefined : "vertical"}
       py={{ base: "space40", md: "space80" }}
       px={{ base: "space24", md: "space40" }}
       sideBorders

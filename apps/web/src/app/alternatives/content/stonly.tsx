@@ -4,6 +4,7 @@ import { css } from "@flows/styled-system/css";
 import { Stonly20, StonlyFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const stonlyContent: AlternativeContentType = {
   slug: "stonly",
@@ -65,8 +66,7 @@ export const stonlyContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. Stonly requires contacting sales for pricing.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. Stonly requires contacting sales for pricing.`,
     },
     {
       title: "Localization",
@@ -99,8 +99,7 @@ export const stonlyContent: AlternativeContentType = {
       title: "Surveys",
       competitor: true,
       flows: true,
-      description:
-        "Both services support in-app surveys for collecting user feedback.",
+      description: "Both services support in-app surveys for collecting user feedback.",
     },
   ],
   otherDifferences: [
@@ -129,8 +128,7 @@ export const stonlyContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Stonly's pricing is not fully transparent and requires contacting sales for higher tiers.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

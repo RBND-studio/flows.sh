@@ -4,6 +4,7 @@ import { css } from "@flows/styled-system/css";
 import { InlineHelp20, InlineHelpFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const inlineHelpContent: AlternativeContentType = {
   slug: "inline-help",
@@ -72,8 +73,7 @@ export const inlineHelpContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. Inline Help offers only a time-limited trial.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. Inline Help offers only a time-limited trial.`,
     },
     {
       title: "Localization",

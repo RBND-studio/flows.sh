@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { CommandAi20, CommandAiFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const commandAiContent: AlternativeContentType = {
   slug: "command-ai",
@@ -63,8 +64,7 @@ export const commandAiContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. Command AI does not offer a public free tier.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. Command AI does not offer a public free tier.`,
     },
     {
       title: "Localization",

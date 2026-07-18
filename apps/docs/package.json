@@ -13,7 +13,7 @@
     "check-links": "docker run --network host -v ./linkcheck-skip-urls.txt:/linkcheck-skip-urls.txt --rm tennox/linkcheck $URL --skip-file linkcheck-skip-urls.txt"
   },
   "dependencies": {
-    "@flows/react-components": "^2.9.0",
+    "@flows/react-components": "^2.9.1",
     "fumadocs-core": "16.8.9",
     "fumadocs-mdx": "15.0.12",
     "fumadocs-ui": "16.8.9",
@@ -27,7 +27,7 @@
     "zod": "4.4.3"
   },
   "devDependencies": {
-    "@pandacss/dev": "^1.11.3",
+    "@pandacss/dev": "^1.11.4",
     "@types/mdx": "^2.0.13",
     "@types/node": "^24.10.4",
     "@types/react": "^19.2.7",

@@ -2,6 +2,7 @@ import { Box, Flex } from "@flows/styled-system/jsx";
 import { Text } from "ui";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const guidechimpContent: AlternativeContentType = {
   slug: "guidechimp",
@@ -96,8 +97,7 @@ export const guidechimpContent: AlternativeContentType = {
       title: "Free plan",
       competitor: true,
       flows: true,
-      description:
-        "GuideChimp requires a paid license for commercial applications. Flows offers a free plan with 250 monthly tracked users.",
+      description: `GuideChimp requires a paid license for commercial applications. Flows offers a free plan with ${FREE_LIMIT} monthly tracked users.`,
     },
     {
       title: "Surveys",

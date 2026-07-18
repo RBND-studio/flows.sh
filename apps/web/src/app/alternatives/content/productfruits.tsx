@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { ProductFruits20, ProductFruitsFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const productfruitsContent: AlternativeContentType = {
   slug: "productfruits",
@@ -65,8 +66,7 @@ export const productfruitsContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. Product Fruits offers only a time-limited trial.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. Product Fruits offers only a time-limited trial.`,
     },
     {
       title: "Localization",
@@ -128,8 +128,7 @@ export const productfruitsContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Product Fruits offers transparent pricing, but costs increase as your MAU count grows and you need access to more features.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

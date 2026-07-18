@@ -5,6 +5,7 @@ import { Text } from "ui";
 import { Delighted20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const delightedContent: AlternativeContentType = {
   slug: "delighted",
@@ -76,8 +77,7 @@ export const delightedContent: AlternativeContentType = {
       title: "Free plan",
       competitor: true,
       flows: true,
-      description:
-        "Delighted offers a free plan with 25 responses and one user. Flows includes a free plan with 250 monthly tracked users and full adoption features.",
+      description: `Delighted offers a free plan with 25 responses and one user. Flows includes a free plan with ${FREE_LIMIT} monthly tracked users and full adoption features.`,
     },
     {
       title: "Transparent pricing",

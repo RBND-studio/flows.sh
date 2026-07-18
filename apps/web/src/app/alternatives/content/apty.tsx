@@ -4,6 +4,7 @@ import { css } from "@flows/styled-system/css";
 import { Apty20, AptyFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const aptyContent: AlternativeContentType = {
   slug: "apty",
@@ -58,8 +59,7 @@ export const aptyContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. Apty has no free plan or public pricing.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. Apty has no free plan or public pricing.`,
     },
     {
       title: "Self-serve setup",
@@ -122,8 +122,7 @@ export const aptyContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Apty doesn't publish pricing and requires enterprise sales engagement. Contracts are tailored to each organization, making it hard to evaluate upfront.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

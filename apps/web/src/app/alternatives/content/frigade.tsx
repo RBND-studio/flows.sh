@@ -4,6 +4,7 @@ import { css } from "@flows/styled-system/css";
 import { Frigade20, FrigadeFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const frigadeContent: AlternativeContentType = {
   slug: "frigade",
@@ -65,8 +66,7 @@ export const frigadeContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan for up to 250 monthly tracked users. Frigade offers only a live demo.",
+      description: `Flows offers a free plan for up to ${FREE_LIMIT} monthly tracked users. Frigade offers only a live demo.`,
     },
     {
       title: "Localization",
@@ -123,8 +123,7 @@ export const frigadeContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Frigade does not publish pricing publicly. You need to contact their team to understand what you'll pay as your usage grows.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

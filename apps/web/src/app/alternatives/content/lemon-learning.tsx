@@ -1,6 +1,7 @@
 import { type AlternativeContentType } from "../types";
 import { Text } from "ui";
 import { Box, Flex } from "@flows/styled-system/jsx";
+import { FREE_LIMIT } from "shared";
 
 export const lemonLearningContent: AlternativeContentType = {
   slug: "lemon-learning",
@@ -60,8 +61,7 @@ export const lemonLearningContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. Lemon Learning requires a demo and enterprise contract.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. Lemon Learning requires a demo and enterprise contract.`,
     },
     {
       title: "Self-serve setup",
@@ -131,8 +131,7 @@ export const lemonLearningContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Lemon Learning doesn't publish pricing and requires a demo to get started. Enterprise contracts are tailored to each organization, making it hard to evaluate cost upfront.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

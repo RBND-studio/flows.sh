@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { Appcues20, AppcuesFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const appcuesContent: AlternativeContentType = {
   slug: "appcues",
@@ -65,8 +66,7 @@ export const appcuesContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. Appcues only offers a time-limited free trial.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. Appcues only offers a time-limited free trial.`,
     },
     {
       title: "Localization",
@@ -129,8 +129,7 @@ export const appcuesContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Appcues pricing starts at hundreds of dollars per month and gates features like branching, environments, and collaboration behind higher tiers, making it one of the more expensive options teams look to replace.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

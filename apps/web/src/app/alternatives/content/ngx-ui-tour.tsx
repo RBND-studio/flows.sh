@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { NgxUiTour20, NgxUiTourFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const ngxUiTourContent: AlternativeContentType = {
   slug: "ngx-ui-tour",
@@ -106,8 +107,7 @@ export const ngxUiTourContent: AlternativeContentType = {
       title: "Free plan",
       competitor: true,
       flows: true,
-      description:
-        "Ngx UI Tour is free and open source. Flows offers a free plan with 250 monthly tracked users.",
+      description: `Ngx UI Tour is free and open source. Flows offers a free plan with ${FREE_LIMIT} monthly tracked users.`,
     },
     {
       title: "Surveys",

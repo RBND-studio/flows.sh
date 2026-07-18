@@ -4,6 +4,7 @@ import { css } from "@flows/styled-system/css";
 import { Screeb20, ScreebFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const screebContent: AlternativeContentType = {
   slug: "screeb",
@@ -72,8 +73,7 @@ export const screebContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. Screeb offers only a time-limited trial.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. Screeb offers only a time-limited trial.`,
     },
     {
       title: "Localization",
@@ -121,8 +121,7 @@ export const screebContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Screeb bundles analytics, session replays, and onboarding into one platform. You pay for the full suite even if you only need product tours.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

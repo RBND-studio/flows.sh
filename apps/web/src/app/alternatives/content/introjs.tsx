@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { Introjs20, IntrojsFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const introjsContent: AlternativeContentType = {
   slug: "introjs",
@@ -100,8 +101,7 @@ export const introjsContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Intro.js requires a paid license for commercial applications. Flows offers a free plan with 250 monthly tracked users.",
+      description: `Intro.js requires a paid license for commercial applications. Flows offers a free plan with ${FREE_LIMIT} monthly tracked users.`,
     },
     {
       title: "Surveys",

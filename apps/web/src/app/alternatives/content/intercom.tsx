@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { Intercom20, IntercomFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const intercomContent: AlternativeContentType = {
   slug: "intercom",
@@ -65,8 +66,7 @@ export const intercomContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. Intercom Product Tours is a paid add-on.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. Intercom Product Tours is a paid add-on.`,
     },
     {
       title: "Localization",
@@ -128,8 +128,7 @@ export const intercomContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Intercom Product Tours pricing is not publicly listed. It's an add-on that costs extra on top of the base Intercom subscription, and combined costs can be significant, especially as your team and user base grow.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

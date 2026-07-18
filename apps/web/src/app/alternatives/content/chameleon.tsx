@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { Chameleon20, ChameleonFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const chameleonContent: AlternativeContentType = {
   slug: "chameleon",
@@ -65,8 +66,7 @@ export const chameleonContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. Chameleon's free plan includes only interactive demos, not live onboarding.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. Chameleon's free plan includes only interactive demos, not live onboarding.`,
     },
     {
       title: "Localization",
@@ -129,8 +129,7 @@ export const chameleonContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Chameleon pricing starts at a relatively high monthly cost and gates key features like localization behind higher tiers.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

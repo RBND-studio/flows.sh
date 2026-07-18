@@ -5,6 +5,7 @@ import { SurveyJSFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
 import { Box } from "@flows/styled-system/jsx";
+import { FREE_LIMIT } from "shared";
 
 export const surveyjsContent: AlternativeContentType = {
   slug: "surveyjs",
@@ -88,8 +89,7 @@ export const surveyjsContent: AlternativeContentType = {
       title: "Free plan",
       competitor: "Free for open source",
       flows: true,
-      description:
-        "SurveyJS is free and open source. Flows offers a free plan with 250 monthly tracked users.",
+      description: `SurveyJS is free and open source. Flows offers a free plan with ${FREE_LIMIT} monthly tracked users.`,
     },
     {
       title: "Developer experience",
@@ -125,8 +125,7 @@ export const surveyjsContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "SurveyJS is free and open source. However, you pay the ongoing cost of hosting and maintaining your own backend infrastructure.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

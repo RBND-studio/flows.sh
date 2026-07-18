@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { Reactour20, ReactourFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const reactourContent: AlternativeContentType = {
   slug: "reactour",
@@ -106,8 +107,7 @@ export const reactourContent: AlternativeContentType = {
       title: "Free plan",
       competitor: true,
       flows: true,
-      description:
-        "Reactour is free and open source. Flows offers a free plan with 250 monthly tracked users.",
+      description: `Reactour is free and open source. Flows offers a free plan with ${FREE_LIMIT} monthly tracked users.`,
     },
     {
       title: "Actively maintained",

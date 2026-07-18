@@ -1,6 +1,7 @@
 import { type AlternativeContentType } from "../types";
 import { BytesRoute20, BytesRouteFull20 } from "icons";
 import { css } from "@flows/styled-system/css";
+import { FREE_LIMIT } from "shared";
 
 export const bytesRouteContent: AlternativeContentType = {
   slug: "bytes-route",
@@ -88,8 +89,7 @@ export const bytesRouteContent: AlternativeContentType = {
       title: "Free plan",
       competitor: true,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. Bytes Route offers a free plan with 3 active product tours.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. Bytes Route offers a free plan with 3 active product tours.`,
     },
     {
       title: "Transparent pricing",

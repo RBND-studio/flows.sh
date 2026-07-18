@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { NextStepJs20, NextStepJsFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const nextstepjsContent: AlternativeContentType = {
   slug: "nextstepjs",
@@ -111,8 +112,7 @@ export const nextstepjsContent: AlternativeContentType = {
       title: "Free plan",
       competitor: true,
       flows: true,
-      description:
-        "NextStep is free and open source. Flows offers a free plan with 250 monthly tracked users.",
+      description: `NextStep is free and open source. Flows offers a free plan with ${FREE_LIMIT} monthly tracked users.`,
     },
     {
       title: "Surveys",

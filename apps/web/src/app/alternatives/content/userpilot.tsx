@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { Userpilot20, UserpilotFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const userpilotContent: AlternativeContentType = {
   slug: "userpilot",
@@ -51,8 +52,7 @@ export const userpilotContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users no strings attached. Userpilot offers only a 14-day free trial.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users no strings attached. Userpilot offers only a 14-day free trial.`,
     },
     {
       title: "Custom components",
@@ -122,8 +122,7 @@ export const userpilotContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Userpilot lists only their cheapest plan publicly and requires you to book a demo just to find out if it fits your budget. Their pricing model is built for large enterprises and can include charges per seat, per flow, or even per feature, making it unpredictable and often expensive.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly active users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

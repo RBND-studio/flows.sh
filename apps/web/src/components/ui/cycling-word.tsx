@@ -6,9 +6,10 @@ import { useEffect, useRef, useState } from "react";
 type Props = {
   words: string[];
   interval?: number;
+  underline?: boolean;
 };
 
-export const CyclingWord = ({ words, interval = 2000 }: Props) => {
+export const CyclingWord = ({ words, interval = 2000, underline }: Props) => {
   const [index, setIndex] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
 
@@ -44,7 +45,11 @@ export const CyclingWord = ({ words, interval = 2000 }: Props) => {
         className={css({
           display: "inline-block",
           opacity: 0,
-          animation: "bottomSlideIn 0.4s ease-out forwards",
+          animation: "textSwap 0.4s ease-out forwards",
+          textDecoration: underline ? "underline" : undefined,
+          textDecorationColor: underline ? "border.neutral.strong" : undefined,
+          textDecorationStyle: underline ? "dotted" : undefined,
+          textUnderlineOffset: underline ? 4 : undefined,
         })}
       >
         {words[index]}
@@ -52,3 +57,5 @@ export const CyclingWord = ({ words, interval = 2000 }: Props) => {
     </span>
   );
 };
+
+export const userAdjectives = ["onboarded", "engaged", "tracked", "surveyed"];

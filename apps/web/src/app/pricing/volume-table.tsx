@@ -1,114 +1,83 @@
-"use client";
-
 import { css } from "@flows/styled-system/css";
-import { Box, Flex } from "@flows/styled-system/jsx";
-import { ChevronDown16 } from "icons";
-import { type ReactElement, useRef, useState } from "react";
-import { formatNumberToK, formatNumberWithThousandSeparator, pricingTiers } from "shared";
-import { Icon, Text } from "ui";
+import { Flex } from "@flows/styled-system/jsx";
+import { CyclingWord, userAdjectives } from "components/ui/cycling-word";
+import { Section } from "components/ui/section";
+import { Graph16 } from "icons";
+import { formatNumberToK, formatNumberWithThousandSeparator, newPricingTiers } from "shared";
+import { FancyIcon, Icon, Text } from "ui";
 
-export const VolumeTable = (): ReactElement => {
-  const [isOpen, setIsOpen] = useState(false);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const height = isOpen ? `${contentRef.current?.scrollHeight}px` : "0px";
+export const VolumeTable = () => {
+  const pricing = Object.values(newPricingTiers).map((tier, index, array) => {
+    const start = index === 0 ? 0 : array[index - 1].up_to + 1;
+    const end = tier.up_to;
+    const price = Number(tier.unit_amount_decimal) / 100;
 
-  const pricing = Object.values(pricingTiers).map((tier) => {
-    const [start, end] = tier.flowsRange;
-
-    if (tier.price === 0)
+    if (start === 0)
       return {
         range: `First ${formatNumberWithThousandSeparator(end)} MTUs`,
-        price: "Free every month",
+        priceString: "Included in Pro plan",
       };
 
     const range =
       end === Infinity
         ? `${formatNumberToK(start)} +`
         : `${formatNumberToK(start)} - ${formatNumberToK(end)}`;
-    const price = `$${tier.price.toFixed(4)} per MTU`;
-    return { range, price };
+    const priceString = `$${price.toFixed(4)} per MTU`;
+    return { range, priceString };
   });
 
   return (
-    <Flex
-      flexDirection="column"
-      alignItems="center"
-      width="100%"
-      maxWidth={640}
-      mx="auto"
-      pt={{ base: "space16", md: 0 }}
-      pb={{ base: "space8", md: "space40" }}
-      px="space8"
-    >
-      <button
-        type="button"
-        onClick={() => setIsOpen(!isOpen)}
-        className={css({
-          cursor: "pointer",
-          color: "fg.neutral.muted",
-          mb: "space16",
-          display: "flex",
-          gap: "space8",
-          alignItems: "center",
-          _hover: {
-            color: "fg.neutral",
-          },
-        })}
+    <>
+      <Section
+        bottomBorder
+        decorator="vertical"
+        py={{ base: "space40", md: "space80" }}
+        px={{ base: "space24", md: "space40" }}
+        sideBorders
       >
-        <Text variant="bodyL" color="inherit">
-          How did we calculate this?
-        </Text>
-        <Icon
-          color="inherit"
-          icon={ChevronDown16}
-          className={css({
-            transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
-            transition: "transform 0.24s",
-          })}
-        />
-      </button>
-      <Box
-        ref={contentRef}
-        transition="height 0.24s, opacity 0.24s"
-        overflow="hidden"
-        width="100%"
-        opacity={isOpen ? 1 : 0}
-        style={{
-          height,
-        }}
-        bg="bg.neutral.subtle"
-        borderRadius="radius12"
-        borderWidth="1px"
-        borderColor="border.neutral"
-      >
-        <Flex
-          width="100%"
-          paddingX="space24"
-          paddingY="space24"
-          borderBottomWidth="1px"
-          borderColor="border.neutral"
-        >
-          <Text variant="bodyM" align="center" textWrap="balance">
-            Flows uses a tiered pricing model, where the price per MTU decreases as your usage
-            increases. When you reach each new tier threshold, any additional MTUs are billed at the
-            lower rate.
+        <Flex gap="space8" alignItems="center" mb="space24">
+          <FancyIcon
+            color="gray"
+            className={css({
+              width: "24px",
+              height: "24px",
+            })}
+          >
+            <Icon icon={Graph16} color="inherit" />
+          </FancyIcon>
+          <Text variant="bodyL" fontFamily="caveat" color="fg.neutral.muted">
+            Volume based pricing
           </Text>
         </Flex>
+        <Text variant="title2xl" mb="space12" maxWidth={440} as="h2">
+          <span className={css({ color: "fg.neutral.subtle" })}>Pay only for</span>{" "}
+          <CyclingWord words={userAdjectives} />{" "}
+          <span className={css({ color: "fg.neutral.subtle" })}>users</span>
+        </Text>
+        <Text maxWidth={680} variant="bodyL" color="fg.neutral.muted" textWrap="balance">
+          Stop paying for every user in your database. With Flows, you only pay for users who
+          actually see an experience, making it the most cost efficient product adoption tool at any
+          scale.
+        </Text>
+      </Section>
+      <Section sideBorders bottomBorder decorator="split">
         {pricing.map((item) => (
           <Flex
-            key={item.price}
+            key={item.priceString}
             paddingX="space24"
             paddingY="space16"
             borderBottomWidth="1px"
             borderColor="border.neutral"
             justifyContent="space-between"
             _last={{ borderBottomWidth: "0px" }}
+            _hover={{ bg: "bg.neutral.muted" }}
+            fastEaseInOut="background-color"
           >
             <Text variant="titleM">{item.range}</Text>
-            <Text variant="titleM">{item.price}</Text>
+            <Text variant="titleM">{item.priceString}</Text>
           </Flex>
         ))}
-      </Box>
-    </Flex>
+      </Section>
+    </>
   );
 };

@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { Refiner20, RefinerFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const refinerContent: AlternativeContentType = {
   slug: "refiner",
@@ -77,8 +78,7 @@ export const refinerContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows offers a free plan with 250 monthly tracked users. Refiner offers only a time-limited free trial.",
+      description: `Flows offers a free plan with ${FREE_LIMIT} monthly tracked users. Refiner offers only a time-limited free trial.`,
     },
     {
       title: "Developer experience",
@@ -120,8 +120,7 @@ export const refinerContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Refiner's pricing is usage-based, you pay for active users. Since it only solves one problem, you often need to combine it with another tool for product adoption.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees, just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

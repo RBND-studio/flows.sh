@@ -5,6 +5,7 @@ import { Text } from "ui";
 import { Wootric20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const wootricContent: AlternativeContentType = {
   slug: "wootric",
@@ -76,8 +77,7 @@ export const wootricContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Flows includes a free plan with 250 monthly tracked users and full adoption features. Wootric does not offer a free plan - all tiers require contacting sales.",
+      description: `Flows includes a free plan with ${FREE_LIMIT} monthly tracked users and full adoption features. Wootric does not offer a free plan - all tiers require contacting sales.`,
     },
     {
       title: "Transparent pricing",
@@ -127,8 +127,7 @@ export const wootricContent: AlternativeContentType = {
       title: "Pricing",
       competitorDescription:
         "Wootric does not publish pricing publicly. All three tiers - Professional, Growth, and Voice of the Customer - require contacting the InMoment sales team to get quotes. You are paying for a specialized feedback and analytics tool, priced for enterprise CX programs rather than product teams looking for lightweight signal collection.",
-      flowsDescription:
-        "Flows offers transparent usage-based pricing with no hidden fees. You can start for free with 250 monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees - just a clear pricing model that scales with your usage.",
+      flowsDescription: `Flows offers transparent usage-based pricing with no hidden fees. You can start for free with ${FREE_LIMIT} monthly tracked users and upgrade only when you need to. No sales calls, no hidden fees - just a clear pricing model that scales with your usage.`,
     },
   ],
   ctaBanner: {

@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { Shepherd20, ShepherdFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const shepherdContent: AlternativeContentType = {
   slug: "shepherdjs",
@@ -100,8 +101,7 @@ export const shepherdContent: AlternativeContentType = {
       title: "Free plan",
       competitor: false,
       flows: true,
-      description:
-        "Shepherd.js requires a paid license for commercial applications. Flows offers a free plan with 250 monthly tracked users.",
+      description: `Shepherd.js requires a paid license for commercial applications. Flows offers a free plan with ${FREE_LIMIT} monthly tracked users.`,
     },
     {
       title: "Surveys",

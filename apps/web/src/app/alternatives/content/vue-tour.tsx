@@ -2,6 +2,7 @@ import { css } from "@flows/styled-system/css";
 import { VueTour20, VueTourFull20 } from "icons";
 
 import { type AlternativeContentType } from "../types";
+import { FREE_LIMIT } from "shared";
 
 export const vueTourContent: AlternativeContentType = {
   slug: "vue-tour",
@@ -107,8 +108,7 @@ export const vueTourContent: AlternativeContentType = {
       title: "Free plan",
       competitor: true,
       flows: true,
-      description:
-        "Vue Tour is free and open source. Flows offers a free plan with 250 monthly tracked users.",
+      description: `Vue Tour is free and open source. Flows offers a free plan with ${FREE_LIMIT} monthly tracked users.`,
     },
     {
       title: "Surveys",
