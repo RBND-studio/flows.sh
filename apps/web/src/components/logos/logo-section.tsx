@@ -1,4 +1,4 @@
-// cSpell:words Ideoz Modelve Hoshii Caudena
+// cSpell:words Ideoz Modelve Hoshii Caudena Ampeers
 import { ApifyLogo } from "./apify";
 import { AtmosLogo } from "./atmos";
 import { FoxEcomLogo } from "./foxecom";
@@ -14,6 +14,7 @@ import { HoshiiLogo } from "./hoshii";
 import { CaudenaLogo } from "./caudena";
 import type { DecoratorType } from "components/ui/section/decorator";
 import { CreatorsProLogo } from "./creators-pro";
+import { AmpeersLogo } from "./ampeers";
 
 const logos = [
   {
@@ -43,6 +44,10 @@ const logos = [
   {
     name: "SalesKick",
     logo: SalesKickLogo,
+  },
+  {
+    name: "Ampeers Group",
+    logo: AmpeersLogo,
   },
   {
     name: "Ideoz",
