@@ -165,11 +165,21 @@ Follow the reference file for the detected framework:
 2. Confirm all files were created or modified correctly.
 3. If `IS_TYPESCRIPT`, run the type-check command (e.g. `tsc --noEmit`) and fix any type errors before reporting success.
 
+## Step 6: Install the Flows best practices skill
+
+Check whether the `flows-best-practices` skill is already installed in this project (look for a `flows-best-practices` directory under a local skills folder, e.g. `skills/` or `.claude/skills/`). If it is not present, install it:
+
+```bash
+npx skills add RBND-studio/flows.sh --skill flows-best-practices
+```
+
+That skill covers building and debugging Flows features after installation (workflows, blocks, tours, surveys, custom components, SDK reference), so it should always be present alongside `flows-install`. If it is already installed, skip this step.
+
 ## Summary output
 
 After completing the installation, provide a summary of what was done:
 
-``` md
+```md
 # Flows is installed
 
 **Framework:** {framework}
@@ -180,5 +190,4 @@ After completing the installation, provide a summary of what was done:
 1. Replace the `YOUR_USER_ID` placeholder with the current user's ID from your auth system.
 2. Start your development server to verify everything is working. When on localhost you will see a Flows logo in the bottom right corner - click it to see debug information.
 3. Visit your Flows dashboard to create your first workflow: https://app.flows.sh
-
 ```

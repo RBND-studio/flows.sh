@@ -6,7 +6,7 @@ import type { ReactNode } from "react";
 import { Button, clipboard, Icon, Menu, MenuItem, MenuSeparator, Text } from "ui";
 
 const promptMd =
-  "# Install Flows\n\nHelp the user install Flows in their product or build a new app. You've copied this prompt from the Flows homepage.\n\n## 1. Install the `flows-install` skill\n\nCheck if you have the `flows-install` skill installed. If not, ask the user to install it:\n\n```bash\nnpx skills add RBND-studio/flows.sh --skill flows-install\n```\n\n## 2. Install Flows\n\nUse the `flows-install` skill to install Flows in your project.";
+  "# Install Flows\n\nHelp the user install Flows in their product or build a new app. You've copied this prompt from the Flows homepage.\n\n## 1. Install the `flows-install` skill\n\nCheck if you have the `flows-install` skill installed. If not, ask the user to install it:\n\n```bash\nnpx skills add RBND-studio/flows.sh --skill flows-install\n```\n\n## 2. Install the `flows-best-practices` skill\n\nCheck if you have the `flows-best-practices` skill installed. If not, ask the user to install it:\n\n```bash\nnpx skills add RBND-studio/flows.sh --skill flows-best-practices\n```\n\n## 3. Install Flows\n\nUse the `flows-install` skill to install Flows in your project.\n\n## 4. Help the user build with Flows\n\nWhen the installation is complete, use the `flows-best-practices` skill to help the user build with Flows. Ask the user what they want to build, and provide guidance based on the best practices skill.";
 
 const items = [
   {
