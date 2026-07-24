@@ -59,6 +59,7 @@ export const BlogPostPreview = (post: Props): ReactElement => {
           display="-webkit-box"
           overflow="hidden"
           style={{
+            // oxlint-disable-next-line typescript/no-deprecated
             WebkitBoxOrient: "vertical",
           }}
         >

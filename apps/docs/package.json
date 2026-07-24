@@ -13,24 +13,24 @@
     "check-links": "docker run --network host -v ./linkcheck-skip-urls.txt:/linkcheck-skip-urls.txt --rm tennox/linkcheck $URL --skip-file linkcheck-skip-urls.txt"
   },
   "dependencies": {
-    "@flows/react-components": "^2.9.1",
+    "@flows/react-components": "^2.9.4",
     "fumadocs-core": "16.8.9",
     "fumadocs-mdx": "15.0.12",
     "fumadocs-ui": "16.8.9",
     "icons": "workspace:*",
     "next": "16.2.11",
-    "react": "19.2.7",
-    "react-dom": "19.2.7",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
     "react-lite-youtube-embed": "^3.6.0",
     "shared": "workspace:*",
     "ui": "workspace:*",
     "zod": "4.4.3"
   },
   "devDependencies": {
-    "@pandacss/dev": "^1.11.4",
+    "@pandacss/dev": "^1.11.5",
     "@types/mdx": "^2.0.13",
     "@types/node": "^24.10.4",
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.2.8",
     "@types/react-dom": "^19.2.3",
     "tsconfig": "workspace:*",
     "typescript": "6.0.3"

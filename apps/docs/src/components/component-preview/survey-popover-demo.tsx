@@ -187,6 +187,7 @@ export const SurveyPopoverDemo: FC = () => {
         __flows={{
           id: "survey-popover-demo",
           workflowId: "survey-popover-demo-workflow",
+          freeOrg: false,
         }}
       />
     </div>

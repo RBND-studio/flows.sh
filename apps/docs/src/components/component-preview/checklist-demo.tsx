@@ -110,7 +110,7 @@ export const ChecklistDemo: FC = () => {
         skipButton={{ label: "Skip onboarding" }}
         close={() => null}
         complete={() => null}
-        __flows={{ id: "checklist-demo", workflowId: "checklist-demo-workflow" }}
+        __flows={{ id: "checklist-demo", workflowId: "checklist-demo-workflow", freeOrg: false }}
       />
     </div>
   );

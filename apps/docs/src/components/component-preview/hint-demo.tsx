@@ -45,6 +45,7 @@ export const HintDemo = ({ tour = false }: Props): JSX.Element => {
           tourVisibleStepIndex: tour ? 0 : undefined,
           id: tour ? "tour-hint-demo" : "hint-demo",
           workflowId: tour ? "tour-hint-demo-workflow" : "hint-demo-workflow",
+          freeOrg: false,
         }}
       />
     </>

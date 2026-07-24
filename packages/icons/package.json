@@ -8,8 +8,8 @@
     "tsc": "tsc"
   },
   "devDependencies": {
-    "@types/react": "^19.2.7",
-    "react": "19.2.7",
+    "@types/react": "^19.2.8",
+    "react": "19.2.8",
     "tsconfig": "workspace:*",
     "typescript": "6.0.3"
   }
