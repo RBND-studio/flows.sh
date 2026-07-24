@@ -45,6 +45,7 @@ export const CardDemo: FC<Props> = ({ tour = false }) => {
         tourVisibleStepIndex: tour ? 0 : undefined,
         id: "card-demo",
         workflowId: "card-demo-workflow",
+        freeOrg: false,
       }}
     />
   );

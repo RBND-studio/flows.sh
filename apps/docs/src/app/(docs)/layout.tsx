@@ -43,16 +43,14 @@ export default function Layout({ children }: { children: ReactNode }): ReactNode
           type: "custom",
         },
       ]}
-      sidebar={{
-        tabs: [
-          {
-            title: "Platform",
-            url: "/",
-            urls: getPlatformUrls({ source, sidebarTabs }),
-          },
-          ...sidebarTabs,
-        ],
-      }}
+      tabs={[
+        {
+          title: "Platform",
+          url: "/",
+          urls: getPlatformUrls({ source, sidebarTabs }),
+        },
+        ...sidebarTabs,
+      ]}
     >
       {children}
     </DocsLayout>

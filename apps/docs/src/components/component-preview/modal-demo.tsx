@@ -44,6 +44,7 @@ export const ModalDemo = ({ tour = false }: Props): JSX.Element => {
             tourVisibleStepIndex: tour ? 0 : undefined,
             id: "modal-demo",
             workflowId: "modal-demo-workflow",
+            freeOrg: false,
           }}
         />
       ) : null}

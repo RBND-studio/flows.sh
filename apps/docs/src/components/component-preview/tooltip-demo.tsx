@@ -43,6 +43,7 @@ export const TooltipDemo = ({ tour = false }: Props): JSX.Element => {
           tourVisibleStepIndex: tour ? 0 : undefined,
           id: tour ? "tour-tooltip-demo" : "tooltip-demo",
           workflowId: tour ? "tour-tooltip-demo-workflow" : "tooltip-demo-workflow",
+          freeOrg: false,
         }}
       />
     </>
