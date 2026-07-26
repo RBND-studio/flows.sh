@@ -16,7 +16,7 @@ overrides:
   minimatch@<10.2.3: ">=10.2.3"
   path-to-regexp@>=8.0.0 <8.4.0: ">=8.4.0"
   picomatch@>=4.0.0 <4.0.4: ">=4.0.4"
-  postcss@<8.5.10: ">=8.5.10"
+  postcss@<8.5.18: ">=8.5.18"
   protobufjs@>=8.0.0 <=8.4.0: ">=8.4.1"
   qs@<=6.15.1: ^6.15.2
   serialize-javascript@<=7.0.2: ">=7.0.3"
@@ -29,6 +29,8 @@ overrides:
   "@opentelemetry/core@<2.8.0": ">=2.8.0"
   sharp@<0.35.0: ">=0.35.0"
   find-my-way@<9.7.0: ">=9.7.0"
+  '@hono/node-server@<2.0.5': ^2.0.5
+  js-yaml@>=5.0.0 <=5.2.1: ^5.2.2
 autoInstallPeers: true
 enablePrePostScripts: true
 allowBuilds:
@@ -45,3 +47,8 @@ allowBuilds:
   protobufjs: true
   sharp: true
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - tar@7.5.21
+  - brace-expansion@5.0.8
+  - '@hono/node-server@2.0.5'
+  - js-yaml@5.2.2
