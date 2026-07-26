@@ -4,6 +4,7 @@ import { Text } from "ui";
 import { Box } from "@flows/styled-system/jsx";
 import { FaqAccordion } from "./ui/faq-accordion";
 import { DOMAIN } from "lib/constants";
+import type { FAQPage, WithContext } from "schema-dts";
 
 export type Question = {
   title: string;
@@ -20,17 +21,23 @@ type Props = {
 };
 
 export const FaqSection = ({ title, questions, pageUrl, bottomAction }: Props): ReactElement => {
-  const jsonLd = {
+  const jsonLd: WithContext<FAQPage> = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: questions.map((q) => ({
-      "@type": "Question",
-      name: q.title,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: q.schemaText ?? q.content,
-      },
-    })),
+    mainEntity: questions.map((q) => {
+      const text = q.schemaText ?? q.content;
+      if (typeof text !== "string") {
+        throw new Error("schemaText or content must be a string for JSON-LD");
+      }
+      return {
+        "@type": "Question",
+        name: q.title,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text,
+        },
+      };
+    }),
     url: `https://${DOMAIN}${pageUrl}`,
   };
 
@@ -70,7 +77,7 @@ export const FaqSection = ({ title, questions, pageUrl, bottomAction }: Props): 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd),
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
     </>
