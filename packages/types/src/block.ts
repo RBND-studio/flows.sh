@@ -17,6 +17,7 @@ export enum BlockTypeEnum {
   WAIT = "wait",
   WORKFLOW_TRIGGER = "workflow-trigger",
   DELAY = "delay",
+  NOTE = "note",
 }
 export type BlockType = `${BlockTypeEnum}`;
 

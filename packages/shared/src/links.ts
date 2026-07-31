@@ -152,6 +152,7 @@ export const links = (domain = "flows.sh") =>
         components: {
           custom: `https://${domain}/docs/components/custom`,
         },
+        note: `https://${domain}/docs/blocks/other-blocks/note`,
       },
       blockProperties: {
         overview: `https://${domain}/docs/blocks/block-properties/overview`,
