@@ -7,6 +7,7 @@ node_modules
 
 # testing
 coverage
+.testcontainers-info.json
 
 # next.js
 .next/
@@ -28,6 +29,8 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 .env
+.env.compose
+e2e-env-backup
 
 # turbo
 .turbo
@@ -49,5 +52,6 @@ sitemap.xml
 sitemap-*.xml
 robots.txt
 
+seed-output.json
 # internal planning docs (top-level docs/ is mirrored to a public repo, see repo-clone.yml)
 docs/superpowers/

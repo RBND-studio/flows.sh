@@ -1,9 +1,6 @@
 services:
   redis:
-    image: my-redis
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: redis:8.8
     restart: unless-stopped
     deploy:
       resources:
@@ -11,6 +8,9 @@ services:
           memory: 512m
     ports:
       - ${REDIS_PORT}:6379
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+    command: redis-server /usr/local/etc/redis/redis.conf
 
 networks:
   default:

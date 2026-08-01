@@ -40,12 +40,14 @@ allowBuilds:
   "@swc/core": true
   bcrypt: true
   bufferutil: true
+  cpu-features: true
   cypress: true
   esbuild: true
   libpq: true
   nestjs-pino: true
   protobufjs: true
   sharp: true
+  ssh2: true
   unrs-resolver: true
 minimumReleaseAgeExclude:
   - tar@7.5.21
