@@ -26,6 +26,7 @@ export const builtInBlockDescriptions: Partial<Record<BlockType, string>> = {
   "workflow-trigger": "Starts another workflow by entering a specified manual start block.",
   delay:
     "Delay pauses the workflow for a specified amount of time before proceeding to the next block",
+  note: "Add comments or explanations to your workflow. Notes are not visible to end users and do not affect the workflow execution.",
 };
 
 export const getVersionName = (versionNumber: number): string =>
@@ -48,6 +49,7 @@ export const blockTranslation: Record<BlockType, string> = {
   wait: "Wait",
   "workflow-trigger": "Workflow trigger",
   delay: "Delay",
+  note: "Note",
 };
 
 export const blockTemplateTranslation: Record<BlockTemplateType, string> = {
@@ -62,7 +64,7 @@ export const defaultBuiltInBlockDescription: Record<string, string> = {
     "Starts the workflow manually when you call the startWorkflow method from your application. For more information, see the Manual start snippet below.",
 };
 
-export const blocksWithoutEntryNode: BlockType[] = ["start", "manual-start"];
+export const blocksWithoutEntryNode: BlockType[] = ["start", "manual-start", "note"];
 
 export const defaultPropertyValue = {
   string: "",

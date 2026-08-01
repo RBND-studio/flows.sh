@@ -13,6 +13,7 @@ import {
   Hint16,
   Info16,
   Modal16,
+  Note16,
   Pointer16,
   Sidebar16,
   Start16,
@@ -41,6 +42,7 @@ export const builtInBlockIcons: Record<string, IconCmp> = {
   "workflow-trigger": WorkflowTrigger16,
   delay: Delay16,
   survey: Survey16,
+  note: Note16,
 };
 
 export const customIconOptions: Record<string, IconCmp> = {
@@ -58,6 +60,7 @@ export const customIconOptions: Record<string, IconCmp> = {
   email: Email16,
   book: Book16,
   upgrade: Upgrade16,
+  note: Note16,
 };
 
 export const fallbackBlockIcon = Tooltip16;
@@ -94,6 +97,7 @@ export const BlockIcon = forwardRef<HTMLDivElement, Props>(function BlockIcon(
       ref={ref}
       padding="space2"
       borderRadius="radius4"
+      borderWidth="1px"
       className={cx(boxStyles({ type }), className)}
       {...props}
     >
@@ -109,26 +113,32 @@ const boxStyles = cva({
       start: {
         backgroundColor: "blockIcon.start.bg",
         color: "blockIcon.start.fg",
+        borderColor: "blockIcon.start.border",
       },
       component: {
         backgroundColor: "blockIcon.component.bg",
         color: "blockIcon.component.fg",
+        borderColor: "blockIcon.component.border",
       },
       logic: {
         backgroundColor: "blockIcon.logic.bg",
         color: "blockIcon.logic.fg",
+        borderColor: "blockIcon.logic.border",
       },
       action: {
         backgroundColor: "blockIcon.action.bg",
         color: "blockIcon.action.fg",
-      },
-      end: {
-        backgroundColor: "blockIcon.end.bg",
-        color: "blockIcon.end.fg",
+        borderColor: "blockIcon.action.border",
       },
       tour: {
         backgroundColor: "blockIcon.component.bg",
         color: "blockIcon.component.fg",
+        borderColor: "blockIcon.component.border",
+      },
+      note: {
+        backgroundColor: "blockIcon.note.bg",
+        color: "blockIcon.note.fg",
+        borderColor: "blockIcon.note.border",
       },
     },
   },

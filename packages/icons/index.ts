@@ -119,6 +119,7 @@ export * from "./src/ngx-joyride-full20";
 export * from "./src/ngx-joyride20";
 export * from "./src/ngx-ui-tour-full20";
 export * from "./src/ngx-ui-tour20";
+export * from "./src/note16";
 export * from "./src/number16";
 export * from "./src/nuxt16";
 export * from "./src/nuxt32";

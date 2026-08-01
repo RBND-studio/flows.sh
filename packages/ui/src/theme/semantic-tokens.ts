@@ -151,18 +151,27 @@ export const semanticTokens = defineSemanticTokens({
       start: {
         bg: { value: { base: "{colors.warning.100}", _dark: "{colors.warning-dark.800}" } },
         fg: { value: { base: "{colors.warning.600}", _dark: "{colors.warning-dark.400}" } },
+        border: { value: { base: "{colors.warning.200}", _dark: "{colors.warning-dark.700}" } },
       },
       component: {
         bg: { value: { base: "#dbe3ff", _dark: "#252e56" } },
         fg: { value: { base: "#4757b8", _dark: "#6e85f2" } },
+        border: { value: { base: "#c0d0ff", _dark: "#1f2a4e" } },
       },
       logic: {
         bg: { value: { base: "{colors.neutral.100}", _dark: "{colors.neutral.800}" } },
         fg: { value: { base: "{colors.neutral.600}", _dark: "{colors.neutral.400}" } },
+        border: { value: { base: "{colors.neutral.150}", _dark: "{colors.neutral.700}" } },
       },
       action: {
         bg: { value: { base: "{colors.danger.100}", _dark: "{colors.danger-dark.800}" } },
         fg: { value: { base: "{colors.danger.600}", _dark: "{colors.danger-dark.400}" } },
+        border: { value: { base: "{colors.danger.150}", _dark: "{colors.danger-dark.700}" } },
+      },
+      note: {
+        bg: { value: { base: "#f4fbcb", _dark: "#2f3802" } },
+        fg: { value: { base: "#748700", _dark: "#AABF2A" } },
+        border: { value: { base: "#DEED82", _dark: "#3b4217" } },
       },
     },
     // charts and data visualization
@@ -354,6 +363,11 @@ export const semanticTokens = defineSemanticTokens({
           base: "hsla(214.3, 14.3%, 9.6%, 6%)",
           _dark: "hsla(217.5, 25%, 93.7%, 8%)",
         },
+      },
+      noteBlock: {
+        bg: { value: { base: "#FFE597", _dark: "#CFBD7C" } },
+        border: { value: { base: "#FCDE83", _dark: "#E4C977" } },
+        borderHighlight: { value: { base: "#F2CC5A", _dark: "#F3C743" } },
       },
     },
   },

@@ -54,6 +54,7 @@ export const palette = defineTokens.colors({
     400: { value: "#f84c43" },
     300: { value: "#ff8274" },
     200: { value: "#ffb0a5" },
+    150: { value: "#ffc6c1" },
     100: { value: "#ffd8d2" },
     50: { value: "#ffe3df" },
     25: { value: "#fdf6f5" },
