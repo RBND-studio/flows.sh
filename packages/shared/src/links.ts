@@ -112,6 +112,9 @@ export const links = (domain = "flows.sh") =>
         "https://github.com/RBND-studio/flows.sh/tree/main/examples/churn-prevention-flow",
       microsurvey: "https://microsurvey.examples.flows.sh",
       microsurveySource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/microsurvey",
+      welcomeScreen: "https://welcome-screen.examples.flows.sh",
+      welcomeScreenSource:
+        "https://github.com/RBND-studio/flows.sh/tree/main/examples/welcome-screen",
       // --PLOP_NEW_EXAMPLE_LINK--
     },
     docs: {
