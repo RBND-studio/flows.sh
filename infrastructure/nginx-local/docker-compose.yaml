@@ -3,6 +3,9 @@ services:
     image: nginx:1.30.3
     restart: unless-stopped
     ports:
-      - "8080:8080"
+      - ${NGINX_PORT}:8080
+    environment:
+      NGINX_BACKEND_HOST: ${NGINX_BACKEND_HOST}
+      NGINX_WEBSOCKET_HOST: ${NGINX_WEBSOCKET_HOST}
     volumes:
-      - ./sites/backend.conf:/etc/nginx/conf.d/backend.conf
+      - ./templates:/etc/nginx/templates

@@ -1,0 +1,101 @@
+# Standalone e2e stack. Everything runs in containers; Cypress runs on the host
+# against the mapped ports. All values are hardcoded on purpose — this file must
+# work with a bare `docker compose up --build` after `run-compose.ts` has written
+# the per-app .env files (see apps/e2e/scripts/run-compose.ts).
+name: flows-e2e
+
+include:
+  - ../../docker-compose.yaml
+
+services:
+  backend:
+    build:
+      context: ../../
+      dockerfile: infrastructure/docker/nest.Dockerfile
+      args:
+        APP: backend
+    ports:
+      - ${BACKEND_PORT}:3005
+    depends_on:
+      postgres:
+        condition: service_started
+      kafka-init:
+        condition: service_completed_successfully
+    environment:
+      BACKEND_DATABASE_CONNECTION: postgres://e2e:e2e@postgres:5432/e2e
+      BACKEND_REDIS_CONNECTION: ""
+      BACKEND_KAFKA_BROKER: kafka:9092
+      BACKEND_ENABLE_BACKDOOR: "true"
+      BACKEND_BACKDOOR_TOKEN: ${BACKEND_BACKDOOR_TOKEN}
+      BACKEND_CAPTCHA_SECRET: 1x0000000000000000000000000000000AA
+      AUTH_SECRET: test-secret
+      BACKEND_APP_URL: http://localhost:6100
+      BACKEND_LOOPS_API_KEY: mock
+      BACKEND_SLACK_WEBHOOK_URL: https://hooks.slack.com/mock
+      BACKEND_LEMONSQUEEZY_WEBHOOK_SECRET: mock
+      BACKEND_LEMONSQUEEZY_API_KEY: mock
+      BACKEND_LEMONSQUEEZY_STORE_ID: mock
+      BACKEND_STRIPE_API_KEY: mock
+      BACKEND_STRIPE_WEBHOOK_SECRET: mock
+      BACKEND_STRIPE_PRO_PRICE_ID: mock
+      # cspell:disable-next-line — $ escaped as $$ for compose interpolation
+      BACKEND_ADMIN_PASSWORD_HASH: "$$2b$$12$$mockmockmockmockmockmOmockmockmockmockmockmockmockmock"
+      # Production-built image over http: opt out of __Secure- cookie requirement.
+      BACKEND_DANGEROUSLY_ALLOW_INSECURE_AUTH_COOKIE: "true"
+      OTEL_EXPORTER_OTLP_ENDPOINT: ""
+
+  worker:
+    build:
+      context: ../../
+      dockerfile: infrastructure/docker/nest.Dockerfile
+      args:
+        APP: worker
+    depends_on:
+      backend:
+        condition: service_started
+    environment:
+      BACKEND_DATABASE_CONNECTION: postgres://e2e:e2e@postgres:5432/e2e
+      BACKEND_REDIS_CONNECTION: ""
+      BACKEND_KAFKA_BROKER: kafka:9092
+      OTEL_EXPORTER_OTLP_ENDPOINT: ""
+
+  websocket:
+    build:
+      context: ../../
+      dockerfile: infrastructure/docker/nest.Dockerfile
+      args:
+        APP: websocket
+    depends_on:
+      backend:
+        condition: service_started
+    environment:
+      BACKEND_DATABASE_CONNECTION: postgres://e2e:e2e@postgres:5432/e2e
+      BACKEND_REDIS_CONNECTION: ""
+      BACKEND_KAFKA_BROKER: kafka:9092
+      OTEL_EXPORTER_OTLP_ENDPOINT: ""
+
+  nginx:
+    depends_on:
+      backend:
+        condition: service_started
+      websocket:
+        condition: service_started
+
+  app:
+    build:
+      context: ../../
+      dockerfile: infrastructure/docker/next.Dockerfile
+      args:
+        APP: app
+    ports:
+      - ${FRONTEND_PORT}:3000
+    depends_on:
+      postgres:
+        condition: service_started
+      nginx:
+        condition: service_started
+
+networks:
+  default:
+    name: ${COMPOSE_PROJECT_NAME}
+    external: false
