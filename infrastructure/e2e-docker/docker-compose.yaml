@@ -41,7 +41,8 @@ services:
       # cspell:disable-next-line — $ escaped as $$ for compose interpolation
       BACKEND_ADMIN_PASSWORD_HASH: "$$2b$$12$$mockmockmockmockmockmOmockmockmockmockmockmockmockmock"
       # Production-built image over http: opt out of __Secure- cookie requirement.
-      BACKEND_DANGEROUSLY_ALLOW_INSECURE_AUTH_COOKIE: "true"
+      DANGEROUSLY_ALLOW_INSECURE_AUTH_COOKIE: "true"
+      DANGEROUSLY_DISABLE_RATE_LIMITING: "true"
       OTEL_EXPORTER_OTLP_ENDPOINT: ""
 
   worker:
