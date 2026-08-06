@@ -6,7 +6,7 @@
   "main": "./index.ts",
   "types": "./index.ts",
   "scripts": {
-    "build": "storybook build --docs",
+    "storybook:build": "storybook build --docs",
     "dev": "storybook dev -p 6006 --no-open",
     "tsc": "tsc",
     "prepare": "panda codegen"

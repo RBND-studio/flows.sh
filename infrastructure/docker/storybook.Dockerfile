@@ -22,7 +22,7 @@ COPY --from=builder /app/out/full/ .
 RUN corepack enable pnpm
 RUN pnpm install --frozen-lockfile
 
-RUN pnpm turbo run build --filter=ui
+RUN pnpm turbo run storybook:build --filter=ui
 
 FROM nginx:alpine AS runner
 

@@ -23,6 +23,7 @@ import { inAppChangelogContent } from "./in-app-changelog/content";
 import { tooltipContent } from "./tooltip/content";
 import { churnPreventionFlowContent } from "./churn-prevention-flow/content";
 import { microsurveyContent } from "./microsurvey/content";
+import { welcomeScreenContent } from "./welcome-screen/content";
 // --PLOP_NEW_EXAMPLE_IMPORT--
 import { type ContentType } from "./types";
 
@@ -52,5 +53,6 @@ export const examplesContent: ContentType[] = [
   cardContent,
   productHuntLaunchAnnouncementContent,
   churnPreventionFlowContent,
+  welcomeScreenContent,
   // --PLOP_NEW_EXAMPLE_CONTENT--
 ];
