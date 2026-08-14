@@ -17,7 +17,7 @@ overrides:
   path-to-regexp@>=8.0.0 <8.4.0: ">=8.4.0"
   picomatch@>=4.0.0 <4.0.4: ">=4.0.4"
   # Postcss 8.5.25 doesn't generate css file properly, the .dark tokens are missing
-  postcss@<8.5.24: "=8.5.24"
+  postcss@<8.5.26: "=8.5.26"
   protobufjs@>=8.0.0 <=8.4.0: ">=8.4.1"
   qs@<=6.15.1: ^6.15.2
   serialize-javascript@<=7.0.2: ">=7.0.3"
@@ -28,7 +28,6 @@ overrides:
   fast-uri@<=3.1.3: ^3.1.4
   fast-uri@>=4.0.0 <=4.1.0: ">=4.1.1"
   "@opentelemetry/core@<2.8.0": ">=2.8.0"
-  sharp@<0.35.0: ">=0.35.0"
   find-my-way@<9.7.0: ">=9.7.0"
   js-yaml@>=5.0.0 <=5.2.1: ^5.2.2
 autoInstallPeers: true
@@ -50,7 +49,17 @@ allowBuilds:
   ssh2: true
   unrs-resolver: true
 minimumReleaseAgeExclude:
-  - postcss@8.5.23
-  - undici@8.9.0
-  - fast-uri@3.1.5 || 4.1.2
-  - brace-expansion@5.0.9
+  - js-yaml@3.15.1 || 4.3.1
+  - "@next/env@16.3.1"
+  - "@next/mdx@16.3.1"
+  - "@next/swc-darwin-arm64@16.3.1"
+  - "@next/swc-darwin-x64@16.3.1"
+  - "@next/swc-linux-arm64-gnu@16.3.1"
+  - "@next/swc-linux-arm64-musl@16.3.1"
+  - "@next/swc-linux-x64-gnu@16.3.1"
+  - "@next/swc-linux-x64-musl@16.3.1"
+  - "@next/swc-win32-arm64-msvc@16.3.1"
+  - "@next/swc-win32-x64-msvc@16.3.1"
+  - next@16.3.1
+  - dompurify@3.4.13
+  - nanoid@3.3.18
