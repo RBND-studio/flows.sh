@@ -23,7 +23,8 @@
       }
     ],
     "prefer-tag-over-role": "off",
-    "typescript/no-deprecated": "error"
+    "typescript/no-deprecated": "error",
+    "react/button-has-type": "error"
   },
   "options": {
     "typeAware": true
