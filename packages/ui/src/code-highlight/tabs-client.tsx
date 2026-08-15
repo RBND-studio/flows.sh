@@ -107,6 +107,7 @@ const FileTab: FC<{ title: string }> = ({ title, ...props }) => {
           },
         },
       })}
+      type="button"
       {...props}
     >
       {icon ? (
