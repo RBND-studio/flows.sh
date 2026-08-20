@@ -165,7 +165,19 @@ Follow the reference file for the detected framework:
 2. Confirm all files were created or modified correctly.
 3. If `IS_TYPESCRIPT`, run the type-check command (e.g. `tsc --noEmit`) and fix any type errors before reporting success.
 
-## Step 6: Install the Flows best practices skill
+## Step 6: Offer to set up identity verification
+
+Identity verification stops third parties from impersonating the app's users, sending events on their behalf, and inflating the account's MTU bill. It is strongly recommended before production.
+
+Ask the user: "Do you want me to set up identity verification now? It needs a secret from your Flows dashboard and a place in your backend to compute a signature. You can also skip it and do it later."
+
+If they agree, follow [references/identity-verification.md](references/identity-verification.md).
+
+If they decline, or the project has no backend to compute the signature in, skip this step and keep the recommendation in the summary output below.
+
+**Never compute the signature in client code or put the secret in a browser-visible environment variable.** Doing so exposes the secret and removes the protection entirely.
+
+## Step 7: Install the Flows best practices skill
 
 Check whether the `flows-best-practices` skill is already installed in this project (look for a `flows-best-practices` directory under a local skills folder, e.g. `skills/` or `.claude/skills/`). If it is not present, install it:
 
@@ -190,4 +202,12 @@ After completing the installation, provide a summary of what was done:
 1. Replace the `YOUR_USER_ID` placeholder with the current user's ID from your auth system.
 2. Start your development server to verify everything is working. When on localhost you will see a Flows logo in the bottom right corner - click it to see debug information.
 3. Visit your Flows dashboard to create your first workflow: https://app.flows.sh
+```
+
+If identity verification was set up in Step 6, add to the next steps: check the browser console for a `User identity verification issue` warning, and once it is clean, enforce identity verification in **Settings > Environments**.
+
+If it was skipped, add this line instead:
+
+```md
+4. **Recommended before production:** set up [identity verification](https://flows.sh/docs/sdk/identity-verification) so third parties cannot impersonate your users. Ask me to do it whenever you are ready.
 ```

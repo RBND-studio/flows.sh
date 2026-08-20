@@ -8,6 +8,7 @@ Isolated instances inside an organization, each with its own active workflow ver
 
 - **Create**: **Settings** → **Environment** → enter a unique key. This key is used to configure the SDK.
 - **Edit**: **Settings** → **Environment** → update the key. **If the key changes, update the SDK setup everywhere it is used at the same time, or the app will stop connecting to the correct environment.**
+- **Secure**: each environment can hold HMAC secrets and can require a signed `userId` on every SDK request. Off by default for new environments. See [identity-verification.md](identity-verification.md).
 
 SDK configuration:
 

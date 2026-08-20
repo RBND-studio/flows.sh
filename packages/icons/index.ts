@@ -102,6 +102,8 @@ export * from "./src/kebab-horizontal16";
 export * from "./src/language16";
 export * from "./src/link16";
 export * from "./src/linkedin16";
+export * from "./src/lock-filled16";
+export * from "./src/lock16";
 export * from "./src/log16";
 export * from "./src/logic16";
 export * from "./src/magic16";

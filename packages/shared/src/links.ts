@@ -183,6 +183,7 @@ export const links = (domain = "flows.sh") =>
         overview: `https://${domain}/docs/sdk`,
         reactInstallation: `https://${domain}/docs/sdk/react/installation`,
         javascriptInstallation: `https://${domain}/docs/sdk/javascript/installation`,
+        identityVerification: `https://${domain}/docs/sdk/identity-verification`,
         frameworks: {
           nextjs: `https://${domain}/docs/sdk/frameworks/next`,
           angular: `https://${domain}/docs/sdk/frameworks/angular`,

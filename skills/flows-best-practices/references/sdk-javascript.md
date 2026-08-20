@@ -46,17 +46,18 @@ If installing into a project for the first time, prefer the `flows-install` skil
 
 Initializes the SDK and identifies the user. Must be called at least once before anything else.
 
-| Option            | Type             | Required | Notes                                                                              |
-| ----------------- | ---------------- | -------- | ---------------------------------------------------------------------------------- |
-| `organizationId`  | `string`         | Yes      | Settings > General                                                                 |
-| `environment`     | `string`         | Yes      | Settings > Environments                                                            |
-| `userId`          | `string`         | Yes      | Unlike the React SDK, this is required here, not optional                          |
-| `userProperties`  | `object`         | No       | [User properties](users.md#user-properties); `string \| number \| boolean \| date` |
-| `language`        | `LanguageOption` | No       | For [localization](personalization-localization.md)                                |
-| `apiUrl`          | `string`         | No       | Custom/proxy API URL                                                               |
-| `debug`           | `boolean`        | No       | Enables debug mode, see [debugging.md](debugging.md)                               |
-| `onDebugShortcut` | `function`       | No       | Custom debug panel shortcut handler                                                |
-| `onNavigate`      | `OnNavigate`     | No       | Intercepts internal link clicks inside Flows components, for client side routing   |
+| Option            | Type             | Required | Notes                                                                                                                                                          |
+| ----------------- | ---------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `organizationId`  | `string`         | Yes      | Settings > General                                                                                                                                             |
+| `environment`     | `string`         | Yes      | Settings > Environments                                                                                                                                        |
+| `userId`          | `string`         | Yes      | Unlike the React SDK, this is required here, not optional                                                                                                      |
+| `signature`       | `string`         | No       | HMAC signature of `userId`, computed on the backend. Required once identity verification is enforced, see [identity-verification.md](identity-verification.md) |
+| `userProperties`  | `object`         | No       | [User properties](users.md#user-properties); `string \| number \| boolean \| date`                                                                             |
+| `language`        | `LanguageOption` | No       | For [localization](personalization-localization.md)                                                                                                            |
+| `apiUrl`          | `string`         | No       | Custom/proxy API URL                                                                                                                                           |
+| `debug`           | `boolean`        | No       | Enables debug mode, see [debugging.md](debugging.md)                                                                                                           |
+| `onDebugShortcut` | `function`       | No       | Custom debug panel shortcut handler                                                                                                                            |
+| `onNavigate`      | `OnNavigate`     | No       | Intercepts internal link clicks inside Flows components, for client side routing                                                                               |
 
 ```js
 import { init } from "@flows/js";
