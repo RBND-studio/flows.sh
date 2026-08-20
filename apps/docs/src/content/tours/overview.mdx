@@ -1,5 +1,5 @@
 ---
-title: Tours
+title: Overview
 description: Guide users through your application with step-by-step, interactive experiences.
 ---
 
@@ -35,7 +35,7 @@ Tours are designed to provide a better user experience for step-by-step instruct
 
 - **Low latency**: When a tour is started, the whole sequence is loaded into the user's browser, making switching between steps instant.
 - **Forwards and backwards navigation**: Users can navigate to the previous steps, making it easier to review instructions.
-- **State persistence**: Tours remember the user's progress, even if they leave and return later.
+- **State persistence**: Tours remember the user's progress, even if they leave and return later. You can change this per tour with [tour sessions](/tours/sessions), for example to restart a tour that the user abandoned.
 
 ## Tour steps
 
@@ -43,4 +43,5 @@ Tours consist of tour-specific blocks from your block library. Each step behaves
 
 ## Next steps
 
-Learn how the tour block works and how to configure it in the [tour block](/blocks/tour-block) documentation.
+- Learn how the tour block works and how to configure it in the [tour block](/blocks/tour-block) documentation.
+- Decide what happens to an abandoned or interrupted tour, and how many tours can run at once, in [tour sessions](/tours/sessions).

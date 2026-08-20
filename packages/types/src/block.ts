@@ -34,3 +34,9 @@ export enum PropertyTypeEnum {
 }
 
 export type PropertyType = `${PropertyTypeEnum}`;
+
+export enum TourSessionEndActionEnum {
+  RESET = "reset",
+  COMPLETE = "complete",
+  CANCEL = "cancel",
+}

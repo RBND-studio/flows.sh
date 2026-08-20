@@ -154,6 +154,7 @@ export * from "./src/reactour-full20";
 export * from "./src/reactour20";
 export * from "./src/refiner-full20";
 export * from "./src/refiner20";
+export * from "./src/reset16";
 export * from "./src/rocket16";
 export * from "./src/satismeter-full20";
 export * from "./src/satismeter20";

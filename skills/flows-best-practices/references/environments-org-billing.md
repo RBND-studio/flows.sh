@@ -44,6 +44,15 @@ There is currently no member role system: any member can add or remove members, 
 - **Manage**: **Settings** → **Organization**.
 - **Delete**: **Settings** → **Organization** → **General**. This is permanent and removes all workflows and user data. **Cancel any paid subscription before deleting the organization.**
 
+### Show multiple tours at the same time
+
+**Settings** → **Organization** → **General**. Controls whether components from more than one [tour](tours.md) can be on screen at the same time. It is organization wide and applies to every environment.
+
+- Off (the default for new organizations): only one tour shows at a time, and Flows starts the one with the most specific trigger. Organizations created before this setting existed have it on, so their behavior did not change.
+- On: several tours can run and render together, which enables more advanced scenarios but lets tours compete for the same part of the screen.
+
+See [tours.md](tours.md#running-multiple-tours) for how the winning tour is chosen and what happens to the tours that do not start.
+
 ### Members
 
 - **Invite**: **Settings** → **Organization** → **Members** → **Invite Member** → enter their email → **Send invite**. The invite link is valid for 7 days. Once accepted, the new member has full access to the organization and its workflows.

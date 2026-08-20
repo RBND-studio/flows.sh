@@ -69,6 +69,12 @@ Guided, step by step sequences designed to help a user complete a task or unders
 
 See [tours.md](tours.md).
 
+## Tour session
+
+A single sitting in which a user works through a tour. It begins once the user moves past the first step and ends a few minutes after the user leaves the app. The tour block's **When user session ends** action then decides whether the unfinished tour keeps its progress, restarts, or ends through its `complete` or `cancel` exit node. The same action resolves a tour that gets interrupted by another tour, and an organization wide setting decides whether more than one tour may run at once.
+
+See [tours.md](tours.md#tour-sessions).
+
 ## Slot
 
 A place in the application where Flows can render a component inline (as opposed to floating on top of the page). Slots must be defined manually in the app code (`<FlowsSlot />` in React, `<flows-slot>` in the JS SDK) before they can be targeted from the workflow editor by "Slottable" components.

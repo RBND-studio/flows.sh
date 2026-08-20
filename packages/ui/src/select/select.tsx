@@ -152,7 +152,8 @@ function SelectInner<T extends string>({
               animationName: "exit",
               animationDuration: "120ms",
             },
-            minW: "var(--radix-select-trigger-width)",
+            minW: "max(var(--radix-select-trigger-width), 160px)",
+            maxW: "max(var(--radix-select-trigger-width), 280px)",
           })}
           position="popper"
           sideOffset={4}
@@ -215,7 +216,7 @@ function SelectInner<T extends string>({
                       <Text
                         color={option.disabled ? "control.fg.disabled" : "fg.neutral.muted"}
                         variant="bodyXs"
-                        maxWidth="240px"
+                        w="100%"
                       >
                         {option.description}
                       </Text>

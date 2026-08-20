@@ -177,6 +177,7 @@ export const links = (domain = "flows.sh") =>
       tour: {
         steps: `https://${domain}/docs/blocks/tour-block#tour-steps`,
         waitStep: `https://${domain}/docs/blocks/tour-block#wait-step`,
+        sessionEndAction: `https://${domain}/docs/tours/sessions`,
       },
       sdk: {
         overview: `https://${domain}/docs/sdk`,
