@@ -85,6 +85,7 @@ export type SDKBlock = {
 
   tourBlocks?: SDKTourBlock[];
   currentTourIndex?: number | null;
+  tourSessionEndAction?: string | null;
 
   survey?: SDKSurvey | null;
 };

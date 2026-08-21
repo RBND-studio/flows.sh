@@ -177,11 +177,13 @@ export const links = (domain = "flows.sh") =>
       tour: {
         steps: `https://${domain}/docs/blocks/tour-block#tour-steps`,
         waitStep: `https://${domain}/docs/blocks/tour-block#wait-step`,
+        sessionEndAction: `https://${domain}/docs/tours/sessions`,
       },
       sdk: {
         overview: `https://${domain}/docs/sdk`,
         reactInstallation: `https://${domain}/docs/sdk/react/installation`,
         javascriptInstallation: `https://${domain}/docs/sdk/javascript/installation`,
+        identityVerification: `https://${domain}/docs/sdk/identity-verification`,
         frameworks: {
           nextjs: `https://${domain}/docs/sdk/frameworks/next`,
           angular: `https://${domain}/docs/sdk/frameworks/angular`,

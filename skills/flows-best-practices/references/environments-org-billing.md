@@ -8,6 +8,7 @@ Isolated instances inside an organization, each with its own active workflow ver
 
 - **Create**: **Settings** → **Environment** → enter a unique key. This key is used to configure the SDK.
 - **Edit**: **Settings** → **Environment** → update the key. **If the key changes, update the SDK setup everywhere it is used at the same time, or the app will stop connecting to the correct environment.**
+- **Secure**: each environment can hold HMAC secrets and can require a signed `userId` on every SDK request. Off by default for new environments. See [identity-verification.md](identity-verification.md).
 
 SDK configuration:
 
@@ -43,6 +44,15 @@ There is currently no member role system: any member can add or remove members, 
 
 - **Manage**: **Settings** → **Organization**.
 - **Delete**: **Settings** → **Organization** → **General**. This is permanent and removes all workflows and user data. **Cancel any paid subscription before deleting the organization.**
+
+### Show multiple tours at the same time
+
+**Settings** → **Organization** → **General**. Controls whether components from more than one [tour](tours.md) can be on screen at the same time. It is organization wide and applies to every environment.
+
+- Off (the default for new organizations): only one tour shows at a time, and Flows starts the one with the most specific trigger. Organizations created before this setting existed have it on, so their behavior did not change.
+- On: several tours can run and render together, which enables more advanced scenarios but lets tours compete for the same part of the screen.
+
+See [tours.md](tours.md#running-multiple-tours) for how the winning tour is chosen and what happens to the tours that do not start.
 
 ### Members
 

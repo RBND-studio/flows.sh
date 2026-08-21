@@ -53,6 +53,12 @@ To ensure compatibility, use these exit node keys in the underlying component.
 
 Sometimes you may need to reorder steps in a tour. To do this, hover over the step and drag it by the handle that appears on the left.
 
+## When user session ends
+
+Under **Settings**, the **When user session ends** property decides what happens to a half-finished tour when the user leaves your app and does not come back for a few minutes. You can preserve their progress, restart the tour, or end it through its `complete` or `cancel` exit node. The same setting decides how the tour is resolved if another tour interrupts it.
+
+See [tour sessions](/tours/sessions) for the available actions and how to choose between them.
+
 ## Wait property
 
 Every tour step includes a **wait property** that pauses the tour until the user interacts with your application. This interaction can be a click event, navigation to a specific page, or no interaction at all. See the [wait property](/blocks/block-properties/wait) page for configuration details.

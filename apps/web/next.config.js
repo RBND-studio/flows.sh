@@ -48,7 +48,7 @@ const nextConfig = {
   },
   images: {
     formats: ["image/avif", "image/webp"],
-    qualities: [50, 75],
+    qualities: [50, 75, 100],
   },
   rewrites: async () => {
     return {

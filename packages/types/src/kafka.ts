@@ -3,6 +3,9 @@ import { type SDKBlock } from "./sdk";
 export type KafkaUserEventName =
   | "transition"
   | "tour-update"
+  | "tour-session-heartbeat"
+  | "tour-session-hint"
+  | "tour-reset"
   | "reset-progress"
   | "workflow-start"
   | "enter"
@@ -18,6 +21,7 @@ export type KafkaUserEvent = {
   organizationId: string;
   name: KafkaUserEventName;
   blockId?: string;
+  blockIds?: string[];
   blockKey?: string;
   workflowId?: string;
   workflowVersionId?: string;

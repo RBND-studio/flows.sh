@@ -353,6 +353,11 @@ const nextConfig = {
         destination: "/blocks/tour-block",
         permanent: true,
       },
+      {
+        source: "/tours",
+        destination: "/tours/overview",
+        permanent: true,
+      },
     ];
   },
 };

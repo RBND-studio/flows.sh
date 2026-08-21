@@ -1,0 +1,219 @@
+---
+title: Identity Verification
+description: Improve security with identity verification in Flows, preventing unauthorized access and safeguarding sensitive information.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+
+## Overview
+
+Identity verification adds an extra layer of security to your Flows integration, requiring a HMAC signature computed on your backend using your unique secret key. This prevents malicious third parties from impersonating your users and sending data to Flows on their behalf.
+
+We strongly recommend implementing identity verification to safeguard your users information.
+
+## What identity verification prevents
+
+Your organization ID and environment key are visible to anyone who opens your application, because the SDK runs in the browser. Without identity verification, anyone who knows those two values and a valid user ID can:
+
+- Create new users in your organization
+- Send events to Flows on behalf of your users
+- Respond to surveys on behalf of your users
+- Start/Dismiss/Restart workflows on behalf of your users
+- Pollute your organization with arbitrary users, possibly leading to increased costs
+
+Some of these risks can be mitigated by using non-public user IDs (eg. uuids instead of emails). If the third party does not know the user ID, they cannot impersonate the user. However, the third party can still pollute your organization by creating users with arbitrary IDs, so we strongly recommend implementing identity verification in this case.
+
+## How it works
+
+Each environment can hold one or more secrets. A secret is a random value that only Flows and your backend know.
+
+When a user signs in to your application, your backend computes a HMAC-SHA256 signature of that user's ID using the secret, and sends the result to your frontend along with the user ID. The SDK includes the signature with every request it makes, and Flows recomputes the signature to confirm that the user ID really came from your backend.
+
+The secret must never reach the browser. If it does, anyone can generate valid signatures for any user ID and the protection is lost.
+
+Identity verification has two stages, so you can roll it out without downtime:
+
+- **Not enforced** (default): requests without a signature are accepted, and an invalid signature only logs a warning in the browser console. Use this stage to build and check your implementation.
+- **Enforced**: requests without a valid signature are rejected. Workflows stop loading for any user whose signature is missing or wrong.
+
+## Implementing identity verification
+
+<Steps>
+
+<Step>
+
+### Create a secret
+
+In the Flows dashboard, go to **Settings > Environments**, open the options menu next to the environment you want to protect, and select **Add a secret**.
+
+Give the secret a name and optionally pick an expiration. Names are only used to identify the secret in the dashboard, so use something that will make sense to you later, such as the name of the system that stores it.
+
+<Callout type="warn">
+  The secret is shown only once, when you create it. Copy it before closing the dialog and store it
+  somewhere safe, such as your secret manager or environment variables. If you lose it, delete the
+  secret and create a new one.
+</Callout>
+
+Each environment has its own secrets. A signature created with a production secret is not valid in your development environment, so repeat this step for every environment you want to protect.
+
+</Step>
+
+<Step>
+
+### Generate the signature on your backend
+
+Compute a HMAC-SHA256 hash of the user's ID, using the secret as the key, and encode the result as a hexadecimal string.
+
+Use the same user ID that you pass to the SDK as `userId`. If the two values differ by even one character, the signature will not match.
+
+```js title="Node.js"
+import crypto from "node:crypto";
+
+const signature = crypto
+  .createHmac("sha256", process.env.FLOWS_SECRET)
+  .update(userId)
+  .digest("hex");
+```
+
+```python title="Python"
+import hashlib
+import hmac
+import os
+
+signature = hmac.new(
+    os.environ["FLOWS_SECRET"].encode(),
+    user_id.encode(),
+    hashlib.sha256,
+).hexdigest()
+```
+
+```ruby title="Ruby"
+require "openssl"
+
+signature = OpenSSL::HMAC.hexdigest("SHA256", ENV["FLOWS_SECRET"], user_id)
+```
+
+This is a standard HMAC-SHA256 digest, so any language with a crypto library can produce it. The result is always 64 hexadecimal characters.
+
+Return the signature to your frontend the same way you return the rest of the signed-in user's data, for example as part of your session or user endpoint.
+
+<Callout>
+  The signature depends only on the user ID and the secret, so it does not expire on its own and you
+  can compute it once per session rather than per request.
+</Callout>
+
+</Step>
+
+<Step>
+
+### Pass the signature to the SDK
+
+Pass the signature you received from your backend to the SDK using the `signature` option.
+
+```tsx title="React"
+import { FlowsProvider } from "@flows/react";
+
+const App = () => {
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    fetch("/user").then((data) => setUser(data));
+  }, []);
+
+  return (
+    <FlowsProvider
+      organizationId="your-organization-id"
+      environment="production"
+      // Pass null as a fallback to disable the SDK while waiting for userId/signature to arrive
+      userId={user?.id ?? null}
+      signature={user?.flowsSignature ?? null} // Signature computed on your backend
+    >
+      {/* Your app code here */}
+    </FlowsProvider>
+  );
+};
+```
+
+```js title="JavaScript"
+import { init } from "@flows/js";
+
+fetch("/user").then((user) => {
+  init({
+    organizationId: "your-organization-id",
+    environment: "production",
+    userId: user.id,
+    signature: user.flowsSignature, // Signature computed on your backend
+  });
+});
+```
+
+If you load the user asynchronously, pass the signature at the same time as the user ID. The SDK sends both together, so a signature that arrives after the first request will not be applied to it.
+
+</Step>
+
+<Step>
+
+### Check your implementation
+
+While identity verification is not enforced, Flows validates any signature it receives and reports the result without blocking the request. This lets you confirm your implementation before turning enforcement on.
+
+Open your application and check the browser console:
+
+- **No warning**: your signature is correct and you are ready to enforce.
+- **`User identity verification issue: Invalid signature | Identity verification is disabled on the current environment`**: the signature does not match. See [Troubleshooting](#troubleshooting) below.
+
+Check every environment and every sign-in path in your application, including any place where the user ID changes without a full page reload, such as switching accounts or impersonating a user.
+
+</Step>
+
+<Step>
+
+### Enforce identity verification
+
+Once every client sends a valid signature, go to **Settings > Environments**, open the options menu next to the environment, and select **Enforce identity verification**. Turn the switch on and save.
+
+<Callout type="warn">
+  Enforcing identity verification immediately rejects every request without a valid signature.
+  Workflows will stop loading for any user whose signature is missing or incorrect, including users
+  on older versions of your application that were released before you added the `signature` option.
+</Callout>
+
+You can turn enforcement off again at any time from the same menu.
+
+</Step>
+
+</Steps>
+
+## Rotating secrets
+
+An environment can have several active secrets at once, and a signature created with any of them is accepted. This lets you rotate a secret without downtime:
+
+1. Create a new secret and store it alongside the current one.
+2. Deploy your backend so it signs with the new secret. Both old and new signatures remain valid.
+3. Once no client is using signatures from the old secret, delete the old secret in **Settings > Environments**.
+
+Deleting a secret takes effect immediately. Any signature created with it is rejected from that moment on, so only delete a secret once you are confident nothing is using it. Deletion cannot be undone.
+
+If you set an expiration when creating a secret, the secret stops being accepted once that date passes. Expired secrets remain visible in the dashboard, marked as **Expired**, until you delete them.
+
+## Troubleshooting
+
+If your signature is not accepted, check the following in order:
+
+- **The user ID does not match.** The signature must be computed from exactly the same string you pass as `userId`. Watch for differences in casing, whitespace, and numeric IDs that were converted to strings differently on each side.
+- **The wrong secret was used.** Secrets are per environment. Confirm your backend is using the secret that belongs to the environment your frontend is pointing at.
+- **The secret was deleted or expired.** Check **Settings > Environments** to confirm the secret still exists and is not marked as expired.
+- **The encoding is wrong.** Flows expects a hexadecimal digest, not base64. The signature is always 64 characters long.
+- **The secret reached the browser.** If you compute the signature in frontend code, the secret is exposed and identity verification provides no protection. Move the computation to your backend.
+
+These are the messages Flows returns:
+
+- `Invalid signature | Identity verification is disabled on the current environment` — Logged as a browser console warning. A signature was sent but did not match. The request was still accepted, because enforcement is off.
+- `Missing signature | Identity verification is enforced on the current environment` — The request was rejected. Enforcement is on and no signature was sent.
+- `Invalid signature | Identity verification is enforced on the current environment` — The request was rejected. Enforcement is on and the signature did not match.
+
+## See also
+
+- [Debugging](/sdk/debug) — Inspect the user ID and SDK setup your application is sending to Flows.
+- [FlowsProvider reference](/sdk/react/reference#flowsprovider) — Full list of React SDK props.
+- [init() reference](/sdk/javascript/reference#init) — Full list of JavaScript SDK options.
