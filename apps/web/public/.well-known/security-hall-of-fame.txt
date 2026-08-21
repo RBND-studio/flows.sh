@@ -1,0 +1,5 @@
+Flows Security Hall of Fame
+
+At Flows, security is a priority. We thank the following researchers for responsibly disclosing security vulnerabilities and helping us keep Flows safe.
+
+- (2026-08-21) Shri Varshan (https://www.linkedin.com/in/shri-varshan-k-743717270) and Vibusha Satheeshkumar (https://www.linkedin.com/in/vibushasatheeshkumar) - Unauthenticated SDK data manipulation 

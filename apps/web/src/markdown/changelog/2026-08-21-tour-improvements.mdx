@@ -1,0 +1,61 @@
+---
+title: Tour sessions and identity verification
+date: "2026-08-21"
+description: Tours now handle users who leave partway through, only one tour runs at a time, and identity verification stops third parties from impersonating your users.
+---
+
+<Image
+  src="/images/changelog/2026-08-21-tour-session.png"
+  alt="Screenshot of the new tour session settings in the Flows editor"
+  width={1800}
+  height={1052}
+/>
+
+Tours now know when a user leaves partway through. The new **When user session ends** setting on a tour block decides what happens next: resume where they left off, restart from the beginning, or end the tour through its `complete` or `cancel` exit node.
+
+You can use this so an abandoned tour doesn't sit waiting for a user who has moved on, and the rest of your workflow keeps running without them. Learn more about [tour sessions](/docs/tours/sessions).
+
+## Tour concurrency settings
+
+<Image
+  src="/images/changelog/2026-08-21-tour-concurrency.png"
+  alt="Screenshot of the new tour concurrency settings in the Flows editor"
+  width={1800}
+  height={1040}
+/>
+
+Only one tour shows at a time now. When several tours would start at the same moment, Flows starts the most specific one and leaves the rest for later.
+
+Use this to stop two tours competing for the same part of the screen. You can turn it off under **Settings > Organization > General**. Existing organizations have this disabled by default, since that was the previous behavior. Learn more about [tour concurrency](/docs/tours/sessions#running-multiple-tours).
+
+## Identity verification
+
+<Image
+  src="/images/changelog/2026-08-21-identity-verification.png"
+  alt="Identity verification illustration"
+  width={1800}
+  height={1040}
+/>
+
+[Identity verification](/docs/sdk/identity-verification) stops third parties from impersonating your users. Your organization ID and environment key are visible to anyone who opens your app, and a signature computed on your backend proves that a user ID really came from you.
+
+Set it up under **Settings > Environments**. Identity verification is optional, but we strongly recommend it for every production environment.
+
+## Other improvements
+
+- New workflows now start from an example you can import in one click, including a product tour, an onboarding checklist, and a welcome modal.
+- Added the [Note block](/docs/blocks/other-blocks/note) for leaving comments and reminders on a workflow. Notes are editor only and never reach your users.
+- Added a [best practices skill](/docs/agent-skills) so AI agents get Flows right when building or debugging.
+- Loading status of workflows with "fetchWorkflows()" method is faster.
+- Components on the free plan now carry "Powered by Flows" branding. Upgrade to remove it.
+
+## SDK
+
+- Added the `signature` option for identity verification, plus tour session and tour concurrency support. Upgrade to the latest SDK version to use these features.
+- The React SDK now refetches blocks when the user's language changes, and the debug panel shows the current language.
+- Events sent as the user leaves the page are more reliable.
+
+## Bug fixes
+
+- Fixed the React SDK throwing an error when `userId` changed.
+- Fixed a race condition that could send some workflows set to **Every time** into a loop.
