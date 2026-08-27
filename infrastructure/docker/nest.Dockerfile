@@ -43,7 +43,6 @@ COPY --chown=node:node --from=prod-installer /app/apps/${APP}/node_modules ./app
 COPY --chown=node:node --from=prod-installer /app/node_modules ./node_modules
 COPY --chown=node:node --from=prod-installer /app/package.json ./package.json
 COPY --chown=node:node --from=installer /app/apps/${APP}/dist ./apps/${APP}/dist
-COPY --chown=node:node ./apps/${APP}/.env.production ./apps/${APP}/.env.production
 
 USER node
 
