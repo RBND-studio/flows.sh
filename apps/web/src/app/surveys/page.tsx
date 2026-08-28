@@ -27,6 +27,7 @@ export default function Surveys(): JSX.Element {
   return (
     <>
       <Hero
+        sideBorders="hide-bottom"
         eyebrow={
           <Flex gap="space8" alignItems="center">
             <Icon icon={Survey16} />

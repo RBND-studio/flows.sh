@@ -12,16 +12,16 @@ import { SharedFeatures } from "../shared-features";
 import { questions, riverFeatures } from "./content";
 import { LogoSection } from "components/logos/logo-section";
 import { SectionIntro } from "components/ui/section-intro";
-import { routes } from "routes";
 import { FaqSection } from "components/faq-section";
+import { routes } from "routes";
 import { Hero } from "components/hero/hero";
 import { BigDemoIllustration } from "components/main-illustration/big-demo-illustration";
 import { InstallWithAIButton } from "components/install-with-ai-button";
 
 export const metadata: Metadata = getWebMetadata({
-  title: "Revenue expansion",
+  title: "User feedback surveys",
   description:
-    "Create strategic in-app promotions. With Flows, you can deliver the right message at the right time to drive conversion and account expansion.",
+    "Run NPS, CSAT, CES, and PMF surveys inside your product, at the point in the journey where the answer means something. Rendered by your own components.",
 });
 
 const Page = (): ReactElement => {
@@ -29,8 +29,14 @@ const Page = (): ReactElement => {
     <>
       <Hero
         sideBorders="hide-bottom"
-        title={<>Convert free trials to paying customers</>}
-        description="Create strategic in-app promotions. With Flows, you can deliver the right message at the right time to drive conversion and account expansion."
+        title={
+          <>
+            Ask your users
+            <br />
+            while they are still here
+          </>
+        }
+        description="Run NPS, CSAT, CES, and PMF surveys inside your product, at the point in the journey where the answer means something. Rendered by your own components."
         actions={
           <>
             <SignupClick>
@@ -54,9 +60,8 @@ const Page = (): ReactElement => {
       <LogoSection decorator="split" />
 
       <SectionIntro
-        title="How Flows works for revenue expansion"
-        description="
-        Boost your MRR with contextual upgrade campaigns. Create in-app modals, banners, and other upsell prompts that convert free trial users into paying customers."
+        title="How Flows works for surveys inside your product"
+        description="A survey in Flows is a block in a workflow, so it knows exactly where the user is and what the rest of the journey should do with the answer."
         sideBorders
         bottomBorder
         decorator="vertical"
@@ -70,7 +75,7 @@ const Page = (): ReactElement => {
       <FaqSection
         title="Frequently asked questions"
         questions={questions}
-        pageUrl={routes.solutions.revenueExpansion}
+        pageUrl={routes.solutions.surveys}
       />
 
       <CtaBanner />

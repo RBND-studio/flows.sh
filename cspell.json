@@ -6,6 +6,7 @@
   "language": "en",
   // words - list of words to be always considered correct
   "words": [
+    "Astrodon",
     "apify",
     "authjs",
     "bento",
@@ -49,6 +50,7 @@
     "Pesicka",
     "pesickadavid",
     "pglite",
+    "qualaroo",
     "rbnd",
     "reauthentication",
     "redeployments",
@@ -56,6 +58,8 @@
     "reimagined",
     "retriable",
     "rgba",
+    "satismeter",
+    "screeb",
     "shepherdjs",
     "shiki",
     "signup",
@@ -74,6 +78,7 @@
     "Vojtech",
     "waivable",
     "walkme",
+    "wootric",
     "xyflow",
     "zustand"
   ],

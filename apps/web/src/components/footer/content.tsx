@@ -122,6 +122,10 @@ export const footerGroups: Record<
         title: "Product marketing",
         href: routes.solutions.productMarketing,
       },
+      {
+        title: "User feedback",
+        href: routes.solutions.surveys,
+      },
     ],
   },
   compare: {

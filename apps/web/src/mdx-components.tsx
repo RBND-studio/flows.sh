@@ -244,6 +244,74 @@ const components: MDXComponents = {
     />
   ),
 
+  // TODO: improve this later. It works but it's not the best solution. I will look into it in the future.
+  table: (props: HTMLProps<HTMLTableElement>) => (
+    <div
+      className={css({
+        overflowX: "auto",
+        mb: "space24",
+      })}
+    >
+      <table
+        className={css({
+          borderCollapse: "separate",
+          borderSpacing: "0",
+          // Columns size to their content, but the table never renders narrower
+          // than the prose column. Wider tables overflow and scroll in the wrapper.
+          width: "max-content",
+          minWidth: "100%",
+          "& thead": {
+            backgroundColor: "bg.neutral.muted",
+          },
+          "& th": {
+            textStyle: "titleS",
+            textAlign: "left",
+            px: "space12",
+            py: "space8",
+            borderTopWidth: "1px",
+            borderTopColor: "border.neutral",
+            borderBottomWidth: "1px",
+            borderBottomColor: "border.neutral",
+            _first: {
+              borderTopLeftRadius: "radius6",
+              borderBottomLeftRadius: "radius6",
+              borderLeftWidth: "1px",
+              borderLeftColor: "border.neutral",
+            },
+            _last: {
+              borderTopRightRadius: "radius6",
+              borderBottomRightRadius: "radius6",
+              borderRightWidth: "1px",
+              borderRightColor: "border.neutral",
+            },
+          },
+          "& td": {
+            fontSize: "14px",
+            lineHeight: "20px",
+            p: "space12",
+            verticalAlign: "baseline",
+            borderBottomWidth: "1px",
+            borderBottomColor: "border.neutral",
+            "& code": {
+              backgroundColor: "bg.neutral.subtle",
+              color: "fg.neutral",
+              paddingX: "space4",
+              paddingY: "2px",
+              borderRadius: "radius6",
+              fontSize: "13px",
+              lineHeight: "18px",
+              fontFamily: "mono",
+              borderWidth: "1px",
+              borderStyle: "solid",
+              borderColor: "border.neutral",
+            },
+          },
+        })}
+        {...props}
+      />
+    </div>
+  ),
+
   hr: (props) => (
     <hr
       className={css({

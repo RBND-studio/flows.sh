@@ -16,6 +16,7 @@ import { FaqSection } from "components/faq-section";
 import { routes } from "routes";
 import { Hero } from "components/hero/hero";
 import { BigDemoIllustration } from "components/main-illustration/big-demo-illustration";
+import { InstallWithAIButton } from "components/install-with-ai-button";
 
 export const metadata: Metadata = getWebMetadata({
   title: "Product Led Growth",
@@ -27,6 +28,7 @@ const Page = (): ReactElement => {
   return (
     <>
       <Hero
+        sideBorders="hide-bottom"
         title={
           <>
             Create growth loops
@@ -36,17 +38,20 @@ const Page = (): ReactElement => {
         }
         description="Build engaging growth loops to drive company KPIs and increase the effectiveness of your sales, support and marketing efforts."
         actions={
-          <SignupClick>
-            <Button
-              className={css({
-                shadow: "neutralFocus",
-              })}
-              asChild
-              size="large"
-            >
-              <a href={links.signUp}>Get started for free</a>
-            </Button>
-          </SignupClick>
+          <>
+            <SignupClick>
+              <Button
+                className={css({
+                  shadow: "neutralFocus",
+                })}
+                asChild
+                size="large"
+              >
+                <a href={links.signUp}>Get started for free</a>
+              </Button>
+            </SignupClick>
+            <InstallWithAIButton />
+          </>
         }
       />
 

@@ -118,6 +118,12 @@ export const menuItems: MenuItemProps[] = [
         icon: Banner16,
         description: "Launch in-app campaigns without engineering help",
       },
+      {
+        title: "User feedback",
+        href: routes.solutions.surveys,
+        icon: Survey16,
+        description: "Collect feedback at the right moment in the journey",
+      },
     ],
   },
   {

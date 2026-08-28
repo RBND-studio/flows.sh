@@ -27,6 +27,7 @@ const Page = (): ReactElement => {
   return (
     <>
       <Hero
+        sideBorders="hide-bottom"
         title={
           <>
             Create powerful
