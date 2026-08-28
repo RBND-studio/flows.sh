@@ -1,0 +1,21 @@
+---
+title: Rate limits
+description: How the Flows API limits requests and what happens when a limit is reached.
+---
+
+## Overview
+
+Every endpoint in the Flows API is rate limited. When a request goes over the limit, the API responds with either `429 Too Many Requests` or `503 Service Unavailable`. Nothing is recorded and no workflow state changes, so a rejected request is always safe to send again.
+
+Each endpoint has its own budget, scoped to the client IP address over a one minute window. The SDK runs in the browser, so a budget belongs to a single visitor's connection rather than to your organization or environment.
+
+We do not publish exact numbers, because we adjust them as traffic patterns change. They sit well above what a normal integration produces. If you run into a limit or expect to, contact us and we will find a rate that works for your use case.
+
+<Callout>
+  Users who share an IP address, for example everyone behind a corporate VPN, share a budget. So do
+  load tests and scripts, which is why they hit limits long before real traffic does.
+</Callout>
+
+## See also
+
+- [Debug mode](/sdk/debug) shows whether the API responded successfully for the current user.

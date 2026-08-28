@@ -19,6 +19,16 @@ Custom components consist of two parts:
 
 Each component definition must have a matching key in the `components` (or `tourComponents`, `surveyComponents`) object you pass to the SDK. When a user reaches the block in a workflow, the SDK renders your component with the configured properties as props.
 
+## Component types
+
+Every component has a type that decides where it can be used, which object you register it in, and how its exit nodes work.
+
+| Type                   | Where you can use it         | Register it in     | Props type             | Exit nodes                                 |
+| ---------------------- | ---------------------------- | ------------------ | ---------------------- | ------------------------------------------ |
+| **Workflow component** | Any block in a workflow      | `components`       | `ComponentProps`       | You define them                            |
+| **Tour component**     | A step inside a tour block   | `tourComponents`   | `TourComponentProps`   | Built in: `continue`, `previous`, `cancel` |
+| **Survey component**   | A step inside a survey block | `surveyComponents` | `SurveyComponentProps` | Built in: `complete`, `cancel`             |
+
 ## Resources
 
 <Cards>

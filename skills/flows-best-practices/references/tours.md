@@ -21,10 +21,10 @@ Leave the trigger empty for the tour to start as soon as the block is reached, f
 
 Each step is its own block, automatically connected via built in `previous` and `continue` exit nodes, plus a `cancel` exit node available at any step for the user to leave the tour. A step can be:
 
-- A component from the [built in library](basics-v2.md) (Modal, Tooltip, Hint, Card) or a custom component marked as usable in a tour.
+- A component from the [built in library](basics-v2.md) (Modal, Tooltip, Hint, Card) or a custom component created with the **Tour component** type.
 - A built in [wait step](#wait-step).
 
-Custom step components must implement the `continue` / `previous` / `cancel` exit node contract to behave correctly inside a tour; see `TourComponentProps` in [components.md](components.md#building-a-custom-component-end-to-end).
+Custom step components must call the `continue` / `previous` / `cancel` props to behave correctly inside a tour; see `TourComponentProps` in [components.md](components.md#building-a-custom-component-end-to-end). These exit nodes are fixed and cannot be changed.
 
 Reorder steps by hovering and dragging the handle on the left of a step.
 
