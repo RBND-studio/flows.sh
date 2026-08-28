@@ -1,4 +1,4 @@
-// Taken from Incident.io app - Status pages > Public status page > Settings > Widget API
+// Taken from Incident.io app - Status pages > Public status page > Settings > Widget API
 
 export interface IncidentComponent {
   id: string;
