@@ -16,6 +16,7 @@ import { FaqSection } from "components/faq-section";
 import { routes } from "routes";
 import { Hero } from "components/hero/hero";
 import { BigDemoIllustration } from "components/main-illustration/big-demo-illustration";
+import { InstallWithAIButton } from "components/install-with-ai-button";
 
 export const metadata: Metadata = getWebMetadata({
   title: "Product Marketing",
@@ -27,6 +28,7 @@ const Page = (): ReactElement => {
   return (
     <>
       <Hero
+        sideBorders="hide-bottom"
         title={
           <>
             Create powerful in-app
@@ -38,17 +40,20 @@ const Page = (): ReactElement => {
 Launch targeted in-app campaigns like announcements and product tours without engineering help.
         "
         actions={
-          <SignupClick>
-            <Button
-              className={css({
-                shadow: "neutralFocus",
-              })}
-              asChild
-              size="large"
-            >
-              <a href={links.signUp}>Get started for free</a>
-            </Button>
-          </SignupClick>
+          <>
+            <SignupClick>
+              <Button
+                className={css({
+                  shadow: "neutralFocus",
+                })}
+                asChild
+                size="large"
+              >
+                <a href={links.signUp}>Get started for free</a>
+              </Button>
+            </SignupClick>
+            <InstallWithAIButton />
+          </>
         }
       />
 

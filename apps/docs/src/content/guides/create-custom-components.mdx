@@ -80,7 +80,7 @@ type Props = ComponentProps<{
 }>;
 ```
 
-In case of a tour component, you should use `TourComponentProps` from `@flows/react` package. This will give you access to `previous`, `continue` and `cancel` props that are used to navigate through the tour.
+In case of a tour component, you should use `TourComponentProps` from `@flows/react` package. This will give you access to `previous`, `continue` and `cancel` props that are used to navigate through the tour. Survey components work the same way with `SurveyComponentProps`, which supplies `survey`, `complete` and `cancel`.
 
 ```tsx title="tour-banner.tsx"
 import { TourComponentProps } from "@flows/react"; // [!code highlight]
@@ -122,7 +122,7 @@ export const MyBanner = (props: Props): ReactNode => (
 
 ## Add component into the Flows provider
 
-To make the component available to Flows, you need to add it to the `FlowsProvider` in your application.
+To make the component available to Flows, you need to add it to the `FlowsProvider` in your application. Register it in the object that matches its type: `components` for a workflow component, `tourComponents` for a tour component, `surveyComponents` for a survey component. A component registered in the wrong object never renders.
 
 ```tsx title="layout.tsx"
 import { FlowsProvider } from "@flows/react";
@@ -154,7 +154,7 @@ const App = () => {
 
 Now that we have our UI component, we can create a component in Flows. Navigate to **Components** and click **New component**.
 
-A dialog will appear where you need to enter a name for the component and select if the component is going to be used in a workflow or a tour.
+A dialog will appear where you need to enter a name for the component and pick its type: **Workflow component**, **Tour component** or **Survey component**.
 
 </Step>
 
@@ -162,7 +162,7 @@ A dialog will appear where you need to enter a name for the component and select
 
 ## Specify component
 
-To tell the Flows SDK which component to use, you need to enter the key you used in the `components` object passed to FlowsProvider. In our case, it's `Banner`.
+To tell the Flows SDK which component to use, you need to enter the key you used in the `components` object passed to FlowsProvider. In our case, it's `Banner`. For a tour or survey component, use the key from `tourComponents` or `surveyComponents`.
 
 ![Template component](/blocks/template-component.png)
 
@@ -215,6 +215,15 @@ Exit nodes are the transitions that can be triggered when the user interacts wit
 The exit node has only a `key` field that needs to match the prop name in your component.
 
 ![Component exit nodes](/blocks/template-exit-nodes.png)
+
+### Exit nodes on tour and survey components
+
+Tour and survey components do not have an editable exit node list. Their exit nodes are fixed by the block they live in, so the component page shows them as a read only list instead of a form:
+
+- **Tour component**: `continue`, `previous` and `cancel`, matching the props you get from `TourComponentProps`.
+- **Survey component**: `complete` and `cancel`, matching the props you get from `SurveyComponentProps`.
+
+There is nothing to add by hand and nothing to double wire. You cannot define extra custom exit nodes on a tour or survey component. If a step needs to branch somewhere other than the next step, put that logic in the workflow after the tour block, or use a workflow component outside the tour.
 
 </Step>
 

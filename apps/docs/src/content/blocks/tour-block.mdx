@@ -37,7 +37,7 @@ When adding steps into a tour block, you can add:
 
 ### Custom steps
 
-Custom steps are UI components from your component library that you can add into a tour. When creating a [component](/components/overview), you can mark it as a tour block, making it available for tours.
+Custom steps are UI components from your component library that you can add into a tour. To make a component available as a tour step, create it with the **Tour component** type. See [component types](/components/custom#component-types).
 
 ### Tour step exit nodes
 
@@ -47,7 +47,7 @@ Tour-specific blocks come with predefined exit nodes to ensure reliable navigati
 - **`previous`**: Connects to the previous step in the tour.
 - **`cancel`**: Connects to the `cancel` exit node of the tour block.
 
-To ensure compatibility, use these exit node keys in the underlying component.
+To ensure compatibility, call the matching `continue`, `previous` and `cancel` props that `TourComponentProps` gives you.
 
 ### Reordering steps
 

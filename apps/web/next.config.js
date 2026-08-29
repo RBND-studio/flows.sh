@@ -9,12 +9,12 @@ const cspHeader = `
     script-src 'self' 'unsafe-inline'${dev ? " 'unsafe-eval'" : ""};
     connect-src 'self' https://app.lemonsqueezy.com https://status.flows.sh https://*.flows-cloud.com wss://*.flows-cloud.com;
     style-src 'self' 'unsafe-inline';
-    img-src 'self' https://api.producthunt.com blob: data:;
+    img-src 'self' https://api.producthunt.com blob: data: https://img.youtube.com https://i.ytimg.com;
     font-src 'self';
     object-src 'none';
     base-uri 'self';
     form-action 'self';
-    frame-src https://*.examples.flows.sh${dev ? " http://localhost:3000" : ""};
+    frame-src https://*.examples.flows.sh${dev ? " http://localhost:3000" : ""} https://www.youtube-nocookie.com;
     frame-ancestors 'none';
     upgrade-insecure-requests;
 `;

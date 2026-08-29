@@ -10,6 +10,7 @@
     "...frameworks",
     "---Other---",
     "debug",
-    "identity-verification"
+    "identity-verification",
+    "rate-limits"
   ]
 }

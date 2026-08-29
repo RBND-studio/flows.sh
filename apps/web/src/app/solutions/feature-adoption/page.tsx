@@ -16,6 +16,7 @@ import { routes } from "routes";
 import { SectionIntro } from "components/ui/section-intro";
 import { Hero } from "components/hero/hero";
 import { BigDemoIllustration } from "components/main-illustration/big-demo-illustration";
+import { InstallWithAIButton } from "components/install-with-ai-button";
 
 export const metadata: Metadata = getWebMetadata({
   title: "Feature Adoption",
@@ -27,20 +28,24 @@ const Page = (): ReactElement => {
   return (
     <>
       <Hero
+        sideBorders="hide-bottom"
         title="Improve feature adoption"
         description="Support releases with engaging announcements, embeddable banners, and guides. Nudge users to try new features and get the most out of your product."
         actions={
-          <SignupClick>
-            <Button
-              className={css({
-                shadow: "neutralFocus",
-              })}
-              asChild
-              size="large"
-            >
-              <a href={links.signUp}>Get started for free</a>
-            </Button>
-          </SignupClick>
+          <>
+            <SignupClick>
+              <Button
+                className={css({
+                  shadow: "neutralFocus",
+                })}
+                asChild
+                size="large"
+              >
+                <a href={links.signUp}>Get started for free</a>
+              </Button>
+            </SignupClick>
+            <InstallWithAIButton />
+          </>
         }
       />
 

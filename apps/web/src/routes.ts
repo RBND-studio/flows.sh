@@ -28,6 +28,7 @@ export const routes = {
     productLedGrowth: "/solutions/product-led-growth",
     productMarketing: "/solutions/product-marketing",
     revenueExpansion: "/solutions/revenue-expansion",
+    surveys: "/solutions/surveys",
   },
 
   alternatives: "/alternatives",

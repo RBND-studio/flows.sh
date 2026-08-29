@@ -1,6 +1,6 @@
 # Debugging
 
-**Source:** [Debug mode](https://flows.sh/docs/sdk/debug.md) · [Testing workflows](https://flows.sh/docs/workflows/testing.md)
+**Source:** [Debug mode](https://flows.sh/docs/sdk/debug.md) · [Testing workflows](https://flows.sh/docs/workflows/testing.md) · [Rate limits](https://flows.sh/docs/sdk/rate-limits.md)
 
 ## SDK debug mode
 
@@ -36,6 +36,7 @@ Common root causes worth checking first:
 
 - A **slottable component** with no Slot ID set, or a slot that does not exist in the app code yet: it renders nothing, with no error. See [components.md](components.md#embedding-components-in-a-slot).
 - A **tooltip or hint** whose target element CSS selector matches nothing on the page: it silently does not appear.
+- A **custom component of the wrong type**: a component created as a **Workflow component** does not appear in a tour block's step picker, and a **Tour component** does not appear in the workflow's Add block menu. The type is fixed at creation, so the component has to be recreated with the right type. See [components.md](components.md#component-types).
 - A **draft version** accidentally pointed at production, or a test relying on the draft that has since been edited into a broken state. Most of the times avoid using drafts in production; see [workflows.md](workflows.md#testing-workflows).
 - **User property targeting** configured in the dashboard, but the underlying property was never actually shipped in the SDK's `userProperties`. See [users.md](users.md#user-properties).
 - A **component update** made in the dashboard that has not been applied to the specific instance already placed in a workflow (updates do not propagate automatically). See [components.md](components.md#managing-components).
@@ -43,3 +44,14 @@ Common root causes worth checking first:
 - A **tour that reset itself or ended on its own** after the user came back later: that is the tour block's **When user session ends** action, which defaults to **Mark as Canceled** on new tour blocks and fires a few minutes after the user leaves the app. The user event log shows the resulting `cancel` / `complete` transition or reset. See [tours.md](tours.md#tour-sessions).
 - For the JavaScript SDK, `<flows-slot>` or `<flows-floating-blocks>` rendering nothing because `setupJsComponents()` was never called, or was called before `init()`.
 - **Identity verification enforced with a broken signature**: every block silently stops loading for affected users. Check the browser console for `User identity verification issue`, and the network tab for requests rejected with `Missing signature` or `Invalid signature`. See [identity-verification.md](identity-verification.md).
+
+## Rate limits
+
+Every API endpoint is rate limited, each with its own budget, scoped to the client IP address over a one minute window, so a budget belongs to one visitor's connection rather than to the whole organization. Exact numbers are not published and change over time, and they sit far above what a normal integration produces. Users behind a shared VPN or gateway share a budget, and load tests concentrate every request on one IP, so they trip limits long before real traffic would.
+
+A throttled request is rejected with `429 Too Many Requests` or `503 Service Unavailable`. Nothing is recorded and no workflow state changes, so it is always safe to retry. The SDK recovers differently per endpoint:
+
+- **Events** are queued in local storage and removed only once the API accepts them, so a rejected event is retried every 10 seconds and again on the next page load. Progress is delayed, not lost. The console shows `Failed to send event, will retry later`.
+- **Blocks, workflows and survey responses** are not queued. The request fails, the error is logged to the console, and the SDK retries only on the next natural trigger: a user property or language change, a real time block update, or the next page load.
+
+Requests pile up when something drives the SDK faster than a user could act: a `userProperties` value that changes constantly (a timestamp or counter), re-initializing the SDK on every route change instead of once, or an exit node or `startWorkflow` called from an effect without a guard.
