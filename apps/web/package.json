@@ -36,6 +36,7 @@
     "next-video": "^2.8.1",
     "react": "19.2.8",
     "react-dom": "19.2.8",
+    "react-lite-youtube-embed": "^3.6.2",
     "react-medium-image-zoom": "^5.4.9",
     "rehype-slug": "^6.0.0",
     "remark-frontmatter": "^5.0.0",

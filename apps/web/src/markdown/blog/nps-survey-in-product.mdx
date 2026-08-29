@@ -1,0 +1,102 @@
+---
+title: "How to run NPS inside your product without annoying anyone"
+description: "NPS is easy to run and easy to run badly. How to time it, who to ask, what to do with the score, and how to make the follow up question earn its place."
+date: "2026-08-29"
+author: "Ondrej Pesicka"
+image: /images/blog/nps-survey-in-product/cover.png
+imageAlt: Illustration of NPS survey
+---
+
+import { YoutubeEmbed } from "components/youtube-embed";
+
+NPS is the most widely run product survey and the most widely misused. The question takes five seconds to answer, which makes it tempting to put in front of everyone, all the time. That is exactly how you end up with a number that moves for reasons nobody can explain and a user base that has learned to dismiss your popovers on sight.
+
+This post is about running it properly: who to ask, when, and what to actually do with the result.
+
+## What NPS measures, and what it does not
+
+The question is fixed: "How likely are you to recommend us to a friend or colleague", on a scale from 0 to 10. Respondents are bucketed into promoters (9 to 10), passives (7 to 8), and detractors (0 to 6). The score is the percentage of promoters minus the percentage of detractors, giving a number between negative 100 and positive 100.
+
+What it measures is the overall relationship, slowly. It is a trend line.
+
+What it does not measure is whether a specific feature works, whether last week's release landed, or how a support conversation went. Those need [CSAT or CES](/blog/survey-types-nps-csat-ces-pmf), and pointing NPS at them produces answers that are mostly noise.
+
+Two honest criticisms worth knowing before you commit to it. The bucketing throws away information: a 6 and a 0 are both detractors, and treating them the same is a real loss. And the 0 to 10 scale is culturally inconsistent, so a global user base introduces variance that has nothing to do with your product. Neither is a reason to avoid NPS. Both are reasons to treat the number as directional and read the comments.
+
+## Who to ask
+
+The most common mistake is asking everyone. NPS from a user who signed up yesterday measures your marketing, not your product.
+
+Sensible targeting:
+
+- **Require tenure.** Thirty days is a reasonable floor for most products. The user should have enough experience to have an opinion worth recording.
+- **Require actual usage.** Someone who signed up and never came back is not going to give you a useful answer. Filter on a meaningful activity threshold, not just account age.
+- **Sample continuously, do not blast.** Survey a rolling slice of eligible users every month rather than everyone at once. You get a steadier trend line and you avoid training your entire user base to dismiss the same popover on the same day.
+- **Segment before you aggregate.** A single company wide score hides everything interesting. Split by plan, role, company size, and tenure. The useful finding is almost always "this segment is unhappy," not "the number went down two points."
+
+## When to ask
+
+**Not during a task.** A rating popover that appears mid flow measures irritation.
+
+**Not right after a failure.** If the user just hit an error, you will collect the error. That might be worth knowing, but it is not the relationship metric you were trying to measure.
+
+**Not right after a win either.** Asking immediately after someone completes something delightful inflates the score. If you want the relationship number, ask at a neutral moment.
+
+**Cap the frequency.** Once every six months per user is a common ceiling for NPS specifically, and no more than one survey of any kind per user per month across everything you run.
+
+## The follow up question is the actual product
+
+The score is a trend line. The free text follow up is where the information lives. Ask it very time, but keep it optional (you don't want forced answers).
+
+<Image
+  src="/images/blog/nps-survey-in-product/followup-question.png"
+  alt="NPS followup question example"
+  width={1800}
+  height={900}
+/>
+
+## Making the score useful
+
+A few practices that separate teams who act on NPS from teams who just report it:
+
+**Read comments before looking at the score.** The number tells you nothing about what to do. Reading fifty comments takes an hour and usually produces a clear list.
+
+**Track the trend, not the absolute value.** Cross company benchmarks are close to meaningless given how differently everyone samples. Your own number over time is the signal.
+
+**Close the loop.** If a detractor leaves a comment and a human replies, a meaningful share change their mind. This is the highest return activity attached to NPS and most teams skip it.
+
+**Watch the response rate.** If it drops, your sampling is too aggressive or your timing is wrong. A falling response rate usually invalidates the score before anyone notices.
+
+## Building it
+
+The question is trivial. Everything around it is not: tenure and usage targeting, rolling sampling, frequency caps across all your surveys, per user state that survives devices, follow ups that branch on the bucket, and analytics you can segment.
+
+In Flows, NPS is a rating question with the 0 to 10 scale, inside a workflow:
+
+1. Add a **Start** block targeting users with the tenure and usage you want.
+2. Add a **Survey** block with a rating question, display set to numbers, scale set to 0 to 10, and labels at each end.
+3. Add a freeform follow up question, marked optional.
+4. Choose a presentation component. The [Survey Popover](/docs/blocks/basics-v2/survey-popover) anchors to a corner so users can answer without losing their place, or use your own component.
+5. Publish to a staging environment first, then production.
+
+Results appear in the analytics tab of the survey block: how many users saw it, how many completed it, the distribution across the scale with average and median, and a CSV export of every raw response.
+
+See the [NPS survey example](/examples/nps-survey) for a working demo with source code, the [surveys documentation](/docs/surveys/overview) for the full reference, or watch this video for a step-by-step setup guide.
+
+{/* cspell:disable-next-line */}
+
+<YoutubeEmbed videoId="UeZzce5AnYg" label="How to set up a basic User Survey" />
+
+## A reasonable starting setup
+
+- Target: users with 30 or more days tenure and a real usage signal
+- Cap: once per user per six months
+- Questions: the 0 to 10 rating, plus one optional open follow up
+- Review: read comments monthly, look at the trend quarterly
+
+Run that for two quarters before drawing conclusions about the number itself. In the meantime the comments will already be paying for it.
+
+## Related reading
+
+- [In app surveys: a practical guide](/blog/in-app-surveys-guide)
+- [User feedback surveys](/solutions/surveys)
