@@ -12,13 +12,13 @@ type Props = {
 export const Readme = ({ readme, sidebar }: Props): ReactNode => {
   return (
     <Section
-      pt="space40"
       flexDirection="column-reverse"
       display="flex"
       gap="space48"
       justifyContent="space-between"
       md={{ flexDirection: "row" }}
       px={{ base: "space24", md: "space40" }}
+      py={{ base: "space24", md: "space40" }}
       sideBorders
       bottomBorder
       decorator="split"
