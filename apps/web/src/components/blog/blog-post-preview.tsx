@@ -13,6 +13,7 @@ type Props = {
   imageAlt?: string;
   image?: string;
   slug: string;
+  headingLevel?: "h2" | "h3";
 };
 
 export const BlogPostPreview = (post: Props): ReactElement => {
@@ -42,7 +43,7 @@ export const BlogPostPreview = (post: Props): ReactElement => {
         ) : null}
 
         <Text
-          as="h2"
+          as={post.headingLevel ?? "h2"}
           mb="space8"
           variant="titleL"
           _hover={{ color: "fg.primary" }}

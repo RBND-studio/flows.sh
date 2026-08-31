@@ -7,7 +7,12 @@ import { importBlogPost, scanBlogFiles } from "lib/mdx";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { ReactElement } from "react";
-import { Text } from "ui";
+import { Icon, Text } from "ui";
+
+import { Suggestions } from "../suggestions";
+import Link from "next/link";
+import { routes } from "routes";
+import { ArrowLeft16 } from "icons";
 
 type Params = {
   slug: string;
@@ -59,58 +64,78 @@ export default async function BlogDetailPage(props: PostProps): Promise<ReactEle
   const date = new Date(post.date);
 
   return (
-    <Section sideBorders bottomBorder>
-      <article
-        className={css({
-          maxWidth: "720px",
-          mx: "auto",
-          px: "space24",
-          py: { base: "space40", md: "space80" },
-          borderRightWidth: { base: 0, md: 1 },
-          borderLeftWidth: { base: 0, md: 1 },
-          borderColor: "border.neutral",
-        })}
-      >
-        <Box mb="space48">
-          <Text
-            as="h1"
-            className={css({
-              mb: "space16",
-            })}
-            variant="title4xl"
-          >
-            {post.title}
-          </Text>
-          <Text as="p" variant="bodyL">
-            {post.description}
-          </Text>
-
-          {post.image ? (
-            <ZoomableImage
-              alt={post.imageAlt ?? "Blog post cover image"}
-              height={600}
-              src={post.image}
-              width={1200}
-              priority
+    <>
+      <Section sideBorders bottomBorder decorator="split">
+        <article
+          className={css({
+            maxWidth: "720px",
+            mx: "auto",
+            px: "space24",
+            py: { base: "space40", md: "space80" },
+            borderRightWidth: { base: 0, md: 1 },
+            borderLeftWidth: { base: 0, md: 1 },
+            borderColor: "border.neutral",
+          })}
+        >
+          <Box mb="space48">
+            <Link
+              href={routes.blog}
               className={css({
-                borderRadius: "radius8",
-                borderWidth: 1,
-                borderStyle: "solid",
-                borderColor: "border.neutral",
-                mt: "space32",
+                display: "flex",
+                gap: "space6",
+                alignItems: "center",
+                mb: "space16",
+                color: "fg.neutral.subtle",
+                fastEaseInOut: "color",
+                _hover: {
+                  color: "fg.neutral",
+                },
               })}
-            />
-          ) : null}
-          <Text className={css({ mt: "space16" })} color="fg.neutral.subtle" variant="bodyM">
-            <span>{post.author}</span>
-            <span>{` • `}</span>
-            <span>
-              {date.toLocaleString("en-US", { day: "numeric", month: "long", year: "numeric" })}
-            </span>
-          </Text>
-        </Box>
-        <post.Mdx />
-      </article>
-    </Section>
+            >
+              <Icon icon={ArrowLeft16} color="inherit" />
+              All posts
+            </Link>
+            <Text
+              as="h1"
+              className={css({
+                mb: "space16",
+              })}
+              variant="title4xl"
+            >
+              {post.title}
+            </Text>
+            <Text as="p" variant="bodyL">
+              {post.description}
+            </Text>
+
+            {post.image ? (
+              <ZoomableImage
+                alt={post.imageAlt ?? "Blog post cover image"}
+                height={600}
+                src={post.image}
+                width={1200}
+                priority
+                className={css({
+                  borderRadius: "radius8",
+                  borderWidth: 1,
+                  borderStyle: "solid",
+                  borderColor: "border.neutral",
+                  mt: "space32",
+                })}
+              />
+            ) : null}
+            <Text className={css({ mt: "space16" })} color="fg.neutral.subtle" variant="bodyM">
+              <span>{post.author}</span>
+              <span>{` • `}</span>
+              <span>
+                {date.toLocaleString("en-US", { day: "numeric", month: "long", year: "numeric" })}
+              </span>
+            </Text>
+          </Box>
+          <post.Mdx />
+        </article>
+      </Section>
+      <Suggestions slug={slug} />
+    </>
   );
 }

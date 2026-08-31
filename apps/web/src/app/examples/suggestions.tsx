@@ -38,7 +38,7 @@ export const Suggestions = ({ slug }: Props): ReactNode => {
 
   return (
     <>
-      <SectionIntro title="Explore more examples" sideBorders bottomBorder decorator="vertical" />
+      <SectionIntro compact title="Explore more examples" sideBorders />
       <Section
         display="grid"
         gridTemplateColumns="1fr"
@@ -46,7 +46,8 @@ export const Suggestions = ({ slug }: Props): ReactNode => {
         gap="space12"
         sideBorders
         bottomBorder
-        p={{ base: "space8", md: "space40" }}
+        px={{ base: "space8", md: "space40" }}
+        pb={{ base: "space8", md: "space40" }}
       >
         {suggestionItems.map((item) => (
           <ExampleCard headingLevel="h3" key={item.title} {...item} />
