@@ -186,6 +186,13 @@ Custom element that renders floating workflow/tour blocks. Requires `setupJsComp
 
 Only one element with `data-placeholder` is supported per slot.
 
+| Attribute      | Type     | Required | Notes                                         |
+| -------------- | -------- | -------- | --------------------------------------------- |
+| `data-slot-id` | `string` | Yes      | Slot id used in the workflow editor           |
+| `limit`        | `number` | No       | Maximum blocks rendered; unlimited by default |
+
+`limit` is a plain attribute, not `data-` prefixed: `<flows-slot data-slot-id="my-slot" limit="1">`.
+
 ## Types
 
 Field shapes for `ActiveBlock`, `ComponentProps`, `StateMemory`, `TourComponentProps`, `SurveyComponentProps`, `Survey`, the `SurveyQuestion` union (`FreeformQuestion`, `SingleChoiceQuestion`, `MultipleChoiceQuestion`, `RatingQuestion`, `LinkQuestion`, `EndScreenQuestion`), `FlowsProperties`, `BlockState`, `WorkflowsResponse`, `Workflow`, `WorkflowStatus`, `WorkflowFrequency`, `WorkflowUserState`, and `LanguageOption` are identical to the React SDK; see [sdk-react.md](sdk-react.md#types) for the full field by field reference rather than duplicating it here.

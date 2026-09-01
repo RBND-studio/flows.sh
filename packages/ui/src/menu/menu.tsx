@@ -34,11 +34,14 @@ export const Menu: FC<Props> = ({
         align={align ?? "start"}
         onOpenAutoFocus={onOpenAutoFocus}
         onCloseAutoFocus={onCloseAutoFocus}
-        className={css({ zIndex: 20 })}
+        className={css({
+          zIndex: 20,
+          minW: "max(var(--radix-popover-trigger-width), 240px)",
+          maxW: "max(var(--radix-popover-trigger-width), 280px)",
+        })}
       >
         <Flex
           flexDir="column"
-          minW="240px"
           p="6px"
           maxHeight="min(500px, var(--radix-popover-content-available-height))"
           overflowY="auto"

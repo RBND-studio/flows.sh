@@ -585,3 +585,10 @@ A custom HTML element for rendering slot blocks. Use the `data-slot-id` attribut
   <!-- ... -->
 </body>
 ```
+
+Attributes:
+
+| Name           | Type     | Required | Notes                                                                                                                  |
+| -------------- | -------- | -------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `data-slot-id` | `string` | Yes      | The Slot ID used to refer to the slot when creating workflows.                                                         |
+| `limit`        | `number` | No       | Limit of how many blocks to render in the slot. Useful when multiple blocks match the same slot. Defaults to no limit. |
