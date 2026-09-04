@@ -39,6 +39,12 @@ export const routes = {
   examples: "/examples",
   exampleDetail: (slug: string) => `/examples/${slug}` as Route,
 
+  tools: "/tools",
+  npsCalculator: "/tools/nps-calculator",
+  csatCalculator: "/tools/csat-calculator",
+  cesCalculator: "/tools/ces-calculator",
+  pmfCalculator: "/tools/pmf-calculator",
+
   blog: "/blog",
   blogPostDetail: ({ postId }: { postId: string }) => `/blog/${postId}` as const,
 

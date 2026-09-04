@@ -19,6 +19,7 @@ type Props = {
   defaultValue?: string | number;
   type?: React.InputHTMLAttributes<HTMLInputElement>["type"];
   autoComplete?: React.InputHTMLAttributes<HTMLInputElement>["autoComplete"];
+  inputMode?: React.InputHTMLAttributes<HTMLInputElement>["inputMode"];
   min?: React.InputHTMLAttributes<HTMLInputElement>["min"];
   max?: React.InputHTMLAttributes<HTMLInputElement>["max"];
   required?: boolean;

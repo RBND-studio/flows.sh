@@ -97,6 +97,10 @@ export const footerGroups: Record<
         title: "Glossary",
         href: routes.glossary,
       },
+      {
+        title: "Tools",
+        href: routes.tools,
+      },
     ],
   },
   solutions: {
