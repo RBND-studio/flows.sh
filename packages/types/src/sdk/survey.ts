@@ -1,4 +1,4 @@
-import type { QuestionType } from "../survey";
+import type { QuestionTypeEnum } from "../survey";
 
 export type SDKSurveyQuestionOption = {
   id: string;
@@ -7,7 +7,7 @@ export type SDKSurveyQuestionOption = {
 
 export type SDKSurveyQuestion = {
   id: string;
-  type: QuestionType;
+  type: QuestionTypeEnum;
 
   title: string;
   description: string;

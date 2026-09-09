@@ -6,8 +6,8 @@
   "language": "en",
   // words - list of words to be always considered correct
   "words": [
-    "Astrodon",
     "apify",
+    "Astrodon",
     "authjs",
     "bento",
     "bitnami",
@@ -58,6 +58,7 @@
     "reimagined",
     "retriable",
     "rgba",
+    "rspack",
     "satismeter",
     "screeb",
     "shepherdjs",
@@ -71,6 +72,7 @@
     "turborepo",
     "uncollectible",
     "Usetiful",
+    "uuidv4",
     "vdpl",
     "Vidra",
     "visx",
