@@ -15,6 +15,12 @@ The card component is a versatile UI element that can be used to display informa
 
 To integrate the card component into your application, follow the steps described in the [library installation guide](/blocks/basics-v2/overview#installation).
 
+## Usage
+
+Unlike other components, the Card is slottable: instead of floating on top of your app, it renders inside a named [slot](/blocks/block-properties/slot) you place in your layout. Add a slot to your app with [`<FlowsSlot />`](/sdk/react/reference#flowsslot) or [`<flows-slot>`](/sdk/javascript/reference#flows-slot), then set the Card block's **Slot ID** property to match. Without a matching slot, the Card will not be rendered.
+
+For a full walkthrough, see the [Embed Components guide](/guides/embed-components).
+
 ## Workflow properties
 
 <ComponentPreview component="card" />

@@ -5,8 +5,11 @@ description: Learn how to add slots to your app so you can embed components insi
 ---
 
 import { Step, Steps } from "fumadocs-ui/components/steps";
+import { YoutubeEmbed } from "components/youtube-embed";
 
-![Embedded card in app](/guides/embed-components/demo.png)
+{/* cspell:disable-next-line */}
+
+<YoutubeEmbed videoId="BenUQgdBukw" label="How to embed components in your app" />
 
 Some Flows components (like [Card](/blocks/basics-v2/card)) are designed to be embedded directly in your app's UI rather than floating on top of it. These are called **slottable components**. Instead of appearing as overlays, they render inside named [slots](/blocks/block-properties/slot) you place in your layout, giving you precise control over where each component shows up.
 
