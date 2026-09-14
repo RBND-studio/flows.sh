@@ -1,4 +1,4 @@
-// cSpell:words Apty produktly jimo gleap stonly candu commandai optimonk frigade guidecx screeb onboardjs tourguidejs survicate surveyjs refiner sprig beamer qualaroo oneflow formbricks satismeter typeform wootric delighted usertourkit
+// cSpell:words Apty produktly jimo gleap stonly candu commandai optimonk frigade guidecx screeb onboardjs tourguidejs survicate surveyjs refiner sprig beamer qualaroo oneflow formbricks satismeter typeform wootric delighted usertourkit fullstory
 export * from "./src/action16";
 export * from "./src/addon16";
 export * from "./src/alert16";
@@ -71,6 +71,8 @@ export * from "./src/formbricks-full20";
 export * from "./src/formbricks20";
 export * from "./src/frigade-full20";
 export * from "./src/frigade20";
+export * from "./src/fullstory-full20";
+export * from "./src/fullstory20";
 export * from "./src/github16";
 export * from "./src/gleap-full20";
 export * from "./src/gleap20";
