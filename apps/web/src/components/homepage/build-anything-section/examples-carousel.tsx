@@ -150,8 +150,7 @@ const examples = [
     alt: "A reminder banner notifying the user that their trial is about to expire",
     background: "#F3F3ED",
     img: trialExpiryReminderPng,
-    // TODO: replace with relevant example once we have one
-    link: routes.examples,
+    link: routes.exampleDetail("trial-countdown-banner"),
   },
   {
     title: "Empty state walkthrough",

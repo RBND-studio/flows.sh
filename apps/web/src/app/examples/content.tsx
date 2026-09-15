@@ -24,6 +24,12 @@ import { tooltipContent } from "./tooltip/content";
 import { churnPreventionFlowContent } from "./churn-prevention-flow/content";
 import { microsurveyContent } from "./microsurvey/content";
 import { welcomeScreenContent } from "./welcome-screen/content";
+import { emptyStateCTAContent } from "./empty-state-cta/content";
+import { paywallModalContent } from "./paywall-modal/content";
+import { trialCountdownBannerContent } from "./trial-countdown-banner/content";
+import { referralWidgetContent } from "./referral-widget/content";
+import { upgradeCTABannerContent } from "./upgrade-cta-banner/content";
+import { waitlistSurveyContent } from "./waitlist-survey/content";
 // --PLOP_NEW_EXAMPLE_IMPORT--
 import { type ContentType } from "./types";
 
@@ -54,5 +60,11 @@ export const examplesContent: ContentType[] = [
   productHuntLaunchAnnouncementContent,
   churnPreventionFlowContent,
   welcomeScreenContent,
+  emptyStateCTAContent,
+  paywallModalContent,
+  trialCountdownBannerContent,
+  referralWidgetContent,
+  upgradeCTABannerContent,
+  waitlistSurveyContent,
   // --PLOP_NEW_EXAMPLE_CONTENT--
 ];
