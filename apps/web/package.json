@@ -30,6 +30,7 @@
     "embla-carousel": "^8.6.0",
     "embla-carousel-auto-scroll": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
+    "gpt-tokenizer": "^4.0.0",
     "icons": "workspace:*",
     "js-cookie": "^3.0.8",
     "next": "16.3.4",

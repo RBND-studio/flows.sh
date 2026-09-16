@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import TurndownService from "turndown";
+import { countTokens } from "gpt-tokenizer";
 
 export async function GET(_req: Request, { params }: RouteContext<"/md/[[...slug]]">) {
   const { slug } = await params;
@@ -40,6 +41,7 @@ export async function GET(_req: Request, { params }: RouteContext<"/md/[[...slug
     headers: {
       "Content-Type": "text/markdown; charset=utf-8",
       Vary: "Accept",
+      "x-markdown-tokens": String(countTokens(content)),
     },
   });
 }
