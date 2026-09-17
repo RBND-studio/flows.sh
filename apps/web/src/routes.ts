@@ -29,6 +29,7 @@ export const routes = {
     productMarketing: "/solutions/product-marketing",
     revenueExpansion: "/solutions/revenue-expansion",
     surveys: "/solutions/surveys",
+    inAppHelp: "/solutions/in-app-help",
   },
 
   alternatives: "/alternatives",

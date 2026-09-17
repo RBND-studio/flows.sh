@@ -130,6 +130,10 @@ export const footerGroups: Record<
         title: "User feedback",
         href: routes.solutions.surveys,
       },
+      {
+        title: "In-app help",
+        href: routes.solutions.inAppHelp,
+      },
     ],
   },
   compare: {

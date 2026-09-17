@@ -1,4 +1,4 @@
-// cSpell:words Apty produktly jimo gleap stonly optimonk candu lemonlearning guidecx frigade screeb onboardjs guidechimp usertour gainsight lusift clicklearn survicate surveyjs refiner sprig beamer hotjar qualaroo oneflow formbricks satismeter typeform wootric delighted usertourkit
+// cSpell:words Apty produktly jimo gleap stonly optimonk candu lemonlearning guidecx frigade screeb onboardjs guidechimp usertour gainsight lusift clicklearn survicate surveyjs refiner sprig beamer hotjar qualaroo oneflow formbricks satismeter typeform wootric delighted usertourkit fullstory
 
 import { appcuesContent } from "./content/appcues";
 import { beamerContent } from "./content/beamer";
@@ -63,6 +63,7 @@ import { vueTourContent } from "./content/vue-tour";
 import { vuejsTourContent } from "./content/vuejs-tour";
 import { walkmeContent } from "./content/walkme";
 import { whatfixContent } from "./content/whatfix";
+import { fullstoryContent } from "./content/fullstory";
 import { type AlternativeContentType } from "./types";
 
 export const alternativesContent: AlternativeContentType[] = [
@@ -108,6 +109,7 @@ export const alternativesContent: AlternativeContentType[] = [
   survicateContent,
   qualarooContent,
   satismeterContent,
+  fullstoryContent,
   wootricContent,
   delightedContent,
   refinerContent,

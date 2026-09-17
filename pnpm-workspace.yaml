@@ -10,7 +10,7 @@ overrides:
   diff@>=5.0.0 <5.2.2: ">=5.2.2"
   esbuild@<0.28.1: ^0.28.1
   fast-xml-parser@<5.5.7: ">=5.5.7"
-  fastify@<=5.12.0: ">=5.12.1"
+  fastify@<=5.12.1: ">=5.12.2"
   file-type@>=20.0.0 <=21.3.1: ">=21.3.2"
   lodash@>=4.0.0 <=4.17.23: ">=4.18.0"
   minimatch@<10.2.3: ">=10.2.3"
@@ -29,6 +29,7 @@ overrides:
   fast-uri@>=4.0.0 <=4.1.0: ">=4.1.1"
   "@opentelemetry/core@<2.8.0": ">=2.8.0"
   find-my-way@<9.7.0: ">=9.7.0"
+  js-yaml@>=3.0.0 <3.15.2: ^3.15.2
   js-yaml@>=5.0.0 <=5.2.1: ^5.2.2
   toml@3.0.0: ^4.2.0
   browserslist@<=4.28.6: ^4.28.7
@@ -38,6 +39,7 @@ enablePrePostScripts: true
 allowBuilds:
   "@confluentinc/kafka-javascript": true
   "@nestjs/core": true
+  "@parcel/watcher": true
   "@scarf/scarf": true
   "@swc/core": true
   bcrypt: true

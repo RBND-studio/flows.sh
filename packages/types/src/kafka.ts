@@ -20,14 +20,14 @@ export type KafkaUserEvent = {
   environment: string;
   organizationId: string;
   name: KafkaUserEventName;
-  blockId?: string;
-  blockIds?: string[];
-  blockKey?: string;
-  workflowId?: string;
-  workflowVersionId?: string;
-  propertyKey?: string;
-  properties?: Record<string, unknown>;
-  locale?: string;
+  blockId?: string | null;
+  blockIds?: string[] | null;
+  blockKey?: string | null;
+  workflowId?: string | null;
+  workflowVersionId?: string | null;
+  propertyKey?: string | null;
+  properties?: Record<string, unknown> | null;
+  locale?: string | null;
   surveyResponse?: KafkaSurveyResponse;
 };
 
@@ -41,10 +41,10 @@ export type KafkaUserStateUpdateEvent = {
 
 export type KafkaSurveyQuestionResponse = {
   questionId: string;
-  textResponse?: string;
-  optionIds?: string[];
-  otherSelected?: boolean;
-  clickedLink?: boolean;
+  textResponse?: string | null;
+  optionIds?: string[] | null;
+  otherSelected?: boolean | null;
+  clickedLink?: boolean | null;
 };
 
 export type KafkaSurveyResponse = {

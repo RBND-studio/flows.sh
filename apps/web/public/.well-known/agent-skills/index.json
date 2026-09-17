@@ -7,6 +7,13 @@
       "description": "Detects the user's framework and installs the Flows SDK with full configuration in the correct location.",
       "url": "https://flows.sh/.well-known/agent-skills/flows-install/SKILL.md",
       "digest": "sha256:ec8a20397deb39cbd9a2602033bb129194600ef3e9af650692009c52cba9c2af"
+    },
+    {
+      "name": "flows-best-practices",
+      "type": "skill-md",
+      "description": "Use this skill when building, debugging, or answering questions about Flows. Flows is a fully customizable product adoption platform that enables you to take control of your product experience. With Flows, you can create anything from user onboarding and feature adoption to in-app messaging and product-led growth loops.",
+      "url": "https://flows.sh/.well-known/agent-skills/flows-best-practices/SKILL.md",
+      "digest": "sha256:9026f25c0946440361297d923d78d442c0500e09c2c80deb9f15f25e81c3119a"
     }
   ]
 }

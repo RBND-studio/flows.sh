@@ -1,3 +1,5 @@
+// cspell:words describedby
+
 const path = require("node:path");
 const createMdx = require("@next/mdx");
 const { withNextVideo } = require("next-video/process");
@@ -29,6 +31,17 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value: cspHeader.replace(/\n/g, ""),
+          },
+        ],
+      },
+      {
+        // Agent discovery per RFC 8288 / RFC 9727 section 3.
+        source: "/",
+        headers: [
+          {
+            key: "Link",
+            value:
+              '</.well-known/api-catalog>; rel="api-catalog", </.well-known/agent-skills/index.json>; rel="agent-skills", </llms.txt>; rel="describedby"',
           },
         ],
       },
