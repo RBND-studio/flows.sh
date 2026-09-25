@@ -26,7 +26,7 @@
     "@visx/responsive": "^4.0.0",
     "@visx/scale": "^4.0.0",
     "@visx/shape": "^4.0.0",
-    "dayjs": "^1.11.21",
+    "dayjs": "^1.11.23",
     "embla-carousel": "^8.6.0",
     "embla-carousel-auto-scroll": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
