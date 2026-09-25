@@ -1,0 +1,39 @@
+---
+title: Choosing components
+description: Which built-in block or component fits which job, and the settings that decide whether it shows up.
+---
+
+Pick the component by what the user needs at that moment, not by what looks best. The more a component interrupts, the stronger the reason to show it has to be.
+
+## Built-in components
+
+| Component                                                  | Use it for                                                            | Watch out for                                                                                                          |
+| ---------------------------------------------------------- | --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| [Modal](/blocks/basics-v2/modal)                           | A welcome, a major announcement, the intro step of a tour.            | It interrupts. Not dismissible by default, so turn on **Dismissible** or add a secondary button.                       |
+| [Tooltip](/blocks/basics-v2/tooltip)                       | Pointing at one element, usually as a tour step.                      | Renders only when **Target element** matches an element on the page.                                                   |
+| [Hint](/blocks/basics-v2/hint)                             | Optional discovery: a pulsing hotspot users can open or ignore.       | Needs a matching target element, like a tooltip.                                                                       |
+| [Card](/blocks/basics-v2/card)                             | Inline content in your layout, such as a dashboard tip or an upsell.  | Renders only inside a [slot](/guides/embed-components). Without a Slot ID it shows nothing.                            |
+| [Floating Checklist](/blocks/basics-v2/floating-checklist) | Onboarding with several tasks users complete in any order, over days. | Items are marked completed when their primary button is clicked, unless you set **Mark as completed when** to a block. |
+| [Survey Popover](/blocks/basics-v2/survey-popover)         | Showing survey questions in a corner without blocking the page.       | Turn on **Dismissible** so users can decline.                                                                          |
+
+Your own [custom components](/components/overview) work the same way. Prefer them over the built-in ones when they match your design system better.
+
+## Built-in blocks
+
+| Block                                                      | Use it for                                                                                  |
+| ---------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| [Automatic start](/blocks/start-blocks/automatic-start)    | Letting users in as soon as they match its user property conditions.                        |
+| [Manual start](/blocks/start-blocks/manual-start)          | Starting a workflow from your code, for example from a **Take the tour** button.            |
+| [Tour](/tours/overview)                                    | A short sequence of steps in one sitting.                                                   |
+| [Filter](/blocks/logic-blocks/filter)                      | Letting only some users continue. Users who don't match stop there, there's no second exit. |
+| [Delay](/blocks/logic-blocks/delay)                        | Waiting before the next step, or ending a workflow users never finished.                    |
+| [Workflow trigger](/blocks/action-blocks/workflow-trigger) | Chaining workflows through a manual start block in the target workflow.                     |
+| [End](/blocks/end-block)                                   | Ending the whole workflow at once, including other branches.                                |
+
+## Interrupting versus inline
+
+| Interrupts the user | Stays out of the way           |
+| ------------------- | ------------------------------ |
+| Modal, tour, survey | Hint, card, floating checklist |
+
+Use the left column for things the user needs now: a first run welcome, a change that affects their work, a survey right after the moment you ask about. Use the right column for everything else.

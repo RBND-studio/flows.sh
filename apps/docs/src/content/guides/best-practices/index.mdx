@@ -1,0 +1,54 @@
+---
+title: Overview
+pageTitle: Best practices
+description: Principles that make every workflow, tour and survey more likely to help your users instead of getting in their way.
+---
+
+In app guidance works when it shows up at the right moment, says one thing clearly and gets out of the way. These principles apply to every workflow you build in Flows, whether you build it in the dashboard or with an AI agent.
+
+## One goal per workflow
+
+Decide what the user should achieve before adding blocks. A workflow that tries to welcome users, announce a feature and ask for feedback at once does all three badly. Build the smallest workflow that reaches the goal, and use separate workflows for separate goals.
+
+## Show it when it's relevant
+
+Guidance that appears at login competes with whatever the user came to do. Tie it to the moment it helps:
+
+- [Page targeting](/blocks/block-properties/page-targeting) shows a component only on the page it's about.
+- A [tour trigger](/tours/overview) or survey trigger starts it when the user visits a page or clicks an element.
+- A [Delay block](/blocks/logic-blocks/delay) spaces out follow ups instead of showing everything in the first session.
+
+## Keep the copy short
+
+- A title of a few words.
+- One or two sentences of body text. If it needs more, it probably needs a link to the docs or a tour.
+- A primary button that says what happens next, such as **Create project** rather than **OK**.
+- Personal where it helps: `Welcome, {{ first_name | there }}!` uses [personalization](/personalization) with a fallback.
+
+## Always give users a way out
+
+Anything that interrupts the user should be easy to close. Make modals and tour steps **Dismissible**, or add a secondary button such as **Not now**. Then decide what closing means: connect the `close` or `cancel` exit node on purpose, usually to an [End block](/blocks/end-block), instead of leaving it unconnected.
+
+## Target narrowly
+
+An automatic Start block without conditions lets every identified user in. Use [user properties](/blocks/block-properties/user-properties) to reach the users the workflow is for: new users by signup date ([guide](/guides/how-to-target-only-new-users)), a plan or a role for feature announcements. Only filter on properties your app actually sends to the SDK; a condition on a missing property matches nobody.
+
+## Use stable selectors
+
+Tooltips, hints and tour triggers find elements with CSS selectors. Add dedicated attributes to your app, such as `data-tour="export-button"`, instead of relying on generated class names that change with every build. A selector that matches nothing renders nothing, silently.
+
+## Keep workflows from colliding
+
+When onboarding, announcements and surveys can reach the same user, put them in a [Launchpad](/launchpad) group with a concurrency of 1 and order them by importance, so a new user sees their onboarding before an upsell.
+
+## Test before it's live
+
+Publish to a staging or development environment first and go through the workflow as a test user. [Reset the user's progress](/users/workflow-states) to try it again. Publish to production once it behaves as intended. See [Testing](/workflows/testing).
+
+## Guides by use case
+
+- [Choosing components](/guides/best-practices/choosing-components)
+- [Onboarding](/guides/best-practices/onboarding)
+- [Product tours](/guides/best-practices/product-tours)
+- [Announcements](/guides/best-practices/announcements)
+- [Surveys](/guides/best-practices/surveys)

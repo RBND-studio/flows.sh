@@ -12,8 +12,10 @@
     "bento",
     "bitnami",
     "CCPA",
+    "cimd",
     "clpxmw",
     "cmdk",
+    "dpop",
     "driverjs",
     "easings",
     "embla",
@@ -53,12 +55,14 @@
     "Pesicka",
     "pesickadavid",
     "pglite",
+    "PKCE",
     "qualaroo",
     "rbnd",
     "reauthentication",
     "redeployments",
     "rehype",
     "reimagined",
+    "rekog",
     "retarget",
     "retriable",
     "rgba",
@@ -111,7 +115,8 @@
     "pandacss-generated",
     "pnpm-lock.yaml",
     "pnpm-workspace.yaml",
-    "security-hall-of-fame.txt"
+    "security-hall-of-fame.txt",
+    "skills-lock.json"
   ],
   "allowCompoundWords": true
 }

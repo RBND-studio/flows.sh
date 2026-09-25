@@ -5,6 +5,7 @@
   "pages": [
     "index",
     "[Quickstart](/quickstart)",
+    "best-practices",
     "create-product-tour",
     "create-survey",
     "[Styling built-in components](/blocks/basics-v2/styling)",
