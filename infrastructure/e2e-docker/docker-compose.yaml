@@ -28,7 +28,7 @@ services:
       BACKEND_ENABLE_BACKDOOR: "true"
       BACKEND_BACKDOOR_TOKEN: ${BACKEND_BACKDOOR_TOKEN}
       BACKEND_CAPTCHA_SECRET: 1x0000000000000000000000000000000AA
-      AUTH_SECRET: test-secret
+      AUTH_SECRET: better-auth-secret-123456789
       BACKEND_APP_URL: http://localhost:6100
       BACKEND_LOOPS_API_KEY: mock
       BACKEND_SLACK_WEBHOOK_URL: https://hooks.slack.com/mock
@@ -42,6 +42,18 @@ services:
       BACKEND_ADMIN_PASSWORD_HASH: "$$2b$$12$$mockmockmockmockmockmOmockmockmockmockmockmockmockmock"
       DANGEROUSLY_DISABLE_RATE_LIMITING: "true"
       OTEL_EXPORTER_OTLP_ENDPOINT: ""
+    healthcheck:
+      # node:slim does not have curl, so we use node to check the health endpoint
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://localhost:3005/status').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   worker:
     build:
@@ -93,6 +105,8 @@ services:
         condition: service_started
       nginx:
         condition: service_started
+      backend:
+        condition: service_healthy
 
 networks:
   default:
