@@ -1,0 +1,169 @@
+---
+title: Overview
+pageTitle: MCP server
+description: Connect Claude, Cursor, VS Code, Codex or any other MCP client to Flows and let your AI agent build, publish and analyze workflows for you.
+---
+
+import { McpInstallButton } from "components/mcp-install-button";
+
+The Flows MCP server connects your AI agent to your Flows account through the [Model Context Protocol](https://modelcontextprotocol.io). Once connected, your agent can build workflows, publish them to your environments, debug why a user doesn't see a workflow and read analytics and survey results, all from a conversation.
+
+The server is hosted by Flows, so there is nothing to install or run. You sign in with your Flows account, and the agent works with the same organizations and permissions you have.
+
+## Prerequisites
+
+- A Flows account. [Sign up for free](https://app.flows.sh/signup) if you don't have one.
+- An MCP client that supports remote servers over HTTP with OAuth sign in, such as Claude, Cursor, VS Code or Codex.
+
+## Server URL
+
+```text
+https://api.flows-cloud.com/mcp
+```
+
+## Installation
+
+<Tabs items={["Claude Code", "Claude", "Cursor", "VS Code", "Codex", "Other clients"]}>
+<Tab value="Claude Code">
+
+Add the server from your terminal:
+
+```bash
+claude mcp add --transport http flows https://api.flows-cloud.com/mcp
+```
+
+Then start Claude Code, run `/mcp`, select **flows** and sign in to Flows in the browser window that opens.
+
+</Tab>
+<Tab value="Claude">
+
+Add Flows as a custom connector in Claude on the web or in the desktop app.
+
+**Pro and Max plans:**
+
+1. Go to **Customize > Connectors**.
+2. Click **+** and select **Add custom connector**.
+3. Paste the server URL and click **Add**.
+4. Connect the new connector and sign in to Flows.
+
+**Team and Enterprise plans:** an owner first adds the connector in **Organization settings > Connectors**. Members then find it in **Customize > Connectors** and click **Connect**.
+
+To use Flows in a conversation, click **+** in the lower left of the chat, open **Connectors** and turn on Flows.
+
+</Tab>
+<Tab value="Cursor">
+
+<McpInstallButton client="cursor" />
+
+Or add the server manually to `~/.cursor/mcp.json` to use it in every project, or to `.cursor/mcp.json` in your project directory:
+
+```json title="mcp.json"
+{
+  "mcpServers": {
+    "flows": {
+      "url": "https://api.flows-cloud.com/mcp"
+    }
+  }
+}
+```
+
+Cursor asks you to sign in to Flows the first time it connects.
+
+</Tab>
+<Tab value="VS Code">
+
+<McpInstallButton client="vscode" />
+
+Or add the server manually to `.vscode/mcp.json` in your project:
+
+```json title=".vscode/mcp.json"
+{
+  "servers": {
+    "flows": {
+      "type": "http",
+      "url": "https://api.flows-cloud.com/mcp"
+    }
+  }
+}
+```
+
+Start the server from the file and sign in to Flows when VS Code asks you to.
+
+</Tab>
+<Tab value="Codex">
+
+Add the server and sign in:
+
+```bash
+codex mcp add flows --url https://api.flows-cloud.com/mcp
+```
+
+```bash
+codex mcp login flows
+```
+
+</Tab>
+<Tab value="Other clients">
+
+Most MCP clients accept a configuration like this one. Check your client's documentation for the exact file and format:
+
+```json
+{
+  "mcpServers": {
+    "flows": {
+      "type": "http",
+      "url": "https://api.flows-cloud.com/mcp"
+    }
+  }
+}
+```
+
+The server uses OAuth, so you don't need an API key. Your client opens a browser window where you sign in to Flows.
+
+</Tab>
+</Tabs>
+
+## Authentication
+
+The first time your client connects, it opens Flows in your browser. Sign in and approve the access your client asks for. Your client then stays connected and refreshes its access on its own, so you won't have to sign in again every session.
+
+Your agent acts as you. It can see and change everything in every organization you are a member of, and nothing more.
+
+### Manage connected clients
+
+To see which clients have access to your account, open **Settings** in Flows and go to **MCP**. Disconnect a client there to revoke its access. It has to sign in again to reconnect.
+
+## What you can do
+
+Ask your agent in plain language. It picks the right tools on its own. For example:
+
+- "Create an onboarding checklist for new users with a tour of the dashboard."
+- "Add a product tour to /reports that explains the filters and the export button."
+- "Why doesn't user 1234 see the welcome modal?"
+- "Where do users drop off in the onboarding workflow?"
+- "Show me the results of the NPS survey from last month."
+- "Translate the onboarding workflow into German."
+- "Is Flows set up correctly in our staging environment?"
+
+The agent can also read the Flows documentation through the server, so it can answer questions about the SDK, blocks and components without leaving your editor. See the [tools reference](/mcp/tools) for everything the server can do.
+
+### Prompts
+
+The server also comes with ready made prompts for common tasks, such as building an onboarding workflow, adding a product tour, creating an NPS survey or debugging a workflow. How you start a prompt depends on your client. In Claude Code, for example, type `/mcp__flows__` to list them. See [the full list of prompts](/mcp/tools#prompts).
+
+### Install the SDK with your agent
+
+If you connect the MCP server in the codebase of your app, ask your agent to install Flows, or use the `install_flows_sdk` prompt. The agent detects your framework, installs the SDK and connects it to your organization.
+
+## Safety
+
+Changes made through the MCP server behave the same as changes you make in the Flows app:
+
+- **Edits go to the draft.** Nothing reaches your users until a workflow is published.
+- **Publish to a development or staging environment first.** Test the workflow there before you ask the agent to publish it to production.
+- **Confirm before changes that are hard to undo.** The server tells agents to ask before publishing to production, deleting anything, resetting real users' progress or turning on identity verification. Tools that change or delete data are marked as such, so most clients ask for your approval before running them. Review each request before you approve it.
+
+## Related
+
+- [Tools reference](/mcp/tools) lists every tool and prompt the server provides.
+- [Agent skills](/agent-skills) teach your coding agent Flows best practices, and work well together with the MCP server.

@@ -1,0 +1,94 @@
+---
+title: Tools reference
+pageTitle: MCP tools reference
+description: Every tool and prompt the Flows MCP server provides, grouped by what they work with.
+---
+
+Your agent picks the right tool based on your request, so you don't need to name tools yourself. This page lists them so you know what the agent can do and which tools you may want to allow or block in your client.
+
+Tools marked **Read** only read data. Tools marked **Write** create, change or delete data, and most clients ask for your approval before running them. See [Safety](/mcp/overview#safety) for how changes reach your users.
+
+## Organizations
+
+| Tool                            | Access | Description                                                                                                  |
+| ------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------ |
+| `flows_list_organizations`      | Read   | List your organizations with their environments, languages and workflow groups. Most other tools start here. |
+| `flows_save_workflow_group`     | Write  | Create or update a workflow group, which limits how many of its workflows a user sees at once.               |
+| `flows_reorder_workflow_groups` | Write  | Set which workflow group goes first when a user qualifies for workflows from several groups.                 |
+| `flows_delete_workflow_group`   | Write  | Delete a workflow group. Its workflows keep running without the group's limits.                              |
+
+## Workflows
+
+| Tool                       | Access | Description                                                                                                     |
+| -------------------------- | ------ | --------------------------------------------------------------------------------------------------------------- |
+| `flows_list_workflows`     | Read   | List workflows, most recently changed first, with where they run and how many users started and completed them. |
+| `flows_get_workflow`       | Read   | Read a whole workflow: its blocks, settings, connections, published versions and any issues to fix.             |
+| `flows_create_workflow`    | Write  | Create an empty workflow, optionally with a recipe for the kind of workflow you want to build.                  |
+| `flows_edit_workflow`      | Write  | Add, update, remove and connect blocks in a workflow's draft, in a single call.                                 |
+| `flows_duplicate_workflow` | Write  | Copy a workflow's draft into a new unpublished workflow.                                                        |
+| `flows_delete_workflow`    | Write  | Delete a workflow with all its versions and stop it everywhere it runs. Cannot be undone.                       |
+
+## Publishing
+
+| Tool                             | Access | Description                                                                                                            |
+| -------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------- |
+| `flows_publish_workflow`         | Write  | Publish the draft as a new version and make it live in the environments you choose.                                    |
+| `flows_set_workflow_environment` | Write  | Pause or resume a workflow in an environment, roll back to an earlier version or change how often users can repeat it. |
+
+## Components
+
+| Tool                     | Access | Description                                                                                                 |
+| ------------------------ | ------ | ----------------------------------------------------------------------------------------------------------- |
+| `flows_list_components`  | Read   | List every block and component you can add to a workflow, with their properties, exits and usage tips.      |
+| `flows_get_component`    | Read   | Read a custom component with its draft and published definition.                                            |
+| `flows_save_component`   | Write  | Create or update a [custom component](/components/overview) and publish it.                                 |
+| `flows_delete_component` | Write  | Delete a custom component. Blocks that use it keep working with their current properties. Cannot be undone. |
+
+## Users
+
+| Tool                        | Access | Description                                                                                                                |
+| --------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------- |
+| `flows_find_users`          | Read   | Find users of your app that the Flows SDK has identified.                                                                  |
+| `flows_get_user`            | Read   | Read a user's properties, language, workflow states and newest events. Useful when a workflow doesn't show up for someone. |
+| `flows_reset_user_progress` | Write  | Let a user go through a workflow again from the start, for example to test it after publishing.                            |
+
+## Analytics
+
+| Tool                               | Access | Description                                                                                             |
+| ---------------------------------- | ------ | ------------------------------------------------------------------------------------------------------- |
+| `flows_get_workflow_analytics`     | Read   | Read how many users started, completed and stopped a workflow per day, and where they drop off.         |
+| `flows_get_survey_results`         | Read   | Read the answers to a survey: answer distribution for every question and the newest free text answers.  |
+| `flows_get_organization_analytics` | Read   | Read workflow starts and completions across the organization and your monthly tracked users.            |
+| `flows_get_setup_status`           | Read   | Check whether the Flows SDK is installed and reaching each environment, and whether workflows are live. |
+
+## Settings
+
+| Tool                              | Access | Description                                                                                                      |
+| --------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| `flows_save_language`             | Write  | Add a [language](/localization) or change its name and which browser locales use it.                             |
+| `flows_delete_language`           | Write  | Delete a language and every translation into it. Cannot be undone.                                               |
+| `flows_save_environment`          | Write  | Add or rename an [environment](/environments), or turn identity verification on or off.                          |
+| `flows_delete_environment`        | Write  | Delete an environment with all its users, their progress and survey answers. Cannot be undone.                   |
+| `flows_create_environment_secret` | Write  | Create a secret your backend uses for [identity verification](/sdk/identity-verification). It's shown only once. |
+| `flows_delete_environment_secret` | Write  | Delete an identity verification secret. Backends still signing with it fail verification.                        |
+
+## Documentation
+
+| Tool              | Access | Description                                                                                                    |
+| ----------------- | ------ | -------------------------------------------------------------------------------------------------------------- |
+| `flows_read_docs` | Read   | Read the Flows documentation as markdown. The pages are also available as MCP resources under `flows://docs/`. |
+
+## Prompts
+
+Prompts are ready made instructions for common tasks. You start them from your client, and the agent then uses the tools above to finish the task. Every argument is optional unless noted.
+
+| Prompt              | Arguments                                            | Description                                                                                      |
+| ------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `install_flows_sdk` | `framework`, `environment`                           | Install and configure the Flows SDK in the codebase you're working in.                           |
+| `build_onboarding`  | `goal`, `audience`                                   | Design and build an onboarding workflow with a welcome message, setup checklist and tours.       |
+| `add_product_tour`  | `feature` (required), `page`, `workflow_id`          | Create a step by step product tour that points at elements of a feature.                         |
+| `create_nps_survey` | `audience`, `follow_up`                              | Create an NPS survey with a follow up question and read its results once answers come in.        |
+| `debug_workflow`    | `workflow` (required), `user`, `problem`             | Find out why a workflow doesn't show up, or doesn't behave as expected, for a user.              |
+| `analyze_drop_off`  | `workflow` (required), `environment`, `period`       | Find where users drop out of a workflow and propose changes to copy, steps, targeting or timing. |
+| `localize_workflow` | `workflow` (required), `language` (required), `tone` | Translate every text of a workflow, including survey questions, into another language.           |
+| `audit_workflows`   | `organization`                                       | Review all workflows of an organization for stale, broken, overlapping or unpublished ones.      |

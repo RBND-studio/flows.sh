@@ -41,3 +41,14 @@ export const describeMcpScope = (scope: string): string => mcpScopeDescriptions[
  * URL — a token is audience-bound to this string, so a mismatch fails every request.
  */
 export const LOCAL_MCP_RESOURCE_URL = "http://localhost:8080/mcp";
+
+/**
+ * One-click install link for Cursor, see https://cursor.com/docs/mcp/install-links. `config` is the
+ * base64 of the server's entry in mcp.json, without the name key.
+ */
+export const cursorMcpInstallUrl = (url: string): string =>
+  `cursor://anysphere.cursor-deeplink/mcp/install?name=flows&config=${btoa(JSON.stringify({ url }))}`;
+
+/** One-click install link for VS Code, see https://code.visualstudio.com/api/extension-guides/ai/mcp */
+export const vscodeMcpInstallUrl = (url: string): string =>
+  `vscode:mcp/install?${encodeURIComponent(JSON.stringify({ name: "flows", type: "http", url }))}`;
