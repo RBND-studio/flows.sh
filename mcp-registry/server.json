@@ -1,0 +1,13 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.RBND-studio/flows",
+  "title": "Flows",
+  "description": "Build product adoption your way - Product adoption infrastructure no-code or all-code.",
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.flows-cloud.com/mcp"
+    }
+  ]
+}
