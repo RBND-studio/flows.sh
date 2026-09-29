@@ -1,0 +1,32 @@
+---
+title: Announcements
+description: Announce new features to the users who benefit, with the right amount of attention for the news.
+---
+
+An announcement succeeds when the right users try the feature, not when everyone has seen it.
+
+## Match the weight to the news
+
+| The news                                    | Use                                                                                               |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| A major launch that changes how people work | A [Modal](/blocks/basics-v2/modal), optionally followed by a short tour                           |
+| A new option or improvement                 | A [Hint](/blocks/basics-v2/hint) on the new button, or a [Card](/blocks/basics-v2/card) in a slot |
+| Small fixes and polish                      | Your changelog, not an in app message                                                             |
+
+## Reach the users who benefit
+
+- Target by plan or role with user property conditions on the Start block, for example only plans that include the feature.
+- Leave out users who signed up after the launch. For them the feature isn't new, and your onboarding already covers it.
+- Show it where the feature lives with [page targeting](/blocks/block-properties/page-targeting), or on the main dashboard for big launches.
+
+## Say why it matters
+
+One sentence about what the user can do now that they couldn't before. The primary button takes them to the feature, either with a URL or by starting a short tour. The secondary button, or **Dismissible**, lets them get back to work.
+
+## Let it expire
+
+Publish with the frequency **Once**. Connect the Start block also to a [Delay block](/blocks/logic-blocks/delay) of around 30 days followed by an [End block](/blocks/end-block), so users who come back months later don't see stale news.
+
+## Don't compete with onboarding
+
+Add announcements to the same [Launchpad](/launchpad) group as your onboarding, below it in priority, so new users finish getting started first.

@@ -1,0 +1,17 @@
+{
+  "name": "oxlint-plugin",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "test": "node --test 'rules/**/*.test.ts'",
+    "tsc": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.4",
+    "oxlint": "^1.85.0",
+    "tsconfig": "workspace:*",
+    "typescript": "6.0.3"
+  }
+}

@@ -1,0 +1,36 @@
+---
+title: Onboarding
+description: Design an onboarding workflow that gets new users to their first success, and then gets out of the way.
+---
+
+Good onboarding is measured by how many new users reach the moment your product becomes useful to them, not by how much of the product they've seen.
+
+## Start from the activation goal
+
+List the two to five actions that make a new user successful, such as creating a first project or inviting a teammate, and the pages where they happen. Everything in the workflow should lead to one of those actions. Features users can discover later don't belong in onboarding.
+
+## A proven structure
+
+1. **Automatic start for new users only.** Add a condition on the signup date, for example `createdAt` greater than the day you launch the workflow, so existing users aren't onboarded. See [Target only new users](/guides/how-to-target-only-new-users).
+2. **A short welcome.** A [Modal](/blocks/basics-v2/modal) with one sentence about what the user will achieve and a primary button that starts it. Make it dismissible.
+3. **A checklist of the key actions.** A [Floating Checklist](/blocks/basics-v2/floating-checklist) with one item per action. Each item's primary button either takes the user to the right page or starts a short [tour](/guides/best-practices/product-tours).
+4. **A way to finish and a way to leave.** Set the checklist's completed title and button, add a skip button, and connect its `complete` and `close` exit nodes to an [End block](/blocks/end-block).
+5. **An expiry.** Connect the Start block also to a [Delay block](/blocks/logic-blocks/delay) of 7 to 14 days followed by an End block. Users who never finish stop seeing the onboarding instead of being reminded forever.
+
+## Mark checklist items done when the task is done
+
+By default, an item is marked as completed when the user clicks its primary button. When the button starts a tour, set **Mark as completed when** to the Tour block instead, so the item is only checked once the user actually went through it. See [State memory](/blocks/block-properties/state-memory).
+
+## Write items as actions
+
+- **Invite a teammate**, not **Teammates**.
+- One short sentence of description that says why it matters.
+- Three to six items. A long checklist looks like work.
+
+## Give it priority
+
+Put onboarding in a [Launchpad](/launchpad) group with your announcements and surveys, first in the order, with a concurrency of 1. New users then get their onboarding without an upsell or a survey on top of it.
+
+## Measure it
+
+Workflow analytics show how many users start and complete the onboarding and where they stop. A step many users see but don't finish is the one to shorten or explain better.

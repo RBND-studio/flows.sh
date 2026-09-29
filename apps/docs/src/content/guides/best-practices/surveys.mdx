@@ -1,0 +1,40 @@
+---
+title: Surveys
+description: Ask fewer questions at better moments to get more and more useful answers.
+---
+
+In app surveys get answers because they're short and well timed. For a walkthrough of how to build one, see [Create a survey](/guides/create-survey).
+
+## Ask little
+
+One question that matters plus one open follow up gets more answers than a form. Keep in app surveys to three questions at most, and mark the follow up as optional.
+
+## Ask at the right moment
+
+- Right after the experience you're asking about: connect the Survey block after the block where it happens, or use a survey trigger on the page.
+- Never in the user's first session. For NPS, ask users who have used the product for a while, for example with a signup date condition 30 days in the past.
+- Use a [Delay block](/blocks/logic-blocks/delay) if it shouldn't appear the moment the user logs in.
+
+## Common setups
+
+### NPS
+
+1. Rating question with numbers from 0 to 10: "How likely are you to recommend Acme to a friend or colleague?" with the labels **Not likely** and **Very likely**.
+2. Optional freeform question: "What's the main reason for your score?"
+3. End screen that thanks the user.
+
+### Satisfaction after a feature
+
+1. Rating question with stars or emojis from 1 to 5: "How easy was it to set up your first report?"
+2. Optional freeform question: "What would make it easier?"
+3. End screen.
+
+## Respect the user's time
+
+- Turn on **Dismissible** in the [Survey Popover](/blocks/basics-v2/survey-popover) so users can decline.
+- Publish with the frequency **Once**, so nobody gets the same survey twice.
+- Connect both the `complete` and `cancel` exit nodes.
+
+## Read the results
+
+Survey [analytics](/surveys/analytics) show response rates and answer distributions. Read the free text answers from the CSV export; they explain the scores.

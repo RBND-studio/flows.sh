@@ -116,17 +116,23 @@ export const links = (domain = "flows.sh") =>
       welcomeScreenSource:
         "https://github.com/RBND-studio/flows.sh/tree/main/examples/welcome-screen",
       emptyStateCTA: "https://empty-state-cta.examples.flows.sh",
-      emptyStateCTASource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/empty-state-cta",
+      emptyStateCTASource:
+        "https://github.com/RBND-studio/flows.sh/tree/main/examples/empty-state-cta",
       paywallModal: "https://paywall-modal.examples.flows.sh",
-      paywallModalSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/paywall-modal",
+      paywallModalSource:
+        "https://github.com/RBND-studio/flows.sh/tree/main/examples/paywall-modal",
       trialCountdownBanner: "https://trial-countdown-banner.examples.flows.sh",
-      trialCountdownBannerSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/trial-countdown-banner",
+      trialCountdownBannerSource:
+        "https://github.com/RBND-studio/flows.sh/tree/main/examples/trial-countdown-banner",
       referralWidget: "https://referral-widget.examples.flows.sh",
-      referralWidgetSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/referral-widget",
+      referralWidgetSource:
+        "https://github.com/RBND-studio/flows.sh/tree/main/examples/referral-widget",
       upgradeCTABanner: "https://upgrade-cta-banner.examples.flows.sh",
-      upgradeCTABannerSource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/upgrade-cta-banner",
+      upgradeCTABannerSource:
+        "https://github.com/RBND-studio/flows.sh/tree/main/examples/upgrade-cta-banner",
       waitlistSurvey: "https://waitlist-survey.examples.flows.sh",
-      waitlistSurveySource: "https://github.com/RBND-studio/flows.sh/tree/main/examples/waitlist-survey",
+      waitlistSurveySource:
+        "https://github.com/RBND-studio/flows.sh/tree/main/examples/waitlist-survey",
       // --PLOP_NEW_EXAMPLE_LINK--
     },
     docs: {
@@ -234,6 +240,10 @@ export const links = (domain = "flows.sh") =>
         },
       },
       agentSkills: `https://${domain}/docs/agent-skills`,
+      mcp: {
+        overview: `https://${domain}/docs/mcp/overview`,
+        tools: `https://${domain}/docs/mcp/tools`,
+      },
     },
     /**
      * Helper function to generate Open Graph image URLs

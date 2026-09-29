@@ -1,0 +1,41 @@
+---
+title: Product tours
+description: Keep product tours short, start them at the right moment, and make every step point at something real.
+---
+
+A tour is best at one thing: showing a user how to complete a single task, step by step, while they're about to do it. For a walkthrough of how to build one, see [Create a Product Tour](/guides/create-product-tour).
+
+## One task, three to five steps
+
+Every extra step is another chance for the user to leave. If a tour needs more than six steps, split it into shorter tours, for example one per item of an onboarding [checklist](/blocks/basics-v2/floating-checklist).
+
+## Start it at the right moment
+
+A tour that starts on login, wherever the user is, is the easiest one to skip. Prefer:
+
+- A [tour trigger](/tours/overview) that starts it when the user opens the page the tour is about.
+- A checklist item or a button whose action starts the Tour block.
+- A [Manual start](/blocks/start-blocks/manual-start) block your code starts, for example from a **Show me how** link.
+
+Triggers also decide which tour wins when several could start at once: by default only one tour shows at a time, and the one with the more specific trigger goes first. See [Running multiple tours](/tours/sessions#running-multiple-tours).
+
+## Make every step point at something real
+
+- Use a [Modal](/blocks/basics-v2/modal) only for an intro step that doesn't need an element.
+- Use [Tooltips](/blocks/basics-v2/tooltip) for the rest, each targeting a stable selector such as `[data-tour="export-button"]`. Add these attributes to your app for the tour; generated class names break with the next release.
+- A tooltip whose target element isn't on the page doesn't render, so check every selector on the page the step shows on.
+
+## Let the user do the thing
+
+When a step asks the user to click a button or open a page, add a [Wait](/blocks/block-properties/wait) to the next step instead of asking them to click **Next**. The tour continues when they've done it.
+
+## Buttons and exits
+
+- Primary button **Next** with the `continue` exit node, secondary button **Back** with `previous` from the second step on.
+- A last button that says what the user gets, such as **Start exporting**.
+- **Dismissible** steps, so users can leave through `cancel`.
+- Both the Tour block's `complete` and `cancel` exit nodes connected on purpose.
+
+## Decide what happens when users leave
+
+A new Tour block cancels an unfinished tour a few minutes after the user leaves your app. Set **When user session ends** to **Do nothing** for longer tours users should resume later, or **Restart tour** for short ones that only make sense from the start. See [Tour sessions](/tours/sessions).
