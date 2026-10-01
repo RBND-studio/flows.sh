@@ -1,0 +1,27 @@
+---
+title: Flows MCP
+date: "2026-10-01"
+description: Connect Claude, Cursor, VS Code or Codex to Flows and let your AI agent build, publish and analyze workflows.
+---
+
+<Image
+  src="/images/changelog/2026-10-01-mcp.png"
+  alt="Illustration of the Flows MCP server"
+  width={1800}
+  height={1052}
+/>
+
+The Flows MCP server connects your AI agent to your Flows account. From a conversation in Claude, Cursor, VS Code, Codex or any other MCP client, your agent can build workflows, publish them to your environments, debug why a user doesn't see a workflow, and read analytics and survey results.
+
+You can use it to go from "add a tour to the reports page" to a working draft without opening the editor. The server is hosted by Flows and you sign in with your Flows account, so there is nothing to install and no API key to manage. Find setup instructions for your client under **Settings > MCP**, or learn more about the [MCP server](/docs/mcp/overview).
+
+## Other improvements
+
+- You now log in to Flows with a magic link sent to your email, or with GitHub or Google. Passwords are gone, and your existing account keeps working with the same email address.
+- Long organization names no longer break the organization switcher.
+- Added six new [examples](/examples) you can import into your organization: a [paywall modal](/examples/paywall-modal), an [empty state CTA](/examples/empty-state-cta), a [waitlist survey](/examples/waitlist-survey), a [trial countdown banner](/examples/trial-countdown-banner), a [referral widget](/examples/referral-widget) and an [upgrade CTA banner](/examples/upgrade-cta-banner).
+- Added a video guide for [embedding components](/docs/guides/embed-components) in your app.
+
+## SDK
+
+- Fixed realtime updates over websocket failing when identity verification is turned on
