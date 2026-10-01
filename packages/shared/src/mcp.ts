@@ -52,3 +52,5 @@ export const cursorMcpInstallUrl = (url: string): string =>
 /** One-click install link for VS Code, see https://code.visualstudio.com/api/extension-guides/ai/mcp */
 export const vscodeMcpInstallUrl = (url: string): string =>
   `vscode:mcp/install?${encodeURIComponent(JSON.stringify({ name: "flows", type: "http", url }))}`;
+
+export const claudeMcpInstallUrl = "https://claude.ai/directory/flows";
