@@ -6,5 +6,6 @@ export * from "./demo-slots";
 export * from "./format-number";
 export * from "./links";
 export * from "./mcp";
+export * from "./organization";
 export * from "./survey";
 export * from "./workflow";

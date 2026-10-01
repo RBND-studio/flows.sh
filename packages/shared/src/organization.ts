@@ -1,0 +1,1 @@
+export const MAX_ORGANIZATIONS_PER_USER = 5;
