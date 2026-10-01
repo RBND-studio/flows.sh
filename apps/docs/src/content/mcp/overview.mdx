@@ -1,10 +1,12 @@
 ---
-title: Overview
-pageTitle: MCP server
+title: MCP Server
+pageTitle: Overview
 description: Connect Claude, Cursor, VS Code, Codex or any other MCP client to Flows and let your AI agent build, publish and analyze workflows for you.
 ---
 
 import { McpInstallButton } from "components/mcp-install-button";
+
+![Cover](/mcp/cover.png)
 
 The Flows MCP server connects your AI agent to your Flows account through the [Model Context Protocol](https://modelcontextprotocol.io). Once connected, your agent can build workflows, publish them to your environments, debug why a user doesn't see a workflow and read analytics and survey results, all from a conversation.
 
@@ -36,6 +38,8 @@ Then start Claude Code, run `/mcp`, select **flows** and sign in to Flows in the
 
 </Tab>
 <Tab value="Claude">
+
+<McpInstallButton client="claude" />
 
 Add Flows as a custom connector in Claude on the web or in the desktop app.
 
