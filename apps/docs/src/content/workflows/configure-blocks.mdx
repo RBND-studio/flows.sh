@@ -21,16 +21,33 @@ Every block includes a name and description. The name is displayed in the workfl
 
 ## Exit nodes
 
-Exit nodes are transitions triggered by user interactions with a block. To configure:
+Exit nodes are transitions triggered by user interactions with a block. Each exit node in the block edit panel shows what moves the user through it and where it leads. To connect one:
 
-1. Click the **`+`** button beside the node key.
-2. Select the destination block(s) to connect.
-
-Users can transition to multiple blocks. If no exit nodes are connected, the workflow halts at the current block.
+1. Click the exit node to open its detail.
+2. Click the **`+`** button beside **Connections**.
+3. Select the destination block(s) to connect.
 
 Each exit node can transition to multiple blocks. If no blocks are connected, the user instance stops at the current block. However, the workflows may continue if user is currently in other blocks.
 
 ![Exit nodes](/workflows/exit-nodes.png)
+
+### Triggers
+
+Triggers are what move a user through an exit node. Every exit node has a default trigger that depends on the block type, such as a click on a component, an elapsed [delay](/blocks/logic-blocks/delay), or a completed [tour](/blocks/tour-block).
+
+You can add [user properties](/blocks/block-properties/user-properties) as a second trigger, so the user also continues when their properties start matching, without interacting with the block:
+
+1. Click the exit node to open its detail.
+2. Click the **`+`** button beside **Trigger** and select **User properties**.
+3. Click the **User properties match** trigger and define the conditions.
+
+When an exit node has multiple triggers, **any** of them moves the user on. Flows evaluates the user properties trigger when it receives updated properties for the user or when they enter a block.
+
+<Callout>
+  The user properties trigger is available on components, surveys, tours and delays. Start,
+  manual start and filter blocks already evaluate user properties as their own block property, so
+  their exit nodes have no separate user properties trigger.
+</Callout>
 
 ## Block positioning
 

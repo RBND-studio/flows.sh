@@ -191,6 +191,7 @@ export const links = (domain = "flows.sh") =>
       },
       configureBlocks: {
         exitNodes: `https://${domain}/docs/workflows/configure-blocks#exit-nodes`,
+        exitNodeTrigger: `https://${domain}/docs/workflows/configure-blocks#triggers`,
       },
       tour: {
         steps: `https://${domain}/docs/blocks/tour-block#tour-steps`,

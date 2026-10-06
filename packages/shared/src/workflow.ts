@@ -66,6 +66,15 @@ export const defaultBuiltInBlockDescription: Record<string, string> = {
 
 export const blocksWithoutEntryNode: BlockType[] = ["start", "manual-start", "note"];
 
+/**
+ * Block types whose exit nodes accept a user property trigger, moving the user through the exit as
+ * soon as their properties match. Start, manual start and filter blocks evaluate user properties as
+ * their own block property instead.
+ */
+export const exitTriggerBlockTypes: BlockType[] = ["component", "survey", "tour", "delay"];
+export const supportsExitTriggers = (blockType: string): boolean =>
+  (exitTriggerBlockTypes as string[]).includes(blockType);
+
 export const defaultPropertyValue = {
   string: "",
   select: "",
