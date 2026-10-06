@@ -5,11 +5,11 @@ description: Target users based on their properties.
 
 ![User properties](/block-properties/user-properties.png)
 
-<Callout>User properties are only available in built-in logic blocks.</Callout>
+<Callout>User properties are available in built-in logic blocks and on block exit nodes.</Callout>
 
 ## Overview
 
-User properties fields allows you to target users based on their attributes. You can add multiple [user properties](/users/properties) to target users based on their attributes, in that case the properties are combined with an AND operator. User properties are only available in built-in logic blocks.
+User properties fields allows you to target users based on their attributes. You can add multiple [user properties](/users/properties) to target users based on their attributes, in that case the properties are combined with an AND operator.
 
 ## Options
 
@@ -32,3 +32,5 @@ User property conditions appear in the following blocks:
 - **[Automatic start](/blocks/start-blocks/automatic-start)** — controls who can enter a workflow.
 - **[Manual start](/blocks/start-blocks/manual-start)** — controls who can enter a manually-triggered workflow.
 - **[Filter](/blocks/logic-blocks/filter)** — controls who can continue within a workflow.
+
+They are also available as an [exit node trigger](/workflows/configure-blocks#triggers) on other blocks, where they move the user to the next block as soon as their properties match.

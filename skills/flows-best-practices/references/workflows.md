@@ -16,10 +16,23 @@ A useful workflow needs at minimum:
 
 1. Go to **Workflows** and click **New workflow**.
 2. Click **Add block** in the bottom center toolbar, choose a block from the library, and drag it into position. Configure its properties in the right hand settings panel. See [blocks.md](blocks.md) and [block-properties.md](block-properties.md).
-3. Connect blocks: click the `+` beside an exit node's key and choose the destination block(s). An exit node can connect to multiple blocks. Dragging a block to reposition it is purely visual and does not affect behavior.
+3. Connect blocks: click an exit node to open its detail, click the `+` beside **Connections**, and choose the destination block(s). An exit node can connect to multiple blocks. Dragging a block to reposition it is purely visual and does not affect behavior.
 4. Every block has a name (shown in the editor) and an optional description for extra context; hover a property name to see its description, key, and type.
 5. Duplicate a block from its `•••` menu (copies properties and exit nodes); delete a block the same way (this disconnects all its paths).
 6. Target who can enter with the [Start block](blocks.md#start-blocks)'s user property conditions, and who can continue mid workflow with a [Filter block](blocks.md#filter). Make sure the underlying user properties are actually sent by the SDK, see [users.md](users.md).
+7. Optionally add a second trigger to an exit node so the user also moves on when their [user properties](block-properties.md#user-properties) start matching, without interacting with the block. See [Exit node triggers](#exit-node-triggers).
+
+## Exit node triggers
+
+An exit node's **triggers** are what move a user through it. Every exit node has a default trigger set by the block type: a click on a component or tour step, an elapsed Delay, a completed or cancelled Tour or Survey, a finished triggered workflow.
+
+Adding **user properties** as a second trigger (exit node detail → `+` beside **Trigger** → **User properties**) means the exit node also fires when the user's properties match, with no interaction at all. Multiple triggers combine with **OR**: any one of them moves the user on, which is why the editor joins them with "or".
+
+Flows evaluates the user properties trigger when the user enters the block and whenever it receives changed properties for that user. A user who already matches on entry moves on right away, and anyone else continues as soon as an identify call makes the conditions match.
+
+Start, manual start and filter blocks do not offer this trigger: they already evaluate user properties as a block property, and that condition is what moves the user through their exit node. Workflow trigger blocks do not offer it either; only component, survey, tour and delay blocks do.
+
+Use it for blocks that should resolve on progress the user makes elsewhere in the product, for example a checklist step that completes once `onboarding_completed` turns true, or an announcement that clears itself once the user upgrades.
 
 ## Versions and publishing
 

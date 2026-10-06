@@ -8,7 +8,7 @@ Users are created automatically the first time the SDK identifies them; there is
 
 ## User properties
 
-Key/value pairs describing a user, usable in targeting conditions such as [Start blocks](blocks.md#start-blocks) and [Filter blocks](blocks.md#filter). Sent from the application via the SDK.
+Key/value pairs describing a user, usable in targeting conditions such as [Start blocks](blocks.md#start-blocks) and [Filter blocks](blocks.md#filter), and as [exit node triggers](workflows.md#exit-node-triggers) that move users on when their properties match. Sent from the application via the SDK.
 
 **Default properties** (collected automatically, not settable): `updatedAt` (last updated in Flows), `createdAt` (when the user was created in Flows), `id` (the identifier you provided), `environment`, and the **language group** (derived from the language sent by the SDK, falling back to the organization's default language group; drives [localization](personalization-localization.md)).
 

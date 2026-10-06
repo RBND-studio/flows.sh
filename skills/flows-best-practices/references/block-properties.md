@@ -227,14 +227,14 @@ Wait steps are skipped when the user goes backwards in a tour, so they cannot ge
 
 ## User properties
 
-Targets users by [user property](users.md#user-properties) conditions. Only available in built in logic blocks (Start, Filter).
+Targets users by [user property](users.md#user-properties) conditions. Available in built in logic blocks (Start, Filter) and as a trigger on any other block's exit nodes.
 
 - **Property name**, **Data type** (`string`, `number`, `boolean`, `date`), **Operator**, **Values** (one or more; multiple values within a condition combine with OR).
 - Multiple conditions on the same block combine with AND.
 
 Example: `plan equals pro OR enterprise` AND `createdAt greater than 2025-01-01`.
 
-Used in: [Automatic start](blocks.md#automatic-start), [Manual start](blocks.md#manual-start) (as an extra gate on top of the trigger call), and [Filter](blocks.md#filter).
+Used in: [Automatic start](blocks.md#automatic-start), [Manual start](blocks.md#manual-start) (as an extra gate on top of the trigger call), [Filter](blocks.md#filter), and as an [exit node trigger](workflows.md#exit-node-triggers) on other blocks, where matching properties move the user on without any interaction.
 
 ## Block key
 

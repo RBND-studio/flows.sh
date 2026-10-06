@@ -42,13 +42,13 @@ See [components.md](components.md) for custom components and [basics-v2.md](basi
 
 ## Exit nodes and paths
 
-An **exit node** is a connector that lets a workflow leave a block, with the specific exit node reached depending on how the user interacted with the block (for example clicking a button, or a Delay finishing). A **path** connects an exit node of one block to the entry of another, forming the sequence of the workflow.
+An **exit node** is a connector that lets a workflow leave a block, with the specific exit node reached depending on how the user interacted with the block (for example clicking a button, or a Delay finishing). An exit node can also carry a [user properties trigger](workflows.md#exit-node-triggers), which moves the user on when their properties match instead of waiting for an interaction. A **path** connects an exit node of one block to the entry of another, forming the sequence of the workflow.
 
 ## User and user properties
 
 A **user** is any person the application identifies to the Flows SDK using a `userId`. Flows tracks that user's progress and stores their state between sessions using this identifier, scoped per environment.
 
-**User properties** are key/value pairs describing a user (plan, role, account creation date, and so on), sent by the SDK and referenceable in workflow conditions (Start blocks, Filter blocks) to control who enters or continues through a workflow.
+**User properties** are key/value pairs describing a user (plan, role, account creation date, and so on), sent by the SDK and referenceable in workflow conditions (Start blocks, Filter blocks, exit node triggers) to control who enters or continues through a workflow.
 
 See [users.md](users.md).
 
