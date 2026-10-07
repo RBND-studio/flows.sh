@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Onboarding hub",
   description: "A home in your app for onboarding and help resources",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/onboarding-hub",
   },

@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Getting started dashboard",
   description: "Show users learning resources and onboarding tips when they first sign up.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/getting-started-dashboard",
   },

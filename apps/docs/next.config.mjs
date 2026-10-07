@@ -5,6 +5,7 @@ import { createMDX } from "fumadocs-mdx/next";
 const withMDX = createMDX();
 
 const dev = process.env.NODE_ENV !== "production";
+const production = process.env.NEXT_PUBLIC_ENV === "production";
 
 const cspHeader = `
     default-src 'self';
@@ -34,6 +35,16 @@ const nextConfig = {
           },
         ],
       },
+      // Keep staging out of search results, including non-HTML responses like markdown and txt
+      ...(production
+        ? []
+        : [
+            {
+              source: "/(.*)",
+              basePath: false,
+              headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+            },
+          ]),
     ];
   },
   // Compression is handled by Nginx, also it's required to disable compression for Next.js to support streaming

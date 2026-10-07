@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Announcement banner example - Flows",
   description: "Add a dismissible announcement banner to your React app with Flows.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/announcement-banner",
   },

@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "NPS survey example - Flows",
   description: "Collect Net Promoter Score feedback with a non-intrusive survey popover",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/nps-survey",
   },

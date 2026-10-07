@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Product Hunt launch announcement",
   description: "Launching your product on Product Hunt? Broadcast the launch inside your app.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/product-hunt-launch-announcement",
   },

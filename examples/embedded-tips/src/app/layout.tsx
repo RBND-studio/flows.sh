@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Embedded tips",
   description: "Inline contextual tips to help users learn about product and UI concepts",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/embedded-tips",
   },

@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Welcome Screen example - Flows",
   description:
     "A welcome screen example that greets new users with a modal on first login, built with Flows for React.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/welcome-screen",
   },

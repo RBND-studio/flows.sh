@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "In-App Changelog example - Flows",
   description:
     "Show users a changelog popover with the latest product updates every time they open your React app - built with Flows.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/in-app-changelog",
   },

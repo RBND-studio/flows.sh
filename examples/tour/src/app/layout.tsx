@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Tour example application – Flows",
   description: "Guide users along their journey through your product.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/tour",
   },

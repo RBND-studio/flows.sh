@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Floating checklist",
   description:
     "Interactive list of suggested setup actions the user can take. Floating in the corner of the screen.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/floating-checklist",
   },

@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Referral widget example - Flows",
   description: "Add an invite-and-earn referral widget to your settings page, powered by Flows.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/referral-widget",
   },

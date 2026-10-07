@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Survey Popover example - Flows",
   description: "Collect user feedback with a non-intrusive survey popover",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/survey-popover",
   },

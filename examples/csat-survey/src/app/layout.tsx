@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "CSAT survey example - Flows",
   description:
     "Collect Customer Satisfaction Score feedback in your React app with a non-intrusive survey popover.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/csat-survey",
   },

@@ -5,6 +5,7 @@ const createMdx = require("@next/mdx");
 const { withNextVideo } = require("next-video/process");
 
 const dev = process.env.NODE_ENV !== "production";
+const production = process.env.NEXT_PUBLIC_ENV === "production";
 
 const cspHeader = `
     default-src 'self';
@@ -34,6 +35,10 @@ const nextConfig = {
           },
         ],
       },
+      // Keep staging out of search results, including non-HTML responses like markdown and txt
+      ...(production
+        ? []
+        : [{ source: "/(.*)", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] }]),
       {
         // Agent discovery per RFC 8288 / RFC 9727 section 3.
         source: "/",
