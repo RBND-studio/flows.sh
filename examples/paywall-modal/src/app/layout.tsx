@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Paywall modal example - Flows",
   description: "Show a paywall modal when free users click a Pro-only feature, powered by Flows.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/paywall-modal",
   },

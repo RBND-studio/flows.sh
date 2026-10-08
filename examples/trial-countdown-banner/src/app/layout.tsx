@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Trial countdown banner example - Flows",
   description:
     "Show a persistent trial countdown banner with an upgrade CTA, powered by a Flows workflow.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/trial-countdown-banner",
   },

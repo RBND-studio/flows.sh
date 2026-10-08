@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Tooltip example - Flows",
   description: "Guide users through your React app with contextual in-app tooltips powered by Flows.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/tooltip",
   },

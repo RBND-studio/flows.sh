@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Churn prevention flow example - Flows",
   description:
     "Reduce cancellations in your React app with a multi-step churn prevention flow - pause offer, exit survey, and discount offer built with Flows.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/churn-prevention-flow",
   },

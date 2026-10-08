@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "New feature badge",
   description: "Highlight new features in your application with a badge.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/new-feature-badge",
   },

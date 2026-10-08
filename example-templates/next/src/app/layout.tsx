@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "-- PLOP TITLE HERE -- example - Flows",
   description: "TODO: Add description",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/-- PLOP EXAMPLE SLUG HERE --",
   },

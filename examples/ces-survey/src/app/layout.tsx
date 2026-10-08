@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Customer Effort Score (CES) survey example - Flows",
   description: "Collect Customer Effort Score feedback in your React app with a non-intrusive survey popover.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/ces-survey",
   },

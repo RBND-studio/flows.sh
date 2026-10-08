@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Card example application – Flows",
   description: "A custom card component built with the Flows SDK to render content inline.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/card",
   },

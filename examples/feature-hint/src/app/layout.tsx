@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Feature hint",
   description: "Dismissible hint used to highlight a new feature in your product.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/feature-hint",
   },

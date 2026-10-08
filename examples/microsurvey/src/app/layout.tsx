@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Microsurvey example - Flows",
   description: "Microsurvey example - a 5-point emoji rating widget for capturing quick in-app feedback with Flows.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/microsurvey",
   },

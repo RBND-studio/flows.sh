@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Modal",
   description: "A dialog to focus user attention on relevant information",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/modal",
   },

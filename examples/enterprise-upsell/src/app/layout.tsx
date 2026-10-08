@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Enterprise upsell",
   description: "Nudge users to upgrade with an in-page promotion card",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/enterprise-upsell",
   },

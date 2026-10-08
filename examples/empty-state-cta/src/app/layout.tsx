@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Empty state CTA example - Flows",
   description:
     "Turn an empty state into a guided first action with a built-in Flows Card component.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/empty-state-cta",
   },

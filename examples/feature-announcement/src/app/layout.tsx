@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Feature announcement",
   description: "Let users know about new features with a full page announcement.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/feature-announcement",
   },

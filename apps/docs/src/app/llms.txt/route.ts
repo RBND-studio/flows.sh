@@ -1,4 +1,5 @@
 import { llms } from "fumadocs-core/source";
+import { toAbsoluteDocsLinks } from "lib/get-llm-text";
 import { sidebarTabs } from "lib/sidebar-tabs";
 import { source } from "lib/source";
 
@@ -29,7 +30,8 @@ export function GET() {
   // Sections that aren't in the root meta.json (the sidebar tabs) live in the page tree's fallback,
   // which index() leaves out, so agents would never find those pages
   const fallback = source.getPageTree().fallback?.children ?? [];
-  return new Response(
-    [generator.index(), ...fallback.map((node) => generator.indexNode(node))].join("\n\n"),
+  const text = [generator.index(), ...fallback.map((node) => generator.indexNode(node))].join(
+    "\n\n",
   );
+  return new Response(toAbsoluteDocsLinks(text));
 }

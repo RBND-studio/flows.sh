@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Waitlist survey example - Flows",
   description:
     "Collect early-access waitlist signups with a qualifying question, using a Flows survey.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/waitlist-survey",
   },

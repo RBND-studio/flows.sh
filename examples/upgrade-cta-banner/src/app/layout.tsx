@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Upgrade CTA banner example - Flows",
   description:
     "Nudge free-plan users to upgrade with a persistent, usage-based banner powered by Flows.",
+  robots: { index: false, follow: false },
   alternates: {
     canonical: "https://flows.sh/examples/upgrade-cta-banner",
   },
