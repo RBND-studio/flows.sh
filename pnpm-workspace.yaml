@@ -17,8 +17,11 @@ overrides:
   minimatch@<10.2.3: ">=10.2.3"
   path-to-regexp@>=8.0.0 <8.4.0: ">=8.4.0"
   picomatch@>=4.0.0 <4.0.4: ">=4.0.4"
-  # Postcss 8.5.25 doesn't generate css file properly, the .dark tokens are missing
   postcss@<8.5.26: "=8.5.26"
+  # mdast-util-to-markdown >=2.1.3 reads `handler.attention`, which fumadocs-core 16.8.9's
+  # stringifier drops when wrapping handlers -> infinite recursion on **bold** in docs build.
+  # Remove after upgrading fumadocs-core to a version that preserves handler props (>=16.16).
+  mdast-util-to-markdown: "2.1.2"
   protobufjs@>=8.0.0 <=8.4.0: ">=8.4.1"
   qs@<=6.15.1: ^6.15.2
   serialize-javascript@<=7.0.2: ">=7.0.3"
