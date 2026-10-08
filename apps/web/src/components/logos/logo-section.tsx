@@ -1,67 +1,86 @@
 // cSpell:words Ideoz Modelve Hoshii Caudena Ampeers
-import { ApifyLogo } from "./apify";
-import { AtmosLogo } from "./atmos";
-import { FoxEcomLogo } from "./foxecom";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { css } from "@flows/styled-system/css";
-import { SagaLogo } from "./saga";
-import { IdeozLogo } from "./ideoz";
-import { ModelveLogo } from "./modelve";
 import { Section } from "components/ui/section";
 import { Text } from "ui";
-import { SalesKickLogo } from "./saleskick";
-import { HoshiiLogo } from "./hoshii";
-import { CaudenaLogo } from "./caudena";
 import type { DecoratorType } from "components/ui/section/decorator";
-import { CreatorsProLogo } from "./creators-pro";
-import { AmpeersLogo } from "./ampeers";
+import type { StaticImageData } from "next/image";
+import type { ReactNode } from "react";
 
-const logos = [
+import ampeers from "./svg/ampeers.svg";
+import apify from "./svg/apify.svg";
+import atmos from "./svg/atmos.svg";
+import caudena from "./svg/caudena.svg";
+import creatorsPro from "./svg/creators-pro.svg";
+import foxecom from "./svg/foxecom.svg";
+import hoshii from "./svg/hoshii.svg";
+import ideoz from "./svg/ideoz.svg";
+import modelve from "./svg/modelve.svg";
+import saga from "./svg/saga.svg";
+import saleskick from "./svg/saleskick.svg";
+
+type LogoItem = {
+  name: string;
+  image: StaticImageData;
+};
+
+const logos: LogoItem[] = [
   {
     name: "Apify",
-    logo: ApifyLogo,
+    image: apify,
   },
   {
     name: "FoxEcom",
-    logo: FoxEcomLogo,
+    image: foxecom,
   },
   {
     name: "Creators Pro",
-    logo: CreatorsProLogo,
+    image: creatorsPro,
   },
   {
     name: "Modelve",
-    logo: ModelveLogo,
+    image: modelve,
   },
   {
     name: "Atmos",
-    logo: AtmosLogo,
+    image: atmos,
   },
   {
     name: "Hoshii",
-    logo: HoshiiLogo,
+    image: hoshii,
   },
   {
     name: "SalesKick",
-    logo: SalesKickLogo,
+    image: saleskick,
   },
   {
     name: "Ampeers Group",
-    logo: AmpeersLogo,
+    image: ampeers,
   },
   {
     name: "Ideoz",
-    logo: IdeozLogo,
+    image: ideoz,
   },
   {
     name: "Caudena",
-    logo: CaudenaLogo,
+    image: caudena,
   },
   {
     name: "Saga",
-    logo: SagaLogo,
+    image: saga,
   },
 ];
+
+// Logos are static SVG files used as a CSS mask over `currentColor`, so they follow the theme
+// without inlining their path data into the HTML of every page that shows this section.
+const Logo = ({ name, image }: LogoItem): ReactNode => (
+  <span
+    role="img"
+    aria-label={name}
+    className={logoCss}
+    style={{ width: image.width, height: image.height, maskImage: `url(${image.src})` }}
+  />
+);
 
 type Props = {
   className?: string;
@@ -96,21 +115,21 @@ export const LogoSection = ({
           flexShrink={{ base: 0, md: "unset" }}
           className={className}
         >
-          {logos.map(({ name, logo: Logo }) => (
-            <Flex as="li" className={logoWrapCss} key={name} title={name}>
-              <Logo />
+          {logos.map((logo) => (
+            <Flex as="li" className={logoWrapCss} key={logo.name} title={logo.name}>
+              <Logo {...logo} />
             </Flex>
           ))}
-          {logos.map(({ name, logo: Logo }) => (
+          {logos.map((logo) => (
             <Flex
               as="li"
               className={logoWrapCss}
-              key={name}
-              title={name}
+              key={logo.name}
+              title={logo.name}
               aria-hidden="true"
               display={{ base: "flex", md: "none" }}
             >
-              <Logo />
+              <Logo {...logo} />
             </Flex>
           ))}
         </Flex>
@@ -121,4 +140,13 @@ export const LogoSection = ({
 
 const logoWrapCss = css({
   color: "fg.neutral",
+});
+
+const logoCss = css({
+  display: "block",
+  flexShrink: 0,
+  backgroundColor: "currentColor",
+  maskSize: "contain",
+  maskRepeat: "no-repeat",
+  maskPosition: "center",
 });

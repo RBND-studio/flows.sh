@@ -6,17 +6,18 @@ import { useState, type ReactNode } from "react";
 import { clipboard, Icon } from "ui";
 
 export const HeadingCopyButton = ({
-  path,
+  hash,
   className,
 }: {
-  path: string;
+  /** Id of the heading to link to */
+  hash?: string;
   className?: string;
 }): ReactNode => {
   const [hasBeenCopied, setHasBeenCopied] = useState(false);
 
   const handleCopy = (): void => {
     setHasBeenCopied(true);
-    void clipboard.copy(window.location.origin + path);
+    void clipboard.copy(`${window.location.origin}${window.location.pathname}#${hash}`);
     setTimeout(() => setHasBeenCopied(false), 3000);
   };
 

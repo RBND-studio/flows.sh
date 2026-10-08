@@ -1,5 +1,3 @@
-"use client";
-
 import { routes } from "routes";
 import { Button, Dialog, DialogActions, DialogClose, DialogContent, DialogTitle, Text } from "ui";
 

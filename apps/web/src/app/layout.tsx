@@ -12,6 +12,7 @@ import type { Metadata } from "next";
 import { Caveat, Figtree, Inter } from "next/font/google";
 import Script from "next/script";
 import type { JSX } from "react";
+import { preconnect } from "react-dom";
 
 const FigTreeFont = Figtree({
   subsets: ["latin"],
@@ -24,7 +25,7 @@ const CaveatFont = Caveat({
 });
 
 const InterFont = Inter({
-  subsets: ["latin-ext"],
+  subsets: ["latin"],
   variable: "--font-body",
 });
 
@@ -45,6 +46,11 @@ export const metadata: Metadata = getWebMetadata({
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
+  // Origins fetched on every page load: the Flows SDK API and the status badge. Both are CORS fetches
+  // without credentials, so the preconnect has to be anonymous to warm up the same connection.
+  preconnect("https://api.flows-cloud.com", { crossOrigin: "anonymous" });
+  preconnect("https://status.flows.sh", { crossOrigin: "anonymous" });
+
   return (
     <html
       className={cx(FigTreeFont.variable, InterFont.variable, CaveatFont.variable)}

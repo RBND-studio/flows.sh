@@ -36,7 +36,7 @@ export const Header = (): ReactElement => {
         alignItems="center"
         gap={{ base: "space8", lg: "space12" }}
       >
-        <Link href={routes.home} aria-label="Home">
+        <Link href={routes.home} prefetch={false} aria-label="Home">
           <Logo
             type="type"
             size={20}
