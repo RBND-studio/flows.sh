@@ -13,7 +13,7 @@ export function Pendo20(props: React.SVGProps<SVGSVGElement>): JSX.Element {
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M0 9.77773H9.99996V19.5556L20 9.77773V0H9.99996L0 9.77773Z"
+        d="M0 9.78h10v9.78l10-9.78V0H10z"
         fill="#FF4876"
       />
     </svg>

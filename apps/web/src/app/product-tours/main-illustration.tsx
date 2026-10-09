@@ -144,7 +144,7 @@ const LineArrowRight = ({ id }: { id: string }): JSX.Element => {
           markerHeight="6"
           orient="auto"
         >
-          <path d="M0,0 L10,3 L0,6 z" fill={token.var("colors.border.neutral.strong")} />
+          <path d="m0 0 10 3L0 6z" fill={token.var("colors.border.neutral.strong")} />
         </marker>
         <marker
           id={`${id}-circle`}
@@ -198,7 +198,7 @@ const LineFork = ({ id }: { id: string }): JSX.Element => {
             markerHeight="6"
             orient="auto"
           >
-            <path d="M0,0 L10,3 L0,6 z" fill={token.var("colors.border.neutral.strong")} />
+            <path d="m0 0 10 3L0 6z" fill={token.var("colors.border.neutral.strong")} />
           </marker>
           <marker
             id={`${id}-circle`}
@@ -215,13 +215,13 @@ const LineFork = ({ id }: { id: string }): JSX.Element => {
         </defs>
 
         <path
-          d="M0 32H9C10.6569 32 12 33.3431 12 35V55C12 56.6569 13.3431 58 15 58H24"
+          d="M0 32h9a3 3 0 0 1 3 3v20a3 3 0 0 0 3 3h9"
           stroke={token.var("colors.border.neutral.strong")}
           markerEnd={`url(#${id}-arrow)`}
           markerStart={`url(#${id}-circle)`}
         />
         <path
-          d="M0 32H9C10.6569 32 12 30.6569 12 29V9C12 7.34315 13.3431 6 15 6H24"
+          d="M0 32h9a3 3 0 0 0 3-3V9a3 3 0 0 1 3-3h9"
           stroke={token.var("colors.border.neutral.strong")}
           markerEnd={`url(#${id}-arrow)`}
           markerStart={`url(#${id}-circle)`}

@@ -9,6 +9,7 @@
     "dev": "turbo run dev",
     "lint": "oxlint",
     "test": "turbo run test",
+    "test:svgs": "node packages/icons/scripts/optimize-svgs.mjs --check",
     "tsc": "turbo run tsc",
     "app": "pnpm --filter app",
     "docs": "pnpm --filter docs",

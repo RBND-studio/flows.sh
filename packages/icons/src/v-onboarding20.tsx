@@ -7,7 +7,7 @@ export function VOnboarding20(props: React.SVGProps<SVGSVGElement>): JSX.Element
         xmlns="http://www.w3.org/2000/svg"
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0ZM4 4L8.14648 16H11.8535L16 4H12.5176L10.0615 12.5859H9.93848L7.47461 4H4Z"
+        d="M10 0a10 10 0 1 1 0 20 10 10 0 0 1 0-20M4 4l4.15 12h3.7L16 4h-3.48l-2.46 8.59h-.12L7.47 4z"
         fill="#42B883"
       />
     </svg>

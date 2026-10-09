@@ -63,6 +63,8 @@ const nextConfig = {
     // Currently turbopack doesn't support this feature, that's why we're doing production builds with webpack
     // More info: https://github.com/vercel/next.js/issues/75148
     optimizePackageImports: ["ui", "icons", "shared", "shared-private"],
+    // Inline the stylesheet into the HTML so first paint doesn't wait on a CSS round trip
+    inlineCss: true,
   },
   images: {
     formats: ["image/avif", "image/webp"],
