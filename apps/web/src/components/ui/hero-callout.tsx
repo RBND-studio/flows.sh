@@ -21,6 +21,7 @@ export const HeroCallout: FC<Props> = ({ title, link, delay }) => {
 
   return (
     <Component
+      prefetch={false}
       href={link}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}

@@ -25,7 +25,7 @@ export const Brow = () => {
       <StatusBadge />
       <ThemeSwitch />
       <Text color="fg.neutral.subtle" variant="bodyS">
-        © {new Date().getFullYear()}{" "}
+        {/* oxlint-disable-next-line react/purity */}© {new Date().getFullYear()}{" "}
         <a
           target="_blank"
           href={links.rbnd}
