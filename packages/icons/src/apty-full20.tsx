@@ -12,7 +12,7 @@ export function AptyFull20(props: React.SVGProps<SVGSVGElement>): JSX.Element {
       {...props}
     >
       <g clipPath="url(#clip0_5264_4958)">
-        <path d="M41 -2.00977H-0.13208V21.0091H41V-2.00977Z" fill="url(#pattern0_5264_4958)" />
+        <path d="M41-2.01H-.13v23.02H41z" fill="url(#pattern0_5264_4958)" />
       </g>
       <defs>
         <pattern

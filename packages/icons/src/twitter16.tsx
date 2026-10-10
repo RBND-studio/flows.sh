@@ -3,7 +3,7 @@ import type { JSX } from "react";
 export function Twitter16(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg fill="currentColor" height={16} width={16} xmlns="http://www.w3.org/2000/svg" {...props}>
-      <path d="M12.6009 0.903809H15.0544L9.69434 7.02998L16 15.3663H11.0627L7.19566 10.3104L2.77087 15.3663H0.31595L6.04904 8.81369L0 0.903809H5.06262L8.55811 5.52514L12.6009 0.903809ZM11.7399 13.8978H13.0993L4.32392 2.29518H2.86506L11.7399 13.8978Z" />
+      <path d="M12.6.9h2.45L9.7 7.03l6.3 8.34h-4.94L7.2 10.3l-4.43 5.06H.32L6.05 8.8 0 .91h5.06l3.5 4.62zm-.86 13h1.36L4.32 2.3H2.87z" />
     </svg>
   );
 }

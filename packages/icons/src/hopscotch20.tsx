@@ -10,13 +10,13 @@ export function Hopscotch20(props: React.SVGProps<SVGSVGElement>): JSX.Element {
       viewBox="0 0 20 20"
       {...props}
     >
-      <path d="M6.70593 0.117188H0.117676V6.70544H6.70593V0.117188Z" fill="#4A75FF" />
-      <path d="M6.70593 6.70605H0.117676V13.2943H6.70593V6.70605Z" fill="#054CC0" />
-      <path d="M13.2943 6.70605H6.70605V13.2943H13.2943V6.70605Z" fill="#DAB9F0" />
-      <path d="M19.8822 6.70605H13.2939V13.2943H19.8822V6.70605Z" fill="#FEC305" />
-      <path d="M19.8822 13.2939H13.2939V19.8822H19.8822V13.2939Z" fill="#FEAAA0" />
-      <path d="M19.8822 0.117188H13.2939V6.70544H19.8822V0.117188Z" fill="#FF5635" />
-      <path d="M6.70593 13.2939H0.117676V19.8822H6.70593V13.2939Z" fill="#26C467" />
+      <path d="M6.7.12H.13V6.7H6.7z" fill="#4A75FF" />
+      <path d="M6.7 6.7H.13v6.6H6.7z" fill="#054CC0" />
+      <path d="M13.3 6.7H6.7v6.6h6.6z" fill="#DAB9F0" />
+      <path d="M19.88 6.7H13.3v6.6h6.6z" fill="#FEC305" />
+      <path d="M19.88 13.3H13.3v6.58h6.6z" fill="#FEAAA0" />
+      <path d="M19.88.12H13.3V6.7h6.6z" fill="#FF5635" />
+      <path d="M6.7 13.3H.13v6.58H6.7z" fill="#26C467" />
     </svg>
   );
 }

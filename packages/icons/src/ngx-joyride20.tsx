@@ -3,18 +3,15 @@ import type { JSX } from "react";
 export function NgxJoyride20(props: React.SVGProps<SVGSVGElement>): JSX.Element {
   return (
     <svg fill="currentColor" height={20} width={20} xmlns="http://www.w3.org/2000/svg" {...props}>
-      <path d="M11.7002 10.54H8.2998L10 6.4502L11.7002 10.54Z" fill="#DD0031" />
+      <path d="M11.7 10.54H8.3L10 6.45z" fill="#DD0031" />
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M19.3096 3.32031L17.8896 15.6299L10 20L2.11035 15.6299L0.69043 3.32031L10 0L19.3096 3.32031ZM4.17969 15.2598H6.34961L7.51953 12.3398H12.46L13.6299 15.2598H15.7998L10 2.20996L4.17969 15.2598Z"
+        d="m19.31 3.32-1.42 12.31L10 20l-7.89-4.37L.69 3.32 10 0zM4.18 15.26h2.17l1.17-2.92h4.94l1.17 2.92h2.17L10 2.21z"
         fill="#DD0031"
       />
-      <path
-        d="M19.3096 3.32031L17.8896 15.6299L10 20V12.3398H12.46L13.6299 15.2598H15.7998L10 2.20996V0L19.3096 3.32031Z"
-        fill="#C3002F"
-      />
-      <path d="M11.7002 10.54H10V6.4502L11.7002 10.54Z" fill="#C3002F" />
+      <path d="m19.31 3.32-1.42 12.31L10 20v-7.66h2.46l1.17 2.92h2.17L10 2.21V0z" fill="#C3002F" />
+      <path d="M11.7 10.54H10V6.45z" fill="#C3002F" />
     </svg>
   );
 }

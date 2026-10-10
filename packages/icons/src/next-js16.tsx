@@ -13,7 +13,7 @@ export function NextJS16(props: React.SVGProps<SVGSVGElement>): JSX.Element {
           width="16"
           height="16"
         >
-          <path d="M16 0H0V16H16V0Z" fill="white" />
+          <path d="M16 0H0v16h16z" fill="white" />
         </mask>
         <g mask="url(#mask0_3790_11477)">
           <mask
@@ -25,24 +25,15 @@ export function NextJS16(props: React.SVGProps<SVGSVGElement>): JSX.Element {
             width="16"
             height="16"
           >
-            <path
-              d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z"
-              fill="black"
-            />
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16" fill="black" />
           </mask>
           <g mask="url(#mask1_3790_11477)">
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16" fill="black" />
             <path
-              d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z"
-              fill="black"
-            />
-            <path
-              d="M13.2884 14.0006L6.14477 4.79883H4.79883V11.1961H5.87557V6.16624L12.4432 14.6517C12.7395 14.4534 13.0219 14.2357 13.2884 14.0006Z"
+              d="M13.29 14 6.14 4.8H4.8v6.4h1.08V6.17l6.56 8.48q.45-.3.85-.65"
               fill="url(#paint0_linear_3790_11477)"
             />
-            <path
-              d="M11.2874 4.79883H10.2207V11.1988H11.2874V4.79883Z"
-              fill="url(#paint1_linear_3790_11477)"
-            />
+            <path d="M11.29 4.8h-1.07v6.4h1.07z" fill="url(#paint1_linear_3790_11477)" />
           </g>
         </g>
       </g>

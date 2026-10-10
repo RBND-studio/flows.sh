@@ -12,10 +12,11 @@
       "cache": false,
       "persistent": true
     },
-    "test": {},
+    "test": { "dependsOn": ["//#test:svgs"] },
     "tsc": { "cache": false },
     "pre-commit": {},
     "//#lint": {},
+    "//#test:svgs": { "cache": false },
     "//#spellcheck": {},
     "//#lint:md": {}
   }

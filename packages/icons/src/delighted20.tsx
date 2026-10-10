@@ -10,10 +10,7 @@ export function Delighted20(props: React.SVGProps<SVGSVGElement>): JSX.Element {
       viewBox="0 0 20 20"
       {...props}
     >
-      <path
-        d="M10 0.5C4.76 0.5 0.5 4.76 0.5 10C0.5 15.24 4.76 19.5 10 19.5C15.24 19.5 19.5 15.24 19.5 10C19.5 4.76 15.24 0.5 10 0.5Z"
-        fill="#212121"
-      />
+      <path d="M10 .5a9.5 9.5 0 1 0 .02 19.02A9.5 9.5 0 0 0 10 .5" fill="#212121" />
     </svg>
   );
 }

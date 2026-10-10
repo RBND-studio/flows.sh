@@ -74,7 +74,7 @@ const LineArrowDown = ({ id }: { id: string }): JSX.Element => {
           markerHeight="10"
           orient="auto"
         >
-          <path d="M0,0 L0,10 L6,5 z" fill={token.var("colors.border.neutral.strong")} />
+          <path d="M0 0v10l6-5z" fill={token.var("colors.border.neutral.strong")} />
         </marker>
         <marker
           id={`${id}-circle`}
@@ -116,7 +116,7 @@ const LineArrowRight = ({ id }: { id: string }): JSX.Element => {
           markerHeight="6"
           orient="auto"
         >
-          <path d="M0,0 L10,3 L0,6 z" fill={token.var("colors.border.neutral.strong")} />
+          <path d="m0 0 10 3L0 6z" fill={token.var("colors.border.neutral.strong")} />
         </marker>
         <marker
           id={`${id}-circle`}

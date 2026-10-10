@@ -12,7 +12,7 @@ export const Spinner20 = (props: React.SVGProps<SVGSVGElement>): JSX.Element => 
   >
     <path
       clipRule="evenodd"
-      d="M9 1a1 1 0 011-1 10 10 0 015.878 18.09 1 1 0 01-1.176-1.618A8 8 0 0010 2a1 1 0 01-1-1z"
+      d="M9 1a1 1 0 0 1 1-1 10 10 0 0 1 5.88 18.09 1 1 0 0 1-1.18-1.62A8 8 0 0 0 10 2a1 1 0 0 1-1-1"
       fillRule="evenodd"
     />
   </svg>
