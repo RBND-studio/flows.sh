@@ -1,5 +1,6 @@
-import type { BlockTemplateType } from "@flows/types";
+import type { BlockTemplateType, DelayValues } from "@flows/types";
 import { type BlockType, type PropertyType, type StateMemoryValue } from "@flows/types";
+import dayjs from "dayjs";
 
 export const propertyTypes: PropertyType[] = [
   "string",
@@ -72,8 +73,15 @@ export const blocksWithoutEntryNode: BlockType[] = ["start", "manual-start", "no
  * their own block property instead.
  */
 export const exitTriggerBlockTypes: BlockType[] = ["component", "survey", "tour", "delay"];
-export const supportsExitTriggers = (blockType: string): boolean =>
-  (exitTriggerBlockTypes as string[]).includes(blockType);
+export const supportsExitTriggers = (blockType: BlockType): boolean =>
+  exitTriggerBlockTypes.includes(blockType);
+/**
+ * Block types whose exit nodes offer a delay trigger in the editor. A delay block's exit node delay
+ * is the block's own duration, edited as a block setting instead.
+ */
+export const supportsExitDelayTrigger = (blockType: BlockType): boolean =>
+  supportsExitTriggers(blockType) && blockType !== "delay";
+export const minDelayMinutes = (blockType: BlockType) => (blockType === "delay" ? 0 : 1);
 
 export const defaultPropertyValue = {
   string: "",
@@ -116,3 +124,16 @@ export const surveyBlockExitNodes = [
 ];
 
 export const delayMaxTotalDays = 30;
+
+/**
+ * Time when the delay started at `start` elapses. Shared by delay blocks and exit node delay triggers.
+ */
+export const getDelayEndDate = (start: Date, delayValues: DelayValues): Date =>
+  dayjs(start)
+    .add(delayValues.days, "days")
+    .add(delayValues.hours, "hours")
+    .add(delayValues.minutes, "minutes")
+    .toDate();
+
+export const getDelayTotalMinutes = (delayValues: DelayValues): number =>
+  delayValues.days * 24 * 60 + delayValues.hours * 60 + delayValues.minutes;

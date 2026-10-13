@@ -2,6 +2,7 @@ import { type SDKBlock } from "./sdk";
 
 export type KafkaUserEventName =
   | "transition"
+  | "delay-elapsed"
   | "tour-update"
   | "tour-session-heartbeat"
   | "tour-session-hint"

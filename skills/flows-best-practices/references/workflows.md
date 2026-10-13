@@ -20,7 +20,7 @@ A useful workflow needs at minimum:
 4. Every block has a name (shown in the editor) and an optional description for extra context; hover a property name to see its description, key, and type.
 5. Duplicate a block from its `•••` menu (copies properties and exit nodes); delete a block the same way (this disconnects all its paths).
 6. Target who can enter with the [Start block](blocks.md#start-blocks)'s user property conditions, and who can continue mid workflow with a [Filter block](blocks.md#filter). Make sure the underlying user properties are actually sent by the SDK, see [users.md](users.md).
-7. Optionally add a second trigger to an exit node so the user also moves on when their [user properties](block-properties.md#user-properties) start matching, without interacting with the block. See [Exit node triggers](#exit-node-triggers).
+7. Optionally add a second trigger to an exit node so the user also moves on when their [user properties](block-properties.md#user-properties) start matching or after a delay, without interacting with the block. See [Exit node triggers](#exit-node-triggers).
 
 ## Exit node triggers
 
@@ -30,9 +30,11 @@ Adding **user properties** as a second trigger (exit node detail → `+` beside 
 
 Flows evaluates the user properties trigger when the user enters the block and whenever it receives changed properties for that user. A user who already matches on entry moves on right away, and anyone else continues as soon as an identify call makes the conditions match.
 
-Start, manual start and filter blocks do not offer this trigger: they already evaluate user properties as a block property, and that condition is what moves the user through their exit node. Workflow trigger blocks do not offer it either; only component, survey, tour and delay blocks do.
+Start, manual start and filter blocks do not offer the user properties trigger: they already evaluate user properties as a block property, and that condition is what moves the user through their exit node. Workflow trigger blocks do not offer it either; only component, survey, tour and delay blocks do.
 
 Use it for blocks that should resolve on progress the user makes elsewhere in the product, for example a checklist step that completes once `onboarding_completed` turns true, or an announcement that clears itself once the user upgrades.
+
+A **delay** trigger (exit node detail → `+` beside **Trigger** → **Delay**) moves the user through the exit node once the set time passes since they entered the block, for example a banner that closes itself after 7 days. It takes at least 1 minute and at most 30 days, and Flows checks it every minute. It is available on component, survey and tour blocks; a Delay block uses its own delay duration instead.
 
 ## Versions and publishing
 
