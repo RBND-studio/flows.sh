@@ -25,10 +25,11 @@ export const TextWithTooltip = forwardRef<HTMLParagraphElement, TextProps>(
     return (
       <Tooltip
         trigger={textContent}
-        content={props.children}
         side={props.tooltipSide}
         className={css({ whiteSpace: "pre-line" })}
-      />
+      >
+        {props.children}
+      </Tooltip>
     );
   },
 );

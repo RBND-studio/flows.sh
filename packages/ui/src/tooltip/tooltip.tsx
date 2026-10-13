@@ -73,7 +73,7 @@ export type TooltipSide = React.ComponentPropsWithoutRef<typeof TooltipPrimitive
 
 type TooltipProps = {
   trigger: React.ReactNode;
-  content: React.ReactNode;
+  children?: React.ReactNode;
   sideOffset?: number;
   side?: TooltipSide;
   align?: React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>["align"];
@@ -85,7 +85,7 @@ type TooltipProps = {
 
 export const Tooltip = forwardRef<HTMLButtonElement, TooltipProps>(function Tooltip(
   {
-    content,
+    children,
     trigger,
     align,
     className,
@@ -127,7 +127,7 @@ export const Tooltip = forwardRef<HTMLButtonElement, TooltipProps>(function Tool
         >
           {trigger}
         </TooltipTrigger>
-        {content ? (
+        {children ? (
           <TooltipPrimitive.Portal>
             <TooltipContent
               arrowPadding={12}
@@ -137,7 +137,7 @@ export const Tooltip = forwardRef<HTMLButtonElement, TooltipProps>(function Tool
               sideOffset={sideOffset}
             >
               <TooltipArrow />
-              {content}
+              {children}
             </TooltipContent>
           </TooltipPrimitive.Portal>
         ) : null}

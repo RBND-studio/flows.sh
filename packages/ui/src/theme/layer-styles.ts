@@ -1,6 +1,7 @@
 import { defineLayerStyles } from "@pandacss/dev";
+import type { LayerStyles } from "@pandacss/types";
 
-export const layerStyles = defineLayerStyles({
+export const layerStyles: LayerStyles = defineLayerStyles({
   card: {
     value: {
       backgroundColor: "pane.bg.main",

@@ -42,7 +42,7 @@
   transition: background-color 0.3s;
   position: absolute;
   inset: 0;
-  background-color: var(--colors-pane-bg-translucent-overlay);
+  /* background-color is defined in the component for pandacss variable visibility */
 }
 
 [data-rmiz-modal-overlay="hidden"] {

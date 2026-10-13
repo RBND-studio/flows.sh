@@ -1,6 +1,7 @@
 import { defineUtility } from "@pandacss/dev";
+import type { PropertyConfig } from "@pandacss/types";
 
-export const fastEaseInOut = defineUtility({
+export const fastEaseInOut: PropertyConfig = defineUtility({
   transform(value, { token }) {
     return {
       transitionProperty: value,
@@ -10,7 +11,7 @@ export const fastEaseInOut = defineUtility({
   },
 });
 
-export const superFastEaseInOut = defineUtility({
+export const superFastEaseInOut: PropertyConfig = defineUtility({
   transform(value, { token }) {
     return {
       transitionProperty: value,

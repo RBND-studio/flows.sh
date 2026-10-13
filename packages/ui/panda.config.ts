@@ -1,7 +1,10 @@
-import { defineConfig } from "@pandacss/dev";
+import { type Config, defineConfig } from "@pandacss/dev";
+import basePreset from "@pandacss/preset-base";
 import { theme, conditions, utilities } from "./theme";
 
-export default defineConfig({
+const config: Config = defineConfig({
+  presets: [basePreset],
+
   // Whether to use css reset
   preflight: true,
 
@@ -22,6 +25,14 @@ export default defineConfig({
   jsxFramework: "react",
 
   minify: true,
+  optimize: {
+    removeUnusedTokens: true,
+    removeUnusedKeyframes: true,
+    smartCompoundVariants: true,
+    treeshakeDesignSystem: true,
+  },
 
   conditions,
 });
+
+export default config;
