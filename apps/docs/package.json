@@ -18,9 +18,9 @@
     "fumadocs-mdx": "15.0.12",
     "fumadocs-ui": "16.8.9",
     "icons": "workspace:*",
-    "next": "16.3.8",
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
+    "next": "16.4.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
     "react-lite-youtube-embed": "^3.6.2",
     "shared": "workspace:*",
     "ui": "workspace:*",
@@ -31,8 +31,8 @@
     "@pandacss/preset-base": "^2.1.2",
     "@types/mdx": "^2.0.13",
     "@types/node": "^24.10.4",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "tsconfig": "workspace:*",
     "typescript": "6.0.3"
   }
