@@ -11,6 +11,12 @@ The **Delay** block pauses the path that enters it for a set duration before con
 
 Example: show a product tour today, then send extra tips one week later.
 
+<Callout>
+  To move a user on from a component, survey or tour after a set time, you don't need a Delay
+  block. Add a [delay trigger](/workflows/configure-blocks#triggers) to its exit node instead, for
+  example a banner that closes itself after 7 days.
+</Callout>
+
 ## How it works
 
 - The block pauses **only the path that passes through it**. Other paths in the workflow continue normally.

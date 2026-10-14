@@ -1,4 +1,5 @@
 import { defineTextStyles, defineTokens } from "@pandacss/dev";
+import type { TextStyles } from "@pandacss/types";
 
 export const fonts = defineTokens.fonts({
   mono: {
@@ -13,7 +14,7 @@ export const fonts = defineTokens.fonts({
 
 // Font definition excluding font-family, family is defined in global styles for each app separately because we want to use fancier font on the web but UI focused one in the app
 
-export const textStyles = defineTextStyles({
+export const textStyles: TextStyles = defineTextStyles({
   // unused
   title6xl: {
     value: {

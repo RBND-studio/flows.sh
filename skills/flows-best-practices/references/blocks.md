@@ -49,6 +49,7 @@ Pauses the path passing through it for a set duration; other paths in the workfl
 - Exit node: `completed`, fired when the delay finishes.
 - Billing: entering a Delay block counts the user as an MTU. They are not counted again for continuing to wait, or for exiting the block.
 - Example uses: automatically stop a stale tour after a week (Delay 7 days → End block); space out sequential tips (tip → Delay 3 days → next tip).
+- To move a user on from a component, survey or tour after a set time, a Delay block isn't needed: add a [delay trigger](workflows.md#exit-node-triggers) to its exit node instead.
 
 ### Filter
 

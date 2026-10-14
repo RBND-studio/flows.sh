@@ -181,7 +181,10 @@ const MtuRender = (): ReactNode => {
         </Text>
       }
       supportMobileTap
-      content="Flows charges only for users who actually see an experience, we call them MTU (Monthly Tracked Users). On the Pro plan, you pay for the amount of MTU you have each month, regardless of how many users visit your app."
-    />
+    >
+      Flows charges only for users who actually see an experience, we call them MTU (Monthly Tracked
+      Users). On the Pro plan, you pay for the amount of MTU you have each month, regardless of how
+      many users visit your app.
+    </Tooltip>
   );
 };

@@ -45,5 +45,3 @@ export const utilities: Config["utilities"] = {
     superFastEaseInOut,
   },
 };
-
-export const globalCss: Config["globalCss"] = {};

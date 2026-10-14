@@ -289,7 +289,11 @@ const ItemWithTooltip = ({
   disabled?: boolean;
 }): JSX.Element => {
   if (disabled && disabledReason) {
-    return <Tooltip side="left" content={disabledReason} trigger={children} />;
+    return (
+      <Tooltip side="left" trigger={children}>
+        {disabledReason}
+      </Tooltip>
+    );
   }
   return <>{children}</>;
 };

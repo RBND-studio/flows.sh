@@ -46,5 +46,9 @@ export const Label = forwardRef<HTMLLabelElement, Props>(function Label(
 
   if (!tooltip) return labelRender;
 
-  return <Tooltip content={tooltip} trigger={labelRender} hasUnderline />;
+  return (
+    <Tooltip trigger={labelRender} hasUnderline>
+      {tooltip}
+    </Tooltip>
+  );
 });

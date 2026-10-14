@@ -1,5 +1,6 @@
 import "./zoomable-image.css";
 
+import { css } from "@flows/styled-system/css";
 import Image from "next/image";
 import { type HTMLProps, type ReactNode } from "react";
 import Zoom from "react-medium-image-zoom";
@@ -12,6 +13,10 @@ type Props = HTMLProps<HTMLImageElement> & {
 export const ZoomableImage = (props: Props): ReactNode => {
   return (
     <Zoom
+      classDialog={css({
+        // cspell:words rmiz
+        "& [data-rmiz-modal-overlay='visible']": { backgroundColor: "pane.bg.translucentOverlay" },
+      })}
       zoomMargin={8}
       zoomImg={{
         src: props.src ?? "",

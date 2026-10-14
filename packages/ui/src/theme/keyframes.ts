@@ -1,6 +1,7 @@
-import type { CssKeyframes } from "@pandacss/dev";
+import { defineKeyframes } from "@pandacss/dev";
+import type { CssKeyframes } from "@pandacss/types";
 
-export const keyframes: CssKeyframes = {
+export const keyframes: CssKeyframes = defineKeyframes({
   enter: {
     "0%": { transform: "scale(.95)", opacity: 0 },
     "100%": { transform: "scale(1)", opacity: 1 },
@@ -172,4 +173,4 @@ export const keyframes: CssKeyframes = {
       opacity: 1,
     },
   },
-};
+});

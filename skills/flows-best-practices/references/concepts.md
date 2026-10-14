@@ -42,7 +42,7 @@ See [components.md](components.md) for custom components and [basics-v2.md](basi
 
 ## Exit nodes and paths
 
-An **exit node** is a connector that lets a workflow leave a block, with the specific exit node reached depending on how the user interacted with the block (for example clicking a button, or a Delay finishing). An exit node can also carry a [user properties trigger](workflows.md#exit-node-triggers), which moves the user on when their properties match instead of waiting for an interaction. A **path** connects an exit node of one block to the entry of another, forming the sequence of the workflow.
+An **exit node** is a connector that lets a workflow leave a block, with the specific exit node reached depending on how the user interacted with the block (for example clicking a button, or a Delay finishing). An exit node can also carry a [user properties or delay trigger](workflows.md#exit-node-triggers), which moves the user on when their properties match or after a set time instead of waiting for an interaction. A **path** connects an exit node of one block to the entry of another, forming the sequence of the workflow.
 
 ## User and user properties
 

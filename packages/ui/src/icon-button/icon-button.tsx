@@ -77,7 +77,9 @@ export const IconButton = memo(
     if (!tooltip) return buttonRender;
 
     return (
-      <Tooltip side={tooltipSide} content={tooltip} delayDuration={800} trigger={buttonRender} />
+      <Tooltip side={tooltipSide} delayDuration={800} trigger={buttonRender}>
+        {tooltip}
+      </Tooltip>
     );
   }),
 );

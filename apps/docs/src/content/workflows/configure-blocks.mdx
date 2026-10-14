@@ -35,18 +35,25 @@ Each exit node can transition to multiple blocks. If no blocks are connected, th
 
 Triggers are what move a user through an exit node. Every exit node has a default trigger that depends on the block type, such as a click on a component, an elapsed [delay](/blocks/logic-blocks/delay), or a completed [tour](/blocks/tour-block).
 
-You can add [user properties](/blocks/block-properties/user-properties) as a second trigger, so the user also continues when their properties start matching, without interacting with the block:
+You can add extra triggers, so the user also continues without interacting with the block:
+
+- **User properties**: the user continues when their [user properties](/blocks/block-properties/user-properties) start matching. Flows evaluates it when the user enters the block and when it receives updated properties for the user.
+- **Delay**: the user continues once the set time passes since they entered the block, for example a banner that closes itself after 7 days. The delay is at least 1 minute and at most 30 days, and Flows checks it every minute.
+
+To add a trigger:
 
 1. Click the exit node to open its detail.
-2. Click the **`+`** button beside **Trigger** and select **User properties**.
-3. Click the **User properties match** trigger and define the conditions.
+2. Click the **`+`** button beside **Trigger** and select **User properties** or **Delay**.
+3. Click the new trigger and define the conditions or the delay duration.
 
-When an exit node has multiple triggers, **any** of them moves the user on. Flows evaluates the user properties trigger when it receives updated properties for the user or when they enter a block.
+When an exit node has multiple triggers, **any** of them moves the user on. When triggers of several exit nodes fire at the same time, the user continues through all of them.
 
 <Callout>
   The user properties trigger is available on components, surveys, tours and delays. Start,
   manual start and filter blocks already evaluate user properties as their own block property, so
-  their exit nodes have no separate user properties trigger.
+  their exit nodes have no separate user properties trigger. The delay trigger is available on
+  components, surveys and tours. A [delay](/blocks/logic-blocks/delay) block uses its own delay
+  duration instead.
 </Callout>
 
 ## Block positioning

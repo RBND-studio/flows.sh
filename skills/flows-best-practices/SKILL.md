@@ -19,7 +19,7 @@ If the user needs to install the SDK into a project for the first time (framewor
 - **Block**: a single step in a workflow. Can be a UI element (component or tour step), a logic step (Delay, Filter), an action (Workflow trigger), or a Start/End block.
 - **Block property**: a configurable field on a block, mapped to a prop on the matching UI component in the app (string, number, boolean, select, array, action, and more).
 - **Component**: a reusable UI element registered in the app code (`@flows/react` or `@flows/js`) and mirrored by a component definition in the Flows dashboard.
-- **Exit node**: a named transition out of a block, triggered by user interaction, block completion, or matching user properties, connected via a path to the next block.
+- **Exit node**: a named transition out of a block, triggered by user interaction, block completion, matching user properties, or an elapsed delay, connected via a path to the next block.
 - **Tour**: a linear, step by step guided sequence, always nested inside a workflow (never standalone).
 - **Tour session**: a single sitting in which a user works through a tour. Starts once the user passes the first step, ends a few minutes after they leave the app, and the tour block's **When user session ends** action decides what happens to the unfinished tour.
 - **Survey**: a block for collecting structured feedback (ratings, choice questions, freeform text), also nested inside a workflow.

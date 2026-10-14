@@ -281,9 +281,10 @@ export const ComparisonTable = () => {
                                     {item.title}
                                   </Text>
                                 }
-                                content={item.description}
                                 supportMobileTap
-                              />
+                              >
+                                {item.description}
+                              </Tooltip>
                             ) : (
                               <Text as="h3" variant="titleM">
                                 {item.title}
