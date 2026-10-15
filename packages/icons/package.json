@@ -9,8 +9,8 @@
     "optimize": "node scripts/optimize-svgs.mjs"
   },
   "devDependencies": {
-    "@types/react": "^19.2.18",
-    "react": "19.2.8",
+    "@types/react": "^19.3.0",
+    "react": "19.3.0",
     "svgo": "^4.1.0",
     "tsconfig": "workspace:*",
     "typescript": "6.0.3"
