@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@types/react": "^19.3.0",
-    "react": "19.3.0",
+    "react": "19.3.1",
     "svgo": "^4.1.0",
     "tsconfig": "workspace:*",
     "typescript": "6.0.3"
