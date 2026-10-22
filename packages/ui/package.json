@@ -26,8 +26,8 @@
     "cmdk": "^1.1.1",
     "icons": "workspace:*",
     "merge-refs": "^2.0.0",
-    "react": "19.3.0",
-    "react-dom": "19.3.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
     "shiki": "^4.2.0",
     "sonner": "^2.0.7"
   },
@@ -36,17 +36,17 @@
     "@pandacss/dev": "^2.1.2",
     "@pandacss/preset-base": "^2.1.2",
     "@pandacss/types": "^2.1.2",
-    "@storybook/addon-docs": "^10.5.6",
-    "@storybook/addon-links": "^10.5.6",
-    "@storybook/cli": "^10.5.6",
-    "@storybook/react-vite": "^10.5.6",
+    "@storybook/addon-docs": "^10.6.2",
+    "@storybook/addon-links": "^10.6.2",
+    "@storybook/cli": "^10.6.2",
+    "@storybook/react-vite": "^10.6.2",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "@vitejs/plugin-react": "^6.0.3",
+    "@vitejs/plugin-react": "^6.1.2",
     "@vueless/storybook-dark-mode": "^10.0.7",
-    "storybook": "^10.5.6",
+    "storybook": "^10.6.2",
     "tsconfig": "workspace:*",
     "typescript": "6.0.3",
-    "vite": "^8.2.2"
+    "vite": "^8.3.4"
   }
 }
