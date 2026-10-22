@@ -1,4 +1,4 @@
-// cSpell:words Ideoz Modelve Hoshii Caudena Ampeers
+// cSpell:words Ideoz Modelve Hoshii Caudena Ampeers TalleFlow Qumis
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { css } from "@flows/styled-system/css";
 import { Section } from "components/ui/section";
@@ -9,15 +9,16 @@ import type { ReactNode } from "react";
 
 import ampeers from "./svg/ampeers.svg";
 import apify from "./svg/apify.svg";
-import atmos from "./svg/atmos.svg";
 import caudena from "./svg/caudena.svg";
+import comper from "./svg/comper.svg";
 import creatorsPro from "./svg/creators-pro.svg";
 import foxecom from "./svg/foxecom.svg";
-import hoshii from "./svg/hoshii.svg";
 import ideoz from "./svg/ideoz.svg";
+import lab08 from "./svg/lab08.svg";
 import modelve from "./svg/modelve.svg";
-import saga from "./svg/saga.svg";
 import saleskick from "./svg/saleskick.svg";
+import talleflow from "./svg/talleflow.svg";
+import qumis from "./svg/qumis.svg";
 
 type LogoItem = {
   name: string;
@@ -42,12 +43,12 @@ const logos: LogoItem[] = [
     image: modelve,
   },
   {
-    name: "Atmos",
-    image: atmos,
+    name: "TalleFlow",
+    image: talleflow,
   },
   {
-    name: "Hoshii",
-    image: hoshii,
+    name: "Lab08",
+    image: lab08,
   },
   {
     name: "SalesKick",
@@ -62,12 +63,16 @@ const logos: LogoItem[] = [
     image: ideoz,
   },
   {
+    name: "Comper",
+    image: comper,
+  },
+  {
     name: "Caudena",
     image: caudena,
   },
   {
-    name: "Saga",
-    image: saga,
+    name: "Qumis",
+    image: qumis,
   },
 ];
 
@@ -95,12 +100,7 @@ export const LogoSection = ({
 }: Props) => {
   return (
     <Section bottomBorder sideBorders={sideBorders} py="space48" decorator={decorator}>
-      <Text
-        color="fg.neutral.muted"
-        textAlign="center"
-        mb="space40"
-        px={{ base: "space24", md: "space40" }}
-      >
+      <Text align="center" mb="space40" px={{ base: "space24", md: "space40" }}>
         Trusted by leading engineering, product, and design teams
       </Text>
       <Box w="100%" overflow="hidden" px={{ base: 0, md: "space40" }}>
