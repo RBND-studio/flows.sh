@@ -1,4 +1,4 @@
-import type { Rule } from "oxlint/plugins-dev";
+import { defineRule } from "@oxlint/plugins";
 
 /**
  * Pino only runs its error serializer (message, stack, type, cause) on the `err` key. Errors
@@ -51,7 +51,7 @@ const isPromiseCatchParam = (def: Node): boolean => {
   );
 };
 
-export const loggerErrKey: Rule = {
+export const loggerErrKey = defineRule({
   meta: {
     type: "problem",
     docs: {
@@ -112,4 +112,4 @@ export const loggerErrKey: Rule = {
       },
     };
   },
-};
+});

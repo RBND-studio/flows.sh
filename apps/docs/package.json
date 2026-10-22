@@ -24,7 +24,7 @@
     "react-lite-youtube-embed": "^3.6.2",
     "shared": "workspace:*",
     "ui": "workspace:*",
-    "zod": "^4.6.5"
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@pandacss/dev": "^2.1.2",

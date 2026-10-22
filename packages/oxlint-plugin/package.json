@@ -9,8 +9,9 @@
     "tsc": "tsc"
   },
   "devDependencies": {
+    "@oxlint/plugins": "^1.89.0",
     "@types/node": "^24.13.3",
-    "oxlint": "^1.85.0",
+    "oxlint": "^1.88.0",
     "tsconfig": "workspace:*",
     "typescript": "6.0.3"
   }
