@@ -82,6 +82,52 @@ const Page = (): ReactElement => {
       </Text>
 
       <Text as="h2" className={headingCss} variant="titleXl">
+        Connecting AI tools (MCP server)
+      </Text>
+      <Text className={paragraphCss} variant="bodyM">
+        You can connect AI tools such as ChatGPT, Claude or Cursor to your Flows account through our
+        MCP server. When you connect a tool, you sign in to Flows and approve its access. To keep
+        the tool connected, we store:
+      </Text>
+      <ul className={ulCss}>
+        <li className={bulletCss}>
+          The name and identifying details the tool provides about itself, such as its website
+        </li>
+        <li className={bulletCss}>
+          Your approval: which tool you connected, the access you granted and when
+        </li>
+        <li className={bulletCss}>Access and refresh tokens that let the tool act as you</li>
+      </ul>
+      <Text className={paragraphCss} variant="bodyM">
+        A connected tool acts as you and can only reach the organizations you are a member of. To
+        answer your requests, our MCP server returns data from those organizations to the tool,
+        which can include:
+      </Text>
+      <ul className={ulCss}>
+        <li className={bulletCss}>
+          Your organizations, their environments, languages and settings
+        </li>
+        <li className={bulletCss}>Your workflows, their content, components and analytics</li>
+        <li className={bulletCss}>
+          Data about the users of your product that your app sends to Flows through the SDK: user
+          IDs (which can be email addresses), user properties, workflow progress, events and survey
+          answers
+        </li>
+      </ul>
+      <Text className={paragraphCss} variant="bodyM">
+        If the tool asks for it on the approval screen, it also receives the email address of your
+        Flows account and whether you verified it, so it can tell which account you connected.
+      </Text>
+      <Text className={paragraphCss} variant="bodyM">
+        We return this data only to the tool you connected and only to complete the request it makes
+        on your behalf. Once returned, the provider of that tool processes it under its own privacy
+        policy and your agreement with that provider. You can disconnect a tool at any time on the
+        MCP page in your Flows settings. It then can’t renew its access, and access it already has
+        expires within 15 minutes. We keep the stored approval and tokens until you disconnect the
+        tool or delete your account.
+      </Text>
+
+      <Text as="h2" className={headingCss} variant="titleXl">
         Sharing your information
       </Text>
 
@@ -161,7 +207,7 @@ const Page = (): ReactElement => {
         information.
       </Text>
       <Text className={paragraphCss} variant="bodyM">
-        Last updated: July 6, 2026
+        Last updated: October 22, 2026
       </Text>
     </LegalLayout>
   );

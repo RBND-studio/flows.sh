@@ -1,0 +1,92 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "flows",
+  "version": "1.0.0",
+  "description": "Build and analyze product adoption workflows in Flows",
+  "author": {
+    "name": "Flows",
+    "email": "hello@flows.sh",
+    "url": "https://flows.sh"
+  },
+  "homepage": "https://flows.sh/docs/mcp/overview",
+  "keywords": ["onboarding", "product tours", "surveys", "product adoption"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Flows",
+        "shortDescription": "Product adoption workflows",
+        "longDescription": "Flows is a platform for building onboarding, product tours, checklists, announcements and surveys that run inside your web app through the Flows SDK. Connect Flows to build, publish and improve those experiences from a conversation.\n\nYou can ask it to:\n• Build an onboarding workflow with a welcome message, a setup checklist and product tours\n• Add a step by step tour to a feature that points at the right elements on the page\n• Create an NPS or feedback survey and summarize the answers once they come in\n• Find where users drop off in a workflow and suggest changes to copy, steps or targeting\n• Debug why a specific user doesn't see a workflow by checking their properties and progress\n• Translate a workflow into another language\n• Check whether the Flows SDK is installed and reaching each environment\n\nIt works with the same organizations and permissions you have in Flows. Edits go to a draft first, and nothing reaches your users until a workflow is published. It can also read the Flows documentation, so it can answer questions about the SDK, blocks and components along the way.\n\nRequires a Flows account. You can create one at flows.sh.",
+        "developerName": "Flows",
+        "category": "Developer Tools",
+        "capabilities": ["Read", "Write"],
+        "websiteURL": "https://flows.sh",
+        "supportURL": "https://flows.sh/contact",
+        "privacyPolicyURL": "https://flows.sh/legal/privacy",
+        "termsOfServiceURL": "https://flows.sh/legal/terms",
+        "defaultPrompt": [
+          "Use Flows to build a product tour for our reports page.",
+          "Use Flows to show how my onboarding workflow is performing."
+        ],
+        "brandColor": "#000000",
+        "brandColorDark": "#FFFFFF",
+        "composerIcon": "./assets/logo.svg",
+        "logo": "./assets/logo.svg"
+      },
+      "review": {
+        "commerce": false,
+        "demo_recording_url": "https://www.youtube.com/watch?v=kpreoPFy1Xo",
+        "test_cases": {
+          "positive": [
+            {
+              "description": "List the workflows in the reviewer's organization with their usage.",
+              "prompt": "Which workflows do I have in Flows?",
+              "tools_triggered": "flows_list_organizations, flows_list_workflows",
+              "expected_behavior": "Lists the workflows of the reviewer's organization (OpenAI review org), including Onboarding and NPS survey, with where each one runs and how many users started and completed it."
+            },
+            {
+              "description": "Read the analytics of a published workflow.",
+              "prompt": "How is the Onboarding workflow performing?",
+              "tools_triggered": "flows_list_organizations, flows_list_workflows, flows_get_workflow_analytics",
+              "expected_behavior": "Reports how many users started, completed and stopped the Onboarding workflow over time, and which step users drop off at."
+            },
+            {
+              "description": "Read the answers to a survey.",
+              "prompt": "Show me the results of the NPS survey.",
+              "tools_triggered": "flows_list_organizations, flows_list_workflows, flows_get_workflow, flows_get_survey_results",
+              "expected_behavior": "Shows how many users saw and answered the NPS survey, the score distribution with the average, and recent free text answers."
+            },
+            {
+              "description": "Explain why a specific end user doesn't see a workflow.",
+              "prompt": "Why doesn't the user reviewer-user-1 see the Onboarding workflow?",
+              "tools_triggered": "flows_list_organizations, flows_find_users, flows_get_user, flows_get_workflow",
+              "expected_behavior": "Looks up reviewer-user-1, compares their properties with the Onboarding workflow's start filter, and explains that they never entered it because they signed up on March 12, 2026, while Onboarding only targets users who signed up after September 1, 2026."
+            },
+            {
+              "description": "Create a new draft workflow with an announcement.",
+              "prompt": "Create a new workflow with a modal that announces our new reports page.",
+              "tools_triggered": "flows_list_organizations, flows_list_components, flows_create_workflow, flows_edit_workflow",
+              "expected_behavior": "Creates a new unpublished workflow with a start block connected to a modal announcing the reports page, and says it isn't live until it is published."
+            }
+          ],
+          "negative": [
+            {
+              "description": "A general question unrelated to Flows. Flows tools must not be called.",
+              "prompt": "What's the weather in Prague today?"
+            },
+            {
+              "description": "A writing request that doesn't involve the user's Flows account. Flows tools must not be called.",
+              "prompt": "Write a short poem about user onboarding."
+            },
+            {
+              "description": "Flows can't send emails. The plugin must not pretend to send them or create anything without asking; at most it can offer an in-app announcement instead.",
+              "prompt": "Send an email to all users of my app announcing our launch."
+            }
+          ]
+        }
+      },
+      "publication": {
+        "release_notes": "First release of the Flows plugin. Connect your Flows account to build, publish and analyze in-app onboarding, product tours, checklists and surveys."
+      }
+    }
+  }
+}
