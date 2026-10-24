@@ -16,23 +16,56 @@ export const MCP_TOOLS_SCOPE = "mcp:tools";
  */
 export const MCP_OFFLINE_ACCESS_SCOPE = "offline_access";
 
+/**
+ * OpenID Connect scopes. Advertising `openid` makes better-auth publish OIDC discovery and a UserInfo
+ * endpoint, and `email` adds the user's email and `email_verified` to it. ChatGPT requests both when
+ * they are advertised and uses the verified email's domain to keep a company account from being
+ * linked outside that company's Enterprise workspace. apps/backend doesn't look at either.
+ */
+export const MCP_OPENID_SCOPE = "openid";
+export const MCP_EMAIL_SCOPE = "email";
+
 /** Every scope an MCP client may ask apps/app for */
-export const MCP_SCOPES = [MCP_TOOLS_SCOPE, MCP_OFFLINE_ACCESS_SCOPE] as const;
+export const MCP_SCOPES = [
+  MCP_TOOLS_SCOPE,
+  MCP_OFFLINE_ACCESS_SCOPE,
+  MCP_OPENID_SCOPE,
+  MCP_EMAIL_SCOPE,
+] as const;
 
 export type McpScope = (typeof MCP_SCOPES)[number];
 
 /**
- * What each scope is allowed to do, in the words shown on the consent screen. `satisfies` keeps it
- * exhaustive, so a new scope cannot reach that screen as a bare protocol name.
+ * What each scope is allowed to do, in the words shown on the consent screen and in the order shown
+ * there. `mcp:tools` is a single scope that reaches every tool, so it spells out the parts worth
+ * knowing before granting it. `satisfies` keeps it exhaustive, so a new scope cannot reach that
+ * screen as a bare protocol name.
  */
-export const mcpScopeDescriptions: Record<string, string | undefined> = {
-  [MCP_TOOLS_SCOPE]: "Read and edit your organizations, workflows and content",
-  [MCP_OFFLINE_ACCESS_SCOPE]:
-    "Stay connected without sending you back here every couple of minutes",
-} satisfies Record<McpScope, string>;
+const mcpScopeDescriptions: Record<string, readonly string[] | undefined> = {
+  [MCP_TOOLS_SCOPE]: [
+    "See and change workflows, components, languages, environments and environment secrets",
+    "Delete any of these",
+    "Publish workflows",
+    "See data about your users (properties, progress, events and survey answers) and reset their progress",
+  ],
+  [MCP_EMAIL_SCOPE]: ["See your email address"],
+  [MCP_OPENID_SCOPE]: ["Know which Flows account you signed in with"],
+  [MCP_OFFLINE_ACCESS_SCOPE]: ["Stay connected until you disconnect it"],
+} satisfies Record<McpScope, readonly string[]>;
 
-/** A client is free to request a scope we do not publish, so fall back to the raw name */
-export const describeMcpScope = (scope: string): string => mcpScopeDescriptions[scope] ?? scope;
+/**
+ * The consent screen's list for the requested scopes. `openid` only identifies the account, which
+ * `email` already implies, so the pair reads as one line. A client is free to request a scope we do
+ * not publish, so that falls back to the raw name at the end.
+ */
+export const describeMcpScopes = (scopes: readonly string[]): string[] => {
+  const requested = new Set(scopes);
+  if (requested.has(MCP_EMAIL_SCOPE)) requested.delete(MCP_OPENID_SCOPE);
+
+  const known = Object.keys(mcpScopeDescriptions).filter((scope) => requested.has(scope));
+  const unknown = [...requested].filter((scope) => !(scope in mcpScopeDescriptions));
+  return [...known.flatMap((scope) => mcpScopeDescriptions[scope] ?? []), ...unknown];
+};
 
 /**
  * The OAuth resource identifier both sides fall back to when no MCP resource URL is configured,
