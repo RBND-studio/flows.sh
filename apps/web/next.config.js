@@ -35,6 +35,19 @@ const nextConfig = {
           },
         ],
       },
+      {
+        // Cloudflare purges this tag on every deploy (see deploy-prod.yml). Content-hashed build assets
+        // are left out so they stay cached at the edge across deploys.
+        source: "/:path((?!_next/static/|_next/image).*)",
+        headers: [{ key: "Cache-Tag", value: "purge-on-deploy" }],
+      },
+      {
+        // Optimized images of content-hashed sources never change either. Only purge the ones made
+        // from /public files, which can be replaced under the same URL.
+        source: "/_next/image",
+        missing: [{ type: "query", key: "url", value: "/_next/static/.*" }],
+        headers: [{ key: "Cache-Tag", value: "purge-on-deploy" }],
+      },
       // Keep staging out of search results, including non-HTML responses like markdown and txt
       ...(production
         ? []
@@ -67,7 +80,8 @@ const nextConfig = {
     inlineCss: true,
   },
   images: {
-    formats: ["image/avif", "image/webp"],
+    // No AVIF: encoding it needs ~2x the memory of WebP and pushed the 1 GiB container into swap
+    formats: ["image/webp"],
     qualities: [50, 75, 100],
   },
   rewrites: async () => {

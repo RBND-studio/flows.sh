@@ -29,7 +29,12 @@ ARG APP
 RUN pnpm turbo run build --filter=${APP}...
 
 FROM node:24-slim AS runner
-RUN apt-get -y update && apt-get install -y libpq5 --no-install-recommends
+RUN apt-get -y update && apt-get install -y libpq5 libjemalloc2 --no-install-recommends
+
+# glibc malloc fragments under sharp (next/image) and never returns the memory to the OS, use jemalloc instead
+# https://sharp.pixelplumbing.com/install#linux-memory-allocator
+RUN ln -s "$(find /usr/lib -name libjemalloc.so.2 | head -1)" /usr/lib/libjemalloc.so.2
+ENV LD_PRELOAD=/usr/lib/libjemalloc.so.2
 WORKDIR /app
 
 # Don't run production as root

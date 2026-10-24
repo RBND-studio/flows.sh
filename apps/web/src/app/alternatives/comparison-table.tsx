@@ -82,6 +82,7 @@ export const ComparisonTable = ({
                       borderColor="border.success.subtle"
                       w="fit-content"
                       mx="auto"
+                      role="img"
                       aria-label="Yes"
                     >
                       <Icon color="fg.success" icon={Check16} />
@@ -98,6 +99,7 @@ export const ComparisonTable = ({
                       borderColor="border.danger.subtle"
                       w="fit-content"
                       mx="auto"
+                      role="img"
                       aria-label="No"
                     >
                       <Icon color="fg.danger" icon={Close16} />

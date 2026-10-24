@@ -85,7 +85,7 @@ export const ExamplesCarousel = () => {
                   {item.title}
                 </Text>
               </Box>
-              <Image src={item.img} alt={item.alt} />
+              <Image src={item.img} alt={item.alt} sizes="300px" />
             </Link>
           </Box>
         ))}
