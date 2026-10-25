@@ -1,4 +1,4 @@
-import { css, cva, cx } from "@flows/styled-system/css";
+import { cva } from "@flows/styled-system/css";
 import { type HTMLStyledProps, styled } from "@flows/styled-system/jsx";
 import { Slot, Slottable } from "@radix-ui/react-slot";
 import { type ButtonHTMLAttributes, type FC, forwardRef, type JSX, memo, useMemo } from "react";
@@ -39,7 +39,9 @@ export const IconButton = memo(
     },
     ref,
   ): JSX.Element {
-    const Component = asChild ? Slot : styled.button;
+    // The styled factory merges the recipe with style props and the `css` prop, so call site
+    // overrides win without `!`
+    const Component = asChild ? IconButtonSlot : IconButtonRoot;
     const children = useMemo(() => {
       if (Icon) return <Icon />;
       return _children;
@@ -51,7 +53,8 @@ export const IconButton = memo(
           aria-label={tooltip}
           type={!asChild ? "button" : undefined}
           {...props}
-          className={cx(button({ size, variant }), props.className)}
+          size={size}
+          variant={variant}
           // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- nullish coalescing cannot be used here
           disabled={disabled || loading}
           data-loading={loading ? "" : undefined}
@@ -60,10 +63,10 @@ export const IconButton = memo(
         >
           {loading ? (
             <Spinner
-              className={css({
+              css={{
                 position: "absolute",
                 visibility: "visible!",
-              })}
+              }}
               color="inherit"
               size={16}
             />
@@ -242,3 +245,6 @@ const button = cva({
     },
   },
 });
+
+const IconButtonRoot = styled("button", button);
+const IconButtonSlot = styled(Slot, button);

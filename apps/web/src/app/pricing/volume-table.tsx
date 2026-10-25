@@ -38,10 +38,10 @@ export const VolumeTable = () => {
         <Flex gap="space8" alignItems="center" mb="space24">
           <FancyIcon
             color="gray"
-            className={css({
+            css={{
               width: "24px",
               height: "24px",
-            })}
+            }}
           >
             <Icon icon={Graph16} color="inherit" />
           </FancyIcon>

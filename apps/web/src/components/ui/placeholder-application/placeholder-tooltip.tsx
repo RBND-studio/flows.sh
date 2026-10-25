@@ -1,5 +1,5 @@
-import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import type { JSX } from "react";
 import { Button, Text } from "ui";
 
@@ -9,6 +9,8 @@ type Props = {
   buttonLabel?: string;
   showProgress?: boolean;
   className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
 };
 
 export const PlaceholderTooltip = ({
@@ -17,6 +19,7 @@ export const PlaceholderTooltip = ({
   buttonLabel = "Next",
   showProgress = true,
   className,
+  css: cssProp,
 }: Props): JSX.Element => {
   return (
     <Flex
@@ -33,6 +36,7 @@ export const PlaceholderTooltip = ({
       gap="space4"
       aria-hidden="true"
       className={className}
+      css={cssProp}
     >
       <Text variant="titleM">{title}</Text>
       <Text variant="bodyXs" color="fg.neutral.muted">
@@ -56,14 +60,15 @@ export const PlaceholderTooltip = ({
         ) : null}
 
         {/* Button is rendered as div to prevent taking focus and messing with aria-hidden */}
-        <Button asChild variant="primary" size="small">
-          <div
-            className={css({
-              pointerEvents: "none",
-            })}
-          >
-            {buttonLabel}
-          </div>
+        <Button
+          css={{
+            pointerEvents: "none",
+          }}
+          asChild
+          variant="primary"
+          size="small"
+        >
+          <div>{buttonLabel}</div>
         </Button>
       </Flex>
     </Flex>

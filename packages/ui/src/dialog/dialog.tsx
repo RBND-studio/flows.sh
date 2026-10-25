@@ -1,6 +1,7 @@
 "use client";
 
 import { css, cva, cx } from "@flows/styled-system/css";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import * as RadixDialog from "@radix-ui/react-dialog";
 import { Close16 } from "icons";
 import type { FC, ReactNode } from "react";
@@ -56,7 +57,7 @@ export const Dialog: FC<Props> = ({
         />
         <RadixDialog.Content
           onSubmit={(e) => e.stopPropagation()}
-          className={cx(contentCss({ maxWidth }), css({ zIndex: zIndex ?? undefined }))}
+          className={css(contentCss.raw({ maxWidth }), { zIndex: zIndex ?? undefined })}
           aria-describedby={undefined}
           onOpenAutoFocus={onOpenAutoFocus}
         >
@@ -116,40 +117,48 @@ const contentCss = cva({
 
 export const DialogClose = RadixDialog.Close;
 
-export const DialogTitle: FC<{ children?: ReactNode; className?: string }> = ({
+type DialogSectionProps = {
+  children?: ReactNode;
+  className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
+};
+
+export const DialogTitle: FC<DialogSectionProps> = ({
   className,
+  css: cssProp,
   children,
   ...props
 }) => {
   return (
-    <RadixDialog.Title className={cx(css({ px: "space16", py: "space16" }), className)} {...props}>
+    <RadixDialog.Title
+      className={cx(css({ px: "space16", py: "space16" }, cssProp), className)}
+      {...props}
+    >
       <Text variant="titleM">{children}</Text>
     </RadixDialog.Title>
   );
 };
 
-export const DialogContent: FC<{ children?: ReactNode; className?: string }> = ({
-  className,
-  ...props
-}) => {
-  return <div className={cx(css({ px: "space16" }), className)} {...props} />;
+export const DialogContent: FC<DialogSectionProps> = ({ className, css: cssProp, ...props }) => {
+  return <div className={cx(css({ px: "space16" }, cssProp), className)} {...props} />;
 };
 
-export const DialogActions: FC<{ children?: ReactNode; className?: string }> = ({
-  className,
-  ...props
-}) => {
+export const DialogActions: FC<DialogSectionProps> = ({ className, css: cssProp, ...props }) => {
   return (
     <div
       className={cx(
-        css({
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-end",
-          gap: "space8",
-          px: "space16",
-          py: "space16",
-        }),
+        css(
+          {
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            gap: "space8",
+            px: "space16",
+            py: "space16",
+          },
+          cssProp,
+        ),
         className,
       )}
       {...props}

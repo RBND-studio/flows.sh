@@ -1,6 +1,7 @@
 import { css, cx } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import { token } from "@flows/styled-system/tokens";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import { Slot } from "@radix-ui/react-slot";
 import type { ComponentProps, FC, ReactNode } from "react";
 import { forwardRef } from "react";
@@ -34,11 +35,11 @@ export const Menu: FC<Props> = ({
         align={align ?? "start"}
         onOpenAutoFocus={onOpenAutoFocus}
         onCloseAutoFocus={onCloseAutoFocus}
-        className={css({
+        css={{
           zIndex: 20,
           minW: "max(var(--radix-popover-trigger-width), 240px)",
           maxW: "max(var(--radix-popover-trigger-width), 280px)",
-        })}
+        }}
       >
         <Flex
           flexDir="column"
@@ -62,13 +63,15 @@ type MenuItemProps = {
   asChild?: boolean;
   disabled?: boolean;
   className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
   onClick?: () => void;
   active?: boolean;
   closeOnClick?: boolean;
 };
 export const MenuItem: FC<MenuItemProps> = forwardRef<HTMLButtonElement, MenuItemProps>(
   function MenuItem(
-    { children, asChild, disabled, className, closeOnClick, active, ...props },
+    { children, asChild, disabled, className, css: cssProp, closeOnClick, active, ...props },
     ref,
   ) {
     const Component = asChild ? Slot : "button";
@@ -80,33 +83,36 @@ export const MenuItem: FC<MenuItemProps> = forwardRef<HTMLButtonElement, MenuIte
         disabled={disabled}
         {...props}
         className={cx(
-          css({
-            display: "flex",
-            alignItems: "center",
-            gap: "space8",
-            py: "6px",
-            px: "6px",
-            my: "1px",
-            borderRadius: "5px",
-            cursor: disabled ? "default" : "pointer",
-            width: "100%",
-            fastEaseInOut: "all",
-            textStyle: "bodyS",
-            color: disabled ? "fg.neutral.subtle" : undefined,
+          css(
+            {
+              display: "flex",
+              alignItems: "center",
+              gap: "space8",
+              py: "6px",
+              px: "6px",
+              my: "1px",
+              borderRadius: "5px",
+              cursor: disabled ? "default" : "pointer",
+              width: "100%",
+              fastEaseInOut: "all",
+              textStyle: "bodyS",
+              color: disabled ? "fg.neutral.subtle" : undefined,
 
-            _highlighted: {
-              bg: "bg.primary.subtle",
-              _hover: {
+              _highlighted: {
                 bg: "bg.primary.subtle",
+                _hover: {
+                  bg: "bg.primary.subtle",
+                },
+              },
+              _hover: {
+                bg: disabled ? "transparent" : "bg.neutral.subtle",
+              },
+              "& svg": {
+                color: disabled ? "fg.neutral.subtle" : undefined,
               },
             },
-            _hover: {
-              bg: disabled ? "transparent" : "bg.neutral.subtle",
-            },
-            "& svg": {
-              color: disabled ? "fg.neutral.subtle" : undefined,
-            },
-          }),
+            cssProp,
+          ),
 
           className,
         )}
@@ -121,6 +127,12 @@ export const MenuItem: FC<MenuItemProps> = forwardRef<HTMLButtonElement, MenuIte
   },
 );
 
-export const MenuSeparator: FC<{ className?: string }> = ({ className }) => {
-  return <Separator className={cx(css({ mx: "-6px", w: "auto", my: "6px" }), className)} />;
+export const MenuSeparator: FC<{
+  className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
+}> = ({ className, css: cssProp }) => {
+  return (
+    <Separator className={className} css={css.raw({ mx: "-6px", w: "auto", my: "6px" }, cssProp)} />
+  );
 };

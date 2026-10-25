@@ -81,7 +81,7 @@ export const ExamplesCarousel = () => {
               }}
             >
               <Box p="space24">
-                <Text variant="titleL" lineHeight="24px!" color="inherit">
+                <Text variant="titleL" lineHeight="24px" color="inherit">
                   {item.title}
                 </Text>
               </Box>

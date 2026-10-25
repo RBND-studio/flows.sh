@@ -97,9 +97,9 @@ export default async function BlogDetailPage(props: PostProps): Promise<ReactEle
             </Link>
             <Text
               as="h1"
-              className={css({
+              css={{
                 mb: "space16",
-              })}
+              }}
               variant="title4xl"
             >
               {post.title}
@@ -124,7 +124,7 @@ export default async function BlogDetailPage(props: PostProps): Promise<ReactEle
                 })}
               />
             ) : null}
-            <Text className={css({ mt: "space16" })} color="fg.neutral.subtle" variant="bodyM">
+            <Text css={{ mt: "space16" }} color="fg.neutral.subtle" variant="bodyM">
               <span>{post.author}</span>
               <span>{` • `}</span>
               <span>

@@ -2,7 +2,7 @@ import { css } from "@flows/styled-system/css";
 
 // These styles are used for basic content pages like /privacy or /terms
 
-export const paragraphCss = css({
+export const paragraphCss = css.raw({
   my: "space24",
 
   "& a": {
@@ -31,7 +31,7 @@ export const olCss = css({
   listStyle: "decimal",
 });
 
-export const headingCss = css({
+export const headingCss = css.raw({
   mt: "space40",
   mb: "space24",
 });

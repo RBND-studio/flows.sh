@@ -18,11 +18,7 @@ export const MobileMenu = (): ReactNode => {
   return (
     <>
       {/* eslint-disable-next-line no-restricted-syntax -- hamburger menu */}
-      <IconButton
-        className={css({ sm: { display: "none" }, px: "8px" })}
-        onClick={toggleOpen}
-        variant="ghost"
-      >
+      <IconButton css={{ sm: { display: "none" }, px: "8px" }} onClick={toggleOpen} variant="ghost">
         <Menu16 />
         <span className={css({ srOnly: true })}>Open main menu</span>
       </IconButton>
@@ -103,7 +99,7 @@ const MobileMainMenuItem = ({ item, handleClose }: MainMenuItemProps): ReactNode
       <Text variant="bodyM" weight="700">
         {item.title}
       </Text>
-      {item.subItems ? <Icon icon={ChevronDown16} className={iconClass({ open: isOpen })} /> : null}
+      {item.subItems ? <Icon icon={ChevronDown16} css={iconClass.raw({ open: isOpen })} /> : null}
     </Component>
   );
 
@@ -133,12 +129,12 @@ const MobileMainMenuItem = ({ item, handleClose }: MainMenuItemProps): ReactNode
                 {subItem.fancyIcon && (
                   <FancyIcon
                     color={subItem.fancyIcon.color}
-                    className={css({
+                    css={{
                       width: "40px",
                       height: "40px",
                       flexShrink: 0,
-                      borderRadius: "radius8!",
-                    })}
+                      borderRadius: "radius8",
+                    }}
                   >
                     <Icon icon={subItem.fancyIcon.icon} color="inherit" />
                   </FancyIcon>

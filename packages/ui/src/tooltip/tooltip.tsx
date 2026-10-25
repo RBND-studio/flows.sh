@@ -2,6 +2,7 @@
 
 import { css, cx } from "@flows/styled-system/css";
 import { token } from "@flows/styled-system/tokens";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import type { JSX } from "react";
 import { forwardRef, useCallback, useState } from "react";
@@ -14,31 +15,38 @@ const TooltipTrigger = TooltipPrimitive.Trigger;
 
 const TooltipContent = ({
   className,
+  css: cssProp,
   sideOffset = 4,
   ...props
-}: React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>): JSX.Element => (
+}: React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content> & {
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
+}): JSX.Element => (
   <TooltipPrimitive.Content
     className={cx(
-      css({
-        zIndex: "1000",
-        overflow: "hidden",
-        borderRadius: "radius8",
-        py: "6px", // This is intentional
-        px: "space8",
-        textStyle: "bodyXs",
-        display: "flex",
-        gap: "space8",
-        backgroundColor: "pane.bg.tooltip",
-        color: "pane.fg.tooltip",
-        borderColor: "pane.border.tooltip",
-        borderWidth: "1px",
-        maxWidth: "240px",
-        boxShadow: "l2",
-        "&[data-state=delayed-open]": {
-          animationDuration: "120ms",
-          animationName: "fadeIn",
+      css(
+        {
+          zIndex: "1000",
+          overflow: "hidden",
+          borderRadius: "radius8",
+          py: "6px", // This is intentional
+          px: "space8",
+          textStyle: "bodyXs",
+          display: "flex",
+          gap: "space8",
+          backgroundColor: "pane.bg.tooltip",
+          color: "pane.fg.tooltip",
+          borderColor: "pane.border.tooltip",
+          borderWidth: "1px",
+          maxWidth: "240px",
+          boxShadow: "l2",
+          "&[data-state=delayed-open]": {
+            animationDuration: "120ms",
+            animationName: "fadeIn",
+          },
         },
-      }),
+        cssProp,
+      ),
       className,
     )}
     collisionPadding={6}
@@ -78,6 +86,8 @@ type TooltipProps = {
   side?: TooltipSide;
   align?: React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>["align"];
   className?: string;
+  /** Style overrides for the tooltip content, merged with its own styles so they win without `!` */
+  css?: SystemStyleObject;
   delayDuration?: number;
   hasUnderline?: boolean;
   supportMobileTap?: boolean;
@@ -89,6 +99,7 @@ export const Tooltip = forwardRef<HTMLButtonElement, TooltipProps>(function Tool
     trigger,
     align,
     className,
+    css: cssProp,
     side,
     sideOffset,
     delayDuration = 320,
@@ -133,6 +144,7 @@ export const Tooltip = forwardRef<HTMLButtonElement, TooltipProps>(function Tool
               arrowPadding={12}
               align={align}
               className={className}
+              css={cssProp}
               side={side}
               sideOffset={sideOffset}
             >

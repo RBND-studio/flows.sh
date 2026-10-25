@@ -1,6 +1,7 @@
 // cSpell:words Ideoz Modelve Hoshii Caudena Ampeers TalleFlow Qumis
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { css } from "@flows/styled-system/css";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import { Section } from "components/ui/section";
 import { Text } from "ui";
 import type { DecoratorType } from "components/ui/section/decorator";
@@ -89,12 +90,15 @@ const Logo = ({ name, image }: LogoItem): ReactNode => (
 
 type Props = {
   className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
   decorator?: DecoratorType;
   sideBorders?: boolean | "hide-top";
 };
 
 export const LogoSection = ({
   className,
+  css: cssProp,
   decorator = "horizontal-no-line",
   sideBorders = "hide-top",
 }: Props) => {
@@ -114,6 +118,7 @@ export const LogoSection = ({
           as="ul"
           flexShrink={{ base: 0, md: "unset" }}
           className={className}
+          css={cssProp}
         >
           {logos.map((logo) => (
             <Flex as="li" className={logoWrapCss} key={logo.name} title={logo.name}>

@@ -3,8 +3,8 @@ import { Box, Flex } from "@flows/styled-system/jsx";
 import { Check16, ChevronDown16 } from "icons";
 import { Button, Icon, Text } from "ui";
 
-const chevronRotated = css({ transform: "rotate(180deg)", flexShrink: 0 });
-const chevronNormal = css({ flexShrink: 0 });
+const chevronRotated = css.raw({ transform: "rotate(180deg)", flexShrink: 0 });
+const chevronNormal = css.raw({ flexShrink: 0 });
 
 const Indicator = ({ completed }: { completed: boolean }) => {
   if (completed) {
@@ -66,7 +66,7 @@ const ChecklistItem = ({
         <Icon
           icon={ChevronDown16}
           color="fg.neutral.muted"
-          className={expanded ? chevronRotated : chevronNormal}
+          css={expanded ? chevronRotated : chevronNormal}
         />
       </Flex>
       {expanded && description ? (
@@ -76,14 +76,15 @@ const ChecklistItem = ({
           </Text>
           {actionLabel ? (
             <Flex gap="space8">
-              <Button variant="black" size="small" asChild>
-                <div
-                  className={css({
-                    pointerEvents: "none",
-                  })}
-                >
-                  {actionLabel}
-                </div>
+              <Button
+                css={{
+                  pointerEvents: "none",
+                }}
+                variant="black"
+                size="small"
+                asChild
+              >
+                <div>{actionLabel}</div>
               </Button>
             </Flex>
           ) : null}

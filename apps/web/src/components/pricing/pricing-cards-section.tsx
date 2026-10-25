@@ -22,7 +22,6 @@ import {
   NewHeroIllustrationLine,
 } from "components/main-illustration/decorations";
 import { CyclingWord, userAdjectives } from "components/ui/cycling-word";
-import { css } from "@flows/styled-system/css";
 import { PricingCard } from "./pricing-card";
 
 type Props = {
@@ -165,7 +164,7 @@ export const PricingCardsSection = ({ embed }: Props) => {
             ]}
           />
         </Flex>
-        <NewHeroIllustrationGlow className={css({ opacity: { base: 0.05, _dark: 0.1 } })} />
+        <NewHeroIllustrationGlow css={{ opacity: { base: 0.05, _dark: 0.1 } }} />
         <NewHeroIllustrationLine />
       </Section>
     </>

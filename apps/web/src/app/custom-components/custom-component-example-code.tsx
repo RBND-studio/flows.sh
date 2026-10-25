@@ -1,4 +1,3 @@
-import { css } from "@flows/styled-system/css";
 import type { JSX } from "react";
 import { CodeHighlight } from "ui/server";
 
@@ -30,14 +29,15 @@ export const CustomComponentExampleCode = (): JSX.Element => {
       lineNumbers
       lang="jsx"
       hideCopyButton
-      className={css({
-        borderRadius: "0!",
-        border: "none!",
-        margin: "0!",
+      css={{
+        borderRadius: "0",
+        borderWidth: "0",
+        my: "0",
         "& pre": {
+          // shiki sets the background as an inline style
           backgroundColor: "transparent!",
         },
-      })}
+      }}
     >
       {codeExample}
     </CodeHighlight>

@@ -69,14 +69,15 @@ export const riverFeatures = [
               Get better insights into user’s behavior.
             </Text>
             {/* Button is rendered as div to prevent taking focus and messing with aria-hidden */}
-            <Button variant="primary" asChild size="small">
-              <div
-                className={css({
-                  pointerEvents: "none",
-                })}
-              >
-                Show details
-              </div>
+            <Button
+              css={{
+                pointerEvents: "none",
+              }}
+              variant="primary"
+              asChild
+              size="small"
+            >
+              <div>Show details</div>
             </Button>
           </Flex>
         }

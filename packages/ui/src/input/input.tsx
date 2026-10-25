@@ -1,5 +1,6 @@
-import { cva, cx } from "@flows/styled-system/css";
+import { css, cva } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import { Slot } from "@radix-ui/react-slot";
 import { type FC, type FocusEvent, forwardRef, type ReactNode, type SVGProps, useId } from "react";
 
@@ -23,7 +24,10 @@ type Props = {
   min?: React.InputHTMLAttributes<HTMLInputElement>["min"];
   max?: React.InputHTMLAttributes<HTMLInputElement>["max"];
   required?: boolean;
-  inputClassName?: string;
+  /**
+   * Style overrides for the input element, merged with its recipe so they win without `!`
+   */
+  inputCss?: SystemStyleObject;
   onFocus?: (e: FocusEvent<HTMLInputElement>) => void;
   name?: string;
   minLength?: number;
@@ -32,11 +36,15 @@ type Props = {
   children?: ReactNode;
   optional?: boolean;
   label?: ReactNode;
-  labelClassName?: string;
+  labelCss?: SystemStyleObject;
   description?: ReactNode;
-  descriptionClassName?: string;
+  descriptionCss?: SystemStyleObject;
   disabled?: boolean;
   className?: string;
+  /**
+   * Style overrides for the wrapper element
+   */
+  css?: SystemStyleObject;
   id?: string;
   form?: string;
   error?: boolean;
@@ -55,9 +63,10 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
     label,
     size = "default",
     className,
-    labelClassName,
-    inputClassName,
-    descriptionClassName,
+    css: cssProp,
+    labelCss,
+    inputCss,
+    descriptionCss,
     optional,
     asChild,
     description,
@@ -75,28 +84,19 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
   const id = useId();
 
   return (
-    <Flex className={className} flexDir="column">
+    <Flex className={className} css={cssProp} flexDir="column">
       {label !== undefined ? (
-        <Label
-          className={labelClassName}
-          disabled={disabled}
-          htmlFor={props.id ?? id}
-          optional={optional}
-        >
+        <Label css={labelCss} disabled={disabled} htmlFor={props.id ?? id} optional={optional}>
           {label}
         </Label>
       ) : null}
       <Flex position="relative">
         {startIcon ? (
-          <Icon
-            color="control.fg.placeholder"
-            className={startIconCva({ size })}
-            icon={startIcon}
-          />
+          <Icon color="control.fg.placeholder" css={startIconCva.raw({ size })} icon={startIcon} />
         ) : null}
         <Comp
-          className={cx(
-            input({
+          className={css(
+            input.raw({
               size,
               startIcon: !!startIcon,
               endIcon: !!endIcon,
@@ -104,7 +104,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
               error,
               highlightInvalid,
             }),
-            inputClassName,
+            inputCss,
           )}
           ref={ref}
           {...props}
@@ -112,13 +112,13 @@ export const Input = forwardRef<HTMLInputElement, Props>(function Input(
           disabled={disabled}
         />
         {endIcon ? (
-          <Icon color="control.fg.placeholder" className={endIconCva({ size })} icon={endIcon} />
+          <Icon color="control.fg.placeholder" css={endIconCva.raw({ size })} icon={endIcon} />
         ) : null}
       </Flex>
       {description !== undefined && (
         <Description
           disabled={disabled}
-          className={descriptionClassName}
+          css={descriptionCss}
           color={error ? "fg.danger" : "fg.neutral.muted"}
         >
           {description}

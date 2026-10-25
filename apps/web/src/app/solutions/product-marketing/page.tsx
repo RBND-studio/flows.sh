@@ -1,4 +1,3 @@
-import { css } from "@flows/styled-system/css";
 import { CtaBanner } from "components/cta-banner";
 import { RiverItem } from "components/ui/river-item";
 import { SignupClick } from "components/utils/signup-click";
@@ -43,9 +42,9 @@ Launch targeted in-app campaigns like announcements and product tours without en
           <>
             <SignupClick>
               <Button
-                className={css({
+                css={{
                   shadow: "neutralFocus",
-                })}
+                }}
                 asChild
                 size="large"
               >

@@ -41,14 +41,15 @@ export const riverFeatures = [
               Upgrade to get access to advanced features.
             </Text>
             {/* Button is rendered as div to prevent taking focus and messing with aria-hidden */}
-            <Button variant="primary" asChild size="small">
-              <div
-                className={css({
-                  pointerEvents: "none",
-                })}
-              >
-                Upgrade now
-              </div>
+            <Button
+              css={{
+                pointerEvents: "none",
+              }}
+              variant="primary"
+              asChild
+              size="small"
+            >
+              <div>Upgrade now</div>
             </Button>
           </Flex>
         }

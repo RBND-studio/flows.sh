@@ -2,7 +2,6 @@ import { Box, Flex } from "@flows/styled-system/jsx";
 import { Close16 } from "icons";
 import { Button, Icon, Text } from "ui";
 import { ProgressDots } from "./progress-dots";
-import { css } from "@flows/styled-system/css";
 
 export const TooltipDemo = () => {
   return (
@@ -40,23 +39,25 @@ export const TooltipDemo = () => {
         >
           <ProgressDots count={3} active={0} />
           <Flex gap="space8" flex={1} justifyContent="flex-end">
-            <Button variant="secondary" size="small" asChild>
-              <div
-                className={css({
-                  pointerEvents: "none",
-                })}
-              >
-                Back
-              </div>
+            <Button
+              css={{
+                pointerEvents: "none",
+              }}
+              variant="secondary"
+              size="small"
+              asChild
+            >
+              <div>Back</div>
             </Button>
-            <Button variant="black" size="small" asChild>
-              <div
-                className={css({
-                  pointerEvents: "none",
-                })}
-              >
-                Next
-              </div>
+            <Button
+              css={{
+                pointerEvents: "none",
+              }}
+              variant="black"
+              size="small"
+              asChild
+            >
+              <div>Next</div>
             </Button>
           </Flex>
         </Flex>

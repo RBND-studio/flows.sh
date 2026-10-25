@@ -1,4 +1,3 @@
-import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { Close16 } from "icons";
 import { Button, Icon, Text } from "ui";
@@ -29,23 +28,25 @@ export const CardDemo = () => {
       </Text>
 
       <Flex gap="space8" flex={1} justifyContent="flex-start" mt="space16">
-        <Button variant="black" size="small" asChild>
-          <div
-            className={css({
-              pointerEvents: "none",
-            })}
-          >
-            Connect
-          </div>
+        <Button
+          css={{
+            pointerEvents: "none",
+          }}
+          variant="black"
+          size="small"
+          asChild
+        >
+          <div>Connect</div>
         </Button>
-        <Button variant="secondary" size="small" asChild>
-          <div
-            className={css({
-              pointerEvents: "none",
-            })}
-          >
-            Learn more
-          </div>
+        <Button
+          css={{
+            pointerEvents: "none",
+          }}
+          variant="secondary"
+          size="small"
+          asChild
+        >
+          <div>Learn more</div>
         </Button>
       </Flex>
     </Box>

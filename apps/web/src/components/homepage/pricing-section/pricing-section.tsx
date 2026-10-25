@@ -25,10 +25,10 @@ export const PricingSection = () => {
         featureIcon={
           <FancyIcon
             color="gray"
-            className={css({
+            css={{
               width: "24px",
               height: "24px",
-            })}
+            }}
           >
             <Icon icon={CreditCard16} color="inherit" />
           </FancyIcon>

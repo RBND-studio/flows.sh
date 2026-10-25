@@ -1,13 +1,16 @@
 import { css, cx } from "@flows/styled-system/css";
 import { Box } from "@flows/styled-system/jsx";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import { type JSX } from "react";
 
 type Props = {
   size?: number;
   className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
 };
 
-export const FancyLogo = ({ size = 60, className }: Props): JSX.Element => {
+export const FancyLogo = ({ size = 60, className, css: cssProp }: Props): JSX.Element => {
   return (
     <Box width="fit-content" shadow="antimetal" flexShrink={0} style={{ borderRadius: size / 2 }}>
       <svg
@@ -15,7 +18,7 @@ export const FancyLogo = ({ size = 60, className }: Props): JSX.Element => {
         height={size}
         viewBox="0 0 80 60"
         fill="none"
-        className={cx(svgClass, className)}
+        className={cx(css(svgStyles, cssProp), className)}
         style={{ borderRadius: size }}
       >
         <rect x="12" y="9" width="55" height="38" fill="var(--fancy-logo-middle-bg)" />
@@ -65,7 +68,7 @@ export const FancyLogo = ({ size = 60, className }: Props): JSX.Element => {
   );
 };
 
-const svgClass = css({
+const svgStyles = css.raw({
   "--fancy-logo-gradient-start": "#15181C",
   "--fancy-logo-gradient-mid": "#2B313A",
   "--fancy-logo-gradient-end": "#6B727B",

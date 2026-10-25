@@ -1,4 +1,3 @@
-import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { Banner16, Check16, Checklist16, Hint16, Modal16, Star16, Survey16, Tour16 } from "icons";
 import Image from "next/image";
@@ -193,14 +192,14 @@ export const demoTabsData = [
               Issues help you track tasks, bugs, and feature requests in your projects.
             </Text>
             {/* Button is rendered as div to prevent taking focus and messing with aria-hidden */}
-            <Button size="small" asChild>
-              <div
-                className={css({
-                  pointerEvents: "none",
-                })}
-              >
-                Explore issues
-              </div>
+            <Button
+              css={{
+                pointerEvents: "none",
+              }}
+              size="small"
+              asChild
+            >
+              <div>Explore issues</div>
             </Button>
           </Flex>
         </Flex>

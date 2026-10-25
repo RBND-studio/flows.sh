@@ -1,5 +1,6 @@
-import { css, cva, cx } from "@flows/styled-system/css";
+import { css, cva } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { Check16 } from "icons";
 import type { FC, Ref } from "react";
@@ -12,14 +13,21 @@ type Props = {
   checked?: boolean;
   onCheckedChange?: (checked: boolean) => void;
   className?: string;
+  /**
+   * Style overrides for the wrapper element
+   */
+  css?: SystemStyleObject;
   disabled?: boolean;
   name?: string;
   value?: string;
   required?: boolean;
   defaultChecked?: boolean;
   label?: ReactNode;
-  labelClassName?: string;
-  inputClassName?: string;
+  labelCss?: SystemStyleObject;
+  /**
+   * Style overrides for the checkbox, merged with its recipe so they win without `!`
+   */
+  inputCss?: SystemStyleObject;
   id?: string;
   readOnly?: boolean;
   ref?: Ref<HTMLButtonElement>;
@@ -27,9 +35,10 @@ type Props = {
 
 export const Checkbox: FC<Props> = ({
   className,
+  css: cssProp,
   label,
-  labelClassName,
-  inputClassName,
+  labelCss,
+  inputCss,
   disabled,
   readOnly,
   ref,
@@ -39,7 +48,7 @@ export const Checkbox: FC<Props> = ({
 
   const check = (
     <CheckboxPrimitive.Root
-      className={cx(checkbox({}), inputClassName)}
+      className={css(checkbox.raw(), inputCss)}
       ref={ref}
       disabled={disabled}
       {...props}
@@ -55,13 +64,13 @@ export const Checkbox: FC<Props> = ({
         })}
       >
         <Icon
-          className={css({
+          css={{
             height: "16px",
             width: "16px",
             position: "absolute",
             top: 0,
             left: 0,
-          })}
+          }}
           color="inherit"
           icon={Check16}
         />
@@ -70,10 +79,10 @@ export const Checkbox: FC<Props> = ({
   );
 
   return (
-    <Flex alignItems="center" className={className} gap="space4">
+    <Flex alignItems="center" className={className} css={cssProp} gap="space4">
       {check}
       {label !== undefined ? (
-        <Label className={labelClassName} disabled={disabled} htmlFor={props.id ?? id}>
+        <Label css={labelCss} disabled={disabled} htmlFor={props.id ?? id}>
           {label}
         </Label>
       ) : null}

@@ -28,14 +28,15 @@ export const NormalTooltip = (): ReactNode => {
       </Text>
       <Flex width="100%" alignItems="center" justifyContent="space-between">
         {/* Button is rendered as div to prevent taking focus and messing with aria-hidden */}
-        <Button asChild variant="primary" size="small">
-          <div
-            className={css({
-              pointerEvents: "none",
-            })}
-          >
-            Next step
-          </div>
+        <Button
+          css={{
+            pointerEvents: "none",
+          }}
+          asChild
+          variant="primary"
+          size="small"
+        >
+          <div>Next step</div>
         </Button>
       </Flex>
     </Flex>
@@ -92,11 +93,11 @@ export const GreenTooltip = (): ReactNode => {
         </Box>
       </Flex>
       <Icon
-        className={css({
+        css={{
           position: "absolute",
           top: "12px",
           right: "12px",
-        })}
+        }}
         icon={Close16}
         color="white"
       />
@@ -135,11 +136,11 @@ export const BlueTooltip = (): ReactNode => {
         </Text>
       </Flex>
       <Icon
-        className={css({
+        css={{
           position: "absolute",
           top: "12px",
           right: "12px",
-        })}
+        }}
         icon={Close16}
         color="white"
       />

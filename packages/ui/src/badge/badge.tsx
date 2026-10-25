@@ -1,16 +1,19 @@
-import { cva, cx } from "@flows/styled-system/css";
+import { css, cva } from "@flows/styled-system/css";
 import { Box } from "@flows/styled-system/jsx";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import { type FC, type ReactNode } from "react";
 
 type Props = {
   children?: ReactNode;
   className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
   size?: "default" | "small";
 };
 
-export const Badge: FC<Props> = ({ children, className, size = "default" }) => {
+export const Badge: FC<Props> = ({ children, className, css: cssProp, size = "default" }) => {
   return (
-    <Box borderRadius="radius12" className={cx(badge({ size }), className)}>
+    <Box borderRadius="radius12" className={className} css={css.raw(badge.raw({ size }), cssProp)}>
       {children}
     </Box>
   );

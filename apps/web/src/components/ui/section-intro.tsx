@@ -1,5 +1,6 @@
-import { cva, cx } from "@flows/styled-system/css";
+import { css, cva } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import { type ReactNode } from "react";
 import { Text } from "ui";
 
@@ -18,6 +19,7 @@ export const SectionIntro = ({
   title,
   description,
   className,
+  css: cssProp,
   compact,
   actions,
   sideBorders,
@@ -26,7 +28,8 @@ export const SectionIntro = ({
 }: Props): ReactNode => {
   return (
     <Section
-      className={cx(sectionIntroStyles({ compact }), className)}
+      className={className}
+      css={css.raw(sectionIntroStyles.raw({ compact }), cssProp)}
       sideBorders={sideBorders}
       bottomBorder={bottomBorder}
       decorator={decorator}
@@ -70,15 +73,18 @@ type SectionIntroTextOnlyProps = {
   title: ReactNode;
   description?: string;
   className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
 };
 
 export const SectionIntroTextOnly = ({
   title,
   description,
   className,
+  css: cssProp,
 }: SectionIntroTextOnlyProps): ReactNode => {
   return (
-    <Box w="100%" className={className}>
+    <Box w="100%" className={className} css={cssProp}>
       <Text as="h2" variant="title3xl" align="center">
         {title}
       </Text>

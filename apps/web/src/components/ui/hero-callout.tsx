@@ -77,13 +77,13 @@ export const HeroCallout: FC<Props> = ({ title, link, delay }) => {
         <Icon
           icon={ArrowRight16}
           color="neutral.0"
-          className={css({
+          css={{
             display: { base: "none", md: "block" },
             fastEaseInOut: "all",
             _groupHover: {
               transform: "translateX(2px)",
             },
-          })}
+          }}
         />
       </Flex>
     </Component>

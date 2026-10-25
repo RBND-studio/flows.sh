@@ -1,29 +1,37 @@
 "use client";
 
 import { css, cx } from "@flows/styled-system/css";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import * as SliderPrimitive from "@radix-ui/react-slider";
 import * as React from "react";
 
 const Slider = ({
   className,
+  css: cssProp,
   ref,
   // The thumb is the element with role="slider", so it needs the accessible name, not the root
   "aria-label": ariaLabel,
   "aria-labelledby": ariaLabelledBy,
   ...props
-}: React.ComponentProps<typeof SliderPrimitive.Root>) => (
+}: React.ComponentProps<typeof SliderPrimitive.Root> & {
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
+}) => (
   <SliderPrimitive.Root
     ref={ref}
     className={cx(
-      css({
-        position: "relative",
-        display: "flex",
-        width: "full",
-        touchAction: "none",
-        userSelect: "none",
-        alignItems: "center",
-        cursor: "pointer",
-      }),
+      css(
+        {
+          position: "relative",
+          display: "flex",
+          width: "full",
+          touchAction: "none",
+          userSelect: "none",
+          alignItems: "center",
+          cursor: "pointer",
+        },
+        cssProp,
+      ),
       className,
     )}
     {...props}

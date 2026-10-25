@@ -1,5 +1,6 @@
-import { cva, cx } from "@flows/styled-system/css";
+import { css, cva } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import { type ReactNode } from "react";
 
 export type FancyIconColors = "blue" | "red" | "green" | "purple" | "dark-teal" | "gray";
@@ -8,9 +9,16 @@ type FancyIconProps = {
   color?: FancyIconColors;
   children: ReactNode;
   className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
 };
 
-export const FancyIcon = ({ children, color, className }: FancyIconProps): ReactNode => {
+export const FancyIcon = ({
+  children,
+  color,
+  className,
+  css: cssProp,
+}: FancyIconProps): ReactNode => {
   return (
     <Flex
       borderRadius="radius8"
@@ -23,7 +31,8 @@ export const FancyIcon = ({ children, color, className }: FancyIconProps): React
       alignItems="center"
       borderWidth="1px"
       borderColor={{ base: "rgba(255, 255, 255, 0.25)", _dark: "rgba(255, 255, 255, 0.1)" }}
-      className={cx(iconColor({ bg: color }), className)}
+      className={className}
+      css={css.raw(iconColor.raw({ bg: color }), cssProp)}
     >
       <Box
         position="absolute"

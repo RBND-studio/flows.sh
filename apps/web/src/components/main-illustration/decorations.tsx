@@ -1,4 +1,5 @@
 import { Box } from "@flows/styled-system/jsx";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import { type ReactNode } from "react";
 
 export const HeroIllustrationLine = (): ReactNode => {
@@ -50,7 +51,16 @@ export const HeroIllustrationGlow = (): ReactNode => {
   );
 };
 
-export const NewHeroIllustrationGlow = ({ className }: { className?: string }): ReactNode => {
+type NewHeroIllustrationProps = {
+  className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
+};
+
+export const NewHeroIllustrationGlow = ({
+  className,
+  css: cssProp,
+}: NewHeroIllustrationProps): ReactNode => {
   // Box in a box to have better control over the opacity when theming
   return (
     <Box
@@ -77,6 +87,7 @@ export const NewHeroIllustrationGlow = ({ className }: { className?: string }): 
         filter="blur(70px)"
         opacity={{ base: 0.1, _dark: 0.2 }}
         className={className}
+        css={cssProp}
       />
       <Box
         aria-hidden="true"
@@ -95,7 +106,10 @@ export const NewHeroIllustrationGlow = ({ className }: { className?: string }): 
   );
 };
 
-export const NewHeroIllustrationLine = ({ className }: { className?: string }): ReactNode => {
+export const NewHeroIllustrationLine = ({
+  className,
+  css: cssProp,
+}: NewHeroIllustrationProps): ReactNode => {
   return (
     <Box
       aria-hidden="true"
@@ -114,6 +128,7 @@ export const NewHeroIllustrationLine = ({ className }: { className?: string }): 
       animationFillMode="forwards"
       opacity={0}
       className={className}
+      css={cssProp}
     />
   );
 };

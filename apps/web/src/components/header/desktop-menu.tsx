@@ -72,9 +72,9 @@ const Item = ({ item }: ItemProps): ReactNode => {
           <Icon
             aria-hidden="true"
             icon={ChevronDown16}
-            className={css({
+            css={{
               fastEaseInOut: "all",
-            })}
+            }}
           />
         </NavigationMenu.Trigger>
         <NavigationMenu.Content className={contentCss}>
@@ -99,12 +99,12 @@ const Item = ({ item }: ItemProps): ReactNode => {
                   {subItem.fancyIcon && (
                     <FancyIcon
                       color={subItem.fancyIcon.color}
-                      className={css({
+                      css={{
                         width: "40px",
                         height: "40px",
                         flexShrink: 0,
-                        borderRadius: "radius8!",
-                      })}
+                        borderRadius: "radius8",
+                      }}
                     >
                       <Icon icon={subItem.fancyIcon.icon} color="inherit" />
                     </FancyIcon>

@@ -65,7 +65,7 @@ type RightIconConfig = {
   rotate: number;
 };
 
-const iconClass = css({
+const iconClass = css.raw({
   width: { base: "32px", md: "48px" },
   height: { base: "32px", md: "48px" },
 });
@@ -100,7 +100,7 @@ const LeftSplash = ({ visible }: SplashProps) => {
             transition: `opacity ${DURATION} ${delay}s ${EASING}, transform ${DURATION} ${delay}s ${EASING}`,
           }}
         >
-          <FancyIcon color={color} className={iconClass}>
+          <FancyIcon color={color} css={iconClass}>
             <Icon icon={icon} color="inherit" />
           </FancyIcon>
         </Box>
@@ -124,7 +124,7 @@ const RightSplash = ({ visible }: SplashProps) => {
             transition: `opacity ${DURATION} ${delay}s ${EASING}, transform ${DURATION} ${delay}s ${EASING}`,
           }}
         >
-          <FancyIcon color={color} className={iconClass}>
+          <FancyIcon color={color} css={iconClass}>
             <Icon icon={icon} color="inherit" />
           </FancyIcon>
         </Box>

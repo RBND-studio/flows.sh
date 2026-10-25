@@ -83,10 +83,10 @@ export const SecondaryCardsSection = (): ReactNode => {
       bottomBorder
       decorator="split"
       p={{ base: "space8", md: "space40" }}
-      outerClassName={css({
+      outerCss={{
         borderBottomWidth: "1px",
         borderBottomColor: "border.neutral.muted",
-      })}
+      }}
     >
       <Grid
         gap="space24"

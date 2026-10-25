@@ -214,11 +214,7 @@ const Item = memo<ItemProps>(function Item({ checked, onChange, option }) {
         py="space4"
         alignItems="center"
       >
-        <Icon
-          icon={Check16}
-          color="fg.primary"
-          className={css({ opacity: !checked ? 0 : undefined })}
-        />
+        <Icon icon={Check16} color="fg.primary" css={{ opacity: !checked ? 0 : undefined }} />
         <Text as="span">{option.label}</Text>
       </Flex>
     </CommandItem>

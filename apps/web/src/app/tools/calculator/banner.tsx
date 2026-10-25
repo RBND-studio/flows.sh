@@ -33,10 +33,10 @@ export const Banner = ({
       overflow="hidden"
       mt="space40"
     >
-      <Text as="h2" variant="titleL" className={textColorCss} mb="space8">
+      <Text as="h2" variant="titleL" css={textColorCss} mb="space8">
         {title}
       </Text>
-      <Text variant="bodyS" className={textColorCss} textWrap="balance" mb="space20">
+      <Text variant="bodyS" css={textColorCss} textWrap="balance" mb="space20">
         {description}
       </Text>
       <Flex gap="space8">
@@ -72,6 +72,6 @@ export const Banner = ({
   );
 };
 
-const textColorCss = css({
+const textColorCss = css.raw({
   color: { base: "white", _dark: "fg.neutral.onPrimary" },
 });
