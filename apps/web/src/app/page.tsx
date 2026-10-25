@@ -1,6 +1,4 @@
-import { FlowsSlot } from "@flows/react";
 import { css } from "@flows/styled-system/css";
-import { Box } from "@flows/styled-system/jsx";
 import { CtaBanner } from "components/cta-banner";
 import { BuildAnythingSection } from "components/homepage/build-anything-section";
 import { CustomizeSection } from "components/homepage/customize-section";
@@ -15,17 +13,25 @@ import { WorkflowsSection } from "components/homepage/workflows-section";
 import { LogoSection } from "components/logos/logo-section";
 import { SignupClick } from "components/utils/signup-click";
 import { links } from "lib/links";
+import type { Route } from "next";
 import type { ReactElement } from "react";
 import { Button } from "ui";
 import { Hero } from "components/hero/hero";
+import { HeroCallout } from "components/ui/hero-callout";
 import { BigDemoIllustration } from "components/main-illustration/big-demo-illustration";
+import { routes } from "routes";
 
 const Page = (): ReactElement => {
   return (
     <>
       <Hero
         sideBorders="hide-bottom"
-        eyebrow={<FlowsSlot id="homepage-hero-eyebrow" placeholder={<Box height={32} />} />}
+        eyebrow={
+          <HeroCallout
+            title="Flows MCP is live! Build workflows with your AI agent"
+            link={routes.changelogReleaseDetail({ releaseId: "2026-10-01-mcp-server" }) as Route}
+          />
+        }
         title={
           <>
             Build product adoption{" "}
