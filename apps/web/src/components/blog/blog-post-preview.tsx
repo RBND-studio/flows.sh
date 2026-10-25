@@ -14,6 +14,8 @@ type Props = {
   image?: string;
   slug: string;
   headingLevel?: "h2" | "h3";
+  // Set for the first card on the page, its cover image is the LCP element
+  priority?: boolean;
 };
 
 export const BlogPostPreview = (post: Props): ReactElement => {
@@ -37,7 +39,10 @@ export const BlogPostPreview = (post: Props): ReactElement => {
               height={600}
               src={post.image}
               width={1200}
-              sizes="(max-width: 768px) 100vw, 896px"
+              // Matches the 1, 2 and 3 column grids the previews are rendered in
+              sizes="(max-width: 639px) 100vw, (max-width: 767px) 50vw, 360px"
+              loading={post.priority ? "eager" : "lazy"}
+              fetchPriority={post.priority ? "high" : undefined}
             />
           </Link>
         ) : null}

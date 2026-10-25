@@ -1,10 +1,26 @@
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 import swirlPng from "./swirl.png";
 
 import { Box } from "@flows/styled-system/jsx";
-import Image from "next/image";
+import { getImageProps } from "next/image";
 import { css } from "@flows/styled-system/css";
+
+// Optimized swirl URLs keyed by width ("1080w"), taken from the srcset Next.js generates
+const swirlUrls = new Map(
+  (getImageProps({ src: swirlPng, alt: "", quality: 50, sizes: "100vw" }).props.srcSet ?? "")
+    .split(", ")
+    .map((candidate) => {
+      const [url, width] = candidate.split(" ");
+      return [width, `url("${url}")`];
+    }),
+);
+
+const swirlStyle = {
+  "--swirl-base": swirlUrls.get("1080w"),
+  "--swirl-sm": swirlUrls.get("2048w"),
+  "--swirl-md": swirlUrls.get("3840w"),
+} as CSSProperties;
 
 export const Dither = (): ReactNode => {
   return (
@@ -23,21 +39,19 @@ export const Dither = (): ReactNode => {
         opacity={{ base: 0.25, _dark: 0.2 }}
         mx="auto"
       >
-        <Image
-          src={swirlPng}
-          alt=""
-          loading="eager"
-          priority
-          fetchPriority="high"
-          sizes="(max-width: 480px) 500px, (max-width: 768px) 1000px, 3000px"
-          width={3000}
-          height={1510}
-          quality={50}
+        {/* The swirl is painted as a mask over a solid fill instead of an <img>. It's a faint
+        decoration, and as an image Chrome picks it as the LCP element instead of the headline. */}
+        <div
+          style={swirlStyle}
           className={css({
-            // In darkmode reverse filter color to be white instead of black to use only one image
-            _dark: {
-              filter: "invert(1)",
-            },
+            width: "100%",
+            aspectRatio: "3000 / 1510",
+            // One image works for both themes, only the fill color changes
+            backgroundColor: { base: "#000", _dark: "#fff" },
+            // Panda adds the -webkit- prefixed mask properties too
+            maskImage: { base: "var(--swirl-base)", sm: "var(--swirl-sm)", md: "var(--swirl-md)" },
+            maskSize: "100% 100%",
+            maskRepeat: "no-repeat",
           })}
         />
       </Box>

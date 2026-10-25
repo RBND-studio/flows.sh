@@ -35,6 +35,21 @@ const nextConfig = {
           },
         ],
       },
+      {
+        // Cloudflare purges this tag on every deploy (see deploy-prod.yml). Content-hashed build assets
+        // are left out so they stay cached at the edge across deploys.
+        source: "/:path((?!docs/_next/static/|docs/_next/image).*)",
+        basePath: false,
+        headers: [{ key: "Cache-Tag", value: "purge-on-deploy" }],
+      },
+      {
+        // Optimized images of content-hashed sources never change either. Only purge the ones made
+        // from /public files, which can be replaced under the same URL.
+        source: "/docs/_next/image",
+        basePath: false,
+        missing: [{ type: "query", key: "url", value: "/docs/_next/static/.*" }],
+        headers: [{ key: "Cache-Tag", value: "purge-on-deploy" }],
+      },
       // Keep staging out of search results, including non-HTML responses like markdown and txt
       ...(production
         ? []

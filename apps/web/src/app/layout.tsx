@@ -19,9 +19,11 @@ const FigTreeFont = Figtree({
   variable: "--font-main",
 });
 
+// Only used for small labels below the fold, so don't let its 75 KB file compete with the LCP on every page
 const CaveatFont = Caveat({
   subsets: ["latin"],
   variable: "--font-caveat",
+  preload: false,
 });
 
 const InterFont = Inter({

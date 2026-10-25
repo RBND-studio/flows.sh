@@ -228,6 +228,7 @@ export const ComparisonTable = () => {
                               borderRadius="50%"
                               w="fit-content"
                               mx="auto"
+                              role="img"
                               aria-label="Yes"
                             >
                               <Icon color="fg.neutral.onBlack" icon={Check16} />
@@ -236,7 +237,7 @@ export const ComparisonTable = () => {
                         }
                         if (value === false) {
                           return (
-                            <Box p="space2" w="fit-content" mx="auto" aria-label="No">
+                            <Box p="space2" w="fit-content" mx="auto" role="img" aria-label="No">
                               <Icon color="fg.neutral.subtle" icon={Minus16} />
                             </Box>
                           );

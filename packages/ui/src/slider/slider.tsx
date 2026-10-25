@@ -7,6 +7,9 @@ import * as React from "react";
 const Slider = ({
   className,
   ref,
+  // The thumb is the element with role="slider", so it needs the accessible name, not the root
+  "aria-label": ariaLabel,
+  "aria-labelledby": ariaLabelledBy,
   ...props
 }: React.ComponentProps<typeof SliderPrimitive.Root>) => (
   <SliderPrimitive.Root
@@ -45,6 +48,8 @@ const Slider = ({
       />
     </SliderPrimitive.Track>
     <SliderPrimitive.Thumb
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledBy}
       className={css({
         display: "block",
         height: "24px",

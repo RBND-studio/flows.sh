@@ -38,7 +38,7 @@ export default async function BlogPage(): Promise<ReactElement> {
             gap: "space32",
           })}
         >
-          {allPosts.map((post) => (
+          {allPosts.map((post, index) => (
             <BlogPostPreview
               key={post.slug}
               title={post.title}
@@ -46,6 +46,7 @@ export default async function BlogPage(): Promise<ReactElement> {
               imageAlt={post.imageAlt}
               image={post.image}
               slug={post.slug}
+              priority={index === 0}
             />
           ))}
         </ul>
