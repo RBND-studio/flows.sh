@@ -50,10 +50,10 @@ export const FaqAccordion = ({ title, children, headingLevel }: Props): ReactEle
         </Text>
         <Icon
           icon={ChevronDown16}
-          className={css({
+          css={{
             transition: "transform 0.24s",
             transform: `rotate(${isOpen ? "180deg" : "0deg"})`,
-          })}
+          }}
         />
       </button>
       <Box ref={contentRef} transition="height 0.24s" overflow="hidden" style={{ height }}>

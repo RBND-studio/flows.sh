@@ -1,4 +1,3 @@
-import { css } from "@flows/styled-system/css";
 import { CtaBanner } from "components/cta-banner";
 import { RiverItem } from "components/ui/river-item";
 import { SignupClick } from "components/utils/signup-click";
@@ -35,9 +34,9 @@ const Page = (): ReactElement => {
           <>
             <SignupClick>
               <Button
-                className={css({
+                css={{
                   shadow: "neutralFocus",
-                })}
+                }}
                 asChild
                 size="large"
               >

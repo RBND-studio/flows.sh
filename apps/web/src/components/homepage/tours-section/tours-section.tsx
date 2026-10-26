@@ -1,7 +1,6 @@
 import { FancyIcon, Icon } from "ui";
 import { tourFeaturesContent } from "./features";
 import { Tour16 } from "icons";
-import { css } from "@flows/styled-system/css";
 import { FeatureSectionIntro } from "../feature-section-intro";
 import { routes } from "routes";
 import { TourComponents } from "./tour-components";
@@ -22,11 +21,11 @@ export const ToursSection = () => {
         feature="Product Tours"
         featureIcon={
           <FancyIcon
-            className={css({
+            css={{
               width: "24px",
               height: "24px",
               backgroundColor: "dataViz.purple.fg",
-            })}
+            }}
           >
             <Icon icon={Tour16} color="inherit" />
           </FancyIcon>

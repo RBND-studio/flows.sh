@@ -1,3 +1,4 @@
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import type { ComponentProps, FC, ReactNode } from "react";
 
 import { Text } from "../text";
@@ -5,6 +6,10 @@ import { Text } from "../text";
 type Props = {
   children?: ReactNode;
   className?: string;
+  /**
+   * Style overrides, merged with the text styles so they win without `!`
+   */
+  css?: SystemStyleObject;
   color?: ComponentProps<typeof Text>["color"];
   disabled?: boolean;
   hideOverflow?: boolean;

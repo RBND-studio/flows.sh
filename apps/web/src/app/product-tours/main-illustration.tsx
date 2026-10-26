@@ -1,6 +1,7 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { token } from "@flows/styled-system/tokens";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import type { BlockType } from "@flows/types";
 import {
   HeroIllustrationGlow,
@@ -39,16 +40,16 @@ export const MainIllustration = (): ReactNode => {
               name="Upsell banner"
               type="component"
               icon="banner"
-              className={css({
+              css={{
                 width: { base: "140px", md: "fit-content" },
-              })}
+              }}
             />
             <Block
               name="End"
               type="end"
-              className={css({
+              css={{
                 width: { base: "140px", md: "100%" },
-              })}
+              }}
             />
           </Flex>
         </Flex>
@@ -99,9 +100,11 @@ type BlockProps = {
   type: BlockType;
   icon?: string;
   className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
 };
 
-const Block = ({ name, type, icon, className }: BlockProps): JSX.Element => {
+const Block = ({ name, type, icon, className, css: cssProp }: BlockProps): JSX.Element => {
   return (
     <Flex
       backgroundColor="bg.neutral"
@@ -115,6 +118,7 @@ const Block = ({ name, type, icon, className }: BlockProps): JSX.Element => {
       borderColor="border.neutral"
       alignItems="center"
       className={className}
+      css={cssProp}
     >
       <BlockIcon blockType={type} blockIcon={icon} />
       <Text weight="600">{name}</Text>

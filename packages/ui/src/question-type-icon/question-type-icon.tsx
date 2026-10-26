@@ -1,5 +1,6 @@
-import { css, cx } from "@flows/styled-system/css";
+import { css } from "@flows/styled-system/css";
 import { Box } from "@flows/styled-system/jsx";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import { End16, Link16, MultiSelect16, Select16, Star16, String16 } from "icons";
 import { type FC, type SVGProps } from "react";
 import { forwardRef } from "react";
@@ -21,11 +22,13 @@ export const typeIcons: Record<QuestionType, IconCmp> = {
 type Props = {
   questionType: QuestionType;
   className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
   onClick?: () => void;
 };
 
 export const QuestionTypeIcon = forwardRef<HTMLDivElement, Props>(function QuestionTypeIcon(
-  { questionType, className, ...props },
+  { questionType, className, css: cssProp, ...props },
   ref,
 ) {
   return (
@@ -33,12 +36,13 @@ export const QuestionTypeIcon = forwardRef<HTMLDivElement, Props>(function Quest
       ref={ref}
       padding="space2"
       borderRadius="radius4"
-      className={cx(
-        css({
+      className={className}
+      css={css.raw(
+        {
           backgroundColor: "blockIcon.start.bg",
           color: "blockIcon.start.fg",
-        }),
-        className,
+        },
+        cssProp,
       )}
       {...props}
     >

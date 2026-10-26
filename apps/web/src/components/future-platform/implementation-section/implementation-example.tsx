@@ -61,33 +61,33 @@ export const ImplementationExample: FC<Props> = ({ codeExample }) => {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Email"
-              className={css({
+              css={{
                 width: "100%",
-              })}
+              }}
             />
             <Input
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               label="Description"
-              className={css({
+              css={{
                 width: "100%",
-              })}
+              }}
             />
             <Input
               value={buttonLabel}
               onChange={(e) => setButtonLabel(e.target.value)}
               label="Button label"
-              className={css({
+              css={{
                 width: "100%",
-              })}
+              }}
             />
             <Input
               value={buttonLink}
               onChange={(e) => setButtonLink(e.target.value)}
               label="Button link"
-              className={css({
+              css={{
                 width: "100%",
-              })}
+              }}
             />
             <Checkbox
               label="Hide close button"
@@ -188,7 +188,7 @@ export const ImplementationExample: FC<Props> = ({ codeExample }) => {
                   >
                     <Flex zIndex={1} alignItems="center" justifyContent="space-between">
                       <Text variant="titleXs">{title}</Text>
-                      {!hideClose && <Icon className={css({ cursor: "pointer" })} icon={Close16} />}
+                      {!hideClose && <Icon css={{ cursor: "pointer" }} icon={Close16} />}
                     </Flex>
                     <Flex
                       zIndex={1}

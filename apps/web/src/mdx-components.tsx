@@ -48,10 +48,10 @@ const components: MDXComponents = {
     return (
       <Text
         as="h1"
-        className={css({
+        css={{
           mt: "space64",
           mb: "space24",
-        })}
+        }}
         variant="title2xl"
         {...props}
       />
@@ -79,10 +79,10 @@ const components: MDXComponents = {
     return (
       <Text
         as="h2"
-        className={css({
+        css={{
           mt: "space64",
           mb: "space24",
-        })}
+        }}
         variant="titleXl"
         {...props}
       />
@@ -110,10 +110,10 @@ const components: MDXComponents = {
     return (
       <Text
         as="h3"
-        className={css({
+        css={{
           mt: "space48",
           mb: "space16",
-        })}
+        }}
         variant="titleL"
         {...props}
       />
@@ -141,10 +141,10 @@ const components: MDXComponents = {
     return (
       <Text
         as="h4"
-        className={css({
+        css={{
           mt: "space24",
           mb: "space16",
-        })}
+        }}
         variant="titleM"
         {...props}
       />
@@ -153,7 +153,7 @@ const components: MDXComponents = {
   p: (props) => (
     <Text
       as="p"
-      className={css({
+      css={{
         mb: "space24",
         "& code": {
           backgroundColor: "bg.neutral.subtle",
@@ -168,7 +168,7 @@ const components: MDXComponents = {
           borderStyle: "solid",
           borderColor: "border.neutral",
         },
-      })}
+      }}
       variant="bodyL"
       {...props}
     />
@@ -176,7 +176,7 @@ const components: MDXComponents = {
   ul: (props) => (
     <Text
       as="ul"
-      className={css({
+      css={{
         listStyle: "disc",
         marginBottom: "space24",
         marginLeft: "space16",
@@ -188,7 +188,7 @@ const components: MDXComponents = {
             textStyle: "bodyS",
           },
         },
-      })}
+      }}
       variant="bodyL"
       {...props}
     />
@@ -196,10 +196,10 @@ const components: MDXComponents = {
   ol: (props) => (
     <Text
       as="ol"
-      className={css({
+      css={{
         listStyle: "number",
         marginLeft: "space16",
-      })}
+      }}
       variant="bodyL"
       {...props}
     />
@@ -209,7 +209,7 @@ const components: MDXComponents = {
       as="li"
       variant="bodyL"
       {...props}
-      className={css({
+      css={{
         listStylePosition: "outside",
         marginBottom: "space8",
         "& code": {
@@ -225,20 +225,20 @@ const components: MDXComponents = {
           borderStyle: "solid",
           borderColor: "border.neutral",
         },
-      })}
+      }}
     />
   ),
 
   blockquote: (props) => (
     <Text
       as="blockquote"
-      className={css({
+      css={{
         mt: "space24",
         mb: "space16",
         pl: "space24",
         borderLeftWidth: "2px",
         borderColor: "border.primary",
-      })}
+      }}
       variant="bodyL"
       {...props}
     />
@@ -351,7 +351,7 @@ const components: MDXComponents = {
   },
   pre: (props) => {
     return (
-      <CodeHighlightWrapper className={css({ my: "space32" })}>
+      <CodeHighlightWrapper css={{ my: "space32" }}>
         <CodeHighlightDiv>
           <pre {...props} />
         </CodeHighlightDiv>

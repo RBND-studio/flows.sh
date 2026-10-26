@@ -1,5 +1,3 @@
-import { css } from "@flows/styled-system/css";
-
 import { CtaBanner } from "components/cta-banner";
 import { getWebMetadata } from "lib/get-metadata";
 import { links } from "lib/links";
@@ -27,9 +25,9 @@ export default function AffiliatePage(): ReactNode {
         description="Partner with Flows and earn 25% recurring commission for every customer you refer."
         actions={
           <Button
-            className={css({
+            css={{
               shadow: "neutralFocus",
-            })}
+            }}
             asChild
             size="large"
           >
@@ -48,9 +46,9 @@ export default function AffiliatePage(): ReactNode {
             asChild
             size="large"
             variant="secondary"
-            className={css({
+            css={{
               shadow: "neutralFocus",
-            })}
+            }}
           >
             <a href={links.affiliatePortal}>Join our program</a>
           </Button>

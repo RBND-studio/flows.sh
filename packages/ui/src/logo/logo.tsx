@@ -1,4 +1,5 @@
 import { css, cx } from "@flows/styled-system/css";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import { type ReactNode } from "react";
 
 import { LogoMarkSvg } from "./logo-mark";
@@ -16,19 +17,24 @@ type Props = {
   color?: string;
   size?: number;
   className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
 } & React.SVGProps<SVGSVGElement>;
 
 export const Logo = (props: Props): ReactNode => {
-  const { type, color = "currentColor", size = 40, className, ...rest } = props;
+  const { type, color = "currentColor", size = 40, className, css: cssProp, ...rest } = props;
 
   const LogoComponent = logoByType[type];
 
   return (
     <LogoComponent
       className={cx(
-        css({
-          color,
-        }),
+        css(
+          {
+            color,
+          },
+          cssProp,
+        ),
         className,
       )}
       height={size}

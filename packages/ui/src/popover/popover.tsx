@@ -1,6 +1,7 @@
 "use client";
 
-import { cva, cx } from "@flows/styled-system/css";
+import { css, cva, cx } from "@flows/styled-system/css";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 import type { FC, ReactNode, Ref } from "react";
 
@@ -13,16 +14,18 @@ export const PopoverTrigger = PopoverPrimitive.Trigger;
 type Props = PopoverPrimitive.PopoverContentProps & {
   children?: ReactNode;
   className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
   ref?: Ref<HTMLDivElement>;
 };
 
 const COLLISION_PADDING = 16;
 
-export const PopoverContent: FC<Props> = ({ className, ref, ...props }) => {
+export const PopoverContent: FC<Props> = ({ className, css: cssProp, ref, ...props }) => {
   return (
     <PopoverPrimitive.Portal>
       <PopoverPrimitive.Content
-        className={cx(content(), className)}
+        className={cx(css(content.raw(), cssProp), className)}
         ref={ref}
         collisionPadding={COLLISION_PADDING}
         sideOffset={4}

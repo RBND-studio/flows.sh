@@ -35,25 +35,24 @@ export const HeadingLink = ({
         "group",
       )}
     >
-      <Text {...textProps} asChild>
-        <Link
-          {...linkProps}
-          className={css({
-            scrollMarginTop: "space80",
-            display: "flex",
-            color: "fg.neutral",
-          })}
-        >
-          {children}
-        </Link>
+      <Text
+        css={{
+          scrollMarginTop: "space80",
+          display: "flex",
+          color: "fg.neutral",
+        }}
+        {...textProps}
+        asChild
+      >
+        <Link {...linkProps}>{children}</Link>
       </Text>
       <HeadingCopyButton
-        className={css({
+        css={{
           _groupHover: {
             opacity: 1,
           },
           opacity: 0,
-        })}
+        }}
         hash={textProps.id}
       />
     </Component>

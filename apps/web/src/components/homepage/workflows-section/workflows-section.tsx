@@ -1,7 +1,6 @@
 import { Section } from "components/ui/section";
 import { FancyIcon, Icon } from "ui";
 import { Block16 } from "icons";
-import { css } from "@flows/styled-system/css";
 import { FeatureSectionIntro } from "../feature-section-intro";
 import { routes } from "routes";
 import { WorkflowFeatures } from "./workflow-features";
@@ -17,11 +16,11 @@ export const WorkflowsSection = () => {
         feature="Workflows"
         featureIcon={
           <FancyIcon
-            className={css({
+            css={{
               width: "24px",
               height: "24px",
               backgroundColor: "dataViz.blue.fg",
-            })}
+            }}
           >
             <Icon icon={Block16} color="inherit" />
           </FancyIcon>

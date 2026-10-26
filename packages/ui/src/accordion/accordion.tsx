@@ -1,7 +1,7 @@
 "use client";
 
-import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import { ChevronDown16 } from "icons";
 import { type CSSProperties, type FC, type Ref, useState } from "react";
 
@@ -10,11 +10,22 @@ import { Text } from "../text";
 
 type Props = {
   title: React.ReactNode;
+  /**
+   * Style overrides for the header, merged with its styles so they win without `!`
+   */
+  headerCss?: SystemStyleObject;
+  /**
+   * Class hooks for the header, like `group`. Use `headerCss` for styles.
+   */
   headerClassName?: string;
   children?: React.ReactNode;
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
   className?: string;
+  /**
+   * Style overrides for the wrapper element
+   */
+  css?: SystemStyleObject;
   /**
    * @defaultValue `unmount`
    */
@@ -29,6 +40,7 @@ export const Accordion: FC<Props> = ({
   onOpenChange,
   open,
   hideMode,
+  headerCss,
   headerClassName,
   ...props
 }) => {
@@ -42,6 +54,7 @@ export const Accordion: FC<Props> = ({
     <Box overflow="hidden" {...props}>
       <Flex
         className={headerClassName}
+        css={headerCss}
         fastEaseInOut="background-color"
         _hover={{
           bg: "bg.neutral.muted",
@@ -59,11 +72,11 @@ export const Accordion: FC<Props> = ({
         </Box>
 
         <Icon
-          className={css({
+          css={{
             transitionDuration: "fast",
             transitionTimingFunction: "easeInOut",
             transform: expanded ? "rotate(180deg)" : `rotate(0)`,
-          })}
+          }}
           icon={ChevronDown16}
         />
       </Flex>

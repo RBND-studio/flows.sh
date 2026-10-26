@@ -1,4 +1,4 @@
-import { css, cva, cx } from "@flows/styled-system/css";
+import { cva } from "@flows/styled-system/css";
 import { type HTMLStyledProps, styled } from "@flows/styled-system/jsx";
 import { Slot, Slottable } from "@radix-ui/react-slot";
 import { type ButtonHTMLAttributes, forwardRef, type JSX, memo } from "react";
@@ -39,12 +39,15 @@ export const Button = memo(
     },
     ref,
   ): JSX.Element {
-    const Component = asChild ? Slot : styled.button;
+    // The styled factory merges the recipe with style props and the `css` prop, so call site
+    // overrides win without `!`
+    const Component = asChild ? ButtonSlot : ButtonRoot;
     return (
       <Component
         type={!asChild ? "button" : undefined}
         {...props}
-        className={cx(button({ size, variant }), props.className)}
+        size={size}
+        variant={variant}
         // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- nullish coalescing cannot be used here
         disabled={disabled || loading}
         ref={ref}
@@ -58,10 +61,10 @@ export const Button = memo(
         ) : null}
         {loading ? (
           <Spinner
-            className={css({
+            css={{
               position: "absolute",
               visibility: "visible!",
-            })}
+            }}
             // TODO: use correct color for each variant
             color="button.secondary.fg.disabled"
             size={16}
@@ -310,3 +313,6 @@ const button = cva({
     },
   },
 });
+
+const ButtonRoot = styled("button", button);
+const ButtonSlot = styled(Slot, button);

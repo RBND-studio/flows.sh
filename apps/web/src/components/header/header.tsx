@@ -40,12 +40,12 @@ export const Header = (): ReactElement => {
           <Logo
             type="type"
             size={20}
-            className={css({ display: { base: "block", sm: "none", md: "block" } })}
+            css={{ display: { base: "block", sm: "none", md: "block" } }}
           />
           <Logo
             type="pill"
             size={28}
-            className={css({ display: { base: "none", sm: "block", md: "none" } })}
+            css={{ display: { base: "none", sm: "block", md: "none" } }}
           />
         </Link>
 
@@ -60,17 +60,17 @@ export const Header = (): ReactElement => {
         </Flex>
 
         <Flex gap="space8" alignItems="center" justifyContent="flex-end">
-          <Button size="small" asChild variant="ghost">
-            <a
-              className={css({
-                display: "block",
-                sm: { display: "none" },
-                md: { display: "block" },
-              })}
-              href={links.logIn}
-            >
-              Log in
-            </a>
+          <Button
+            css={{
+              display: "block",
+              sm: { display: "none" },
+              md: { display: "block" },
+            }}
+            size="small"
+            asChild
+            variant="ghost"
+          >
+            <a href={links.logIn}>Log in</a>
           </Button>
           <SignupClick>
             <Button size="small" asChild>

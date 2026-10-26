@@ -1,6 +1,7 @@
 "use client";
 
-import { css, cx } from "@flows/styled-system/css";
+import { css } from "@flows/styled-system/css";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import { Check16, Copy16 } from "icons";
 import type { Ref } from "react";
 import { type FC, useState } from "react";
@@ -10,11 +11,11 @@ import { clipboard } from "../utils/utils";
 
 type Props = {
   code: string | (() => string);
-  className?: string;
+  css?: SystemStyleObject;
   ref?: Ref<HTMLButtonElement>;
 };
 
-export const CopyButton: FC<Props> = ({ code, className, ref }) => {
+export const CopyButton: FC<Props> = ({ code, css: cssProp, ref }) => {
   const [successIcon, setSuccessIcon] = useState(false);
 
   const handleCopy = (): void => {
@@ -31,11 +32,8 @@ export const CopyButton: FC<Props> = ({ code, className, ref }) => {
       variant="secondary"
       size="small"
       tooltip="Copy"
-      className={cx(
-        css({ position: "absolute", right: "10px", top: "10px", opacity: 0, p: 0 }),
-        "copy-button",
-        className,
-      )}
+      className="copy-button"
+      css={css.raw({ position: "absolute", right: "10px", top: "10px", opacity: 0, p: 0 }, cssProp)}
     >
       {successIcon ? <Check16 /> : <Copy16 />}
     </IconButton>

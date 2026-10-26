@@ -1,6 +1,6 @@
 "use client";
 
-import { css, cva } from "@flows/styled-system/css";
+import { cva } from "@flows/styled-system/css";
 import { Box, Flex, Grid } from "@flows/styled-system/jsx";
 import { Check16, Copy16, Reset16 } from "icons";
 import { type JSX, useCallback, useEffect, useState } from "react";
@@ -67,8 +67,8 @@ export const SurveyCalculator = <TKey extends string>({ config }: Props<TKey>): 
               <Label option={option} wordedScale={wordedScale} />
               <Input
                 id={`answer-${option.value}`}
-                className={wordedScale ? css({ width: { base: 110, md: 160 } }) : css({ flex: 1 })}
-                inputClassName={css({ borderLeftRadius: 0 })}
+                css={wordedScale ? { width: { base: 110, md: 160 } } : { flex: 1 }}
+                inputCss={{ borderLeftRadius: 0 }}
                 type="text"
                 inputMode="numeric"
                 value={counts[option.value] ?? ""}

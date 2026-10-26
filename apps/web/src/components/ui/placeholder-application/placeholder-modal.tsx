@@ -1,5 +1,5 @@
-import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import Image from "next/image";
 import type { JSX } from "react";
 import { Button, Text } from "ui";
@@ -11,6 +11,8 @@ type Props = {
   description: string;
   buttonLabel?: string;
   className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
 };
 
 export const PlaceholderModal = ({
@@ -18,6 +20,7 @@ export const PlaceholderModal = ({
   description,
   buttonLabel = "Continue",
   className,
+  css: cssProp,
 }: Props): JSX.Element => {
   return (
     <Flex
@@ -31,6 +34,7 @@ export const PlaceholderModal = ({
       alignItems="center"
       maxWidth={240}
       className={className}
+      css={cssProp}
       aria-hidden="true"
     >
       <Box
@@ -50,14 +54,15 @@ export const PlaceholderModal = ({
         {description}
       </Text>
       {/* Button is rendered as div to prevent taking focus and messing with aria-hidden */}
-      <Button asChild variant="primary" size="small">
-        <div
-          className={css({
-            pointerEvents: "none",
-          })}
-        >
-          {buttonLabel}
-        </div>
+      <Button
+        css={{
+          pointerEvents: "none",
+        }}
+        asChild
+        variant="primary"
+        size="small"
+      >
+        <div>{buttonLabel}</div>
       </Button>
     </Flex>
   );

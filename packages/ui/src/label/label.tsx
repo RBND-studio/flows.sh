@@ -1,4 +1,5 @@
 import { css, cx } from "@flows/styled-system/css";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import { forwardRef, type ReactNode } from "react";
 
 import { Text } from "../text";
@@ -8,23 +9,30 @@ type Props = {
   children?: ReactNode;
   optional?: boolean;
   className?: string;
+  /**
+   * Style overrides, merged with the label styles so they win without `!`
+   */
+  css?: SystemStyleObject;
   htmlFor?: string;
   tooltip?: ReactNode;
   disabled?: boolean;
 };
 
 export const Label = forwardRef<HTMLLabelElement, Props>(function Label(
-  { children, optional, className, tooltip, disabled, ...props },
+  { children, optional, className, css: cssProp, tooltip, disabled, ...props },
   ref,
 ) {
   const labelRender = (
     <label
       className={cx(
-        css({
-          textStyle: "bodyXs",
-          color: disabled ? "control.fg.disabled" : "control.fg",
-          fontWeight: "550",
-        }),
+        css(
+          {
+            textStyle: "bodyXs",
+            color: disabled ? "control.fg.disabled" : "control.fg",
+            fontWeight: "550",
+          },
+          cssProp,
+        ),
         className,
       )}
       ref={ref}
@@ -34,7 +42,7 @@ export const Label = forwardRef<HTMLLabelElement, Props>(function Label(
       {optional ? (
         <Text
           as="span"
-          className={css({ ml: "space4" })}
+          css={{ ml: "space4" }}
           color={disabled ? "control.fg.disabled" : "fg.neutral.subtle"}
           variant="bodyXxs"
         >

@@ -1,4 +1,3 @@
-import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { PlaceholderModal } from "components/ui/placeholder-application/placeholder-modal";
 import { PlaceholderTable } from "components/ui/placeholder-application/placeholder-table";
@@ -77,10 +76,10 @@ export const ImplementationFeatures = (): JSX.Element => {
           <PlaceholderModal
             title="New feature announcement"
             description="Modals are better for catching attention or more information."
-            className={css({
+            css={{
               display: "none",
               md: { display: "flex" },
-            })}
+            }}
           />
         </Flex>
       </Box>

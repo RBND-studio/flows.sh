@@ -1,4 +1,4 @@
-import { css, cva, cx } from "@flows/styled-system/css";
+import { cva } from "@flows/styled-system/css";
 import { type HTMLStyledProps, styled } from "@flows/styled-system/jsx";
 import { type SystemStyleObject } from "@flows/styled-system/types";
 import { Slot } from "@radix-ui/react-slot";
@@ -29,39 +29,27 @@ export type TextProps = HTMLAttributes<HTMLParagraphElement> &
 
 export const BaseText = forwardRef<HTMLParagraphElement, TextProps>(function BaseText(
   {
-    color,
     variant = "bodyS",
     align = "left",
     weight = "400",
-    children,
     asChild,
-    hideOverflow,
     // oxlint-disable-next-line no-unused-vars - has to be specified to avoid being included in ...props and causing an error on the DOM element
     tooltipSide,
     ...props
   },
   ref,
 ) {
-  const Component = asChild ? Slot : styled.p;
+  // The styled factory merges the recipe, style props and the `css` prop into one css() call,
+  // so overrides from call sites win without `!`
+  const Component = asChild ? TextSlot : TextRoot;
 
-  return (
-    <Component
-      {...props}
-      className={cx(
-        textVariants({ variant, align, weight, hideOverflow }),
-        css({
-          color: color ?? "fg.neutral",
-        }),
-        props.className,
-      )}
-      ref={ref}
-    >
-      {children}
-    </Component>
-  );
+  return <Component {...props} variant={variant} align={align} weight={weight} ref={ref} />;
 });
 
 const textVariants = cva({
+  base: {
+    color: "fg.neutral",
+  },
   variants: {
     weight: {
       "400": {},
@@ -145,3 +133,6 @@ const textVariants = cva({
     },
   },
 });
+
+const TextRoot = styled("p", textVariants);
+const TextSlot = styled(Slot, textVariants);

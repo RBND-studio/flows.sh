@@ -1,13 +1,15 @@
 import { css, cva, cx } from "@flows/styled-system/css";
-import { Box, Flex } from "@flows/styled-system/jsx";
+import { Box, Flex, splitCssProps } from "@flows/styled-system/jsx";
 import { token } from "@flows/styled-system/tokens";
-import type { HTMLStyledProps } from "@flows/styled-system/types";
+import type { HTMLStyledProps, SystemStyleObject } from "@flows/styled-system/types";
 import { type HTMLAttributes, type JSX } from "react";
 import { Decorator } from "./section/decorator";
 import type { DecoratorType } from "./section/decorator";
 
 export type SectionBaseProps = {
   outerClassName?: string;
+  /** Style overrides for the outer wrapper, merged with its own styles so they win without `!` */
+  outerCss?: SystemStyleObject;
   bottomBorder?: boolean;
   topBorder?: boolean;
   sideBorders?: boolean | "hide-top" | "hide-bottom";
@@ -17,11 +19,16 @@ export type SectionBaseProps = {
 
 export type SectionProps = HTMLAttributes<HTMLDivElement> &
   HTMLStyledProps<"div"> &
-  SectionBaseProps;
+  SectionBaseProps & {
+    /** Style overrides, merged with the component's own styles so they win without `!` */
+    css?: SystemStyleObject;
+  };
 
 export const Section = ({
   children,
   outerClassName,
+  outerCss,
+  css: cssProp,
   bottomBorder,
   topBorder,
   sideBorders,
@@ -29,28 +36,38 @@ export const Section = ({
   decorator,
   ...props
 }: SectionProps): JSX.Element => {
+  // Style props are merged with the inner wrapper's own styles below, so they win over them
+  const [styleProps, elementProps] = splitCssProps(props);
+
   return (
     <div
       className={cx(
-        css({
-          width: "100%",
-          paddingX: "space24",
-          position: "relative",
-        }),
-        outerWrapperStyles({ bottomBorder, topBorder, sideDots }),
+        css(
+          {
+            width: "100%",
+            paddingX: "space24",
+            position: "relative",
+          },
+          outerWrapperStyles.raw({ bottomBorder, topBorder, sideDots }),
+          outerCss,
+        ),
         outerClassName,
       )}
     >
       <Box
-        {...props}
+        {...elementProps}
         className={cx(
-          css({
-            maxWidth: "1080px",
-            marginX: "auto",
-            position: "relative",
-          }),
-          innerWrapperStyles({ sideBorders, sideDots }),
-          props.className,
+          css(
+            {
+              maxWidth: "1080px",
+              marginX: "auto",
+              position: "relative",
+            },
+            innerWrapperStyles.raw({ sideBorders, sideDots }),
+            styleProps,
+            cssProp,
+          ),
+          elementProps.className,
         )}
       >
         {children}

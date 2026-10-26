@@ -10,7 +10,7 @@ const production = process.env.NEXT_PUBLIC_ENV === "production";
 const cspHeader = `
     default-src 'self';
     script-src 'self' 'unsafe-inline'${dev ? " 'unsafe-eval'" : ""};
-    connect-src 'self' https://app.lemonsqueezy.com https://status.flows.sh https://*.flows-cloud.com wss://*.flows-cloud.com;
+    connect-src 'self' https://app.lemonsqueezy.com https://status.flows.sh;
     style-src 'self' 'unsafe-inline';
     img-src 'self' https://api.producthunt.com blob: data: https://img.youtube.com https://i.ytimg.com;
     font-src 'self';
@@ -69,13 +69,13 @@ const nextConfig = {
   compress: false,
   poweredByHeader: false,
   typedRoutes: true,
-  transpilePackages: ["ui", "icons", "shared", "shared-private"],
+  transpilePackages: ["ui", "icons", "shared"],
   output: "standalone",
   outputFileTracingRoot: path.join(__dirname, "../../"),
   experimental: {
     // Currently turbopack doesn't support this feature, that's why we're doing production builds with webpack
     // More info: https://github.com/vercel/next.js/issues/75148
-    optimizePackageImports: ["ui", "icons", "shared", "shared-private"],
+    optimizePackageImports: ["ui", "icons", "shared"],
     // Inline the stylesheet into the HTML so first paint doesn't wait on a CSS round trip
     inlineCss: true,
   },

@@ -113,7 +113,7 @@ type FooterGroupProps = {
 const FooterGroupWrap = ({ group }: FooterGroupProps): ReactNode => {
   return (
     <Flex key={group.title} flexDirection="column" gap="space2">
-      <Text className={css({ mb: "space4" })} weight="700" variant="bodyS">
+      <Text css={{ mb: "space4" }} weight="700" variant="bodyS">
         {group.title}
       </Text>
       {group.mainFeatures?.map((feature) => (
@@ -143,23 +143,20 @@ type FooterLinkProps = {
 const FooterLink = ({ title, href, icon, color, target }: FooterLinkProps): ReactNode => {
   if (icon && color) {
     return (
-      <SmartLink
-        href={href}
-        className={css({ display: "flex", alignItems: "center", gap: "space8" })}
-      >
+      <SmartLink href={href} css={{ display: "flex", alignItems: "center", gap: "space8" }}>
         <FancyIcon
           color={color}
-          className={css({
+          css={{
             width: "22px",
             height: "22px",
             flexShrink: 0,
-            borderRadius: "radius6!",
-          })}
+            borderRadius: "radius6",
+          }}
         >
           <Icon icon={icon} color="inherit" />
         </FancyIcon>
         <Text
-          className={css({
+          css={{
             display: "flex",
             gap: "space4",
             padding: "space6",
@@ -168,7 +165,7 @@ const FooterLink = ({ title, href, icon, color, target }: FooterLinkProps): Reac
             "&:hover": {
               textDecoration: "underline",
             },
-          })}
+          }}
           variant="bodyS"
           color="fg.neutral.muted"
         >
@@ -181,7 +178,7 @@ const FooterLink = ({ title, href, icon, color, target }: FooterLinkProps): Reac
   return (
     <Text
       asChild
-      className={css({
+      css={{
         display: "flex",
         gap: "space4",
         padding: "space6",
@@ -190,7 +187,7 @@ const FooterLink = ({ title, href, icon, color, target }: FooterLinkProps): Reac
         "&:hover": {
           textDecoration: "underline",
         },
-      })}
+      }}
       variant="bodyS"
       color="fg.neutral.muted"
     >

@@ -1,4 +1,3 @@
-import { css } from "@flows/styled-system/css";
 import { Box } from "@flows/styled-system/jsx";
 import { GlossaryPostPreview } from "app/glossary/glossary-post-preview";
 import { Section } from "components/ui/section";
@@ -28,10 +27,7 @@ export default async function GlossaryPage(): Promise<ReactNode> {
         px="space24"
         pb="space40"
       >
-        <FancyIcon
-          className={css({ mx: "auto", mb: "space24", width: "48px", height: "48px" })}
-          color="blue"
-        >
+        <FancyIcon css={{ mx: "auto", mb: "space24", width: "48px", height: "48px" }} color="blue">
           <Icon icon={Book16} color="inherit" />
         </FancyIcon>
         <Text as="h1" variant="title4xl" textAlign="center" mb="space16" maxWidth={600} mx="auto">

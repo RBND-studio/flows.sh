@@ -91,7 +91,7 @@ export const riverFeatures = [
                   <Icon
                     icon={Check16}
                     color="fg.neutral.onPrimary"
-                    className={css({ height: 10, width: 10 })}
+                    css={{ height: 10, width: 10 }}
                   />
                 </Flex>
                 <Text variant="bodyXs" color="fg.neutral.muted" textDecoration="line-through">

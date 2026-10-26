@@ -1,5 +1,6 @@
-import { cva, cx } from "@flows/styled-system/css";
+import { css, cva } from "@flows/styled-system/css";
 import { Box } from "@flows/styled-system/jsx";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import {
   Banner16,
   Book16,
@@ -70,11 +71,13 @@ type Props = {
   blockType: BlockType | BlockTemplateType;
   blockIcon?: string | null;
   className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
   onClick?: () => void;
 };
 
 export const BlockIcon = forwardRef<HTMLDivElement, Props>(function BlockIcon(
-  { blockType, blockIcon, className, ...props },
+  { blockType, blockIcon, className, css: cssProp, ...props },
   ref,
 ) {
   const icon = useMemo(() => {
@@ -98,7 +101,8 @@ export const BlockIcon = forwardRef<HTMLDivElement, Props>(function BlockIcon(
       padding="space2"
       borderRadius="radius4"
       borderWidth="1px"
-      className={cx(boxStyles({ type }), className)}
+      className={className}
+      css={css.raw(boxStyles.raw({ type }), cssProp)}
       {...props}
     >
       <Icon color="inherit" icon={icon} />

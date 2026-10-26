@@ -1,8 +1,6 @@
 import "./globals.css";
 
-import { FlowsSlot } from "@flows/react";
 import { css, cx } from "@flows/styled-system/css";
-import { Box } from "@flows/styled-system/jsx";
 import { Footer } from "components/footer";
 import { Header } from "components/header";
 import { Providers } from "components/providers";
@@ -48,9 +46,8 @@ export const metadata: Metadata = getWebMetadata({
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
-  // Origins fetched on every page load: the Flows SDK API and the status badge. Both are CORS fetches
-  // without credentials, so the preconnect has to be anonymous to warm up the same connection.
-  preconnect("https://api.flows-cloud.com", { crossOrigin: "anonymous" });
+  // Origin fetched on every page load by the status badge. It's a CORS fetch without credentials,
+  // so the preconnect has to be anonymous to warm up the same connection.
   preconnect("https://status.flows.sh", { crossOrigin: "anonymous" });
 
   return (
@@ -70,9 +67,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
             {children}
           </main>
           <Footer />
-          <Box position="fixed" bottom="space24" left="space24">
-            <FlowsSlot id="corner-banner" />
-          </Box>
         </Providers>
       </body>
       {PRODUCTION ? (

@@ -1,18 +1,22 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import type { ReactNode } from "react";
 import { Button, Text } from "ui";
 
 type Props = {
   className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
   title: string;
   children: ReactNode;
 };
 
-export const SurveyPopover = ({ className, title, children }: Props) => {
+export const SurveyPopover = ({ className, css: cssProp, title, children }: Props) => {
   return (
     <Box
       className={className}
+      css={cssProp}
       p="space16"
       bg="pane.bg.elevated"
       borderWidth={1}
@@ -58,10 +62,10 @@ export const SurveyScale = ({ options, topLabel, bottomLabel }: SurveyScaleProps
         ))}
       </Flex>
       <Flex justifyContent="space-between" mt="space8">
-        <Text variant="bodyXs" color="fg.muted">
+        <Text variant="bodyXs" color="fg.neutral.muted">
           {topLabel}
         </Text>
-        <Text variant="bodyXs" color="fg.muted">
+        <Text variant="bodyXs" color="fg.neutral.muted">
           {bottomLabel}
         </Text>
       </Flex>
@@ -118,14 +122,15 @@ export const SurveyFreeform = ({ placeholder }: SurveyFreeformProps) => {
           pointerEvents: "none",
         })}
       />
-      <Button size="small" w="100%" asChild>
-        <div
-          className={css({
-            pointerEvents: "none",
-          })}
-        >
-          Submit
-        </div>
+      <Button
+        css={{
+          pointerEvents: "none",
+        }}
+        size="small"
+        w="100%"
+        asChild
+      >
+        <div>Submit</div>
       </Button>
     </>
   );

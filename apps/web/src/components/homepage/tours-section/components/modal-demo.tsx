@@ -2,7 +2,6 @@ import { Box, Flex } from "@flows/styled-system/jsx";
 import { Close16 } from "icons";
 import { Button, Icon, Text } from "ui";
 import { ProgressDots } from "./progress-dots";
-import { css } from "@flows/styled-system/css";
 
 export const ModalDemo = () => {
   return (
@@ -33,23 +32,25 @@ export const ModalDemo = () => {
       </Box>
 
       <Flex mt="space20" gap="space12" flexWrap="wrap-reverse">
-        <Button variant="secondary" flex={1} asChild>
-          <div
-            className={css({
-              pointerEvents: "none",
-            })}
-          >
-            Maybe later
-          </div>
+        <Button
+          css={{
+            pointerEvents: "none",
+          }}
+          variant="secondary"
+          flex={1}
+          asChild
+        >
+          <div>Maybe later</div>
         </Button>
-        <Button variant="black" flex={1} asChild>
-          <div
-            className={css({
-              pointerEvents: "none",
-            })}
-          >
-            Get started
-          </div>
+        <Button
+          css={{
+            pointerEvents: "none",
+          }}
+          variant="black"
+          flex={1}
+          asChild
+        >
+          <div>Get started</div>
         </Button>
       </Flex>
     </Box>

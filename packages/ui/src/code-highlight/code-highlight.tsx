@@ -1,14 +1,16 @@
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import { Fragment, type FC, type ReactElement } from "react";
 import type { BundledLanguage } from "shiki";
 import { codeToHtml } from "shiki";
 import { CodeHighlightDiv, CodeHighlightWrapper } from "./code-highlight-div";
 import { CodeTabs } from "./tabs-client";
 import { CopyButton } from "./copy-button";
-import { css } from "@flows/styled-system/css";
 
 type Props = {
   children: string | { code: string; filename: string; lang: BundledLanguage }[];
   className?: string;
+  /** Style overrides for the wrapper, merged with its own styles so they win without `!` */
+  css?: SystemStyleObject;
   lineNumbers?: boolean;
   lang: BundledLanguage;
   hideCopyButton?: boolean;
@@ -34,7 +36,7 @@ export const CodeHighlight: FC<Props> = async ({
 }: Props): Promise<ReactElement> => {
   if (typeof children === "string") {
     return (
-      <CodeHighlightWrapper className={props.className}>
+      <CodeHighlightWrapper className={props.className} css={props.css}>
         <CodeHighlightDiv
           lineNumbers={lineNumbers}
           dangerouslySetInnerHTML={{ __html: await formatCode({ code: children, lang }) }}
@@ -45,7 +47,7 @@ export const CodeHighlight: FC<Props> = async ({
   }
 
   return (
-    <CodeHighlightWrapper className={props.className}>
+    <CodeHighlightWrapper className={props.className} css={props.css}>
       <CodeTabs tabs={children.map((c) => c.filename)}>
         {await Promise.all(
           children.map(async (c) => {
@@ -59,10 +61,10 @@ export const CodeHighlight: FC<Props> = async ({
                 {!hideCopyButton && (
                   <CopyButton
                     code={c.code}
-                    className={css({
+                    css={{
                       // 10px + Tab List height 32px
-                      top: "42px!",
-                    })}
+                      top: "42px",
+                    }}
                   />
                 )}
               </Fragment>

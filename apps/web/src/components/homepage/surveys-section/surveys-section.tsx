@@ -2,7 +2,6 @@ import { FancyIcon, Icon } from "ui";
 import { SurveyExamples } from "./survey-examples";
 import { surveyFeaturesContent } from "./features";
 import { Survey16 } from "icons";
-import { css } from "@flows/styled-system/css";
 import { FeatureSectionIntro } from "../feature-section-intro";
 import { routes } from "routes";
 import {
@@ -22,11 +21,11 @@ export const SurveysSection = () => {
         feature="Surveys"
         featureIcon={
           <FancyIcon
-            className={css({
+            css={{
               width: "24px",
               height: "24px",
               backgroundColor: "dataViz.darkTeal.fg",
-            })}
+            }}
           >
             <Icon icon={Survey16} color="inherit" />
           </FancyIcon>

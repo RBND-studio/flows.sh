@@ -1,6 +1,5 @@
 "use client";
 
-import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { Banner16, Close16, Code16 } from "icons";
 import { type FC, type ReactNode, useState } from "react";
@@ -58,20 +57,20 @@ export const CustomComponentExample: FC<Props> = ({ codeExample }) => {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Title"
-              className={css({
+              css={{
                 width: "100%",
-              })}
+              }}
             />
             <Input
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               label="Description"
-              className={css({
+              css={{
                 width: "100%",
-              })}
-              inputClassName={css({
-                height: "48px!",
-              })}
+              }}
+              inputCss={{
+                height: "48px",
+              }}
               asChild
             >
               {/* oxlint-disable-next-line jsx-a11y/control-has-associated-label -- just for decoration */}
@@ -81,17 +80,17 @@ export const CustomComponentExample: FC<Props> = ({ codeExample }) => {
               value={buttonLabel}
               onChange={(e) => setButtonLabel(e.target.value)}
               label="Button label"
-              className={css({
+              css={{
                 width: "100%",
-              })}
+              }}
             />
             <Input
               value={buttonLink}
               onChange={(e) => setButtonLink(e.target.value)}
               label="Button link"
-              className={css({
+              css={{
                 width: "100%",
-              })}
+              }}
             />
             <Checkbox
               label="Hide close button"
@@ -192,11 +191,7 @@ export const CustomComponentExample: FC<Props> = ({ codeExample }) => {
                       {title}
                     </Text>
                     {!hideClose && (
-                      <Icon
-                        className={css({ cursor: "pointer" })}
-                        icon={Close16}
-                        color="neutral.200"
-                      />
+                      <Icon css={{ cursor: "pointer" }} icon={Close16} color="neutral.200" />
                     )}
                   </Flex>
                   <Flex zIndex={1} gap="space8" justifyContent="space-between" alignItems="center">

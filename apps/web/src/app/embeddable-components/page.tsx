@@ -11,7 +11,6 @@ import { FeaturesSection } from "./features-section";
 import { MainIllustration } from "./main-illustration";
 import { LogoSection } from "components/logos/logo-section";
 import { SignupClick } from "components/utils/signup-click";
-import { css } from "@flows/styled-system/css";
 import { links } from "lib/links";
 import { InstallWithAIButton } from "components/install-with-ai-button";
 import { TrailFork } from "components/feature-landing-pages/trail-fork";
@@ -40,9 +39,9 @@ export default function ProductTour(): JSX.Element {
           <>
             <SignupClick>
               <Button
-                className={css({
+                css={{
                   shadow: "neutralFocus",
-                })}
+                }}
                 asChild
                 size="large"
               >

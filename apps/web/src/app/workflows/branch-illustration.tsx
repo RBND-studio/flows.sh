@@ -1,6 +1,7 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { token } from "@flows/styled-system/tokens";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import type { BlockType } from "@flows/types";
 import type { JSX } from "react";
 import { BlockIcon, Text } from "ui";
@@ -36,21 +37,21 @@ export const BranchIllustration = (): JSX.Element => {
         />
         <Badge
           text="Yes"
-          className={css({
+          css={{
             position: "absolute",
             left: "20%",
             top: "50%",
             transform: "translateY(-50%)",
-          })}
+          }}
         />
         <Badge
           text="No"
-          className={css({
+          css={{
             position: "absolute",
             right: "20%",
             top: "50%",
             transform: "translateY(-50%)",
-          })}
+          }}
         />
       </Flex>
       <Flex gap={{ base: "space16", md: "space40" }} mt="space4">
@@ -112,10 +113,20 @@ const LineArrowDown = (): JSX.Element => {
   );
 };
 
-const Badge = ({ text, className }: { text: string; className?: string }): JSX.Element => {
+const Badge = ({
+  text,
+  className,
+  css: cssProp,
+}: {
+  text: string;
+  className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
+}): JSX.Element => {
   return (
     <Flex
       className={className}
+      css={cssProp}
       backgroundColor="bg.neutral"
       shadow="newL1"
       borderRadius="radius8"

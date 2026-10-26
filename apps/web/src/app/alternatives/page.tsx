@@ -23,7 +23,7 @@ const Page = (): ReactElement => {
 
   return (
     <>
-      <Section maxWidth="720px!" mt={{ base: "space40", md: "space80" }}>
+      <Section maxWidth="720px" mt={{ base: "space40", md: "space80" }}>
         <Flex align="center" justify="center" mb="space24">
           <FancyLogo size={48} />
         </Flex>
@@ -37,7 +37,7 @@ const Page = (): ReactElement => {
       </Section>
       <Section
         bottomBorder
-        maxWidth="800px!"
+        maxWidth="800px"
         borderWidth={1}
         borderColor="border.neutral.placeholder"
         borderRadius="radius8"

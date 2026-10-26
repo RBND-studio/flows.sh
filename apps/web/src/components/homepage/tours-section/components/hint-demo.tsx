@@ -23,14 +23,15 @@ export const HintDemo = () => {
           We've added a new dashboard with better analytics to help you track your progress.
         </Text>
         <Flex mt="space16">
-          <Button variant="black" size="small" asChild>
-            <div
-              className={css({
-                pointerEvents: "none",
-              })}
-            >
-              Learn more
-            </div>
+          <Button
+            css={{
+              pointerEvents: "none",
+            }}
+            variant="black"
+            size="small"
+            asChild
+          >
+            <div>Learn more</div>
           </Button>
         </Flex>
       </Box>

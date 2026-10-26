@@ -39,10 +39,10 @@ export const CtaBanner = ({
         position="relative"
         overflow="hidden"
       >
-        <Text as="h2" variant="title3xl" className={textColorCss} mb="space16">
+        <Text as="h2" variant="title3xl" css={textColorCss} mb="space16">
           {title}
         </Text>
-        <Text variant="bodyL" className={textColorCss} textWrap="balance">
+        <Text variant="bodyL" css={textColorCss} textWrap="balance">
           {description}
         </Text>
         {actions && <Box mt={{ base: "space24", md: "space40" }}>{actions}</Box>}
@@ -68,6 +68,6 @@ export const CtaBanner = ({
   );
 };
 
-const textColorCss = css({
+const textColorCss = css.raw({
   color: { base: "white", _dark: "fg.neutral.onPrimary" },
 });

@@ -96,9 +96,9 @@ export default async function GlossaryPostPage(props: Props): Promise<ReactNode>
 
           <Text
             as="h1"
-            className={css({
+            css={{
               mb: "space16",
-            })}
+            }}
             variant="title4xl"
             textAlign="center"
           >

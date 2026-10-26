@@ -1,4 +1,5 @@
 import { Box, Flex } from "@flows/styled-system/jsx";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import { type ReactNode } from "react";
 
 import {
@@ -29,13 +30,17 @@ const elements = [
 
 export const CustomUIComponentsIllustration = ({
   className,
+  css: cssProp,
 }: {
   className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
 }): ReactNode => {
   return (
     <Box
       h="100%"
       className={className}
+      css={cssProp}
       py="space24"
       role="img"
       aria-label="Illustration of multiple custom UI components including tooltips and a sale dialog, arranged in a horizontal carousel"

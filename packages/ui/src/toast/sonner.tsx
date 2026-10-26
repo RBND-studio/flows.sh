@@ -71,7 +71,6 @@ export const Toaster: FC = () => {
           }),
           loading: css({
             backgroundColor: "bg.neutral",
-            borderColor: "border.neutral.subtle",
             "& [data-icon]": {
               position: "relative",
               width: 20,

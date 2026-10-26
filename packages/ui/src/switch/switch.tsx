@@ -2,6 +2,7 @@
 
 import { cva } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import * as RadixSwitch from "@radix-ui/react-switch";
 import { type FC, type ReactNode, useId } from "react";
 
@@ -13,12 +14,23 @@ type Props = {
   disabled?: boolean;
   id?: string;
   label?: ReactNode;
-  labelClassName?: string;
+  labelCss?: SystemStyleObject;
   className?: string;
+  /**
+   * Style overrides for the wrapper element
+   */
+  css?: SystemStyleObject;
   onPointerEnter?: () => void;
 };
 
-export const Switch: FC<Props> = ({ onChange, className, label, labelClassName, ...props }) => {
+export const Switch: FC<Props> = ({
+  onChange,
+  className,
+  css: cssProp,
+  label,
+  labelCss,
+  ...props
+}) => {
   const id = useId();
 
   const switchRender = (
@@ -28,10 +40,10 @@ export const Switch: FC<Props> = ({ onChange, className, label, labelClassName, 
   );
 
   return (
-    <Flex alignItems="center" className={className} gap="space8">
+    <Flex alignItems="center" className={className} css={cssProp} gap="space8">
       {switchRender}
       {label !== undefined ? (
-        <Label className={labelClassName} htmlFor={props.id ?? id}>
+        <Label css={labelCss} htmlFor={props.id ?? id}>
           {label}
         </Label>
       ) : null}

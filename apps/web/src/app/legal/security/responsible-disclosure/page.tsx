@@ -22,16 +22,16 @@ const Page = (): ReactElement => {
           Responsible Disclosure
         </Text>
       </Flex>
-      <Text className={paragraphCss} variant="bodyM">
+      <Text css={paragraphCss} variant="bodyM">
         At Flows, we care deeply about the safety and security of our customers' data. We greatly
         value reports from our community that help us detect vulnerabilities in our product and
         services.
       </Text>
 
-      <Text as="h2" className={headingCss} variant="titleXl">
+      <Text as="h2" css={headingCss} variant="titleXl">
         How to report an issue
       </Text>
-      <Text className={paragraphCss} variant="bodyM">
+      <Text css={paragraphCss} variant="bodyM">
         If you have discovered an issue or vulnerability that is in-scope (see below), please send
         an email to <a href={`mailto:${emails.security}`}>{emails.security}</a> with the following
         details.
@@ -46,15 +46,15 @@ const Page = (): ReactElement => {
           If possible, proof-of-concept code to exploit the vulnerability
         </li>
       </ul>
-      <Text className={paragraphCss} variant="bodyM">
+      <Text css={paragraphCss} variant="bodyM">
         Upon receiving your email, our team will conduct an investigation. We will update you on our
         progress, and may request further details, or re-testing if needed.
       </Text>
-      <Text className={paragraphCss} variant="bodyM">
+      <Text css={paragraphCss} variant="bodyM">
         All original reports will be considered, and bounties may be issued at our sole discretion.
       </Text>
 
-      <Text as="h2" className={headingCss} variant="titleXl">
+      <Text as="h2" css={headingCss} variant="titleXl">
         In scope
       </Text>
       <ul className={ulCss}>
@@ -69,7 +69,7 @@ const Page = (): ReactElement => {
         </li>
       </ul>
 
-      <Text as="h2" className={headingCss} variant="titleXl">
+      <Text as="h2" css={headingCss} variant="titleXl">
         Out of scope
       </Text>
       <ul className={ulCss}>
@@ -91,7 +91,7 @@ const Page = (): ReactElement => {
         <li className={bulletCss}>Denial of service attacks</li>
       </ul>
 
-      <Text as="h2" className={headingCss} variant="titleXl">
+      <Text as="h2" css={headingCss} variant="titleXl">
         We kindly ask you
       </Text>
       <ul className={ulCss}>
@@ -113,7 +113,7 @@ const Page = (): ReactElement => {
         </li>
       </ul>
 
-      <Text as="h2" className={headingCss} variant="titleXl">
+      <Text as="h2" css={headingCss} variant="titleXl">
         Report Format
       </Text>
       <ul className={ulCss}>
@@ -137,7 +137,7 @@ const Page = (): ReactElement => {
         </li>
       </ul>
 
-      <Text as="h2" className={headingCss} variant="titleXl">
+      <Text as="h2" css={headingCss} variant="titleXl">
         Risk Assessment and Bounties
       </Text>
       <ul className={ulCss}>
@@ -156,7 +156,7 @@ const Page = (): ReactElement => {
         </li>
       </ul>
 
-      <Text className={paragraphCss} variant="bodyM">
+      <Text css={paragraphCss} variant="bodyM">
         Happy hacking, from the Flows Team
       </Text>
     </LegalLayout>

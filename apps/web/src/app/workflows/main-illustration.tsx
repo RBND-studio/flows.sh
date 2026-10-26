@@ -1,6 +1,7 @@
 import { css } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { token } from "@flows/styled-system/tokens";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import type { BlockType } from "@flows/types";
 import {
   HeroIllustrationGlow,
@@ -34,27 +35,27 @@ export const MainIllustration = (): ReactNode => {
             <Block
               name="Onboarding tour"
               type="tour"
-              className={css({
+              css={{
                 width: { base: "140px", md: "fit-content" },
-              })}
+              }}
             />
             <Block
               name="End"
               type="end"
-              className={css({
+              css={{
                 width: { base: "140px", md: "100%" },
-              })}
+              }}
             />
           </Flex>
         </Flex>
       </Section>
       <Section
-        maxWidth="1100px!"
+        maxWidth="1100px"
         role="img"
         aria-label="Illustration of a workflow editor showing a multi-step flow with branching logic"
-        outerClassName={css({
+        outerCss={{
           display: { base: "none", md: "block" },
-        })}
+        }}
       >
         <Box>
           <Box
@@ -110,9 +111,11 @@ type BlockProps = {
   type: BlockType;
   icon?: string;
   className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
 };
 
-const Block = ({ name, type, icon, className }: BlockProps): JSX.Element => {
+const Block = ({ name, type, icon, className, css: cssProp }: BlockProps): JSX.Element => {
   return (
     <Flex
       backgroundColor="bg.neutral"
@@ -126,6 +129,7 @@ const Block = ({ name, type, icon, className }: BlockProps): JSX.Element => {
       borderColor="border.neutral"
       alignItems="center"
       className={className}
+      css={cssProp}
     >
       <BlockIcon blockType={type} blockIcon={icon} />
       <Text weight="600">{name}</Text>

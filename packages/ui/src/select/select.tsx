@@ -3,6 +3,7 @@
 import { css, cva, cx } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { token } from "@flows/styled-system/tokens";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import * as RadixSelect from "@radix-ui/react-select";
 import { CaretDown16, Check16 } from "icons";
 import { type JSX, memo, type ReactNode, useId, useMemo } from "react";
@@ -29,14 +30,21 @@ export type SelectProps<T extends string = string> = {
   loading?: boolean;
   onChange?: (value: T) => void;
   className?: string;
-  buttonClassName?: string;
+  /**
+   * Style overrides for the wrapper element
+   */
+  css?: SystemStyleObject;
+  /**
+   * Style overrides for the trigger button, merged with its styles so they win without `!`
+   */
+  buttonCss?: SystemStyleObject;
   placeholder?: string;
   size?: "default" | "small";
   optional?: boolean;
   label?: string;
-  labelClassName?: string;
+  labelCss?: SystemStyleObject;
   description?: string;
-  descriptionClassName?: string;
+  descriptionCss?: SystemStyleObject;
   id?: string;
   ["aria-label"]?: string;
   disabled?: boolean;
@@ -50,12 +58,13 @@ export const Select = memo(SelectInner) as typeof SelectInner;
 function SelectInner<T extends string>({
   options,
   className,
-  buttonClassName,
+  css: cssProp,
+  buttonCss,
   description,
-  descriptionClassName,
+  descriptionCss,
   placeholder,
   label,
-  labelClassName,
+  labelCss,
   size = "default",
   onChange,
   optional,
@@ -98,8 +107,8 @@ function SelectInner<T extends string>({
           autoFocus={autoFocus}
           aria-label={ariaLabel}
           data-test={dataTest}
-          className={cx(
-            css({
+          css={css.raw(
+            {
               position: "relative",
               "&[data-placeholder]": {
                 color: "control.fg.placeholder",
@@ -108,9 +117,9 @@ function SelectInner<T extends string>({
                 flex: 1,
                 justifyContent: "flex-end",
               },
-            }),
-            buttonClassName,
-            button({ size }),
+            },
+            button.raw({ size }),
+            buttonCss,
           )}
           startIcon={currentOption?.startIcon}
           endIcon={endIcon}
@@ -243,20 +252,15 @@ function SelectInner<T extends string>({
   );
 
   return (
-    <Flex className={className} flexDir="column">
+    <Flex className={className} css={cssProp} flexDir="column">
       {label !== undefined ? (
-        <Label
-          className={labelClassName}
-          disabled={disabled}
-          htmlFor={props.id ?? id}
-          optional={optional}
-        >
+        <Label css={labelCss} disabled={disabled} htmlFor={props.id ?? id} optional={optional}>
           {label}
         </Label>
       ) : null}
       {selectRender}
       {description !== undefined && (
-        <Description disabled={disabled} className={descriptionClassName}>
+        <Description disabled={disabled} css={descriptionCss}>
           {description}
         </Description>
       )}

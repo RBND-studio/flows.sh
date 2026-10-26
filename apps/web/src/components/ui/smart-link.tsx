@@ -1,4 +1,5 @@
-import { cva, cx } from "@flows/styled-system/css";
+import { css, cva, cx } from "@flows/styled-system/css";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import { ExternalLink16 } from "icons";
 import { type Route } from "next";
 import Link, { type LinkProps } from "next/link";
@@ -11,14 +12,22 @@ type Props = {
   underline?: boolean;
   prefetch?: LinkProps<Route>["prefetch"];
   className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
 };
 
-export const SmartLink: FC<Props> = ({ underline, prefetch, className, ...props }) => {
+export const SmartLink: FC<Props> = ({
+  underline,
+  prefetch,
+  className,
+  css: cssProp,
+  ...props
+}) => {
   if (props.href.startsWith("http"))
     return (
       <a
         rel={props.target === "_blank" ? "noopener noreferrer" : undefined}
-        className={cx(linkClassname({ underline }), className)}
+        className={cx(css(linkClassname.raw({ underline }), cssProp), className)}
         {...props}
       >
         {props.children}
@@ -26,7 +35,14 @@ export const SmartLink: FC<Props> = ({ underline, prefetch, className, ...props 
       </a>
     );
 
-  return <Link className={className} {...props} prefetch={prefetch} href={props.href as Route} />;
+  return (
+    <Link
+      className={cssProp ? cx(css(cssProp), className) : className}
+      {...props}
+      prefetch={prefetch}
+      href={props.href as Route}
+    />
+  );
 };
 
 const linkClassname = cva({

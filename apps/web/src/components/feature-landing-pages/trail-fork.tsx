@@ -137,13 +137,13 @@ const FeatureCard = ({ title, description, icon, href }: FeatureCardProps): Reac
         <Text variant="titleL">{title}</Text>
         <Icon
           icon={ArrowRight16}
-          className={css({
+          css={{
             opacity: 0,
             fastEaseInOut: "all",
             _groupHover: {
               opacity: 1,
             },
-          })}
+          }}
         />
       </Flex>
       <Text variant="bodyM" color="fg.neutral.muted">

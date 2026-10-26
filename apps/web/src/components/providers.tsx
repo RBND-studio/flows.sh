@@ -4,8 +4,6 @@ import { Affiliate } from "components/utils/affiliate";
 import { ThemeProvider } from "next-themes";
 import type { FC, ReactNode } from "react";
 
-import { FlowsProvider } from "./utils/flows-provider";
-
 type Props = {
   children: ReactNode;
 };
@@ -13,10 +11,8 @@ type Props = {
 export const Providers: FC<Props> = ({ children }) => {
   return (
     <ThemeProvider attribute="class">
-      <FlowsProvider>
-        {children}
-        <Affiliate />
-      </FlowsProvider>
+      {children}
+      <Affiliate />
     </ThemeProvider>
   );
 };

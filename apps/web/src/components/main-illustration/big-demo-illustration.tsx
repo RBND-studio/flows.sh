@@ -130,7 +130,7 @@ export const BigDemoIllustration = (): ReactNode => {
                       />
                     )}
 
-                    <Icon color="inherit" icon={tabItem.icon} className={css({ zIndex: 1 })} />
+                    <Icon color="inherit" icon={tabItem.icon} css={{ zIndex: 1 }} />
                     <Text variant="bodyS" weight="600" zIndex={1} color="inherit">
                       {tabItem.label}
                     </Text>
@@ -186,7 +186,7 @@ export const BigDemoIllustration = (): ReactNode => {
         </Box>
 
         <NewHeroIllustrationLine />
-        <NewHeroIllustrationLine className={css({ bottom: -1, top: "unset!" })} />
+        <NewHeroIllustrationLine css={{ bottom: -1, top: "unset" }} />
         <NewHeroIllustrationGlow />
       </Section>
       <Dither />

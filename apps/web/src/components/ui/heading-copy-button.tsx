@@ -1,6 +1,7 @@
 "use client";
 
 import { css, cx } from "@flows/styled-system/css";
+import type { SystemStyleObject } from "@flows/styled-system/types";
 import { Check16, Link16 } from "icons";
 import { useState, type ReactNode } from "react";
 import { clipboard, Icon } from "ui";
@@ -8,10 +9,13 @@ import { clipboard, Icon } from "ui";
 export const HeadingCopyButton = ({
   hash,
   className,
+  css: cssProp,
 }: {
   /** Id of the heading to link to */
   hash?: string;
   className?: string;
+  /** Style overrides, merged with the component's own styles so they win without `!` */
+  css?: SystemStyleObject;
 }): ReactNode => {
   const [hasBeenCopied, setHasBeenCopied] = useState(false);
 
@@ -25,16 +29,19 @@ export const HeadingCopyButton = ({
     <button
       aria-label="Copy link to heading"
       className={cx(
-        css({
-          color: "fg.neutral.subtle",
-          fastEaseInOut: "all",
-          padding: "space4",
-          cursor: "pointer",
-          _hover: {
-            color: "fg.neutral",
+        css(
+          {
+            color: "fg.neutral.subtle",
+            fastEaseInOut: "all",
+            padding: "space4",
+            cursor: "pointer",
+            _hover: {
+              color: "fg.neutral",
+            },
+            opacity: hasBeenCopied ? 1 : undefined,
           },
-          opacity: hasBeenCopied ? 1 : undefined,
-        }),
+          cssProp,
+        ),
         className,
       )}
       type="button"

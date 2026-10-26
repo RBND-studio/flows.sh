@@ -1,4 +1,3 @@
-import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
 import { CtaBanner } from "components/cta-banner";
 import { SignupClick } from "components/utils/signup-click";
@@ -54,9 +53,9 @@ export default async function TechnologyDetailPage({ params }: Props): Promise<R
           <Flex gap="space12" flexDirection={{ base: "column", md: "row" }}>
             <SignupClick>
               <Button
-                className={css({
+                css={{
                   shadow: "neutralFocus",
-                })}
+                }}
                 asChild
                 size="large"
               >

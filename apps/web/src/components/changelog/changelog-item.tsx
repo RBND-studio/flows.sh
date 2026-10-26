@@ -1,4 +1,4 @@
-import { css, cva } from "@flows/styled-system/css";
+import { cva } from "@flows/styled-system/css";
 import { Box, Flex } from "@flows/styled-system/jsx";
 import { ArrowLeft16 } from "icons";
 import Link from "next/link";
@@ -41,12 +41,12 @@ export const ChangelogItem = ({ detail, mdx, ...release }: Props): ReactElement 
   );
 
   const titleComponent = detail ? (
-    <Text variant="title2xl" as="h2" className={css({ mb: "space24" })}>
+    <Text variant="title2xl" as="h2" css={{ mb: "space24" }}>
       {release.title}
     </Text>
   ) : (
     <Link href={href}>
-      <Text variant="title2xl" as="h2" className={css({ mb: "space24" })}>
+      <Text variant="title2xl" as="h2" css={{ mb: "space24" }}>
         {release.title}
       </Text>
     </Link>

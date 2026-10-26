@@ -85,7 +85,7 @@ export const CsatCard = (): ReactNode => {
           >
             <Icon
               icon={star <= 4 ? StarFilled16 : Star16}
-              color={star <= 4 ? "#f4be35" : "fg.neutral.placeholder"}
+              color={star <= 4 ? "#f4be35" : "fg.neutral.subtle"}
             />
           </Flex>
         ))}
@@ -135,8 +135,8 @@ export const PmfCard = (): ReactNode => {
           </Flex>
         ))}
       </Flex>
-      <Button size="small" asChild>
-        <div className={css({ pointerEvents: "none" })}>Submit</div>
+      <Button css={{ pointerEvents: "none" }} size="small" asChild>
+        <div>Submit</div>
       </Button>
     </Flex>
   );
