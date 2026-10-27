@@ -5,6 +5,10 @@ services:
     mem_limit: 1g
     ports:
       - ${KAFKA_PORT}:9094
+    # Named volume so topics, messages and consumer offsets survive `docker compose down`. The image
+    # creates /var/lib/kafka/data owned by appuser, which a new volume inherits.
+    volumes:
+      - kafka-data:/var/lib/kafka/data
     environment:
       KAFKA_NODE_ID: 1
       KAFKA_PROCESS_ROLES: "broker,controller"
@@ -21,7 +25,9 @@ services:
       KAFKA_SHARE_COORDINATOR_STATE_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_SHARE_COORDINATOR_STATE_TOPIC_MIN_ISR: 1
       KAFKA_DEFAULT_REPLICATION_FACTOR: 1
-      KAFKA_NUM_PARTITIONS: 1
+      # Topics are created by kafka-init. Producers that reconnect before it runs would otherwise
+      # auto-create user-events with 1 partition, and kafka-init's --if-not-exists would skip it.
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
       KAFKA_OFFSETS_TOPIC_NUM_PARTITIONS: 1
       KAFKA_TRANSACTION_STATE_LOG_NUM_PARTITIONS: 1
       KAFKA_LOG_RETENTION_HOURS: 12
@@ -30,7 +36,7 @@ services:
       KAFKA_NUM_NETWORK_THREADS: 2
       KAFKA_NUM_IO_THREADS: 4
       KAFKA_HEAP_OPTS: "-Xms384m -Xmx384m"
-      KAFKA_LOG_DIRS: "/tmp/kraft-combined-logs"
+      KAFKA_LOG_DIRS: "/var/lib/kafka/data"
 
   kafka-init:
     image: apache/kafka:4.3.2
@@ -42,6 +48,9 @@ services:
     volumes:
       - ./create-topics.sh:/scripts/create-topics.sh:ro
     entrypoint: ["/bin/sh", "/scripts/create-topics.sh"]
+
+volumes:
+  kafka-data:
 
 networks:
   default:
