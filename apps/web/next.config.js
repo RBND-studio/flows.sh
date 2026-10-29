@@ -141,7 +141,13 @@ const nextConfig = {
 
 const withMDX = createMdx({
   options: {
-    remarkPlugins: ["remark-frontmatter", "remark-mdx-frontmatter", "remark-gfm"],
+    remarkPlugins: [
+      "remark-frontmatter",
+      "remark-mdx-frontmatter",
+      "remark-gfm",
+      // Absolute, the loader resolves plugin paths relative to each MDX file
+      path.join(__dirname, "src/lib/remark-cover-image.mjs"),
+    ],
     rehypePlugins: [
       "rehype-slug",
       [

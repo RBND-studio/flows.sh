@@ -1,25 +1,19 @@
 import type { CSSProperties, ReactNode } from "react";
 
-import swirlPng from "./swirl.png";
+import swirl1080 from "./swirl-1080.webp";
+import swirl2048 from "./swirl-2048.webp";
+import swirl3000 from "./swirl-3000.webp";
 
 import { Box } from "@flows/styled-system/jsx";
-import { getImageProps } from "next/image";
 import { css } from "@flows/styled-system/css";
 
-// Optimized swirl URLs keyed by width ("1080w"), taken from the srcset Next.js generates
-const swirlUrls = new Map(
-  (getImageProps({ src: swirlPng, alt: "", quality: 50, sizes: "100vw" }).props.srcSet ?? "")
-    .split(", ")
-    .map((candidate) => {
-      const [url, width] = candidate.split(" ");
-      return [width, `url("${url}")`];
-    }),
-);
-
+// Pre-encoded with sharp (webp quality 50, alphaQuality 50, effort 6) instead of going through
+// the Next.js image optimizer. Only the alpha channel matters for a mask and the optimizer keeps
+// it lossless, which made this faint halftone 70 KB on mobile and 190 KB on desktop.
 const swirlStyle = {
-  "--swirl-base": swirlUrls.get("1080w"),
-  "--swirl-sm": swirlUrls.get("2048w"),
-  "--swirl-md": swirlUrls.get("3840w"),
+  "--swirl-base": `url("${swirl1080.src}")`,
+  "--swirl-sm": `url("${swirl2048.src}")`,
+  "--swirl-md": `url("${swirl3000.src}")`,
 } as CSSProperties;
 
 export const Dither = (): ReactNode => {

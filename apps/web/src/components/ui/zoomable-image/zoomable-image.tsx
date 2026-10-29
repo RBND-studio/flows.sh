@@ -34,7 +34,8 @@ export const ZoomableImage = (props: Props): ReactNode => {
         src={props.src ?? ""}
         width={Number(props.width)}
         sizes="(max-width: 768px) 100vw, 896px"
-        priority={props.priority}
+        loading={props.priority ? "eager" : "lazy"}
+        fetchPriority={props.priority ? "high" : undefined}
       />
     </Zoom>
   );
