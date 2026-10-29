@@ -1,6 +1,7 @@
 import { Grid } from "@flows/styled-system/jsx";
 import { getWebMetadata } from "lib/get-metadata";
 import { importAllChangelogPosts, importChangelogPost, scanChangelogFiles } from "lib/mdx";
+import { priorityCoverComponents } from "mdx-components";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { ReactElement } from "react";
@@ -62,7 +63,7 @@ export default async function ChangelogDetailPage(
         description={release.description}
         date={release.date}
         slug={slug}
-        mdx={<release.Mdx />}
+        mdx={<release.Mdx components={priorityCoverComponents} />}
       />
       <Grid
         gap="space24"

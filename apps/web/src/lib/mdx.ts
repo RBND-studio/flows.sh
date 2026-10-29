@@ -1,3 +1,4 @@
+import type { MDXContent } from "mdx/types";
 import fs from "node:fs/promises";
 import path from "node:path";
 
@@ -6,7 +7,7 @@ export type ChangelogPost = {
   title: string;
   description: string;
   date: string;
-  Mdx: React.FC;
+  Mdx: MDXContent;
 };
 
 export type BlogPost = {

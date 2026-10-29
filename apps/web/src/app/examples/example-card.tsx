@@ -15,6 +15,8 @@ type Props = {
   lightImage: string | StaticImport;
   darkImage: string | StaticImport;
   alt: string;
+  // Set for the first card on the page, its image is the LCP element
+  priority?: boolean;
 };
 
 export const ExampleCard = ({
@@ -25,6 +27,7 @@ export const ExampleCard = ({
   lightImage,
   darkImage,
   alt,
+  priority,
 }: Props): ReactNode => {
   return (
     <Link
@@ -65,6 +68,7 @@ export const ExampleCard = ({
             width={600}
             height={384}
             alt={alt}
+            priority={priority}
           />
         </Flex>
       </Flex>

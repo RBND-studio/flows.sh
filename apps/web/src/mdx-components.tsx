@@ -10,22 +10,36 @@ import { CodeHighlightDiv, CodeHighlightWrapper, Text, type TextProps } from "ui
 
 import { MdxCopyButton } from "components/utils/mdx-copy-button";
 
+type MdxImageProps = HTMLProps<HTMLImageElement> & {
+  // Set by remark-cover-image on the first image of the file
+  cover?: boolean;
+  priority?: boolean;
+};
+
+const MdxImage = (props: MdxImageProps) => (
+  <ZoomableImage
+    alt={props.alt ?? "Blog post cover image"}
+    src={props.src ?? ""}
+    height={Number(props.height)}
+    width={Number(props.width)}
+    priority={props.priority}
+    className={css({
+      borderRadius: "radius8",
+      borderWidth: 1,
+      borderStyle: "solid",
+      borderColor: "border.neutral",
+      mb: "space32",
+    })}
+  />
+);
+
+// For MDX rendered at the top of a page, where the cover image is the LCP element
+export const priorityCoverComponents: MDXComponents = {
+  Image: ({ cover, ...props }: MdxImageProps) => <MdxImage {...props} priority={cover} />,
+};
+
 const components: MDXComponents = {
-  Image: (props: HTMLProps<HTMLImageElement>) => (
-    <ZoomableImage
-      alt={props.alt ?? "Blog post cover image"}
-      src={props.src ?? ""}
-      height={Number(props.height)}
-      width={Number(props.width)}
-      className={css({
-        borderRadius: "radius8",
-        borderWidth: 1,
-        borderStyle: "solid",
-        borderColor: "border.neutral",
-        mb: "space32",
-      })}
-    />
-  ),
+  Image: MdxImage,
   h1: (props: TextProps) => {
     if (props.id) {
       return (
