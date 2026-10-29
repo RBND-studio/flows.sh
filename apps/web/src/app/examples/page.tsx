@@ -31,8 +31,9 @@ export default function ExamplePage(): ReactNode {
           gridTemplateColumns={{ base: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}
           gap="space20"
         >
-          {examplesContent.map((example) => (
+          {examplesContent.map((example, index) => (
             <ExampleCard
+              priority={index === 0}
               darkImage={example.images.dark}
               lightImage={example.images.light}
               key={example.title}
