@@ -6,6 +6,9 @@
   "language": "en",
   // words - list of words to be always considered correct
   "words": [
+    "faro",
+    "Mobi",
+    "TTFB",
     "apify",
     "Astrodon",
     "authjs",
@@ -97,6 +100,8 @@
   // For example "hte" should be "the"
   "flagWords": ["hte"],
   "ignorePaths": [
+    "docs/superpowers/**",
+    ".superpowers/**",
     "_journal.json",
     "**.html",
     "**/dist/**/*",
