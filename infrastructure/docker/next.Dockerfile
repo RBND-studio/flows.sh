@@ -55,5 +55,4 @@ COPY --from=installer --chown=nextjs:nodejs /app/apps/${APP}/public ./apps/${APP
 
 ENV SERVER_FILE=apps/${APP}/server.js
 
-CMD ["sh", "-c", "node $SERVER_FILE"]
-
+CMD ["sh", "-c", "node --enable-experimental-regexp-engine-on-excessive-backtracks $SERVER_FILE"]

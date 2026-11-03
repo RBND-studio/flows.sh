@@ -57,6 +57,7 @@ allowBuilds:
   libpq: true
   nestjs-pino: true
   protobufjs: true
+  re2: true
   sharp: true
   ssh2: true
   unrs-resolver: true

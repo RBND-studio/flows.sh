@@ -47,4 +47,4 @@ COPY --chown=node:node --from=installer /app/apps/${APP}/dist ./apps/${APP}/dist
 USER node
 
 WORKDIR /app/apps/${APP}
-CMD ["node", "dist/main.js"]
+CMD ["node", "--enable-experimental-regexp-engine-on-excessive-backtracks", "dist/main.js"]
