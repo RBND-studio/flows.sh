@@ -65,7 +65,7 @@ const nextConfig = {
   // Compression is handled by Nginx, also it's required to disable compression for Next.js to support streaming
   compress: false,
   poweredByHeader: false,
-  transpilePackages: ["ui", "icons", "shared"],
+  transpilePackages: ["ui", "icons", "shared", "telemetry"],
   output: "standalone",
   outputFileTracingRoot: path.join(path.resolve(), "../../"),
   experimental: {

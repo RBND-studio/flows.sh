@@ -45,6 +45,7 @@
     "remark-gfm": "^4.0.1",
     "remark-mdx-frontmatter": "^6.0.0",
     "shared": "workspace:*",
+    "telemetry": "workspace:*",
     "turndown": "^7.2.4",
     "ui": "workspace:*"
   },

@@ -69,7 +69,7 @@ const nextConfig = {
   compress: false,
   poweredByHeader: false,
   typedRoutes: true,
-  transpilePackages: ["ui", "icons", "shared"],
+  transpilePackages: ["ui", "icons", "shared", "telemetry"],
   output: "standalone",
   outputFileTracingRoot: path.join(__dirname, "../../"),
   experimental: {
@@ -99,6 +99,11 @@ const nextConfig = {
           source: "/:path*.md",
           destination: "/md/:path*",
         },
+        // Web vitals beacons from this site and the docs. Same origin, so ad blockers and CSP leave
+        // them alone and the collector stays on the private network
+        ...(process.env.TELEMETRY_FARO_URL
+          ? [{ source: "/api/telemetry", destination: process.env.TELEMETRY_FARO_URL }]
+          : []),
       ],
       beforeFiles: [
         {

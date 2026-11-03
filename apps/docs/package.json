@@ -23,6 +23,7 @@
     "react-dom": "19.3.1",
     "react-lite-youtube-embed": "^3.6.2",
     "shared": "workspace:*",
+    "telemetry": "workspace:*",
     "ui": "workspace:*",
     "zod": "^4.6.7"
   },
