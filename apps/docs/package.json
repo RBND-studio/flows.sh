@@ -18,7 +18,7 @@
     "fumadocs-mdx": "15.0.12",
     "fumadocs-ui": "16.8.9",
     "icons": "workspace:*",
-    "next": "16.4.1",
+    "next": "16.4.5",
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "react-lite-youtube-embed": "^3.6.2",
