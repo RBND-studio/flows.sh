@@ -14,6 +14,8 @@ type Props = {
   className?: string;
   /** Style overrides, merged with the component's own styles so they win without `!` */
   css?: SystemStyleObject;
+  /** Internal link component, the root layout passes the one from `components/utils/layout-client` */
+  linkComponent?: typeof Link;
 };
 
 export const SmartLink: FC<Props> = ({
@@ -21,6 +23,7 @@ export const SmartLink: FC<Props> = ({
   prefetch,
   className,
   css: cssProp,
+  linkComponent: LinkComponent = Link,
   ...props
 }) => {
   if (props.href.startsWith("http"))
@@ -36,7 +39,7 @@ export const SmartLink: FC<Props> = ({
     );
 
   return (
-    <Link
+    <LinkComponent
       className={cssProp ? cx(css(cssProp), className) : className}
       {...props}
       prefetch={prefetch}

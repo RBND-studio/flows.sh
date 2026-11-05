@@ -1,8 +1,7 @@
 import { css } from "@flows/styled-system/css";
 import { Flex } from "@flows/styled-system/jsx";
-import { SignupClick } from "components/utils/signup-click";
+import { Link, SignupClick } from "components/utils/layout-client";
 import { links } from "lib/links";
-import Link from "next/link";
 import { type ReactElement } from "react";
 import { routes } from "routes";
 import { Button, Logo } from "ui";

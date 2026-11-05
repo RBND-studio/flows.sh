@@ -3,7 +3,7 @@ import type { ReactElement } from "react";
 import ditherPng from "./dither.png";
 import { Section } from "components/ui/section";
 import { css } from "@flows/styled-system/css";
-import Image from "next/image";
+import { Image } from "components/utils/layout-client";
 
 export const Dither = (): ReactElement => {
   return (
