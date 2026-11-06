@@ -1,5 +1,6 @@
 export * from "./basics-v2-components";
 export * from "./billing";
+export * from "./code-variable";
 export * from "./contacts";
 export * from "./create-params";
 export * from "./demo-slots";
