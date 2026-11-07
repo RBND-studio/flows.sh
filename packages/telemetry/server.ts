@@ -1,7 +1,5 @@
 import type { TelemetryConfig } from "./constants";
-
-// Auth routes take tokens in the query (magic link `token`, OAuth `code`), keep them out of Loki
-const stripQuery = (url: string): string => url.split(/[?#]/, 1)[0] ?? url;
+import { stripQueries } from "./strip-queries";
 
 /**
  * Builds `onRequestError` for `instrumentation.ts`. One structured JSON line to stdout per server
@@ -18,17 +16,20 @@ export const createRequestErrorReporter =
     const message = err?.message ?? String(error);
     // eslint-disable-next-line no-console -- structured stdout lines are the server side log transport
     console.error(
-      JSON.stringify({
-        level: "error",
-        msg: message,
-        kind: "server",
-        route: context.routePath,
-        route_type: context.routeType,
-        method: request.method,
-        path: stripQuery(request.path),
-        service_version: version,
-        environment,
-        error: { name: err?.name ?? typeof error, message, stack: err?.stack },
-      }),
+      // The request path and URLs quoted in error messages can carry tokens
+      JSON.stringify(
+        stripQueries({
+          level: "error",
+          msg: message,
+          kind: "server",
+          route: context.routePath,
+          route_type: context.routeType,
+          method: request.method,
+          path: request.path,
+          service_version: version,
+          environment,
+          error: { name: err?.name ?? typeof error, message, stack: err?.stack },
+        }),
+      ),
     );
   };

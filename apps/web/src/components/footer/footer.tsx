@@ -11,6 +11,7 @@ import type { Route } from "next";
 import type { FooterGroup } from "./content";
 import { footerGroups, socialLinks } from "./content";
 import { SmartLink } from "components/ui/smart-link";
+import { Link } from "components/utils/layout-client";
 import { Dither } from "./dither";
 
 export const Footer = (): ReactElement => {
@@ -143,7 +144,11 @@ type FooterLinkProps = {
 const FooterLink = ({ title, href, icon, color, target }: FooterLinkProps): ReactNode => {
   if (icon && color) {
     return (
-      <SmartLink href={href} css={{ display: "flex", alignItems: "center", gap: "space8" }}>
+      <SmartLink
+        href={href}
+        css={{ display: "flex", alignItems: "center", gap: "space8" }}
+        linkComponent={Link}
+      >
         <FancyIcon
           color={color}
           css={{
@@ -191,7 +196,7 @@ const FooterLink = ({ title, href, icon, color, target }: FooterLinkProps): Reac
       variant="bodyS"
       color="fg.neutral.muted"
     >
-      <SmartLink prefetch={false} href={href} target={target}>
+      <SmartLink prefetch={false} href={href} target={target} linkComponent={Link}>
         {title}
       </SmartLink>
     </Text>
