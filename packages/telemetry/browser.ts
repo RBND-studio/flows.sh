@@ -2,6 +2,7 @@ import { getWebInstrumentations, initializeFaro } from "@grafana/faro-web-sdk";
 import { TracingInstrumentation } from "@grafana/faro-web-tracing";
 
 import type { TelemetryApp, TelemetryConfig } from "./constants";
+import { stripQueries } from "./strip-queries";
 
 /**
  * Starts the Faro web SDK with tracing for the dashboard. Call once from `instrumentation-client.ts`.
@@ -23,6 +24,8 @@ export const initBrowserTelemetry = ({
         new TracingInstrumentation(),
       ],
       ignoreErrors: [/^Script error\./, /ResizeObserver loop/],
+      // Page meta, navigation and CSP events, web vitals, errors and fetch spans all carry URLs
+      beforeSend: stripQueries,
     });
   } catch {
     // Telemetry is best effort.
