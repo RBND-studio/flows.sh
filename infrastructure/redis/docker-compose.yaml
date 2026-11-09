@@ -8,9 +8,26 @@ services:
           memory: 512m
     ports:
       - ${REDIS_PORT}:6379
-    volumes:
-      - ./redis.conf:/usr/local/etc/redis/redis.conf
+    configs:
+      - source: redis_conf
+        target: /usr/local/etc/redis/redis.conf
     command: redis-server /usr/local/etc/redis/redis.conf
+    healthcheck:
+      # Any reply (PONG, or NOAUTH when auth is on) means Redis is up and accepting connections.
+      test: ["CMD-SHELL", "redis-cli ping 2>&1 | grep -qE 'PONG|NOAUTH'"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+
+# Inline config is copied into the container when it's created (no bind mount), so it survives
+# restarts and reboots without any file on the host. REDIS_USER/REDIS_PASSWORD come from the deploy
+# workflow; when unset (local dev) the config is empty and Redis runs with defaults. A config-only
+# change needs the container recreated (`down` + `up`, or `up --force-recreate`).
+configs:
+  redis_conf:
+    content: |
+      ${REDIS_PASSWORD:+user default off}
+      ${REDIS_PASSWORD:+user ${REDIS_USER} on allcommands allkeys >${REDIS_PASSWORD}}
 
 networks:
   default:
