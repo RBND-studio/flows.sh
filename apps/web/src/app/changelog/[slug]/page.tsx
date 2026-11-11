@@ -31,6 +31,9 @@ export async function generateMetadata(props: ChangelogPageProps): Promise<Metad
   });
 }
 
+// Every slug comes from generateStaticParams, so unknown ones are a 404 instead of a failed MDX import
+export const dynamicParams = false;
+
 export async function generateStaticParams(): Promise<Params[]> {
   const changelogFiles = await scanChangelogFiles();
 
