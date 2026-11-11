@@ -46,20 +46,20 @@ Tools marked **Read** only read data. Tools marked **Write** create, change or d
 
 ## Users
 
-| Tool                        | Access | Description                                                                                                                |
-| --------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------- |
-| `flows_find_users`          | Read   | Find users of your app that the Flows SDK has identified.                                                                  |
-| `flows_get_user`            | Read   | Read a user's properties, language, workflow states and newest events. Useful when a workflow doesn't show up for someone. |
-| `flows_reset_user_progress` | Write  | Let a user go through a workflow again from the start, for example to test it after publishing.                            |
+| Tool                        | Access | Description                                                                                                                                                  |
+| --------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `flows_find_users`          | Read   | Look up one user of your app by the exact userId your app passes to the Flows SDK.                                                                           |
+| `flows_get_user`            | Read   | Read the properties your workflows filter on, plus a user's language, workflow states and newest events. Useful when a workflow doesn't show up for someone. |
+| `flows_reset_user_progress` | Write  | Let a user go through a workflow again from the start, for example to test it after publishing.                                                              |
 
 ## Analytics
 
-| Tool                               | Access | Description                                                                                             |
-| ---------------------------------- | ------ | ------------------------------------------------------------------------------------------------------- |
-| `flows_get_workflow_analytics`     | Read   | Read how many users started, completed and stopped a workflow per day, and where they drop off.         |
-| `flows_get_survey_results`         | Read   | Read the answers to a survey: answer distribution for every question and the newest free text answers.  |
-| `flows_get_organization_analytics` | Read   | Read workflow starts and completions across the organization and your monthly tracked users.            |
-| `flows_get_setup_status`           | Read   | Check whether the Flows SDK is installed and reaching each environment, and whether workflows are live. |
+| Tool                               | Access | Description                                                                                                                                   |
+| ---------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `flows_get_workflow_analytics`     | Read   | Read how many users started, completed and stopped a workflow per day, and where they drop off.                                               |
+| `flows_get_survey_results`         | Read   | Read the answers to a survey: answer distribution for every question and the newest free text answers.                                        |
+| `flows_get_organization_analytics` | Read   | Read workflow starts and completions across the organization and your monthly tracked users.                                                  |
+| `flows_get_setup_status`           | Read   | Check whether the Flows SDK is installed and reaching each environment, whether workflows are live, and which user properties your app sends. |
 
 ## Settings
 
