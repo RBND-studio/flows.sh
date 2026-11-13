@@ -45,6 +45,9 @@ export async function generateMetadata(props: PostProps): Promise<Metadata> {
   });
 }
 
+// Every slug comes from generateStaticParams, so unknown ones are a 404 instead of a failed MDX import
+export const dynamicParams = false;
+
 export async function generateStaticParams(): Promise<Params[]> {
   const blogFiles = await scanBlogFiles();
 
