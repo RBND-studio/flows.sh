@@ -76,7 +76,7 @@ Docs: https://flows.sh/docs/agent-skills
 - [Workflows](https://flows.sh/docs/workflows/overview): Workflow creation, versioning, analytics
 - [Blocks](https://flows.sh/docs/blocks): Block reference
 - [Basics V2 components](https://flows.sh/docs/blocks/basics-v2/overview): Built-in UI components
-- [Tours](https://flows.sh/docs/tours): Guided tour documentation
+- [Tours](https://flows.sh/docs/tours/overview): Guided tour documentation
 - [Surveys](https://flows.sh/docs/surveys/overview): Survey block documentation
 - [Components](https://flows.sh/docs/components/overview): Custom component docs
 - [Users](https://flows.sh/docs/users/overview): User management and inspection

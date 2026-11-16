@@ -9,7 +9,8 @@ import { Text } from "ui";
 
 export const metadata: Metadata = getWebMetadata({
   title: "Privacy Policy",
-  description: `Exploring Flows’s legal documents? Let us know if we can help. Get in touch at ${emails.general}`,
+  description:
+    "How Flows collects, uses, shares and protects your personal data when you visit our website or use our services.",
 });
 
 const Page = (): ReactElement => {

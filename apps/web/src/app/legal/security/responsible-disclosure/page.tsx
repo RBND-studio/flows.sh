@@ -11,7 +11,8 @@ import { Text } from "ui";
 
 export const metadata: Metadata = getWebMetadata({
   title: "Responsible Disclosure",
-  description: `Exploring Flows’s legal documents? Let us know if we can help. Get in touch at ${emails.general}`,
+  description:
+    "How to report a security vulnerability in Flows, what is in and out of scope, and how we assess risk and bounties.",
 });
 
 const Page = (): ReactElement => {
