@@ -1,3 +1,30 @@
+const fs = require("node:fs");
+const path = require("node:path");
+
+/**
+ * Last modified dates from the `updated` (falls back to `date`) frontmatter field of each post,
+ * keyed by URL path. Other pages have no reliable date, so their sitemap entry has no lastmod.
+ */
+const readContentDates = (section) => {
+  const dir = path.join(__dirname, "src/markdown", section);
+  const dates = new Map();
+  for (const file of fs.readdirSync(dir)) {
+    if (!file.endsWith(".mdx")) continue;
+    const source = fs.readFileSync(path.join(dir, file), "utf8");
+    const frontmatter = source.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? "";
+    const field = (key) =>
+      frontmatter.match(new RegExp(`^${key}:\\s*["']?(\\d{4}-\\d{2}-\\d{2})`, "m"))?.[1];
+    const date = field("updated") ?? field("date");
+    if (date) dates.set(`/${section}/${file.replace(/\.mdx$/, "")}`, date);
+  }
+  // The index page changes whenever one of its posts does
+  const latest = [...dates.values()].sort((a, b) => a.localeCompare(b)).at(-1);
+  if (latest) dates.set(`/${section}`, latest);
+  return dates;
+};
+
+const contentDates = new Map([...readContentDates("blog"), ...readContentDates("changelog")]);
+
 const instructions = `# As a condition of accessing this website, you agree to
 # abide by the following content signals:
 
@@ -38,6 +65,15 @@ Allow: /
 module.exports = {
   siteUrl: `https://${process.env.NEXT_PUBLIC_DOMAIN}`,
   generateRobotsTxt: true,
+  // Without this every URL gets the build time as lastmod, which crawlers learn to ignore
+  autoLastmod: false,
+  transform: async (config, loc) => ({
+    loc,
+    changefreq: config.changefreq,
+    priority: config.priority,
+    lastmod: contentDates.get(loc),
+    alternateRefs: config.alternateRefs ?? [],
+  }),
   robotsTxtOptions: {
     policies: [],
     additionalSitemaps: [`https://${process.env.NEXT_PUBLIC_DOMAIN}/docs/sitemap.xml`],

@@ -97,48 +97,50 @@ export async function generateMetadata(props: { params: Promise<Params> }): Prom
   if (!page) notFound();
   const isHomePage = page.url === "/";
 
-  // Use pageTitle if available, otherwise fallback to title
-  const pageTitle = page.data.pageTitle ?? page.data.title;
+  // metaTitle disambiguates pages whose visible title is shared with other pages (e.g. "Overview")
+  const metaTitle = page.data.metaTitle ?? page.data.pageTitle ?? page.data.title;
+  const fullTitle = `${metaTitle} | Flows Docs`;
+  // For some reason "./" adds a trailing slash to the /docs homepage URL, so we use "." there
+  const pageUrl = isHomePage ? "." : "./";
 
   return {
     metadataBase: new URL(`https://${DOMAIN}/docs`),
-    title: `${pageTitle} – Flows Docs`,
+    title: fullTitle,
     description: page.data.description,
     openGraph: {
-      title: `${pageTitle} – Flows Docs`,
+      title: fullTitle,
       description: page.data.description,
-      url: "./",
+      url: pageUrl,
       type: "article",
       locale: "en_US",
       siteName: "Flows",
       images: [
         {
-          url: links.ogImage({ title: pageTitle, type: "Docs" }),
+          url: links.ogImage({ title: metaTitle, type: "Docs" }),
           width: 1200,
           height: 630,
-          alt: pageTitle,
+          alt: metaTitle,
           type: "image/png",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${page.data.title} – Flows Docs`,
+      title: fullTitle,
       description: page.data.description,
       images: [
         {
-          url: links.ogImage({ title: pageTitle, type: "Docs" }),
+          url: links.ogImage({ title: metaTitle, type: "Docs" }),
           width: 1200,
           height: 630,
-          alt: pageTitle,
+          alt: metaTitle,
           type: "image/png",
         },
       ],
       creator: "@flows_sh",
     },
     alternates: {
-      // For some reason "./" adds a trailing slash to the /docs homepage URL, so we use "." there
-      canonical: isHomePage ? "." : "./",
+      canonical: pageUrl,
     },
     keywords: ["flows", "onboarding", "product adoption", "user onboarding", "user adoption"],
     robots: PRODUCTION ? undefined : "noindex,nofollow",

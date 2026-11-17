@@ -1,4 +1,4 @@
-import { getLLMText } from "lib/get-llm-text";
+import { getLLMText, getPageUrl } from "lib/get-llm-text";
 import { source } from "lib/source";
 import { notFound } from "next/navigation";
 
@@ -13,6 +13,8 @@ export async function GET(_req: Request, { params }: RouteContext<"/llms.mdx/[[.
     headers: {
       "Content-Type": "text/markdown",
       Vary: "Accept",
+      // Point search engines at the HTML page so the markdown copy isn't indexed as a duplicate
+      Link: `<${getPageUrl(page)}>; rel="canonical"`,
     },
   });
 }
