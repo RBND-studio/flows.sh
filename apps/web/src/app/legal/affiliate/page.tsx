@@ -9,7 +9,8 @@ import { Text } from "ui";
 
 export const metadata: Metadata = getWebMetadata({
   title: "Affiliate Program Policy",
-  description: `Exploring Flows’s legal documents? Let us know if we can help. Get in touch at ${emails.general}`,
+  description:
+    "Terms of the Flows Affiliate Program: how to join, how referred customers earn you commission, payment terms and termination.",
 });
 
 const Page = (): ReactElement => {

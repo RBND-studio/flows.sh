@@ -9,12 +9,12 @@ import { type Metadata } from "next";
 import Link from "next/link";
 import type { ReactElement } from "react";
 import { routes } from "routes";
-import { emails } from "shared";
 import { Text } from "ui";
 
 export const metadata: Metadata = getWebMetadata({
   title: "Security overview",
-  description: `Exploring Flows’s legal documents? Let us know if we can help. Get in touch at ${emails.general}`,
+  description:
+    "How Flows protects your data: EU hosting, access control, backups and disaster recovery, secure development and incident response.",
 });
 
 const Page = (): ReactElement => {

@@ -2,7 +2,6 @@ import { Flex } from "@flows/styled-system/jsx";
 import { getWebMetadata } from "lib/get-metadata";
 import { type Metadata } from "next";
 import type { ReactElement } from "react";
-import { emails } from "shared";
 import { Text } from "ui";
 
 import { type Cookie, CookiesTable } from "./table";
@@ -11,7 +10,8 @@ import { LegalLayout } from "components/legal-layout";
 
 export const metadata: Metadata = getWebMetadata({
   title: "Cookie Policy",
-  description: `Exploring Flows’s legal documents? Let us know if we can help. Get in touch at ${emails.general}`,
+  description:
+    "Which cookies Flows sets, what each one does, how long it lasts and which category it belongs to.",
 });
 
 const cookies: Cookie[] = [

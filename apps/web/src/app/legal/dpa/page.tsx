@@ -13,7 +13,8 @@ import { LegalLayout } from "components/legal-layout";
 
 export const metadata: Metadata = getWebMetadata({
   title: "Data Processing Agreement",
-  description: `Exploring Flows’s legal documents? Let us know if we can help. Get in touch at ${emails.general}`,
+  description:
+    "How RBND studio processes personal data for Flows customers under GDPR and CCPA, including security measures, subprocessors and transfers.",
 });
 
 const Page = (): ReactElement => {

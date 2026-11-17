@@ -7,6 +7,8 @@ export const docs = defineDocs({
   docs: {
     schema: pageSchema.extend({
       pageTitle: z.string().optional(),
+      // Overrides the <title> and social titles when the visible title is ambiguous (e.g. "Overview")
+      metaTitle: z.string().optional(),
     }),
     postprocess: {
       includeProcessedMarkdown: true,

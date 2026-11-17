@@ -11,7 +11,8 @@ import { Text } from "ui";
 
 export const metadata: Metadata = getWebMetadata({
   title: "Terms of Service",
-  description: `Exploring Flows’s legal documents? Let us know if we can help. Get in touch at ${emails.general}`,
+  description:
+    "The terms for using Flows: account rules, payments and refunds, cancellation, content ownership, liability and governing law.",
 });
 
 const Page = (): ReactElement => {
