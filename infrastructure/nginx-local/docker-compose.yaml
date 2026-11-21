@@ -1,6 +1,6 @@
 services:
   nginx:
-    image: nginx:1.30.3
+    image: nginx:1.30.7
     restart: unless-stopped
     ports:
       - ${NGINX_PORT}:8080
