@@ -68,14 +68,6 @@ export const describeMcpScopes = (scopes: readonly string[]): string[] => {
 };
 
 /**
- * The OAuth resource identifier both sides fall back to when no MCP resource URL is configured,
- * i.e. local development, where nginx proxies port 8080 to the backend. Deployments set
- * `MCP_RESOURCE_URL` (apps/app) and `MCP_RESOURCE_URL` (apps/backend) to the same public
- * URL — a token is audience-bound to this string, so a mismatch fails every request.
- */
-export const LOCAL_MCP_RESOURCE_URL = "http://localhost:8080/mcp";
-
-/**
  * One-click install link for Cursor, see https://cursor.com/docs/mcp/install-links. `config` is the
  * base64 of the server's entry in mcp.json, without the name key.
  */
@@ -87,3 +79,13 @@ export const vscodeMcpInstallUrl = (url: string): string =>
   `vscode:mcp/install?${encodeURIComponent(JSON.stringify({ name: "flows", type: "http", url }))}`;
 
 export const claudeMcpInstallUrl = "https://claude.ai/directory/flows";
+
+/**
+ * Canonical URL of this MCP server. Every access token is audience-bound to it.
+ * RFC 8707 requires https, no query and no fragment, except on loopback for local development.
+ */
+export const getMcpResourceUrl = (env?: "production" | "stage") => {
+  if (env === "production") return "https://api.flows-cloud.com/mcp";
+  if (env === "stage") return "https://api.stage.flows-cloud.com/mcp";
+  return "http://localhost:8080/mcp";
+};
