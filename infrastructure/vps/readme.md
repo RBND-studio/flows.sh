@@ -22,3 +22,30 @@ This checklist lists all the steps needed to follow when setting up new VPS for 
 - Login to Docker registry
 - Setup Twingate resource for SSH connection
 - Disallow SSH (22) port in firewall
+
+<!-- cspell:words Databasus logql -->
+
+## Restoring a database backup
+
+Databasus takes a backup every day and keeps each one for 30 days. Restoring a backup brings back every organization and user account deleted after it was taken, so delete them again before the app takes traffic.
+
+1. Note when the backup you are restoring was taken.
+2. Stop the backend, worker and websocket, then restore the backup.
+3. In Grafana Explore, pick the Loki data source, set the time range from the backup time to now and run:
+
+   ```logql
+   {service_name="flows-backend-prod"} |= "Customer data deleted"
+   ```
+
+   Each line carries a `deletedOrganizationId` or a `deletedUserId`.
+
+4. Delete those ids again. Deleting an organization cascades to all of its data, and deleting a user cascades to their sessions, accounts and memberships:
+
+   ```sql
+   DELETE FROM organization WHERE id IN ('<deletedOrganizationId>', ...);
+   DELETE FROM "user" WHERE id IN ('<deletedUserId>', ...);
+   ```
+
+5. Start the backend, worker and websocket.
+
+This only works while Loki keeps backend logs at least as long as the oldest backup (30 days). The lines are logged at warn level because production log shipping drops info lines.

@@ -31,7 +31,7 @@ services:
       AUTH_SECRET: better-auth-secret-123456789
       BACKEND_APP_URL: http://localhost:6100
       BACKEND_LOOPS_API_KEY: mock
-      BACKEND_SLACK_WEBHOOK_URL: https://hooks.slack.com/mock
+      BACKEND_SLACK_BOT_TOKEN: http://localhost
       BACKEND_LEMONSQUEEZY_WEBHOOK_SECRET: mock
       BACKEND_LEMONSQUEEZY_API_KEY: mock
       BACKEND_LEMONSQUEEZY_STORE_ID: mock
@@ -42,6 +42,7 @@ services:
       BACKEND_ADMIN_PASSWORD_HASH: "$$2b$$12$$mockmockmockmockmockmOmockmockmockmockmockmockmockmock"
       DANGEROUSLY_DISABLE_RATE_LIMITING: "true"
       OTEL_EXPORTER_OTLP_ENDPOINT: ""
+      BACKEND_ENV: test
     healthcheck:
       # node:slim does not have curl, so we use node to check the health endpoint
       test:
