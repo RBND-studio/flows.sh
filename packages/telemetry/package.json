@@ -13,8 +13,8 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@grafana/faro-web-sdk": "^2.13.0",
-    "@grafana/faro-web-tracing": "^2.13.0",
+    "@grafana/faro-web-sdk": "^2.14.0",
+    "@grafana/faro-web-tracing": "^2.14.0",
     "web-vitals": "6.2.3"
   },
   "devDependencies": {
